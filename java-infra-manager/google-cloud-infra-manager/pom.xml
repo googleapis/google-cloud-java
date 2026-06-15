@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-infra-manager</artifactId>
-  <version>0.69.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-infra-manager:current} -->
+  <version>0.71.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-infra-manager:current} -->
   <packaging>jar</packaging>
   <name>Google Infrastructure Manager API</name>
   <description>Infrastructure Manager API Creates and manages Google Cloud Platform resources and infrastructure.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-infra-manager-parent</artifactId>
-    <version>0.69.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-infra-manager:current} -->
+    <version>0.71.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-infra-manager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-infra-manager</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-infra-manager-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-infra-manager-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

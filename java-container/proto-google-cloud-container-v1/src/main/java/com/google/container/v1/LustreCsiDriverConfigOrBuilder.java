@@ -59,9 +59,26 @@ public interface LustreCsiDriverConfigOrBuilder
    * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2344
+   *     See google/container/v1/cluster_service.proto;l=2503
    * @return The enableLegacyLustrePort.
    */
   @java.lang.Deprecated
   boolean getEnableLegacyLustrePort();
+
+  /**
+   *
+   *
+   * <pre>
+   * When set to true, this disables multi-NIC support for the Lustre CSI
+   * driver.
+   * By default, GKE enables multi-NIC support, which allows the Lustre
+   * CSI driver to automatically detect and configure all suitable network
+   * interfaces on a node to maximize I/O performance for demanding workloads.
+   * </pre>
+   *
+   * <code>bool disable_multi_nic = 4;</code>
+   *
+   * @return The disableMultiNic.
+   */
+  boolean getDisableMultiNic();
 }

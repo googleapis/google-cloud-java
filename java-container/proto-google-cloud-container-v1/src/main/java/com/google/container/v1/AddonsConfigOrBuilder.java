@@ -124,7 +124,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2099
+   *     google/container/v1/cluster_service.proto;l=2243
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -145,7 +145,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2099
+   *     google/container/v1/cluster_service.proto;l=2243
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -699,6 +699,86 @@ public interface AddonsConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for the Pod Snapshot feature.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PodSnapshotConfig pod_snapshot_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the podSnapshotConfig field is set.
+   */
+  boolean hasPodSnapshotConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the Pod Snapshot feature.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PodSnapshotConfig pod_snapshot_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The podSnapshotConfig.
+   */
+  com.google.container.v1.PodSnapshotConfig getPodSnapshotConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the Pod Snapshot feature.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.PodSnapshotConfig pod_snapshot_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.PodSnapshotConfigOrBuilder getPodSnapshotConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Slurm Operator.
+   * </pre>
+   *
+   * <code>.google.container.v1.SlurmOperatorConfig slurm_operator_config = 25;</code>
+   *
+   * @return Whether the slurmOperatorConfig field is set.
+   */
+  boolean hasSlurmOperatorConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Slurm Operator.
+   * </pre>
+   *
+   * <code>.google.container.v1.SlurmOperatorConfig slurm_operator_config = 25;</code>
+   *
+   * @return The slurmOperatorConfig.
+   */
+  com.google.container.v1.SlurmOperatorConfig getSlurmOperatorConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Slurm Operator.
+   * </pre>
+   *
+   * <code>.google.container.v1.SlurmOperatorConfig slurm_operator_config = 25;</code>
+   */
+  com.google.container.v1.SlurmOperatorConfigOrBuilder getSlurmOperatorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Configuration for the slice controller add-on.
    * </pre>
    *
@@ -737,4 +817,90 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1.SliceControllerConfigOrBuilder getSliceControllerConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentSandboxConfig field is set.
+   */
+  boolean hasAgentSandboxConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentSandboxConfig.
+   */
+  com.google.container.v1.AgentSandboxConfig getAgentSandboxConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.AgentSandboxConfigOrBuilder getAgentSandboxConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for NodeReadinessController add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeReadinessConfig node_readiness_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeReadinessConfig field is set.
+   */
+  boolean hasNodeReadinessConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for NodeReadinessController add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeReadinessConfig node_readiness_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeReadinessConfig.
+   */
+  com.google.container.v1.NodeReadinessConfig getNodeReadinessConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for NodeReadinessController add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeReadinessConfig node_readiness_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.NodeReadinessConfigOrBuilder getNodeReadinessConfigOrBuilder();
 }

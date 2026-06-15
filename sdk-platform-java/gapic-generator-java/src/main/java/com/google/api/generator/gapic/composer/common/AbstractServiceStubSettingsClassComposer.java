@@ -2133,22 +2133,24 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
               .build();
     }
 
-    libraryMetadataBuilderExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(libraryMetadataBuilderExpr)
-            .setMethodName("setVersion")
-            .setArguments(
-                VariableExpr.builder()
-                    .setStaticReferenceType(
-                        TypeNode.withReference(
-                            VaporReference.builder()
-                                .setName("Version")
-                                .setPakkage(String.format("%s.stub", service.pakkage()))
-                                .build()))
-                    .setVariable(
-                        Variable.builder().setName("VERSION").setType(TypeNode.STRING).build())
-                    .build())
-            .build();
+    if (context.generateVersionJava()) {
+      libraryMetadataBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(libraryMetadataBuilderExpr)
+              .setMethodName("setVersion")
+              .setArguments(
+                  VariableExpr.builder()
+                      .setStaticReferenceType(
+                          TypeNode.withReference(
+                              VaporReference.builder()
+                                  .setName("Version")
+                                  .setPakkage(String.format("%s.stub", service.pakkage()))
+                                  .build()))
+                      .setVariable(
+                          Variable.builder().setName("VERSION").setType(TypeNode.STRING).build())
+                      .build())
+              .build();
+    }
 
     Expr returnExpr =
         MethodInvocationExpr.builder()

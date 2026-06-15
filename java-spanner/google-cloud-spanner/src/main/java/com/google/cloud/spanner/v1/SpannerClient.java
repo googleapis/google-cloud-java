@@ -35,6 +35,7 @@ import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -43,6 +44,7 @@ import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -365,6 +367,18 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> batchWriteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchCacheUpdate</td>
+ *      <td><p> Retrieves a cache update for a given database.
+ * <p>  This RPC can be used to warm up the client cache by fetching key recipes and server information for a given database. It is recommended to call this RPC at the beginning of the client's lifecycle, prior to any other data plane operations.
+ * <p>  The cache update is returned as a stream because the response can be too large to fit into a single `CacheUpdate` message.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchCacheUpdateCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2361,6 +2375,44 @@ public class SpannerClient implements BackgroundResource {
    */
   public final ServerStreamingCallable<BatchWriteRequest, BatchWriteResponse> batchWriteCallable() {
     return stub.batchWriteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a cache update for a given database.
+   *
+   * <p>This RPC can be used to warm up the client cache by fetching key recipes and server
+   * information for a given database. It is recommended to call this RPC at the beginning of the
+   * client's lifecycle, prior to any other data plane operations.
+   *
+   * <p>The cache update is returned as a stream because the response can be too large to fit into a
+   * single `CacheUpdate` message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   FetchCacheUpdateRequest request =
+   *       FetchCacheUpdateRequest.newBuilder()
+   *           .setDatabase(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
+   *           .setMaxRecipeCount(-423637479)
+   *           .setMaxRangeCount(1695701298)
+   *           .build();
+   *   ServerStream<CacheUpdate> stream = spannerClient.fetchCacheUpdateCallable().call(request);
+   *   for (CacheUpdate response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateCallable() {
+    return stub.fetchCacheUpdateCallable();
   }
 
   @Override

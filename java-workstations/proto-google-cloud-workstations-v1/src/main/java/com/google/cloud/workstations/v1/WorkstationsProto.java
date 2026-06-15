@@ -49,6 +49,14 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationCluster_PrivateClusterConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationCluster_DomainConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationCluster_DomainConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationCluster_GatewayConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationCluster_GatewayConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_WorkstationCluster_AnnotationsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationCluster_AnnotationsEntry_fieldAccessorTable;
@@ -56,6 +64,10 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_workstations_v1_WorkstationCluster_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationCluster_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationCluster_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationCluster_TagsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -77,6 +89,22 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_GceConfidentialInstanceConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_Accelerator_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_Accelerator_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_BoostConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_BoostConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_VmTagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_VmTagsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_InstanceMetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_InstanceMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_fieldAccessorTable;
@@ -84,6 +112,18 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceRegionalPersistentDisk_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceRegionalPersistentDisk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceHyperdiskBalancedHighAvailability_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceHyperdiskBalancedHighAvailability_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_GcePersistentDisk_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_GcePersistentDisk_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_WorkstationConfig_Container_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -101,6 +141,10 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_PortRange_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_WorkstationConfig_PortRange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_WorkstationConfig_AnnotationsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_WorkstationConfig_AnnotationsEntry_fieldAccessorTable;
@@ -113,6 +157,18 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_Workstation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_Workstation_AnnotationsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_Workstation_AnnotationsEntry_fieldAccessorTable;
@@ -120,6 +176,10 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_workstations_v1_Workstation_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_workstations_v1_Workstation_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_workstations_v1_Workstation_EnvEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_workstations_v1_Workstation_EnvEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_workstations_v1_GetWorkstationClusterRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -242,20 +302,20 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "ons.proto\022\034google.cloud.workstations.v1\032"
           + "\034google/api/annotations.proto\032\027google/ap"
           + "i/client.proto\032\037google/api/field_behavio"
-          + "r.proto\032\031google/api/resource.proto\032#goog"
-          + "le/longrunning/operations.proto\032\036google/protobuf/duration.proto\032"
-          + " google/protobuf"
-          + "/field_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\207"
-          + "\t\n"
-          + "\022WorkstationCluster\022\014\n"
-          + "\004name\030\001 \001(\t\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\001\022\020\n"
-          + "\003uid\030\003 \001(\tB\003\340A\003\022\030\n"
+          + "r.proto\032\033google/api/field_info.proto\032\031go"
+          + "ogle/api/resource.proto\032#google/longrunn"
+          + "ing/operations.proto\032\036google/protobuf/duration.proto\032"
+          + " google/protobuf/field_mask"
+          + ".proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\361\014\n"
+          + "\022WorkstationCluster\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\003uid\030\003 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\030\n"
           + "\013reconciling\030\004 \001(\010B\003\340A\003\022[\n"
-          + "\013annotations\030\005"
-          + " \003(\0132A.google.cloud.workstations.v1.WorkstationCluster.AnnotationsEntryB\003\340A\001\022Q\n"
-          + "\006labels\030\017 \003(\0132<.google.cloud.workstations"
-          + ".v1.WorkstationCluster.LabelsEntryB\003\340A\001\0224\n"
+          + "\013annotations\030\005 \003(\0132A.google.cloud.workstations.v1.Wo"
+          + "rkstationCluster.AnnotationsEntryB\003\340A\001\022Q\n"
+          + "\006labels\030\017 \003(\0132<.google.cloud.workstatio"
+          + "ns.v1.WorkstationCluster.LabelsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013delete_time\030\010"
@@ -265,34 +325,49 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\tB\003\340A\005\022\027\n\n"
           + "subnetwork\030\013 \001(\tB\003\340A\005\022\035\n"
           + "\020control_plane_ip\030\020 \001(\tB\003\340A\003\022j\n"
-          + "\026private_cluster_config\030\014 \001(\0132E.google.cloud.workstations.v"
-          + "1.WorkstationCluster.PrivateClusterConfigB\003\340A\001\022\025\n"
+          + "\026private_cluster_config\030\014 \001(\0132E.google.cloud.workstations"
+          + ".v1.WorkstationCluster.PrivateClusterConfigB\003\340A\001\022Y\n\r"
+          + "domain_config\030\021 \001(\0132=.google"
+          + ".cloud.workstations.v1.WorkstationCluster.DomainConfigB\003\340A\001\022\025\n"
           + "\010degraded\030\r"
           + " \001(\010B\003\340A\003\022+\n\n"
-          + "conditions\030\016 \003(\0132\022.google.rpc.StatusB\003\340A\003\032\237\001\n"
+          + "conditions\030\016 \003(\0132\022.google.rpc.StatusB\003\340A\003\022S\n"
+          + "\004tags\030\024 \003(\0132:.google.cloud.wor"
+          + "kstations.v1.WorkstationCluster.TagsEntryB\t\340A\004\340A\005\340A\001\022[\n"
+          + "\016gateway_config\030\025 \001(\0132>.g"
+          + "oogle.cloud.workstations.v1.WorkstationCluster.GatewayConfigB\003\340A\001\022*\n"
+          + "\035workstation_authorization_url\030\026 \001(\tB\003\340A\001\022#\n"
+          + "\026workstation_launch_url\030\027 \001(\tB\003\340A\001\032\237\001\n"
           + "\024PrivateClusterConfig\022$\n"
           + "\027enable_private_endpoint\030\001 \001(\010B\003\340A\005\022\035\n"
           + "\020cluster_hostname\030\002 \001(\tB\003\340A\003\022#\n"
           + "\026service_attachment_uri\030\003 \001(\tB\003\340A\003\022\035\n"
-          + "\020allowed_projects\030\004 \003(\tB\003\340A\001\0322\n"
+          + "\020allowed_projects\030\004 \003(\tB\003\340A\001\032#\n"
+          + "\014DomainConfig\022\023\n"
+          + "\006domain\030\001 \001(\tB\003\340A\005\032+\n\r"
+          + "GatewayConfig\022\032\n\r"
+          + "http2_enabled\030\001 \001(\010B\003\340A\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\263\001\352A\257\001\n"
-          + ".workstations.googleapis.com/WorkstationCluster\022Qprojects"
-          + "/{project}/locations/{location}/workstationClusters/{workstation_cluster}*\023works"
-          + "tationClusters2\022workstationClusterR\001\001\"\262\031\n"
-          + "\021WorkstationConfig\022\014\n"
-          + "\004name\030\001 \001(\t\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\001\022\020\n"
-          + "\003uid\030\003 \001(\tB\003\340A\003\022\030\n"
+          + ".workstations.googleapis.com/WorkstationCluster\022Qprojects/"
+          + "{project}/locations/{location}/workstati"
+          + "onClusters/{workstation_cluster}*\023workstationClusters2\022workstationClusterR\001\001\"\352*\n"
+          + "\021WorkstationConfig\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\003uid\030\003 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\030\n"
           + "\013reconciling\030\004 \001(\010B\003\340A\003\022Z\n"
-          + "\013annotations\030\005"
-          + " \003(\0132@.google.cloud.workstations.v1.WorkstationConfig.AnnotationsEntryB\003\340A\001\022P\n"
-          + "\006labels\030\022 \003(\0132;.google.cloud.workstations"
-          + ".v1.WorkstationConfig.LabelsEntryB\003\340A\001\0224\n"
+          + "\013annotations\030\005 \003(\0132@.google.cloud.worksta"
+          + "tions.v1.WorkstationConfig.AnnotationsEntryB\003\340A\001\022P\n"
+          + "\006labels\030\022 \003(\0132;.google.cloud."
+          + "workstations.v1.WorkstationConfig.LabelsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013delete_time\030\010"
@@ -301,24 +376,32 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\014idle_timeout\030\n"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\0227\n"
           + "\017running_timeout\030\013"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022G\n"
-          + "\004host\030\014 \001(\01324.google.cloud."
-          + "workstations.v1.WorkstationConfig.HostB\003\340A\001\022h\n"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022$\n"
+          + "\027max_usable_workstations\030\034 \001(\005B\003\340A\001\022G\n"
+          + "\004host\030\014 \001(\01324.goo"
+          + "gle.cloud.workstations.v1.WorkstationConfig.HostB\003\340A\001\022h\n"
           + "\026persistent_directories\030\r"
-          + " \003(\0132C.go"
-          + "ogle.cloud.workstations.v1.WorkstationConfig.PersistentDirectoryB\003\340A\001\022Q\n"
-          + "\tcontainer\030\016"
-          + " \001(\01329.google.cloud.workstations.v1.WorkstationConfig.ContainerB\003\340A\001\022b\n"
-          + "\016encryption_key\030\021 \001(\0132E.google.cloud.workstat"
-          + "ions.v1.WorkstationConfig.CustomerEncryptionKeyB\003\340A\005\022]\n"
-          + "\020readiness_checks\030\023 \003(\0132>"
-          + ".google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckB\003\340A\001\022\035\n\r"
+          + " \003(\0132C.google.cloud.workstations.v1.Wor"
+          + "kstationConfig.PersistentDirectoryB\003\340A\001\022f\n"
+          + "\025ephemeral_directories\030\026 \003(\0132B.google."
+          + "cloud.workstations.v1.WorkstationConfig.EphemeralDirectoryB\003\340A\001\022Q\n"
+          + "\tcontainer\030\016 \001"
+          + "(\01329.google.cloud.workstations.v1.WorkstationConfig.ContainerB\003\340A\001\022b\n"
+          + "\016encryption_key\030\021 \001(\0132E.google.cloud.workstations.v"
+          + "1.WorkstationConfig.CustomerEncryptionKeyB\003\340A\005\022]\n"
+          + "\020readiness_checks\030\023 \003(\0132>.googl"
+          + "e.cloud.workstations.v1.WorkstationConfig.ReadinessCheckB\003\340A\001\022\035\n\r"
           + "replica_zones\030\027 \003(\tB\006\340A\001\340A\005\022\025\n"
           + "\010degraded\030\017 \001(\010B\003\340A\003\022+\n\n"
-          + "conditions\030\020 \003(\0132\022.google.rpc.StatusB\003\340A\003\032\365\006\n"
+          + "conditions\030\020 \003(\0132\022.google.rpc.StatusB\003\340A\003\022\037\n"
+          + "\022enable_audit_agent\030\024 \001(\010B\003\340A\001\022$\n"
+          + "\027disable_tcp_connections\030\030 \001(\010B\003\340A\001\022U\n\r"
+          + "allowed_ports\030\031 \003(\01329.google.cloud.workstatio"
+          + "ns.v1.WorkstationConfig.PortRangeB\003\340A\001\0223\n"
+          + "&grant_workstation_admin_role_on_create\030\035 \001(\010B\003\340A\001\032\205\016\n"
           + "\004Host\022X\n"
-          + "\014gce_instance\030\001 \001(\0132@."
-          + "google.cloud.workstations.v1.WorkstationConfig.Host.GceInstanceH\000\032\210\006\n"
+          + "\014gce_instance\030\001 \001"
+          + "(\0132@.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstanceH\000\032\230\r\n"
           + "\013GceInstance\022\031\n"
           + "\014machine_type\030\001 \001(\tB\003\340A\001\022\034\n"
           + "\017service_account\030\002 \001(\tB\003\340A\001\022#\n"
@@ -328,42 +411,97 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\020pooled_instances\030\014 \001(\005B\003\340A\003\022(\n"
           + "\033disable_public_ip_addresses\030\006 \001(\010B\003\340A\001\022)\n"
           + "\034enable_nested_virtualization\030\007 \001(\010B\003\340A\001\022\201\001\n"
-          + "\030shielded_instance_config\030\010 \001(\0132Z.google.cloud.workstations.v1"
-          + ".WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfigB\003\340A\001\022\211\001\n"
+          + "\030shielded_instance_config\030\010 \001(\0132Z.google.cloud.workstatio"
+          + "ns.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfigB\003\340A\001\022\211\001\n"
           + "\034confidential_instance_config\030\n"
-          + " \001(\0132^.google.cloud.workstations.v1.WorkstationConfig.Host."
-          + "GceInstance.GceConfidentialInstanceConfigB\003\340A\001\022\036\n"
-          + "\021boot_disk_size_gb\030\t \001(\005B\003\340A\001\032\200\001\n"
+          + " \001(\0132^.google.cloud.workstations.v1.WorkstationConfig."
+          + "Host.GceInstance.GceConfidentialInstanceConfigB\003\340A\001\022\036\n"
+          + "\021boot_disk_size_gb\030\t \001(\005B\003\340A\001\022g\n"
+          + "\014accelerators\030\013 \003(\0132L.google.cloud"
+          + ".workstations.v1.WorkstationConfig.Host.GceInstance.AcceleratorB\003\340A\001\022h\n\r"
+          + "boost_configs\030\031 \003(\0132L.google.cloud.workstations."
+          + "v1.WorkstationConfig.Host.GceInstance.BoostConfigB\003\340A\001\022\030\n"
+          + "\013disable_ssh\030\r"
+          + " \001(\010B\003\340A\001\022b\n"
+          + "\007vm_tags\030\016 \003(\0132L.google.cloud.worksta"
+          + "tions.v1.WorkstationConfig.Host.GceInstance.VmTagsEntryB\003\340A\001\022\037\n"
+          + "\022startup_script_uri\030\032 \001(\tB\003\340A\001\022v\n"
+          + "\021instance_metadata\030\033 \003(\0132V.google.cloud.workstations.v1.Workstat"
+          + "ionConfig.Host.GceInstance.InstanceMetadataEntryB\003\340A\001\032\200\001\n"
           + "\031GceShieldedInstanceConfig\022\037\n"
           + "\022enable_secure_boot\030\001 \001(\010B\003\340A\001\022\030\n"
           + "\013enable_vtpm\030\002 \001(\010B\003\340A\001\022(\n"
           + "\033enable_integrity_monitoring\030\003 \001(\010B\003\340A\001\032I\n"
           + "\035GceConfidentialInstanceConfig\022(\n"
-          + "\033enable_confidential_compute\030\001 \001(\010B\003\340A\001B\010\n"
-          + "\006config\032\205\004\n"
+          + "\033enable_confidential_compute\030\001 \001(\010B\003\340A\001\0324\n"
+          + "\013Accelerator\022\021\n"
+          + "\004type\030\001 \001(\tB\003\340A\001\022\022\n"
+          + "\005count\030\002 \001(\005B\003\340A\001\032\205\002\n"
+          + "\013BoostConfig\022\017\n"
+          + "\002id\030\001 \001(\tB\003\340A\002\022\031\n"
+          + "\014machine_type\030\002 \001(\tB\003\340A\001\022g\n"
+          + "\014accelerators\030\003 \003(\0132L.google.cloud.workstations.v1.WorkstationCo"
+          + "nfig.Host.GceInstance.AcceleratorB\003\340A\001\022\036\n"
+          + "\021boot_disk_size_gb\030\004 \001(\005B\003\340A\001\022)\n"
+          + "\034enable_nested_virtualization\030\007 \001(\010B\003\340A\001\022\026\n"
+          + "\tpool_size\030\005 \001(\005B\003\340A\001\032-\n"
+          + "\013VmTagsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\0327\n"
+          + "\025InstanceMetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\010\n"
+          + "\006config\032\343\010\n"
           + "\023PersistentDirectory\022o\n"
-          + "\006gce_pd\030\002 \001(\0132].google.cloud.workstatio"
-          + "ns.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDiskH\000\022\027\n\n"
-          + "mount_path\030\001 \001(\tB\003\340A\001\032\321\002\n"
+          + "\006gce_pd\030\002 \001(\0132].google.cloud.workstations."
+          + "v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDiskH\000\022z\n"
+          + "\006gce_hd\030\003 \001(\0132h.google.cloud.workstations.v1.Work"
+          + "stationConfig.PersistentDirectory.GceHyperdiskBalancedHighAvailabilityH\000\022\027\n\n"
+          + "mount_path\030\001 \001(\tB\003\340A\001\032\244\003\n"
           + "\031GceRegionalPersistentDisk\022\024\n"
-          + "\007size_gb\030\001 \001(\005B\003\340A\001\022\024\n"
+          + "\007size_gb\030\001 \001(\005B\003\340A\001\022\030\n"
+          + "\013max_size_gb\030\007 \001(\005B\003\340A\001\022\024\n"
           + "\007fs_type\030\002 \001(\tB\003\340A\001\022\026\n"
           + "\tdisk_type\030\003 \001(\tB\003\340A\001\022\034\n"
           + "\017source_snapshot\030\005 \001(\tB\003\340A\001\022\210\001\n"
-          + "\016reclaim_policy\030\004 \001(\0162k.google.cloud.workstations.v1"
-          + ".WorkstationConfig.PersistentDirectory.G"
-          + "ceRegionalPersistentDisk.ReclaimPolicyB\003\340A\001\"G\n\r"
+          + "\016reclaim_policy\030\004 \001(\0162k.google.cloud.workstations.v1.WorkstationC"
+          + "onfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicyB\003\340A\001\0227\n"
+          + "\017archive_timeout\030\006"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"G\n\r"
+          + "ReclaimPolicy\022\036\n"
+          + "\032RECLAIM_POLICY_UNSPECIFIED\020\000\022\n\n"
+          + "\006DELETE\020\001\022\n\n"
+          + "\006RETAIN\020\002\032\214\003\n"
+          + "$GceHyperdiskBalancedHighAvailability\022\024\n"
+          + "\007size_gb\030\001 \001(\005B\003\340A\001\022\030\n"
+          + "\013max_size_gb\030\005 \001(\005B\003\340A\001\022\034\n"
+          + "\017source_snapshot\030\002 \001(\tB\003\340A\001\022\223\001\n"
+          + "\016reclaim_policy\030\003 \001(\0162v.google.cloud."
+          + "workstations.v1.WorkstationConfig.Persis"
+          + "tentDirectory.GceHyperdiskBalancedHighAvailability.ReclaimPolicyB\003\340A\001\0227\n"
+          + "\017archive_timeout\030\004"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"G\n\r"
           + "ReclaimPolicy\022\036\n"
           + "\032RECLAIM_POLICY_UNSPECIFIED\020\000\022\n\n"
           + "\006DELETE\020\001\022\n\n"
           + "\006RETAIN\020\002B\020\n"
+          + "\016directory_type\032\245\002\n"
+          + "\022EphemeralDirectory\022f\n"
+          + "\006gce_pd\030\003 \001(\0132T.google.cloud.workstat"
+          + "ions.v1.WorkstationConfig.EphemeralDirectory.GcePersistentDiskH\000\022\027\n\n"
+          + "mount_path\030\001 \001(\tB\003\340A\002\032|\n"
+          + "\021GcePersistentDisk\022\026\n"
+          + "\tdisk_type\030\001 \001(\tB\003\340A\001\022\034\n"
+          + "\017source_snapshot\030\002 \001(\tB\003\340A\001\022\031\n"
+          + "\014source_image\030\003 \001(\tB\003\340A\001\022\026\n"
+          + "\tread_only\030\004 \001(\010B\003\340A\001B\020\n"
           + "\016directory_type\032\376\001\n"
           + "\tContainer\022\022\n"
           + "\005image\030\001 \001(\tB\003\340A\001\022\024\n"
           + "\007command\030\002 \003(\tB\003\340A\001\022\021\n"
           + "\004args\030\003 \003(\tB\003\340A\001\022T\n"
-          + "\003env\030\004 \003(\0132B.google.cloud.wo"
-          + "rkstations.v1.WorkstationConfig.Container.EnvEntryB\003\340A\001\022\030\n"
+          + "\003env\030\004 \003("
+          + "\0132B.google.cloud.workstations.v1.WorkstationConfig.Container.EnvEntryB\003\340A\001\022\030\n"
           + "\013working_dir\030\005 \001(\tB\003\340A\001\022\030\n"
           + "\013run_as_user\030\006 \001(\005B\003\340A\001\032*\n"
           + "\010EnvEntry\022\013\n"
@@ -375,22 +513,26 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\016ReadinessCheck\022\021\n"
           + "\004path\030\001 \001(\tB\003\340A\001\022\021\n"
           + "\004port\030\002 \001(\005B\003\340A\001\0322\n"
+          + "\tPortRange\022\022\n"
+          + "\005first\030\001 \001(\005B\003\340A\002\022\021\n"
+          + "\004last\030\002 \001(\005B\003\340A\002\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\330\001\352A\324\001\n"
-          + "-workstations.googleapis.com/WorkstationConfig\022yprojects/{project}/locations/{loc"
-          + "ation}/workstationClusters/{workstation_cluster}/workstationConfigs/{workstation"
-          + "_config}*\022workstationConfigs2\021workstationConfigR\001\001\"\374\007\n"
-          + "\013Workstation\022\014\n"
-          + "\004name\030\001 \001(\t\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\001\022\020\n"
-          + "\003uid\030\003 \001(\tB\003\340A\003\022\030\n"
+          + "-workstations.googleapis.com/WorkstationConfig\022ypr"
+          + "ojects/{project}/locations/{location}/workstationClusters/{workstation_cluster}/"
+          + "workstationConfigs/{workstation_config}*"
+          + "\022workstationConfigs2\021workstationConfigR\001\001\"\233\r\n"
+          + "\013Workstation\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\003uid\030\003 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\030\n"
           + "\013reconciling\030\004 \001(\010B\003\340A\003\022T\n"
-          + "\013annotations\030\005"
-          + " \003(\0132:.google.cloud.workstations.v1.Workstation.AnnotationsEntryB\003\340A\001\022J\n"
+          + "\013annotations\030\005 \003(\0132:.google.cloud.workstat"
+          + "ions.v1.Workstation.AnnotationsEntryB\003\340A\001\022J\n"
           + "\006labels\030\r"
           + " \003(\01325.google.cloud.workstations.v1.Workstation.LabelsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -399,14 +541,36 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "start_time\030\016 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013delete_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
-          + "\004etag\030\t \001(\tB\003\340A\001\022C\n"
+          + "\004etag\030\t \001(\tB\003\340A\001\022m\n"
+          + "\026persistent_directories\030\031 \003(\0132H.google.cloud.w"
+          + "orkstations.v1.Workstation.WorkstationPersistentDirectoryB\003\340A\001\022C\n"
           + "\005state\030\n"
           + " \001(\0162/.google.cloud.workstations.v1.Workstation.StateB\003\340A\003\022\021\n"
-          + "\004host\030\013 \001(\tB\003\340A\003\0322\n"
+          + "\004host\030\013 \001(\tB\003\340A\003\022D\n"
+          + "\003env\030\014 "
+          + "\003(\01322.google.cloud.workstations.v1.Workstation.EnvEntryB\003\340A\001\022\024\n"
+          + "\007kms_key\030\017 \001(\tB\003\340A\003\022\037\n"
+          + "\022source_workstation\030\021 \001(\tB\003\340A\001\022S\n"
+          + "\014runtime_host\030\025 \001(\01325.google.cloud.worksta"
+          + "tions.v1.Workstation.RuntimeHostB\006\340A\001\340A\003\032O\n"
+          + "\036WorkstationPersistentDirectory\022\027\n\n"
+          + "mount_path\030\002 \001(\tB\003\340A\001\022\024\n"
+          + "\007size_gb\030\003 \001(\005B\003\340A\001\032\321\001\n"
+          + "\013RuntimeHost\022b\n"
+          + "\021gce_instance_host\030\001"
+          + " \001(\0132E.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostH\000\032Q\n"
+          + "\017GceInstanceHost\022\024\n"
+          + "\004name\030\001 \001(\tB\006\340A\001\340A\003\022\022\n"
+          + "\002id\030\002 \001(\tB\006\340A\001\340A\003\022\024\n"
+          + "\004zone\030\003 \001(\tB\006\340A\001\340A\003B\013\n"
+          + "\thost_type\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032-\n"
           + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032*\n"
+          + "\010EnvEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"l\n"
           + "\005State\022\025\n"
@@ -415,28 +579,30 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "STATE_RUNNING\020\002\022\022\n"
           + "\016STATE_STOPPING\020\003\022\021\n\r"
           + "STATE_STOPPED\020\004:\342\001\352A\336\001\n"
-          + "\'workstations.googleapis.com/Workstation\022\224\001projects/{project}/locati"
-          + "ons/{location}/workstationClusters/{workstation_cluster}/workstationConfigs/{wor"
-          + "kstation_config}/workstations/{workstation}*\014workstations2\013workstationR\001\001\"d\n"
+          + "\'workstations.googleapis.com/Workstation\022\224\001pro"
+          + "jects/{project}/locations/{location}/workstationClusters/{workstation_cluster}/w"
+          + "orkstationConfigs/{workstation_config}/w"
+          + "orkstations/{workstation}*\014workstations2\013workstationR\001\001\"d\n"
           + "\034GetWorkstationClusterRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
-          + ".workstations.googleapis.com/WorkstationCluster\"\231\001\n"
+          + ".workstations.googleapis.com/WorkstationCluster\"\256\001\n"
           + "\036ListWorkstationClustersRequest\022F\n"
-          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.work"
-          + "stations.googleapis.com/WorkstationCluster\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB6\340A\002\372A0\022.workstations.googleapis.com/WorkstationCluster\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\237\001\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"\237\001\n"
           + "\037ListWorkstationClustersResponse\022N\n"
-          + "\024workstation_clusters\030\001 \003(\01320."
-          + "google.cloud.workstations.v1.WorkstationCluster\022\027\n"
+          + "\024workstation_clusters\030\001 \003(\013"
+          + "20.google.cloud.workstations.v1.WorkstationCluster\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\376\001\n"
           + "\037CreateWorkstationClusterRequest\022F\n"
-          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.works"
-          + "tations.googleapis.com/WorkstationCluster\022#\n"
+          + "\006parent\030\001 \001(\tB6\340A\002\372A0\022.wo"
+          + "rkstations.googleapis.com/WorkstationCluster\022#\n"
           + "\026workstation_cluster_id\030\002 \001(\tB\003\340A\002\022R\n"
-          + "\023workstation_cluster\030\003 \001(\01320.google.clo"
-          + "ud.workstations.v1.WorkstationClusterB\003\340A\002\022\032\n\r"
+          + "\023workstation_cluster\030\003 \001(\01320.google."
+          + "cloud.workstations.v1.WorkstationClusterB\003\340A\002\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\343\001\n"
           + "\037UpdateWorkstationClusterRequest\022R\n"
           + "\023workstation_cluster\030\001"
@@ -453,15 +619,16 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\005force\030\004 \001(\010B\003\340A\001\"b\n"
           + "\033GetWorkstationConfigRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
-          + "-workstations.googleapis.com/WorkstationConfig\"\230\001\n"
+          + "-workstations.googleapis.com/WorkstationConfig\"\255\001\n"
           + "\035ListWorkstationConfigsRequest\022F\n"
           + "\006parent\030\001 \001(\tB6\340A\002\372A0\n"
           + ".workstations.googleapis.com/WorkstationCluster\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\234\001\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"\234\001\n"
           + "\036ListWorkstationConfigsResponse\022L\n"
-          + "\023workstation_configs\030\001 \003(\0132/.googl"
-          + "e.cloud.workstations.v1.WorkstationConfig\022\027\n"
+          + "\023workstation_configs\030\001"
+          + " \003(\0132/.google.cloud.workstations.v1.WorkstationConfig\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\236\001\n"
           + "#ListUsableWorkstationConfigsRequest\022F\n"
@@ -470,43 +637,42 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\242\001\n"
           + "$ListUsableWorkstationConfigsResponse\022L\n"
-          + "\023workstation_configs\030\001 \003(\0132/"
-          + ".google.cloud.workstations.v1.WorkstationConfig\022\027\n"
+          + "\023workstation_configs\030\001"
+          + " \003(\0132/.google.cloud.workstations.v1.WorkstationConfig\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\372\001\n"
           + "\036CreateWorkstationConfigRequest\022F\n"
           + "\006parent\030\001 \001(\tB6\340A\002\372A0\n"
           + ".workstations.googleapis.com/WorkstationCluster\022\"\n"
           + "\025workstation_config_id\030\002 \001(\tB\003\340A\002\022P\n"
-          + "\022workstation_config\030\003 \001(\0132/.google.cloud."
-          + "workstations.v1.WorkstationConfigB\003\340A\002\022\032\n\r"
+          + "\022workstation_config\030\003"
+          + " \001(\0132/.google.cloud.workstations.v1.WorkstationConfigB\003\340A\002\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\340\001\n"
           + "\036UpdateWorkstationConfigRequest\022P\n"
-          + "\022workstation_config\030\001"
-          + " \001(\0132/.google.cloud.workstations.v1.WorkstationConfigB\003\340A\002\0224\n"
+          + "\022workstation_config\030\001 \001(\0132/.goog"
+          + "le.cloud.workstations.v1.WorkstationConfigB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\032\n"
-          + "\r"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\032\n\r"
           + "validate_only\030\003 \001(\010B\003\340A\001\022\032\n\r"
           + "allow_missing\030\004 \001(\010B\003\340A\001\"\250\001\n"
           + "\036DeleteWorkstationConfigRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
-          + "-workstations.googleapis.com/WorkstationConfig\022\032\n"
-          + "\r"
+          + "-workstations.googleapis.com/WorkstationConfig\022\032\n\r"
           + "validate_only\030\002 \001(\010B\003\340A\001\022\021\n"
           + "\004etag\030\003 \001(\tB\003\340A\001\022\022\n"
           + "\005force\030\004 \001(\010B\003\340A\001\"V\n"
           + "\025GetWorkstationRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'workstations.googleapis.com/Workstation\"\221\001\n"
+          + "\'workstations.googleapis.com/Workstation\"\246\001\n"
           + "\027ListWorkstationsRequest\022E\n"
           + "\006parent\030\001 \001(\tB5\340A\002\372A/\n"
           + "-workstations.googleapis.com/WorkstationConfig\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\223\001\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"\223\001\n"
           + "\030ListWorkstationsResponse\022?\n"
-          + "\014workstations\030\001"
-          + " \003(\0132).google.cloud.workstations.v1.Workstation\022\034\n"
+          + "\014workstations\030\001 \003(\0132).g"
+          + "oogle.cloud.workstations.v1.Workstation\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\001\"\227\001\n"
           + "\035ListUsableWorkstationsRequest\022E\n"
@@ -527,8 +693,8 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132).google.cloud.workstations.v1.WorkstationB\003\340A\002\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\315\001\n"
           + "\030UpdateWorkstationRequest\022C\n"
-          + "\013workstation\030\001"
-          + " \001(\0132).google.cloud.workstations.v1.WorkstationB\003\340A\002\0224\n"
+          + "\013workstation\030\001 \001(\0132).google"
+          + ".cloud.workstations.v1.WorkstationB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\032\n\r"
           + "validate_only\030\003 \001(\010B\003\340A\001\022\032\n\r"
@@ -537,22 +703,24 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
           + "\'workstations.googleapis.com/Workstation\022\032\n\r"
           + "validate_only\030\002 \001(\010B\003\340A\001\022\021\n"
-          + "\004etag\030\003 \001(\tB\003\340A\001\"\207\001\n"
+          + "\004etag\030\003 \001(\tB\003\340A\001\"\242\001\n"
           + "\027StartWorkstationRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
           + "\'workstations.googleapis.com/Workstation\022\032\n\r"
           + "validate_only\030\002 \001(\010B\003\340A\001\022\021\n"
-          + "\004etag\030\003 \001(\tB\003\340A\001\"\206\001\n"
+          + "\004etag\030\003 \001(\tB\003\340A\001\022\031\n"
+          + "\014boost_config\030\004 \001(\tB\003\340A\001\"\206\001\n"
           + "\026StopWorkstationRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
           + "\'workstations.googleapis.com/Workstation\022\032\n\r"
           + "validate_only\030\002 \001(\010B\003\340A\001\022\021\n"
-          + "\004etag\030\003 \001(\tB\003\340A\001\"\315\001\n"
+          + "\004etag\030\003 \001(\tB\003\340A\001\"\340\001\n"
           + "\032GenerateAccessTokenRequest\0221\n"
           + "\013expire_time\030\002 \001(\0132\032.google.protobuf.TimestampH\000\022(\n"
           + "\003ttl\030\003 \001(\0132\031.google.protobuf.DurationH\000\022D\n"
           + "\013workstation\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'workstations.googleapis.com/WorkstationB\014\n\n"
+          + "\'workstations.googleapis.com/Workstation\022\021\n"
+          + "\004port\030\004 \001(\005B\003\340A\001B\014\n\n"
           + "expiration\"d\n"
           + "\033GenerateAccessTokenResponse\022\024\n"
           + "\014access_token\030\001 \001(\t\022/\n"
@@ -566,112 +734,131 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\0032\233*\n"
           + "\014Workstations\022\315\001\n"
-          + "\025GetWorkstationCluster\022:.google.cloud.workstations.v"
-          + "1.GetWorkstationClusterRequest\0320.google.cloud.workstations.v1.WorkstationCluster"
-          + "\"F\332A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/workstationClusters/*}\022\340\001\n"
-          + "\027ListWorkstationClusters\022<.google.cloud.work"
-          + "stations.v1.ListWorkstationClustersRequest\032=.google.cloud.workstations.v1.ListWo"
-          + "rkstationClustersResponse\"H\332A\006parent\202\323\344\223"
-          + "\0029\0227/v1/{parent=projects/*/locations/*}/workstationClusters\022\255\002\n"
-          + "\030CreateWorkstationCluster\022=.google.cloud.workstations.v1."
-          + "CreateWorkstationClusterRequest\032\035.google.longrunning.Operation\"\262\001\312A\'\n"
-          + "\022WorkstationCluster\022\021OperationMetadata\332A1parent,wor"
-          + "kstation_cluster,workstation_cluster_id\202"
-          + "\323\344\223\002N\"7/v1/{parent=projects/*/locations/"
-          + "*}/workstationClusters:\023workstation_cluster\022\257\002\n"
-          + "\030UpdateWorkstationCluster\022=.google.cloud.workstations.v1.UpdateWorkstatio"
-          + "nClusterRequest\032\035.google.longrunning.Operation\"\264\001\312A\'\n"
-          + "\022WorkstationCluster\022\021OperationMetadata\332A\037workstation_cluster,update"
-          + "_mask\202\323\344\223\002b2K/v1/{workstation_cluster.na"
-          + "me=projects/*/locations/*/workstationClusters/*}:\023workstation_cluster\022\352\001\n"
-          + "\030DeleteWorkstationCluster\022=.google.cloud.workst"
-          + "ations.v1.DeleteWorkstationClusterRequest\032\035.google.longrunning.Operation\"p\312A\'\n"
-          + "\022WorkstationCluster\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\0029*7/v1/{name=projects/*/locations/*/workstationClusters/*}\022\337\001\n"
-          + "\024GetWorkstationConfig\0229.google.cloud.workstations."
-          + "v1.GetWorkstationConfigRequest\032/.google.cloud.workstations.v1.WorkstationConfig\""
-          + "[\332A\004name\202\323\344\223\002N\022L/v1/{name=projects/*/loc"
-          + "ations/*/workstationClusters/*/workstationConfigs/*}\022\362\001\n"
-          + "\026ListWorkstationConfigs\022;.google.cloud.workstations.v1.ListWorks"
-          + "tationConfigsRequest\032<.google.cloud.workstations.v1.ListWorkstationConfigsRespon"
-          + "se\"]\332A\006parent\202\323\344\223\002N\022L/v1/{parent=project"
-          + "s/*/locations/*/workstationClusters/*}/workstationConfigs\022\217\002\n"
-          + "\034ListUsableWorkstationConfigs\022A.google.cloud.workstations.v"
-          + "1.ListUsableWorkstationConfigsRequest\032B.google.cloud.workstations.v1.ListUsableW"
-          + "orkstationConfigsResponse\"h\332A\006parent\202\323\344\223"
-          + "\002Y\022W/v1/{parent=projects/*/locations/*/w"
-          + "orkstationClusters/*}/workstationConfigs:listUsable\022\274\002\n"
-          + "\027CreateWorkstationConfig\022<.google.cloud.workstations.v1.CreateWor"
-          + "kstationConfigRequest\032\035.google.longrunning.Operation\"\303\001\312A&\n"
-          + "\021WorkstationConfig\022\021OperationMetadata\332A/parent,workstation_co"
-          + "nfig,workstation_config_id\202\323\344\223\002b\"L/v1/{p"
-          + "arent=projects/*/locations/*/workstation"
-          + "Clusters/*}/workstationConfigs:\022workstation_config\022\276\002\n"
-          + "\027UpdateWorkstationConfig\022<.google.cloud.workstations.v1.UpdateWork"
-          + "stationConfigRequest\032\035.google.longrunning.Operation\"\305\001\312A&\n"
-          + "\021WorkstationConfig\022\021OperationMetadata\332A\036workstation_config,upd"
-          + "ate_mask\202\323\344\223\002u2_/v1/{workstation_config."
-          + "name=projects/*/locations/*/workstationC"
-          + "lusters/*/workstationConfigs/*}:\022workstation_config\022\375\001\n"
-          + "\027DeleteWorkstationConfig\022<.google.cloud.workstations.v1.DeleteWor"
-          + "kstationConfigRequest\032\035.google.longrunning.Operation\"\204\001\312A&\n"
-          + "\021WorkstationConfig\022\021O"
-          + "perationMetadata\332A\004name\202\323\344\223\002N*L/v1/{name"
-          + "=projects/*/locations/*/workstationClusters/*/workstationConfigs/*}\022\334\001\n"
-          + "\016GetWorkstation\0223.google.cloud.workstations.v1.Ge"
-          + "tWorkstationRequest\032).google.cloud.works"
-          + "tations.v1.Workstation\"j\332A\004name\202\323\344\223\002]\022[/"
-          + "v1/{name=projects/*/locations/*/workstat"
-          + "ionClusters/*/workstationConfigs/*/workstations/*}\022\357\001\n"
-          + "\020ListWorkstations\0225.google.cloud.workstations.v1.ListWorkstationsR"
-          + "equest\0326.google.cloud.workstations.v1.Li"
-          + "stWorkstationsResponse\"l\332A\006parent\202\323\344\223\002]\022"
-          + "[/v1/{parent=projects/*/locations/*/work"
-          + "stationClusters/*/workstationConfigs/*}/workstations\022\214\002\n"
-          + "\026ListUsableWorkstations\022;.google.cloud.workstations.v1.ListUsabl"
-          + "eWorkstationsRequest\032<.google.cloud.workstations.v1.ListUsableWorkstationsRespon"
-          + "se\"w\332A\006parent\202\323\344\223\002h\022f/v1/{parent=project"
-          + "s/*/locations/*/workstationClusters/*/wo"
-          + "rkstationConfigs/*}/workstations:listUsable\022\244\002\n"
-          + "\021CreateWorkstation\0226.google.cloud"
-          + ".workstations.v1.CreateWorkstationRequest\032\035.google.longrunning.Operation\"\267\001\312A"
-          + " \n"
-          + "\013Workstation\022\021OperationMetadata\332A!parent,"
-          + "workstation,workstation_id\202\323\344\223\002j\"[/v1/{p"
-          + "arent=projects/*/locations/*/workstation"
-          + "Clusters/*/workstationConfigs/*}/workstations:\013workstation\022\246\002\n"
-          + "\021UpdateWorkstation\0226.google.cloud.workstations.v1.UpdateWo"
-          + "rkstationRequest\032\035.google.longrunning.Operation\"\271\001\312A \n"
-          + "\013Workstation\022\021OperationMet"
-          + "adata\332A\027workstation,update_mask\202\323\344\223\002v2g/"
-          + "v1/{workstation.name=projects/*/location"
-          + "s/*/workstationClusters/*/workstationConfigs/*/workstations/*}:\013workstation\022\372\001\n"
-          + "\021DeleteWorkstation\0226.google.cloud.worksta"
-          + "tions.v1.DeleteWorkstationRequest\032\035.google.longrunning.Operation\"\215\001\312A"
-          + " \n"
-          + "\013Workstation\022\021OperationMetadata\332A\004name\202\323\344\223\002]*[/v1"
+          + "\025GetWorkstationCluster\022:.google.cloud.wor"
+          + "kstations.v1.GetWorkstationClusterRequest\0320.google.cloud.workstations.v1.Worksta"
+          + "tionCluster\"F\332A\004name\202\323\344\223\0029\0227/v1/{name=pr"
+          + "ojects/*/locations/*/workstationClusters/*}\022\340\001\n"
+          + "\027ListWorkstationClusters\022<.google.cloud.workstations.v1.ListWorkstationCl"
+          + "ustersRequest\032=.google.cloud.workstation"
+          + "s.v1.ListWorkstationClustersResponse\"H\332A"
+          + "\006parent\202\323\344\223\0029\0227/v1/{parent=projects/*/locations/*}/workstationClusters\022\255\002\n"
+          + "\030CreateWorkstationCluster\022=.google.cloud.works"
+          + "tations.v1.CreateWorkstationClusterRequest\032\035.google.longrunning.Operation\"\262\001\312A\'\n"
+          + "\022WorkstationCluster\022\021OperationMetadata\332A"
+          + "1parent,workstation_cluster,workstation_"
+          + "cluster_id\202\323\344\223\002N\"7/v1/{parent=projects/*"
+          + "/locations/*}/workstationClusters:\023workstation_cluster\022\257\002\n"
+          + "\030UpdateWorkstationCluster\022=.google.cloud.workstations.v1.Updat"
+          + "eWorkstationClusterRequest\032\035.google.longrunning.Operation\"\264\001\312A\'\n"
+          + "\022WorkstationCluster\022\021OperationMetadata\332A\037workstation_clu"
+          + "ster,update_mask\202\323\344\223\002b2K/v1/{workstation"
+          + "_cluster.name=projects/*/locations/*/wor"
+          + "kstationClusters/*}:\023workstation_cluster\022\352\001\n"
+          + "\030DeleteWorkstationCluster\022=.google.cloud.workstations.v1.DeleteWorkstationCl"
+          + "usterRequest\032\035.google.longrunning.Operation\"p\312A\'\n"
+          + "\022WorkstationCluster\022\021OperationM"
+          + "etadata\332A\004name\202\323\344\223\0029*7/v1/{name=projects"
+          + "/*/locations/*/workstationClusters/*}\022\337\001\n"
+          + "\024GetWorkstationConfig\0229.google.cloud.workstations.v1.GetWorkstationConfigReques"
+          + "t\032/.google.cloud.workstations.v1.Worksta"
+          + "tionConfig\"[\332A\004name\202\323\344\223\002N\022L/v1/{name=pro"
+          + "jects/*/locations/*/workstationClusters/*/workstationConfigs/*}\022\362\001\n"
+          + "\026ListWorkstationConfigs\022;.google.cloud.workstations.v"
+          + "1.ListWorkstationConfigsRequest\032<.google.cloud.workstations.v1.ListWorkstationCo"
+          + "nfigsResponse\"]\332A\006parent\202\323\344\223\002N\022L/v1/{par"
+          + "ent=projects/*/locations/*/workstationClusters/*}/workstationConfigs\022\217\002\n"
+          + "\034ListUsableWorkstationConfigs\022A.google.cloud.wor"
+          + "kstations.v1.ListUsableWorkstationConfigsRequest\032B.google.cloud.workstations.v1."
+          + "ListUsableWorkstationConfigsResponse\"h\332A"
+          + "\006parent\202\323\344\223\002Y\022W/v1/{parent=projects/*/lo"
+          + "cations/*/workstationClusters/*}/workstationConfigs:listUsable\022\274\002\n"
+          + "\027CreateWorkstationConfig\022<.google.cloud.workstations.v",
+      "1.CreateWorkstationConfigRequest\032\035.googl"
+          + "e.longrunning.Operation\"\303\001\312A&\n\021Workstati"
+          + "onConfig\022\021OperationMetadata\332A/parent,wor"
+          + "kstation_config,workstation_config_id\202\323\344"
+          + "\223\002b\"L/v1/{parent=projects/*/locations/*/"
+          + "workstationClusters/*}/workstationConfig"
+          + "s:\022workstation_config\022\276\002\n\027UpdateWorkstat"
+          + "ionConfig\022<.google.cloud.workstations.v1"
+          + ".UpdateWorkstationConfigRequest\032\035.google"
+          + ".longrunning.Operation\"\305\001\312A&\n\021Workstatio"
+          + "nConfig\022\021OperationMetadata\332A\036workstation"
+          + "_config,update_mask\202\323\344\223\002u2_/v1/{workstat"
+          + "ion_config.name=projects/*/locations/*/w"
+          + "orkstationClusters/*/workstationConfigs/"
+          + "*}:\022workstation_config\022\375\001\n\027DeleteWorksta"
+          + "tionConfig\022<.google.cloud.workstations.v"
+          + "1.DeleteWorkstationConfigRequest\032\035.googl"
+          + "e.longrunning.Operation\"\204\001\312A&\n\021Workstati"
+          + "onConfig\022\021OperationMetadata\332A\004name\202\323\344\223\002N"
+          + "*L/v1/{name=projects/*/locations/*/works"
+          + "tationClusters/*/workstationConfigs/*}\022\334"
+          + "\001\n\016GetWorkstation\0223.google.cloud.worksta"
+          + "tions.v1.GetWorkstationRequest\032).google."
+          + "cloud.workstations.v1.Workstation\"j\332A\004na"
+          + "me\202\323\344\223\002]\022[/v1/{name=projects/*/locations"
+          + "/*/workstationClusters/*/workstationConf"
+          + "igs/*/workstations/*}\022\357\001\n\020ListWorkstatio"
+          + "ns\0225.google.cloud.workstations.v1.ListWo"
+          + "rkstationsRequest\0326.google.cloud.worksta"
+          + "tions.v1.ListWorkstationsResponse\"l\332A\006pa"
+          + "rent\202\323\344\223\002]\022[/v1/{parent=projects/*/locat"
+          + "ions/*/workstationClusters/*/workstation"
+          + "Configs/*}/workstations\022\214\002\n\026ListUsableWo"
+          + "rkstations\022;.google.cloud.workstations.v"
+          + "1.ListUsableWorkstationsRequest\032<.google"
+          + ".cloud.workstations.v1.ListUsableWorksta"
+          + "tionsResponse\"w\332A\006parent\202\323\344\223\002h\022f/v1/{par"
+          + "ent=projects/*/locations/*/workstationCl"
+          + "usters/*/workstationConfigs/*}/workstati"
+          + "ons:listUsable\022\244\002\n\021CreateWorkstation\0226.g"
+          + "oogle.cloud.workstations.v1.CreateWorkst"
+          + "ationRequest\032\035.google.longrunning.Operat"
+          + "ion\"\267\001\312A \n\013Workstation\022\021OperationMetadat"
+          + "a\332A!parent,workstation,workstation_id\202\323\344"
+          + "\223\002j\"[/v1/{parent=projects/*/locations/*/"
+          + "workstationClusters/*/workstationConfigs"
+          + "/*}/workstations:\013workstation\022\246\002\n\021Update"
+          + "Workstation\0226.google.cloud.workstations."
+          + "v1.UpdateWorkstationRequest\032\035.google.lon"
+          + "grunning.Operation\"\271\001\312A \n\013Workstation\022\021O"
+          + "perationMetadata\332A\027workstation,update_ma"
+          + "sk\202\323\344\223\002v2g/v1/{workstation.name=projects"
+          + "/*/locations/*/workstationClusters/*/wor"
+          + "kstationConfigs/*/workstations/*}:\013works"
+          + "tation\022\372\001\n\021DeleteWorkstation\0226.google.cl"
+          + "oud.workstations.v1.DeleteWorkstationReq"
+          + "uest\032\035.google.longrunning.Operation\"\215\001\312A"
+          + " \n\013Workstation\022\021OperationMetadata\332A\004name"
+          + "\202\323\344\223\002]*[/v1/{name=projects/*/locations/*"
+          + "/workstationClusters/*/workstationConfig"
+          + "s/*/workstations/*}\022\201\002\n\020StartWorkstation"
+          + "\0225.google.cloud.workstations.v1.StartWor"
+          + "kstationRequest\032\035.google.longrunning.Ope"
+          + "ration\"\226\001\312A \n\013Workstation\022\021OperationMeta"
+          + "data\332A\004name\202\323\344\223\002f\"a/v1/{name=projects/*/"
+          + "locations/*/workstationClusters/*/workst"
+          + "ationConfigs/*/workstations/*}:start:\001*\022"
+          + "\376\001\n\017StopWorkstation\0224.google.cloud.works"
+          + "tations.v1.StopWorkstationRequest\032\035.goog"
+          + "le.longrunning.Operation\"\225\001\312A \n\013Workstat"
+          + "ion\022\021OperationMetadata\332A\004name\202\323\344\223\002e\"`/v1"
           + "/{name=projects/*/locations/*/workstatio"
-          + "nClusters/*/workstationConfigs/*/workstations/*}\022\201\002\n"
-          + "\020StartWorkstation\0225.google.cloud.workstations.v1.StartWorkstationReq"
-          + "uest\032\035.google.longrunning.Operation\"\226\001\312A \n"
-          + "\013Workstation\022\021OperationMetadata\332A\004name"
-          + "\202\323\344\223\002f\"a/v1/{name=projects/*/locations/*"
-          + "/workstationClusters/*/workstationConfigs/*/workstations/*}:start:\001*\022\376\001\n"
-          + "\017StopWorkstation\0224.google.cloud.workstations.v1."
-          + "StopWorkstationRequest\032\035.google.longrunning.Operation\"\225\001\312A \n"
-          + "\013Workstation\022\021Operat"
-          + "ionMetadata\332A\004name\202\323\344\223\002e\"`/v1/{name=proj"
-          + "ects/*/locations/*/workstationClusters/*"
-          + "/workstationConfigs/*/workstations/*}:stop:\001*\022\234\002\n"
-          + "\023GenerateAccessToken\0228.google.cloud.workstations.v1.GenerateAccessToken"
-          + "Request\0329.google.cloud.workstations.v1.G"
-          + "enerateAccessTokenResponse\"\217\001\332A\013workstat"
-          + "ion\202\323\344\223\002{\"v/v1/{workstation=projects/*/l"
-          + "ocations/*/workstationClusters/*/workstationConfigs/*/workstations/*}:generateAc"
-          + "cessToken:\001*\032O\312A\033workstations.googleapis"
-          + ".com\322A.https://www.googleapis.com/auth/cloud-platformB}\n"
-          + " com.google.cloud.workstations.v1B\021WorkstationsProtoP\001ZDcloud.go"
-          + "ogle.com/go/workstations/apiv1/workstationspb;workstationspbb\006proto3"
+          + "nClusters/*/workstationConfigs/*/worksta"
+          + "tions/*}:stop:\001*\022\234\002\n\023GenerateAccessToken"
+          + "\0228.google.cloud.workstations.v1.Generate"
+          + "AccessTokenRequest\0329.google.cloud.workst"
+          + "ations.v1.GenerateAccessTokenResponse\"\217\001"
+          + "\332A\013workstation\202\323\344\223\002{\"v/v1/{workstation=p"
+          + "rojects/*/locations/*/workstationCluster"
+          + "s/*/workstationConfigs/*/workstations/*}"
+          + ":generateAccessToken:\001*\032O\312A\033workstations"
+          + ".googleapis.com\322A.https://www.googleapis"
+          + ".com/auth/cloud-platformB}\n com.google.c"
+          + "loud.workstations.v1B\021WorkstationsProtoP"
+          + "\001ZDcloud.google.com/go/workstations/apiv"
+          + "1/workstationspb;workstationspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -680,6 +867,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
@@ -707,8 +895,13 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "Subnetwork",
               "ControlPlaneIp",
               "PrivateClusterConfig",
+              "DomainConfig",
               "Degraded",
               "Conditions",
+              "Tags",
+              "GatewayConfig",
+              "WorkstationAuthorizationUrl",
+              "WorkstationLaunchUrl",
             });
     internal_static_google_cloud_workstations_v1_WorkstationCluster_PrivateClusterConfig_descriptor =
         internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(0);
@@ -718,8 +911,24 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "EnablePrivateEndpoint", "ClusterHostname", "ServiceAttachmentUri", "AllowedProjects",
             });
-    internal_static_google_cloud_workstations_v1_WorkstationCluster_AnnotationsEntry_descriptor =
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_DomainConfig_descriptor =
         internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(1);
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_DomainConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationCluster_DomainConfig_descriptor,
+            new java.lang.String[] {
+              "Domain",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_GatewayConfig_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(2);
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_GatewayConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationCluster_GatewayConfig_descriptor,
+            new java.lang.String[] {
+              "Http2Enabled",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_AnnotationsEntry_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(3);
     internal_static_google_cloud_workstations_v1_WorkstationCluster_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationCluster_AnnotationsEntry_descriptor,
@@ -727,10 +936,18 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_workstations_v1_WorkstationCluster_LabelsEntry_descriptor =
-        internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(2);
+        internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(4);
     internal_static_google_cloud_workstations_v1_WorkstationCluster_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationCluster_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_TagsEntry_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationCluster_descriptor.getNestedType(5);
+    internal_static_google_cloud_workstations_v1_WorkstationCluster_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationCluster_TagsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -752,14 +969,20 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "Etag",
               "IdleTimeout",
               "RunningTimeout",
+              "MaxUsableWorkstations",
               "Host",
               "PersistentDirectories",
+              "EphemeralDirectories",
               "Container",
               "EncryptionKey",
               "ReadinessChecks",
               "ReplicaZones",
               "Degraded",
               "Conditions",
+              "EnableAuditAgent",
+              "DisableTcpConnections",
+              "AllowedPorts",
+              "GrantWorkstationAdminRoleOnCreate",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_descriptor =
         internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(0);
@@ -787,6 +1010,12 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "ShieldedInstanceConfig",
               "ConfidentialInstanceConfig",
               "BootDiskSizeGb",
+              "Accelerators",
+              "BoostConfigs",
+              "DisableSsh",
+              "VmTags",
+              "StartupScriptUri",
+              "InstanceMetadata",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_GceShieldedInstanceConfig_descriptor =
         internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_descriptor
@@ -806,13 +1035,54 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "EnableConfidentialCompute",
             });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_Accelerator_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_Accelerator_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_Accelerator_descriptor,
+            new java.lang.String[] {
+              "Type", "Count",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_BoostConfig_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_descriptor
+            .getNestedType(3);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_BoostConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_BoostConfig_descriptor,
+            new java.lang.String[] {
+              "Id",
+              "MachineType",
+              "Accelerators",
+              "BootDiskSizeGb",
+              "EnableNestedVirtualization",
+              "PoolSize",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_VmTagsEntry_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_descriptor
+            .getNestedType(4);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_VmTagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_VmTagsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_InstanceMetadataEntry_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_descriptor
+            .getNestedType(5);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_InstanceMetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_Host_GceInstance_InstanceMetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_descriptor =
         internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(1);
     internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_descriptor,
             new java.lang.String[] {
-              "GcePd", "MountPath", "DirectoryType",
+              "GcePd", "GceHd", "MountPath", "DirectoryType",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceRegionalPersistentDisk_descriptor =
         internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_descriptor
@@ -821,10 +1091,42 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceRegionalPersistentDisk_descriptor,
             new java.lang.String[] {
-              "SizeGb", "FsType", "DiskType", "SourceSnapshot", "ReclaimPolicy",
+              "SizeGb",
+              "MaxSizeGb",
+              "FsType",
+              "DiskType",
+              "SourceSnapshot",
+              "ReclaimPolicy",
+              "ArchiveTimeout",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceHyperdiskBalancedHighAvailability_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceHyperdiskBalancedHighAvailability_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_PersistentDirectory_GceHyperdiskBalancedHighAvailability_descriptor,
+            new java.lang.String[] {
+              "SizeGb", "MaxSizeGb", "SourceSnapshot", "ReclaimPolicy", "ArchiveTimeout",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(2);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_descriptor,
+            new java.lang.String[] {
+              "GcePd", "MountPath", "DirectoryType",
+            });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_GcePersistentDisk_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_GcePersistentDisk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_EphemeralDirectory_GcePersistentDisk_descriptor,
+            new java.lang.String[] {
+              "DiskType", "SourceSnapshot", "SourceImage", "ReadOnly",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_Container_descriptor =
-        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(2);
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(3);
     internal_static_google_cloud_workstations_v1_WorkstationConfig_Container_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_Container_descriptor,
@@ -841,7 +1143,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_CustomerEncryptionKey_descriptor =
-        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(3);
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(4);
     internal_static_google_cloud_workstations_v1_WorkstationConfig_CustomerEncryptionKey_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_CustomerEncryptionKey_descriptor,
@@ -849,15 +1151,23 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "KmsKey", "KmsKeyServiceAccount",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_descriptor =
-        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(4);
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(5);
     internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_descriptor,
             new java.lang.String[] {
               "Path", "Port",
             });
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_PortRange_descriptor =
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(6);
+    internal_static_google_cloud_workstations_v1_WorkstationConfig_PortRange_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_WorkstationConfig_PortRange_descriptor,
+            new java.lang.String[] {
+              "First", "Last",
+            });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_AnnotationsEntry_descriptor =
-        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(5);
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(7);
     internal_static_google_cloud_workstations_v1_WorkstationConfig_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_AnnotationsEntry_descriptor,
@@ -865,7 +1175,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_workstations_v1_WorkstationConfig_LabelsEntry_descriptor =
-        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(6);
+        internal_static_google_cloud_workstations_v1_WorkstationConfig_descriptor.getNestedType(8);
     internal_static_google_cloud_workstations_v1_WorkstationConfig_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_WorkstationConfig_LabelsEntry_descriptor,
@@ -889,11 +1199,41 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "StartTime",
               "DeleteTime",
               "Etag",
+              "PersistentDirectories",
               "State",
               "Host",
+              "Env",
+              "KmsKey",
+              "SourceWorkstation",
+              "RuntimeHost",
+            });
+    internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_descriptor =
+        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(0);
+    internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_descriptor,
+            new java.lang.String[] {
+              "MountPath", "SizeGb",
+            });
+    internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor =
+        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(1);
+    internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor,
+            new java.lang.String[] {
+              "GceInstanceHost", "HostType",
+            });
+    internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_descriptor =
+        internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_descriptor,
+            new java.lang.String[] {
+              "Name", "Id", "Zone",
             });
     internal_static_google_cloud_workstations_v1_Workstation_AnnotationsEntry_descriptor =
-        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(0);
+        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(2);
     internal_static_google_cloud_workstations_v1_Workstation_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_Workstation_AnnotationsEntry_descriptor,
@@ -901,10 +1241,18 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_workstations_v1_Workstation_LabelsEntry_descriptor =
-        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(1);
+        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(3);
     internal_static_google_cloud_workstations_v1_Workstation_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_Workstation_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_workstations_v1_Workstation_EnvEntry_descriptor =
+        internal_static_google_cloud_workstations_v1_Workstation_descriptor.getNestedType(4);
+    internal_static_google_cloud_workstations_v1_Workstation_EnvEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_workstations_v1_Workstation_EnvEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -922,7 +1270,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_ListWorkstationClustersRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_workstations_v1_ListWorkstationClustersResponse_descriptor =
         getDescriptor().getMessageType(5);
@@ -970,7 +1318,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_ListWorkstationConfigsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_workstations_v1_ListWorkstationConfigsResponse_descriptor =
         getDescriptor().getMessageType(11);
@@ -1034,7 +1382,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_ListWorkstationsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_workstations_v1_ListWorkstationsResponse_descriptor =
         getDescriptor().getMessageType(19);
@@ -1090,7 +1438,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_StartWorkstationRequest_descriptor,
             new java.lang.String[] {
-              "Name", "ValidateOnly", "Etag",
+              "Name", "ValidateOnly", "Etag", "BoostConfig",
             });
     internal_static_google_cloud_workstations_v1_StopWorkstationRequest_descriptor =
         getDescriptor().getMessageType(26);
@@ -1106,7 +1454,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_workstations_v1_GenerateAccessTokenRequest_descriptor,
             new java.lang.String[] {
-              "ExpireTime", "Ttl", "Workstation", "Expiration",
+              "ExpireTime", "Ttl", "Workstation", "Port", "Expiration",
             });
     internal_static_google_cloud_workstations_v1_GenerateAccessTokenResponse_descriptor =
         getDescriptor().getMessageType(28);
@@ -1134,6 +1482,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
@@ -1144,6 +1493,7 @@ public final class WorkstationsProto extends com.google.protobuf.GeneratedFile {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);

@@ -200,7 +200,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("case_", request.getCase(), true))
+                          ProtoRestSerializer.create().toBody("case", request.getCase(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Case>newBuilder()
@@ -237,7 +237,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("case_", request.getCase(), true))
+                          ProtoRestSerializer.create().toBody("case", request.getCase(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Case>newBuilder()

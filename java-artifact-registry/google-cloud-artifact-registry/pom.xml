@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-artifact-registry</artifactId>
-  <version>1.91.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+  <version>1.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   <packaging>jar</packaging>
   <name>Google Artifact Registry</name>
   <description>provides a single place for your organization to manage container images and language packages (such as Maven and npm). It is fully integrated with Google Cloud's tooling and runtimes and comes with support for native artifact protocols. This makes it simple to integrate it with your CI/CD tooling to set up automated pipelines.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-artifact-registry-parent</artifactId>
-    <version>1.91.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+    <version>1.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-artifact-registry</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-artifact-registry-v1</artifactId>
@@ -49,6 +50,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-artifact-registry-v1beta2</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -81,6 +83,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-artifact-registry-v1beta2</artifactId>
@@ -91,6 +94,7 @@
       <artifactId>grpc-google-cloud-artifact-registry-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
    <dependency>
       <groupId>com.google.api</groupId>

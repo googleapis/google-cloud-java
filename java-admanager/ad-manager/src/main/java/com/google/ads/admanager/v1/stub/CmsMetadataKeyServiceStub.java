@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysResponse;
 import com.google.ads.admanager.v1.CmsMetadataKey;
 import com.google.ads.admanager.v1.GetCmsMetadataKeyRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataKeysRequest;
@@ -47,6 +51,19 @@ public abstract class CmsMetadataKeyServiceStub implements BackgroundResource {
   public UnaryCallable<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse>
       listCmsMetadataKeysCallable() {
     throw new UnsupportedOperationException("Not implemented: listCmsMetadataKeysCallable()");
+  }
+
+  public UnaryCallable<BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateCmsMetadataKeysCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCmsMetadataKeysCallable()");
   }
 
   @Override

@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java</artifactId>
-  <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
   <name>GAPIC Generator Java</name>
   <description>GAPIC generator Java</description>
 
@@ -23,7 +23,7 @@
   <parent>
     <groupId>com.google.api</groupId>
     <artifactId>gapic-generator-java-pom-parent</artifactId>
-    <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
     <relativePath>../gapic-generator-java-pom-parent</relativePath>
   </parent>
 
@@ -32,7 +32,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gapic-generator-java-bom</artifactId>
-        <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+        <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -137,101 +137,8 @@
                 https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/gapic/metadata/gapic_metadata.proto
               </url>
               <outputDirectory>target/generated-sources/proto</outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-common-resources-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/cloud/common_resources.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto</outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-pubsub-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/pubsub/v1/pubsub.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto</outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-schema-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/pubsub/v1/schema.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto/google/pubsub/v1
-              </outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-logging-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/logging/v2/logging.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto</outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-log-entry-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/logging/v2/log_entry.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto/google/logging/v2
-              </outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-logging-config-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/logging/v2/logging_config.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto/google/logging/v2
-              </outputDirectory>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-logging-metrics-proto</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>
-                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/google/logging/v2/logging_metrics.proto
-              </url>
-              <outputDirectory>target/generated-test-sources/proto/google/logging/v2
-              </outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
             </configuration>
           </execution>
         </executions>
@@ -277,16 +184,6 @@
               <includeSourceInfoInDescriptorSet>true</includeSourceInfoInDescriptorSet>
               <includeDependenciesInDescriptorSet>true</includeDependenciesInDescriptorSet>
               <descriptorSetFileName>test-proto.descriptorset</descriptorSetFileName>
-            </configuration>
-          </execution>
-          <execution>
-            <id>compile-downloaded-test-protos</id>
-            <goals>
-              <goal>test-compile</goal>
-            </goals>
-            <configuration>
-              <protoTestSourceRoot>target/generated-test-sources/proto</protoTestSourceRoot>
-              <clearOutputDirectory>false</clearOutputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -504,7 +401,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
+      <version>2.65.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -530,7 +427,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
-      <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
+      <version>2.73.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>

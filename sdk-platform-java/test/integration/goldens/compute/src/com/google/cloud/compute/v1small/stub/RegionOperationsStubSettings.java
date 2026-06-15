@@ -206,7 +206,7 @@ public class RegionOperationsStubSettings extends StubSettings<RegionOperationsS
 
   @Override
   protected LibraryMetadata getLibraryMetadata() {
-    return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
+    return LibraryMetadata.newBuilder().build();
   }
 
   /** Builder for RegionOperationsStubSettings. */

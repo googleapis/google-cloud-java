@@ -155,6 +155,7 @@ public class Parser {
 
     boolean willGenerateMetadata = PluginArgumentParser.hasMetadataFlag(request);
     boolean willGenerateNumericEnum = PluginArgumentParser.hasNumericEnumFlag(request);
+    boolean willGenerateVersionJava = PluginArgumentParser.hasGenerateVersionJavaFlag(request);
 
     Optional<String> serviceConfigPathOpt = PluginArgumentParser.parseJsonConfigPath(request);
     Optional<GapicServiceConfig> serviceConfigOpt =
@@ -255,6 +256,7 @@ public class Parser {
         .setServiceYamlProto(serviceYamlProtoOpt.orElse(null))
         .setTransport(transport)
         .setRestNumericEnumsEnabled(willGenerateNumericEnum)
+        .setGenerateVersionJava(willGenerateVersionJava)
         .setRepo(repoOpt.orElse(null))
         .setArtifact(artifactOpt.orElse(null))
         .build();

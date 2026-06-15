@@ -75,6 +75,732 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
             com.google.container.v1beta1.NodeKubeletConfig.Builder.class);
   }
 
+  public interface CrashLoopBackOffConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum duration the backoff delay can accrue to for
+     * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+     * defaults to the internal crashloopbackoff maximum.
+     *
+     * The string must be a sequence of decimal numbers, each with optional
+     * fraction and a unit suffix, such as "300ms".
+     * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+     * for more details.
+     * </pre>
+     *
+     * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxContainerRestartPeriod.
+     */
+    java.lang.String getMaxContainerRestartPeriod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum duration the backoff delay can accrue to for
+     * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+     * defaults to the internal crashloopbackoff maximum.
+     *
+     * The string must be a sequence of decimal numbers, each with optional
+     * fraction and a unit suffix, such as "300ms".
+     * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+     * for more details.
+     * </pre>
+     *
+     * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for maxContainerRestartPeriod.
+     */
+    com.google.protobuf.ByteString getMaxContainerRestartPeriodBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains config to modify node-level parameters for container restart
+   * behavior.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig}
+   */
+  public static final class CrashLoopBackOffConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig)
+      CrashLoopBackOffConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "CrashLoopBackOffConfig");
+    }
+
+    // Use CrashLoopBackOffConfig.newBuilder() to construct.
+    private CrashLoopBackOffConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CrashLoopBackOffConfig() {
+      maxContainerRestartPeriod_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NodeKubeletConfig_CrashLoopBackOffConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NodeKubeletConfig_CrashLoopBackOffConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.class,
+              com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder.class);
+    }
+
+    public static final int MAX_CONTAINER_RESTART_PERIOD_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object maxContainerRestartPeriod_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum duration the backoff delay can accrue to for
+     * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+     * defaults to the internal crashloopbackoff maximum.
+     *
+     * The string must be a sequence of decimal numbers, each with optional
+     * fraction and a unit suffix, such as "300ms".
+     * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+     * for more details.
+     * </pre>
+     *
+     * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxContainerRestartPeriod.
+     */
+    @java.lang.Override
+    public java.lang.String getMaxContainerRestartPeriod() {
+      java.lang.Object ref = maxContainerRestartPeriod_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maxContainerRestartPeriod_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum duration the backoff delay can accrue to for
+     * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+     * defaults to the internal crashloopbackoff maximum.
+     *
+     * The string must be a sequence of decimal numbers, each with optional
+     * fraction and a unit suffix, such as "300ms".
+     * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+     *
+     * See
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+     * for more details.
+     * </pre>
+     *
+     * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for maxContainerRestartPeriod.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMaxContainerRestartPeriodBytes() {
+      java.lang.Object ref = maxContainerRestartPeriod_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        maxContainerRestartPeriod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(maxContainerRestartPeriod_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, maxContainerRestartPeriod_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(maxContainerRestartPeriod_)) {
+        size +=
+            com.google.protobuf.GeneratedMessage.computeStringSize(1, maxContainerRestartPeriod_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig other =
+          (com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig) obj;
+
+      if (!getMaxContainerRestartPeriod().equals(other.getMaxContainerRestartPeriod()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_CONTAINER_RESTART_PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxContainerRestartPeriod().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains config to modify node-level parameters for container restart
+     * behavior.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig)
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodeKubeletConfig_CrashLoopBackOffConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodeKubeletConfig_CrashLoopBackOffConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.class,
+                com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        maxContainerRestartPeriod_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodeKubeletConfig_CrashLoopBackOffConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig build() {
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig buildPartial() {
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig result =
+            new com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxContainerRestartPeriod_ = maxContainerRestartPeriod_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig) {
+          return mergeFrom(
+              (com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig other) {
+        if (other
+            == com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+                .getDefaultInstance()) return this;
+        if (!other.getMaxContainerRestartPeriod().isEmpty()) {
+          maxContainerRestartPeriod_ = other.maxContainerRestartPeriod_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  maxContainerRestartPeriod_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object maxContainerRestartPeriod_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum duration the backoff delay can accrue to for
+       * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+       * defaults to the internal crashloopbackoff maximum.
+       *
+       * The string must be a sequence of decimal numbers, each with optional
+       * fraction and a unit suffix, such as "300ms".
+       * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+       *
+       * See
+       * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+       * for more details.
+       * </pre>
+       *
+       * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The maxContainerRestartPeriod.
+       */
+      public java.lang.String getMaxContainerRestartPeriod() {
+        java.lang.Object ref = maxContainerRestartPeriod_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          maxContainerRestartPeriod_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum duration the backoff delay can accrue to for
+       * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+       * defaults to the internal crashloopbackoff maximum.
+       *
+       * The string must be a sequence of decimal numbers, each with optional
+       * fraction and a unit suffix, such as "300ms".
+       * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+       *
+       * See
+       * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+       * for more details.
+       * </pre>
+       *
+       * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for maxContainerRestartPeriod.
+       */
+      public com.google.protobuf.ByteString getMaxContainerRestartPeriodBytes() {
+        java.lang.Object ref = maxContainerRestartPeriod_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          maxContainerRestartPeriod_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum duration the backoff delay can accrue to for
+       * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+       * defaults to the internal crashloopbackoff maximum.
+       *
+       * The string must be a sequence of decimal numbers, each with optional
+       * fraction and a unit suffix, such as "300ms".
+       * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+       *
+       * See
+       * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+       * for more details.
+       * </pre>
+       *
+       * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The maxContainerRestartPeriod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxContainerRestartPeriod(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxContainerRestartPeriod_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum duration the backoff delay can accrue to for
+       * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+       * defaults to the internal crashloopbackoff maximum.
+       *
+       * The string must be a sequence of decimal numbers, each with optional
+       * fraction and a unit suffix, such as "300ms".
+       * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+       *
+       * See
+       * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+       * for more details.
+       * </pre>
+       *
+       * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxContainerRestartPeriod() {
+        maxContainerRestartPeriod_ = getDefaultInstance().getMaxContainerRestartPeriod();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum duration the backoff delay can accrue to for
+       * container restarts, minimum 1 second, maximum 300 seconds. If not set,
+       * defaults to the internal crashloopbackoff maximum.
+       *
+       * The string must be a sequence of decimal numbers, each with optional
+       * fraction and a unit suffix, such as "300ms".
+       * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
+       *
+       * See
+       * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#configurable-container-restart-delay
+       * for more details.
+       * </pre>
+       *
+       * <code>string max_container_restart_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for maxContainerRestartPeriod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxContainerRestartPeriodBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        maxContainerRestartPeriod_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig)
+    private static final com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig();
+    }
+
+    public static com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CrashLoopBackOffConfig> PARSER =
+        new com.google.protobuf.AbstractParser<CrashLoopBackOffConfig>() {
+          @java.lang.Override
+          public CrashLoopBackOffConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CrashLoopBackOffConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CrashLoopBackOffConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int CPU_MANAGER_POLICY_FIELD_NUMBER = 1;
 
@@ -1190,6 +1916,70 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     return singleProcessOomKill_;
   }
 
+  public static final int CRASH_LOOP_BACK_OFF_FIELD_NUMBER = 24;
+  private com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crashLoopBackOff_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains configuration options to modify node-level parameters
+   * for container restart behavior.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crashLoopBackOff field is set.
+   */
+  @java.lang.Override
+  public boolean hasCrashLoopBackOff() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains configuration options to modify node-level parameters
+   * for container restart behavior.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crashLoopBackOff.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+      getCrashLoopBackOff() {
+    return crashLoopBackOff_ == null
+        ? com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.getDefaultInstance()
+        : crashLoopBackOff_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains configuration options to modify node-level parameters
+   * for container restart behavior.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder
+      getCrashLoopBackOffOrBuilder() {
+    return crashLoopBackOff_ == null
+        ? com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.getDefaultInstance()
+        : crashLoopBackOff_;
+  }
+
   public static final int SHUTDOWN_GRACE_PERIOD_SECONDS_FIELD_NUMBER = 26;
   private int shutdownGracePeriodSeconds_ = 0;
 
@@ -1215,7 +2005,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasShutdownGracePeriodSeconds() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1250,10 +2040,10 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
-   * grace period (in seconds) used to terminate critical pods during a node
-   * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
-   * only valid if shutdown_grace_period_seconds is set.
+   * Optional. shutdown_grace_period_critical_pods_seconds is the maximum
+   * allowed grace period (in seconds) used to terminate critical pods during a
+   * node shutdown. This value should be &lt;= shutdown_grace_period_seconds, and
+   * is only valid if shutdown_grace_period_seconds is set.
    * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
    * Range: [0, 120].
    * </pre>
@@ -1266,17 +2056,17 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasShutdownGracePeriodCriticalPodsSeconds() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
-   * grace period (in seconds) used to terminate critical pods during a node
-   * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
-   * only valid if shutdown_grace_period_seconds is set.
+   * Optional. shutdown_grace_period_critical_pods_seconds is the maximum
+   * allowed grace period (in seconds) used to terminate critical pods during a
+   * node shutdown. This value should be &lt;= shutdown_grace_period_seconds, and
+   * is only valid if shutdown_grace_period_seconds is set.
    * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
    * Range: [0, 120].
    * </pre>
@@ -1367,9 +2157,12 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       output.writeBool(22, singleProcessOomKill_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeInt32(26, shutdownGracePeriodSeconds_);
+      output.writeMessage(24, getCrashLoopBackOff());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(26, shutdownGracePeriodSeconds_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt32(27, shutdownGracePeriodCriticalPodsSeconds_);
     }
     getUnknownFields().writeTo(output);
@@ -1456,10 +2249,13 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, singleProcessOomKill_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getCrashLoopBackOff());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(26, shutdownGracePeriodSeconds_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               27, shutdownGracePeriodCriticalPodsSeconds_);
@@ -1526,6 +2322,10 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (hasSingleProcessOomKill() != other.hasSingleProcessOomKill()) return false;
     if (hasSingleProcessOomKill()) {
       if (getSingleProcessOomKill() != other.getSingleProcessOomKill()) return false;
+    }
+    if (hasCrashLoopBackOff() != other.hasCrashLoopBackOff()) return false;
+    if (hasCrashLoopBackOff()) {
+      if (!getCrashLoopBackOff().equals(other.getCrashLoopBackOff())) return false;
     }
     if (hasShutdownGracePeriodSeconds() != other.hasShutdownGracePeriodSeconds()) return false;
     if (hasShutdownGracePeriodSeconds()) {
@@ -1607,6 +2407,10 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (hasSingleProcessOomKill()) {
       hash = (37 * hash) + SINGLE_PROCESS_OOM_KILL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleProcessOomKill());
+    }
+    if (hasCrashLoopBackOff()) {
+      hash = (37 * hash) + CRASH_LOOP_BACK_OFF_FIELD_NUMBER;
+      hash = (53 * hash) + getCrashLoopBackOff().hashCode();
     }
     if (hasShutdownGracePeriodSeconds()) {
       hash = (37 * hash) + SHUTDOWN_GRACE_PERIOD_SECONDS_FIELD_NUMBER;
@@ -1763,6 +2567,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         internalGetEvictionSoftFieldBuilder();
         internalGetEvictionSoftGracePeriodFieldBuilder();
         internalGetEvictionMinimumReclaimFieldBuilder();
+        internalGetCrashLoopBackOffFieldBuilder();
       }
     }
 
@@ -1814,6 +2619,11 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       evictionMaxPodGracePeriodSeconds_ = 0;
       maxParallelImagePulls_ = 0;
       singleProcessOomKill_ = false;
+      crashLoopBackOff_ = null;
+      if (crashLoopBackOffBuilder_ != null) {
+        crashLoopBackOffBuilder_.dispose();
+        crashLoopBackOffBuilder_ = null;
+      }
       shutdownGracePeriodSeconds_ = 0;
       shutdownGracePeriodCriticalPodsSeconds_ = 0;
       return this;
@@ -1933,12 +2743,17 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.shutdownGracePeriodSeconds_ = shutdownGracePeriodSeconds_;
+        result.crashLoopBackOff_ =
+            crashLoopBackOffBuilder_ == null ? crashLoopBackOff_ : crashLoopBackOffBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.shutdownGracePeriodCriticalPodsSeconds_ = shutdownGracePeriodCriticalPodsSeconds_;
+        result.shutdownGracePeriodSeconds_ = shutdownGracePeriodSeconds_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.shutdownGracePeriodCriticalPodsSeconds_ = shutdownGracePeriodCriticalPodsSeconds_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2031,6 +2846,9 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasSingleProcessOomKill()) {
         setSingleProcessOomKill(other.getSingleProcessOomKill());
+      }
+      if (other.hasCrashLoopBackOff()) {
+        mergeCrashLoopBackOff(other.getCrashLoopBackOff());
       }
       if (other.hasShutdownGracePeriodSeconds()) {
         setShutdownGracePeriodSeconds(other.getShutdownGracePeriodSeconds());
@@ -2194,16 +3012,23 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00080000;
                 break;
               } // case 176
+            case 194:
+              {
+                input.readMessage(
+                    internalGetCrashLoopBackOffFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 194
             case 208:
               {
                 shutdownGracePeriodSeconds_ = input.readInt32();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 208
             case 216:
               {
                 shutdownGracePeriodCriticalPodsSeconds_ = input.readInt32();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 216
             default:
@@ -5375,6 +6200,238 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crashLoopBackOff_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig,
+            com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder,
+            com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder>
+        crashLoopBackOffBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the crashLoopBackOff field is set.
+     */
+    public boolean hasCrashLoopBackOff() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The crashLoopBackOff.
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+        getCrashLoopBackOff() {
+      if (crashLoopBackOffBuilder_ == null) {
+        return crashLoopBackOff_ == null
+            ? com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+                .getDefaultInstance()
+            : crashLoopBackOff_;
+      } else {
+        return crashLoopBackOffBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCrashLoopBackOff(
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig value) {
+      if (crashLoopBackOffBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        crashLoopBackOff_ = value;
+      } else {
+        crashLoopBackOffBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCrashLoopBackOff(
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder
+            builderForValue) {
+      if (crashLoopBackOffBuilder_ == null) {
+        crashLoopBackOff_ = builderForValue.build();
+      } else {
+        crashLoopBackOffBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCrashLoopBackOff(
+        com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig value) {
+      if (crashLoopBackOffBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && crashLoopBackOff_ != null
+            && crashLoopBackOff_
+                != com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+                    .getDefaultInstance()) {
+          getCrashLoopBackOffBuilder().mergeFrom(value);
+        } else {
+          crashLoopBackOff_ = value;
+        }
+      } else {
+        crashLoopBackOffBuilder_.mergeFrom(value);
+      }
+      if (crashLoopBackOff_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCrashLoopBackOff() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      crashLoopBackOff_ = null;
+      if (crashLoopBackOffBuilder_ != null) {
+        crashLoopBackOffBuilder_.dispose();
+        crashLoopBackOffBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder
+        getCrashLoopBackOffBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetCrashLoopBackOffFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder
+        getCrashLoopBackOffOrBuilder() {
+      if (crashLoopBackOffBuilder_ != null) {
+        return crashLoopBackOffBuilder_.getMessageOrBuilder();
+      } else {
+        return crashLoopBackOff_ == null
+            ? com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig
+                .getDefaultInstance()
+            : crashLoopBackOff_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains configuration options to modify node-level parameters
+     * for container restart behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig,
+            com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder,
+            com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder>
+        internalGetCrashLoopBackOffFieldBuilder() {
+      if (crashLoopBackOffBuilder_ == null) {
+        crashLoopBackOffBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig,
+                com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfig.Builder,
+                com.google.container.v1beta1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder>(
+                getCrashLoopBackOff(), getParentForChildren(), isClean());
+        crashLoopBackOff_ = null;
+      }
+      return crashLoopBackOffBuilder_;
+    }
+
     private int shutdownGracePeriodSeconds_;
 
     /**
@@ -5399,7 +6456,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasShutdownGracePeriodSeconds() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -5451,7 +6508,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public Builder setShutdownGracePeriodSeconds(int value) {
 
       shutdownGracePeriodSeconds_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5477,7 +6534,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearShutdownGracePeriodSeconds() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       shutdownGracePeriodSeconds_ = 0;
       onChanged();
       return this;
@@ -5489,10 +6546,10 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
-     * grace period (in seconds) used to terminate critical pods during a node
-     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
-     * only valid if shutdown_grace_period_seconds is set.
+     * Optional. shutdown_grace_period_critical_pods_seconds is the maximum
+     * allowed grace period (in seconds) used to terminate critical pods during a
+     * node shutdown. This value should be &lt;= shutdown_grace_period_seconds, and
+     * is only valid if shutdown_grace_period_seconds is set.
      * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
      * Range: [0, 120].
      * </pre>
@@ -5505,17 +6562,17 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasShutdownGracePeriodCriticalPodsSeconds() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
-     * grace period (in seconds) used to terminate critical pods during a node
-     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
-     * only valid if shutdown_grace_period_seconds is set.
+     * Optional. shutdown_grace_period_critical_pods_seconds is the maximum
+     * allowed grace period (in seconds) used to terminate critical pods during a
+     * node shutdown. This value should be &lt;= shutdown_grace_period_seconds, and
+     * is only valid if shutdown_grace_period_seconds is set.
      * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
      * Range: [0, 120].
      * </pre>
@@ -5535,10 +6592,10 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
-     * grace period (in seconds) used to terminate critical pods during a node
-     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
-     * only valid if shutdown_grace_period_seconds is set.
+     * Optional. shutdown_grace_period_critical_pods_seconds is the maximum
+     * allowed grace period (in seconds) used to terminate critical pods during a
+     * node shutdown. This value should be &lt;= shutdown_grace_period_seconds, and
+     * is only valid if shutdown_grace_period_seconds is set.
      * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
      * Range: [0, 120].
      * </pre>
@@ -5553,7 +6610,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public Builder setShutdownGracePeriodCriticalPodsSeconds(int value) {
 
       shutdownGracePeriodCriticalPodsSeconds_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5562,10 +6619,10 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
-     * grace period (in seconds) used to terminate critical pods during a node
-     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
-     * only valid if shutdown_grace_period_seconds is set.
+     * Optional. shutdown_grace_period_critical_pods_seconds is the maximum
+     * allowed grace period (in seconds) used to terminate critical pods during a
+     * node shutdown. This value should be &lt;= shutdown_grace_period_seconds, and
+     * is only valid if shutdown_grace_period_seconds is set.
      * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
      * Range: [0, 120].
      * </pre>
@@ -5577,7 +6634,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearShutdownGracePeriodCriticalPodsSeconds() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       shutdownGracePeriodCriticalPodsSeconds_ = 0;
       onChanged();
       return this;

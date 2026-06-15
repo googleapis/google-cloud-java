@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [DeleteRun][google.cloud.datacatalog.lineage.v1.DeleteRun].
+ * [DeleteRun][google.cloud.datacatalog.lineage.v1.Lineage.DeleteRun].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.DeleteRunRequest}
@@ -135,11 +135,11 @@ public final class DeleteRunRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set to true and the run is not found, the request
+   * Optional. If set to true and the run is not found, the request
    * succeeds but the server doesn't perform any actions.
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
@@ -323,7 +323,7 @@ public final class DeleteRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Request message for
-   * [DeleteRun][google.cloud.datacatalog.lineage.v1.DeleteRun].
+   * [DeleteRun][google.cloud.datacatalog.lineage.v1.Lineage.DeleteRun].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.DeleteRunRequest}
@@ -609,11 +609,11 @@ public final class DeleteRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true and the run is not found, the request
+     * Optional. If set to true and the run is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMissing.
      */
@@ -626,11 +626,11 @@ public final class DeleteRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true and the run is not found, the request
+     * Optional. If set to true and the run is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMissing to set.
      * @return This builder for chaining.
@@ -647,11 +647,11 @@ public final class DeleteRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true and the run is not found, the request
+     * Optional. If set to true and the run is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

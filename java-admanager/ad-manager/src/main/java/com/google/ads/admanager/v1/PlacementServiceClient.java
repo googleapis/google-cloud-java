@@ -750,7 +750,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @param placement Required. The `Placement` to update.
    *     <p>The `Placement`'s name is used to identify the `Placement` to update. Format:
    *     `networks/{network_code}/placements/{placement_id}`
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Placement updatePlacement(Placement placement, FieldMask updateMask) {

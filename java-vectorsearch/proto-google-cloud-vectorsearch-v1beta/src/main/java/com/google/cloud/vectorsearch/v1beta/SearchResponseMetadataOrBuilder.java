@@ -92,5 +92,65 @@ public interface SearchResponseMetadataOrBuilder
    */
   boolean getUsedKnn();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.rpc.Status> getWarningsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.Status getWarnings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getWarningsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getWarningsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.StatusOrBuilder getWarningsOrBuilder(int index);
+
   com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata.IndexTypeCase getIndexTypeCase();
 }

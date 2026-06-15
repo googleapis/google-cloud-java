@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset</artifactId>
-  <version>3.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+  <version>3.98.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Asset</name>
   <description>Java idiomatic client for Google Cloud Asset</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-asset-parent</artifactId>
-    <version>3.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+    <version>3.98.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-asset</site.installationModule>
@@ -40,6 +40,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-asset-v1p7beta1</artifactId>
@@ -60,6 +61,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-asset-v1p5beta1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -107,6 +109,7 @@
       <artifactId>google-cloud-resourcemanager</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-asset-v1</artifactId>
@@ -132,6 +135,7 @@
       <artifactId>grpc-google-cloud-asset-v1p5beta1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

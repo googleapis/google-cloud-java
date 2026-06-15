@@ -28,7 +28,6 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-import io.grpc.Status;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -274,19 +273,6 @@ public final class GqlQuery<V> extends Query<V> implements RecordQuery<V> {
      * Sets a new named binding.
      *
      * @param name name of the binding
-     * @param value a {@link FullEntity} object or a list of {@link FullEntity} objects that binds
-     *     to a given name
-     */
-    @Deprecated
-    public Builder<V> setBinding(String name, FullEntity<?>... value) {
-      throw new DatastoreException(
-          Status.Code.UNIMPLEMENTED.value(), "Binding entities is not supported.", "UNIMPLEMENTED");
-    }
-
-    /**
-     * Sets a new named binding.
-     *
-     * @param name name of the binding
      * @param value a {@link Blob} object or list of {@link Blob} objects that binds to a given name
      */
     public Builder<V> setBinding(String name, Blob... value) {
@@ -376,18 +362,6 @@ public final class GqlQuery<V> extends Query<V> implements RecordQuery<V> {
     public Builder<V> addBinding(Key... value) {
       positionalBindings.add(toBinding(KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
-    }
-
-    /**
-     * Sets a new positional binding.
-     *
-     * @param value a {@link FullEntity} object or a list of {@link FullEntity} objects to be set as
-     *     a new positional binding
-     */
-    @Deprecated
-    public Builder<V> addBinding(FullEntity<?>... value) {
-      throw new DatastoreException(
-          Status.Code.UNIMPLEMENTED.value(), "Binding entities is not supported.", "UNIMPLEMENTED");
     }
 
     /**

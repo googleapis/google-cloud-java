@@ -320,7 +320,7 @@ public interface NodePoolUpgradeInfoOrBuilder
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of standard support timestamp.
+   * The node pool's current minor version's end of standard support timestamp.
    * </pre>
    *
    * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -333,7 +333,7 @@ public interface NodePoolUpgradeInfoOrBuilder
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of standard support timestamp.
+   * The node pool's current minor version's end of standard support timestamp.
    * </pre>
    *
    * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -346,7 +346,7 @@ public interface NodePoolUpgradeInfoOrBuilder
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of standard support timestamp.
+   * The node pool's current minor version's end of standard support timestamp.
    * </pre>
    *
    * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -359,7 +359,7 @@ public interface NodePoolUpgradeInfoOrBuilder
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of extended support timestamp.
+   * The node pool's current minor version's end of extended support timestamp.
    * </pre>
    *
    * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -372,7 +372,7 @@ public interface NodePoolUpgradeInfoOrBuilder
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of extended support timestamp.
+   * The node pool's current minor version's end of extended support timestamp.
    * </pre>
    *
    * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -385,7 +385,7 @@ public interface NodePoolUpgradeInfoOrBuilder
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of extended support timestamp.
+   * The node pool's current minor version's end of extended support timestamp.
    * </pre>
    *
    * <code>optional string end_of_extended_support_timestamp = 7;</code>

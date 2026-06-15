@@ -296,6 +296,49 @@ public interface BatchOrBuilder
    *
    *
    * <pre>
+   * Optional. PySpark notebook batch config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.PySparkNotebookBatch pyspark_notebook_batch = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pysparkNotebookBatch field is set.
+   */
+  boolean hasPysparkNotebookBatch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. PySpark notebook batch config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.PySparkNotebookBatch pyspark_notebook_batch = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pysparkNotebookBatch.
+   */
+  com.google.cloud.dataproc.v1.PySparkNotebookBatch getPysparkNotebookBatch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. PySpark notebook batch config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.PySparkNotebookBatch pyspark_notebook_batch = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.PySparkNotebookBatchOrBuilder getPysparkNotebookBatchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Runtime information about batch execution.
    * </pre>
    *

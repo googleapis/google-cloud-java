@@ -62,13 +62,13 @@ public interface ListProcessesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of processes to return. The service may return
+   * Optional. The maximum number of processes to return. The service may return
    * fewer than this value. If unspecified, at most 50 processes are
    * returned. The maximum value is 100; values greater than 100 are cut to
    * 100.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -78,14 +78,14 @@ public interface ListProcessesRequestOrBuilder
    *
    *
    * <pre>
-   * The page token received from a previous `ListProcesses` call. Specify
-   * it to get the next page.
+   * Optional. The page token received from a previous `ListProcesses` call.
+   * Specify it to get the next page.
    *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -95,14 +95,14 @@ public interface ListProcessesRequestOrBuilder
    *
    *
    * <pre>
-   * The page token received from a previous `ListProcesses` call. Specify
-   * it to get the next page.
+   * Optional. The page token received from a previous `ListProcesses` call.
+   * Specify it to get the next page.
    *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

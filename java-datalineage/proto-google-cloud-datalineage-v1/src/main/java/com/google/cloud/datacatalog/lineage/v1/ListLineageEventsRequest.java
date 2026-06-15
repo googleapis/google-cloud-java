@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.ListLineageEvents].
+ * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.Lineage.ListLineageEvents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest}
@@ -138,14 +138,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The maximum number of lineage events to return.
+   * Optional. The maximum number of lineage events to return.
    *
    * The service may return fewer events than this value.
    * If unspecified, at most 50 events are returned. The maximum value is 100;
    * values greater than 100 are cut to 100.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -163,14 +163,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The page token received from a previous `ListLineageEvents` call. Specify
-   * it to get the next page.
+   * Optional. The page token received from a previous `ListLineageEvents` call.
+   * Specify it to get the next page.
    *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -191,14 +191,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The page token received from a previous `ListLineageEvents` call. Specify
-   * it to get the next page.
+   * Optional. The page token received from a previous `ListLineageEvents` call.
+   * Specify it to get the next page.
    *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -399,7 +399,7 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Request message for
-   * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.ListLineageEvents].
+   * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.Lineage.ListLineageEvents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest}
@@ -709,14 +709,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The maximum number of lineage events to return.
+     * Optional. The maximum number of lineage events to return.
      *
      * The service may return fewer events than this value.
      * If unspecified, at most 50 events are returned. The maximum value is 100;
      * values greater than 100 are cut to 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -729,14 +729,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The maximum number of lineage events to return.
+     * Optional. The maximum number of lineage events to return.
      *
      * The service may return fewer events than this value.
      * If unspecified, at most 50 events are returned. The maximum value is 100;
      * values greater than 100 are cut to 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -753,14 +753,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The maximum number of lineage events to return.
+     * Optional. The maximum number of lineage events to return.
      *
      * The service may return fewer events than this value.
      * If unspecified, at most 50 events are returned. The maximum value is 100;
      * values greater than 100 are cut to 100.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -777,14 +777,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The page token received from a previous `ListLineageEvents` call. Specify
-     * it to get the next page.
+     * Optional. The page token received from a previous `ListLineageEvents` call.
+     * Specify it to get the next page.
      *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -804,14 +804,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The page token received from a previous `ListLineageEvents` call. Specify
-     * it to get the next page.
+     * Optional. The page token received from a previous `ListLineageEvents` call.
+     * Specify it to get the next page.
      *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -831,14 +831,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The page token received from a previous `ListLineageEvents` call. Specify
-     * it to get the next page.
+     * Optional. The page token received from a previous `ListLineageEvents` call.
+     * Specify it to get the next page.
      *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -857,14 +857,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The page token received from a previous `ListLineageEvents` call. Specify
-     * it to get the next page.
+     * Optional. The page token received from a previous `ListLineageEvents` call.
+     * Specify it to get the next page.
      *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -879,14 +879,14 @@ public final class ListLineageEventsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The page token received from a previous `ListLineageEvents` call. Specify
-     * it to get the next page.
+     * Optional. The page token received from a previous `ListLineageEvents` call.
+     * Specify it to get the next page.
      *
      * When paginating, all other parameters specified in this call must
      * match the parameters of the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

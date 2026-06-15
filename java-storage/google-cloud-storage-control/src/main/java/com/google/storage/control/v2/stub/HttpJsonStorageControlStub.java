@@ -16,6 +16,10 @@
 
 package com.google.storage.control.v2.stub;
 
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -51,15 +55,23 @@ import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetFolderRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
+import com.google.storage.control.v2.IntelligenceFinding;
+import com.google.storage.control.v2.IntelligenceFindingRevision;
 import com.google.storage.control.v2.ListAnywhereCachesRequest;
 import com.google.storage.control.v2.ListAnywhereCachesResponse;
 import com.google.storage.control.v2.ListFoldersRequest;
 import com.google.storage.control.v2.ListFoldersResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ManagedFolder;
@@ -68,6 +80,8 @@ import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
 import com.google.storage.control.v2.StorageLayout;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
@@ -347,6 +361,205 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingMethodDescriptor =
+          ApiMethodDescriptor.<GetIntelligenceFindingRequest, IntelligenceFinding>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/GetIntelligenceFinding")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIntelligenceFindingRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/intelligenceFindings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIntelligenceFindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIntelligenceFindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<IntelligenceFinding>newBuilder()
+                      .setDefaultInstance(IntelligenceFinding.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/ListIntelligenceFindings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListIntelligenceFindingsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/intelligenceFindings",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListIntelligenceFindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListIntelligenceFindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListIntelligenceFindingsResponse>newBuilder()
+                      .setDefaultInstance(ListIntelligenceFindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/SummarizeIntelligenceFindings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SummarizeIntelligenceFindingsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/intelligenceFindings:summarize",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SummarizeIntelligenceFindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=folders/*/locations/*}/intelligenceFindings:summarize",
+                          "/v2/{parent=organizations/*/locations/*}/intelligenceFindings:summarize")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SummarizeIntelligenceFindingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceScope", request.getResourceScopeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SummarizeIntelligenceFindingsResponse>newBuilder()
+                      .setDefaultInstance(
+                          SummarizeIntelligenceFindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>newBuilder()
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/GetIntelligenceFindingRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIntelligenceFindingRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/intelligenceFindings/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIntelligenceFindingRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIntelligenceFindingRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<IntelligenceFindingRevision>newBuilder()
+                      .setDefaultInstance(IntelligenceFindingRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/ListIntelligenceFindingRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListIntelligenceFindingRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*/intelligenceFindings/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListIntelligenceFindingRevisionsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListIntelligenceFindingRevisionsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListIntelligenceFindingRevisionsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListIntelligenceFindingRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
       getProjectIntelligenceConfigCallable;
   private final UnaryCallable<UpdateProjectIntelligenceConfigRequest, IntelligenceConfig>
@@ -359,6 +572,27 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
       getOrganizationIntelligenceConfigCallable;
   private final UnaryCallable<UpdateOrganizationIntelligenceConfigRequest, IntelligenceConfig>
       updateOrganizationIntelligenceConfigCallable;
+  private final UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable;
+  private final UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable;
+  private final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable;
+  private final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable;
+  private final UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -492,6 +726,78 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>
+        getIntelligenceFindingTransportSettings =
+            HttpJsonCallSettings.<GetIntelligenceFindingRequest, IntelligenceFinding>newBuilder()
+                .setMethodDescriptor(getIntelligenceFindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+        listIntelligenceFindingsTransportSettings =
+            HttpJsonCallSettings
+                .<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>newBuilder()
+                .setMethodDescriptor(listIntelligenceFindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+        summarizeIntelligenceFindingsTransportSettings =
+            HttpJsonCallSettings
+                .<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                    newBuilder()
+                .setMethodDescriptor(summarizeIntelligenceFindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+        getIntelligenceFindingRevisionTransportSettings =
+            HttpJsonCallSettings
+                .<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>newBuilder()
+                .setMethodDescriptor(getIntelligenceFindingRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+        listIntelligenceFindingRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listIntelligenceFindingRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getProjectIntelligenceConfigCallable =
         callableFactory.createUnaryCallable(
@@ -523,6 +829,46 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
             updateOrganizationIntelligenceConfigTransportSettings,
             settings.updateOrganizationIntelligenceConfigSettings(),
             clientContext);
+    this.getIntelligenceFindingCallable =
+        callableFactory.createUnaryCallable(
+            getIntelligenceFindingTransportSettings,
+            settings.getIntelligenceFindingSettings(),
+            clientContext);
+    this.listIntelligenceFindingsCallable =
+        callableFactory.createUnaryCallable(
+            listIntelligenceFindingsTransportSettings,
+            settings.listIntelligenceFindingsSettings(),
+            clientContext);
+    this.listIntelligenceFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listIntelligenceFindingsTransportSettings,
+            settings.listIntelligenceFindingsSettings(),
+            clientContext);
+    this.summarizeIntelligenceFindingsCallable =
+        callableFactory.createUnaryCallable(
+            summarizeIntelligenceFindingsTransportSettings,
+            settings.summarizeIntelligenceFindingsSettings(),
+            clientContext);
+    this.summarizeIntelligenceFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            summarizeIntelligenceFindingsTransportSettings,
+            settings.summarizeIntelligenceFindingsSettings(),
+            clientContext);
+    this.getIntelligenceFindingRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getIntelligenceFindingRevisionTransportSettings,
+            settings.getIntelligenceFindingRevisionSettings(),
+            clientContext);
+    this.listIntelligenceFindingRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listIntelligenceFindingRevisionsTransportSettings,
+            settings.listIntelligenceFindingRevisionsSettings(),
+            clientContext);
+    this.listIntelligenceFindingRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listIntelligenceFindingRevisionsTransportSettings,
+            settings.listIntelligenceFindingRevisionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -537,6 +883,11 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
     methodDescriptors.add(updateFolderIntelligenceConfigMethodDescriptor);
     methodDescriptors.add(getOrganizationIntelligenceConfigMethodDescriptor);
     methodDescriptors.add(updateOrganizationIntelligenceConfigMethodDescriptor);
+    methodDescriptors.add(getIntelligenceFindingMethodDescriptor);
+    methodDescriptors.add(listIntelligenceFindingsMethodDescriptor);
+    methodDescriptors.add(summarizeIntelligenceFindingsMethodDescriptor);
+    methodDescriptors.add(getIntelligenceFindingRevisionMethodDescriptor);
+    methodDescriptors.add(listIntelligenceFindingRevisionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -578,6 +929,57 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   public UnaryCallable<UpdateOrganizationIntelligenceConfigRequest, IntelligenceConfig>
       updateOrganizationIntelligenceConfigCallable() {
     return updateOrganizationIntelligenceConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable() {
+    return getIntelligenceFindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable() {
+    return listIntelligenceFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable() {
+    return listIntelligenceFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable() {
+    return summarizeIntelligenceFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable() {
+    return summarizeIntelligenceFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable() {
+    return getIntelligenceFindingRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable() {
+    return listIntelligenceFindingRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable() {
+    return listIntelligenceFindingRevisionsPagedCallable;
   }
 
   @Override

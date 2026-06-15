@@ -54,7 +54,6 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
   private SearchAdReviewCenterAdsRequest() {
     parent_ = "";
     pageToken_ = "";
-    status_ = 0;
     adReviewCenterAdId_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchText_ = com.google.protobuf.LazyStringArrayList.emptyList();
     buyerAccountId_ = emptyLongList();
@@ -76,6 +75,199 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
   }
 
   private int bitField0_;
+  private int adReviewStatusCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object adReviewStatus_;
+
+  public enum AdReviewStatusCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    STATUS(4),
+    MANUAL_REVIEW_STATUS(9),
+    ADREVIEWSTATUS_NOT_SET(0);
+    private final int value;
+
+    private AdReviewStatusCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AdReviewStatusCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AdReviewStatusCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return STATUS;
+        case 9:
+          return MANUAL_REVIEW_STATUS;
+        case 0:
+          return ADREVIEWSTATUS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AdReviewStatusCase getAdReviewStatusCase() {
+    return AdReviewStatusCase.forNumber(adReviewStatusCase_);
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given status.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  public boolean hasStatus() {
+    return adReviewStatusCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given status.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  public int getStatusValue() {
+    if (adReviewStatusCase_ == 4) {
+      return (java.lang.Integer) adReviewStatus_;
+    }
+    return 0;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given status.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The status.
+   */
+  public com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus getStatus() {
+    if (adReviewStatusCase_ == 4) {
+      com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus result =
+          com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus.forNumber(
+              (java.lang.Integer) adReviewStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
+              .UNRECOGNIZED
+          : result;
+    }
+    return com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
+        .AD_REVIEW_CENTER_AD_STATUS_UNSPECIFIED;
+  }
+
+  public static final int MANUAL_REVIEW_STATUS_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given manual review status. Only
+   * available for networks with Manual Creative Review enabled. For more
+   * information, see
+   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the manualReviewStatus field is set.
+   */
+  public boolean hasManualReviewStatus() {
+    return adReviewStatusCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given manual review status. Only
+   * available for networks with Manual Creative Review enabled. For more
+   * information, see
+   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for manualReviewStatus.
+   */
+  public int getManualReviewStatusValue() {
+    if (adReviewStatusCase_ == 9) {
+      return (java.lang.Integer) adReviewStatus_;
+    }
+    return 0;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given manual review status. Only
+   * available for networks with Manual Creative Review enabled. For more
+   * information, see
+   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The manualReviewStatus.
+   */
+  public com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+      getManualReviewStatus() {
+    if (adReviewStatusCase_ == 9) {
+      com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+          result =
+              com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                  .ManualAdReviewCenterAdStatus.forNumber((java.lang.Integer) adReviewStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+              .ManualAdReviewCenterAdStatus.UNRECOGNIZED
+          : result;
+    }
+    return com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+        .MANUAL_AD_REVIEW_CENTER_AD_STATUS_UNSPECIFIED;
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -236,50 +428,6 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 4;
-  private int status_ = 0;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Only return ads with the given status.
-   * </pre>
-   *
-   * <code>
-   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for status.
-   */
-  @java.lang.Override
-  public int getStatusValue() {
-    return status_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Only return ads with the given status.
-   * </pre>
-   *
-   * <code>
-   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The status.
-   */
-  @java.lang.Override
-  public com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus getStatus() {
-    com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus result =
-        com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus.forNumber(
-            status_);
-    return result == null
-        ? com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus.UNRECOGNIZED
-        : result;
-  }
-
   public static final int AD_REVIEW_CENTER_AD_ID_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -365,7 +513,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. If provided, only return ads that served within the given date
    * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days.
+   * provided, the date range will be the last 30 days. This filter does not
+   * apply to the PENDING manual review status.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -384,7 +533,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. If provided, only return ads that served within the given date
    * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days.
+   * provided, the date range will be the last 30 days. This filter does not
+   * apply to the PENDING manual review status.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -403,7 +553,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. If provided, only return ads that served within the given date
    * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days.
+   * provided, the date range will be the last 30 days. This filter does not
+   * apply to the PENDING manual review status.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -509,7 +660,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. If provided, restrict the search to creatives belonging to one of
    * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-   * buyer account IDs can be found via the ProgrammaticBuyerService.
+   * buyer account IDs can be found using the `ProgrammaticBuyerService`.
    * </pre>
    *
    * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -527,7 +678,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. If provided, restrict the search to creatives belonging to one of
    * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-   * buyer account IDs can be found via the ProgrammaticBuyerService.
+   * buyer account IDs can be found using the `ProgrammaticBuyerService`.
    * </pre>
    *
    * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -544,7 +695,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. If provided, restrict the search to creatives belonging to one of
    * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-   * buyer account IDs can be found via the ProgrammaticBuyerService.
+   * buyer account IDs can be found using the `ProgrammaticBuyerService`.
    * </pre>
    *
    * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -582,11 +733,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, pageToken_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
-            .AD_REVIEW_CENTER_AD_STATUS_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(4, status_);
+    if (adReviewStatusCase_ == 4) {
+      output.writeEnum(4, ((java.lang.Integer) adReviewStatus_));
     }
     for (int i = 0; i < adReviewCenterAdId_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, adReviewCenterAdId_.getRaw(i));
@@ -603,6 +751,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     }
     for (int i = 0; i < buyerAccountId_.size(); i++) {
       output.writeInt64NoTag(buyerAccountId_.getLong(i));
+    }
+    if (adReviewStatusCase_ == 9) {
+      output.writeEnum(9, ((java.lang.Integer) adReviewStatus_));
     }
     getUnknownFields().writeTo(output);
   }
@@ -622,11 +773,10 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, pageToken_);
     }
-    if (status_
-        != com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
-            .AD_REVIEW_CENTER_AD_STATUS_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, status_);
+    if (adReviewStatusCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              4, ((java.lang.Integer) adReviewStatus_));
     }
     {
       int dataSize = 0;
@@ -660,6 +810,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       buyerAccountIdMemoizedSerializedSize = dataSize;
     }
+    if (adReviewStatusCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              9, ((java.lang.Integer) adReviewStatus_));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -679,7 +834,6 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
-    if (status_ != other.status_) return false;
     if (!getAdReviewCenterAdIdList().equals(other.getAdReviewCenterAdIdList())) return false;
     if (hasDateTimeRange() != other.hasDateTimeRange()) return false;
     if (hasDateTimeRange()) {
@@ -687,6 +841,17 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     }
     if (!getSearchTextList().equals(other.getSearchTextList())) return false;
     if (!getBuyerAccountIdList().equals(other.getBuyerAccountIdList())) return false;
+    if (!getAdReviewStatusCase().equals(other.getAdReviewStatusCase())) return false;
+    switch (adReviewStatusCase_) {
+      case 4:
+        if (getStatusValue() != other.getStatusValue()) return false;
+        break;
+      case 9:
+        if (getManualReviewStatusValue() != other.getManualReviewStatusValue()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -704,8 +869,6 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
     if (getAdReviewCenterAdIdCount() > 0) {
       hash = (37 * hash) + AD_REVIEW_CENTER_AD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAdReviewCenterAdIdList().hashCode();
@@ -721,6 +884,18 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     if (getBuyerAccountIdCount() > 0) {
       hash = (37 * hash) + BUYER_ACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBuyerAccountIdList().hashCode();
+    }
+    switch (adReviewStatusCase_) {
+      case 4:
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getStatusValue();
+        break;
+      case 9:
+        hash = (37 * hash) + MANUAL_REVIEW_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getManualReviewStatusValue();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -875,7 +1050,6 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
-      status_ = 0;
       adReviewCenterAdId_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dateTimeRange_ = null;
       if (dateTimeRangeBuilder_ != null) {
@@ -884,6 +1058,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       searchText_ = com.google.protobuf.LazyStringArrayList.emptyList();
       buyerAccountId_ = emptyLongList();
+      adReviewStatusCase_ = 0;
+      adReviewStatus_ = null;
       return this;
     }
 
@@ -914,43 +1090,47 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageSize_ = pageSize_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.pageToken_ = pageToken_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.status_ = status_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         adReviewCenterAdId_.makeImmutable();
         result.adReviewCenterAdId_ = adReviewCenterAdId_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dateTimeRange_ =
             dateTimeRangeBuilder_ == null ? dateTimeRange_ : dateTimeRangeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         searchText_.makeImmutable();
         result.searchText_ = searchText_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         buyerAccountId_.makeImmutable();
         result.buyerAccountId_ = buyerAccountId_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest result) {
+      result.adReviewStatusCase_ = adReviewStatusCase_;
+      result.adReviewStatus_ = this.adReviewStatus_;
     }
 
     @java.lang.Override
@@ -968,7 +1148,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -976,16 +1156,13 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
-      }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
       }
       if (!other.adReviewCenterAdId_.isEmpty()) {
         if (adReviewCenterAdId_.isEmpty()) {
           adReviewCenterAdId_ = other.adReviewCenterAdId_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         } else {
           ensureAdReviewCenterAdIdIsMutable();
           adReviewCenterAdId_.addAll(other.adReviewCenterAdId_);
@@ -998,7 +1175,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       if (!other.searchText_.isEmpty()) {
         if (searchText_.isEmpty()) {
           searchText_ = other.searchText_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
         } else {
           ensureSearchTextIsMutable();
           searchText_.addAll(other.searchText_);
@@ -1009,12 +1186,28 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
         if (buyerAccountId_.isEmpty()) {
           buyerAccountId_ = other.buyerAccountId_;
           buyerAccountId_.makeImmutable();
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
         } else {
           ensureBuyerAccountIdIsMutable();
           buyerAccountId_.addAll(other.buyerAccountId_);
         }
         onChanged();
+      }
+      switch (other.getAdReviewStatusCase()) {
+        case STATUS:
+          {
+            setStatusValue(other.getStatusValue());
+            break;
+          }
+        case MANUAL_REVIEW_STATUS:
+          {
+            setManualReviewStatusValue(other.getManualReviewStatusValue());
+            break;
+          }
+        case ADREVIEWSTATUS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1045,25 +1238,26 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 16:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 32:
               {
-                status_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                int rawValue = input.readEnum();
+                adReviewStatusCase_ = 4;
+                adReviewStatus_ = rawValue;
                 break;
               } // case 32
             case 42:
@@ -1077,7 +1271,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
               {
                 input.readMessage(
                     internalGetDateTimeRangeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1105,6 +1299,13 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
                 input.popLimit(limit);
                 break;
               } // case 66
+            case 72:
+              {
+                int rawValue = input.readEnum();
+                adReviewStatusCase_ = 9;
+                adReviewStatus_ = rawValue;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1122,7 +1323,313 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       return this;
     }
 
+    private int adReviewStatusCase_ = 0;
+    private java.lang.Object adReviewStatus_;
+
+    public AdReviewStatusCase getAdReviewStatusCase() {
+      return AdReviewStatusCase.forNumber(adReviewStatusCase_);
+    }
+
+    public Builder clearAdReviewStatus() {
+      adReviewStatusCase_ = 0;
+      adReviewStatus_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given status.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return adReviewStatusCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given status.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override
+    public int getStatusValue() {
+      if (adReviewStatusCase_ == 4) {
+        return ((java.lang.Integer) adReviewStatus_).intValue();
+      }
+      return 0;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given status.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      adReviewStatusCase_ = 4;
+      adReviewStatus_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given status.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
+        getStatus() {
+      if (adReviewStatusCase_ == 4) {
+        com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus result =
+            com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus.forNumber(
+                (java.lang.Integer) adReviewStatus_);
+        return result == null
+            ? com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
+                .UNRECOGNIZED
+            : result;
+      }
+      return com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
+          .AD_REVIEW_CENTER_AD_STATUS_UNSPECIFIED;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given status.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      adReviewStatusCase_ = 4;
+      adReviewStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given status.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      if (adReviewStatusCase_ == 4) {
+        adReviewStatusCase_ = 0;
+        adReviewStatus_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given manual review status. Only
+     * available for networks with Manual Creative Review enabled. For more
+     * information, see
+     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the manualReviewStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasManualReviewStatus() {
+      return adReviewStatusCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given manual review status. Only
+     * available for networks with Manual Creative Review enabled. For more
+     * information, see
+     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for manualReviewStatus.
+     */
+    @java.lang.Override
+    public int getManualReviewStatusValue() {
+      if (adReviewStatusCase_ == 9) {
+        return ((java.lang.Integer) adReviewStatus_).intValue();
+      }
+      return 0;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given manual review status. Only
+     * available for networks with Manual Creative Review enabled. For more
+     * information, see
+     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for manualReviewStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManualReviewStatusValue(int value) {
+      adReviewStatusCase_ = 9;
+      adReviewStatus_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given manual review status. Only
+     * available for networks with Manual Creative Review enabled. For more
+     * information, see
+     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The manualReviewStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+        getManualReviewStatus() {
+      if (adReviewStatusCase_ == 9) {
+        com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+            result =
+                com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                    .ManualAdReviewCenterAdStatus.forNumber((java.lang.Integer) adReviewStatus_);
+        return result == null
+            ? com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                .ManualAdReviewCenterAdStatus.UNRECOGNIZED
+            : result;
+      }
+      return com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+          .ManualAdReviewCenterAdStatus.MANUAL_AD_REVIEW_CENTER_AD_STATUS_UNSPECIFIED;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given manual review status. Only
+     * available for networks with Manual Creative Review enabled. For more
+     * information, see
+     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The manualReviewStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManualReviewStatus(
+        com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      adReviewStatusCase_ = 9;
+      adReviewStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only return ads with the given manual review status. Only
+     * available for networks with Manual Creative Review enabled. For more
+     * information, see
+     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearManualReviewStatus() {
+      if (adReviewStatusCase_ == 9) {
+        adReviewStatusCase_ = 0;
+        adReviewStatus_ = null;
+        onChanged();
+      }
+      return this;
+    }
 
     private java.lang.Object parent_ = "";
 
@@ -1234,7 +1741,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1267,7 +1774,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1305,7 +1812,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1349,7 +1856,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1369,7 +1876,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1443,7 +1950,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1462,7 +1969,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1486,118 +1993,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private int status_ = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Only return ads with the given status.
-     * </pre>
-     *
-     * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The enum numeric value on the wire for status.
-     */
-    @java.lang.Override
-    public int getStatusValue() {
-      return status_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Only return ads with the given status.
-     * </pre>
-     *
-     * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The enum numeric value on the wire for status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusValue(int value) {
-      status_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Only return ads with the given status.
-     * </pre>
-     *
-     * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
-        getStatus() {
-      com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus result =
-          com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus.forNumber(
-              status_);
-      return result == null
-          ? com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus
-              .UNRECOGNIZED
-          : result;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Only return ads with the given status.
-     * </pre>
-     *
-     * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(
-        com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      status_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Only return ads with the given status.
-     * </pre>
-     *
-     * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      status_ = 0;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1609,7 +2005,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       if (!adReviewCenterAdId_.isModifiable()) {
         adReviewCenterAdId_ = new com.google.protobuf.LazyStringArrayList(adReviewCenterAdId_);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
     }
 
     /**
@@ -1704,7 +2100,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       ensureAdReviewCenterAdIdIsMutable();
       adReviewCenterAdId_.set(index, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1729,7 +2125,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       ensureAdReviewCenterAdIdIsMutable();
       adReviewCenterAdId_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1751,7 +2147,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     public Builder addAllAdReviewCenterAdId(java.lang.Iterable<java.lang.String> values) {
       ensureAdReviewCenterAdIdIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adReviewCenterAdId_);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1771,7 +2167,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      */
     public Builder clearAdReviewCenterAdId() {
       adReviewCenterAdId_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       ;
       onChanged();
       return this;
@@ -1798,7 +2194,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureAdReviewCenterAdIdIsMutable();
       adReviewCenterAdId_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1816,7 +2212,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1825,7 +2222,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * @return Whether the dateTimeRange field is set.
      */
     public boolean hasDateTimeRange() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1834,7 +2231,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1858,7 +2256,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1873,7 +2272,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       } else {
         dateTimeRangeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1884,7 +2283,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1896,7 +2296,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       } else {
         dateTimeRangeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1907,7 +2307,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1915,7 +2316,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      */
     public Builder mergeDateTimeRange(com.google.type.Interval value) {
       if (dateTimeRangeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && dateTimeRange_ != null
             && dateTimeRange_ != com.google.type.Interval.getDefaultInstance()) {
           getDateTimeRangeBuilder().mergeFrom(value);
@@ -1926,7 +2327,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
         dateTimeRangeBuilder_.mergeFrom(value);
       }
       if (dateTimeRange_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1938,14 +2339,15 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearDateTimeRange() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       dateTimeRange_ = null;
       if (dateTimeRangeBuilder_ != null) {
         dateTimeRangeBuilder_.dispose();
@@ -1961,14 +2363,15 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.type.Interval.Builder getDateTimeRangeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetDateTimeRangeFieldBuilder().getBuilder();
     }
@@ -1979,7 +2382,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2001,7 +2405,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, only return ads that served within the given date
      * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days.
+     * provided, the date range will be the last 30 days. This filter does not
+     * apply to the PENDING manual review status.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2031,7 +2436,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       if (!searchText_.isModifiable()) {
         searchText_ = new com.google.protobuf.LazyStringArrayList(searchText_);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
     }
 
     /**
@@ -2136,7 +2541,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       ensureSearchTextIsMutable();
       searchText_.set(index, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2163,7 +2568,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       ensureSearchTextIsMutable();
       searchText_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2187,7 +2592,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     public Builder addAllSearchText(java.lang.Iterable<java.lang.String> values) {
       ensureSearchTextIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, searchText_);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2209,7 +2614,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      */
     public Builder clearSearchText() {
       searchText_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ;
       onChanged();
       return this;
@@ -2238,7 +2643,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensureSearchTextIsMutable();
       searchText_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2249,7 +2654,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       if (!buyerAccountId_.isModifiable()) {
         buyerAccountId_ = makeMutableCopy(buyerAccountId_);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
     }
 
     /**
@@ -2258,7 +2663,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2276,7 +2681,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2293,7 +2698,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2311,7 +2716,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2324,7 +2729,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
 
       ensureBuyerAccountIdIsMutable();
       buyerAccountId_.setLong(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2335,7 +2740,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2347,7 +2752,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
 
       ensureBuyerAccountIdIsMutable();
       buyerAccountId_.addLong(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2358,7 +2763,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2369,7 +2774,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     public Builder addAllBuyerAccountId(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureBuyerAccountIdIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, buyerAccountId_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2380,7 +2785,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. If provided, restrict the search to creatives belonging to one of
      * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-     * buyer account IDs can be found via the ProgrammaticBuyerService.
+     * buyer account IDs can be found using the `ProgrammaticBuyerService`.
      * </pre>
      *
      * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2389,7 +2794,7 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      */
     public Builder clearBuyerAccountId() {
       buyerAccountId_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

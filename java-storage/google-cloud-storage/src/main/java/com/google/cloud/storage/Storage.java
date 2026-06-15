@@ -3185,6 +3185,7 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
     private final List<SourceBlob> sourceBlobs;
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
+    private final boolean deleteSourceObjects;
 
     private transient Opts<ObjectTargetOpt> targetOpts;
 
@@ -3222,6 +3223,7 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobInfo target;
       private Opts<ObjectTargetOpt> opts = Opts.empty();
+      private boolean deleteSourceObjects;
 
       /** Add source blobs for compose operation. */
       public Builder addSource(Iterable<String> blobs) {
@@ -3265,6 +3267,16 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
         return this;
       }
 
+      /**
+       * Sets whether to delete source blobs after compose operation.
+       *
+       * @since 2.67.0
+       */
+      public Builder setDeleteSourceObjects(boolean deleteSourceObjects) {
+        this.deleteSourceObjects = deleteSourceObjects;
+        return this;
+      }
+
       /** Creates a {@code ComposeRequest} object. */
       public ComposeRequest build() {
         checkArgument(!sourceBlobs.isEmpty());
@@ -3280,6 +3292,7 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
       // keep targetOptions for serialization even though we will read targetOpts
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
       targetOpts = builder.opts.prepend(Opts.unwrap(targetOptions).resolveFrom(target));
+      deleteSourceObjects = builder.deleteSourceObjects;
     }
 
     /** Returns compose operation's source blobs. */
@@ -3295,6 +3308,11 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
     /** Returns compose operation's target blob's options. */
     public List<BlobTargetOption> getTargetOptions() {
       return targetOptions;
+    }
+
+    /** Returns whether to delete source blobs after compose operation. */
+    public boolean isDeleteSourceObjects() {
+      return deleteSourceObjects;
     }
 
     @InternalApi

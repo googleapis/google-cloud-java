@@ -52,6 +52,46 @@ public final class ApplicationServiceProto extends com.google.protobuf.Generated
       internal_static_google_ads_admanager_v1_ListApplicationsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListApplicationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateApplicationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateApplicationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateApplicationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateApplicationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateApplicationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateApplicationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateApplicationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateApplicationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateApplicationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateApplicationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateApplicationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateApplicationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveApplicationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveApplicationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveApplicationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveApplicationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -67,7 +107,8 @@ public final class ApplicationServiceProto extends com.google.protobuf.Generated
           + "ogle/ads/admanager/v1/application_messag"
           + "es.proto\032\034google/api/annotations.proto\032\027"
           + "google/api/client.proto\032\037google/api/fiel"
-          + "d_behavior.proto\032\031google/api/resource.proto\"S\n"
+          + "d_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"S\n"
           + "\025GetApplicationRequest\022:\n"
           + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
           + "$admanager.googleapis.com/Application\"\303\001\n"
@@ -82,21 +123,82 @@ public final class ApplicationServiceProto extends com.google.protobuf.Generated
           + "\030ListApplicationsResponse\022:\n"
           + "\014applications\030\001 \003(\0132$.google.ads.admanager.v1.Application\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\254\003\n"
+          + "total_size\030\003 \001(\005\"\224\001\n"
+          + "\030CreateApplicationRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022>\n"
+          + "\013application\030\002 \001"
+          + "(\0132$.google.ads.admanager.v1.ApplicationB\003\340A\002\"\244\001\n"
+          + "\036BatchCreateApplicationsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022H\n"
+          + "\010requests\030\002 \003(\01321.g"
+          + "oogle.ads.admanager.v1.CreateApplicationRequestB\003\340A\002\"]\n"
+          + "\037BatchCreateApplicationsResponse\022:\n"
+          + "\014applications\030\001 \003(\0132$.google.ads.admanager.v1.Application\"\220\001\n"
+          + "\030UpdateApplicationRequest\022>\n"
+          + "\013application\030\001 \001(\0132$."
+          + "google.ads.admanager.v1.ApplicationB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\244\001\n"
+          + "\036BatchUpdateApplicationsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022H\n"
+          + "\010requests\030\002"
+          + " \003(\01321.google.ads.admanager.v1.UpdateApplicationRequestB\003\340A\002\"]\n"
+          + "\037BatchUpdateApplicationsResponse\022:\n"
+          + "\014applications\030\001 \003(\0132$.google.ads.admanager.v1.Application\"\230\001\n"
+          + "\037BatchArchiveApplicationsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022;\n"
+          + "\005names\030\002 \003(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/Application\"\"\n"
+          + " BatchArchiveApplicationsResponse\"\232\001\n"
+          + "!BatchUnarchiveApplicationsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022;\n"
+          + "\005names\030\002 \003(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/Application\"$\n"
+          + "\"BatchUnarchiveApplicationsResponse2\360\r\n"
           + "\022ApplicationService\022\233\001\n"
-          + "\016GetApplication\022..google.ads.admanager.v1.GetApplicationRequest\032$.google."
-          + "ads.admanager.v1.Application\"3\332A\004name\202\323\344"
-          + "\223\002&\022$/v1/{name=networks/*/applications/*}\022\256\001\n"
-          + "\020ListApplications\0220.google.ads.admanager.v1.ListApplicationsRequest\0321.googl"
-          + "e.ads.admanager.v1.ListApplicationsRespo"
-          + "nse\"5\332A\006parent\202\323\344\223\002&\022$/v1/{parent=networ"
-          + "ks/*}/applications\032G\312A\030admanager.googlea"
-          + "pis.com\322A)https://www.googleapis.com/auth/admanagerB\313\001\n"
-          + "\033com.google.ads.admanager.v1B\027ApplicationServiceProtoP\001Z@google.g"
-          + "olang.org/genproto/googleapis/ads/admana"
-          + "ger/v1;admanager\252\002\027Google.Ads.AdManager."
-          + "V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::A"
-          + "ds::AdManager::V1b\006proto3"
+          + "\016GetApplication\022..google.ads.admanager.v1.GetApplicationRequest\032$.googl"
+          + "e.ads.admanager.v1.Application\"3\332A\004name\202"
+          + "\323\344\223\002&\022$/v1/{name=networks/*/applications/*}\022\256\001\n"
+          + "\020ListApplications\0220.google.ads.admanager.v1.ListApplicationsRequest\0321.goo"
+          + "gle.ads.admanager.v1.ListApplicationsRes"
+          + "ponse\"5\332A\006parent\202\323\344\223\002&\022$/v1/{parent=networks/*}/applications\022\274\001\n"
+          + "\021CreateApplication\0221.google.ads.admanager.v1.CreateAppli"
+          + "cationRequest\032$.google.ads.admanager.v1."
+          + "Application\"N\332A\022parent,application\202\323\344\223\0023"
+          + "\"$/v1/{parent=networks/*}/applications:\013application\022\333\001\n"
+          + "\027BatchCreateApplications\0227.google.ads.admanager.v1.BatchCreateApp"
+          + "licationsRequest\0328.google.ads.admanager."
+          + "v1.BatchCreateApplicationsResponse\"M\332A\017p"
+          + "arent,requests\202\323\344\223\0025\"0/v1/{parent=networks/*}/applications:batchCreate:\001*\022\315\001\n"
+          + "\021UpdateApplication\0221.google.ads.admanager.v"
+          + "1.UpdateApplicationRequest\032$.google.ads."
+          + "admanager.v1.Application\"_\332A\027application"
+          + ",update_mask\202\323\344\223\002?20/v1/{application.nam"
+          + "e=networks/*/applications/*}:\013application\022\333\001\n"
+          + "\027BatchUpdateApplications\0227.google.ads.admanager.v1.BatchUpdateApplicationsR"
+          + "equest\0328.google.ads.admanager.v1.BatchUp"
+          + "dateApplicationsResponse\"M\332A\017parent,requ"
+          + "ests\202\323\344\223\0025\"0/v1/{parent=networks/*}/applications:batchUpdate:\001*\022\334\001\n"
+          + "\030BatchArchiveApplications\0228.google.ads.admanager.v1.B"
+          + "atchArchiveApplicationsRequest\0329.google.ads.admanager.v1.BatchArchiveApplication"
+          + "sResponse\"K\332A\014parent,names\202\323\344\223\0026\"1/v1/{p"
+          + "arent=networks/*}/applications:batchArchive:\001*\022\344\001\n"
+          + "\032BatchUnarchiveApplications\022:.google.ads.admanager.v1.BatchUnarchiveAp"
+          + "plicationsRequest\032;.google.ads.admanager.v1.BatchUnarchiveApplicationsResponse\"M"
+          + "\332A\014parent,names\202\323\344\223\0028\"3/v1/{parent=netwo"
+          + "rks/*}/applications:batchUnarchive:\001*\032z\312"
+          + "A\030admanager.googleapis.com\322A\\https://www"
+          + ".googleapis.com/auth/admanager,https://w"
+          + "ww.googleapis.com/auth/admanager.readonlyB\313\001\n"
+          + "\033com.google.ads.admanager.v1B\027ApplicationServiceProtoP\001Z@google.golang.org/"
+          + "genproto/googleapis/ads/admanager/v1;adm"
+          + "anager\252\002\027Google.Ads.AdManager.V1\312\002\027Googl"
+          + "e\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -107,6 +209,7 @@ public final class ApplicationServiceProto extends com.google.protobuf.Generated
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetApplicationRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -132,12 +235,89 @@ public final class ApplicationServiceProto extends com.google.protobuf.Generated
             new java.lang.String[] {
               "Applications", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateApplicationRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_CreateApplicationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateApplicationRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Application",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateApplicationsRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchCreateApplicationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateApplicationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateApplicationsResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchCreateApplicationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateApplicationsResponse_descriptor,
+            new java.lang.String[] {
+              "Applications",
+            });
+    internal_static_google_ads_admanager_v1_UpdateApplicationRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateApplicationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateApplicationRequest_descriptor,
+            new java.lang.String[] {
+              "Application", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateApplicationsRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateApplicationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateApplicationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateApplicationsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateApplicationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateApplicationsResponse_descriptor,
+            new java.lang.String[] {
+              "Applications",
+            });
+    internal_static_google_ads_admanager_v1_BatchArchiveApplicationsRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_BatchArchiveApplicationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveApplicationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchArchiveApplicationsResponse_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchArchiveApplicationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveApplicationsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsRequest_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsResponse_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUnarchiveApplicationsResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.ApplicationMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

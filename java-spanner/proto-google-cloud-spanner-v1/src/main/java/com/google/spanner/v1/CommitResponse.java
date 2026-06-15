@@ -51,7 +51,10 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
     super(builder);
   }
 
-  private CommitResponse() {}
+  private CommitResponse() {
+    isolationLevel_ = 0;
+    readLockMode_ = 0;
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.spanner.v1.CommitResponseProto
@@ -953,6 +956,84 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
         : cacheUpdate_;
   }
 
+  public static final int ISOLATION_LEVEL_FIELD_NUMBER = 7;
+  private int isolationLevel_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The isolation level used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+   *
+   * @return The enum numeric value on the wire for isolationLevel.
+   */
+  @java.lang.Override
+  public int getIsolationLevelValue() {
+    return isolationLevel_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The isolation level used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+   *
+   * @return The isolationLevel.
+   */
+  @java.lang.Override
+  public com.google.spanner.v1.TransactionOptions.IsolationLevel getIsolationLevel() {
+    com.google.spanner.v1.TransactionOptions.IsolationLevel result =
+        com.google.spanner.v1.TransactionOptions.IsolationLevel.forNumber(isolationLevel_);
+    return result == null
+        ? com.google.spanner.v1.TransactionOptions.IsolationLevel.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int READ_LOCK_MODE_FIELD_NUMBER = 8;
+  private int readLockMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The read lock mode used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+   *
+   * @return The enum numeric value on the wire for readLockMode.
+   */
+  @java.lang.Override
+  public int getReadLockModeValue() {
+    return readLockMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The read lock mode used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+   *
+   * @return The readLockMode.
+   */
+  @java.lang.Override
+  public com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode getReadLockMode() {
+    com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode result =
+        com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.forNumber(readLockMode_);
+    return result == null
+        ? com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -983,6 +1064,17 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getCacheUpdate());
     }
+    if (isolationLevel_
+        != com.google.spanner.v1.TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, isolationLevel_);
+    }
+    if (readLockMode_
+        != com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode
+            .READ_LOCK_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, readLockMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1008,6 +1100,17 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCacheUpdate());
+    }
+    if (isolationLevel_
+        != com.google.spanner.v1.TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, isolationLevel_);
+    }
+    if (readLockMode_
+        != com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode
+            .READ_LOCK_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, readLockMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1040,6 +1143,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
     if (hasCacheUpdate()) {
       if (!getCacheUpdate().equals(other.getCacheUpdate())) return false;
     }
+    if (isolationLevel_ != other.isolationLevel_) return false;
+    if (readLockMode_ != other.readLockMode_) return false;
     if (!getMultiplexedSessionRetryCase().equals(other.getMultiplexedSessionRetryCase()))
       return false;
     switch (multiplexedSessionRetryCase_) {
@@ -1076,6 +1181,10 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CACHE_UPDATE_FIELD_NUMBER;
       hash = (53 * hash) + getCacheUpdate().hashCode();
     }
+    hash = (37 * hash) + ISOLATION_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + isolationLevel_;
+    hash = (37 * hash) + READ_LOCK_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + readLockMode_;
     switch (multiplexedSessionRetryCase_) {
       case 4:
         hash = (37 * hash) + PRECOMMIT_TOKEN_FIELD_NUMBER;
@@ -1258,6 +1367,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
         cacheUpdateBuilder_.dispose();
         cacheUpdateBuilder_ = null;
       }
+      isolationLevel_ = 0;
+      readLockMode_ = 0;
       multiplexedSessionRetryCase_ = 0;
       multiplexedSessionRetry_ = null;
       return this;
@@ -1319,6 +1430,12 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
             cacheUpdateBuilder_ == null ? cacheUpdate_ : cacheUpdateBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.isolationLevel_ = isolationLevel_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.readLockMode_ = readLockMode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1353,6 +1470,12 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasCacheUpdate()) {
         mergeCacheUpdate(other.getCacheUpdate());
+      }
+      if (other.isolationLevel_ != 0) {
+        setIsolationLevelValue(other.getIsolationLevelValue());
+      }
+      if (other.readLockMode_ != 0) {
+        setReadLockModeValue(other.getReadLockModeValue());
       }
       switch (other.getMultiplexedSessionRetryCase()) {
         case PRECOMMIT_TOKEN:
@@ -1426,6 +1549,18 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 56:
+              {
+                isolationLevel_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+            case 64:
+              {
+                readLockMode_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2576,6 +2711,202 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessage
         cacheUpdate_ = null;
       }
       return cacheUpdateBuilder_;
+    }
+
+    private int isolationLevel_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The isolation level used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+     *
+     * @return The enum numeric value on the wire for isolationLevel.
+     */
+    @java.lang.Override
+    public int getIsolationLevelValue() {
+      return isolationLevel_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The isolation level used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+     *
+     * @param value The enum numeric value on the wire for isolationLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsolationLevelValue(int value) {
+      isolationLevel_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The isolation level used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+     *
+     * @return The isolationLevel.
+     */
+    @java.lang.Override
+    public com.google.spanner.v1.TransactionOptions.IsolationLevel getIsolationLevel() {
+      com.google.spanner.v1.TransactionOptions.IsolationLevel result =
+          com.google.spanner.v1.TransactionOptions.IsolationLevel.forNumber(isolationLevel_);
+      return result == null
+          ? com.google.spanner.v1.TransactionOptions.IsolationLevel.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The isolation level used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+     *
+     * @param value The isolationLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsolationLevel(
+        com.google.spanner.v1.TransactionOptions.IsolationLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      isolationLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The isolation level used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsolationLevel() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      isolationLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int readLockMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The read lock mode used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+     *
+     * @return The enum numeric value on the wire for readLockMode.
+     */
+    @java.lang.Override
+    public int getReadLockModeValue() {
+      return readLockMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The read lock mode used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+     *
+     * @param value The enum numeric value on the wire for readLockMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadLockModeValue(int value) {
+      readLockMode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The read lock mode used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+     *
+     * @return The readLockMode.
+     */
+    @java.lang.Override
+    public com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode getReadLockMode() {
+      com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode result =
+          com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.forNumber(readLockMode_);
+      return result == null
+          ? com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The read lock mode used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+     *
+     * @param value The readLockMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadLockMode(
+        com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      readLockMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The read lock mode used for the read-write transaction.
+     * </pre>
+     *
+     * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReadLockMode() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      readLockMode_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.CommitResponse)

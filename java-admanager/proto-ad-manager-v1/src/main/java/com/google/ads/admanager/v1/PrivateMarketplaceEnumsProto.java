@@ -55,19 +55,21 @@ public final class PrivateMarketplaceEnumsProto extends com.google.protobuf.Gene
     java.lang.String[] descriptorData = {
       "\n"
           + "7google/ads/admanager/v1/private_market"
-          + "place_enums.proto\022\027google.ads.admanager.v1\"\300\001\n"
-          + " PrivateMarketplaceDealStatusEnum\"\233\001\n"
+          + "place_enums.proto\022\027google.ads.admanager.v1\"\317\001\n"
+          + " PrivateMarketplaceDealStatusEnum\"\252\001\n"
           + "\034PrivateMarketplaceDealStatus\022/\n"
           + "+PRIVATE_MARKETPLACE_DEAL_STATUS_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010CANCELED\020\003\022\021\n\r"
           + "SELLER_PAUSED\020\004\022\020\n"
-          + "\014BUYER_PAUSED\020\005B\320\001\n"
-          + "\033com.google.ads.admanager.v1B\034PrivateMa"
-          + "rketplaceEnumsProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;ad"
-          + "manager\252\002\027Google.Ads.AdManager.V1\312\002\027Goog"
-          + "le\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\014BUYER_PAUSED\020\005\022\r\n"
+          + "\tCOMPLETED\020\006B\320\001\n"
+          + "\033com.google.ads.admanager.v1B\034PrivateMarketplaceEnumsProtoP\001Z@go"
+          + "ogle.golang.org/genproto/googleapis/ads/"
+          + "admanager/v1;admanager\252\002\027Google.Ads.AdMa"
+          + "nager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goo"
+          + "gle::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

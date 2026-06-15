@@ -140,15 +140,19 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. `CustomTargetingKey` ID.
+   * Output only. Deprecated: `CustomTargetingKey` ID.
    * </pre>
    *
-   * <code>optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+   *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
    * @return Whether the customTargetingKeyId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCustomTargetingKeyId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -157,15 +161,19 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. `CustomTargetingKey` ID.
+   * Output only. Deprecated: `CustomTargetingKey` ID.
    * </pre>
    *
-   * <code>optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+   *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
    * @return The customTargetingKeyId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getCustomTargetingKeyId() {
     return customTargetingKeyId_;
   }
@@ -1123,16 +1131,19 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `CustomTargetingKey` ID.
+     * Output only. Deprecated: `CustomTargetingKey` ID.
      * </pre>
      *
      * <code>
-     * optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+     *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
      * @return Whether the customTargetingKeyId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasCustomTargetingKeyId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1141,16 +1152,19 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `CustomTargetingKey` ID.
+     * Output only. Deprecated: `CustomTargetingKey` ID.
      * </pre>
      *
      * <code>
-     * optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+     *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
      * @return The customTargetingKeyId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getCustomTargetingKeyId() {
       return customTargetingKeyId_;
     }
@@ -1159,16 +1173,19 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `CustomTargetingKey` ID.
+     * Output only. Deprecated: `CustomTargetingKey` ID.
      * </pre>
      *
      * <code>
-     * optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+     *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
      * @param value The customTargetingKeyId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setCustomTargetingKeyId(long value) {
 
       customTargetingKeyId_ = value;
@@ -1181,15 +1198,18 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `CustomTargetingKey` ID.
+     * Output only. Deprecated: `CustomTargetingKey` ID.
      * </pre>
      *
      * <code>
-     * optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+     *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearCustomTargetingKeyId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       customTargetingKeyId_ = 0L;

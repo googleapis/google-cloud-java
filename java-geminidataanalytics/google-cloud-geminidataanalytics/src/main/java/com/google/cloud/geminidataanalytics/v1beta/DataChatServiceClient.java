@@ -76,7 +76,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Chat</td>
- *      <td><p> Answers a data question by generating a stream of [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.</td>
+ *      <td><p> Answers a data question by generating a stream of [Message][google.cloud.geminidataanalytics.v1.Message] objects.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -197,8 +197,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -337,7 +338,7 @@ public class DataChatServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Answers a data question by generating a stream of
-   * [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.
+   * [Message][google.cloud.geminidataanalytics.v1.Message] objects.
    *
    * <p>Sample code:
    *
@@ -353,6 +354,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setProject(ProjectName.of("[PROJECT]").toString())
    *           .setParent("parent-995424086")
    *           .addAllMessages(new ArrayList<Message>())
+   *           .setCredentials(Credentials.newBuilder().build())
    *           .build();
    *   ServerStream<Message> stream = dataChatServiceClient.chatCallable().call(request);
    *   for (Message response : stream) {
@@ -1140,13 +1142,19 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1179,13 +1187,19 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1219,13 +1233,19 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

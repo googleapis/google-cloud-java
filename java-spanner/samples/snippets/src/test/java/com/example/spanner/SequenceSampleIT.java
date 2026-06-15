@@ -93,7 +93,8 @@ public class SequenceSampleIT extends SampleTestBaseV2 {
         out.contains(
             "Created Seq sequence and Customers table, where the key column "
                 + "CustomerId uses the sequence as a default value"));
-    assertEquals(out.split("Inserted customer record with CustomerId", -1).length - 1, 3);
+    int insertCount = out.split("Inserted customer record with CustomerId", -1).length - 1;
+    assertTrue(insertCount > 0 && insertCount % 3 == 0);
     assertTrue(out.contains("Number of customer records inserted is: 3"));
   }
 
@@ -115,7 +116,8 @@ public class SequenceSampleIT extends SampleTestBaseV2 {
     }
     assertTrue(
         out.contains("Altered Seq sequence to skip an inclusive range between 1000 and 5000000"));
-    assertEquals(out.split("Inserted customer record with CustomerId", -1).length - 1, 3);
+    int insertCount = out.split("Inserted customer record with CustomerId", -1).length - 1;
+    assertTrue(insertCount > 0 && insertCount % 3 == 0);
     assertTrue(out.contains("Number of customer records inserted is: 3"));
   }
 

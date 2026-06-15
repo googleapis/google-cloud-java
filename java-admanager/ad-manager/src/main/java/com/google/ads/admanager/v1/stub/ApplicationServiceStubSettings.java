@@ -19,9 +19,19 @@ package com.google.ads.admanager.v1.stub;
 import static com.google.ads.admanager.v1.ApplicationServiceClient.ListApplicationsPagedResponse;
 
 import com.google.ads.admanager.v1.Application;
+import com.google.ads.admanager.v1.BatchArchiveApplicationsRequest;
+import com.google.ads.admanager.v1.BatchArchiveApplicationsResponse;
+import com.google.ads.admanager.v1.BatchCreateApplicationsRequest;
+import com.google.ads.admanager.v1.BatchCreateApplicationsResponse;
+import com.google.ads.admanager.v1.BatchUnarchiveApplicationsRequest;
+import com.google.ads.admanager.v1.BatchUnarchiveApplicationsResponse;
+import com.google.ads.admanager.v1.BatchUpdateApplicationsRequest;
+import com.google.ads.admanager.v1.BatchUpdateApplicationsResponse;
+import com.google.ads.admanager.v1.CreateApplicationRequest;
 import com.google.ads.admanager.v1.GetApplicationRequest;
 import com.google.ads.admanager.v1.ListApplicationsRequest;
 import com.google.ads.admanager.v1.ListApplicationsResponse;
+import com.google.ads.admanager.v1.UpdateApplicationRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -109,12 +119,26 @@ import javax.annotation.Generated;
 public class ApplicationServiceStubSettings extends StubSettings<ApplicationServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/admanager")
+          .add("https://www.googleapis.com/auth/admanager.readonly")
+          .build();
 
   private final UnaryCallSettings<GetApplicationRequest, Application> getApplicationSettings;
   private final PagedCallSettings<
           ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
       listApplicationsSettings;
+  private final UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings;
+  private final UnaryCallSettings<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsSettings;
+  private final UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings;
+  private final UnaryCallSettings<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsSettings;
+  private final UnaryCallSettings<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsSettings;
+  private final UnaryCallSettings<
+          BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsSettings;
 
   private static final PagedListDescriptor<
           ListApplicationsRequest, ListApplicationsResponse, Application>
@@ -183,6 +207,40 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
           ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
       listApplicationsSettings() {
     return listApplicationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createApplication. */
+  public UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings() {
+    return createApplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateApplications. */
+  public UnaryCallSettings<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsSettings() {
+    return batchCreateApplicationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateApplication. */
+  public UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings() {
+    return updateApplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateApplications. */
+  public UnaryCallSettings<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsSettings() {
+    return batchUpdateApplicationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveApplications. */
+  public UnaryCallSettings<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsSettings() {
+    return batchArchiveApplicationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUnarchiveApplications. */
+  public UnaryCallSettings<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsSettings() {
+    return batchUnarchiveApplicationsSettings;
   }
 
   public ApplicationServiceStub createStub() throws IOException {
@@ -269,6 +327,13 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
 
     getApplicationSettings = settingsBuilder.getApplicationSettings().build();
     listApplicationsSettings = settingsBuilder.listApplicationsSettings().build();
+    createApplicationSettings = settingsBuilder.createApplicationSettings().build();
+    batchCreateApplicationsSettings = settingsBuilder.batchCreateApplicationsSettings().build();
+    updateApplicationSettings = settingsBuilder.updateApplicationSettings().build();
+    batchUpdateApplicationsSettings = settingsBuilder.batchUpdateApplicationsSettings().build();
+    batchArchiveApplicationsSettings = settingsBuilder.batchArchiveApplicationsSettings().build();
+    batchUnarchiveApplicationsSettings =
+        settingsBuilder.batchUnarchiveApplicationsSettings().build();
   }
 
   @Override
@@ -289,6 +354,22 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
     private final PagedCallSettings.Builder<
             ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
         listApplicationsSettings;
+    private final UnaryCallSettings.Builder<CreateApplicationRequest, Application>
+        createApplicationSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+        batchCreateApplicationsSettings;
+    private final UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
+        updateApplicationSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+        batchUpdateApplicationsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+        batchArchiveApplicationsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+        batchUnarchiveApplicationsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -318,10 +399,23 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
 
       getApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listApplicationsSettings = PagedCallSettings.newBuilder(LIST_APPLICATIONS_PAGE_STR_FACT);
+      createApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateApplicationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateApplicationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchArchiveApplicationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUnarchiveApplicationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getApplicationSettings, listApplicationsSettings);
+              getApplicationSettings,
+              listApplicationsSettings,
+              createApplicationSettings,
+              batchCreateApplicationsSettings,
+              updateApplicationSettings,
+              batchUpdateApplicationsSettings,
+              batchArchiveApplicationsSettings,
+              batchUnarchiveApplicationsSettings);
       initDefaults(this);
     }
 
@@ -330,10 +424,23 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
 
       getApplicationSettings = settings.getApplicationSettings.toBuilder();
       listApplicationsSettings = settings.listApplicationsSettings.toBuilder();
+      createApplicationSettings = settings.createApplicationSettings.toBuilder();
+      batchCreateApplicationsSettings = settings.batchCreateApplicationsSettings.toBuilder();
+      updateApplicationSettings = settings.updateApplicationSettings.toBuilder();
+      batchUpdateApplicationsSettings = settings.batchUpdateApplicationsSettings.toBuilder();
+      batchArchiveApplicationsSettings = settings.batchArchiveApplicationsSettings.toBuilder();
+      batchUnarchiveApplicationsSettings = settings.batchUnarchiveApplicationsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getApplicationSettings, listApplicationsSettings);
+              getApplicationSettings,
+              listApplicationsSettings,
+              createApplicationSettings,
+              batchCreateApplicationsSettings,
+              updateApplicationSettings,
+              batchUpdateApplicationsSettings,
+              batchArchiveApplicationsSettings,
+              batchUnarchiveApplicationsSettings);
     }
 
     private static Builder createDefault() {
@@ -356,6 +463,36 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
 
       builder
           .listApplicationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createApplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateApplicationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateApplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateApplicationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchArchiveApplicationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUnarchiveApplicationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -387,6 +524,46 @@ public class ApplicationServiceStubSettings extends StubSettings<ApplicationServ
             ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
         listApplicationsSettings() {
       return listApplicationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createApplication. */
+    public UnaryCallSettings.Builder<CreateApplicationRequest, Application>
+        createApplicationSettings() {
+      return createApplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateApplications. */
+    public UnaryCallSettings.Builder<
+            BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+        batchCreateApplicationsSettings() {
+      return batchCreateApplicationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateApplication. */
+    public UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
+        updateApplicationSettings() {
+      return updateApplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateApplications. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+        batchUpdateApplicationsSettings() {
+      return batchUpdateApplicationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveApplications. */
+    public UnaryCallSettings.Builder<
+            BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+        batchArchiveApplicationsSettings() {
+      return batchArchiveApplicationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUnarchiveApplications. */
+    public UnaryCallSettings.Builder<
+            BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+        batchUnarchiveApplicationsSettings() {
+      return batchUnarchiveApplicationsSettings;
     }
 
     @Override

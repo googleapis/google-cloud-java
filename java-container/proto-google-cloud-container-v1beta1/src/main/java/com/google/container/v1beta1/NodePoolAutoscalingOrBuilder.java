@@ -84,7 +84,7 @@ public interface NodePoolAutoscalingOrBuilder
    *
    *
    * <pre>
-   * Location policy used when scaling up a nodepool.
+   * Location policy used when scaling up a node pool.
    * </pre>
    *
    * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
@@ -97,7 +97,7 @@ public interface NodePoolAutoscalingOrBuilder
    *
    *
    * <pre>
-   * Location policy used when scaling up a nodepool.
+   * Location policy used when scaling up a node pool.
    * </pre>
    *
    * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>

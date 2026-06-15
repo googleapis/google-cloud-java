@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [UpdateProcess][google.cloud.datacatalog.lineage.v1.UpdateProcess].
+ * [UpdateProcess][google.cloud.datacatalog.lineage.v1.Lineage.UpdateProcess].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.UpdateProcessRequest}
@@ -52,7 +52,9 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     super(builder);
   }
 
-  private UpdateProcessRequest() {}
+  private UpdateProcessRequest() {
+    requestId_ = "";
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.lineage.v1.LineageProto
@@ -142,11 +144,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -159,11 +162,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -176,11 +180,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -194,16 +199,78 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If set to true and the process is not found, the request inserts it.
+   * Optional. If set to true and the process is not found, the request inserts
+   * it.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
   @java.lang.Override
   public boolean getAllowMissing() {
     return allowMissing_;
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for this request. Restricted to 36 ASCII
+   * characters. A random UUID is recommended. This request is idempotent only
+   * if a `request_id` is provided.
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for this request. Restricted to 36 ASCII
+   * characters. A random UUID is recommended. This request is idempotent only
+   * if a `request_id` is provided.
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -229,6 +296,9 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     if (allowMissing_ != false) {
       output.writeBool(3, allowMissing_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -246,6 +316,9 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     }
     if (allowMissing_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, allowMissing_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -272,6 +345,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
     if (getAllowMissing() != other.getAllowMissing()) return false;
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -293,6 +367,8 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowMissing());
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -400,7 +476,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Request message for
-   * [UpdateProcess][google.cloud.datacatalog.lineage.v1.UpdateProcess].
+   * [UpdateProcess][google.cloud.datacatalog.lineage.v1.Lineage.UpdateProcess].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.UpdateProcessRequest}
@@ -456,6 +532,7 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
+      requestId_ = "";
       return this;
     }
 
@@ -506,6 +583,9 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.allowMissing_ = allowMissing_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -531,6 +611,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
       }
       if (other.getAllowMissing() != false) {
         setAllowMissing(other.getAllowMissing());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -577,6 +662,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -838,11 +929,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -854,11 +946,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -876,11 +969,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -900,11 +994,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -921,11 +1016,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -950,11 +1046,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -971,11 +1068,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000002;
@@ -987,11 +1085,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1007,11 +1106,12 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.FieldMask,
@@ -1036,10 +1136,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true and the process is not found, the request inserts it.
+     * Optional. If set to true and the process is not found, the request inserts
+     * it.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMissing.
      */
@@ -1052,10 +1153,11 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true and the process is not found, the request inserts it.
+     * Optional. If set to true and the process is not found, the request inserts
+     * it.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMissing to set.
      * @return This builder for chaining.
@@ -1072,16 +1174,148 @@ public final class UpdateProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true and the process is not found, the request inserts it.
+     * Optional. If set to true and the process is not found, the request inserts
+     * it.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
       bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
+     * </pre>
+     *
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

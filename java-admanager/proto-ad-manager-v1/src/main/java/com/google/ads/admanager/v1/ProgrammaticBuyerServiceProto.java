@@ -82,7 +82,7 @@ public final class ProgrammaticBuyerServiceProto extends com.google.protobuf.Gen
           + "\023programmatic_buyers\030\001"
           + " \003(\0132*.google.ads.admanager.v1.ProgrammaticBuyer\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\342\003\n"
+          + "total_size\030\003 \001(\0052\225\004\n"
           + "\030ProgrammaticBuyerService\022\263\001\n"
           + "\024GetProgrammaticBuyer\0224.google.ads.admanager.v1.GetProgr"
           + "ammaticBuyerRequest\032*.google.ads.admanag"
@@ -92,11 +92,14 @@ public final class ProgrammaticBuyerServiceProto extends com.google.protobuf.Gen
           + "quest\0327.google.ads.admanager.v1.ListProg"
           + "rammaticBuyersResponse\";\332A\006parent\202\323\344\223\002,\022"
           + "*/v1/{parent=networks/*}/programmaticBuy"
-          + "ers\032G\312A\030admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\321\001\n"
-          + "\033com.google.ads.admanager.v1B\035Programmat"
-          + "icBuyerServiceProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;ad"
-          + "manager\252\002\027Google.Ads.AdManager.V1\312\002\027Goog"
-          + "le\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "ers\032z\312A\030admanager.googleapis.com\322A\\https"
+          + "://www.googleapis.com/auth/admanager,htt"
+          + "ps://www.googleapis.com/auth/admanager.readonlyB\321\001\n"
+          + "\033com.google.ads.admanager.v1B\035ProgrammaticBuyerServiceProtoP\001Z@google"
+          + ".golang.org/genproto/googleapis/ads/adma"
+          + "nager/v1;admanager\252\002\027Google.Ads.AdManage"
+          + "r.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google:"
+          + ":Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

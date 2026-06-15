@@ -98,6 +98,8 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                                 fields, "buyerAccountId", request.getBuyerAccountIdList());
                             serializer.putQueryParam(
                                 fields, "dateTimeRange", request.getDateTimeRange());
+                            serializer.putQueryParam(
+                                fields, "manualReviewStatus", request.getManualReviewStatusValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
@@ -265,6 +267,11 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
             callableFactory,
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=networks/*/operations/reports/runs/*}:cancel")
+                        .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()

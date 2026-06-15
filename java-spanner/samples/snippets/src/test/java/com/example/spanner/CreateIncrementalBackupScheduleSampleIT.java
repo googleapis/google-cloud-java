@@ -41,8 +41,17 @@ public class CreateIncrementalBackupScheduleSampleIT extends SampleTestBaseV2 {
                 CreateIncrementalBackupScheduleSample.createIncrementalBackupSchedule(
                     projectId, multiRegionalInstanceId, databaseId, backupScheduleId);
               } finally {
-                DeleteBackupScheduleSample.deleteBackupSchedule(
-                    projectId, multiRegionalInstanceId, databaseId, backupScheduleId);
+                try {
+                  DeleteBackupScheduleSample.deleteBackupSchedule(
+                      projectId, multiRegionalInstanceId, databaseId, backupScheduleId);
+                } catch (Exception e) {
+                  System.out.println(
+                      "Failed to delete backup schedule "
+                          + backupScheduleId
+                          + " due to "
+                          + e.getMessage()
+                          + ", skipping...");
+                }
               }
             });
     assertThat(out)

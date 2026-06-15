@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Response message for
- * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEvent].
+ * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.Lineage.ProcessOpenLineageRunEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse}
@@ -461,7 +461,7 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
    *
    * <pre>
    * Response message for
-   * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEvent].
+   * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.Lineage.ProcessOpenLineageRunEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse}

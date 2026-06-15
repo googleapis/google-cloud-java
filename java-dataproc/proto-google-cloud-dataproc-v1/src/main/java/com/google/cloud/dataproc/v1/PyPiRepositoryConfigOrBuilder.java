@@ -30,7 +30,8 @@ public interface PyPiRepositoryConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. PyPi repository address
+   * Optional. The PyPi repository address. **Note: This field is not available
+   * for batch workloads.**
    * </pre>
    *
    * <code>string pypi_repository = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -43,7 +44,8 @@ public interface PyPiRepositoryConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. PyPi repository address
+   * Optional. The PyPi repository address. **Note: This field is not available
+   * for batch workloads.**
    * </pre>
    *
    * <code>string pypi_repository = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

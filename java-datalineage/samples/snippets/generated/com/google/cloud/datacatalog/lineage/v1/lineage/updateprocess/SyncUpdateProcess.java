@@ -40,6 +40,7 @@ public class SyncUpdateProcess {
               .setProcess(Process.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAllowMissing(true)
+              .setRequestId("requestId693933066")
               .build();
       Process response = lineageClient.updateProcess(request);
     }

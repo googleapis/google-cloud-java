@@ -109,14 +109,12 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reports with saved visibility will appear in the Ad Manager UI by
-     * default. Alias for VISIBLE and will be replaced in the future.
+     * Reports with this visibility will appear in the Ad Manager UI.
      * </pre>
      *
-     * <code>SAVED = 2 [deprecated = true];</code>
+     * <code>VISIBLE = 2;</code>
      */
-    @java.lang.Deprecated
-    SAVED(2),
+    VISIBLE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -134,12 +132,15 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reports with this visibility will appear in the Ad Manager UI.
+     * Deprecated: Use `VISIBLE`.
+     * Reports with saved visibility will appear in the Ad Manager UI by
+     * default. This is an alias for `VISIBLE` and will be removed in the
+     * future.
      * </pre>
      *
-     * <code>VISIBLE = 2;</code>
+     * <code>SAVED = 2 [deprecated = true];</code>
      */
-    public static final Visibility VISIBLE = SAVED;
+    public static final Visibility SAVED = VISIBLE;
 
     /**
      *
@@ -169,24 +170,26 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Reports with saved visibility will appear in the Ad Manager UI by
-     * default. Alias for VISIBLE and will be replaced in the future.
-     * </pre>
-     *
-     * <code>SAVED = 2 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public static final int SAVED_VALUE = 2;
-
-    /**
-     *
-     *
-     * <pre>
      * Reports with this visibility will appear in the Ad Manager UI.
      * </pre>
      *
      * <code>VISIBLE = 2;</code>
      */
     public static final int VISIBLE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `VISIBLE`.
+     * Reports with saved visibility will appear in the Ad Manager UI by
+     * default. This is an alias for `VISIBLE` and will be removed in the
+     * future.
+     * </pre>
+     *
+     * <code>SAVED = 2 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int SAVED_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -217,7 +220,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         case 1:
           return DRAFT;
         case 2:
-          return SAVED;
+          return VISIBLE;
         default:
           return null;
       }
@@ -254,7 +257,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
 
     private static Visibility[] getStaticValuesArray() {
       return new Visibility[] {
-        HIDDEN, DRAFT, SAVED, VISIBLE,
+        HIDDEN, DRAFT, VISIBLE, SAVED,
       };
     }
 

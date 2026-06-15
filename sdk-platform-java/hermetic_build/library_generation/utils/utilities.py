@@ -68,6 +68,9 @@ def run_process_and_print_output(
         kwargs["stderr"] = subprocess.STDOUT
     proc_info = subprocess.run(arguments, stdout=subprocess.PIPE, **kwargs)
     print(proc_info.stdout.decode(), end="", flush=True)
+    # If stderr was not specified and the process failed, print the error output
+    if proc_info.returncode != 0 and proc_info.stderr:
+        print(proc_info.stderr.decode(), end="", flush=True)
     print(
         f"{job_name} {'finished successfully' if proc_info.returncode == 0 else 'failed'}"
     )
@@ -202,6 +205,7 @@ def generate_postprocessing_prerequisite_files(
     transport: str,
     library_path: str,
     language: str = "java",
+    has_version: bool = True,
 ) -> None:
     """
     Generates the postprocessing prerequisite files for a library.
@@ -304,6 +308,7 @@ def generate_postprocessing_prerequisite_files(
             proto_path=remove_version_from(proto_path),
             module_name=repo_metadata["repo_short"],
             api_shortname=library.api_shortname,
+            has_version=has_version,
         )
 
     # generate owlbot.py

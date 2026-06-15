@@ -1340,6 +1340,8 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setThreadKey("threadKey-1562254347")
    *           .setRequestId("requestId693933066")
    *           .setMessageId("messageId-1440013438")
+   *           .setCreateMessageNotificationOptions(
+   *               CreateMessageNotificationOptions.newBuilder().build())
    *           .build();
    *   Message response = chatServiceClient.createMessage(request);
    * }
@@ -1408,6 +1410,8 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setThreadKey("threadKey-1562254347")
    *           .setRequestId("requestId693933066")
    *           .setMessageId("messageId-1440013438")
+   *           .setCreateMessageNotificationOptions(
+   *               CreateMessageNotificationOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Message> future = chatServiceClient.createMessageCallable().futureCall(request);
    *   // Do something.

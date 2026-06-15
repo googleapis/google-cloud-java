@@ -133,6 +133,23 @@ branchProtectionRules:
       - header-check
       - library_generation
       - unmanaged_dependency_check
+  - pattern: datastore-2.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - split-units (java-datastore, 8)
+      - split-units (java-datastore, 11)
+      - split-units (java-datastore, 17)
+      - split-units (java-datastore, 21)
+      - split-units (java-datastore, 25)
+      - split-clirr (java-datastore)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: Datastore Integration'
+      - 'Kokoro - Test: Datastore GraalVM Native Image'
 permissionRules:
   - team: yoshi-admins
     permission: admin

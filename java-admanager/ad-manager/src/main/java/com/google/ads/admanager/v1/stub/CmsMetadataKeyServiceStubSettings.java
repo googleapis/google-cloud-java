@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysResponse;
 import com.google.ads.admanager.v1.CmsMetadataKey;
 import com.google.ads.admanager.v1.GetCmsMetadataKeyRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataKeysRequest;
@@ -110,13 +114,22 @@ public class CmsMetadataKeyServiceStubSettings
     extends StubSettings<CmsMetadataKeyServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/admanager")
+          .add("https://www.googleapis.com/auth/admanager.readonly")
+          .build();
 
   private final UnaryCallSettings<GetCmsMetadataKeyRequest, CmsMetadataKey>
       getCmsMetadataKeySettings;
   private final PagedCallSettings<
           ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, ListCmsMetadataKeysPagedResponse>
       listCmsMetadataKeysSettings;
+  private final UnaryCallSettings<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysSettings;
 
   private static final PagedListDescriptor<
           ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, CmsMetadataKey>
@@ -187,6 +200,20 @@ public class CmsMetadataKeyServiceStubSettings
           ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, ListCmsMetadataKeysPagedResponse>
       listCmsMetadataKeysSettings() {
     return listCmsMetadataKeysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCmsMetadataKeys. */
+  public UnaryCallSettings<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysSettings() {
+    return batchActivateCmsMetadataKeysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCmsMetadataKeys. */
+  public UnaryCallSettings<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysSettings() {
+    return batchDeactivateCmsMetadataKeysSettings;
   }
 
   public CmsMetadataKeyServiceStub createStub() throws IOException {
@@ -273,6 +300,10 @@ public class CmsMetadataKeyServiceStubSettings
 
     getCmsMetadataKeySettings = settingsBuilder.getCmsMetadataKeySettings().build();
     listCmsMetadataKeysSettings = settingsBuilder.listCmsMetadataKeysSettings().build();
+    batchActivateCmsMetadataKeysSettings =
+        settingsBuilder.batchActivateCmsMetadataKeysSettings().build();
+    batchDeactivateCmsMetadataKeysSettings =
+        settingsBuilder.batchDeactivateCmsMetadataKeysSettings().build();
   }
 
   @Override
@@ -295,6 +326,12 @@ public class CmsMetadataKeyServiceStubSettings
             ListCmsMetadataKeysResponse,
             ListCmsMetadataKeysPagedResponse>
         listCmsMetadataKeysSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+        batchActivateCmsMetadataKeysSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+        batchDeactivateCmsMetadataKeysSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -325,10 +362,15 @@ public class CmsMetadataKeyServiceStubSettings
       getCmsMetadataKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCmsMetadataKeysSettings =
           PagedCallSettings.newBuilder(LIST_CMS_METADATA_KEYS_PAGE_STR_FACT);
+      batchActivateCmsMetadataKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateCmsMetadataKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCmsMetadataKeySettings, listCmsMetadataKeysSettings);
+              getCmsMetadataKeySettings,
+              listCmsMetadataKeysSettings,
+              batchActivateCmsMetadataKeysSettings,
+              batchDeactivateCmsMetadataKeysSettings);
       initDefaults(this);
     }
 
@@ -337,10 +379,17 @@ public class CmsMetadataKeyServiceStubSettings
 
       getCmsMetadataKeySettings = settings.getCmsMetadataKeySettings.toBuilder();
       listCmsMetadataKeysSettings = settings.listCmsMetadataKeysSettings.toBuilder();
+      batchActivateCmsMetadataKeysSettings =
+          settings.batchActivateCmsMetadataKeysSettings.toBuilder();
+      batchDeactivateCmsMetadataKeysSettings =
+          settings.batchDeactivateCmsMetadataKeysSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCmsMetadataKeySettings, listCmsMetadataKeysSettings);
+              getCmsMetadataKeySettings,
+              listCmsMetadataKeysSettings,
+              batchActivateCmsMetadataKeysSettings,
+              batchDeactivateCmsMetadataKeysSettings);
     }
 
     private static Builder createDefault() {
@@ -363,6 +412,16 @@ public class CmsMetadataKeyServiceStubSettings
 
       builder
           .listCmsMetadataKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateCmsMetadataKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateCmsMetadataKeysSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -397,6 +456,20 @@ public class CmsMetadataKeyServiceStubSettings
             ListCmsMetadataKeysPagedResponse>
         listCmsMetadataKeysSettings() {
       return listCmsMetadataKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCmsMetadataKeys. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+        batchActivateCmsMetadataKeysSettings() {
+      return batchActivateCmsMetadataKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCmsMetadataKeys. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+        batchDeactivateCmsMetadataKeysSettings() {
+      return batchDeactivateCmsMetadataKeysSettings;
     }
 
     @Override

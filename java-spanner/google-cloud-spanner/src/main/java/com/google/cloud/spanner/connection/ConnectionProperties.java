@@ -82,6 +82,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_RPC_
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_SEQUENCE_KIND_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_TRACK_CONNECTION_LEAKS;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_TRACK_SESSION_LEAKS;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_TYPE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_USER_AGENT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_USE_PLAIN_TEXT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_USE_VIRTUAL_GRPC_TRANSPORT_THREADS;
@@ -113,17 +114,20 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ROUTE_TO_LEA
 import static com.google.cloud.spanner.connection.ConnectionOptions.RPC_PRIORITY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.TRACK_CONNECTION_LEAKS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.TRACK_SESSION_LEAKS_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.TYPE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USER_AGENT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USE_PLAIN_TEXT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USE_VIRTUAL_GRPC_TRANSPORT_THREADS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USE_VIRTUAL_THREADS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionProperty.castProperty;
 
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.DmlBatchUpdateCountVerificationFailedException;
 import com.google.cloud.spanner.Options.RpcPriority;
+import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.AutocommitDmlModeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.BooleanConverter;
@@ -132,6 +136,7 @@ import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.Cr
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DdlInTransactionModeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DialectConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DurationConverter;
+import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.InstanceTypeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.IsolationLevelConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.LongConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.NonNegativeIntegerConverter;
@@ -248,6 +253,12 @@ public class ConnectionProperties {
           BOOLEANS,
           BooleanConverter.INSTANCE,
           Context.STARTUP);
+
+  /**
+   * @deprecated Use {@link #TYPE} with value "omni" instead.
+   */
+  @ObsoleteApi("Use TYPE with value \"omni\" instead")
+  @Deprecated
   static final ConnectionProperty<Boolean> IS_EXPERIMENTAL_HOST =
       create(
           IS_EXPERIMENTAL_HOST_PROPERTY_NAME,
@@ -255,6 +266,18 @@ public class ConnectionProperties {
           DEFAULT_IS_EXPERIMENTAL_HOST,
           BOOLEANS,
           BooleanConverter.INSTANCE,
+          Context.STARTUP);
+
+  static final ConnectionProperty<SpannerOptions.InstanceType> TYPE =
+      create(
+          TYPE_PROPERTY_NAME,
+          "Specifies the type of Spanner instance to connect to (cloud or omni). Setting it to omni"
+              + " is mandatory when connecting to a Spanner Omni instance.",
+          DEFAULT_TYPE,
+          new SpannerOptions.InstanceType[] {
+            SpannerOptions.InstanceType.CLOUD, SpannerOptions.InstanceType.OMNI,
+          },
+          InstanceTypeConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> CLIENT_CERTIFICATE =
       create(
@@ -513,8 +536,8 @@ public class ConnectionProperties {
   static final ConnectionProperty<Integer> DCP_MIN_RPC_PER_CHANNEL =
       create(
           DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME,
-          "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used when "
-              + "enableDynamicChannelPool is true. The default is "
+          "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used"
+              + " when enableDynamicChannelPool is true. The default is "
               + DEFAULT_DCP_MIN_RPC_PER_CHANNEL
               + ".",
           DEFAULT_DCP_MIN_RPC_PER_CHANNEL,
@@ -523,8 +546,8 @@ public class ConnectionProperties {
   static final ConnectionProperty<Integer> DCP_MAX_RPC_PER_CHANNEL =
       create(
           DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME,
-          "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used when "
-              + "enableDynamicChannelPool is true. The default is "
+          "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used"
+              + " when enableDynamicChannelPool is true. The default is "
               + DEFAULT_DCP_MAX_RPC_PER_CHANNEL
               + ".",
           DEFAULT_DCP_MAX_RPC_PER_CHANNEL,

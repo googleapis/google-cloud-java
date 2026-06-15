@@ -102,6 +102,44 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> BatchActivateCmsMetadataKeys</td>
+ *      <td><p> API to activate a list of `CmsMetadataKey` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchActivateCmsMetadataKeys(BatchActivateCmsMetadataKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchActivateCmsMetadataKeys(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchActivateCmsMetadataKeys(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchActivateCmsMetadataKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeactivateCmsMetadataKeys</td>
+ *      <td><p> API to deactivate a list of `CmsMetadataKey` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateCmsMetadataKeys(BatchDeactivateCmsMetadataKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateCmsMetadataKeys(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeactivateCmsMetadataKeys(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateCmsMetadataKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -495,6 +533,282 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
   public final UnaryCallable<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse>
       listCmsMetadataKeysCallable() {
     return stub.listCmsMetadataKeysCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to activate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateCmsMetadataKeysResponse response =
+   *       cmsMetadataKeyServiceClient.batchActivateCmsMetadataKeys(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `CmsMetadataKeys` will be activated. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The resource names of the `CmsMetadataKey`s to activate. Format:
+   *     `networks/{network_code}/cmsMetadataKeys/{cms_metadata_key_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateCmsMetadataKeysResponse batchActivateCmsMetadataKeys(
+      NetworkName parent, List<String> names) {
+    BatchActivateCmsMetadataKeysRequest request =
+        BatchActivateCmsMetadataKeysRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchActivateCmsMetadataKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to activate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateCmsMetadataKeysResponse response =
+   *       cmsMetadataKeyServiceClient.batchActivateCmsMetadataKeys(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `CmsMetadataKeys` will be activated. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The resource names of the `CmsMetadataKey`s to activate. Format:
+   *     `networks/{network_code}/cmsMetadataKeys/{cms_metadata_key_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateCmsMetadataKeysResponse batchActivateCmsMetadataKeys(
+      String parent, List<String> names) {
+    BatchActivateCmsMetadataKeysRequest request =
+        BatchActivateCmsMetadataKeysRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchActivateCmsMetadataKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to activate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   BatchActivateCmsMetadataKeysRequest request =
+   *       BatchActivateCmsMetadataKeysRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchActivateCmsMetadataKeysResponse response =
+   *       cmsMetadataKeyServiceClient.batchActivateCmsMetadataKeys(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateCmsMetadataKeysResponse batchActivateCmsMetadataKeys(
+      BatchActivateCmsMetadataKeysRequest request) {
+    return batchActivateCmsMetadataKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to activate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   BatchActivateCmsMetadataKeysRequest request =
+   *       BatchActivateCmsMetadataKeysRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchActivateCmsMetadataKeysResponse> future =
+   *       cmsMetadataKeyServiceClient.batchActivateCmsMetadataKeysCallable().futureCall(request);
+   *   // Do something.
+   *   BatchActivateCmsMetadataKeysResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysCallable() {
+    return stub.batchActivateCmsMetadataKeysCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to deactivate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateCmsMetadataKeysResponse response =
+   *       cmsMetadataKeyServiceClient.batchDeactivateCmsMetadataKeys(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `CmsMetadataKeys` will be deactivated.
+   *     Format: `networks/{network_code}`
+   * @param names Required. The resource names of the `CmsMetadataKey`s to deactivate. Format:
+   *     `networks/{network_code}/cmsMetadataKeys/{cms_metadata_key_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateCmsMetadataKeysResponse batchDeactivateCmsMetadataKeys(
+      NetworkName parent, List<String> names) {
+    BatchDeactivateCmsMetadataKeysRequest request =
+        BatchDeactivateCmsMetadataKeysRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeactivateCmsMetadataKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to deactivate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateCmsMetadataKeysResponse response =
+   *       cmsMetadataKeyServiceClient.batchDeactivateCmsMetadataKeys(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `CmsMetadataKeys` will be deactivated.
+   *     Format: `networks/{network_code}`
+   * @param names Required. The resource names of the `CmsMetadataKey`s to deactivate. Format:
+   *     `networks/{network_code}/cmsMetadataKeys/{cms_metadata_key_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateCmsMetadataKeysResponse batchDeactivateCmsMetadataKeys(
+      String parent, List<String> names) {
+    BatchDeactivateCmsMetadataKeysRequest request =
+        BatchDeactivateCmsMetadataKeysRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchDeactivateCmsMetadataKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to deactivate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   BatchDeactivateCmsMetadataKeysRequest request =
+   *       BatchDeactivateCmsMetadataKeysRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeactivateCmsMetadataKeysResponse response =
+   *       cmsMetadataKeyServiceClient.batchDeactivateCmsMetadataKeys(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateCmsMetadataKeysResponse batchDeactivateCmsMetadataKeys(
+      BatchDeactivateCmsMetadataKeysRequest request) {
+    return batchDeactivateCmsMetadataKeysCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to deactivate a list of `CmsMetadataKey` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CmsMetadataKeyServiceClient cmsMetadataKeyServiceClient =
+   *     CmsMetadataKeyServiceClient.create()) {
+   *   BatchDeactivateCmsMetadataKeysRequest request =
+   *       BatchDeactivateCmsMetadataKeysRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchDeactivateCmsMetadataKeysResponse> future =
+   *       cmsMetadataKeyServiceClient.batchDeactivateCmsMetadataKeysCallable().futureCall(request);
+   *   // Do something.
+   *   BatchDeactivateCmsMetadataKeysResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysCallable() {
+    return stub.batchDeactivateCmsMetadataKeysCallable();
   }
 
   @Override

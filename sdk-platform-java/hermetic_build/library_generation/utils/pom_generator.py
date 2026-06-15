@@ -72,6 +72,7 @@ MODULE_ALLOWLIST = set(
         "google-auth-library-java",
         "sdk-platform-java",
         "java-showcase",
+        "grpc-gcp-java",
     ]
 )
 
@@ -94,6 +95,7 @@ def __search_for_bom_artifact(
 ) -> List[BomConfig]:
     repo = Path(repository_path).resolve()
     module_exclusions = ["gapic-libraries-bom"]
+    sub_module_exclusions = ["google-cloud-bigtable-deps-bom"]
     group_id_inclusions = [
         "com.google.cloud",
         "com.google.analytics",
@@ -104,7 +106,11 @@ def __search_for_bom_artifact(
         if module.is_file() or module.name in module_exclusions:
             continue
         for sub_module in module.iterdir():
-            if sub_module.is_dir() and sub_module.name.endswith("-bom"):
+            if (
+                sub_module.is_dir()
+                and sub_module.name.endswith("-bom")
+                and sub_module.name not in sub_module_exclusions
+            ):
                 root = etree.parse(f"{sub_module}/pom.xml").getroot()
                 group_id = root.find(f"{project_tag}{group_id_tag}").text
                 if group_id not in group_id_inclusions:

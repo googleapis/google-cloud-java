@@ -30,7 +30,7 @@ public interface FetchNodePoolUpgradeInfoRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name (project, location, cluster, nodepool) of the nodepool
+   * Required. The name (project, location, cluster, node pool) of the node pool
    * to get. Specified in the format
    * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
    * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -46,7 +46,7 @@ public interface FetchNodePoolUpgradeInfoRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name (project, location, cluster, nodepool) of the nodepool
+   * Required. The name (project, location, cluster, node pool) of the node pool
    * to get. Specified in the format
    * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
    * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.

@@ -39,7 +39,7 @@ public interface SearchHintOrBuilder
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
    * @return Whether the useIndex field is set.
    */
   @java.lang.Deprecated
@@ -58,7 +58,7 @@ public interface SearchHintOrBuilder
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
    * @return The useIndex.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SearchHintOrBuilder
    * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
    * @return Whether the useKnn field is set.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SearchHintOrBuilder
    * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
    * @return The useKnn.
    */
   @java.lang.Deprecated

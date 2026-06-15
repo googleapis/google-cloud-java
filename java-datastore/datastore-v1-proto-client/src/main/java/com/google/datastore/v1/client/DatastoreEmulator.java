@@ -15,7 +15,6 @@
  */
 package com.google.datastore.v1.client;
 
-import static com.google.api.client.util.Preconditions.checkNotNull;
 import static com.google.api.client.util.Preconditions.checkState;
 
 import java.io.BufferedReader;
@@ -100,37 +99,6 @@ public class DatastoreEmulator extends Datastore {
    */
   public void clear() throws DatastoreEmulatorException {
     sendEmptyRequest("/reset", "POST");
-  }
-
-  /**
-   * Starts the emulator. It is the caller's responsibility to call {@link #stop}. Note that
-   * receiving an exception does not indicate that the server did not start. We recommend calling
-   * {@link #stop} to ensure the server is not running regardless of the result of this method.
-   *
-   * @param emulatorDir The path to the emulator directory, e.g. /usr/local/cloud-datastore-emulator
-   * @param projectId The project ID
-   * @param commandLineOptions Command line options to pass to the emulator on startup
-   * @throws DatastoreEmulatorException If {@link #start} has already been called or the server does
-   *     not start successfully.
-   * @deprecated prefer setting options in the emulator options and calling {#start()}.
-   */
-  @Deprecated
-  public synchronized void start(String emulatorDir, String projectId, String... commandLineOptions)
-      throws DatastoreEmulatorException {
-    checkNotNull(emulatorDir, "emulatorDir cannot be null");
-    checkNotNull(projectId, "projectId cannot be null");
-    checkState(state == State.NEW, "Cannot call start() more than once.");
-    try {
-      startEmulatorInternal(
-          emulatorDir + "/cloud_datastore_emulator", projectId, Arrays.asList(commandLineOptions));
-      state = State.STARTED;
-    } finally {
-      if (state != State.STARTED) {
-        // If we're not able to start the server we don't want people trying again. Just move it
-        // straight to the STOPPED state.
-        state = State.STOPPED;
-      }
-    }
   }
 
   public synchronized void start() throws DatastoreEmulatorException {

@@ -93,6 +93,22 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_fieldAccessorTable;
@@ -209,7 +225,7 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "ContainerSpec\022\026\n"
           + "\timage_uri\030\001 \001(\tB\003\340A\002B\023\n"
           + "\021deployment_sourceB\022\n"
-          + "\020_service_account\"\342\005\n"
+          + "\020_service_account\"\377\n\n"
           + "\017ReasoningEngine\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
@@ -225,29 +241,47 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\017encryption_spec\030\013"
           + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec\022L\n"
           + "\006labels\030\021"
-          + " \003(\0132<.google.cloud.aiplatform.v1beta1.ReasoningEngine.LabelsEntry\032-\n"
+          + " \003(\0132<.google.cloud.aiplatform.v1beta1.ReasoningEngine.LabelsEntry\022[\n"
+          + "\016traffic_config\030\024 \001(\0132>.google.cloud.aiplatform."
+          + "v1beta1.ReasoningEngine.TrafficConfigB\003\340A\001\032\275\004\n\r"
+          + "TrafficConfig\022v\n"
+          + "\024traffic_split_manual\030\022 \001(\0132Q.google.cloud.aiplatform.v1b"
+          + "eta1.ReasoningEngine.TrafficConfig.TrafficSplitManualB\003\340A\001H\000\022\203\001\n"
+          + "\033traffic_split_always_latest\030\023 \001(\0132W.google.cloud.aiplat"
+          + "form.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatestB\003\340A\001H\000\032\200\002\n"
+          + "\022TrafficSplitManual\022i\n"
+          + "\007targets\030\001 \003(\0132X.google.cloud.aiplatform.v1beta1.ReasoningEn"
+          + "gine.TrafficConfig.TrafficSplitManual.Target\032\177\n"
+          + "\006Target\022_\n"
+          + "\025runtime_revision_name\030\001 \001(\tB@\340A\002\372A:\n"
+          + "8aiplatform.googleapis.com/ReasoningEngineRuntimeRevision\022\024\n"
+          + "\007percent\030\002 \001(\005B\003\340A\002\032\032\n"
+          + "\030TrafficSplitAlwaysLatestB\017\n\r"
+          + "traffic_split\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
-          + ")aiplatform.googleapis.com/ReasoningEngine\022Kprojects/{project}/locations/{lo"
-          + "cation}/reasoningEngines/{reasoning_engi"
-          + "ne}*\020reasoningEngines2\017reasoningEngine\"\354\010\n"
+          + ")aiplatform.googleapis.com/ReasoningEngine\022Kpro"
+          + "jects/{project}/locations/{location}/rea"
+          + "soningEngines/{reasoning_engine}*\020reasoningEngines2\017reasoningEngine\"\354\010\n"
           + "\032ReasoningEngineContextSpec\022m\n"
-          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatf"
-          + "orm.v1beta1.ReasoningEngineContextSpec.MemoryBankConfigB\003\340A\001\032\336\007\n"
+          + "\022memory_bank_config\030\001 \001(\0132L.google.cloud.aiplatform.v1beta1"
+          + ".ReasoningEngineContextSpec.MemoryBankConfigB\003\340A\001\032\336\007\n"
           + "\020MemoryBankConfig\022}\n"
-          + "\021generation_config\030\001 \001(\0132].google.cl"
-          + "oud.aiplatform.v1beta1.ReasoningEngineCo"
-          + "ntextSpec.MemoryBankConfig.GenerationConfigB\003\340A\001\022\212\001\n"
-          + "\030similarity_search_config\030\002 \001(\0132c.google.cloud.aiplatform.v1beta1.Re"
-          + "asoningEngineContextSpec.MemoryBankConfig.SimilaritySearchConfigB\003\340A\001\022o\n\n"
-          + "ttl_config\030\005 \001(\0132V.google.cloud.aiplatform.v1be"
-          + "ta1.ReasoningEngineContextSpec.MemoryBankConfig.TtlConfigB\003\340A\001\032\236\003\n"
+          + "\021generation_config\030\001 \001(\0132].google.cloud.aiplatf"
+          + "orm.v1beta1.ReasoningEngineContextSpec.M"
+          + "emoryBankConfig.GenerationConfigB\003\340A\001\022\212\001\n"
+          + "\030similarity_search_config\030\002 \001(\0132c.googl"
+          + "e.cloud.aiplatform.v1beta1.ReasoningEngi"
+          + "neContextSpec.MemoryBankConfig.SimilaritySearchConfigB\003\340A\001\022o\n\n"
+          + "ttl_config\030\005 \001(\0132V.google.cloud.aiplatform.v1beta1.Reasoni"
+          + "ngEngineContextSpec.MemoryBankConfig.TtlConfigB\003\340A\001\032\236\003\n"
           + "\tTtlConfig\0225\n"
           + "\013default_ttl\030\001"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H\000\022\214\001\n"
-          + "\023granular_ttl_config\030\002 \001(\0132h.google.cloud.aiplatform.v1beta1.Reas"
-          + "oningEngineContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfigB\003\340A\001H\000\032\303\001\n"
+          + "\023granular_ttl_config\030\002 \001(\0132h.google."
+          + "cloud.aiplatform.v1beta1.ReasoningEngine"
+          + "ContextSpec.MemoryBankConfig.TtlConfig.GranularTtlConfigB\003\340A\001H\000\032\303\001\n"
           + "\021GranularTtlConfig\0222\n\n"
           + "create_ttl\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022<\n"
           + "\024generate_created_ttl\030\002"
@@ -261,14 +295,14 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
           + "\026SimilaritySearchConfig\022C\n"
           + "\017embedding_model\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"aiplatform.googleapis.com/EndpointB\215\003\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngineProtoP\001ZCc"
-          + "loud.google.com/go/aiplatform/apiv1beta1"
-          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
-          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1\352A\236\001\n"
-          + "1developerconnect.googleapis.com/GitRepositoryLink\022iprojects/{pr"
-          + "oject}/locations/{location}/connections/{connection}/gitRepositoryLinks/{git_rep"
-          + "ository_link}b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngineProtoP\001ZCcloud.google"
+          + ".com/go/aiplatform/apiv1beta1/aiplatform"
+          + "pb;aiplatformpb\252\002\037Google.Cloud.AIPlatfor"
+          + "m.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1be"
+          + "ta1\352\002\"Google::Cloud::AIPlatform::V1beta1\352A\236\001\n"
+          + "1developerconnect.googleapis.com/GitRepositoryLink\022iprojects/{project}/loca"
+          + "tions/{location}/connections/{connection}/gitRepositoryLinks/{git_repository_lin"
+          + "k}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -424,9 +458,43 @@ public final class ReasoningEngineProto extends com.google.protobuf.GeneratedFil
               "ContextSpec",
               "EncryptionSpec",
               "Labels",
+              "TrafficConfig",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor.getNestedType(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor,
+            new java.lang.String[] {
+              "TrafficSplitManual", "TrafficSplitAlwaysLatest", "TrafficSplit",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor,
+            new java.lang.String[] {
+              "Targets",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_descriptor,
+            new java.lang.String[] {
+              "RuntimeRevisionName", "Percent",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor.getNestedType(1);
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_LabelsEntry_descriptor,

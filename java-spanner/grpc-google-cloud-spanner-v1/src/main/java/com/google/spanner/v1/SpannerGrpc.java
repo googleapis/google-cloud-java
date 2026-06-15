@@ -690,6 +690,47 @@ public final class SpannerGrpc {
     return getBatchWriteMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.v1.FetchCacheUpdateRequest, com.google.spanner.v1.CacheUpdate>
+      getFetchCacheUpdateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchCacheUpdate",
+      requestType = com.google.spanner.v1.FetchCacheUpdateRequest.class,
+      responseType = com.google.spanner.v1.CacheUpdate.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.FetchCacheUpdateRequest, com.google.spanner.v1.CacheUpdate>
+      getFetchCacheUpdateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.v1.FetchCacheUpdateRequest, com.google.spanner.v1.CacheUpdate>
+        getFetchCacheUpdateMethod;
+    if ((getFetchCacheUpdateMethod = SpannerGrpc.getFetchCacheUpdateMethod) == null) {
+      synchronized (SpannerGrpc.class) {
+        if ((getFetchCacheUpdateMethod = SpannerGrpc.getFetchCacheUpdateMethod) == null) {
+          SpannerGrpc.getFetchCacheUpdateMethod =
+              getFetchCacheUpdateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.v1.FetchCacheUpdateRequest,
+                          com.google.spanner.v1.CacheUpdate>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchCacheUpdate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.FetchCacheUpdateRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.CacheUpdate.getDefaultInstance()))
+                      .setSchemaDescriptor(new SpannerMethodDescriptorSupplier("FetchCacheUpdate"))
+                      .build();
+        }
+      }
+    }
+    return getFetchCacheUpdateMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SpannerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SpannerStub> factory =
@@ -1092,6 +1133,26 @@ public final class SpannerGrpc {
         com.google.spanner.v1.BatchWriteRequest request,
         io.grpc.stub.StreamObserver<com.google.spanner.v1.BatchWriteResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchWriteMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a cache update for a given database.
+     * This RPC can be used to warm up the client cache by fetching key recipes
+     * and server information for a given database. It is recommended to call
+     * this RPC at the beginning of the client's lifecycle, prior to any other
+     * data plane operations.
+     * The cache update is returned as a stream because the response can be too
+     * large to fit into a single `CacheUpdate` message.
+     * </pre>
+     */
+    default void fetchCacheUpdate(
+        com.google.spanner.v1.FetchCacheUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.CacheUpdate> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchCacheUpdateMethod(), responseObserver);
     }
   }
 
@@ -1496,6 +1557,28 @@ public final class SpannerGrpc {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getBatchWriteMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a cache update for a given database.
+     * This RPC can be used to warm up the client cache by fetching key recipes
+     * and server information for a given database. It is recommended to call
+     * this RPC at the beginning of the client's lifecycle, prior to any other
+     * data plane operations.
+     * The cache update is returned as a stream because the response can be too
+     * large to fit into a single `CacheUpdate` message.
+     * </pre>
+     */
+    public void fetchCacheUpdate(
+        com.google.spanner.v1.FetchCacheUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.CacheUpdate> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getFetchCacheUpdateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1849,6 +1932,26 @@ public final class SpannerGrpc {
       return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
           getChannel(), getBatchWriteMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a cache update for a given database.
+     * This RPC can be used to warm up the client cache by fetching key recipes
+     * and server information for a given database. It is recommended to call
+     * this RPC at the beginning of the client's lifecycle, prior to any other
+     * data plane operations.
+     * The cache update is returned as a stream because the response can be too
+     * large to fit into a single `CacheUpdate` message.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.spanner.v1.CacheUpdate> fetchCacheUpdate(
+        com.google.spanner.v1.FetchCacheUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getFetchCacheUpdateMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2196,6 +2299,25 @@ public final class SpannerGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getBatchWriteMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a cache update for a given database.
+     * This RPC can be used to warm up the client cache by fetching key recipes
+     * and server information for a given database. It is recommended to call
+     * this RPC at the beginning of the client's lifecycle, prior to any other
+     * data plane operations.
+     * The cache update is returned as a stream because the response can be too
+     * large to fit into a single `CacheUpdate` message.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.spanner.v1.CacheUpdate> fetchCacheUpdate(
+        com.google.spanner.v1.FetchCacheUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getFetchCacheUpdateMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2506,6 +2628,7 @@ public final class SpannerGrpc {
   private static final int METHODID_PARTITION_QUERY = 13;
   private static final int METHODID_PARTITION_READ = 14;
   private static final int METHODID_BATCH_WRITE = 15;
+  private static final int METHODID_FETCH_CACHE_UPDATE = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2611,6 +2734,11 @@ public final class SpannerGrpc {
               (com.google.spanner.v1.BatchWriteRequest) request,
               (io.grpc.stub.StreamObserver<com.google.spanner.v1.BatchWriteResponse>)
                   responseObserver);
+          break;
+        case METHODID_FETCH_CACHE_UPDATE:
+          serviceImpl.fetchCacheUpdate(
+              (com.google.spanner.v1.FetchCacheUpdateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.spanner.v1.CacheUpdate>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2729,6 +2857,12 @@ public final class SpannerGrpc {
                 new MethodHandlers<
                     com.google.spanner.v1.BatchWriteRequest,
                     com.google.spanner.v1.BatchWriteResponse>(service, METHODID_BATCH_WRITE)))
+        .addMethod(
+            getFetchCacheUpdateMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.spanner.v1.FetchCacheUpdateRequest,
+                    com.google.spanner.v1.CacheUpdate>(service, METHODID_FETCH_CACHE_UPDATE)))
         .build();
   }
 
@@ -2794,6 +2928,7 @@ public final class SpannerGrpc {
                       .addMethod(getPartitionQueryMethod())
                       .addMethod(getPartitionReadMethod())
                       .addMethod(getBatchWriteMethod())
+                      .addMethod(getFetchCacheUpdateMethod())
                       .build();
         }
       }

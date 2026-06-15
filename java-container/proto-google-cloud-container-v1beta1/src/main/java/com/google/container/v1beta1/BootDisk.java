@@ -24,7 +24,7 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * BootDisk specifies the boot disk configuration for nodepools.
+ * BootDisk specifies the boot disk configuration for node pools.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.BootDisk}
@@ -371,7 +371,7 @@ public final class BootDisk extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * BootDisk specifies the boot disk configuration for nodepools.
+   * BootDisk specifies the boot disk configuration for node pools.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.BootDisk}

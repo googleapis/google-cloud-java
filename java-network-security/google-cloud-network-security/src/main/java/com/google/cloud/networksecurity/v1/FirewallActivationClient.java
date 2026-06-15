@@ -101,6 +101,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListProjectFirewallEndpoints</td>
+ *      <td><p> Lists FirewallEndpoints in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProjectFirewallEndpoints(ListFirewallEndpointsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProjectFirewallEndpoints(LocationName parent)
+ *           <li><p> listProjectFirewallEndpoints(OrganizationLocationName parent)
+ *           <li><p> listProjectFirewallEndpoints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProjectFirewallEndpointsPagedCallable()
+ *           <li><p> listProjectFirewallEndpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetFirewallEndpoint</td>
  *      <td><p> Gets details of a single org Endpoint.</td>
  *      <td>
@@ -116,6 +137,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getFirewallEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProjectFirewallEndpoint</td>
+ *      <td><p> Gets details of a single project Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProjectFirewallEndpoint(GetFirewallEndpointRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProjectFirewallEndpoint(FirewallEndpointName name)
+ *           <li><p> getProjectFirewallEndpoint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProjectFirewallEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -141,6 +181,27 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateProjectFirewallEndpoint</td>
+ *      <td><p> Creates a new FirewallEndpoint in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createProjectFirewallEndpointAsync(CreateFirewallEndpointRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createProjectFirewallEndpointAsync(LocationName parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId)
+ *           <li><p> createProjectFirewallEndpointAsync(OrganizationLocationName parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId)
+ *           <li><p> createProjectFirewallEndpointAsync(String parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createProjectFirewallEndpointOperationCallable()
+ *           <li><p> createProjectFirewallEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteFirewallEndpoint</td>
  *      <td><p> Deletes a single org Endpoint.</td>
  *      <td>
@@ -161,6 +222,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteProjectFirewallEndpoint</td>
+ *      <td><p> Deletes a single project Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteProjectFirewallEndpointAsync(DeleteFirewallEndpointRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteProjectFirewallEndpointAsync(FirewallEndpointName name)
+ *           <li><p> deleteProjectFirewallEndpointAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteProjectFirewallEndpointOperationCallable()
+ *           <li><p> deleteProjectFirewallEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> UpdateFirewallEndpoint</td>
  *      <td><p> Update a single org Endpoint.</td>
  *      <td>
@@ -176,6 +257,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> updateFirewallEndpointOperationCallable()
  *           <li><p> updateFirewallEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateProjectFirewallEndpoint</td>
+ *      <td><p> Update a single project Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateProjectFirewallEndpointAsync(UpdateFirewallEndpointRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateProjectFirewallEndpointAsync(FirewallEndpoint firewallEndpoint, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateProjectFirewallEndpointOperationCallable()
+ *           <li><p> updateProjectFirewallEndpointCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -280,8 +380,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -667,6 +766,217 @@ public class FirewallActivationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists FirewallEndpoints in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (FirewallEndpoint element :
+   *       firewallActivationClient.listProjectFirewallEndpoints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListEndpointsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectFirewallEndpointsPagedResponse listProjectFirewallEndpoints(
+      LocationName parent) {
+    ListFirewallEndpointsRequest request =
+        ListFirewallEndpointsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProjectFirewallEndpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists FirewallEndpoints in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (FirewallEndpoint element :
+   *       firewallActivationClient.listProjectFirewallEndpoints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListEndpointsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectFirewallEndpointsPagedResponse listProjectFirewallEndpoints(
+      OrganizationLocationName parent) {
+    ListFirewallEndpointsRequest request =
+        ListFirewallEndpointsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProjectFirewallEndpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists FirewallEndpoints in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (FirewallEndpoint element :
+   *       firewallActivationClient.listProjectFirewallEndpoints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListEndpointsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectFirewallEndpointsPagedResponse listProjectFirewallEndpoints(
+      String parent) {
+    ListFirewallEndpointsRequest request =
+        ListFirewallEndpointsRequest.newBuilder().setParent(parent).build();
+    return listProjectFirewallEndpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists FirewallEndpoints in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   ListFirewallEndpointsRequest request =
+   *       ListFirewallEndpointsRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (FirewallEndpoint element :
+   *       firewallActivationClient.listProjectFirewallEndpoints(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectFirewallEndpointsPagedResponse listProjectFirewallEndpoints(
+      ListFirewallEndpointsRequest request) {
+    return listProjectFirewallEndpointsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists FirewallEndpoints in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   ListFirewallEndpointsRequest request =
+   *       ListFirewallEndpointsRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<FirewallEndpoint> future =
+   *       firewallActivationClient.listProjectFirewallEndpointsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FirewallEndpoint element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListFirewallEndpointsRequest, ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsPagedCallable() {
+    return stub.listProjectFirewallEndpointsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists FirewallEndpoints in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   ListFirewallEndpointsRequest request =
+   *       ListFirewallEndpointsRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListFirewallEndpointsResponse response =
+   *         firewallActivationClient.listProjectFirewallEndpointsCallable().call(request);
+   *     for (FirewallEndpoint element : response.getFirewallEndpointsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>
+      listProjectFirewallEndpointsCallable() {
+    return stub.listProjectFirewallEndpointsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets details of a single org Endpoint.
    *
    * <p>Sample code:
@@ -787,6 +1097,130 @@ public class FirewallActivationClient implements BackgroundResource {
   public final UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint>
       getFirewallEndpointCallable() {
     return stub.getFirewallEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   FirewallEndpointName name =
+   *       FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *           "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]");
+   *   FirewallEndpoint response = firewallActivationClient.getProjectFirewallEndpoint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallEndpoint getProjectFirewallEndpoint(FirewallEndpointName name) {
+    GetFirewallEndpointRequest request =
+        GetFirewallEndpointRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProjectFirewallEndpoint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   String name =
+   *       FirewallEndpointName.ofOrganizationLocationFirewallEndpointName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *           .toString();
+   *   FirewallEndpoint response = firewallActivationClient.getProjectFirewallEndpoint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallEndpoint getProjectFirewallEndpoint(String name) {
+    GetFirewallEndpointRequest request =
+        GetFirewallEndpointRequest.newBuilder().setName(name).build();
+    return getProjectFirewallEndpoint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   GetFirewallEndpointRequest request =
+   *       GetFirewallEndpointRequest.newBuilder()
+   *           .setName(
+   *               FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *                   .toString())
+   *           .build();
+   *   FirewallEndpoint response = firewallActivationClient.getProjectFirewallEndpoint(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FirewallEndpoint getProjectFirewallEndpoint(GetFirewallEndpointRequest request) {
+    return getProjectFirewallEndpointCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   GetFirewallEndpointRequest request =
+   *       GetFirewallEndpointRequest.newBuilder()
+   *           .setName(
+   *               FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FirewallEndpoint> future =
+   *       firewallActivationClient.getProjectFirewallEndpointCallable().futureCall(request);
+   *   // Do something.
+   *   FirewallEndpoint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointCallable() {
+    return stub.getProjectFirewallEndpointCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1013,6 +1447,233 @@ public class FirewallActivationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a new FirewallEndpoint in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+   *   String firewallEndpointId = "firewallEndpointId-993710416";
+   *   FirewallEndpoint response =
+   *       firewallActivationClient
+   *           .createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param firewallEndpoint Required. The resource being created
+   * @param firewallEndpointId Required. Id of the requesting object. If auto-generating Id
+   *     server-side, remove this field and firewall_endpoint_id from the method_signature of Create
+   *     RPC.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointAsync(
+          LocationName parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId) {
+    CreateFirewallEndpointRequest request =
+        CreateFirewallEndpointRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFirewallEndpoint(firewallEndpoint)
+            .setFirewallEndpointId(firewallEndpointId)
+            .build();
+    return createProjectFirewallEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallEndpoint in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+   *   String firewallEndpointId = "firewallEndpointId-993710416";
+   *   FirewallEndpoint response =
+   *       firewallActivationClient
+   *           .createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param firewallEndpoint Required. The resource being created
+   * @param firewallEndpointId Required. Id of the requesting object. If auto-generating Id
+   *     server-side, remove this field and firewall_endpoint_id from the method_signature of Create
+   *     RPC.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointAsync(
+          OrganizationLocationName parent,
+          FirewallEndpoint firewallEndpoint,
+          String firewallEndpointId) {
+    CreateFirewallEndpointRequest request =
+        CreateFirewallEndpointRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFirewallEndpoint(firewallEndpoint)
+            .setFirewallEndpointId(firewallEndpointId)
+            .build();
+    return createProjectFirewallEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallEndpoint in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+   *   String firewallEndpointId = "firewallEndpointId-993710416";
+   *   FirewallEndpoint response =
+   *       firewallActivationClient
+   *           .createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param firewallEndpoint Required. The resource being created
+   * @param firewallEndpointId Required. Id of the requesting object. If auto-generating Id
+   *     server-side, remove this field and firewall_endpoint_id from the method_signature of Create
+   *     RPC.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointAsync(
+          String parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId) {
+    CreateFirewallEndpointRequest request =
+        CreateFirewallEndpointRequest.newBuilder()
+            .setParent(parent)
+            .setFirewallEndpoint(firewallEndpoint)
+            .setFirewallEndpointId(firewallEndpointId)
+            .build();
+    return createProjectFirewallEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallEndpoint in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   CreateFirewallEndpointRequest request =
+   *       CreateFirewallEndpointRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFirewallEndpointId("firewallEndpointId-993710416")
+   *           .setFirewallEndpoint(FirewallEndpoint.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   FirewallEndpoint response =
+   *       firewallActivationClient.createProjectFirewallEndpointAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointAsync(CreateFirewallEndpointRequest request) {
+    return createProjectFirewallEndpointOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallEndpoint in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   CreateFirewallEndpointRequest request =
+   *       CreateFirewallEndpointRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFirewallEndpointId("firewallEndpointId-993710416")
+   *           .setFirewallEndpoint(FirewallEndpoint.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<FirewallEndpoint, OperationMetadata> future =
+   *       firewallActivationClient
+   *           .createProjectFirewallEndpointOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   FirewallEndpoint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationCallable() {
+    return stub.createProjectFirewallEndpointOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new FirewallEndpoint in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   CreateFirewallEndpointRequest request =
+   *       CreateFirewallEndpointRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFirewallEndpointId("firewallEndpointId-993710416")
+   *           .setFirewallEndpoint(FirewallEndpoint.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       firewallActivationClient.createProjectFirewallEndpointCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointCallable() {
+    return stub.createProjectFirewallEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single org Endpoint.
    *
    * <p>Sample code:
@@ -1174,6 +1835,170 @@ public class FirewallActivationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   FirewallEndpointName name =
+   *       FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *           "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]");
+   *   firewallActivationClient.deleteProjectFirewallEndpointAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteProjectFirewallEndpointAsync(
+      FirewallEndpointName name) {
+    DeleteFirewallEndpointRequest request =
+        DeleteFirewallEndpointRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteProjectFirewallEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   String name =
+   *       FirewallEndpointName.ofOrganizationLocationFirewallEndpointName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *           .toString();
+   *   firewallActivationClient.deleteProjectFirewallEndpointAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteProjectFirewallEndpointAsync(
+      String name) {
+    DeleteFirewallEndpointRequest request =
+        DeleteFirewallEndpointRequest.newBuilder().setName(name).build();
+    return deleteProjectFirewallEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   DeleteFirewallEndpointRequest request =
+   *       DeleteFirewallEndpointRequest.newBuilder()
+   *           .setName(
+   *               FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   firewallActivationClient.deleteProjectFirewallEndpointAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteProjectFirewallEndpointAsync(
+      DeleteFirewallEndpointRequest request) {
+    return deleteProjectFirewallEndpointOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   DeleteFirewallEndpointRequest request =
+   *       DeleteFirewallEndpointRequest.newBuilder()
+   *           .setName(
+   *               FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       firewallActivationClient
+   *           .deleteProjectFirewallEndpointOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationCallable() {
+    return stub.deleteProjectFirewallEndpointOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   DeleteFirewallEndpointRequest request =
+   *       DeleteFirewallEndpointRequest.newBuilder()
+   *           .setName(
+   *               FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       firewallActivationClient.deleteProjectFirewallEndpointCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointCallable() {
+    return stub.deleteProjectFirewallEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Update a single org Endpoint.
    *
    * <p>Sample code:
@@ -1301,6 +2126,141 @@ public class FirewallActivationClient implements BackgroundResource {
   public final UnaryCallable<UpdateFirewallEndpointRequest, Operation>
       updateFirewallEndpointCallable() {
     return stub.updateFirewallEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   FirewallEndpoint response =
+   *       firewallActivationClient
+   *           .updateProjectFirewallEndpointAsync(firewallEndpoint, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param firewallEndpoint Required. The resource being updated
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     Endpoint resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointAsync(FirewallEndpoint firewallEndpoint, FieldMask updateMask) {
+    UpdateFirewallEndpointRequest request =
+        UpdateFirewallEndpointRequest.newBuilder()
+            .setFirewallEndpoint(firewallEndpoint)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateProjectFirewallEndpointAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   UpdateFirewallEndpointRequest request =
+   *       UpdateFirewallEndpointRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setFirewallEndpoint(FirewallEndpoint.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   FirewallEndpoint response =
+   *       firewallActivationClient.updateProjectFirewallEndpointAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointAsync(UpdateFirewallEndpointRequest request) {
+    return updateProjectFirewallEndpointOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   UpdateFirewallEndpointRequest request =
+   *       UpdateFirewallEndpointRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setFirewallEndpoint(FirewallEndpoint.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<FirewallEndpoint, OperationMetadata> future =
+   *       firewallActivationClient
+   *           .updateProjectFirewallEndpointOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   FirewallEndpoint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationCallable() {
+    return stub.updateProjectFirewallEndpointOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single project Endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirewallActivationClient firewallActivationClient = FirewallActivationClient.create()) {
+   *   UpdateFirewallEndpointRequest request =
+   *       UpdateFirewallEndpointRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setFirewallEndpoint(FirewallEndpoint.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       firewallActivationClient.updateProjectFirewallEndpointCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointCallable() {
+    return stub.updateProjectFirewallEndpointCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2112,9 +3072,8 @@ public class FirewallActivationClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2158,9 +3117,8 @@ public class FirewallActivationClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2205,9 +3163,8 @@ public class FirewallActivationClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2625,6 +3582,91 @@ public class FirewallActivationClient implements BackgroundResource {
     protected ListFirewallEndpointsFixedSizeCollection createCollection(
         List<ListFirewallEndpointsPage> pages, int collectionSize) {
       return new ListFirewallEndpointsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListProjectFirewallEndpointsPagedResponse
+      extends AbstractPagedListResponse<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          FirewallEndpoint,
+          ListProjectFirewallEndpointsPage,
+          ListProjectFirewallEndpointsFixedSizeCollection> {
+
+    public static ApiFuture<ListProjectFirewallEndpointsPagedResponse> createAsync(
+        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+            context,
+        ApiFuture<ListFirewallEndpointsResponse> futureResponse) {
+      ApiFuture<ListProjectFirewallEndpointsPage> futurePage =
+          ListProjectFirewallEndpointsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListProjectFirewallEndpointsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProjectFirewallEndpointsPagedResponse(ListProjectFirewallEndpointsPage page) {
+      super(page, ListProjectFirewallEndpointsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProjectFirewallEndpointsPage
+      extends AbstractPage<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          FirewallEndpoint,
+          ListProjectFirewallEndpointsPage> {
+
+    private ListProjectFirewallEndpointsPage(
+        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+            context,
+        ListFirewallEndpointsResponse response) {
+      super(context, response);
+    }
+
+    private static ListProjectFirewallEndpointsPage createEmptyPage() {
+      return new ListProjectFirewallEndpointsPage(null, null);
+    }
+
+    @Override
+    protected ListProjectFirewallEndpointsPage createPage(
+        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+            context,
+        ListFirewallEndpointsResponse response) {
+      return new ListProjectFirewallEndpointsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProjectFirewallEndpointsPage> createPageAsync(
+        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+            context,
+        ApiFuture<ListFirewallEndpointsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProjectFirewallEndpointsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          FirewallEndpoint,
+          ListProjectFirewallEndpointsPage,
+          ListProjectFirewallEndpointsFixedSizeCollection> {
+
+    private ListProjectFirewallEndpointsFixedSizeCollection(
+        List<ListProjectFirewallEndpointsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProjectFirewallEndpointsFixedSizeCollection createEmptyCollection() {
+      return new ListProjectFirewallEndpointsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProjectFirewallEndpointsFixedSizeCollection createCollection(
+        List<ListProjectFirewallEndpointsPage> pages, int collectionSize) {
+      return new ListProjectFirewallEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appoptimize</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
   <packaging>jar</packaging>
   <name>Google App Optimize API</name>
   <description>App Optimize API The App Optimize API provides developers and platform teams with tools to monitor, analyze, and improve the performance and cost-efficiency of their cloud applications.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-appoptimize-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-appoptimize</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-appoptimize-v1beta</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-appoptimize-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

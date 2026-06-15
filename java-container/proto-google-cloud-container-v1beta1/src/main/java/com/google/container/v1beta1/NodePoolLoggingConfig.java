@@ -24,7 +24,7 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * NodePoolLoggingConfig specifies logging configuration for nodepools.
+ * NodePoolLoggingConfig specifies logging configuration for node pools.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.NodePoolLoggingConfig}
@@ -291,7 +291,7 @@ public final class NodePoolLoggingConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * NodePoolLoggingConfig specifies logging configuration for nodepools.
+   * NodePoolLoggingConfig specifies logging configuration for node pools.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.NodePoolLoggingConfig}

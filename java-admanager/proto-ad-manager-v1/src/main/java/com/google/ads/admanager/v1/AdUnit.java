@@ -150,14 +150,18 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. AdUnit ID.
+   * Output only. Deprecated: AdUnit ID.
    * </pre>
    *
-   * <code>int64 ad_unit_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 ad_unit_id = 15 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.AdUnit.ad_unit_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=50
    * @return The adUnitId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getAdUnitId() {
     return adUnitId_;
   }
@@ -1161,7 +1165,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
    * @return Whether the externalSetTopBoxChannelId field is set.
    */
   @java.lang.Override
@@ -1183,7 +1187,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
    * @return The externalSetTopBoxChannelId.
    */
   @java.lang.Override
@@ -1213,7 +1217,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
    * @return The bytes for externalSetTopBoxChannelId.
    */
   @java.lang.Override
@@ -3224,14 +3228,18 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. AdUnit ID.
+     * Output only. Deprecated: AdUnit ID.
      * </pre>
      *
-     * <code>int64 ad_unit_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 ad_unit_id = 15 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.ad_unit_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=50
      * @return The adUnitId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getAdUnitId() {
       return adUnitId_;
     }
@@ -3240,14 +3248,18 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. AdUnit ID.
+     * Output only. Deprecated: AdUnit ID.
      * </pre>
      *
-     * <code>int64 ad_unit_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 ad_unit_id = 15 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.ad_unit_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=50
      * @param value The adUnitId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAdUnitId(long value) {
 
       adUnitId_ = value;
@@ -3260,13 +3272,17 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. AdUnit ID.
+     * Output only. Deprecated: AdUnit ID.
      * </pre>
      *
-     * <code>int64 ad_unit_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 ad_unit_id = 15 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.AdUnit.ad_unit_id is deprecated. See
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=50
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearAdUnitId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       adUnitId_ = 0L;
@@ -5900,7 +5916,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
      * @return Whether the externalSetTopBoxChannelId field is set.
      */
     @java.lang.Deprecated
@@ -5921,7 +5937,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
      * @return The externalSetTopBoxChannelId.
      */
     @java.lang.Deprecated
@@ -5950,7 +5966,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
      * @return The bytes for externalSetTopBoxChannelId.
      */
     @java.lang.Deprecated
@@ -5979,7 +5995,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
      * @param value The externalSetTopBoxChannelId to set.
      * @return This builder for chaining.
      */
@@ -6007,7 +6023,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -6031,7 +6047,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-     *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+     *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
      * @param value The bytes for externalSetTopBoxChannelId to set.
      * @return This builder for chaining.
      */

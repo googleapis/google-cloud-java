@@ -1,0 +1,45 @@
+/*
+ * Copyright 2025 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.gaxx.grpc;
+
+import com.google.api.core.ApiFuture;
+import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.PingAndWarmResponse;
+import io.grpc.Channel;
+import io.grpc.ManagedChannel;
+
+@InternalApi("For internal use by google-cloud-java clients only")
+public interface ChannelPrimer {
+  /**
+   * @deprecated Use {@link #primeChannel(Channel)}
+   */
+  @Deprecated
+  default void primeChannel(ManagedChannel channel) {
+    primeChannel((Channel) channel);
+  }
+
+  void primeChannel(Channel channel);
+
+  /**
+   * @deprecated Use {@link #sendPrimeRequestsAsync(Channel)}
+   */
+  @Deprecated
+  default ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(ManagedChannel channel) {
+    return sendPrimeRequestsAsync((Channel) channel);
+  }
+
+  ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(Channel channel);
+}

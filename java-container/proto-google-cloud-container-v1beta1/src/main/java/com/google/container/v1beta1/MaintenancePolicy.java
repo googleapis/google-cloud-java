@@ -185,6 +185,65 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int DISRUPTION_BUDGET_FIELD_NUMBER = 4;
+  private com.google.container.v1beta1.DisruptionBudget disruptionBudget_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The upgrade disruption budget for the cluster control plane.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the disruptionBudget field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisruptionBudget() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The upgrade disruption budget for the cluster control plane.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The disruptionBudget.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.DisruptionBudget getDisruptionBudget() {
+    return disruptionBudget_ == null
+        ? com.google.container.v1beta1.DisruptionBudget.getDefaultInstance()
+        : disruptionBudget_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The upgrade disruption budget for the cluster control plane.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.DisruptionBudgetOrBuilder getDisruptionBudgetOrBuilder() {
+    return disruptionBudget_ == null
+        ? com.google.container.v1beta1.DisruptionBudget.getDefaultInstance()
+        : disruptionBudget_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -205,6 +264,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resourceVersion_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, resourceVersion_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getDisruptionBudget());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -219,6 +281,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resourceVersion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, resourceVersion_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDisruptionBudget());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -241,6 +306,10 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       if (!getWindow().equals(other.getWindow())) return false;
     }
     if (!getResourceVersion().equals(other.getResourceVersion())) return false;
+    if (hasDisruptionBudget() != other.hasDisruptionBudget()) return false;
+    if (hasDisruptionBudget()) {
+      if (!getDisruptionBudget().equals(other.getDisruptionBudget())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -258,6 +327,10 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + RESOURCE_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getResourceVersion().hashCode();
+    if (hasDisruptionBudget()) {
+      hash = (37 * hash) + DISRUPTION_BUDGET_FIELD_NUMBER;
+      hash = (53 * hash) + getDisruptionBudget().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -400,6 +473,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetWindowFieldBuilder();
+        internalGetDisruptionBudgetFieldBuilder();
       }
     }
 
@@ -413,6 +487,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         windowBuilder_ = null;
       }
       resourceVersion_ = "";
+      disruptionBudget_ = null;
+      if (disruptionBudgetBuilder_ != null) {
+        disruptionBudgetBuilder_.dispose();
+        disruptionBudgetBuilder_ = null;
+      }
       return this;
     }
 
@@ -457,6 +536,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceVersion_ = resourceVersion_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.disruptionBudget_ =
+            disruptionBudgetBuilder_ == null ? disruptionBudget_ : disruptionBudgetBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -479,6 +563,9 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         resourceVersion_ = other.resourceVersion_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasDisruptionBudget()) {
+        mergeDisruptionBudget(other.getDisruptionBudget());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -518,6 +605,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetDisruptionBudgetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -861,6 +955,220 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.DisruptionBudget disruptionBudget_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.DisruptionBudget,
+            com.google.container.v1beta1.DisruptionBudget.Builder,
+            com.google.container.v1beta1.DisruptionBudgetOrBuilder>
+        disruptionBudgetBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the disruptionBudget field is set.
+     */
+    public boolean hasDisruptionBudget() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The disruptionBudget.
+     */
+    public com.google.container.v1beta1.DisruptionBudget getDisruptionBudget() {
+      if (disruptionBudgetBuilder_ == null) {
+        return disruptionBudget_ == null
+            ? com.google.container.v1beta1.DisruptionBudget.getDefaultInstance()
+            : disruptionBudget_;
+      } else {
+        return disruptionBudgetBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDisruptionBudget(com.google.container.v1beta1.DisruptionBudget value) {
+      if (disruptionBudgetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        disruptionBudget_ = value;
+      } else {
+        disruptionBudgetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDisruptionBudget(
+        com.google.container.v1beta1.DisruptionBudget.Builder builderForValue) {
+      if (disruptionBudgetBuilder_ == null) {
+        disruptionBudget_ = builderForValue.build();
+      } else {
+        disruptionBudgetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDisruptionBudget(com.google.container.v1beta1.DisruptionBudget value) {
+      if (disruptionBudgetBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && disruptionBudget_ != null
+            && disruptionBudget_
+                != com.google.container.v1beta1.DisruptionBudget.getDefaultInstance()) {
+          getDisruptionBudgetBuilder().mergeFrom(value);
+        } else {
+          disruptionBudget_ = value;
+        }
+      } else {
+        disruptionBudgetBuilder_.mergeFrom(value);
+      }
+      if (disruptionBudget_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDisruptionBudget() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      disruptionBudget_ = null;
+      if (disruptionBudgetBuilder_ != null) {
+        disruptionBudgetBuilder_.dispose();
+        disruptionBudgetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.DisruptionBudget.Builder getDisruptionBudgetBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetDisruptionBudgetFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.DisruptionBudgetOrBuilder getDisruptionBudgetOrBuilder() {
+      if (disruptionBudgetBuilder_ != null) {
+        return disruptionBudgetBuilder_.getMessageOrBuilder();
+      } else {
+        return disruptionBudget_ == null
+            ? com.google.container.v1beta1.DisruptionBudget.getDefaultInstance()
+            : disruptionBudget_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The upgrade disruption budget for the cluster control plane.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.DisruptionBudget,
+            com.google.container.v1beta1.DisruptionBudget.Builder,
+            com.google.container.v1beta1.DisruptionBudgetOrBuilder>
+        internalGetDisruptionBudgetFieldBuilder() {
+      if (disruptionBudgetBuilder_ == null) {
+        disruptionBudgetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.DisruptionBudget,
+                com.google.container.v1beta1.DisruptionBudget.Builder,
+                com.google.container.v1beta1.DisruptionBudgetOrBuilder>(
+                getDisruptionBudget(), getParentForChildren(), isClean());
+        disruptionBudget_ = null;
+      }
+      return disruptionBudgetBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1beta1.MaintenancePolicy)

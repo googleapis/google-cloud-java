@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>third-party-dependencies</artifactId>
   <packaging>pom</packaging>
-  <version>3.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Google Cloud Third-party Shared Dependencies</name>
   <description>
     Shared third-party dependencies for Google Cloud Java libraries.
@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.api</groupId>
     <artifactId>gapic-generator-java-pom-parent</artifactId>
-    <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
     <relativePath>../../gapic-generator-java-pom-parent</relativePath>
   </parent>
 
@@ -24,7 +24,7 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
 
     <threeten-extra.version>1.8.0</threeten-extra.version>
-    <animal-sniffer.version>1.26</animal-sniffer.version>
+    <animal-sniffer.version>1.27</animal-sniffer.version>
     <opencensus.version>0.31.1</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <jackson.version>2.18.3</jackson.version>
@@ -261,6 +261,11 @@
         <groupId>com.google.crypto.tink</groupId>
         <artifactId>tink</artifactId>
         <version>${com.google.crypto.tink.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>${jspecify.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

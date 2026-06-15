@@ -79,11 +79,12 @@ public interface UpdateProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -93,11 +94,12 @@ public interface UpdateProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -107,11 +109,12 @@ public interface UpdateProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -119,12 +122,47 @@ public interface UpdateProcessRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true and the process is not found, the request inserts it.
+   * Optional. If set to true and the process is not found, the request inserts
+   * it.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
   boolean getAllowMissing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for this request. Restricted to 36 ASCII
+   * characters. A random UUID is recommended. This request is idempotent only
+   * if a `request_id` is provided.
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for this request. Restricted to 36 ASCII
+   * characters. A random UUID is recommended. This request is idempotent only
+   * if a `request_id` is provided.
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

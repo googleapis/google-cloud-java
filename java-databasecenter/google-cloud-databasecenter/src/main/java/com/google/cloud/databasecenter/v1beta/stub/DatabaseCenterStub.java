@@ -17,6 +17,7 @@
 package com.google.cloud.databasecenter.v1beta.stub;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateQueryStatsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
@@ -28,6 +29,8 @@ import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateQueryStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateQueryStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
@@ -79,6 +82,16 @@ public abstract class DatabaseCenterStub implements BackgroundResource {
   public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable() {
     throw new UnsupportedOperationException("Not implemented: aggregateIssueStatsCallable()");
+  }
+
+  public UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateQueryStatsPagedCallable()");
+  }
+
+  public UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsResponse>
+      aggregateQueryStatsCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateQueryStatsCallable()");
   }
 
   public UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse> queryIssuesPagedCallable() {

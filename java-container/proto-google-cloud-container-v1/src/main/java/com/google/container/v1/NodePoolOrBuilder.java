@@ -410,7 +410,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5025
+   *     google/container/v1/cluster_service.proto;l=5361
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -430,7 +430,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5025
+   *     google/container/v1/cluster_service.proto;l=5361
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -882,4 +882,48 @@ public interface NodePoolOrBuilder
    * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
    */
   com.google.container.v1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  com.google.container.v1.NodePool.NodePoolMaintenancePolicy getMaintenancePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder();
 }

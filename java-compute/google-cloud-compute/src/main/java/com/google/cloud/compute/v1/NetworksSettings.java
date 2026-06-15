@@ -123,6 +123,18 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     return ((NetworksStubSettings) getStubSettings()).addPeeringOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to cancelRequestRemovePeering. */
+  public UnaryCallSettings<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringSettings() {
+    return ((NetworksStubSettings) getStubSettings()).cancelRequestRemovePeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelRequestRemovePeering. */
+  public OperationCallSettings<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationSettings() {
+    return ((NetworksStubSettings) getStubSettings()).cancelRequestRemovePeeringOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteNetworkRequest, Operation> deleteSettings() {
     return ((NetworksStubSettings) getStubSettings()).deleteSettings();
@@ -332,6 +344,19 @@ public class NetworksSettings extends ClientSettings<NetworksSettings> {
     public OperationCallSettings.Builder<AddPeeringNetworkRequest, Operation, Operation>
         addPeeringOperationSettings() {
       return getStubSettingsBuilder().addPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelRequestRemovePeering. */
+    public UnaryCallSettings.Builder<CancelRequestRemovePeeringNetworkRequest, Operation>
+        cancelRequestRemovePeeringSettings() {
+      return getStubSettingsBuilder().cancelRequestRemovePeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelRequestRemovePeering. */
+    public OperationCallSettings.Builder<
+            CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+        cancelRequestRemovePeeringOperationSettings() {
+      return getStubSettingsBuilder().cancelRequestRemovePeeringOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */

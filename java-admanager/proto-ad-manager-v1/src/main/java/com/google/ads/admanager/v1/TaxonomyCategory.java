@@ -137,15 +137,19 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `TaxonomyCategory` ID.
+   * Output only. Deprecated: `TaxonomyCategory` ID.
    * </pre>
    *
-   * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 taxonomy_category_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.TaxonomyCategory.taxonomy_category_id is deprecated. See
+   *     google/ads/admanager/v1/taxonomy_category_messages.proto;l=44
    * @return Whether the taxonomyCategoryId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasTaxonomyCategoryId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -154,15 +158,19 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `TaxonomyCategory` ID.
+   * Output only. Deprecated: `TaxonomyCategory` ID.
    * </pre>
    *
-   * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 taxonomy_category_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.TaxonomyCategory.taxonomy_category_id is deprecated. See
+   *     google/ads/admanager/v1/taxonomy_category_messages.proto;l=44
    * @return The taxonomyCategoryId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getTaxonomyCategoryId() {
     return taxonomyCategoryId_;
   }
@@ -1178,15 +1186,19 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `TaxonomyCategory` ID.
+     * Output only. Deprecated: `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 taxonomy_category_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.TaxonomyCategory.taxonomy_category_id is deprecated. See
+     *     google/ads/admanager/v1/taxonomy_category_messages.proto;l=44
      * @return Whether the taxonomyCategoryId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasTaxonomyCategoryId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1195,15 +1207,19 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `TaxonomyCategory` ID.
+     * Output only. Deprecated: `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 taxonomy_category_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.TaxonomyCategory.taxonomy_category_id is deprecated. See
+     *     google/ads/admanager/v1/taxonomy_category_messages.proto;l=44
      * @return The taxonomyCategoryId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getTaxonomyCategoryId() {
       return taxonomyCategoryId_;
     }
@@ -1212,15 +1228,19 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `TaxonomyCategory` ID.
+     * Output only. Deprecated: `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 taxonomy_category_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.TaxonomyCategory.taxonomy_category_id is deprecated. See
+     *     google/ads/admanager/v1/taxonomy_category_messages.proto;l=44
      * @param value The taxonomyCategoryId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTaxonomyCategoryId(long value) {
 
       taxonomyCategoryId_ = value;
@@ -1233,14 +1253,18 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `TaxonomyCategory` ID.
+     * Output only. Deprecated: `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 taxonomy_category_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.TaxonomyCategory.taxonomy_category_id is deprecated. See
+     *     google/ads/admanager/v1/taxonomy_category_messages.proto;l=44
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTaxonomyCategoryId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       taxonomyCategoryId_ = 0L;

@@ -24,6 +24,10 @@ package com.google.container.v1;
  *
  *
  * <pre>
+ * Deprecated: Compliance Posture is no longer supported.
+ * For more details, see
+ * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+ *
  * CompliancePostureConfig defines the settings needed to enable/disable
  * features for the Compliance Posture.
  * </pre>
@@ -31,6 +35,7 @@ package com.google.container.v1;
  * Protobuf type {@code google.container.v1.CompliancePostureConfig}
  */
 @com.google.protobuf.Generated
+@java.lang.Deprecated
 public final class CompliancePostureConfig extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.container.v1.CompliancePostureConfig)
@@ -1241,6 +1246,10 @@ public final class CompliancePostureConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * CompliancePostureConfig defines the settings needed to enable/disable
    * features for the Compliance Posture.
    * </pre>

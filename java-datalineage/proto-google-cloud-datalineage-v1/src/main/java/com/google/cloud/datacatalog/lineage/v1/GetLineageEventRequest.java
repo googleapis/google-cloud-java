@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [GetLineageEvent][google.cloud.datacatalog.lineage.v1.GetLineageEvent].
+ * [GetLineageEvent][google.cloud.datacatalog.lineage.v1.Lineage.GetLineageEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.GetLineageEventRequest}
@@ -294,7 +294,7 @@ public final class GetLineageEventRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Request message for
-   * [GetLineageEvent][google.cloud.datacatalog.lineage.v1.GetLineageEvent].
+   * [GetLineageEvent][google.cloud.datacatalog.lineage.v1.Lineage.GetLineageEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.GetLineageEventRequest}

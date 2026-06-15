@@ -228,8 +228,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -246,8 +246,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -264,8 +264,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -283,8 +283,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -1170,8 +1170,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -1190,8 +1190,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -1210,8 +1210,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -1231,8 +1231,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Specifying port is supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>repeated string fqdns = 1;</code>
@@ -1804,8 +1804,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1825,8 +1825,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1845,8 +1845,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1866,8 +1866,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1887,8 +1887,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1916,8 +1916,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1944,8 +1944,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1969,8 +1969,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -1993,8 +1993,8 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          * Specifying port is supported.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>repeated string fqdns = 1;</code>
@@ -3969,11 +3969,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
      * Defines the host name of the registry server, which will be used to
      * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
      * It supports fully qualified domain names (FQDN) and IP addresses:
-     * Specifying port is supported.
+     * Specifying port is supported, while scheme and path are NOT supported.
      * Wildcards are NOT supported.
      * Examples:
-     * - my.customdomain.com
-     * - 10.0.1.2:5000
+     * - `my.customdomain.com`
+     * - `10.0.1.2:5000`
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -3989,11 +3989,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
      * Defines the host name of the registry server, which will be used to
      * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
      * It supports fully qualified domain names (FQDN) and IP addresses:
-     * Specifying port is supported.
+     * Specifying port is supported, while scheme and path are NOT supported.
      * Wildcards are NOT supported.
      * Examples:
-     * - my.customdomain.com
-     * - 10.0.1.2:5000
+     * - `my.customdomain.com`
+     * - `10.0.1.2:5000`
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -7364,12 +7364,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Host configures the registry host/mirror.
-       * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * It supports fully qualified domain names (FQDNs) and IP addresses.
+       * Specifying scheme, port or path is supported. Scheme can only be http
+       * or https.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `https://my.customdomain.com/path`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string host = 1;</code>
@@ -7383,12 +7385,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Host configures the registry host/mirror.
-       * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * It supports fully qualified domain names (FQDNs) and IP addresses.
+       * Specifying scheme, port or path is supported. Scheme can only be http
+       * or https.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `https://my.customdomain.com/path`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string host = 1;</code>
@@ -7835,12 +7839,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Host configures the registry host/mirror.
-       * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * It supports fully qualified domain names (FQDNs) and IP addresses.
+       * Specifying scheme, port or path is supported. Scheme can only be http
+       * or https.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `https://my.customdomain.com/path`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string host = 1;</code>
@@ -7865,12 +7871,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Host configures the registry host/mirror.
-       * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * It supports fully qualified domain names (FQDNs) and IP addresses.
+       * Specifying scheme, port or path is supported. Scheme can only be http
+       * or https.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `https://my.customdomain.com/path`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string host = 1;</code>
@@ -9081,12 +9089,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Host configures the registry host/mirror.
-         * It supports fully qualified domain names (FQDN) and IP addresses:
-         * Specifying port is supported.
+         * It supports fully qualified domain names (FQDNs) and IP addresses.
+         * Specifying scheme, port or path is supported. Scheme can only be http
+         * or https.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `https://my.customdomain.com/path`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>string host = 1;</code>
@@ -9110,12 +9120,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Host configures the registry host/mirror.
-         * It supports fully qualified domain names (FQDN) and IP addresses:
-         * Specifying port is supported.
+         * It supports fully qualified domain names (FQDNs) and IP addresses.
+         * Specifying scheme, port or path is supported. Scheme can only be http
+         * or https.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `https://my.customdomain.com/path`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>string host = 1;</code>
@@ -9139,12 +9151,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Host configures the registry host/mirror.
-         * It supports fully qualified domain names (FQDN) and IP addresses:
-         * Specifying port is supported.
+         * It supports fully qualified domain names (FQDNs) and IP addresses.
+         * Specifying scheme, port or path is supported. Scheme can only be http
+         * or https.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `https://my.customdomain.com/path`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>string host = 1;</code>
@@ -9167,12 +9181,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Host configures the registry host/mirror.
-         * It supports fully qualified domain names (FQDN) and IP addresses:
-         * Specifying port is supported.
+         * It supports fully qualified domain names (FQDNs) and IP addresses.
+         * Specifying scheme, port or path is supported. Scheme can only be http
+         * or https.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `https://my.customdomain.com/path`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>string host = 1;</code>
@@ -9191,12 +9207,14 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Host configures the registry host/mirror.
-         * It supports fully qualified domain names (FQDN) and IP addresses:
-         * Specifying port is supported.
+         * It supports fully qualified domain names (FQDNs) and IP addresses.
+         * Specifying scheme, port or path is supported. Scheme can only be http
+         * or https.
          * Wildcards are NOT supported.
          * Examples:
-         * - my.customdomain.com
-         * - 10.0.1.2:5000
+         * - `my.customdomain.com`
+         * - `https://my.customdomain.com/path`
+         * - `10.0.1.2:5000`
          * </pre>
          *
          * <code>string host = 1;</code>
@@ -11211,11 +11229,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
      * Defines the host name of the registry server, which will be used to
      * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
      * It supports fully qualified domain names (FQDN) and IP addresses:
-     * Specifying port is supported.
+     * Specifying port is supported, while scheme and path are NOT supported.
      * Wildcards are NOT supported.
      * Examples:
-     * - my.customdomain.com
-     * - 10.0.1.2:5000
+     * - `my.customdomain.com`
+     * - `10.0.1.2:5000`
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -11242,11 +11260,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
      * Defines the host name of the registry server, which will be used to
      * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
      * It supports fully qualified domain names (FQDN) and IP addresses:
-     * Specifying port is supported.
+     * Specifying port is supported, while scheme and path are NOT supported.
      * Wildcards are NOT supported.
      * Examples:
-     * - my.customdomain.com
-     * - 10.0.1.2:5000
+     * - `my.customdomain.com`
+     * - `10.0.1.2:5000`
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -11763,11 +11781,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Defines the host name of the registry server, which will be used to
        * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
        * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * Specifying port is supported, while scheme and path are NOT supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string server = 1;</code>
@@ -11793,11 +11811,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Defines the host name of the registry server, which will be used to
        * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
        * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * Specifying port is supported, while scheme and path are NOT supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string server = 1;</code>
@@ -11823,11 +11841,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Defines the host name of the registry server, which will be used to
        * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
        * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * Specifying port is supported, while scheme and path are NOT supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string server = 1;</code>
@@ -11852,11 +11870,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Defines the host name of the registry server, which will be used to
        * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
        * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * Specifying port is supported, while scheme and path are NOT supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string server = 1;</code>
@@ -11877,11 +11895,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        * Defines the host name of the registry server, which will be used to
        * create configuration file as /etc/containerd/hosts.d/&lt;server&gt;/hosts.toml.
        * It supports fully qualified domain names (FQDN) and IP addresses:
-       * Specifying port is supported.
+       * Specifying port is supported, while scheme and path are NOT supported.
        * Wildcards are NOT supported.
        * Examples:
-       * - my.customdomain.com
-       * - 10.0.1.2:5000
+       * - `my.customdomain.com`
+       * - `10.0.1.2:5000`
        * </pre>
        *
        * <code>string server = 1;</code>

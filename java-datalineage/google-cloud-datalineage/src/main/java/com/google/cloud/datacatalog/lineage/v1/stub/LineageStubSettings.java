@@ -48,6 +48,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -78,6 +79,8 @@ import com.google.cloud.datacatalog.lineage.v1.ProcessLinks;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
 import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
 import com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest;
@@ -208,6 +211,9 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
           BatchSearchLinkProcessesResponse,
           BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesSettings;
+  private final ServerStreamingCallSettings<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingSettings;
 
   private static final PagedListDescriptor<ListProcessesRequest, ListProcessesResponse, Process>
       LIST_PROCESSES_PAGE_STR_DESC =
@@ -597,6 +603,12 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     return batchSearchLinkProcessesSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchLineageStreaming. */
+  public ServerStreamingCallSettings<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingSettings() {
+    return searchLineageStreamingSettings;
+  }
+
   public LineageStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -726,6 +738,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     deleteLineageEventSettings = settingsBuilder.deleteLineageEventSettings().build();
     searchLinksSettings = settingsBuilder.searchLinksSettings().build();
     batchSearchLinkProcessesSettings = settingsBuilder.batchSearchLinkProcessesSettings().build();
+    searchLineageStreamingSettings = settingsBuilder.searchLineageStreamingSettings().build();
   }
 
   @Override
@@ -778,6 +791,9 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             BatchSearchLinkProcessesResponse,
             BatchSearchLinkProcessesPagedResponse>
         batchSearchLinkProcessesSettings;
+    private final ServerStreamingCallSettings.Builder<
+            SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -836,6 +852,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
       searchLinksSettings = PagedCallSettings.newBuilder(SEARCH_LINKS_PAGE_STR_FACT);
       batchSearchLinkProcessesSettings =
           PagedCallSettings.newBuilder(BATCH_SEARCH_LINK_PROCESSES_PAGE_STR_FACT);
+      searchLineageStreamingSettings = ServerStreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -881,6 +898,7 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
       deleteLineageEventSettings = settings.deleteLineageEventSettings.toBuilder();
       searchLinksSettings = settings.searchLinksSettings.toBuilder();
       batchSearchLinkProcessesSettings = settings.batchSearchLinkProcessesSettings.toBuilder();
+      searchLineageStreamingSettings = settings.searchLineageStreamingSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1010,6 +1028,11 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
 
       builder
           .batchSearchLinkProcessesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchLineageStreamingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1189,6 +1212,13 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
             BatchSearchLinkProcessesPagedResponse>
         batchSearchLinkProcessesSettings() {
       return batchSearchLinkProcessesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchLineageStreaming. */
+    public ServerStreamingCallSettings.Builder<
+            SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingSettings() {
+      return searchLineageStreamingSettings;
     }
 
     @Override

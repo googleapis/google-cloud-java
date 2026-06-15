@@ -60,12 +60,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the Autonomous Database. The database name must be
-   * unique in the project. The name must begin with a letter and can contain a
-   * maximum of 30 alphanumeric characters.
+   * Optional. Immutable. The name of the Autonomous Database. The database name
+   * must be unique in the project. The name must begin with a letter and can
+   * contain a maximum of 30 alphanumeric characters.
    * </pre>
    *
-   * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The database.
    */
@@ -75,12 +77,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the Autonomous Database. The database name must be
-   * unique in the project. The name must begin with a letter and can contain a
-   * maximum of 30 alphanumeric characters.
+   * Optional. Immutable. The name of the Autonomous Database. The database name
+   * must be unique in the project. The name must begin with a letter and can
+   * contain a maximum of 30 alphanumeric characters.
    * </pre>
    *
-   * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for database.
    */
@@ -90,11 +94,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for the Autonomous Database. The name does not
-   * have to be unique within your project.
+   * Optional. Immutable. The display name for the Autonomous Database. The name
+   * does not have to be unique within your project.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -104,11 +110,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name for the Autonomous Database. The name does not
-   * have to be unique within your project.
+   * Optional. Immutable. The display name for the Autonomous Database. The name
+   * does not have to be unique within your project.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -146,10 +154,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The password for the default ADMIN user.
+   * Optional. Immutable. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The adminPassword.
    */
@@ -159,14 +171,54 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The password for the default ADMIN user.
+   * Optional. Immutable. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for adminPassword.
    */
   com.google.protobuf.ByteString getAdminPasswordBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The resource name of a secret version in Secret
+   * Manager which contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The adminPasswordSecretVersion.
+   */
+  java.lang.String getAdminPasswordSecretVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The resource name of a secret version in Secret
+   * Manager which contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for adminPasswordSecretVersion.
+   */
+  com.google.protobuf.ByteString getAdminPasswordSecretVersionBytes();
 
   /**
    *
@@ -278,12 +330,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the VPC network used by the Autonomous Database in
-   * the following format: projects/{project}/global/networks/{network}
+   * Optional. Immutable. The name of the VPC network used by the Autonomous
+   * Database in the following format:
+   * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -294,12 +347,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the VPC network used by the Autonomous Database in
-   * the following format: projects/{project}/global/networks/{network}
+   * Optional. Immutable. The name of the VPC network used by the Autonomous
+   * Database in the following format:
+   * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -310,10 +364,12 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonomous Database.
+   * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
-   * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cidr.
    */
@@ -323,10 +379,12 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonomous Database.
+   * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
-   * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for cidr.
    */
@@ -336,15 +394,15 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
    * optional but if specified, this should match the parent ODBNetwork of the
    * OdbSubnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbNetwork.
@@ -355,15 +413,15 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
    * optional but if specified, this should match the parent ODBNetwork of the
    * OdbSubnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbNetwork.
@@ -374,13 +432,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbSubnet.
@@ -391,13 +449,13 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbSubnet.
@@ -408,13 +466,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The source Autonomous Database configuration for the standby
-   * Autonomous Database. The source Autonomous Database is configured while
-   * creating the Peer Autonomous Database and can't be updated after creation.
+   * Optional. Immutable. The source Autonomous Database configuration for the
+   * standby Autonomous Database. The source Autonomous Database is configured
+   * while creating the Peer Autonomous Database and can't be updated after
+   * creation.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the sourceConfig field is set.
@@ -425,13 +484,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The source Autonomous Database configuration for the standby
-   * Autonomous Database. The source Autonomous Database is configured while
-   * creating the Peer Autonomous Database and can't be updated after creation.
+   * Optional. Immutable. The source Autonomous Database configuration for the
+   * standby Autonomous Database. The source Autonomous Database is configured
+   * while creating the Peer Autonomous Database and can't be updated after
+   * creation.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The sourceConfig.
@@ -442,13 +502,14 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The source Autonomous Database configuration for the standby
-   * Autonomous Database. The source Autonomous Database is configured while
-   * creating the Peer Autonomous Database and can't be updated after creation.
+   * Optional. Immutable. The source Autonomous Database configuration for the
+   * standby Autonomous Database. The source Autonomous Database is configured
+   * while creating the Peer Autonomous Database and can't be updated after
+   * creation.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder getSourceConfigOrBuilder();

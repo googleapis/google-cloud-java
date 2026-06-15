@@ -188,6 +188,59 @@ public final class ReasoningEngineExecutionServiceGrpc {
     return getAsyncQueryReasoningEngineMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest,
+          com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+      getCancelAsyncQueryReasoningEngineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelAsyncQueryReasoningEngine",
+      requestType = com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest,
+          com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+      getCancelAsyncQueryReasoningEngineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest,
+            com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+        getCancelAsyncQueryReasoningEngineMethod;
+    if ((getCancelAsyncQueryReasoningEngineMethod =
+            ReasoningEngineExecutionServiceGrpc.getCancelAsyncQueryReasoningEngineMethod)
+        == null) {
+      synchronized (ReasoningEngineExecutionServiceGrpc.class) {
+        if ((getCancelAsyncQueryReasoningEngineMethod =
+                ReasoningEngineExecutionServiceGrpc.getCancelAsyncQueryReasoningEngineMethod)
+            == null) {
+          ReasoningEngineExecutionServiceGrpc.getCancelAsyncQueryReasoningEngineMethod =
+              getCancelAsyncQueryReasoningEngineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest,
+                          com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CancelAsyncQueryReasoningEngine"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReasoningEngineExecutionServiceMethodDescriptorSupplier(
+                              "CancelAsyncQueryReasoningEngine"))
+                      .build();
+        }
+      }
+    }
+    return getCancelAsyncQueryReasoningEngineMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ReasoningEngineExecutionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ReasoningEngineExecutionServiceStub> factory =
@@ -295,6 +348,22 @@ public final class ReasoningEngineExecutionServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAsyncQueryReasoningEngineMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AsyncQueryReasoningEngine operation.
+     * </pre>
+     */
+    default void cancelAsyncQueryReasoningEngine(
+        com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelAsyncQueryReasoningEngineMethod(), responseObserver);
+    }
   }
 
   /**
@@ -382,6 +451,24 @@ public final class ReasoningEngineExecutionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AsyncQueryReasoningEngine operation.
+     * </pre>
+     */
+    public void cancelAsyncQueryReasoningEngine(
+        com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelAsyncQueryReasoningEngineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -445,6 +532,21 @@ public final class ReasoningEngineExecutionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAsyncQueryReasoningEngineMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AsyncQueryReasoningEngine operation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse
+        cancelAsyncQueryReasoningEngine(
+            com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelAsyncQueryReasoningEngineMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -506,6 +608,20 @@ public final class ReasoningEngineExecutionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAsyncQueryReasoningEngineMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AsyncQueryReasoningEngine operation.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse
+        cancelAsyncQueryReasoningEngine(
+            com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelAsyncQueryReasoningEngineMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -556,11 +672,28 @@ public final class ReasoningEngineExecutionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getAsyncQueryReasoningEngineMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AsyncQueryReasoningEngine operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngine(
+            com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelAsyncQueryReasoningEngineMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_QUERY_REASONING_ENGINE = 0;
   private static final int METHODID_STREAM_QUERY_REASONING_ENGINE = 1;
   private static final int METHODID_ASYNC_QUERY_REASONING_ENGINE = 2;
+  private static final int METHODID_CANCEL_ASYNC_QUERY_REASONING_ENGINE = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -595,6 +728,13 @@ public final class ReasoningEngineExecutionServiceGrpc {
           serviceImpl.asyncQueryReasoningEngine(
               (com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_ASYNC_QUERY_REASONING_ENGINE:
+          serviceImpl.cancelAsyncQueryReasoningEngine(
+              (com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -634,6 +774,13 @@ public final class ReasoningEngineExecutionServiceGrpc {
                     com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_ASYNC_QUERY_REASONING_ENGINE)))
+        .addMethod(
+            getCancelAsyncQueryReasoningEngineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest,
+                    com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse>(
+                    service, METHODID_CANCEL_ASYNC_QUERY_REASONING_ENGINE)))
         .build();
   }
 
@@ -689,6 +836,7 @@ public final class ReasoningEngineExecutionServiceGrpc {
                       .addMethod(getQueryReasoningEngineMethod())
                       .addMethod(getStreamQueryReasoningEngineMethod())
                       .addMethod(getAsyncQueryReasoningEngineMethod())
+                      .addMethod(getCancelAsyncQueryReasoningEngineMethod())
                       .build();
         }
       }

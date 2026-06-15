@@ -76,7 +76,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Location policy specifies how zones are picked when scaling up the
-   * nodepool.
+   * node pool.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1beta1.NodePoolAutoscaling.LocationPolicy}
@@ -328,7 +328,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Location policy used when scaling up a nodepool.
+   * Location policy used when scaling up a node pool.
    * </pre>
    *
    * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
@@ -344,7 +344,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Location policy used when scaling up a nodepool.
+   * Location policy used when scaling up a node pool.
    * </pre>
    *
    * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
@@ -1087,7 +1087,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Location policy used when scaling up a nodepool.
+     * Location policy used when scaling up a node pool.
      * </pre>
      *
      * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
@@ -1104,7 +1104,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Location policy used when scaling up a nodepool.
+     * Location policy used when scaling up a node pool.
      * </pre>
      *
      * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
@@ -1124,7 +1124,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Location policy used when scaling up a nodepool.
+     * Location policy used when scaling up a node pool.
      * </pre>
      *
      * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
@@ -1146,7 +1146,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Location policy used when scaling up a nodepool.
+     * Location policy used when scaling up a node pool.
      * </pre>
      *
      * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
@@ -1170,7 +1170,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Location policy used when scaling up a nodepool.
+     * Location policy used when scaling up a node pool.
      * </pre>
      *
      * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;

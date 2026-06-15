@@ -30,12 +30,14 @@ import com.google.cloud.bigquery.storage.v1.AppendFormats.DataFormat;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorker.HealthCheckMetrics.HealthCheckFields;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.DoneCallback;
 import com.google.cloud.bigquery.storage.v1.StreamConnection.RequestCallback;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Uninterruptibles;
+import com.google.gson.Gson;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.Status.Code;
@@ -82,6 +84,7 @@ class ConnectionWorker implements AutoCloseable {
    */
   static Duration MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = Duration.ofMinutes(5);
 
+  private static final Gson GSON = new Gson();
   private Lock lock;
   private Condition hasMessageInWaitingQueue;
   private Condition inflightReduced;
@@ -225,6 +228,11 @@ class ConnectionWorker implements AutoCloseable {
   private final AtomicLong inflightWaitSec = new AtomicLong(0);
 
   /*
+   * Tracks current inflight retries.
+   */
+  private final AtomicLong queuedRetryCount = new AtomicLong(0);
+
+  /*
    * A String that uniquely identifies this writer.
    */
   private final String writerId = UUID.randomUUID().toString();
@@ -250,6 +258,9 @@ class ConnectionWorker implements AutoCloseable {
   private final RequestProfiler.RequestProfilerHook requestProfilerHook;
   private final TelemetryMetrics telemetryMetrics;
 
+  @GuardedBy("lock")
+  private final HealthCheckMetrics healthCheckMetrics;
+
   /** Indicate whether this connection is created during multiplexing mode. */
   private final Boolean isMultiplexing;
 
@@ -262,7 +273,227 @@ class ConnectionWorker implements AutoCloseable {
   private static String tableMatching = "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/";
   private static Pattern streamPatternTable = Pattern.compile(tableMatching);
 
-  // Latency buckets are based on a list of 1.5 ^ n
+  class HealthCheckMetrics {
+    // Interval between health checks.
+    private Duration HEALTH_CHECK_INTERVAL = Duration.ofSeconds(15);
+    // At least one of these thresholds must be met to trigger health check warning.
+    private Duration responseWaitTimeThreshold = Duration.ofSeconds(5);
+    private Duration latencyThreshold = Duration.ofSeconds(5);
+    private int percentErrorResponsesThreshold = 10;
+    private long queuedRequestsThreshold = 100;
+    private int percentRetriesThreshold = 25;
+    private long queuedBytesThreshold = 50 * 1024 * 1024;
+    private long connectionAttemptThreshold = 1;
+    private long connectionCloseThreshold = 1;
+
+    /*
+     * When was the last time we did a health check.
+     */
+    @GuardedBy("lock")
+    private Instant healthCheckTimeStamp = Instant.now();
+
+    @GuardedBy("lock")
+    private long windowedRequestsSent;
+
+    @GuardedBy("lock")
+    private long windowedRequestsSentBytes;
+
+    @GuardedBy("lock")
+    private long windowedResponsesAcked;
+
+    @GuardedBy("lock")
+    private long windowedResponsesAckedBytes;
+
+    @GuardedBy("lock")
+    private long windowedMilliLatencyMax;
+
+    @GuardedBy("lock")
+    private long windowedMilliLatencySum;
+
+    @GuardedBy("lock")
+    private long windowedMilliResponseWaitTimeMax;
+
+    @GuardedBy("lock")
+    private Map<Integer, Integer> windowedResponseCodes = new ConcurrentHashMap<>();
+
+    @GuardedBy("lock")
+    private long windowedQueuedRequestsMax;
+
+    @GuardedBy("lock")
+    private long windowedQueuedRetriesMax;
+
+    private long windowedConnectionAttemptCount;
+    private long windowedConnectionClosedCount;
+
+    void updateWindowedQueuedRequestsMax(long currentQueueLength, long currentRetryCount) {
+      if (currentQueueLength > windowedQueuedRequestsMax) {
+        windowedQueuedRequestsMax = currentQueueLength;
+      }
+      if (currentRetryCount > windowedQueuedRetriesMax) {
+        windowedQueuedRetriesMax = currentRetryCount;
+      }
+    }
+
+    void updateResponseWait(Instant sendInstant) {
+      long currentWaitTime = Duration.between(sendInstant, Instant.now()).toMillis();
+      if (currentWaitTime > windowedMilliResponseWaitTimeMax) {
+        windowedMilliResponseWaitTimeMax = currentWaitTime;
+      }
+    }
+
+    void updateRequestsSent(long bytes) {
+      windowedRequestsSent++;
+      windowedRequestsSentBytes += bytes;
+    }
+
+    void updateResponsesAcked(long bytes, long latencyMilli, int code) {
+      windowedResponsesAcked++;
+      windowedResponsesAckedBytes += bytes;
+      if (latencyMilli > windowedMilliLatencyMax) {
+        windowedMilliLatencyMax = latencyMilli;
+      }
+      windowedMilliLatencySum += latencyMilli;
+      windowedResponseCodes.put(code, windowedResponseCodes.getOrDefault(code, 0) + 1);
+    }
+
+    synchronized void updateConnectionAttempt() {
+      windowedConnectionAttemptCount++;
+    }
+
+    synchronized void updateConnectionClosed() {
+      windowedConnectionClosedCount++;
+    }
+
+    class HealthCheckFields {
+      // All metrics are windowed unless otherwise specified
+      long msecLongestResponseWaitTime;
+      long msecMaxLatency;
+      long msecAvgLatency;
+      long sendBps;
+      long receiveBps;
+      Map<Integer, Integer> responseCodes;
+      long requestsSentCount;
+      long responseCount;
+      long queuedRequestCountMax;
+      long queuedRetryCountMax; // How many active waiting or inflight requests are retries
+      long inflightBytes;
+      long connectionAttemptCount;
+      long connectionClosedCount;
+      boolean isConnected; // snapshot at instant metrics are gathered
+      String streamName;
+      String writerId;
+      String windowStartTime;
+      String windowDuration;
+    }
+
+    /*
+     * Compute current values of all health check metrics.
+     */
+    private void gatherHealthCheckMetrics(HealthCheckFields healthCheckFields) {
+      healthCheckFields.streamName = isMultiplexing ? "MULTIPLEXING" : streamName;
+      healthCheckFields.writerId = writerId;
+      healthCheckFields.queuedRequestCountMax = windowedQueuedRequestsMax;
+      healthCheckFields.queuedRetryCountMax = windowedQueuedRetriesMax;
+      healthCheckFields.msecLongestResponseWaitTime = windowedMilliResponseWaitTimeMax;
+      healthCheckFields.inflightBytes = inflightBytes;
+      healthCheckFields.requestsSentCount = windowedRequestsSent;
+      healthCheckFields.responseCount = windowedResponsesAcked;
+      if (HEALTH_CHECK_INTERVAL.toMillis() > 0) {
+        healthCheckFields.sendBps =
+            (windowedRequestsSentBytes * 1000) / HEALTH_CHECK_INTERVAL.toMillis();
+        healthCheckFields.receiveBps =
+            (windowedResponsesAckedBytes * 1000) / HEALTH_CHECK_INTERVAL.toMillis();
+      }
+      healthCheckFields.msecMaxLatency = windowedMilliLatencyMax;
+      healthCheckFields.msecAvgLatency =
+          windowedResponsesAcked > 0 ? windowedMilliLatencySum / windowedResponsesAcked : 0;
+      healthCheckFields.responseCodes.clear();
+      healthCheckFields.responseCodes.putAll(windowedResponseCodes);
+      healthCheckFields.connectionAttemptCount = windowedConnectionAttemptCount;
+      healthCheckFields.connectionClosedCount = windowedConnectionClosedCount;
+      healthCheckFields.isConnected = streamConnectionIsConnected;
+      healthCheckFields.windowStartTime = healthCheckTimeStamp.toString();
+      healthCheckFields.windowDuration = HEALTH_CHECK_INTERVAL.toString();
+    }
+
+    /*
+     * Determine if health check thresholds have been met.
+     */
+    private boolean checkThresholds(HealthCheckFields healthCheckFields) {
+      if ((healthCheckFields.queuedRequestCountMax >= queuedRequestsThreshold)
+          || (healthCheckFields.inflightBytes >= queuedBytesThreshold)
+          || (healthCheckFields.msecLongestResponseWaitTime >= responseWaitTimeThreshold.toMillis())
+          || (healthCheckFields.msecMaxLatency >= latencyThreshold.toMillis())
+          || (healthCheckFields.connectionAttemptCount >= connectionAttemptThreshold)
+          || (healthCheckFields.connectionClosedCount >= connectionCloseThreshold)) {
+        return true;
+      }
+      if (healthCheckFields.queuedRequestCountMax > 0) {
+        if (((healthCheckFields.queuedRetryCountMax * 100)
+                / (healthCheckFields.queuedRequestCountMax))
+            >= percentRetriesThreshold) {
+          return true;
+        }
+      }
+      if (!healthCheckFields.responseCodes.isEmpty()) {
+        int successResponses = 0;
+        if (healthCheckFields.responseCodes.containsKey(Status.Code.OK.value())) {
+          successResponses = healthCheckFields.responseCodes.get(Status.Code.OK.value());
+        }
+        int allResponses =
+            healthCheckFields.responseCodes.values().stream().mapToInt(Integer::intValue).sum();
+        if (allResponses > 0) {
+          int errorResponses = allResponses - successResponses;
+          if (((errorResponses * 100) / allResponses) >= percentErrorResponsesThreshold) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    /*
+     * Dump given health check metrics as WARNING log.
+     */
+    private void emitHealthCheckMetrics(HealthCheckFields healthCheckFields) {
+      log.warning(GSON.toJson(healthCheckFields));
+    }
+
+    /*
+     * Reset per-interval health check metrics in preparation for next window.
+     */
+    private void resetWindowedMetrics() {
+      windowedRequestsSent = 0;
+      windowedRequestsSentBytes = 0;
+      windowedResponsesAcked = 0;
+      windowedResponsesAckedBytes = 0;
+      windowedMilliLatencyMax = 0;
+      windowedMilliLatencySum = 0;
+      windowedMilliResponseWaitTimeMax = 0;
+      windowedResponseCodes.clear();
+      windowedConnectionAttemptCount = 0;
+      windowedConnectionClosedCount = 0;
+      windowedQueuedRequestsMax = 0;
+      windowedQueuedRetriesMax = 0;
+    }
+
+    /*
+     * Periodically run health checks. In case of issues emit a warning log message.
+     */
+    private void periodicHealthCheck() {
+      Duration timeSinceLastHealthCheck = Duration.between(healthCheckTimeStamp, Instant.now());
+      if (timeSinceLastHealthCheck.compareTo(HEALTH_CHECK_INTERVAL) >= 0) {
+        HealthCheckFields healthCheckFields = new HealthCheckFields();
+        healthCheckFields.responseCodes = new ConcurrentHashMap<>();
+        gatherHealthCheckMetrics(healthCheckFields);
+        if (checkThresholds(healthCheckFields)) {
+          emitHealthCheckMetrics(healthCheckFields);
+        }
+        resetWindowedMetrics();
+        healthCheckTimeStamp = Instant.now();
+      }
+    }
+  }
 
   public static Boolean isDefaultStreamName(String streamName) {
     Matcher matcher = DEFAULT_STREAM_PATTERN.matcher(streamName);
@@ -429,6 +660,7 @@ class ConnectionWorker implements AutoCloseable {
     this.requestProfilerHook = new RequestProfiler.RequestProfilerHook(enableRequestProfiler);
     this.telemetryMetrics =
         new TelemetryMetrics(this, enableOpenTelemetry, getTableName(), writerId, traceId);
+    this.healthCheckMetrics = new HealthCheckMetrics();
     this.isMultiplexing = isMultiplexing;
 
     // Always recreate a client for connection worker.
@@ -480,6 +712,7 @@ class ConnectionWorker implements AutoCloseable {
   private void resetConnection() {
     log.info("Start connecting stream: " + streamName + " id: " + writerId);
     telemetryMetrics.recordConnectionStart();
+    healthCheckMetrics.updateConnectionAttempt();
     if (this.streamConnection != null) {
       // It's safe to directly close the previous connection as the in flight messages
       // will be picked up by the next connection.
@@ -544,11 +777,6 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   @GuardedBy("lock")
-  private void addMessageToBackOfWaitingQueue(AppendRequestAndResponse requestWrapper) {
-    addMessageToWaitingQueue(requestWrapper, /* addToFront= */ false);
-  }
-
-  @GuardedBy("lock")
   private void addMessageToWaitingQueue(
       AppendRequestAndResponse requestWrapper, boolean addToFront) {
     ++this.inflightRequests;
@@ -561,6 +789,8 @@ class ConnectionWorker implements AutoCloseable {
     } else {
       waitingRequestQueue.add(requestWrapper);
     }
+    healthCheckMetrics.updateWindowedQueuedRequestsMax(
+        waitingRequestQueue.size() + inflightRequestQueue.size(), queuedRetryCount.get());
   }
 
   /** Schedules the writing of rows at given offset. */
@@ -698,7 +928,10 @@ class ConnectionWorker implements AutoCloseable {
       requestProfilerHook.startOperation(RequestProfiler.OperationName.WAIT_QUEUE, requestUniqueId);
       ++this.inflightRequests;
       this.inflightBytes += requestWrapper.messageSize;
+      requestWrapper.placedInWaitingQueueTime = Instant.now();
       waitingRequestQueue.addLast(requestWrapper);
+      healthCheckMetrics.updateWindowedQueuedRequestsMax(
+          waitingRequestQueue.size() + inflightRequestQueue.size(), queuedRetryCount.get());
       hasMessageInWaitingQueue.signal();
       requestProfilerHook.startOperation(
           RequestProfiler.OperationName.WAIT_INFLIGHT_QUOTA, requestUniqueId);
@@ -763,6 +996,66 @@ class ConnectionWorker implements AutoCloseable {
   void setTestOnlyRunTimeExceptionInAppendLoop(
       RuntimeException testOnlyRunTimeExceptionInAppendLoop) {
     this.testOnlyRunTimeExceptionInAppendLoop = testOnlyRunTimeExceptionInAppendLoop;
+  }
+
+  @VisibleForTesting()
+  HealthCheckMetrics.HealthCheckFields gatherTestOnlyHealthCheckMetrics() {
+    this.lock.lock();
+    try {
+      HealthCheckFields healthCheckFields = healthCheckMetrics.new HealthCheckFields();
+      healthCheckFields.responseCodes = new ConcurrentHashMap<>();
+      healthCheckMetrics.gatherHealthCheckMetrics(healthCheckFields);
+      healthCheckMetrics.emitHealthCheckMetrics(healthCheckFields);
+      return healthCheckFields;
+    } finally {
+      this.lock.unlock();
+    }
+  }
+
+  @VisibleForTesting
+  void setTestOnlyHealthCheckInterval(Duration interval) {
+    this.lock.lock();
+    try {
+      healthCheckMetrics.HEALTH_CHECK_INTERVAL = interval;
+    } finally {
+      this.lock.unlock();
+    }
+  }
+
+  @VisibleForTesting
+  void setTestOnlyHealthCheckThresholds(
+      long queuedRequestsThreshold,
+      long queuedBytesThreshold,
+      Duration responseWaitTimeThreshold,
+      Duration latencyThreshold,
+      int percentRetriesThreshold,
+      int percentErrorResponsesThreshold,
+      long connectionAttemptThreshold,
+      long connectionCloseThreshold) {
+    this.lock.lock();
+    try {
+      healthCheckMetrics.queuedRequestsThreshold = queuedRequestsThreshold;
+      healthCheckMetrics.queuedBytesThreshold = queuedBytesThreshold;
+      healthCheckMetrics.responseWaitTimeThreshold = responseWaitTimeThreshold;
+      healthCheckMetrics.latencyThreshold = latencyThreshold;
+      healthCheckMetrics.percentRetriesThreshold = percentRetriesThreshold;
+      healthCheckMetrics.percentErrorResponsesThreshold = percentErrorResponsesThreshold;
+      healthCheckMetrics.connectionAttemptThreshold = connectionAttemptThreshold;
+      healthCheckMetrics.connectionCloseThreshold = connectionCloseThreshold;
+    } finally {
+      this.lock.unlock();
+    }
+  }
+
+  @VisibleForTesting
+  boolean checkTestOnlyHealthCheckThresholds(
+      HealthCheckMetrics.HealthCheckFields healthCheckFields) {
+    this.lock.lock();
+    try {
+      return healthCheckMetrics.checkThresholds(healthCheckFields);
+    } finally {
+      this.lock.unlock();
+    }
   }
 
   public long getInflightWaitSeconds() {
@@ -859,11 +1152,14 @@ class ConnectionWorker implements AutoCloseable {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
         // Check whether we should error out the current append loop.
         if (inflightRequestQueue.size() > 0) {
-          Instant sendInstant = inflightRequestQueue.getFirst().requestSendTimeStamp;
+          AppendRequestAndResponse firstRequest = inflightRequestQueue.getFirst();
+          Instant sendInstant = firstRequest.requestSendTimeStamp;
           if (sendInstant != null) {
-            throwIfWaitCallbackTooLong(sendInstant);
+            healthCheckMetrics.updateResponseWait(sendInstant);
+            throwIfWaitCallbackTooLong(firstRequest);
           }
         }
+        healthCheckMetrics.periodicHealthCheck();
 
         // Copy the streamConnectionIsConnected guarded by lock to a local variable.
         // In addition, only reconnect if there is a retriable error.
@@ -893,8 +1189,10 @@ class ConnectionWorker implements AutoCloseable {
           requestProfilerHook.endOperation(
               RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
           waitForBackoffIfNecessary(requestWrapper);
+          requestWrapper.placedInInflightQueueTime = Instant.now();
           this.inflightRequestQueue.add(requestWrapper);
           localQueue.addLast(requestWrapper);
+          healthCheckMetrics.updateRequestsSent(requestWrapper.messageSize);
         }
       } catch (InterruptedException e) {
         log.warning(
@@ -1044,11 +1342,21 @@ class ConnectionWorker implements AutoCloseable {
     log.info("Append thread is done. Stream: " + streamName + " id: " + writerId);
   }
 
-  private void throwIfWaitCallbackTooLong(Instant timeToCheck) {
+  private void throwIfWaitCallbackTooLong(AppendRequestAndResponse requestWrapper) {
+    Instant timeToCheck = requestWrapper.requestSendTimeStamp;
+    if (timeToCheck == null) {
+      return;
+    }
     Duration milliSinceLastCallback = Duration.between(timeToCheck, Instant.now());
     if (milliSinceLastCallback.compareTo(MAXIMUM_REQUEST_CALLBACK_WAIT_TIME) > 0) {
       throw new Exceptions.MaximumRequestCallbackWaitTimeExceededException(
-          milliSinceLastCallback, writerId, MAXIMUM_REQUEST_CALLBACK_WAIT_TIME);
+          milliSinceLastCallback,
+          writerId,
+          MAXIMUM_REQUEST_CALLBACK_WAIT_TIME,
+          requestWrapper.requestReceivedTime,
+          requestWrapper.placedInWaitingQueueTime,
+          requestWrapper.placedInInflightQueueTime,
+          requestWrapper.dispatchTimes);
     }
   }
 
@@ -1113,6 +1421,7 @@ class ConnectionWorker implements AutoCloseable {
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
     this.lock.lock();
     try {
+      queuedRetryCount.set(0L);
       if (this.connectionFinalStatus != null) {
         finalStatus = this.connectionFinalStatus;
       }
@@ -1191,6 +1500,9 @@ class ConnectionWorker implements AutoCloseable {
 
         Long offset =
             requestWrapper.message.hasOffset() ? requestWrapper.message.getOffset().getValue() : -1;
+        if (requestWrapper.retryCount == 1) {
+          queuedRetryCount.incrementAndGet(); // this is the first retry attempt
+        }
         if (isDefaultStreamName(streamName) || offset == -1) {
           log.info(
               String.format(
@@ -1244,6 +1556,20 @@ class ConnectionWorker implements AutoCloseable {
     AppendRequestAndResponse requestWrapper;
     this.lock.lock();
     try {
+      Duration durationLatency = Duration.ZERO;
+      long latencyMilli = 0;
+      long responseMessageSize = 0;
+      if (!this.inflightRequestQueue.isEmpty()) {
+        responseMessageSize = this.inflightRequestQueue.getFirst().messageSize;
+        Instant sendInstant = this.inflightRequestQueue.getFirst().requestSendTimeStamp;
+        if (sendInstant != null) {
+          durationLatency = Duration.between(sendInstant, Instant.now());
+          latencyMilli = durationLatency.toMillis();
+        }
+      }
+      int statusCode = response.hasError() ? response.getError().getCode() : Status.Code.OK.value();
+      healthCheckMetrics.updateResponsesAcked(responseMessageSize, latencyMilli, statusCode);
+
       // Ignored response has arrived
       if (responsesToIgnore > 0) {
         if (response.hasError()) {
@@ -1275,9 +1601,7 @@ class ConnectionWorker implements AutoCloseable {
         connectionRetryStartTime = 0;
       }
       if (!this.inflightRequestQueue.isEmpty()) {
-        Instant sendInstant = inflightRequestQueue.getFirst().requestSendTimeStamp;
-        if (sendInstant != null) {
-          Duration durationLatency = Duration.between(sendInstant, Instant.now());
+        if (durationLatency.compareTo(Duration.ZERO) > 0) {
           telemetryMetrics.recordNetworkLatency(durationLatency);
         }
 
@@ -1319,6 +1643,14 @@ class ConnectionWorker implements AutoCloseable {
       if (retryOnRetryableError(Code.values()[response.getError().getCode()], requestWrapper)) {
         log.info("Attempting to retry on error: " + response.getError().toString());
         return;
+      }
+    }
+    if (requestWrapper.retryCount > 0) {
+      this.lock.lock();
+      try {
+        queuedRetryCount.decrementAndGet();
+      } finally {
+        this.lock.unlock();
       }
     }
 
@@ -1401,6 +1733,7 @@ class ConnectionWorker implements AutoCloseable {
       this.streamConnectionIsConnected = false;
       this.telemetryMetrics.recordConnectionEnd(
           Code.values()[Status.fromThrowable(finalStatus).getCode().ordinal()].toString());
+      this.healthCheckMetrics.updateConnectionClosed();
       if (connectionFinalStatus == null) {
         if (!closedIdleConnection && connectionRetryStartTime == 0) {
           connectionRetryStartTime = System.currentTimeMillis();
@@ -1504,6 +1837,11 @@ class ConnectionWorker implements AutoCloseable {
     // If a response is no longer expected this is set back to null.
     Instant requestSendTimeStamp;
 
+    final Instant requestReceivedTime;
+    Instant placedInWaitingQueueTime;
+    Instant placedInInflightQueueTime;
+    final List<Instant> dispatchTimes = new ArrayList<>();
+
     AppendRequestAndResponse(
         AppendRowsRequest message,
         StreamWriter streamWriter,
@@ -1532,10 +1870,12 @@ class ConnectionWorker implements AutoCloseable {
         this.retryAlgorithm = null;
       }
       this.recordBatchRowCount = recordBatchRowCount;
+      this.requestReceivedTime = Instant.now();
     }
 
     void setRequestSendQueueTime() {
       requestSendTimeStamp = Instant.now();
+      dispatchTimes.add(requestSendTimeStamp);
     }
   }
 

@@ -606,10 +606,16 @@ def main(versions_file, monorepo):
                 version=main_module.version,
                 release_version=main_module.release_version,
             )
+
+    modules_to_write = []
+    for m in existing_modules.values():
+        if "showcase" not in m.artifact_id:
+            modules_to_write.append(m)
+
     templates.render(
         template_name="versions.txt.j2",
         output_name=versions_file,
-        modules=existing_modules.values(),
+        modules=modules_to_write,
     )
 
 

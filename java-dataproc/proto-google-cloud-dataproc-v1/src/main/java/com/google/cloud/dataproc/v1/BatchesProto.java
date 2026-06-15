@@ -92,6 +92,14 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_dataproc_v1_SparkSqlBatch_QueryVariablesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_SparkSqlBatch_QueryVariablesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_ParamsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_ParamsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -125,14 +133,15 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\"z\n"
-          + "\023ListBatchesResponse\0220\n"
-          + "\007batches\030\001 \003(\0132\037.google.cloud.dataproc.v1.Batch\022\027\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\177\n"
+          + "\023ListBatchesResponse\0225\n"
+          + "\007batches\030\001"
+          + " \003(\0132\037.google.cloud.dataproc.v1.BatchB\003\340A\003\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"I\n"
           + "\022DeleteBatchRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
-          + "\035dataproc.googleapis.com/Batch\"\310\n\n"
+          + "\035dataproc.googleapis.com/Batch\"\237\013\n"
           + "\005Batch\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\021\n"
           + "\004uuid\030\002 \001(\tB\003\340A\003\0224\n"
@@ -142,24 +151,26 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132&.google.cloud.dataproc.v1.PySparkBatchB\003\340A\001H\000\022@\n"
           + "\013spark_batch\030\005"
           + " \001(\0132$.google.cloud.dataproc.v1.SparkBatchB\003\340A\001H\000\022C\n\r"
-          + "spark_r_batch\030\006 \001("
-          + "\0132%.google.cloud.dataproc.v1.SparkRBatchB\003\340A\001H\000\022G\n"
-          + "\017spark_sql_batch\030\007 \001(\0132\'.googl"
-          + "e.cloud.dataproc.v1.SparkSqlBatchB\003\340A\001H\000\022@\n"
-          + "\014runtime_info\030\010"
-          + " \001(\0132%.google.cloud.dataproc.v1.RuntimeInfoB\003\340A\003\0229\n"
-          + "\005state\030\t \001("
-          + "\0162%.google.cloud.dataproc.v1.Batch.StateB\003\340A\003\022\032\n\r"
+          + "spark_r_batch\030\006"
+          + " \001(\0132%.google.cloud.dataproc.v1.SparkRBatchB\003\340A\001H\000\022G\n"
+          + "\017spark_sql_batch\030\007 \001(\0132\'."
+          + "google.cloud.dataproc.v1.SparkSqlBatchB\003\340A\001H\000\022U\n"
+          + "\026pyspark_notebook_batch\030\023 \001(\0132.."
+          + "google.cloud.dataproc.v1.PySparkNotebookBatchB\003\340A\001H\000\022@\n"
+          + "\014runtime_info\030\010 \001(\0132%.goo"
+          + "gle.cloud.dataproc.v1.RuntimeInfoB\003\340A\003\0229\n"
+          + "\005state\030\t"
+          + " \001(\0162%.google.cloud.dataproc.v1.Batch.StateB\003\340A\003\022\032\n\r"
           + "state_message\030\n"
           + " \001(\tB\003\340A\003\0223\n\n"
           + "state_time\030\013 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\024\n"
           + "\007creator\030\014 \001(\tB\003\340A\003\022@\n"
           + "\006labels\030\r"
           + " \003(\0132+.google.cloud.dataproc.v1.Batch.LabelsEntryB\003\340A\001\022D\n"
-          + "\016runtime_config\030\016 \001(\0132\'"
-          + ".google.cloud.dataproc.v1.RuntimeConfigB\003\340A\001\022L\n"
-          + "\022environment_config\030\017 \001(\0132+.googl"
-          + "e.cloud.dataproc.v1.EnvironmentConfigB\003\340A\001\022\026\n"
+          + "\016runtime_config\030\016"
+          + " \001(\0132\'.google.cloud.dataproc.v1.RuntimeConfigB\003\340A\001\022L\n"
+          + "\022environment_config\030\017"
+          + " \001(\0132+.google.cloud.dataproc.v1.EnvironmentConfigB\003\340A\001\022\026\n"
           + "\toperation\030\020 \001(\tB\003\340A\003\022H\n\r"
           + "state_history\030\021"
           + " \003(\0132,.google.cloud.dataproc.v1.Batch.StateHistoryB\003\340A\003\032\240\001\n"
@@ -180,18 +191,16 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
           + "\tCANCELLED\020\004\022\r\n"
           + "\tSUCCEEDED\020\005\022\n\n"
           + "\006FAILED\020\006:[\352AX\n"
-          + "\035dataproc.googleapis.com/Batch\0227projects/{projec"
-          + "t}/locations/{location}/batches/{batch}B\016\n"
+          + "\035dataproc.googleapis.com/Batch\0227proj"
+          + "ects/{project}/locations/{location}/batches/{batch}B\016\n"
           + "\014batch_config\"\262\001\n"
           + "\014PySparkBatch\022!\n"
           + "\024main_python_file_uri\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\004args\030\002 \003(\tB\003\340A\001\022\035\n"
-          + "\020python_file_uris\030\003 \003(\tB\003\340A\001\022\032\n"
-          + "\r"
+          + "\020python_file_uris\030\003 \003(\tB\003\340A\001\022\032\n\r"
           + "jar_file_uris\030\004 \003(\tB\003\340A\001\022\026\n"
           + "\tfile_uris\030\005 \003(\tB\003\340A\001\022\031\n"
-          + "\014archive_uris\030\006 \003(\tB\003\340A\001\"\265\001\n"
-          + "\n"
+          + "\014archive_uris\030\006 \003(\tB\003\340A\001\"\265\001\n\n"
           + "SparkBatch\022 \n"
           + "\021main_jar_file_uri\030\001 \001(\tB\003\340A\001H\000\022\031\n\n"
           + "main_class\030\002 \001(\tB\003\340A\001H\000\022\021\n"
@@ -207,30 +216,45 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
           + "\014archive_uris\030\004 \003(\tB\003\340A\001\"\332\001\n\r"
           + "SparkSqlBatch\022\033\n"
           + "\016query_file_uri\030\001 \001(\tB\003\340A\002\022Y\n"
-          + "\017query_variables\030\002"
-          + " \003(\0132;.google.cloud.dataproc.v1.SparkSqlBatch.QueryVariablesEntryB\003\340A\001\022\032\n\r"
+          + "\017query_variables\030\002 \003(\0132;.google.cloud.datap"
+          + "roc.v1.SparkSqlBatch.QueryVariablesEntryB\003\340A\001\022\032\n\r"
           + "jar_file_uris\030\003 \003(\tB\003\340A\001\0325\n"
           + "\023QueryVariablesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\0012\235\006\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\244\002\n"
+          + "\024PySparkNotebookBatch\022\036\n"
+          + "\021notebook_file_uri\030\001 \001(\tB\003\340A\002\022O\n"
+          + "\006params\030\002 \003("
+          + "\0132:.google.cloud.dataproc.v1.PySparkNotebookBatch.ParamsEntryB\003\340A\001\022\035\n"
+          + "\020python_file_uris\030\003 \003(\tB\003\340A\001\022\032\n\r"
+          + "jar_file_uris\030\004 \003(\tB\003\340A\001\022\026\n"
+          + "\tfile_uris\030\005 \003(\tB\003\340A\001\022\031\n"
+          + "\014archive_uris\030\006 \003(\tB\003\340A\001\032-\n"
+          + "\013ParamsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\0012\373\006\n"
           + "\017BatchController\022\352\001\n"
-          + "\013CreateBatch\022,.googl"
-          + "e.cloud.dataproc.v1.CreateBatchRequest\032\035.google.longrunning.Operation\"\215\001\312A8\n"
-          + "\005Batch\022/google.cloud.dataproc.v1.BatchOperat"
-          + "ionMetadata\332A\025parent,batch,batch_id\202\323\344\223\002"
-          + "4\"+/v1/{parent=projects/*/locations/*}/batches:\005batch\022\222\001\n"
-          + "\010GetBatch\022).google.cloud.dataproc.v1.GetBatchRequest\032\037.google.c"
-          + "loud.dataproc.v1.Batch\":\332A\004name\202\323\344\223\002-\022+/"
-          + "v1/{name=projects/*/locations/*/batches/*}\022\250\001\n"
-          + "\013ListBatches\022,.google.cloud.dataproc.v1.ListBatchesRequest\032-.google.cloud."
-          + "dataproc.v1.ListBatchesResponse\"<\332A\006pare"
-          + "nt\202\323\344\223\002-\022+/v1/{parent=projects/*/locations/*}/batches\022\217\001\n"
-          + "\013DeleteBatch\022,.google.cloud.dataproc.v1.DeleteBatchRequest\032\026.go"
-          + "ogle.protobuf.Empty\":\332A\004name\202\323\344\223\002-*+/v1/"
-          + "{name=projects/*/locations/*/batches/*}\032"
-          + "K\312A\027dataproc.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBk\n"
-          + "\034com.google.cloud.dataproc.v1B\014BatchesPro"
-          + "toP\001Z;cloud.google.com/go/dataproc/v2/apiv1/dataprocpb;dataprocpbb\006proto3"
+          + "\013CreateBatch\022,.google.cloud.datap"
+          + "roc.v1.CreateBatchRequest\032\035.google.longrunning.Operation\"\215\001\312A8\n"
+          + "\005Batch\022/google.cloud.dataproc.v1.BatchOperationMetadata\332A"
+          + "\025parent,batch,batch_id\202\323\344\223\0024\"+/v1/{paren"
+          + "t=projects/*/locations/*}/batches:\005batch\022\222\001\n"
+          + "\010GetBatch\022).google.cloud.dataproc.v1"
+          + ".GetBatchRequest\032\037.google.cloud.dataproc"
+          + ".v1.Batch\":\332A\004name\202\323\344\223\002-\022+/v1/{name=projects/*/locations/*/batches/*}\022\250\001\n"
+          + "\013ListBatches\022,.google.cloud.dataproc.v1.ListBat"
+          + "chesRequest\032-.google.cloud.dataproc.v1.L"
+          + "istBatchesResponse\"<\332A\006parent\202\323\344\223\002-\022+/v1"
+          + "/{parent=projects/*/locations/*}/batches\022\217\001\n"
+          + "\013DeleteBatch\022,.google.cloud.dataproc"
+          + ".v1.DeleteBatchRequest\032\026.google.protobuf"
+          + ".Empty\":\332A\004name\202\323\344\223\002-*+/v1/{name=project"
+          + "s/*/locations/*/batches/*}\032\250\001\312A\027dataproc"
+          + ".googleapis.com\322A\212\001https://www.googleapi"
+          + "s.com/auth/cloud-platform,https://www.go"
+          + "ogleapis.com/auth/dataproc,https://www.googleapis.com/auth/dataproc.read-onlyBk\n"
+          + "\034com.google.cloud.dataproc.v1B\014BatchesPr"
+          + "otoP\001Z;cloud.google.com/go/dataproc/v2/apiv1/dataprocpb;dataprocpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -297,6 +321,7 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
               "SparkBatch",
               "SparkRBatch",
               "SparkSqlBatch",
+              "PysparkNotebookBatch",
               "RuntimeInfo",
               "State",
               "StateMessage",
@@ -373,6 +398,27 @@ public final class BatchesProto extends com.google.protobuf.GeneratedFile {
     internal_static_google_cloud_dataproc_v1_SparkSqlBatch_QueryVariablesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_SparkSqlBatch_QueryVariablesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_descriptor,
+            new java.lang.String[] {
+              "NotebookFileUri",
+              "Params",
+              "PythonFileUris",
+              "JarFileUris",
+              "FileUris",
+              "ArchiveUris",
+            });
+    internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_ParamsEntry_descriptor =
+        internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_descriptor.getNestedType(0);
+    internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_ParamsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_PySparkNotebookBatch_ParamsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

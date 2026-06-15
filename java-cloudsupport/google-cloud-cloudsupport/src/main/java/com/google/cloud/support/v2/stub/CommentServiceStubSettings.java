@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.Comment;
 import com.google.cloud.support.v2.CreateCommentRequest;
+import com.google.cloud.support.v2.GetCommentRequest;
 import com.google.cloud.support.v2.ListCommentsRequest;
 import com.google.cloud.support.v2.ListCommentsResponse;
 import com.google.common.collect.ImmutableList;
@@ -119,6 +120,7 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
           ListCommentsRequest, ListCommentsResponse, ListCommentsPagedResponse>
       listCommentsSettings;
   private final UnaryCallSettings<CreateCommentRequest, Comment> createCommentSettings;
+  private final UnaryCallSettings<GetCommentRequest, Comment> getCommentSettings;
 
   private static final PagedListDescriptor<ListCommentsRequest, ListCommentsResponse, Comment>
       LIST_COMMENTS_PAGE_STR_DESC =
@@ -180,6 +182,11 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
   /** Returns the object with the settings used for calls to createComment. */
   public UnaryCallSettings<CreateCommentRequest, Comment> createCommentSettings() {
     return createCommentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getComment. */
+  public UnaryCallSettings<GetCommentRequest, Comment> getCommentSettings() {
+    return getCommentSettings;
   }
 
   public CommentServiceStub createStub() throws IOException {
@@ -295,6 +302,7 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
 
     listCommentsSettings = settingsBuilder.listCommentsSettings().build();
     createCommentSettings = settingsBuilder.createCommentSettings().build();
+    getCommentSettings = settingsBuilder.getCommentSettings().build();
   }
 
   @Override
@@ -313,6 +321,7 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
             ListCommentsRequest, ListCommentsResponse, ListCommentsPagedResponse>
         listCommentsSettings;
     private final UnaryCallSettings.Builder<CreateCommentRequest, Comment> createCommentSettings;
+    private final UnaryCallSettings.Builder<GetCommentRequest, Comment> getCommentSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -324,6 +333,7 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -351,6 +361,8 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -363,10 +375,11 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
 
       listCommentsSettings = PagedCallSettings.newBuilder(LIST_COMMENTS_PAGE_STR_FACT);
       createCommentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCommentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listCommentsSettings, createCommentSettings);
+              listCommentsSettings, createCommentSettings, getCommentSettings);
       initDefaults(this);
     }
 
@@ -375,10 +388,11 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
 
       listCommentsSettings = settings.listCommentsSettings.toBuilder();
       createCommentSettings = settings.createCommentSettings.toBuilder();
+      getCommentSettings = settings.getCommentSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listCommentsSettings, createCommentSettings);
+              listCommentsSettings, createCommentSettings, getCommentSettings);
     }
 
     private static Builder createDefault() {
@@ -416,6 +430,11 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .getCommentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -444,6 +463,11 @@ public class CommentServiceStubSettings extends StubSettings<CommentServiceStubS
     /** Returns the builder for the settings used for calls to createComment. */
     public UnaryCallSettings.Builder<CreateCommentRequest, Comment> createCommentSettings() {
       return createCommentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getComment. */
+    public UnaryCallSettings.Builder<GetCommentRequest, Comment> getCommentSettings() {
+      return getCommentSettings;
     }
 
     @Override

@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStub;
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStubSettings;
@@ -391,6 +392,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> batchSearchLinkProcessesPagedCallable()
  *           <li><p> batchSearchLinkProcessesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchLineageStreaming</td>
+ *      <td><p> Retrieves a streaming response of lineage links connected to the requested assets by performing a breadth-first search in the given direction. Links represent the data flow between &#42;&#42;source&#42;&#42; (upstream) and &#42;&#42;target&#42;&#42; (downstream) assets in transformation pipelines. Links are stored in the same project as the Lineage Events that create them. This method retrieves links from all valid locations provided in the request. This method supports Column-Level Lineage (CLL) along with wildcard support to retrieve all CLL for an Entity FQN.
+ * <p>  Following permissions are required to retrieve links:
+ * <ul>
+ * <li>  `datalineage.events.get` permission for the project where the link is stored for entity-level lineage.
+ * <li>  `datalineage.events.getFields` permission for the project where the link is stored for column-level lineage.
+ * </ul>
+ * <p>  This method also returns processes that created the links if explicitly requested by setting [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link) is non-zero and full process details are requested via `links.processes.process` in the [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+ * <p>  Permission required to retrieve processes:
+ * <ul>
+ * <li>  `datalineage.processes.get` permission for the project where the process is stored.
+ * </ul></td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchLineageStreamingCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -766,8 +787,8 @@ public class LineageClient implements BackgroundResource {
    *
    * @param process Required. The lineage process to update.
    *     <p>The process's `name` field is used to identify the process to update.
-   * @param updateMask The list of fields to update. Currently not used. The whole message is
-   *     updated.
+   * @param updateMask Optional. The list of fields to update. Currently not used. The whole message
+   *     is updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Process updateProcess(Process process, FieldMask updateMask) {
@@ -794,6 +815,7 @@ public class LineageClient implements BackgroundResource {
    *           .setProcess(Process.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAllowMissing(true)
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   Process response = lineageClient.updateProcess(request);
    * }
@@ -824,6 +846,7 @@ public class LineageClient implements BackgroundResource {
    *           .setProcess(Process.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAllowMissing(true)
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Process> future = lineageClient.updateProcessCallable().futureCall(request);
    *   // Do something.
@@ -1388,8 +1411,8 @@ public class LineageClient implements BackgroundResource {
    * @param run Required. The lineage run to update.
    *     <p>The run's `name` field is used to identify the run to update.
    *     <p>Format: `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
-   * @param updateMask The list of fields to update. Currently not used. The whole message is
-   *     updated.
+   * @param updateMask Optional. The list of fields to update. Currently not used. The whole message
+   *     is updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Run updateRun(Run run, FieldMask updateMask) {
@@ -2651,6 +2674,67 @@ public class LineageClient implements BackgroundResource {
   public final UnaryCallable<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>
       batchSearchLinkProcessesCallable() {
     return stub.batchSearchLinkProcessesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a streaming response of lineage links connected to the requested assets by performing
+   * a breadth-first search in the given direction. Links represent the data flow between
+   * &#42;&#42;source&#42;&#42; (upstream) and &#42;&#42;target&#42;&#42; (downstream) assets in
+   * transformation pipelines. Links are stored in the same project as the Lineage Events that
+   * create them. This method retrieves links from all valid locations provided in the request. This
+   * method supports Column-Level Lineage (CLL) along with wildcard support to retrieve all CLL for
+   * an Entity FQN.
+   *
+   * <p>Following permissions are required to retrieve links:
+   *
+   * <ul>
+   *   <li>`datalineage.events.get` permission for the project where the link is stored for
+   *       entity-level lineage.
+   *   <li>`datalineage.events.getFields` permission for the project where the link is stored for
+   *       column-level lineage.
+   * </ul>
+   *
+   * <p>This method also returns processes that created the links if explicitly requested by setting
+   * [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link)
+   * is non-zero and full process details are requested via `links.processes.process` in the
+   * [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+   *
+   * <p>Permission required to retrieve processes:
+   *
+   * <ul>
+   *   <li>`datalineage.processes.get` permission for the project where the process is stored.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   SearchLineageStreamingRequest request =
+   *       SearchLineageStreamingRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllLocations(new ArrayList<String>())
+   *           .setRootCriteria(SearchLineageStreamingRequest.RootCriteria.newBuilder().build())
+   *           .setFilters(SearchLineageStreamingRequest.SearchFilters.newBuilder().build())
+   *           .setLimits(SearchLineageStreamingRequest.SearchLimits.newBuilder().build())
+   *           .build();
+   *   ServerStream<SearchLineageStreamingResponse> stream =
+   *       lineageClient.searchLineageStreamingCallable().call(request);
+   *   for (SearchLineageStreamingResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingCallable() {
+    return stub.searchLineageStreamingCallable();
   }
 
   @Override

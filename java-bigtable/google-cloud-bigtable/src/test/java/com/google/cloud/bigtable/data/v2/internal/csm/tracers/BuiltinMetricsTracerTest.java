@@ -1,0 +1,1245 @@
+/*
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
+
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedDoubleValue;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedValue;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getMetricData;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.verifyAttributes;
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertThrows;
+
+import com.google.api.client.util.Lists;
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.batching.BatchingException;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowControlSettings;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.StreamController;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowResponse;
+import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.ReadRowsResponse;
+import com.google.bigtable.v2.ResponseParams;
+import com.google.cloud.bigtable.Version;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientBatchWriteFlowControlFactor;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientBatchWriteFlowControlTargetQps;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.MetricLabels;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableApplicationBlockingLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableAttemptLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableClientBlockingLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableConnectivityErrorCount;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableFirstResponseLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRemainingDeadline;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRetryCount;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableServerLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.ClientSchema;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.common.base.Stopwatch;
+import com.google.common.collect.Comparators;
+import com.google.common.collect.Range;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.BytesValue;
+import com.google.protobuf.StringValue;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ForwardingClientCall;
+import io.grpc.ForwardingClientCallListener;
+import io.grpc.ForwardingServerCall;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import io.grpc.ProxiedSocketAddress;
+import io.grpc.ProxyDetector;
+import io.grpc.Server;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.stub.ServerCallStreamObserver;
+import io.grpc.stub.StreamObserver;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.io.IOException;
+import java.net.SocketAddress;
+import java.nio.charset.Charset;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+import javax.annotation.Nullable;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+
+@RunWith(JUnit4.class)
+public class BuiltinMetricsTracerTest {
+  private static final Metadata.Key<byte[]> LOCATION_METADATA_KEY =
+      Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
+
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String APP_PROFILE_ID = "default";
+  private static final TableId TABLE = TableId.of("fake-table");
+
+  private static final String BAD_TABLE_ID = "non-exist-table";
+  private static final String FIRST_RESPONSE_TABLE_ID = "first-response";
+  private static final String ZONE = "us-west-1";
+  private static final String CLUSTER = "cluster-0";
+  private static final long FAKE_SERVER_TIMING = 50;
+  private static final long SERVER_LATENCY = 100;
+  private static final long APPLICATION_LATENCY = 200;
+  private static final long SLEEP_VARIABILITY = 15;
+  private static final String CLIENT_NAME = "java-bigtable/" + Version.VERSION;
+  private static final Duration CHANNEL_BLOCKING_LATENCY = Duration.ofMillis(200);
+
+  @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
+
+  private final FakeService fakeService = new FakeService();
+  private Server server;
+
+  private OpenTelemetrySdk otel;
+  private EnhancedBigtableStub stub;
+
+  private static final int batchElementCount = 2;
+
+  private final ClientInfo clientInfo =
+      ClientInfo.builder()
+          .setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
+          .setAppProfileId(APP_PROFILE_ID)
+          .build();
+  private final Attributes expectedBaseAttributes =
+      Attributes.builder()
+          .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
+          .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
+          .put(MetricLabels.APP_PROFILE_KEY, APP_PROFILE_ID)
+          .build();
+
+  private final Attributes expectedClientSchemaBaseAttributes =
+      Attributes.builder()
+          .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
+          .put(TableSchema.INSTANCE_ID_KEY, INSTANCE_ID)
+          .put(MetricLabels.APP_PROFILE_KEY, APP_PROFILE_ID)
+          .put(MetricLabels.CLIENT_NAME, "java-bigtable/" + Version.VERSION)
+          .build();
+
+  private InMemoryMetricReader metricReader;
+
+  private DelayProxyDetector delayProxyDetector;
+
+  private final OutstandingRpcCounter outstandingRpcCounter = new OutstandingRpcCounter();
+
+  @Before
+  public void setUp() throws Exception {
+    metricReader = InMemoryMetricReader.create();
+
+    SdkMeterProviderBuilder meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader);
+
+    otel = OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
+    MetricRegistry mr = new MetricRegistry();
+
+    BuiltinMetricsTracerFactory facotry =
+        new BuiltinMetricsTracerFactory(
+            mr.newInternalRecorderRegistry(otel.getMeterProvider()), clientInfo);
+
+    // Add an interceptor to add server-timing in headers
+    ServerInterceptor trailersInterceptor =
+        new ServerInterceptor() {
+          @Override
+          public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+              ServerCall<ReqT, RespT> serverCall,
+              Metadata metadata,
+              ServerCallHandler<ReqT, RespT> serverCallHandler) {
+            return serverCallHandler.startCall(
+                new ForwardingServerCall.SimpleForwardingServerCall<ReqT, RespT>(serverCall) {
+                  @Override
+                  public void sendHeaders(Metadata headers) {
+                    headers.put(
+                        Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER),
+                        String.format("gfet4t7; dur=%d", FAKE_SERVER_TIMING));
+
+                    ResponseParams params =
+                        ResponseParams.newBuilder().setZoneId(ZONE).setClusterId(CLUSTER).build();
+                    byte[] byteArray = params.toByteArray();
+                    headers.put(LOCATION_METADATA_KEY, byteArray);
+
+                    super.sendHeaders(headers);
+                  }
+                },
+                metadata);
+          }
+        };
+
+    server = FakeServiceBuilder.create(fakeService).intercept(trailersInterceptor).start();
+
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId(PROJECT_ID)
+            .setInstanceId(INSTANCE_ID)
+            .setAppProfileId(APP_PROFILE_ID)
+            .build();
+    EnhancedBigtableStubSettings.Builder stubSettingsBuilder =
+        settings.getStubSettings().toBuilder();
+    stubSettingsBuilder
+        .mutateRowSettings()
+        .retrySettings()
+        .setInitialRetryDelayDuration(java.time.Duration.ofMillis(200));
+
+    stubSettingsBuilder
+        .readRowsSettings()
+        .retrySettings()
+        .setTotalTimeoutDuration(Duration.ofMillis(9000))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(9000))
+        .setRpcTimeoutMultiplier(1)
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(6000))
+        .setInitialRetryDelayDuration(Duration.ofMillis(10))
+        .setRetryDelayMultiplier(1)
+        .setMaxRetryDelayDuration(Duration.ofMillis(10));
+
+    stubSettingsBuilder
+        .bulkMutateRowsSettings()
+        .setServerInitiatedFlowControl(true)
+        .setBatchingSettings(
+            // Each batch has 2 mutations, batch has 1 in-flight request, disable auto flush by
+            // setting the delay to 1 hour.
+            BatchingSettings.newBuilder()
+                .setElementCountThreshold((long) batchElementCount)
+                .setRequestByteThreshold(1000L)
+                .setDelayThresholdDuration(java.time.Duration.ofHours(1))
+                .setFlowControlSettings(
+                    FlowControlSettings.newBuilder()
+                        .setMaxOutstandingElementCount((long) batchElementCount + 1)
+                        .setMaxOutstandingRequestBytes(1001L)
+                        .build())
+                .build());
+
+    stubSettingsBuilder.setTracerFactory(facotry);
+
+    InstantiatingGrpcChannelProvider.Builder channelProvider =
+        ((InstantiatingGrpcChannelProvider) stubSettingsBuilder.getTransportChannelProvider())
+            .toBuilder();
+
+    @SuppressWarnings("rawtypes")
+    final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> oldConfigurator =
+        channelProvider.getChannelConfigurator();
+
+    delayProxyDetector = new DelayProxyDetector();
+
+    channelProvider.setChannelConfigurator(
+        (builder) -> {
+          if (oldConfigurator != null) {
+            builder = oldConfigurator.apply(builder);
+          }
+          return builder.proxyDetector(delayProxyDetector).intercept(outstandingRpcCounter);
+        });
+    stubSettingsBuilder.setTransportChannelProvider(channelProvider.build());
+    stub = EnhancedBigtableStub.create(stubSettingsBuilder.build());
+  }
+
+  @After
+  public void tearDown() {
+    stub.close();
+    server.shutdown();
+    otel.close();
+  }
+
+  @Test
+  public void testReadRowsOperationLatencies() {
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)).iterator());
+    long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
+
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    MetricData metricData = getMetricData(metricReader, TableOperationLatency.NAME);
+
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
+  }
+
+  @Test
+  public void testReadRowsOperationLatenciesOnAuthorizedView() {
+    String authorizedViewId = "test-authorized-view-id";
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    Lists.newArrayList(
+        stub.readRowsCallable().call(Query.create(AuthorizedViewId.of(TABLE, authorizedViewId))));
+    long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
+
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    MetricData metricData = getMetricData(metricReader, TableOperationLatency.NAME);
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
+  }
+
+  @Test
+  public void testFirstResponseLatencies() {
+    Stopwatch firstResponseTimer = Stopwatch.createStarted();
+    stub.readRowsCallable()
+        .call(
+            Query.create(TableId.of(FIRST_RESPONSE_TABLE_ID)),
+            new ResponseObserver<Row>() {
+              @Override
+              public void onStart(StreamController controller) {}
+
+              @Override
+              public void onResponse(Row response) {
+                // Server sends back 2 responses for this test
+                if (firstResponseTimer.isRunning()) {
+                  firstResponseTimer.stop();
+                }
+                try {
+                  Thread.sleep(100);
+                } catch (InterruptedException ignored) {
+                  // dont really care
+                }
+              }
+
+              @Override
+              public void onError(Throwable t) {}
+
+              @Override
+              public void onComplete() {}
+            });
+
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, FIRST_RESPONSE_TABLE_ID)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    MetricData metricData = getMetricData(metricReader, TableFirstResponseLatency.NAME);
+
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isAtMost(firstResponseTimer.elapsed(TimeUnit.MILLISECONDS));
+  }
+
+  @Test
+  public void testGfeMetrics() {
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)));
+
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .build();
+
+    MetricData serverLatenciesMetricData = getMetricData(metricReader, TableServerLatency.NAME);
+
+    long serverLatencies = getAggregatedValue(serverLatenciesMetricData, expectedAttributes);
+    assertThat(serverLatencies).isEqualTo(FAKE_SERVER_TIMING);
+
+    MetricData connectivityErrorCountMetricData =
+        getMetricData(metricReader, TableConnectivityErrorCount.NAME);
+    Attributes expected1 =
+        expectedClientSchemaBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+    Attributes expected2 =
+        expectedClientSchemaBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    verifyAttributes(connectivityErrorCountMetricData, expected1);
+    verifyAttributes(connectivityErrorCountMetricData, expected2);
+
+    assertThat(getAggregatedValue(connectivityErrorCountMetricData, expected1)).isEqualTo(1);
+    assertThat(getAggregatedValue(connectivityErrorCountMetricData, expected2)).isEqualTo(0);
+  }
+
+  @Test
+  public void testReadRowsApplicationLatencyWithAutoFlowControl() throws Exception {
+    final SettableApiFuture<Void> future = SettableApiFuture.create();
+    final AtomicInteger counter = new AtomicInteger(0);
+    // For auto flow control, application latency is the time application spent in onResponse.
+    stub.readRowsCallable()
+        .call(
+            Query.create(TABLE),
+            new ResponseObserver<Row>() {
+              @Override
+              public void onStart(StreamController streamController) {}
+
+              @Override
+              public void onResponse(Row row) {
+                counter.getAndIncrement();
+                try {
+                  Thread.sleep(APPLICATION_LATENCY);
+                } catch (InterruptedException ignored) {
+                  // dont really care
+                }
+              }
+
+              @Override
+              public void onError(Throwable throwable) {
+                future.setException(throwable);
+              }
+
+              @Override
+              public void onComplete() {
+                future.set(null);
+              }
+            });
+    future.get();
+
+    assertThat(counter.get()).isEqualTo(fakeService.getResponseCounter().get());
+
+    MetricData applicationLatency =
+        getMetricData(metricReader, TableApplicationBlockingLatency.NAME);
+
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .build();
+    long value = getAggregatedValue(applicationLatency, expectedAttributes);
+
+    assertThat(value).isAtLeast((APPLICATION_LATENCY - SLEEP_VARIABILITY) * counter.get());
+
+    MetricData operationLatency = getMetricData(metricReader, TableOperationLatency.NAME);
+    long operationLatencyValue =
+        getAggregatedValue(
+            operationLatency,
+            expectedAttributes.toBuilder()
+                .put(MetricLabels.STATUS_KEY, "OK")
+                .put(MetricLabels.STREAMING_KEY, true)
+                .build());
+    assertThat(value).isAtMost(operationLatencyValue - SERVER_LATENCY);
+  }
+
+  @Test
+  public void testReadRowsApplicationLatencyWithManualFlowControl() throws Exception {
+    int counter = 0;
+
+    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TABLE)).iterator();
+    while (rows.hasNext()) {
+      counter++;
+      Thread.sleep(APPLICATION_LATENCY);
+      rows.next();
+    }
+
+    MetricData applicationLatency =
+        getMetricData(metricReader, TableApplicationBlockingLatency.NAME);
+
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .build();
+
+    long value = getAggregatedValue(applicationLatency, expectedAttributes);
+    // For manual flow control, the last application latency shouldn't count, because at that
+    // point the server already sent back all the responses.
+    assertThat(counter).isEqualTo(fakeService.getResponseCounter().get());
+    assertThat(value).isAtLeast(APPLICATION_LATENCY * (counter - 1) - SERVER_LATENCY);
+
+    MetricData operationLatency = getMetricData(metricReader, TableOperationLatency.NAME);
+    long operationLatencyValue =
+        getAggregatedValue(
+            operationLatency,
+            expectedAttributes.toBuilder()
+                .put(MetricLabels.STATUS_KEY, "OK")
+                .put(MetricLabels.STREAMING_KEY, true)
+                .build());
+    assertThat(value).isAtMost(operationLatencyValue - SERVER_LATENCY);
+  }
+
+  @Test
+  public void testRetryCount() throws InterruptedException {
+    stub.mutateRowCallable()
+        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
+
+    MetricData metricData = getMetricData(metricReader, TableRetryCount.NAME);
+    Attributes expectedAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .build();
+
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isEqualTo(fakeService.getAttemptCounter().get() - 1);
+  }
+
+  @Test
+  public void testMutateRowAttemptsTagValues() throws InterruptedException {
+    stub.mutateRowCallable()
+        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
+
+    outstandingRpcCounter.waitUntilRpcsDone();
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
+
+    Attributes expected1 =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
+            .build();
+
+    Attributes expected2 =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
+            .build();
+
+    verifyAttributes(metricData, expected1);
+    verifyAttributes(metricData, expected2);
+  }
+
+  @Test
+  public void testMutateRowsPartialError() throws InterruptedException {
+    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null);
+    int numMutations = 6;
+    for (int i = 0; i < numMutations; i++) {
+      String key = i % 2 == 0 ? "key" : "fail-key";
+      ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
+    }
+
+    assertThrows(BatchingException.class, batcher::close);
+
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
+
+    Attributes expected =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
+            .build();
+
+    verifyAttributes(metricData, expected);
+  }
+
+  @Test
+  public void testMutateRowsRpcError() {
+    Batcher<RowMutationEntry, Void> batcher =
+        stub.newMutateRowsBatcher(TableId.of(BAD_TABLE_ID), null);
+    int numMutations = 6;
+    for (int i = 0; i < numMutations; i++) {
+      String key = i % 2 == 0 ? "key" : "fail-key";
+      ApiFuture<Void> ignored = batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
+    }
+
+    assertThrows(BatchingException.class, batcher::close);
+
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
+
+    Attributes expected =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "NOT_FOUND")
+            .put(TableSchema.TABLE_ID_KEY, BAD_TABLE_ID)
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, false)
+            .build();
+
+    verifyAttributes(metricData, expected);
+  }
+
+  @Test
+  public void testReadRowsAttemptsTagValues() {
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)).iterator());
+
+    MetricData metricData = getMetricData(metricReader, TableAttemptLatency.NAME);
+
+    Attributes expected1 =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, true)
+            .build();
+
+    Attributes expected2 =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .put(MetricLabels.STREAMING_KEY, true)
+            .build();
+
+    verifyAttributes(metricData, expected1);
+    verifyAttributes(metricData, expected2);
+  }
+
+  @Test
+  public void testBatchBlockingLatencies() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      for (int i = 0; i < 6; i++) {
+        ApiFuture<Void> ignored =
+            batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
+      }
+
+      // closing the batcher to trigger the third flush
+      batcher.close();
+
+      int expectedNumRequests = 6 / batchElementCount;
+
+      MetricData applicationLatency = getMetricData(metricReader, TableClientBlockingLatency.NAME);
+
+      Attributes expectedAttributes =
+          expectedBaseAttributes.toBuilder()
+              .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+              .put(TableSchema.ZONE_ID_KEY, ZONE)
+              .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+              .build();
+
+      long value = getAggregatedValue(applicationLatency, expectedAttributes);
+      // After the first request is sent, batcher will block on add because of the server latency.
+      // Blocking latency should be around server latency. So each data point would be at least
+      // (SERVER_LATENCY - 10).
+      long expected = (SERVER_LATENCY - 10) * (expectedNumRequests - 1) / expectedNumRequests;
+      assertThat(value).isAtLeast(expected);
+    }
+  }
+
+  @Test
+  public void testQueuedOnChannelServerStreamLatencies() throws Exception {
+    ApiFuture<List<Row>> f = stub.readRowsCallable().all().futureCall(Query.create(TABLE));
+    Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
+    f.get();
+
+    MetricData clientLatency = getMetricData(metricReader, TableClientBlockingLatency.NAME);
+
+    Attributes attributes =
+        expectedBaseAttributes.toBuilder()
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    assertThat(Duration.ofMillis(getAggregatedValue(clientLatency, attributes)))
+        .isAtLeast(
+            // Offset the expected latency to deal with asynchrony and jitter
+            CHANNEL_BLOCKING_LATENCY.minus(
+                Comparators.max(proxyDelayPriorTest, Duration.ofMillis(1))));
+  }
+
+  @Test
+  public void testQueuedOnChannelUnaryLatencies() throws Exception {
+    ApiFuture<Void> f =
+        stub.mutateRowCallable()
+            .futureCall(RowMutation.create(TABLE, "a-key").setCell("f", "q", "v"));
+    Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
+    f.get();
+
+    outstandingRpcCounter.waitUntilRpcsDone();
+    MetricData clientLatency = getMetricData(metricReader, TableClientBlockingLatency.NAME);
+
+    Attributes attributes =
+        expectedBaseAttributes.toBuilder()
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRow")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    assertThat(Duration.ofMillis(getAggregatedValue(clientLatency, attributes)))
+        .isAtLeast(
+            // Offset the expected latency to deal with asynchrony and jitter
+            CHANNEL_BLOCKING_LATENCY.minus(
+                Comparators.max(proxyDelayPriorTest, Duration.ofMillis(1))));
+  }
+
+  @Test
+  public void testPermanentFailure() {
+    assertThrows(
+        NotFoundException.class,
+        () ->
+            Lists.newArrayList(
+                stub.readRowsCallable().call(Query.create(TableId.of(BAD_TABLE_ID))).iterator()));
+
+    MetricData attemptLatency = getMetricData(metricReader, TableAttemptLatency.NAME);
+
+    Attributes expected =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "NOT_FOUND")
+            .put(TableSchema.TABLE_ID_KEY, BAD_TABLE_ID)
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+
+    verifyAttributes(attemptLatency, expected);
+
+    MetricData opLatency = getMetricData(metricReader, TableOperationLatency.NAME);
+    verifyAttributes(opLatency, expected);
+  }
+
+  @Test
+  public void testRemainingDeadline() {
+    stub.readRowsCallable().all().call(Query.create(TABLE));
+    MetricData deadlineMetric = getMetricData(metricReader, TableRemainingDeadline.NAME);
+
+    Attributes retryAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(TableSchema.ZONE_ID_KEY, "global")
+            .put(TableSchema.CLUSTER_ID_KEY, "<unspecified>")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+    HistogramPointData retryHistogramPointData =
+        deadlineMetric.getHistogramData().getPoints().stream()
+            .filter(pd -> pd.getAttributes().equals(retryAttributes))
+            .collect(Collectors.toList())
+            .get(0);
+
+    double retryRemainingDeadline = retryHistogramPointData.getSum();
+    // The retry remaining deadline should be equivalent to the original timeout.
+    assertThat(retryRemainingDeadline).isEqualTo(9000);
+
+    Attributes okAttributes =
+        expectedBaseAttributes.toBuilder()
+            .put(MetricLabels.STATUS_KEY, "OK")
+            .put(TableSchema.TABLE_ID_KEY, TABLE.getTableId())
+            .put(TableSchema.ZONE_ID_KEY, ZONE)
+            .put(TableSchema.CLUSTER_ID_KEY, CLUSTER)
+            .put(MetricLabels.METHOD_KEY, "Bigtable.ReadRows")
+            .put(MetricLabels.STREAMING_KEY, true)
+            .put(MetricLabels.CLIENT_NAME, CLIENT_NAME)
+            .build();
+    HistogramPointData okHistogramPointData =
+        deadlineMetric.getHistogramData().getPoints().stream()
+            .filter(pd -> pd.getAttributes().equals(okAttributes))
+            .collect(Collectors.toList())
+            .get(0);
+
+    double okRemainingDeadline = okHistogramPointData.getSum();
+    // first attempt latency + retry delay
+    double expected = 9000 - SERVER_LATENCY - CHANNEL_BLOCKING_LATENCY.toMillis() - 10;
+    assertThat(okRemainingDeadline).isIn(Range.closed(expected - 500, expected + 10));
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsIncreased() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-12")
+                  .setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
+      Attributes targetQpsAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      double expected_qps = 12;
+      assertThat(actual_qps).isEqualTo(expected_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
+      Attributes factorAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(ClientSchema.CLIENT_NAME, "java-bigtable/" + Version.VERSION)
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      double expected_factor_mean = 1.2;
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsDecreased() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-08")
+                  .setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
+      Attributes targetQpsAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      double expected_qps = 8.0;
+      assertThat(actual_qps).isEqualTo(expected_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
+      Attributes factorAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      double expected_factor_mean = 0.8;
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsCappedOnMaxFactor() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-18")
+                  .setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
+      Attributes targetQpsAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      // Factor is 1.8 but capped at 1.3 so updated QPS is 13.
+      double expected_qps = 13;
+      assertThat(actual_qps).isEqualTo(expected_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
+      Attributes factorAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      // Factor is 1.8 but capped at 1.3
+      double expected_factor_mean = 1.3;
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsCappedOnMinFactor() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-success-05")
+                  .setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
+      Attributes targetQpsAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      // Factor is 0.5 but capped at 0.7 so updated QPS is 7.
+      double expected_qps = 7;
+      assertThat(actual_qps).isEqualTo(expected_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
+      Attributes factorAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      // Factor is 0.5 but capped at 0.7
+      double expected_factor_mean = 0.7;
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsDecreasedForError() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      ApiFuture<Void> ignored =
+          batcher.add(
+              RowMutationEntry.create("batch-write-flow-control-fail-unavailable")
+                  .setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, ClientBatchWriteFlowControlTargetQps.NAME);
+      Attributes targetQpsAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      // On error, min factor is applied.
+      double expected_qps = 7;
+      assertThat(actual_qps).isEqualTo(expected_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, ClientBatchWriteFlowControlFactor.NAME);
+      Attributes factorAttributes =
+          expectedClientSchemaBaseAttributes.toBuilder()
+              .put(MetricLabels.METHOD_KEY, "Bigtable.MutateRows")
+              .put(MetricLabels.APPLIED_KEY, true)
+              .put(MetricLabels.STATUS_KEY, "UNAVAILABLE")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      // On error, min factor is applied.
+      double expected_factor_mean = 0.7;
+      assertThat(actual_factor_mean).isEqualTo(expected_factor_mean);
+    }
+  }
+
+  private static class FakeService extends BigtableGrpc.BigtableImplBase {
+
+    static List<ReadRowsResponse> createFakeResponse() {
+      List<ReadRowsResponse> responses = new ArrayList<>();
+      for (int i = 0; i < 4; i++) {
+        responses.add(
+            ReadRowsResponse.newBuilder()
+                .addChunks(
+                    ReadRowsResponse.CellChunk.newBuilder()
+                        .setRowKey(ByteString.copyFromUtf8("fake-key-" + i))
+                        .setFamilyName(StringValue.of("cf"))
+                        .setQualifier(
+                            BytesValue.newBuilder().setValue(ByteString.copyFromUtf8("q")))
+                        .setTimestampMicros(1_000)
+                        .setValue(
+                            ByteString.copyFromUtf8(
+                                String.join("", Collections.nCopies(1024 * 1024, "A"))))
+                        .setCommitRow(true))
+                .build());
+      }
+      return responses;
+    }
+
+    private final AtomicInteger attemptCounter = new AtomicInteger(0);
+    private final AtomicInteger responseCounter = new AtomicInteger(0);
+    private final Iterator<ReadRowsResponse> source = createFakeResponse().listIterator();
+
+    @Override
+    public void readRows(
+        ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+      if (request.getTableName().contains(FIRST_RESPONSE_TABLE_ID)) {
+        responseObserver.onNext(source.next());
+        responseObserver.onNext(source.next());
+        responseObserver.onCompleted();
+        return;
+      }
+      if (request.getTableName().contains(BAD_TABLE_ID)) {
+        responseObserver.onError(new StatusRuntimeException(Status.NOT_FOUND));
+        return;
+      }
+      final AtomicBoolean done = new AtomicBoolean();
+      final ServerCallStreamObserver<ReadRowsResponse> target =
+          (ServerCallStreamObserver<ReadRowsResponse>) responseObserver;
+      try {
+        Thread.sleep(SERVER_LATENCY);
+      } catch (InterruptedException ignored) {
+        // dont care
+      }
+      if (attemptCounter.getAndIncrement() == 0) {
+        target.onError(new StatusRuntimeException(Status.UNAVAILABLE));
+        return;
+      }
+
+      // Only return the next response when the buffer is emptied for testing manual flow control.
+      // The fake service won't keep calling onNext unless it received an onRequest event from
+      // the application thread
+      target.setOnReadyHandler(
+          () -> {
+            while (target.isReady() && source.hasNext()) {
+              responseCounter.getAndIncrement();
+              target.onNext(source.next());
+            }
+            if (!source.hasNext() && done.compareAndSet(false, true)) {
+              target.onCompleted();
+            }
+          });
+    }
+
+    @Override
+    public void mutateRow(
+        MutateRowRequest request, StreamObserver<MutateRowResponse> responseObserver) {
+      if (attemptCounter.getAndIncrement() < 2) {
+        responseObserver.onError(new StatusRuntimeException(Status.UNAVAILABLE));
+        return;
+      }
+      responseObserver.onNext(MutateRowResponse.getDefaultInstance());
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void mutateRows(
+        MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
+      if (request.getTableName().contains(BAD_TABLE_ID)) {
+        responseObserver.onError(new StatusRuntimeException(Status.NOT_FOUND));
+        return;
+      }
+      try {
+        Thread.sleep(SERVER_LATENCY);
+      } catch (InterruptedException ignored) {
+        // dont care
+      }
+      MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+      String receivedRowkey = "";
+      for (int i = 0; i < request.getEntriesCount(); i++) {
+        receivedRowkey =
+            request.getEntries(i).getRowKey().toString(Charset.availableCharsets().get("UTF-8"));
+        if (request
+            .getEntries(i)
+            .getRowKey()
+            .toString(Charset.availableCharsets().get("UTF-8"))
+            .startsWith("fail")) {
+          builder
+              .addEntriesBuilder()
+              .setIndex(i)
+              .setStatus(
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(com.google.rpc.Code.PERMISSION_DENIED_VALUE)
+                      .build());
+          continue;
+        }
+        builder.addEntriesBuilder().setIndex(i);
+      }
+
+      // Add RateLimitInfo for Batch Write Flow Control
+      com.google.protobuf.Duration duration =
+          builder.getRateLimitInfoBuilder().getPeriodBuilder().setSeconds(10).build();
+      if (receivedRowkey.equals("batch-write-flow-control-success-18")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(1.8).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-success-12")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(1.2).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-success-08")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(0.8).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-success-05")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(0.5).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-fail-unavailable")) {
+        if (getAttemptCounter().get() > 0) {
+          responseObserver.onNext(builder.build());
+          responseObserver.onCompleted();
+          return;
+        }
+        getAttemptCounter().incrementAndGet();
+        responseObserver.onError(new StatusRuntimeException(Status.UNAVAILABLE));
+        return;
+      }
+
+      responseObserver.onNext(builder.build());
+      responseObserver.onCompleted();
+    }
+
+    public AtomicInteger getAttemptCounter() {
+      return attemptCounter;
+    }
+
+    public AtomicInteger getResponseCounter() {
+      return responseCounter;
+    }
+  }
+
+  static class OutstandingRpcCounter implements ClientInterceptor {
+    private int numOutstandingRpcs = 0;
+    private final Object lock = new Object();
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
+      synchronized (lock) {
+        numOutstandingRpcs++;
+      }
+      return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+          channel.newCall(methodDescriptor, callOptions)) {
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          super.start(
+              new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
+                  responseListener) {
+                @Override
+                public void onClose(Status status, Metadata trailers) {
+                  super.onClose(status, trailers);
+                  synchronized (lock) {
+                    numOutstandingRpcs--;
+                    lock.notify();
+                  }
+                }
+              },
+              headers);
+        }
+      };
+    }
+
+    void waitUntilRpcsDone() throws InterruptedException {
+      synchronized (lock) {
+        while (numOutstandingRpcs > 0) {
+          lock.wait();
+        }
+      }
+    }
+  }
+
+  static class DelayProxyDetector implements ProxyDetector {
+    private volatile Instant lastProxyDelay = null;
+
+    @Nullable
+    @Override
+    public ProxiedSocketAddress proxyFor(SocketAddress socketAddress) throws IOException {
+      lastProxyDelay = Instant.now();
+      try {
+        Thread.sleep(CHANNEL_BLOCKING_LATENCY.toMillis());
+      } catch (InterruptedException ignored) {
+        // dont care
+      }
+      return null;
+    }
+
+    Duration getCurrentDelayUsed() {
+      Instant local = lastProxyDelay;
+      // If the delay was never injected - add 1 ms for channel establishment
+      if (local == null) {
+        return Duration.ofMillis(1);
+      }
+      Duration duration =
+          Duration.between(local, Instant.now()).plus(Duration.of(10, ChronoUnit.MICROS));
+
+      assertWithMessage("test burned through all channel blocking latency during setup")
+          .that(duration)
+          .isLessThan(CHANNEL_BLOCKING_LATENCY);
+
+      return duration;
+    }
+  }
+}

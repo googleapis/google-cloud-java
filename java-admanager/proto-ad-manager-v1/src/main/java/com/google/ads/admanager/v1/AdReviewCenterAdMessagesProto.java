@@ -57,24 +57,26 @@ public final class AdReviewCenterAdMessagesProto extends com.google.protobuf.Gen
           + ":google/ads/admanager/v1/ad_review_center_ad_messages.proto\022\027google.ads.admanag"
           + "er.v1\0327google/ads/admanager/v1/ad_review_center_ad_enums.proto\032?google/ads/adman"
           + "ager/v1/exchange_syndication_product_enu"
-          + "m.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\376\003\n"
+          + "m.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\373\004\n"
           + "\020AdReviewCenterAd\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022#\n"
           + "\026ad_review_center_ad_id\030\002 \001(\tB\003\340A\003\022m\n"
           + "\014product_type\030\003 \001(\0162R.google.ads.admanager.v1.Exchang"
           + "eSyndicationProductEnum.ExchangeSyndicationProductB\003\340A\003\022Z\n"
           + "\006status\030\004 \001(\0162J.google"
-          + ".ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus\022\035\n"
+          + ".ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus\022{\n"
+          + "\026manual_review_statuses\030\006 \003(\0162V.google.ads.admanag"
+          + "er.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatusB\003\340A\003\022\035\n"
           + "\013preview_url\030\005 \001(\tB\003\340A\003H\000\210\001\001:\267\001\352A\263\001\n"
-          + ")admanager.googleapis.com/AdReviewCenterAd\022anetworks/{"
-          + "network_code}/webProperties/{web_property_code}/adReviewCenterAds/{ad_review_cen"
-          + "ter_ad}*\021adReviewCenterAds2\020adReviewCenterAdB\016\n"
+          + ")admanager.googleapis.com/AdReviewCenterAd\022anetwo"
+          + "rks/{network_code}/webProperties/{web_property_code}/adReviewCenterAds/{ad_revie"
+          + "w_center_ad}*\021adReviewCenterAds2\020adReviewCenterAdB\016\n"
           + "\014_preview_urlB\321\001\n"
-          + "\033com.google.ads.admanager.v1B\035AdReviewCenterAdMessagesPr"
-          + "otoP\001Z@google.golang.org/genproto/google"
-          + "apis/ads/admanager/v1;admanager\252\002\027Google"
-          + ".Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager"
-          + "\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\033com.google.ads.admanager.v1B\035AdReviewCenterAdMessa"
+          + "gesProtoP\001Z@google.golang.org/genproto/g"
+          + "oogleapis/ads/admanager/v1;admanager\252\002\027G"
+          + "oogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMa"
+          + "nager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,7 +93,12 @@ public final class AdReviewCenterAdMessagesProto extends com.google.protobuf.Gen
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_AdReviewCenterAd_descriptor,
             new java.lang.String[] {
-              "Name", "AdReviewCenterAdId", "ProductType", "Status", "PreviewUrl",
+              "Name",
+              "AdReviewCenterAdId",
+              "ProductType",
+              "Status",
+              "ManualReviewStatuses",
+              "PreviewUrl",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.AdReviewCenterAdEnumsProto.getDescriptor();

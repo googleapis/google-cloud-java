@@ -26,7 +26,7 @@ jobs:
     name: sdk-platform-java units
     strategy:
       matrix:
-        java: [ 11, 17, 21, 25 ]
+        java: [ 11, 17, 21, 25, 26 ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -162,18 +162,23 @@ jobs:
           JOB_TYPE: install
       - name: Integration Tests
         run: |
-          bazelisk --batch test //sdk-platform-java/test/integration/...
+          bazelisk --batch test //sdk-platform-java/test/integration/... --test_output=errors
 
-  bazel-25:  
+  # JDK 24+ permanently disables Security Manager. Bazel's default test runner tries to install it.
+  # We must explicitly disable this behavior using shouldInstallTestSecurityManager=false.
+  bazel-no-security-manager-jdk24-plus:  
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
-    name: sdk-platform-java integration (25)
+    name: sdk-platform-java integration (JDK 24+)
+    strategy:
+      matrix:
+        java: [ 25, 26 ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          java-version: 25
+          java-version: ${{ matrix.java }}
           distribution: temurin
           cache: maven
       - run: bazelisk version

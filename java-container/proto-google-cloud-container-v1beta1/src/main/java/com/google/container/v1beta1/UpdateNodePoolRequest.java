@@ -58,6 +58,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     nodePoolId_ = "";
     nodeVersion_ = "";
     imageType_ = "";
+    image_ = "";
+    imageProject_ = "";
     locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
     etag_ = "";
@@ -100,7 +102,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4480
+   *     google/container/v1beta1/cluster_service.proto;l=4765
    * @return The projectId.
    */
   @java.lang.Override
@@ -129,7 +131,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4480
+   *     google/container/v1beta1/cluster_service.proto;l=4765
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -164,7 +166,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4486
+   *     google/container/v1beta1/cluster_service.proto;l=4771
    * @return The zone.
    */
   @java.lang.Override
@@ -194,7 +196,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4486
+   *     google/container/v1beta1/cluster_service.proto;l=4771
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -227,7 +229,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4490
+   *     google/container/v1beta1/cluster_service.proto;l=4775
    * @return The clusterId.
    */
   @java.lang.Override
@@ -255,7 +257,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4490
+   *     google/container/v1beta1/cluster_service.proto;l=4775
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -288,7 +290,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4494
+   *     google/container/v1beta1/cluster_service.proto;l=4779
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -316,7 +318,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4494
+   *     google/container/v1beta1/cluster_service.proto;l=4779
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -457,6 +459,116 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       imageType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired name of the image name to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image = 10;</code>
+   *
+   * @return The image.
+   */
+  @java.lang.Override
+  public java.lang.String getImage() {
+    java.lang.Object ref = image_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      image_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired name of the image name to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image = 10;</code>
+   *
+   * @return The bytes for image.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImageBytes() {
+    java.lang.Object ref = image_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      image_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGE_PROJECT_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageProject_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The project containing the desired image to use for this node pool.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image_project = 11;</code>
+   *
+   * @return The imageProject.
+   */
+  @java.lang.Override
+  public java.lang.String getImageProject() {
+    java.lang.Object ref = imageProject_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageProject_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The project containing the desired image to use for this node pool.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image_project = 11;</code>
+   *
+   * @return The bytes for imageProject.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImageProjectBytes() {
+    java.lang.Object ref = imageProject_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      imageProject_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2233,6 +2345,59 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : consolidationDelay_;
   }
 
+  public static final int TAINT_CONFIG_FIELD_NUMBER = 51;
+  private com.google.container.v1beta1.TaintConfig taintConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+   *
+   * @return Whether the taintConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaintConfig() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+   *
+   * @return The taintConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.TaintConfig getTaintConfig() {
+    return taintConfig_ == null
+        ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+        : taintConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.TaintConfigOrBuilder getTaintConfigOrBuilder() {
+    return taintConfig_ == null
+        ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+        : taintConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2267,6 +2432,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, image_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageProject_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, imageProject_);
     }
     for (int i = 0; i < locations_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 13, locations_.getRaw(i));
@@ -2358,6 +2529,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00400000) != 0)) {
       output.writeMessage(49, getConsolidationDelay());
     }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      output.writeMessage(51, getTaintConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2387,6 +2561,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, image_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageProject_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, imageProject_);
     }
     {
       int dataSize = 0;
@@ -2490,6 +2670,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, getConsolidationDelay());
     }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getTaintConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2512,6 +2695,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (!getNodePoolId().equals(other.getNodePoolId())) return false;
     if (!getNodeVersion().equals(other.getNodeVersion())) return false;
     if (!getImageType().equals(other.getImageType())) return false;
+    if (!getImage().equals(other.getImage())) return false;
+    if (!getImageProject().equals(other.getImageProject())) return false;
     if (!getLocationsList().equals(other.getLocationsList())) return false;
     if (hasWorkloadMetadataConfig() != other.hasWorkloadMetadataConfig()) return false;
     if (hasWorkloadMetadataConfig()) {
@@ -2612,6 +2797,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasConsolidationDelay()) {
       if (!getConsolidationDelay().equals(other.getConsolidationDelay())) return false;
     }
+    if (hasTaintConfig() != other.hasTaintConfig()) return false;
+    if (hasTaintConfig()) {
+      if (!getTaintConfig().equals(other.getTaintConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2635,6 +2824,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getNodeVersion().hashCode();
     hash = (37 * hash) + IMAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getImageType().hashCode();
+    hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getImage().hashCode();
+    hash = (37 * hash) + IMAGE_PROJECT_FIELD_NUMBER;
+    hash = (53 * hash) + getImageProject().hashCode();
     if (getLocationsCount() > 0) {
       hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getLocationsList().hashCode();
@@ -2748,6 +2941,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasConsolidationDelay()) {
       hash = (37 * hash) + CONSOLIDATION_DELAY_FIELD_NUMBER;
       hash = (53 * hash) + getConsolidationDelay().hashCode();
+    }
+    if (hasTaintConfig()) {
+      hash = (37 * hash) + TAINT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTaintConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2913,6 +3110,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         internalGetBootDiskFieldBuilder();
         internalGetNodeDrainConfigFieldBuilder();
         internalGetConsolidationDelayFieldBuilder();
+        internalGetTaintConfigFieldBuilder();
       }
     }
 
@@ -2927,6 +3125,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       nodePoolId_ = "";
       nodeVersion_ = "";
       imageType_ = "";
+      image_ = "";
+      imageProject_ = "";
       locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       workloadMetadataConfig_ = null;
       if (workloadMetadataConfigBuilder_ != null) {
@@ -3011,7 +3211,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         accelerators_ = null;
         acceleratorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       machineType_ = "";
       diskType_ = "";
       diskSizeGb_ = 0L;
@@ -3051,6 +3251,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (consolidationDelayBuilder_ != null) {
         consolidationDelayBuilder_.dispose();
         consolidationDelayBuilder_ = null;
+      }
+      taintConfig_ = null;
+      if (taintConfigBuilder_ != null) {
+        taintConfigBuilder_.dispose();
+        taintConfigBuilder_ = null;
       }
       return this;
     }
@@ -3093,9 +3298,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     private void buildPartialRepeatedFields(
         com.google.container.v1beta1.UpdateNodePoolRequest result) {
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)) {
+        if (((bitField0_ & 0x04000000) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.accelerators_ = accelerators_;
       } else {
@@ -3124,124 +3329,119 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         result.imageType_ = imageType_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.image_ = image_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.imageProject_ = imageProject_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         locations_.makeImmutable();
         result.locations_ = locations_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.workloadMetadataConfig_ =
             workloadMetadataConfigBuilder_ == null
                 ? workloadMetadataConfig_
                 : workloadMetadataConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.upgradeSettings_ =
             upgradeSettingsBuilder_ == null ? upgradeSettings_ : upgradeSettingsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.tags_ = tagsBuilder_ == null ? tags_ : tagsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.taints_ = taintsBuilder_ == null ? taints_ : taintsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.labels_ = labelsBuilder_ == null ? labels_ : labelsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.linuxNodeConfig_ =
             linuxNodeConfigBuilder_ == null ? linuxNodeConfig_ : linuxNodeConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.kubeletConfig_ =
             kubeletConfigBuilder_ == null ? kubeletConfig_ : kubeletConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.nodeNetworkConfig_ =
             nodeNetworkConfigBuilder_ == null
                 ? nodeNetworkConfig_
                 : nodeNetworkConfigBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.gcfsConfig_ = gcfsConfigBuilder_ == null ? gcfsConfig_ : gcfsConfigBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.confidentialNodes_ =
             confidentialNodesBuilder_ == null
                 ? confidentialNodes_
                 : confidentialNodesBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.gvnic_ = gvnicBuilder_ == null ? gvnic_ : gvnicBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.fastSocket_ = fastSocketBuilder_ == null ? fastSocket_ : fastSocketBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.loggingConfig_ =
             loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.resourceLabels_ =
             resourceLabelsBuilder_ == null ? resourceLabels_ : resourceLabelsBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.windowsNodeConfig_ =
             windowsNodeConfigBuilder_ == null
                 ? windowsNodeConfig_
                 : windowsNodeConfigBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.machineType_ = machineType_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.diskType_ = diskType_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.diskSizeGb_ = diskSizeGb_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.resourceManagerTags_ =
             resourceManagerTagsBuilder_ == null
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.containerdConfig_ =
             containerdConfigBuilder_ == null ? containerdConfig_ : containerdConfigBuilder_.build();
         to_bitField0_ |= 0x00010000;
-      }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.queuedProvisioning_ =
-            queuedProvisioningBuilder_ == null
-                ? queuedProvisioning_
-                : queuedProvisioningBuilder_.build();
-        to_bitField0_ |= 0x00020000;
-      }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
-        storagePools_.makeImmutable();
-        result.storagePools_ = storagePools_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3250,29 +3450,45 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.queuedProvisioning_ =
+            queuedProvisioningBuilder_ == null
+                ? queuedProvisioning_
+                : queuedProvisioningBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        storagePools_.makeImmutable();
+        result.storagePools_ = storagePools_;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         result.maxRunDuration_ =
             maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
         to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField1_ & 0x00000002) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.flexStart_ = flexStart_;
         to_bitField0_ |= 0x00080000;
       }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
         to_bitField0_ |= 0x00100000;
       }
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.nodeDrainConfig_ =
             nodeDrainConfigBuilder_ == null ? nodeDrainConfig_ : nodeDrainConfigBuilder_.build();
         to_bitField0_ |= 0x00200000;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000040) != 0)) {
         result.consolidationDelay_ =
             consolidationDelayBuilder_ == null
                 ? consolidationDelay_
                 : consolidationDelayBuilder_.build();
         to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.taintConfig_ =
+            taintConfigBuilder_ == null ? taintConfig_ : taintConfigBuilder_.build();
+        to_bitField0_ |= 0x00800000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3320,10 +3536,20 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.getImage().isEmpty()) {
+        image_ = other.image_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getImageProject().isEmpty()) {
+        imageProject_ = other.imageProject_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000100;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -3335,7 +3561,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasUpgradeSettings()) {
@@ -3370,7 +3596,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasFastSocket()) {
@@ -3389,7 +3615,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -3402,7 +3628,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
             acceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAcceleratorsFieldBuilder()
@@ -3414,12 +3640,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (!other.getDiskType().isEmpty()) {
         diskType_ = other.diskType_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (other.getDiskSizeGb() != 0L) {
@@ -3437,7 +3663,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (!other.storagePools_.isEmpty()) {
         if (storagePools_.isEmpty()) {
           storagePools_ = other.storagePools_;
-          bitField0_ |= 0x80000000;
+          bitField1_ |= 0x00000002;
         } else {
           ensureStoragePoolsIsMutable();
           storagePools_.addAll(other.storagePools_);
@@ -3458,6 +3684,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasConsolidationDelay()) {
         mergeConsolidationDelay(other.getConsolidationDelay());
+      }
+      if (other.hasTaintConfig()) {
+        mergeTaintConfig(other.getTaintConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3524,9 +3753,21 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             case 66:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 66
+            case 82:
+              {
+                image_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
+            case 90:
+              {
+                imageProject_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
             case 106:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -3539,107 +3780,107 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 input.readMessage(
                     internalGetWorkloadMetadataConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetUpgradeSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(internalGetTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(internalGetTaintsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(internalGetLabelsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     internalGetLinuxNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 154
             case 162:
               {
                 input.readMessage(
                     internalGetKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 162
             case 170:
               {
                 input.readMessage(
                     internalGetNodeNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 170
             case 178:
               {
                 input.readMessage(
                     internalGetGcfsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(
                     internalGetConfidentialNodesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 186
             case 234:
               {
                 input.readMessage(internalGetGvnicFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 234
             case 242:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 242
             case 250:
               {
                 input.readMessage(
                     internalGetFastSocketFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 250
             case 258:
               {
                 input.readMessage(
                     internalGetLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 258
             case 266:
               {
                 input.readMessage(
                     internalGetResourceLabelsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 266
             case 274:
               {
                 input.readMessage(
                     internalGetWindowsNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 274
             case 282:
@@ -3658,40 +3899,40 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             case 290:
               {
                 machineType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 290
             case 298:
               {
                 diskType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 298
             case 304:
               {
                 diskSizeGb_ = input.readInt64();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 304
             case 314:
               {
                 input.readMessage(
                     internalGetResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 314
             case 322:
               {
                 input.readMessage(
                     internalGetContainerdConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 322
             case 338:
               {
                 input.readMessage(
                     internalGetQueuedProvisioningFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 338
             case 346:
@@ -3705,36 +3946,43 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     internalGetMaxRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 362
             case 368:
               {
                 flexStart_ = input.readBool();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 368
             case 378:
               {
                 input.readMessage(
                     internalGetBootDiskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 378
             case 386:
               {
                 input.readMessage(
                     internalGetNodeDrainConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 386
             case 394:
               {
                 input.readMessage(
                     internalGetConsolidationDelayFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 394
+            case 410:
+              {
+                input.readMessage(
+                    internalGetTaintConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000080;
+                break;
+              } // case 410
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3769,7 +4017,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4765
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -3797,7 +4045,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4765
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -3825,7 +4073,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4765
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -3852,7 +4100,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4765
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3875,7 +4123,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4765
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -3906,7 +4154,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4771
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -3935,7 +4183,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4771
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -3964,7 +4212,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4771
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3992,7 +4240,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4771
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4016,7 +4264,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4771
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -4045,7 +4293,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4775
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -4072,7 +4320,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4775
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -4099,7 +4347,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4775
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -4125,7 +4373,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4775
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4147,7 +4395,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4775
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -4176,7 +4424,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4779
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -4203,7 +4451,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4779
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -4230,7 +4478,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4779
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -4256,7 +4504,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4779
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4278,7 +4526,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4779
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -4576,6 +4824,238 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private java.lang.Object image_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired name of the image name to use for this node.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image = 10;</code>
+     *
+     * @return The image.
+     */
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired name of the image name to use for this node.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image = 10;</code>
+     *
+     * @return The bytes for image.
+     */
+    public com.google.protobuf.ByteString getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired name of the image name to use for this node.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image = 10;</code>
+     *
+     * @param value The image to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      image_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired name of the image name to use for this node.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImage() {
+      image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired name of the image name to use for this node.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image = 10;</code>
+     *
+     * @param value The bytes for image to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      image_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageProject_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The project containing the desired image to use for this node pool.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image_project = 11;</code>
+     *
+     * @return The imageProject.
+     */
+    public java.lang.String getImageProject() {
+      java.lang.Object ref = imageProject_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageProject_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project containing the desired image to use for this node pool.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image_project = 11;</code>
+     *
+     * @return The bytes for imageProject.
+     */
+    public com.google.protobuf.ByteString getImageProjectBytes() {
+      java.lang.Object ref = imageProject_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        imageProject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project containing the desired image to use for this node pool.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image_project = 11;</code>
+     *
+     * @param value The imageProject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageProject(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      imageProject_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project containing the desired image to use for this node pool.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image_project = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImageProject() {
+      imageProject_ = getDefaultInstance().getImageProject();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The project containing the desired image to use for this node pool.
+     * This is used to create clusters using a custom image.
+     * </pre>
+     *
+     * <code>string image_project = 11;</code>
+     *
+     * @param value The bytes for imageProject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageProjectBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      imageProject_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList locations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -4583,7 +5063,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
     }
 
     /**
@@ -4728,7 +5208,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4763,7 +5243,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       ensureLocationsIsMutable();
       locations_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4795,7 +5275,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4825,7 +5305,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ;
       onChanged();
       return this;
@@ -4862,7 +5342,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4886,7 +5366,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the workloadMetadataConfig field is set.
      */
     public boolean hasWorkloadMetadataConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -4929,7 +5409,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         workloadMetadataConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4950,7 +5430,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         workloadMetadataConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4967,7 +5447,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeWorkloadMetadataConfig(
         com.google.container.v1beta1.WorkloadMetadataConfig value) {
       if (workloadMetadataConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && workloadMetadataConfig_ != null
             && workloadMetadataConfig_
                 != com.google.container.v1beta1.WorkloadMetadataConfig.getDefaultInstance()) {
@@ -4979,7 +5459,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         workloadMetadataConfigBuilder_.mergeFrom(value);
       }
       if (workloadMetadataConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -4995,7 +5475,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
      */
     public Builder clearWorkloadMetadataConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       workloadMetadataConfig_ = null;
       if (workloadMetadataConfigBuilder_ != null) {
         workloadMetadataConfigBuilder_.dispose();
@@ -5016,7 +5496,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.container.v1beta1.WorkloadMetadataConfig.Builder
         getWorkloadMetadataConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetWorkloadMetadataConfigFieldBuilder().getBuilder();
     }
@@ -5138,7 +5618,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5158,7 +5638,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5183,7 +5663,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5207,7 +5687,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the upgradeSettings field is set.
      */
     public boolean hasUpgradeSettings() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -5249,7 +5729,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         upgradeSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5270,7 +5750,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         upgradeSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5287,7 +5767,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeUpgradeSettings(
         com.google.container.v1beta1.NodePool.UpgradeSettings value) {
       if (upgradeSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && upgradeSettings_ != null
             && upgradeSettings_
                 != com.google.container.v1beta1.NodePool.UpgradeSettings.getDefaultInstance()) {
@@ -5299,7 +5779,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         upgradeSettingsBuilder_.mergeFrom(value);
       }
       if (upgradeSettings_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -5315,7 +5795,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodePool.UpgradeSettings upgrade_settings = 15;</code>
      */
     public Builder clearUpgradeSettings() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       upgradeSettings_ = null;
       if (upgradeSettingsBuilder_ != null) {
         upgradeSettingsBuilder_.dispose();
@@ -5336,7 +5816,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.container.v1beta1.NodePool.UpgradeSettings.Builder
         getUpgradeSettingsBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetUpgradeSettingsFieldBuilder().getBuilder();
     }
@@ -5408,7 +5888,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the tags field is set.
      */
     public boolean hasTags() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -5454,7 +5934,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         tagsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5476,7 +5956,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         tagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5494,7 +5974,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTags(com.google.container.v1beta1.NetworkTags value) {
       if (tagsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && tags_ != null
             && tags_ != com.google.container.v1beta1.NetworkTags.getDefaultInstance()) {
           getTagsBuilder().mergeFrom(value);
@@ -5505,7 +5985,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         tagsBuilder_.mergeFrom(value);
       }
       if (tags_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5523,7 +6003,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
      */
     public Builder clearTags() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       tags_ = null;
       if (tagsBuilder_ != null) {
         tagsBuilder_.dispose();
@@ -5545,7 +6025,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
      */
     public com.google.container.v1beta1.NetworkTags.Builder getTagsBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetTagsFieldBuilder().getBuilder();
     }
@@ -5620,7 +6100,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the taints field is set.
      */
     public boolean hasTaints() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5666,7 +6146,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         taintsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5688,7 +6168,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         taintsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5706,7 +6186,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeTaints(com.google.container.v1beta1.NodeTaints value) {
       if (taintsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && taints_ != null
             && taints_ != com.google.container.v1beta1.NodeTaints.getDefaultInstance()) {
           getTaintsBuilder().mergeFrom(value);
@@ -5717,7 +6197,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         taintsBuilder_.mergeFrom(value);
       }
       if (taints_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5735,7 +6215,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
      */
     public Builder clearTaints() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       taints_ = null;
       if (taintsBuilder_ != null) {
         taintsBuilder_.dispose();
@@ -5757,7 +6237,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
      */
     public com.google.container.v1beta1.NodeTaints.Builder getTaintsBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetTaintsFieldBuilder().getBuilder();
     }
@@ -5832,7 +6312,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the labels field is set.
      */
     public boolean hasLabels() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5878,7 +6358,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         labelsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5900,7 +6380,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         labelsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5918,7 +6398,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeLabels(com.google.container.v1beta1.NodeLabels value) {
       if (labelsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && labels_ != null
             && labels_ != com.google.container.v1beta1.NodeLabels.getDefaultInstance()) {
           getLabelsBuilder().mergeFrom(value);
@@ -5929,7 +6409,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         labelsBuilder_.mergeFrom(value);
       }
       if (labels_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5947,7 +6427,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
      */
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       labels_ = null;
       if (labelsBuilder_ != null) {
         labelsBuilder_.dispose();
@@ -5969,7 +6449,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
      */
     public com.google.container.v1beta1.NodeLabels.Builder getLabelsBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetLabelsFieldBuilder().getBuilder();
     }
@@ -6042,7 +6522,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the linuxNodeConfig field is set.
      */
     public boolean hasLinuxNodeConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6084,7 +6564,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         linuxNodeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6105,7 +6585,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         linuxNodeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6121,7 +6601,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeLinuxNodeConfig(com.google.container.v1beta1.LinuxNodeConfig value) {
       if (linuxNodeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && linuxNodeConfig_ != null
             && linuxNodeConfig_
                 != com.google.container.v1beta1.LinuxNodeConfig.getDefaultInstance()) {
@@ -6133,7 +6613,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         linuxNodeConfigBuilder_.mergeFrom(value);
       }
       if (linuxNodeConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6149,7 +6629,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.LinuxNodeConfig linux_node_config = 19;</code>
      */
     public Builder clearLinuxNodeConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       linuxNodeConfig_ = null;
       if (linuxNodeConfigBuilder_ != null) {
         linuxNodeConfigBuilder_.dispose();
@@ -6169,7 +6649,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.LinuxNodeConfig linux_node_config = 19;</code>
      */
     public com.google.container.v1beta1.LinuxNodeConfig.Builder getLinuxNodeConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetLinuxNodeConfigFieldBuilder().getBuilder();
     }
@@ -6238,7 +6718,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the kubeletConfig field is set.
      */
     public boolean hasKubeletConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6280,7 +6760,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         kubeletConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6301,7 +6781,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         kubeletConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6317,7 +6797,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeKubeletConfig(com.google.container.v1beta1.NodeKubeletConfig value) {
       if (kubeletConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && kubeletConfig_ != null
             && kubeletConfig_
                 != com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()) {
@@ -6329,7 +6809,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         kubeletConfigBuilder_.mergeFrom(value);
       }
       if (kubeletConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6345,7 +6825,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeKubeletConfig kubelet_config = 20;</code>
      */
     public Builder clearKubeletConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       kubeletConfig_ = null;
       if (kubeletConfigBuilder_ != null) {
         kubeletConfigBuilder_.dispose();
@@ -6365,7 +6845,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeKubeletConfig kubelet_config = 20;</code>
      */
     public com.google.container.v1beta1.NodeKubeletConfig.Builder getKubeletConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetKubeletConfigFieldBuilder().getBuilder();
     }
@@ -6434,7 +6914,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the nodeNetworkConfig field is set.
      */
     public boolean hasNodeNetworkConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6476,7 +6956,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         nodeNetworkConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6497,7 +6977,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         nodeNetworkConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6513,7 +6993,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeNodeNetworkConfig(com.google.container.v1beta1.NodeNetworkConfig value) {
       if (nodeNetworkConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && nodeNetworkConfig_ != null
             && nodeNetworkConfig_
                 != com.google.container.v1beta1.NodeNetworkConfig.getDefaultInstance()) {
@@ -6525,7 +7005,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         nodeNetworkConfigBuilder_.mergeFrom(value);
       }
       if (nodeNetworkConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -6541,7 +7021,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeNetworkConfig node_network_config = 21;</code>
      */
     public Builder clearNodeNetworkConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       nodeNetworkConfig_ = null;
       if (nodeNetworkConfigBuilder_ != null) {
         nodeNetworkConfigBuilder_.dispose();
@@ -6561,7 +7041,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodeNetworkConfig node_network_config = 21;</code>
      */
     public com.google.container.v1beta1.NodeNetworkConfig.Builder getNodeNetworkConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetNodeNetworkConfigFieldBuilder().getBuilder();
     }
@@ -6630,7 +7110,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the gcfsConfig field is set.
      */
     public boolean hasGcfsConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6672,7 +7152,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         gcfsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6692,7 +7172,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         gcfsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6708,7 +7188,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeGcfsConfig(com.google.container.v1beta1.GcfsConfig value) {
       if (gcfsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && gcfsConfig_ != null
             && gcfsConfig_ != com.google.container.v1beta1.GcfsConfig.getDefaultInstance()) {
           getGcfsConfigBuilder().mergeFrom(value);
@@ -6719,7 +7199,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gcfsConfigBuilder_.mergeFrom(value);
       }
       if (gcfsConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6735,7 +7215,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
      */
     public Builder clearGcfsConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       gcfsConfig_ = null;
       if (gcfsConfigBuilder_ != null) {
         gcfsConfigBuilder_.dispose();
@@ -6755,7 +7235,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
      */
     public com.google.container.v1beta1.GcfsConfig.Builder getGcfsConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return internalGetGcfsConfigFieldBuilder().getBuilder();
     }
@@ -6825,7 +7305,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the confidentialNodes field is set.
      */
     public boolean hasConfidentialNodes() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6869,7 +7349,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         confidentialNodesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6891,7 +7371,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         confidentialNodesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6908,7 +7388,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeConfidentialNodes(com.google.container.v1beta1.ConfidentialNodes value) {
       if (confidentialNodesBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && confidentialNodes_ != null
             && confidentialNodes_
                 != com.google.container.v1beta1.ConfidentialNodes.getDefaultInstance()) {
@@ -6920,7 +7400,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         confidentialNodesBuilder_.mergeFrom(value);
       }
       if (confidentialNodes_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -6937,7 +7417,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 23;</code>
      */
     public Builder clearConfidentialNodes() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       confidentialNodes_ = null;
       if (confidentialNodesBuilder_ != null) {
         confidentialNodesBuilder_.dispose();
@@ -6958,7 +7438,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 23;</code>
      */
     public com.google.container.v1beta1.ConfidentialNodes.Builder getConfidentialNodesBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetConfidentialNodesFieldBuilder().getBuilder();
     }
@@ -7029,7 +7509,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the gvnic field is set.
      */
     public boolean hasGvnic() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -7071,7 +7551,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         gvnicBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7091,7 +7571,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         gvnicBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7107,7 +7587,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeGvnic(com.google.container.v1beta1.VirtualNIC value) {
       if (gvnicBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && gvnic_ != null
             && gvnic_ != com.google.container.v1beta1.VirtualNIC.getDefaultInstance()) {
           getGvnicBuilder().mergeFrom(value);
@@ -7118,7 +7598,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnicBuilder_.mergeFrom(value);
       }
       if (gvnic_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -7134,7 +7614,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
      */
     public Builder clearGvnic() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       gvnic_ = null;
       if (gvnicBuilder_ != null) {
         gvnicBuilder_.dispose();
@@ -7154,7 +7634,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
      */
     public com.google.container.v1beta1.VirtualNIC.Builder getGvnicBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetGvnicFieldBuilder().getBuilder();
     }
@@ -7275,7 +7755,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7295,7 +7775,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7320,7 +7800,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7344,7 +7824,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the fastSocket field is set.
      */
     public boolean hasFastSocket() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -7386,7 +7866,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         fastSocketBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7406,7 +7886,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         fastSocketBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7422,7 +7902,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeFastSocket(com.google.container.v1beta1.FastSocket value) {
       if (fastSocketBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && fastSocket_ != null
             && fastSocket_ != com.google.container.v1beta1.FastSocket.getDefaultInstance()) {
           getFastSocketBuilder().mergeFrom(value);
@@ -7433,7 +7913,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         fastSocketBuilder_.mergeFrom(value);
       }
       if (fastSocket_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -7449,7 +7929,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.FastSocket fast_socket = 31;</code>
      */
     public Builder clearFastSocket() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       fastSocket_ = null;
       if (fastSocketBuilder_ != null) {
         fastSocketBuilder_.dispose();
@@ -7469,7 +7949,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.FastSocket fast_socket = 31;</code>
      */
     public com.google.container.v1beta1.FastSocket.Builder getFastSocketBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return internalGetFastSocketFieldBuilder().getBuilder();
     }
@@ -7538,7 +8018,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -7580,7 +8060,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7601,7 +8081,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7617,7 +8097,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeLoggingConfig(com.google.container.v1beta1.NodePoolLoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && loggingConfig_ != null
             && loggingConfig_
                 != com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()) {
@@ -7629,7 +8109,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         loggingConfigBuilder_.mergeFrom(value);
       }
       if (loggingConfig_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -7645,7 +8125,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 32;</code>
      */
     public Builder clearLoggingConfig() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       loggingConfig_ = null;
       if (loggingConfigBuilder_ != null) {
         loggingConfigBuilder_.dispose();
@@ -7665,7 +8145,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 32;</code>
      */
     public com.google.container.v1beta1.NodePoolLoggingConfig.Builder getLoggingConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetLoggingConfigFieldBuilder().getBuilder();
     }
@@ -7735,7 +8215,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the resourceLabels field is set.
      */
     public boolean hasResourceLabels() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -7779,7 +8259,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         resourceLabelsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7801,7 +8281,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         resourceLabelsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7818,7 +8298,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeResourceLabels(com.google.container.v1beta1.ResourceLabels value) {
       if (resourceLabelsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && resourceLabels_ != null
             && resourceLabels_
                 != com.google.container.v1beta1.ResourceLabels.getDefaultInstance()) {
@@ -7830,7 +8310,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         resourceLabelsBuilder_.mergeFrom(value);
       }
       if (resourceLabels_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -7847,7 +8327,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ResourceLabels resource_labels = 33;</code>
      */
     public Builder clearResourceLabels() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       resourceLabels_ = null;
       if (resourceLabelsBuilder_ != null) {
         resourceLabelsBuilder_.dispose();
@@ -7868,7 +8348,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ResourceLabels resource_labels = 33;</code>
      */
     public com.google.container.v1beta1.ResourceLabels.Builder getResourceLabelsBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return internalGetResourceLabelsFieldBuilder().getBuilder();
     }
@@ -7939,7 +8419,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the windowsNodeConfig field is set.
      */
     public boolean hasWindowsNodeConfig() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -7981,7 +8461,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         windowsNodeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8002,7 +8482,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         windowsNodeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8018,7 +8498,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeWindowsNodeConfig(com.google.container.v1beta1.WindowsNodeConfig value) {
       if (windowsNodeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && windowsNodeConfig_ != null
             && windowsNodeConfig_
                 != com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()) {
@@ -8030,7 +8510,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         windowsNodeConfigBuilder_.mergeFrom(value);
       }
       if (windowsNodeConfig_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -8046,7 +8526,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
      */
     public Builder clearWindowsNodeConfig() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       windowsNodeConfig_ = null;
       if (windowsNodeConfigBuilder_ != null) {
         windowsNodeConfigBuilder_.dispose();
@@ -8066,7 +8546,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
      */
     public com.google.container.v1beta1.WindowsNodeConfig.Builder getWindowsNodeConfigBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return internalGetWindowsNodeConfigFieldBuilder().getBuilder();
     }
@@ -8120,10 +8600,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x04000000) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.container.v1beta1.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
       }
     }
 
@@ -8384,7 +8864,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -8537,7 +9017,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 com.google.container.v1beta1.AcceleratorConfig,
                 com.google.container.v1beta1.AcceleratorConfig.Builder,
                 com.google.container.v1beta1.AcceleratorConfigOrBuilder>(
-                accelerators_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
+                accelerators_, ((bitField0_ & 0x04000000) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -8614,7 +9094,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       machineType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8634,7 +9114,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearMachineType() {
       machineType_ = getDefaultInstance().getMachineType();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -8659,7 +9139,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       machineType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8735,7 +9215,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       diskType_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8755,7 +9235,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearDiskType() {
       diskType_ = getDefaultInstance().getDiskType();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -8780,7 +9260,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       diskType_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8822,7 +9302,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder setDiskSizeGb(long value) {
 
       diskSizeGb_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8841,7 +9321,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeGb() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       diskSizeGb_ = 0L;
       onChanged();
       return this;
@@ -8868,7 +9348,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the resourceManagerTags field is set.
      */
     public boolean hasResourceManagerTags() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -8914,7 +9394,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         resourceManagerTagsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8937,7 +9417,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         resourceManagerTagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8956,7 +9436,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeResourceManagerTags(
         com.google.container.v1beta1.ResourceManagerTags value) {
       if (resourceManagerTagsBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && resourceManagerTags_ != null
             && resourceManagerTags_
                 != com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()) {
@@ -8968,7 +9448,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         resourceManagerTagsBuilder_.mergeFrom(value);
       }
       if (resourceManagerTags_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -8986,7 +9466,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
      */
     public Builder clearResourceManagerTags() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       resourceManagerTags_ = null;
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
@@ -9009,7 +9489,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.container.v1beta1.ResourceManagerTags.Builder
         getResourceManagerTagsBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return internalGetResourceManagerTagsFieldBuilder().getBuilder();
     }
@@ -9085,7 +9565,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the containerdConfig field is set.
      */
     public boolean hasContainerdConfig() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -9131,7 +9611,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         containerdConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -9154,7 +9634,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         containerdConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -9172,7 +9652,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeContainerdConfig(com.google.container.v1beta1.ContainerdConfig value) {
       if (containerdConfigBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)
+        if (((bitField0_ & 0x80000000) != 0)
             && containerdConfig_ != null
             && containerdConfig_
                 != com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()) {
@@ -9184,7 +9664,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         containerdConfigBuilder_.mergeFrom(value);
       }
       if (containerdConfig_ != null) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -9202,7 +9682,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 40;</code>
      */
     public Builder clearContainerdConfig() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       containerdConfig_ = null;
       if (containerdConfigBuilder_ != null) {
         containerdConfigBuilder_.dispose();
@@ -9224,7 +9704,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.ContainerdConfig containerd_config = 40;</code>
      */
     public com.google.container.v1beta1.ContainerdConfig.Builder getContainerdConfigBuilder() {
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return internalGetContainerdConfigFieldBuilder().getBuilder();
     }
@@ -9297,7 +9777,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the queuedProvisioning field is set.
      */
     public boolean hasQueuedProvisioning() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -9340,7 +9820,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         queuedProvisioningBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9361,7 +9841,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         queuedProvisioningBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9378,7 +9858,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeQueuedProvisioning(
         com.google.container.v1beta1.NodePool.QueuedProvisioning value) {
       if (queuedProvisioningBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && queuedProvisioning_ != null
             && queuedProvisioning_
                 != com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()) {
@@ -9390,7 +9870,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         queuedProvisioningBuilder_.mergeFrom(value);
       }
       if (queuedProvisioning_ != null) {
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -9406,7 +9886,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
      */
     public Builder clearQueuedProvisioning() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       queuedProvisioning_ = null;
       if (queuedProvisioningBuilder_ != null) {
         queuedProvisioningBuilder_.dispose();
@@ -9427,7 +9907,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder
         getQueuedProvisioningBuilder() {
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return internalGetQueuedProvisioningFieldBuilder().getBuilder();
     }
@@ -9485,7 +9965,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (!storagePools_.isModifiable()) {
         storagePools_ = new com.google.protobuf.LazyStringArrayList(storagePools_);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
     }
 
     /**
@@ -9575,7 +10055,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       ensureStoragePoolsIsMutable();
       storagePools_.set(index, value);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9599,7 +10079,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       ensureStoragePoolsIsMutable();
       storagePools_.add(value);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9620,7 +10100,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder addAllStoragePools(java.lang.Iterable<java.lang.String> values) {
       ensureStoragePoolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storagePools_);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9639,7 +10119,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearStoragePools() {
       storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -9665,7 +10145,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureStoragePoolsIsMutable();
       storagePools_.add(value);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9690,7 +10170,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the maxRunDuration field is set.
      */
     public boolean hasMaxRunDuration() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -9734,7 +10214,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         maxRunDurationBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9755,7 +10235,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         maxRunDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9772,7 +10252,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeMaxRunDuration(com.google.protobuf.Duration value) {
       if (maxRunDurationBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)
+        if (((bitField1_ & 0x00000004) != 0)
             && maxRunDuration_ != null
             && maxRunDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getMaxRunDurationBuilder().mergeFrom(value);
@@ -9783,7 +10263,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         maxRunDurationBuilder_.mergeFrom(value);
       }
       if (maxRunDuration_ != null) {
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -9800,7 +10280,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Duration max_run_duration = 45;</code>
      */
     public Builder clearMaxRunDuration() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       maxRunDuration_ = null;
       if (maxRunDurationBuilder_ != null) {
         maxRunDurationBuilder_.dispose();
@@ -9821,7 +10301,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Duration max_run_duration = 45;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRunDurationBuilder() {
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return internalGetMaxRunDurationFieldBuilder().getBuilder();
     }
@@ -9888,7 +10368,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasFlexStart() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -9922,7 +10402,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder setFlexStart(boolean value) {
 
       flexStart_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9939,7 +10419,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFlexStart() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000008);
       flexStart_ = false;
       onChanged();
       return this;
@@ -9966,7 +10446,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the bootDisk field is set.
      */
     public boolean hasBootDisk() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -10012,7 +10492,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         bootDiskBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -10034,7 +10514,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         bootDiskBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -10052,7 +10532,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeBootDisk(com.google.container.v1beta1.BootDisk value) {
       if (bootDiskBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && bootDisk_ != null
             && bootDisk_ != com.google.container.v1beta1.BootDisk.getDefaultInstance()) {
           getBootDiskBuilder().mergeFrom(value);
@@ -10063,7 +10543,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         bootDiskBuilder_.mergeFrom(value);
       }
       if (bootDisk_ != null) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -10081,7 +10561,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.BootDisk boot_disk = 47;</code>
      */
     public Builder clearBootDisk() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000010);
       bootDisk_ = null;
       if (bootDiskBuilder_ != null) {
         bootDiskBuilder_.dispose();
@@ -10103,7 +10583,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.BootDisk boot_disk = 47;</code>
      */
     public com.google.container.v1beta1.BootDisk.Builder getBootDiskBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return internalGetBootDiskFieldBuilder().getBuilder();
     }
@@ -10176,7 +10656,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the nodeDrainConfig field is set.
      */
     public boolean hasNodeDrainConfig() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
 
     /**
@@ -10218,7 +10698,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         nodeDrainConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10239,7 +10719,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         nodeDrainConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10256,7 +10736,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeNodeDrainConfig(
         com.google.container.v1beta1.NodePool.NodeDrainConfig value) {
       if (nodeDrainConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0)
+        if (((bitField1_ & 0x00000020) != 0)
             && nodeDrainConfig_ != null
             && nodeDrainConfig_
                 != com.google.container.v1beta1.NodePool.NodeDrainConfig.getDefaultInstance()) {
@@ -10268,7 +10748,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         nodeDrainConfigBuilder_.mergeFrom(value);
       }
       if (nodeDrainConfig_ != null) {
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -10284,7 +10764,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.container.v1beta1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
      */
     public Builder clearNodeDrainConfig() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000020);
       nodeDrainConfig_ = null;
       if (nodeDrainConfigBuilder_ != null) {
         nodeDrainConfigBuilder_.dispose();
@@ -10305,7 +10785,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.container.v1beta1.NodePool.NodeDrainConfig.Builder
         getNodeDrainConfigBuilder() {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return internalGetNodeDrainConfigFieldBuilder().getBuilder();
     }
@@ -10377,7 +10857,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the consolidationDelay field is set.
      */
     public boolean hasConsolidationDelay() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
 
     /**
@@ -10423,7 +10903,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         consolidationDelayBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -10445,7 +10925,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         consolidationDelayBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -10463,7 +10943,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeConsolidationDelay(com.google.protobuf.Duration value) {
       if (consolidationDelayBuilder_ == null) {
-        if (((bitField1_ & 0x00000010) != 0)
+        if (((bitField1_ & 0x00000040) != 0)
             && consolidationDelay_ != null
             && consolidationDelay_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getConsolidationDelayBuilder().mergeFrom(value);
@@ -10474,7 +10954,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         consolidationDelayBuilder_.mergeFrom(value);
       }
       if (consolidationDelay_ != null) {
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -10492,7 +10972,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
      */
     public Builder clearConsolidationDelay() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000040);
       consolidationDelay_ = null;
       if (consolidationDelayBuilder_ != null) {
         consolidationDelayBuilder_.dispose();
@@ -10514,7 +10994,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
      */
     public com.google.protobuf.Duration.Builder getConsolidationDelayBuilder() {
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return internalGetConsolidationDelayFieldBuilder().getBuilder();
     }
@@ -10566,6 +11046,201 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         consolidationDelay_ = null;
       }
       return consolidationDelayBuilder_;
+    }
+
+    private com.google.container.v1beta1.TaintConfig taintConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.TaintConfig,
+            com.google.container.v1beta1.TaintConfig.Builder,
+            com.google.container.v1beta1.TaintConfigOrBuilder>
+        taintConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     *
+     * @return Whether the taintConfig field is set.
+     */
+    public boolean hasTaintConfig() {
+      return ((bitField1_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     *
+     * @return The taintConfig.
+     */
+    public com.google.container.v1beta1.TaintConfig getTaintConfig() {
+      if (taintConfigBuilder_ == null) {
+        return taintConfig_ == null
+            ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+            : taintConfig_;
+      } else {
+        return taintConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder setTaintConfig(com.google.container.v1beta1.TaintConfig value) {
+      if (taintConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taintConfig_ = value;
+      } else {
+        taintConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder setTaintConfig(
+        com.google.container.v1beta1.TaintConfig.Builder builderForValue) {
+      if (taintConfigBuilder_ == null) {
+        taintConfig_ = builderForValue.build();
+      } else {
+        taintConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder mergeTaintConfig(com.google.container.v1beta1.TaintConfig value) {
+      if (taintConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000080) != 0)
+            && taintConfig_ != null
+            && taintConfig_ != com.google.container.v1beta1.TaintConfig.getDefaultInstance()) {
+          getTaintConfigBuilder().mergeFrom(value);
+        } else {
+          taintConfig_ = value;
+        }
+      } else {
+        taintConfigBuilder_.mergeFrom(value);
+      }
+      if (taintConfig_ != null) {
+        bitField1_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder clearTaintConfig() {
+      bitField1_ = (bitField1_ & ~0x00000080);
+      taintConfig_ = null;
+      if (taintConfigBuilder_ != null) {
+        taintConfigBuilder_.dispose();
+        taintConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public com.google.container.v1beta1.TaintConfig.Builder getTaintConfigBuilder() {
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return internalGetTaintConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public com.google.container.v1beta1.TaintConfigOrBuilder getTaintConfigOrBuilder() {
+      if (taintConfigBuilder_ != null) {
+        return taintConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return taintConfig_ == null
+            ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+            : taintConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.TaintConfig,
+            com.google.container.v1beta1.TaintConfig.Builder,
+            com.google.container.v1beta1.TaintConfigOrBuilder>
+        internalGetTaintConfigFieldBuilder() {
+      if (taintConfigBuilder_ == null) {
+        taintConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.TaintConfig,
+                com.google.container.v1beta1.TaintConfig.Builder,
+                com.google.container.v1beta1.TaintConfigOrBuilder>(
+                getTaintConfig(), getParentForChildren(), isClean());
+        taintConfig_ = null;
+      }
+      return taintConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1beta1.UpdateNodePoolRequest)

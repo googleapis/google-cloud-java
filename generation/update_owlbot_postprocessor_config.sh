@@ -6,7 +6,10 @@
 
 set -e
 
-for dir in $(find . -mindepth 2 -maxdepth 2 -name owlbot.py | grep -v 'java-common-protos/' | grep -v 'java-iam/' | grep -v 'java-showcase/' | sort | xargs dirname ); do
+TARGET_MODULE="${1:-.}"
+
+for owlbot_script in $(find "$TARGET_MODULE" -name owlbot.py | grep -v 'java-common-protos/' | grep -v 'java-iam/' | grep -v 'java-showcase/' | sort); do
+  dir=$(dirname "$owlbot_script")
   pushd "$dir"
 
   # form a perl command to replace java.common_templates() invocation

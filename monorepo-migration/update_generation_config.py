@@ -15,87 +15,40 @@
 
 import sys
 import yaml
-import re
-
-def get_library_id(lib):
-    """
-    Returns a unique identifier for a library.
-    Prefer 'library_name', then 'api_shortname'.
-    """
-    if 'library_name' in lib:
-        return f"java-{lib['library_name']}"
-    if 'api_shortname' in lib:
-        return f"java-{lib['api_shortname']}"
-    return "unknown"
-
-def merge_libraries(target_libs, source_libs):
-    """
-    Merges source_libs into target_libs.
-    Libraries are matched by get_library_id.
-    GAPICs are merged and deduplicated by proto_path.
-    The final list is sorted by library_id.
-    """
-    # Map from library_id to library dict
-    target_map = {get_library_id(lib): lib for lib in target_libs}
-
-    for s_lib in source_libs:
-        lib_id = get_library_id(s_lib)
-        
-        # Clean up source library (remove repo fields)
-        s_lib_cleaned = {k: v for k, v in s_lib.items() if k not in ('repo', 'repo_short')}
-        
-        if lib_id in target_map:
-            t_lib = target_map[lib_id]
-            # Merge GAPICs
-            t_gapics_list = t_lib.get('GAPICs', [])
-            s_gapics_list = s_lib_cleaned.get('GAPICs', [])
-            
-            # Map by proto_path for deduplication
-            proto_map = {g['proto_path']: g for g in t_gapics_list}
-            for g in s_gapics_list:
-                proto_map[g['proto_path']] = g
-            
-            # Sort GAPICs by proto_path
-            sorted_protos = sorted(proto_map.keys())
-            t_lib['GAPICs'] = [proto_map[p] for p in sorted_protos]
-            
-            # Update other fields from source
-            for k, v in s_lib_cleaned.items():
-                if k != 'GAPICs':
-                    t_lib[k] = v
-        else:
-            target_map[lib_id] = s_lib_cleaned
-
-    # Return sorted list of libraries
-    sorted_ids = sorted(target_map.keys())
-    return [target_map[lib_id] for lib_id in sorted_ids]
 
 def update_config(target_path, source_path):
-    with open(target_path, 'r') as f:
-        target_content = f.read()
-    
+    """
+    Appends the library configuration from the source_path to the target_path.
+    This avoids rewriting the entire target YAML, preserving all comments and ordering.
+    """
     with open(source_path, 'r') as f:
         source_data = yaml.safe_load(f) or {}
 
-    # Load target data
-    target_data = yaml.safe_load(target_content) or {}
-    
-    target_libs = target_data.get('libraries', [])
     source_libs = source_data.get('libraries', [])
-    
-    merged_libs = merge_libraries(target_libs, source_libs)
-    target_data['libraries'] = merged_libs
+    if not source_libs:
+        print("No libraries found in source config.")
+        return
 
-    # Write back
-    with open(target_path, 'w') as f:
-        # Check if there was a license header in the original file
-        header_match = re.search(r'^(#.*?\n\n)', target_content, re.DOTALL)
-        if header_match:
-            f.write(header_match.group(1))
-        
-        # Use yaml.dump to write the data.
-        # sort_keys=False to preserve order of fields within libraries if possible (YAML 1.2+ usually does, but pyyaml depends)
-        yaml.dump(target_data, f, sort_keys=False, default_flow_style=False, indent=2)
+    # In standalone repos, there is usually only one library definition.
+    new_libs = []
+    for s_lib in source_libs:
+        # Clean up source library (remove repo fields as they are now internal to monorepo)
+        if 'repo' in s_lib:
+            del s_lib['repo']
+        if 'repo_short' in s_lib:
+            del s_lib['repo_short']
+        new_libs.append(s_lib)
+
+    # Dump the new library entries as a YAML string
+    # sort_keys=False preserves the field ordering (e.g., api_shortname first)
+    new_yaml_str = yaml.dump(new_libs, sort_keys=False, default_flow_style=False, indent=2)
+
+    # Append to the existing monorepo generation_config.yaml
+    # This ensures we don't rewrite the file and lose comments/ordering.
+    with open(target_path, 'a') as f:
+        f.write(new_yaml_str.rstrip() + "\n")
+
+    print(f"Appended {len(new_libs)} libraries to {target_path}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

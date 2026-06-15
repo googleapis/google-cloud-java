@@ -546,9 +546,9 @@ public class DataTableServiceStubSettings extends StubSettings<DataTableServiceS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_9_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_6_codes",
+          "retry_policy_8_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -565,7 +565,7 @@ public class DataTableServiceStubSettings extends StubSettings<DataTableServiceS
               .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
-      definitions.put("no_retry_7_params", settings);
+      definitions.put("no_retry_9_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -576,7 +576,7 @@ public class DataTableServiceStubSettings extends StubSettings<DataTableServiceS
               .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_6_params", settings);
+      definitions.put("retry_policy_8_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -689,78 +689,78 @@ public class DataTableServiceStubSettings extends StubSettings<DataTableServiceS
     private static Builder initDefaults(Builder builder) {
       builder
           .createDataTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .listDataTablesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .getDataTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .updateDataTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .deleteDataTableSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .createDataTableRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .updateDataTableRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .listDataTableRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .getDataTableRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .deleteDataTableRowSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .bulkCreateDataTableRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .bulkGetDataTableRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       builder
           .bulkReplaceDataTableRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .bulkUpdateDataTableRowsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
 
       builder
           .getDataTableOperationErrorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_8_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_8_params"));
 
       return builder;
     }

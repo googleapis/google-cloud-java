@@ -297,18 +297,27 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "oud.storagebatchoperations.v1.ErrorLogEntryB\003\340A\002\"J\n\r"
           + "ErrorLogEntry\022\032\n\n"
           + "object_uri\030\001 \001(\tB\006\340A\002\340A\003\022\035\n\r"
-          + "error_details\030\003 \003(\tB\006\340A\001\340A\003\"\255\001\n"
+          + "error_details\030\003 \003(\tB\006\340A\001\340A\003\"\254\003\n"
           + "\010Counters\022\037\n"
           + "\022total_object_count\030\001 \001(\003B\003\340A\003\022#\n"
           + "\026succeeded_object_count\030\002 \001(\003B\003\340A\003\022 \n"
           + "\023failed_object_count\030\003 \001(\003B\003\340A\003\022#\n"
-          + "\021total_bytes_found\030\004 \001(\003B\003\340A\003H\000\210\001\001B\024\n"
-          + "\022_total_bytes_found\"\365\002\n\r"
+          + "\021total_bytes_found\030\004 \001(\003B\003\340A\003H\000\210\001\001\0220\n"
+          + "\036object_custom_contexts_created\030\005"
+          + " \001(\003B\003\340A\003H\001\210\001\001\0220\n"
+          + "\036object_custom_contexts_deleted\030\006"
+          + " \001(\003B\003\340A\003H\002\210\001\001\0220\n"
+          + "\036object_custom_contexts_updated\030\007"
+          + " \001(\003B\003\340A\003H\003\210\001\001B\024\n"
+          + "\022_total_bytes_foundB!\n"
+          + "\037_object_custom_contexts_createdB!\n"
+          + "\037_object_custom_contexts_deletedB!\n"
+          + "\037_object_custom_contexts_updated\"\365\002\n\r"
           + "LoggingConfig\022^\n"
-          + "\013log_actions\030\001 \003(\0162D.google.cloud.stora"
-          + "gebatchoperations.v1.LoggingConfig.LoggableActionB\003\340A\002\022i\n"
-          + "\021log_action_states\030\002 \003(\0162I.google.cloud.storagebatchoperations."
-          + "v1.LoggingConfig.LoggableActionStateB\003\340A\002\"@\n"
+          + "\013log_actions\030\001 \003(\0162D.goo"
+          + "gle.cloud.storagebatchoperations.v1.LoggingConfig.LoggableActionB\003\340A\002\022i\n"
+          + "\021log_action_states\030\002 \003(\0162I.google.cloud.storageb"
+          + "atchoperations.v1.LoggingConfig.LoggableActionStateB\003\340A\002\"@\n"
           + "\016LoggableAction\022\037\n"
           + "\033LOGGABLE_ACTION_UNSPECIFIED\020\000\022\r\n"
           + "\tTRANSFORM\020\006\"W\n"
@@ -316,13 +325,14 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
           + "!LOGGABLE_ACTION_STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tSUCCEEDED\020\001\022\n\n"
           + "\006FAILED\020\002B\255\003\n"
-          + "*com.google.cloud.storagebatchoperations.v1B StorageBatchOperationsTypesProtoP\001Z"
-          + "bcloud.google.com/go/storagebatchoperations/apiv1/storagebatchoperationspb;stora"
-          + "gebatchoperationspb\252\002&Google.Cloud.Stora"
-          + "geBatchOperations.V1\312\002&Google\\Cloud\\Stor"
-          + "ageBatchOperations\\V1\352\002)Google::Cloud::StorageBatchOperations::V1\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{proje"
-          + "ct}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
+          + "*com.google.cloud.storagebatchoperations.v1B StorageBatchOperatio"
+          + "nsTypesProtoP\001Zbcloud.google.com/go/storagebatchoperations/apiv1/storagebatchope"
+          + "rationspb;storagebatchoperationspb\252\002&Goo"
+          + "gle.Cloud.StorageBatchOperations.V1\312\002&Go"
+          + "ogle\\Cloud\\StorageBatchOperations\\V1\352\002)G"
+          + "oogle::Cloud::StorageBatchOperations::V1\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{location}/"
+          + "keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -527,7 +537,13 @@ public final class StorageBatchOperationsTypesProto extends com.google.protobuf.
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_storagebatchoperations_v1_Counters_descriptor,
             new java.lang.String[] {
-              "TotalObjectCount", "SucceededObjectCount", "FailedObjectCount", "TotalBytesFound",
+              "TotalObjectCount",
+              "SucceededObjectCount",
+              "FailedObjectCount",
+              "TotalBytesFound",
+              "ObjectCustomContextsCreated",
+              "ObjectCustomContextsDeleted",
+              "ObjectCustomContextsUpdated",
             });
     internal_static_google_cloud_storagebatchoperations_v1_LoggingConfig_descriptor =
         getDescriptor().getMessageType(16);

@@ -1824,7 +1824,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("package_", request.getPackage(), true))
+                                  .toBody("package", request.getPackage(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Package>newBuilder()

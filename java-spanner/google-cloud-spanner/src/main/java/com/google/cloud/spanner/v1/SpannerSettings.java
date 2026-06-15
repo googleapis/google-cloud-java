@@ -38,6 +38,7 @@ import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -45,6 +46,7 @@ import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -195,6 +197,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
   /** Returns the object with the settings used for calls to batchWrite. */
   public ServerStreamingCallSettings<BatchWriteRequest, BatchWriteResponse> batchWriteSettings() {
     return ((SpannerStubSettings) getStubSettings()).batchWriteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchCacheUpdate. */
+  public ServerStreamingCallSettings<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateSettings() {
+    return ((SpannerStubSettings) getStubSettings()).fetchCacheUpdateSettings();
   }
 
   public static final SpannerSettings create(SpannerStubSettings stub) throws IOException {
@@ -396,6 +404,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
     public ServerStreamingCallSettings.Builder<BatchWriteRequest, BatchWriteResponse>
         batchWriteSettings() {
       return getStubSettingsBuilder().batchWriteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchCacheUpdate. */
+    public ServerStreamingCallSettings.Builder<FetchCacheUpdateRequest, CacheUpdate>
+        fetchCacheUpdateSettings() {
+      return getStubSettingsBuilder().fetchCacheUpdateSettings();
     }
 
     @Override

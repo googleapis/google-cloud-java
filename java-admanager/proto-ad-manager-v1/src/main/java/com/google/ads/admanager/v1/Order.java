@@ -153,14 +153,19 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Order ID.
+   * Output only. Deprecated: Order ID.
    * </pre>
    *
-   * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=47
    * @return Whether the orderId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasOrderId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -169,14 +174,19 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Order ID.
+   * Output only. Deprecated: Order ID.
    * </pre>
    *
-   * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=47
    * @return The orderId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getOrderId() {
     return orderId_;
   }
@@ -1242,8 +1252,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The application which modified this order. This attribute is
-   * assigned by Google.
+   * Output only. The application which modified this order.
    * </pre>
    *
    * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1260,8 +1269,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The application which modified this order. This attribute is
-   * assigned by Google.
+   * Output only. The application which modified this order.
    * </pre>
    *
    * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1286,8 +1294,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The application which modified this order. This attribute is
-   * assigned by Google.
+   * Output only. The application which modified this order.
    * </pre>
    *
    * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3536,14 +3543,19 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Order ID.
+     * Output only. Deprecated: Order ID.
      * </pre>
      *
-     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=47
      * @return Whether the orderId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasOrderId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -3552,14 +3564,19 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Order ID.
+     * Output only. Deprecated: Order ID.
      * </pre>
      *
-     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=47
      * @return The orderId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getOrderId() {
       return orderId_;
     }
@@ -3568,14 +3585,19 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Order ID.
+     * Output only. Deprecated: Order ID.
      * </pre>
      *
-     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=47
      * @param value The orderId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setOrderId(long value) {
 
       orderId_ = value;
@@ -3588,13 +3610,18 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Order ID.
+     * Output only. Deprecated: Order ID.
      * </pre>
      *
-     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+     *     google/ads/admanager/v1/order_messages.proto;l=47
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearOrderId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       orderId_ = 0L;
@@ -6057,8 +6084,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The application which modified this order. This attribute is
-     * assigned by Google.
+     * Output only. The application which modified this order.
      * </pre>
      *
      * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6074,8 +6100,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The application which modified this order. This attribute is
-     * assigned by Google.
+     * Output only. The application which modified this order.
      * </pre>
      *
      * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6099,8 +6124,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The application which modified this order. This attribute is
-     * assigned by Google.
+     * Output only. The application which modified this order.
      * </pre>
      *
      * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6124,8 +6148,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The application which modified this order. This attribute is
-     * assigned by Google.
+     * Output only. The application which modified this order.
      * </pre>
      *
      * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6148,8 +6171,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The application which modified this order. This attribute is
-     * assigned by Google.
+     * Output only. The application which modified this order.
      * </pre>
      *
      * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6168,8 +6190,7 @@ public final class Order extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The application which modified this order. This attribute is
-     * assigned by Google.
+     * Output only. The application which modified this order.
      * </pre>
      *
      * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];

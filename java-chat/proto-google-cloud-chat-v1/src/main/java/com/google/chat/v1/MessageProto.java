@@ -97,6 +97,10 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_CreateMessageRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_CreateMessageNotificationOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_chat_v1_CreateMessageNotificationOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_ListMessagesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_ListMessagesRequest_fieldAccessorTable;
@@ -137,7 +141,7 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + " google/chat/v1/matched_url.proto\032\035googl"
           + "e/chat/v1/reaction.proto\032\"google/chat/v1"
           + "/slash_command.proto\032\032google/chat/v1/space.proto\032\031google/chat/v1/user.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\324\n\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\351\n\n"
           + "\007Message\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022)\n"
           + "\006sender\030\002 \001(\0132\024.google.chat.v1.UserB\003\340A\003\0227\n"
@@ -166,7 +170,8 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "attachment\030\022 \003(\0132\032.google.chat.v1.AttachmentB\003\340A\001\0224\n"
           + "\013matched_url\030\024"
           + " \001(\0132\032.google.chat.v1.MatchedUrlB\003\340A\003\022\031\n"
-          + "\014thread_reply\030\031 \001(\010B\003\340A\003\022\'\n"
+          + "\014thread_reply\030\031 \001(\010B\003\340A\003\022\023\n"
+          + "\006silent\030. \001(\010B\003\340A\003\022\'\n"
           + "\032client_assigned_message_id\030  \001(\tB\003\340A\001\022K\n"
           + "\030emoji_reaction_summaries\030!"
           + " \003(\0132$.google.chat.v1.EmojiReactionSummaryB\003\340A\003\022<\n"
@@ -174,11 +179,11 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\024.google.chat.v1.UserB\006\340A\005\340A\001\022@\n"
           + "\021deletion_metadata\030& \001(\0132"
           + " .google.chat.v1.DeletionMetadataB\003\340A\003\022K\n"
-          + "\027quoted_message_metadata\030\' \001(\0132%.goo"
-          + "gle.chat.v1.QuotedMessageMetadataB\003\340A\001\0227\n\r"
+          + "\027quoted_message_metadata\030\'"
+          + " \001(\0132%.google.chat.v1.QuotedMessageMetadataB\003\340A\001\0227\n\r"
           + "attached_gifs\030* \003(\0132\033.google.chat.v1.AttachedGifB\003\340A\003\022?\n"
-          + "\021accessory_widgets\030, \003"
-          + "(\0132\037.google.chat.v1.AccessoryWidgetB\003\340A\001:C\352A@\n"
+          + "\021accessory_widgets\030,"
+          + " \003(\0132\037.google.chat.v1.AccessoryWidgetB\003\340A\001:C\352A@\n"
           + "\033chat.googleapis.com/Message\022!spaces/{space}/messages/{message}\"\037\n"
           + "\013AttachedGif\022\020\n"
           + "\003uri\030\001 \001(\tB\003\340A\003\"\230\004\n"
@@ -187,18 +192,17 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "\033chat.googleapis.com/Message\0229\n"
           + "\020last_update_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022H\n\n"
-          + "quote_type\030\004"
-          + " \001(\0162/.google.chat.v1.QuotedMessageMetadata.QuoteTypeB\003\340A\001\022K\n"
+          + "quote_type\030\004 \001(\0162"
+          + "/.google.chat.v1.QuotedMessageMetadata.QuoteTypeB\003\340A\001\022K\n"
           + "\027quoted_message_snapshot\030\005"
           + " \001(\0132%.google.chat.v1.QuotedMessageSnapshotB\003\340A\003\022B\n"
-          + "\022forwarded_metadata\030\006"
-          + " \001(\0132!.google.chat.v1.ForwardedMetadataB\003\340A\003\"2\n"
+          + "\022forwarded_metadata\030\006 \001(\0132!"
+          + ".google.chat.v1.ForwardedMetadataB\003\340A\003\"2\n"
           + "\tQuoteType\022\032\n"
           + "\026QUOTE_TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005REPLY\020\001:\201\001\352A~\n"
-          + ")chat.googleapis.com/QuotedMessageMetadata\022Q"
-          + "spaces/{space}/messages/{message}/quoted"
-          + "MessageMetadata/{quoted_message_metadata}\"\310\001\n"
+          + ")chat.googleapis.com/QuotedMessageMetadata\022Qspaces/{space}/mess"
+          + "ages/{message}/quotedMessageMetadata/{quoted_message_metadata}\"\310\001\n"
           + "\025QuotedMessageSnapshot\022\023\n"
           + "\006sender\030\001 \001(\tB\003\340A\003\022\021\n"
           + "\004text\030\002 \001(\tB\003\340A\003\022\033\n"
@@ -214,15 +218,15 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "thread_key\030\003 \001(\tB\003\340A\001:@\352A=\n"
           + "\032chat.googleapis.com/Thread\022\037spaces/{space}/threads/{thread}\"\322\004\n"
           + "\016ActionResponse\022>\n"
-          + "\004type\030\001"
-          + " \001(\0162+.google.chat.v1.ActionResponse.ResponseTypeB\003\340A\004\022\020\n"
+          + "\004type\030\001 \001"
+          + "(\0162+.google.chat.v1.ActionResponse.ResponseTypeB\003\340A\004\022\020\n"
           + "\003url\030\002 \001(\tB\003\340A\004\0228\n\r"
           + "dialog_action\030\003 \001(\0132\034.google.chat.v1.DialogActionB\003\340A\004\022I\n"
-          + "\016updated_widget\030\004"
-          + " \001(\0132,.google.chat.v1.ActionResponse.UpdatedWidgetB\003\340A\004\032R\n"
+          + "\016updated_widget\030\004 \001(\0132,.googl"
+          + "e.chat.v1.ActionResponse.UpdatedWidgetB\003\340A\004\032R\n"
           + "\016SelectionItems\022@\n"
-          + "\005items\030\001"
-          + " \003(\01321.google.apps.card.v1.SelectionInput.SelectionItem\032w\n\r"
+          + "\005items\030\001 \003(\01321.g"
+          + "oogle.apps.card.v1.SelectionInput.SelectionItem\032w\n\r"
           + "UpdatedWidget\022D\n"
           + "\013suggestions\030\001"
           + " \001(\0132-.google.chat.v1.ActionResponse.SelectionItemsH\000\022\016\n"
@@ -250,20 +254,29 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "\007message\030\001 \001(\0132\027.google.chat.v1.MessageB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\032\n\r"
-          + "allow_missing\030\004 \001(\010B\003\340A\001\"\244\003\n"
+          + "allow_missing\030\004 \001(\010B\003\340A\001\"\210\004\n"
           + "\024CreateMessageRequest\0223\n"
           + "\006parent\030\001 \001("
           + "\tB#\340A\002\372A\035\022\033chat.googleapis.com/Message\022-\n"
           + "\007message\030\004 \001(\0132\027.google.chat.v1.MessageB\003\340A\002\022\031\n\n"
           + "thread_key\030\006 \001(\tB\005\030\001\340A\001\022\027\n\n"
           + "request_id\030\007 \001(\tB\003\340A\001\022Z\n"
-          + "\024message_reply_option\030\010 \001(\01627"
-          + ".google.chat.v1.CreateMessageRequest.MessageReplyOptionB\003\340A\001\022\027\n\n"
-          + "message_id\030\t \001(\tB\003\340A\001\"\177\n"
+          + "\024message_reply_option\030\010 \001(\01627.google.chat.v1.Cre"
+          + "ateMessageRequest.MessageReplyOptionB\003\340A\001\022\027\n\n"
+          + "message_id\030\t \001(\tB\003\340A\001\022b\n"
+          + "#create_message_notification_options\030\n"
+          + " \001(\01320.google.chat.v1.CreateMessageNotificationOptionsB\003\340A\001\"\177\n"
           + "\022MessageReplyOption\022$\n"
           + " MESSAGE_REPLY_OPTION_UNSPECIFIED\020\000\022(\n"
           + "$REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD\020\001\022\031\n"
-          + "\025REPLY_MESSAGE_OR_FAIL\020\002\"\302\001\n"
+          + "\025REPLY_MESSAGE_OR_FAIL\020\002\"\362\001\n"
+          + " CreateMessageNotificationOptions\022\\\n"
+          + "\021notification_type\030\001 \001(\0162"
+          + "A.google.chat.v1.CreateMessageNotificationOptions.NotificationType\"p\n"
+          + "\020NotificationType\022\032\n"
+          + "\026NOTIFICATION_TYPE_NONE\020\000\022\"\n"
+          + "\036NOTIFICATION_TYPE_FORCE_NOTIFY\020\002\022\034\n"
+          + "\030NOTIFICATION_TYPE_SILENT\020\003\"\302\001\n"
           + "\023ListMessagesRequest\0223\n"
           + "\006parent\030\001 \001("
           + "\tB#\340A\002\372A\035\022\033chat.googleapis.com/Message\022\026\n"
@@ -284,9 +297,10 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "CardWithId\022\017\n"
           + "\007card_id\030\001 \001(\t\022\'\n"
           + "\004card\030\002 \001(\0132\031.google.apps.card.v1.CardB\245\001\n"
-          + "\022com.google.chat.v1B\014MessageProtoP\001Z,cloud.google.com/go/chat/apiv1/chatp"
-          + "b;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Cha"
-          + "t.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "\022com.google.chat.v1B\014MessageProtoP\001Z,cloud.google.com/go/chat/apiv1"
+          + "/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Ap"
+          + "ps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Googl"
+          + "e::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -332,6 +346,7 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
               "Attachment",
               "MatchedUrl",
               "ThreadReply",
+              "Silent",
               "ClientAssignedMessageId",
               "EmojiReactionSummaries",
               "PrivateMessageViewer",
@@ -436,10 +451,24 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_CreateMessageRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Message", "ThreadKey", "RequestId", "MessageReplyOption", "MessageId",
+              "Parent",
+              "Message",
+              "ThreadKey",
+              "RequestId",
+              "MessageReplyOption",
+              "MessageId",
+              "CreateMessageNotificationOptions",
+            });
+    internal_static_google_chat_v1_CreateMessageNotificationOptions_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_chat_v1_CreateMessageNotificationOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_chat_v1_CreateMessageNotificationOptions_descriptor,
+            new java.lang.String[] {
+              "NotificationType",
             });
     internal_static_google_chat_v1_ListMessagesRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(13);
     internal_static_google_chat_v1_ListMessagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_ListMessagesRequest_descriptor,
@@ -447,28 +476,28 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "ShowDeleted",
             });
     internal_static_google_chat_v1_ListMessagesResponse_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_chat_v1_ListMessagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_ListMessagesResponse_descriptor,
             new java.lang.String[] {
               "Messages", "NextPageToken",
             });
-    internal_static_google_chat_v1_DialogAction_descriptor = getDescriptor().getMessageType(14);
+    internal_static_google_chat_v1_DialogAction_descriptor = getDescriptor().getMessageType(15);
     internal_static_google_chat_v1_DialogAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_DialogAction_descriptor,
             new java.lang.String[] {
               "Dialog", "ActionStatus", "Action",
             });
-    internal_static_google_chat_v1_Dialog_descriptor = getDescriptor().getMessageType(15);
+    internal_static_google_chat_v1_Dialog_descriptor = getDescriptor().getMessageType(16);
     internal_static_google_chat_v1_Dialog_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_Dialog_descriptor,
             new java.lang.String[] {
               "Body",
             });
-    internal_static_google_chat_v1_CardWithId_descriptor = getDescriptor().getMessageType(16);
+    internal_static_google_chat_v1_CardWithId_descriptor = getDescriptor().getMessageType(17);
     internal_static_google_chat_v1_CardWithId_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_CardWithId_descriptor,

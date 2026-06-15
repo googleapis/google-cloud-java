@@ -21,13 +21,14 @@ excluded_modules=(
   'java-vertexai'
   'java-logging'
   'java-bigquery'
+  'java-bigquery-jdbc'
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
   'sdk-platform-java'
   'sdk-platform-java/java-shared-dependencies/dependency-analyzer'
   'sdk-platform-java/java-shared-dependencies/dependency-convergence-check'
-  'sdk-platform-java/java-showcase'
+  'java-showcase'
   'sdk-platform-java/java-showcase-3.21.0'
   'sdk-platform-java/java-showcase-3.25.8'
   'java-spanner'
@@ -36,6 +37,11 @@ excluded_modules=(
   'google-auth-library-java/oauth2_http'
   'java-storage'
   'java-storage-nio'
+  'java-firestore'
+  'java-bigtable'
+  'java-pubsub'
+  'java-common-protos'
+  'java-iam'
 )
 
 function retry_with_backoff {
@@ -406,6 +412,8 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      'java-monitoring/google-cloud-monitoring'
+      'java-monitoring/google-cloud-monitoring-bom'
       'google-auth-library-java/appengine'
       'google-auth-library-java/bom'
       'google-auth-library-java/cab-token-generator'

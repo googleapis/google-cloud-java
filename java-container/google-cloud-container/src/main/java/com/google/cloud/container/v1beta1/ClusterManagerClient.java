@@ -750,7 +750,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> FetchNodePoolUpgradeInfo</td>
- *      <td><p> Fetch upgrade information of a specific nodepool.</td>
+ *      <td><p> Fetch upgrade information of a specific node pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1330,6 +1330,8 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setNodePoolId("nodePoolId1121557241")
    *           .setNodeVersion("nodeVersion1155309686")
    *           .setImageType("imageType-878147787")
+   *           .setImage("image100313435")
+   *           .setImageProject("imageProject288951614")
    *           .addAllLocations(new ArrayList<String>())
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setName("name3373707")
@@ -1361,6 +1363,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setBootDisk(BootDisk.newBuilder().build())
    *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
    *           .setConsolidationDelay(Duration.newBuilder().build())
+   *           .setTaintConfig(TaintConfig.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1394,6 +1397,8 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setNodePoolId("nodePoolId1121557241")
    *           .setNodeVersion("nodeVersion1155309686")
    *           .setImageType("imageType-878147787")
+   *           .setImage("image100313435")
+   *           .setImageProject("imageProject288951614")
    *           .addAllLocations(new ArrayList<String>())
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setName("name3373707")
@@ -1425,6 +1430,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setBootDisk(BootDisk.newBuilder().build())
    *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
    *           .setConsolidationDelay(Duration.newBuilder().build())
+   *           .setTaintConfig(TaintConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -4532,7 +4538,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetch upgrade information of a specific nodepool.
+   * Fetch upgrade information of a specific node pool.
    *
    * <p>Sample code:
    *
@@ -4548,7 +4554,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name (project, location, cluster, nodepool) of the nodepool to get.
+   * @param name Required. The name (project, location, cluster, node pool) of the node pool to get.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;` or
    *     `projects/&#42;/zones/&#42;/clusters/&#42;/nodePools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -4561,7 +4567,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetch upgrade information of a specific nodepool.
+   * Fetch upgrade information of a specific node pool.
    *
    * <p>Sample code:
    *
@@ -4591,7 +4597,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetch upgrade information of a specific nodepool.
+   * Fetch upgrade information of a specific node pool.
    *
    * <p>Sample code:
    *

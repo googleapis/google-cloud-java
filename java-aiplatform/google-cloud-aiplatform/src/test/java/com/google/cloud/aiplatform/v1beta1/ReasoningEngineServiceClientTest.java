@@ -122,6 +122,7 @@ public class ReasoningEngineServiceClientTest {
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTrafficConfig(ReasoningEngine.TrafficConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -183,6 +184,7 @@ public class ReasoningEngineServiceClientTest {
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTrafficConfig(ReasoningEngine.TrafficConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -244,6 +246,7 @@ public class ReasoningEngineServiceClientTest {
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTrafficConfig(ReasoningEngine.TrafficConfig.newBuilder().build())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -294,6 +297,7 @@ public class ReasoningEngineServiceClientTest {
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTrafficConfig(ReasoningEngine.TrafficConfig.newBuilder().build())
             .build();
     mockReasoningEngineService.addResponse(expectedResponse);
 
@@ -432,6 +436,7 @@ public class ReasoningEngineServiceClientTest {
             .setContextSpec(ReasoningEngineContextSpec.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTrafficConfig(ReasoningEngine.TrafficConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

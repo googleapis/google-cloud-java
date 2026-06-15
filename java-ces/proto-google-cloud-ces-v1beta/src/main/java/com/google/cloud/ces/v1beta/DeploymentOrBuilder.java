@@ -272,4 +272,47 @@ public interface DeploymentOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the experimentConfig field is set.
+   */
+  boolean hasExperimentConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The experimentConfig.
+   */
+  com.google.cloud.ces.v1beta.ExperimentConfig getExperimentConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder getExperimentConfigOrBuilder();
 }

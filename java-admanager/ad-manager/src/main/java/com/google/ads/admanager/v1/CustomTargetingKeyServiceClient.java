@@ -917,7 +917,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    * @param customTargetingKey Required. The `CustomTargetingKey` to update.
    *     <p>The `CustomTargetingKey`'s `name` is used to identify the `CustomTargetingKey` to
    *     update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomTargetingKey updateCustomTargetingKey(

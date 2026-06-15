@@ -84,8 +84,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes what percentage of events were used in this funnel report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -106,8 +106,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes what percentage of events were used in this funnel report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -128,8 +128,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes what percentage of events were used in this funnel report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -149,8 +149,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes what percentage of events were used in this funnel report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -170,8 +170,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes what percentage of events were used in this funnel report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -572,8 +572,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -597,8 +597,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -621,8 +621,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -645,8 +645,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -676,8 +676,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -704,8 +704,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -734,8 +734,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -765,8 +765,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -793,8 +793,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -821,8 +821,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -849,8 +849,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -876,8 +876,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -903,8 +903,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -924,8 +924,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -949,8 +949,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -974,8 +974,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -996,8 +996,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -1019,8 +1019,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes what percentage of events were used in this funnel report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>

@@ -58,11 +58,10 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the application. This attribute is required
-   * and has a maximum length of 80 characters.
+   * Required. The display name of the application.
    * </pre>
    *
-   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -72,11 +71,10 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the application. This attribute is required
-   * and has a maximum length of 80 characters.
+   * Required. The display name of the application.
    * </pre>
    *
-   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -86,13 +84,502 @@ public interface ApplicationOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the application. This attribute is required
-   * and has a maximum length of 80 characters.
+   * Required. The display name of the application.
    * </pre>
    *
-   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app store ID of the app to claim.
+   * </pre>
+   *
+   * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the appStoreId field is set.
+   */
+  boolean hasAppStoreId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app store ID of the app to claim.
+   * </pre>
+   *
+   * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The appStoreId.
+   */
+  java.lang.String getAppStoreId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app store ID of the app to claim.
+   * </pre>
+   *
+   * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for appStoreId.
+   */
+  com.google.protobuf.ByteString getAppStoreIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the appStores.
+   */
+  java.util.List<com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>
+      getAppStoresList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of appStores.
+   */
+  int getAppStoresCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The appStores at the given index.
+   */
+  com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore getAppStores(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for appStores.
+   */
+  java.util.List<java.lang.Integer> getAppStoresValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of appStores at the given index.
+   */
+  int getAppStoresValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the application.
+   *
+   * When true, an application cannot be targeted and will not serve ads,
+   * regardless of its `status`.
+   * </pre>
+   *
+   * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  boolean hasArchived();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the application.
+   *
+   * When true, an application cannot be targeted and will not serve ads,
+   * regardless of its `status`.
+   * </pre>
+   *
+   * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  boolean getArchived();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the application on the app store.
+   * </pre>
+   *
+   * <code>optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the appStoreDisplayName field is set.
+   */
+  boolean hasAppStoreDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the application on the app store.
+   * </pre>
+   *
+   * <code>optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The appStoreDisplayName.
+   */
+  java.lang.String getAppStoreDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the application on the app store.
+   * </pre>
+   *
+   * <code>optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for appStoreDisplayName.
+   */
+  com.google.protobuf.ByteString getAppStoreDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application code used to identify the app in the SDK.
+   *
+   * Note that the UI refers to this as "App ID".
+   * </pre>
+   *
+   * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationCode field is set.
+   */
+  boolean hasApplicationCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application code used to identify the app in the SDK.
+   *
+   * Note that the UI refers to this as "App ID".
+   * </pre>
+   *
+   * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationCode.
+   */
+  java.lang.String getApplicationCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application code used to identify the app in the SDK.
+   *
+   * Note that the UI refers to this as "App ID".
+   * </pre>
+   *
+   * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for applicationCode.
+   */
+  com.google.protobuf.ByteString getApplicationCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the developer of the application.
+   * </pre>
+   *
+   * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the developer field is set.
+   */
+  boolean hasDeveloper();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the developer of the application.
+   * </pre>
+   *
+   * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The developer.
+   */
+  java.lang.String getDeveloper();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the developer of the application.
+   * </pre>
+   *
+   * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for developer.
+   */
+  com.google.protobuf.ByteString getDeveloperBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The platform the application runs on.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the platform field is set.
+   */
+  boolean hasPlatform();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The platform the application runs on.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for platform.
+   */
+  int getPlatformValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The platform the application runs on.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The platform.
+   */
+  com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform getPlatform();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the application is free on the app store it belongs
+   * to.
+   * </pre>
+   *
+   * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the free field is set.
+   */
+  boolean hasFree();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the application is free on the app store it belongs
+   * to.
+   * </pre>
+   *
+   * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The free.
+   */
+  boolean getFree();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The download URL of the application on the app store it
+   * belongs to.
+   * </pre>
+   *
+   * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the downloadUrl field is set.
+   */
+  boolean hasDownloadUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The download URL of the application on the app store it
+   * belongs to.
+   * </pre>
+   *
+   * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The downloadUrl.
+   */
+  java.lang.String getDownloadUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The download URL of the application on the app store it
+   * belongs to.
+   * </pre>
+   *
+   * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for downloadUrl.
+   */
+  com.google.protobuf.ByteString getDownloadUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approvalStatus field is set.
+   */
+  boolean hasApprovalStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for approvalStatus.
+   */
+  int getApprovalStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approvalStatus.
+   */
+  com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+      getApprovalStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The webview claiming status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the webviewClaimingStatus field is set.
+   */
+  boolean hasWebviewClaimingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The webview claiming status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for webviewClaimingStatus.
+   */
+  int getWebviewClaimingStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The webview claiming status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The webviewClaimingStatus.
+   */
+  com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus
+      getWebviewClaimingStatus();
 }

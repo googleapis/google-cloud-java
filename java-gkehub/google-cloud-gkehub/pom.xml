@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gkehub</artifactId>
-  <version>1.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+  <version>1.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   <packaging>jar</packaging>
   <name>Google GKE Hub API</name>
   <description>provides a unified way to work with Kubernetes clusters as part of Anthos, extending GKE to work in multiple environments. You have consistent, unified, and secure infrastructure, cluster, and container management, whether you're using Anthos on Google Cloud (with traditional GKE), hybrid cloud, or multiple public clouds.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gkehub-parent</artifactId>
-    <version>1.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+    <version>1.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gkehub</site.installationModule>
@@ -55,6 +55,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-gkehub-v1beta</artifactId>
@@ -71,6 +72,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-gkehub-v1beta1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -99,6 +101,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-gkehub-v1beta1</artifactId>
@@ -119,6 +122,7 @@
       <artifactId>grpc-google-cloud-gkehub-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

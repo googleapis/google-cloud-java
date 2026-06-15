@@ -30,6 +30,106 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Only return ads with the given status.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given status.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given status.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given manual review status. Only
+   * available for networks with Manual Creative Review enabled. For more
+   * information, see
+   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the manualReviewStatus field is set.
+   */
+  boolean hasManualReviewStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given manual review status. Only
+   * available for networks with Manual Creative Review enabled. For more
+   * information, see
+   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for manualReviewStatus.
+   */
+  int getManualReviewStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only return ads with the given manual review status. Only
+   * available for networks with Manual Creative Review enabled. For more
+   * information, see
+   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_status = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The manualReviewStatus.
+   */
+  com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+      getManualReviewStatus();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent, which owns this collection of AdReviewCenterAds.
    * Format: networks/{network_code}/webProperties/{web_property_code}
    *
@@ -130,36 +230,6 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only return ads with the given status.
-   * </pre>
-   *
-   * <code>
-   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The enum numeric value on the wire for status.
-   */
-  int getStatusValue();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Only return ads with the given status.
-   * </pre>
-   *
-   * <code>
-   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The status.
-   */
-  com.google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus getStatus();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
    * no other filter can be set (other than page size and page token).
    * </pre>
@@ -224,7 +294,8 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * <pre>
    * Optional. If provided, only return ads that served within the given date
    * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days.
+   * provided, the date range will be the last 30 days. This filter does not
+   * apply to the PENDING manual review status.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -240,7 +311,8 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * <pre>
    * Optional. If provided, only return ads that served within the given date
    * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days.
+   * provided, the date range will be the last 30 days. This filter does not
+   * apply to the PENDING manual review status.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -256,7 +328,8 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * <pre>
    * Optional. If provided, only return ads that served within the given date
    * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days.
+   * provided, the date range will be the last 30 days. This filter does not
+   * apply to the PENDING manual review status.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -340,7 +413,7 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * <pre>
    * Optional. If provided, restrict the search to creatives belonging to one of
    * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-   * buyer account IDs can be found via the ProgrammaticBuyerService.
+   * buyer account IDs can be found using the `ProgrammaticBuyerService`.
    * </pre>
    *
    * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -355,7 +428,7 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * <pre>
    * Optional. If provided, restrict the search to creatives belonging to one of
    * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-   * buyer account IDs can be found via the ProgrammaticBuyerService.
+   * buyer account IDs can be found using the `ProgrammaticBuyerService`.
    * </pre>
    *
    * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -370,7 +443,7 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * <pre>
    * Optional. If provided, restrict the search to creatives belonging to one of
    * the given Adx buyer account IDs. Only applicable to RTB creatives. Adx
-   * buyer account IDs can be found via the ProgrammaticBuyerService.
+   * buyer account IDs can be found using the `ProgrammaticBuyerService`.
    * </pre>
    *
    * <code>repeated int64 buyer_account_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -379,4 +452,7 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * @return The buyerAccountId at the given index.
    */
   long getBuyerAccountId(int index);
+
+  com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest.AdReviewStatusCase
+      getAdReviewStatusCase();
 }

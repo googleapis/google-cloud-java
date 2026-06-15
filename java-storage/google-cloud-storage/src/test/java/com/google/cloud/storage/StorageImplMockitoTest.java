@@ -1038,4 +1038,39 @@ public class StorageImplMockitoTest {
     assertEquals(TOPIC, value.getTopic());
     assertEquals(Arrays.asList(EVENT_TYPES), value.getEventTypes());
   }
+
+  @Test
+  public void testComposeWithDeleteSourceObjects() {
+    String bucket = "b1";
+    String source1 = "s1";
+    String source2 = "s2";
+    String target = "t1";
+    BlobId targetId = BlobId.of(bucket, target);
+    BlobInfo targetInfo = BlobInfo.newBuilder(targetId).build();
+    Storage.ComposeRequest req =
+        Storage.ComposeRequest.newBuilder()
+            .addSource(source1, source2)
+            .setTarget(targetInfo)
+            .setDeleteSourceObjects(true)
+            .build();
+
+    StorageObject targetPb = Conversions.json().blobInfo().encode(targetInfo);
+    List<StorageObject> sourcePbs =
+        ImmutableList.of(
+            Conversions.json().blobInfo().encode(BlobInfo.newBuilder(bucket, source1).build()),
+            Conversions.json().blobInfo().encode(BlobInfo.newBuilder(bucket, source2).build()));
+
+    ArgumentCaptor<Map<StorageRpc.Option, Object>> optionsCaptor =
+        ArgumentCaptor.forClass(Map.class);
+
+    doReturn(targetPb)
+        .when(storageRpcMock)
+        .compose(Mockito.eq(sourcePbs), Mockito.eq(targetPb), optionsCaptor.capture());
+
+    initializeService();
+    storage.compose(req);
+
+    Map<StorageRpc.Option, Object> capturedOptions = optionsCaptor.getValue();
+    assertEquals(true, capturedOptions.get(StorageRpc.Option.DELETE_SOURCE_OBJECTS));
+  }
 }

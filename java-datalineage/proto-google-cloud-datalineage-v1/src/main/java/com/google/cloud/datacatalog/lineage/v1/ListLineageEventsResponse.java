@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Response message for
- * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.ListLineageEvents].
+ * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.Lineage.ListLineageEvents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse}
@@ -383,7 +383,7 @@ public final class ListLineageEventsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Response message for
-   * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.ListLineageEvents].
+   * [ListLineageEvents][google.cloud.datacatalog.lineage.v1.Lineage.ListLineageEvents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse}

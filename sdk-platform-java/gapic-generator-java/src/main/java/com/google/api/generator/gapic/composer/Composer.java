@@ -40,6 +40,7 @@ import com.google.api.generator.gapic.model.Transport;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -199,6 +200,9 @@ public class Composer {
   }
 
   public static List<GapicClass> generateVersionClasses(GapicContext context) {
+    if (!context.generateVersionJava()) {
+      return Collections.emptyList();
+    }
     return context.services().stream()
         .collect(Collectors.toMap(Service::pakkage, s -> s, (s1, s2) -> s1))
         .values()

@@ -58,12 +58,12 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the Order to which the LineItem belongs. This
-   * attribute is required. Format: `networks/{network_code}/orders/{order}`
+   * Required. Immutable. The ID of the Order to which the LineItem belongs.
+   * Format: `networks/{network_code}/orders/{order}`
    * </pre>
    *
    * <code>
-   * optional string order = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string order = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return Whether the order field is set.
@@ -74,12 +74,12 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the Order to which the LineItem belongs. This
-   * attribute is required. Format: `networks/{network_code}/orders/{order}`
+   * Required. Immutable. The ID of the Order to which the LineItem belongs.
+   * Format: `networks/{network_code}/orders/{order}`
    * </pre>
    *
    * <code>
-   * optional string order = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string order = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The order.
@@ -90,12 +90,12 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID of the Order to which the LineItem belongs. This
-   * attribute is required. Format: `networks/{network_code}/orders/{order}`
+   * Required. Immutable. The ID of the Order to which the LineItem belongs.
+   * Format: `networks/{network_code}/orders/{order}`
    * </pre>
    *
    * <code>
-   * optional string order = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string order = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for order.

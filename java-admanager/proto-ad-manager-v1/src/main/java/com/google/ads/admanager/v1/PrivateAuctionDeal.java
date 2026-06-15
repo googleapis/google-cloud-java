@@ -876,15 +876,19 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. `PrivateAuctionDeal` ID.
+   * Output only. Deprecated: `PrivateAuctionDeal` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
    * @return Whether the privateAuctionDealId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPrivateAuctionDealId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -893,15 +897,19 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. `PrivateAuctionDeal` ID.
+   * Output only. Deprecated: `PrivateAuctionDeal` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
    * @return The privateAuctionDealId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getPrivateAuctionDealId() {
     return privateAuctionDealId_;
   }
@@ -2697,16 +2705,19 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `PrivateAuctionDeal` ID.
+     * Output only. Deprecated: `PrivateAuctionDeal` ID.
      * </pre>
      *
      * <code>
-     * optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
      * @return Whether the privateAuctionDealId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasPrivateAuctionDealId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -2715,16 +2726,19 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `PrivateAuctionDeal` ID.
+     * Output only. Deprecated: `PrivateAuctionDeal` ID.
      * </pre>
      *
      * <code>
-     * optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
      * @return The privateAuctionDealId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getPrivateAuctionDealId() {
       return privateAuctionDealId_;
     }
@@ -2733,16 +2747,19 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `PrivateAuctionDeal` ID.
+     * Output only. Deprecated: `PrivateAuctionDeal` ID.
      * </pre>
      *
      * <code>
-     * optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
      * @param value The privateAuctionDealId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPrivateAuctionDealId(long value) {
 
       privateAuctionDealId_ = value;
@@ -2755,15 +2772,18 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. `PrivateAuctionDeal` ID.
+     * Output only. Deprecated: `PrivateAuctionDeal` ID.
      * </pre>
      *
      * <code>
-     * optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPrivateAuctionDealId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       privateAuctionDealId_ = 0L;

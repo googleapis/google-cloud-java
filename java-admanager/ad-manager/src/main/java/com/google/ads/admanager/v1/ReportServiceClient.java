@@ -705,7 +705,7 @@ public class ReportServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param report Required. The `Report` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Report updateReport(Report report, FieldMask updateMask) {

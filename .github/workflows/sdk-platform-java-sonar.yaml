@@ -79,8 +79,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FOR_GENERATOR }}
         run: |
-          mvn -B verify -Pquick-build \
-              -DenableFullTestCoverage \
+          mvn -B verify -Pquick-build -Djacoco.skip=false \
               -Penable-integration-tests \
               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
               -Dsonar.projectKey=googleapis_google-cloud-java_generator \
@@ -92,7 +91,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FOR_SHOWCASE }}
         run: |
-          mvn -B clean verify -Pquick-build \
+          mvn -B clean verify -Pquick-build -Djacoco.skip=false \
               -DskipUnitTests \
               -Penable-integration-tests \
               -DenableShowcaseTestCoverage \

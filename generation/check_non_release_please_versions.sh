@@ -19,9 +19,14 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*java-spanner.* ]] || \
       [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
       [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
+      [[ "${pomFile}" =~ .*grpc-gcp.* ]] || \
       [[ "${pomFile}" =~ .*java-storage.* ]] || \
       [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
+      [[ "${pomFile}" =~ .*java-pubsub.* ]] || \
+      [[ "${pomFile}" =~ .*java-bigtable.* ]] || \
+      [[ "${pomFile}" =~ .*java-firestore.* ]] || \
       [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
+      [[ "${pomFile}" =~ .*java-compute.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi

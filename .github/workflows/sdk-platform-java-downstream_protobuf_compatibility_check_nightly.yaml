@@ -27,13 +27,10 @@ jobs:
       fail-fast: false
       matrix:
         repo:
-          - java-bigtable
-          - java-firestore
-          - java-pubsub
           - java-pubsublite
         # Default Protobuf-Java versions to use are specified here. Without this, the nightly workflow won't know
         # which values to use and would resolve to ''.
-        protobuf-version: ${{ fromJSON(format('[{0}]', inputs.protobuf_runtime_versions || '"4.33.5"')) }}
+        protobuf-version: ${{ fromJSON(format('[{0}]', inputs.protobuf_runtime_versions || '"4.35.0"')) }}
     steps:
       - name: Checkout sdk-platform-java repo
         uses: actions/checkout@v4

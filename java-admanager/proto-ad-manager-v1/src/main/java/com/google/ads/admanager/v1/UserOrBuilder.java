@@ -58,26 +58,36 @@ public interface UserOrBuilder
    *
    *
    * <pre>
-   * Output only. `User` ID.
+   * Output only. Deprecated: `User` ID.
    * </pre>
    *
-   * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+   *     google/ads/admanager/v1/user_messages.proto;l=43
    * @return Whether the userId field is set.
    */
+  @java.lang.Deprecated
   boolean hasUserId();
 
   /**
    *
    *
    * <pre>
-   * Output only. `User` ID.
+   * Output only. Deprecated: `User` ID.
    * </pre>
    *
-   * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+   *     google/ads/admanager/v1/user_messages.proto;l=43
    * @return The userId.
    */
+  @java.lang.Deprecated
   long getUserId();
 
   /**

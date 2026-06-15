@@ -2981,10 +2981,12 @@ class ITBigQueryTest {
     builder2.put("FloatField", 1.2);
     builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
     assertFalse(response.hasErrors());
@@ -3040,10 +3042,12 @@ class ITBigQueryTest {
     builder2.put("FloatField", 1.2);
     builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
             .setTemplateSuffix("_suffix")
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
@@ -3114,11 +3118,13 @@ class ITBigQueryTest {
     builder3.put("IntegerArrayField", ImmutableList.of(0, 1));
     builder3.put("BooleanField", false);
     builder3.put("BytesField", BYTES_BASE64);
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
-            .addRow(builder3.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder3.build())
             .setSkipInvalidRows(true)
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
@@ -7487,22 +7493,36 @@ class ITBigQueryTest {
     }
 
     // Stateful query returns Job
-    // Test scenario 2 to ensure job is created if JobCreationMode is set, but for a small query
-    // it still returns results.
+    // Test scenario 2 to ensure job is created if Query is long running.
+    // Explicitly disable cache to ensure it is long-running query;
+    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
+    long millis = System.currentTimeMillis();
+    result = bigQuery.queryWithTimeout(config, null, 1000L);
+    millis = System.currentTimeMillis() - millis;
+    assertTrue(result instanceof Job);
+    // Cancel the job as we don't need results.
+    ((Job) result).cancel();
+    // Allow 2 seconds of timeout value to account for random delays
+    assertTrue(millis < 1_000_000 * 2);
+
+    // Stateful query returns Job
+    // Test scenario 3 to ensure job is created if JobCreationMode is set.
     config =
         QueryJobConfiguration.newBuilder(query)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
             .build();
     result = bigQuery.queryWithTimeout(config, null, null);
-    assertTrue(result instanceof TableResult);
-    assertNotNull(((TableResult) result).getJobId());
-    assertNull(((TableResult) result).getQueryId());
+    assertTrue(result instanceof Job);
 
     // Stateful query returns Job
-    // Test scenario 3 to ensure job is created if Query is long running.
+    // Test scenario 4 to ensure job is created if Query is long running.
     // Explicitly disable cache to ensure it is long-running query;
-    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
-    long millis = System.currentTimeMillis();
+    config =
+        QueryJobConfiguration.newBuilder(largeQuery)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+            .setUseQueryCache(false)
+            .build();
+    millis = System.currentTimeMillis();
     result = bigQuery.queryWithTimeout(config, null, 1000L);
     millis = System.currentTimeMillis() - millis;
     assertTrue(result instanceof Job);

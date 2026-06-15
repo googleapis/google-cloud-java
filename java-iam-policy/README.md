@@ -1,6 +1,6 @@
-# Google IAM Client for Java
+# Google Cloud IAM Policy Client for Java
 
-Java idiomatic client for [IAM][product-docs].
+Java idiomatic client for [Cloud IAM Policy][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.80.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-policy</artifactId>
-  <version>1.88.0</version>
+  <version>1.90.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-iam-policy:1.88.0'
+implementation 'com.google.cloud:google-iam-policy:1.90.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.88.0"
+libraryDependencies += "com.google.cloud" % "google-iam-policy" % "1.90.0"
 ```
 
 ## Authentication
@@ -64,14 +64,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired IAM APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the IAM API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud IAM Policy APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud IAM Policy API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the IAM [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google IAM.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud IAM Policy [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud IAM Policy.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -81,13 +81,13 @@ You will need to [enable billing][enable-billing] to use Google IAM.
 You'll need to obtain the `google-iam-policy` library.  See the [Quickstart](#quickstart) section
 to add `google-iam-policy` as a dependency in your code.
 
-## About IAM
+## About Cloud IAM Policy
 
 
-[IAM][product-docs] n/a
+[Cloud IAM Policy][product-docs] n/a
 
-See the [IAM client library docs][javadocs] to learn how to
-use this IAM Client Library.
+See the [Cloud IAM Policy client library docs][javadocs] to learn how to
+use this Cloud IAM Policy Client Library.
 
 
 
@@ -100,7 +100,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-IAM uses both gRPC and HTTP/JSON for the transport layer.
+Cloud IAM Policy uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -175,7 +175,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-iam-policy.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-iam-policy/1.88.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-iam-policy/1.90.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

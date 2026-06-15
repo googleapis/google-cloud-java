@@ -58,13 +58,17 @@ public interface PlacementOrBuilder
    *
    *
    * <pre>
-   * Output only. `Placement` ID.
+   * Output only. Deprecated: `Placement` ID.
    * </pre>
    *
-   * <code>int64 placement_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 placement_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Placement.placement_id is deprecated. See
+   *     google/ads/admanager/v1/placement_messages.proto;l=45
    * @return The placementId.
    */
+  @java.lang.Deprecated
   long getPlacementId();
 
   /**

@@ -844,7 +844,7 @@ public class TeamServiceClient implements BackgroundResource {
    *
    * @param team Required. The `Team` to update.
    *     <p>The `Team`'s `name` is used to identify the `Team` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Team updateTeam(Team team, FieldMask updateMask) {

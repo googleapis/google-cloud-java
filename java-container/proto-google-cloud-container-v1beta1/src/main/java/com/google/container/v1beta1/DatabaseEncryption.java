@@ -115,6 +115,18 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>DECRYPTED = 2;</code>
      */
     DECRYPTED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Encryption of all objects in the storage is enabled. There is no
+     * guarantee that all objects in the storage are encrypted, but eventually
+     * they will be.
+     * </pre>
+     *
+     * <code>ALL_OBJECTS_ENCRYPTION_ENABLED = 3;</code>
+     */
+    ALL_OBJECTS_ENCRYPTION_ENABLED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -162,6 +174,19 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      */
     public static final int DECRYPTED_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Encryption of all objects in the storage is enabled. There is no
+     * guarantee that all objects in the storage are encrypted, but eventually
+     * they will be.
+     * </pre>
+     *
+     * <code>ALL_OBJECTS_ENCRYPTION_ENABLED = 3;</code>
+     */
+    public static final int ALL_OBJECTS_ENCRYPTION_ENABLED_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -192,6 +217,8 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return ENCRYPTED;
         case 2:
           return DECRYPTED;
+        case 3:
+          return ALL_OBJECTS_ENCRYPTION_ENABLED;
         default:
           return null;
       }
@@ -328,6 +355,38 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_DECRYPTION_ERROR = 6;</code>
      */
     CURRENT_STATE_DECRYPTION_ERROR(6),
+    /**
+     *
+     *
+     * <pre>
+     * Encryption of all objects in the storage is enabled.
+     * It does not guarantee that all objects in the storage are encrypted,
+     * but eventually they will be.
+     * </pre>
+     *
+     * <code>CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ENABLED = 8;</code>
+     */
+    CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ENABLED(8),
+    /**
+     *
+     *
+     * <pre>
+     * Enablement of the encryption of all objects in storage is pending.
+     * </pre>
+     *
+     * <code>CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_PENDING = 9;</code>
+     */
+    CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_PENDING(9),
+    /**
+     *
+     *
+     * <pre>
+     * Enabling encryption of all objects in storage encountered an error.
+     * </pre>
+     *
+     * <code>CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ERROR = 10;</code>
+     */
+    CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ERROR(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -421,6 +480,41 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      */
     public static final int CURRENT_STATE_DECRYPTION_ERROR_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * Encryption of all objects in the storage is enabled.
+     * It does not guarantee that all objects in the storage are encrypted,
+     * but eventually they will be.
+     * </pre>
+     *
+     * <code>CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ENABLED = 8;</code>
+     */
+    public static final int CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ENABLED_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enablement of the encryption of all objects in storage is pending.
+     * </pre>
+     *
+     * <code>CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_PENDING = 9;</code>
+     */
+    public static final int CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_PENDING_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enabling encryption of all objects in storage encountered an error.
+     * </pre>
+     *
+     * <code>CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ERROR = 10;</code>
+     */
+    public static final int CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ERROR_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -459,6 +553,12 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return CURRENT_STATE_DECRYPTION_PENDING;
         case 6:
           return CURRENT_STATE_DECRYPTION_ERROR;
+        case 8:
+          return CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ENABLED;
+        case 9:
+          return CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_PENDING;
+        case 10:
+          return CURRENT_STATE_ALL_OBJECTS_ENCRYPTION_ERROR;
         default:
           return null;
       }

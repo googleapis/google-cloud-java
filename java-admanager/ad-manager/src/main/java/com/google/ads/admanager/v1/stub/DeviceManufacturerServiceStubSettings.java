@@ -110,7 +110,10 @@ public class DeviceManufacturerServiceStubSettings
     extends StubSettings<DeviceManufacturerServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/admanager")
+          .add("https://www.googleapis.com/auth/admanager.readonly")
+          .build();
 
   private final UnaryCallSettings<GetDeviceManufacturerRequest, DeviceManufacturer>
       getDeviceManufacturerSettings;

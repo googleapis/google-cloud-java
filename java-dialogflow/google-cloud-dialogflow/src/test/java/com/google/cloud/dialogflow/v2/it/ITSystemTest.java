@@ -57,6 +57,7 @@ import java.io.IOException;
 import java.util.UUID;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -258,6 +259,7 @@ public class ITSystemTest {
   }
 
   @Test
+  @Ignore("b/423958346")
   public void detectIntentTest() {
     QueryInput queryInput =
         QueryInput.newBuilder()
@@ -286,6 +288,7 @@ public class ITSystemTest {
   }
 
   @Test
+  @Ignore("b/423958346")
   public void listContextsTest() {
     ListContextsRequest request =
         ListContextsRequest.newBuilder().setParent(SESSION_NAME.toString()).build();

@@ -40,6 +40,11 @@ ENV/
 env.bak/
 venv.bak/
 
+# Protect Java package folders from global Python virtualenv env/ blanket collisions
+!**/src/main/java/**/env/
+!**/src/test/java/**/env/
+!**/src/main/proto/**/env/
+!**/src/test/proto/**/env/
 
 # Unit test / coverage reports
 .coverage
@@ -81,3 +86,6 @@ monorepo
 *.tfstate.lock.info
 
 .jqwik-database
+
+# Python build artifacts for library_generation tool
+sdk-platform-java/hermetic_build/library_generation/build/

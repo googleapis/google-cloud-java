@@ -82,7 +82,7 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
           + "\027custom_targeting_values\030\001"
           + " \003(\0132-.google.ads.admanager.v1.CustomTargetingValue\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\215\005\n"
+          + "total_size\030\003 \001(\0052\300\005\n"
           + "\033CustomTargetingValueService\022\207\002\n"
           + "\027GetCustomTargetingValue\0227.google.ads.admanager.v1.GetCustomTarget"
           + "ingValueRequest\032-.google.ads.admanager.v"
@@ -94,11 +94,14 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
           + "omTargetingValuesResponse\"\205\001\332A\006parent\202\323\344"
           + "\223\002v\022-/v1/{parent=networks/*}/customTarge"
           + "tingValuesZE\022C/v1/{parent=networks/*/customTargetingKeys/*}/customTargetingValue"
-          + "s\032G\312A\030admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\324\001\n"
-          + "\033com.google.ads.admanager.v1B CustomTarget"
-          + "ingValueServiceProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;a"
-          + "dmanager\252\002\027Google.Ads.AdManager.V1\312\002\027Goo"
-          + "gle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "s\032z\312A\030admanager.googleapis.com\322A\\https:/"
+          + "/www.googleapis.com/auth/admanager,https"
+          + "://www.googleapis.com/auth/admanager.readonlyB\324\001\n"
+          + "\033com.google.ads.admanager.v1B CustomTargetingValueServiceProtoP\001Z@googl"
+          + "e.golang.org/genproto/googleapis/ads/adm"
+          + "anager/v1;admanager\252\002\027Google.Ads.AdManag"
+          + "er.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google"
+          + "::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

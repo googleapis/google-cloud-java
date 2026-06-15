@@ -30,10 +30,10 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the session.
+   * Identifier. The resource name of the session.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the session.
+   * Identifier. The resource name of the session.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -167,7 +167,7 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Spark Connect session config.
+   * Optional. Spark connect session config.
    * </pre>
    *
    * <code>
@@ -182,7 +182,7 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Spark Connect session config.
+   * Optional. Spark connect session config.
    * </pre>
    *
    * <code>
@@ -197,7 +197,7 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Optional. Spark Connect session config.
+   * Optional. Spark connect session config.
    * </pre>
    *
    * <code>

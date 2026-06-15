@@ -29,8 +29,11 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.GetIamPolicyLicenseCodeRequest;
 import com.google.cloud.compute.v1.GetLicenseCodeRequest;
 import com.google.cloud.compute.v1.LicenseCode;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -85,6 +88,86 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<GetIamPolicyLicenseCodeRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyLicenseCodeRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.LicenseCodes/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyLicenseCodeRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/licenseCodes/{resource}/getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyLicenseCodeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyLicenseCodeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyLicenseCodeRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyLicenseCodeRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.LicenseCodes/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyLicenseCodeRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/licenseCodes/{resource}/setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyLicenseCodeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyLicenseCodeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "globalSetPolicyRequestResource",
+                                      request.getGlobalSetPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
@@ -128,6 +211,8 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
               .build();
 
   private final UnaryCallable<GetLicenseCodeRequest, LicenseCode> getCallable;
+  private final UnaryCallable<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
@@ -136,6 +221,10 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
 
   private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/licenseCodes/{license_code}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenseCodes/{resource}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenseCodes/{resource}");
   private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/licenseCodes/{resource}");
 
@@ -198,6 +287,44 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                   return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyLicenseCodeRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyLicenseCodeRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
     HttpJsonCallSettings<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
@@ -224,6 +351,12 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -238,6 +371,8 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
@@ -245,6 +380,16 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
   @Override
   public UnaryCallable<GetLicenseCodeRequest, LicenseCode> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
   }
 
   @Override

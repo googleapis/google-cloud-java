@@ -58,28 +58,36 @@ public interface CustomFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. Unique ID of the CustomField. This attribute is assigned by
-   * Google.
+   * Output only. Deprecated: Unique ID of the CustomField.
    * </pre>
    *
-   * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 custom_field_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.CustomField.custom_field_id is deprecated. See
+   *     google/ads/admanager/v1/custom_field_messages.proto;l=44
    * @return Whether the customFieldId field is set.
    */
+  @java.lang.Deprecated
   boolean hasCustomFieldId();
 
   /**
    *
    *
    * <pre>
-   * Output only. Unique ID of the CustomField. This attribute is assigned by
-   * Google.
+   * Output only. Deprecated: Unique ID of the CustomField.
    * </pre>
    *
-   * <code>optional int64 custom_field_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 custom_field_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.CustomField.custom_field_id is deprecated. See
+   *     google/ads/admanager/v1/custom_field_messages.proto;l=44
    * @return The customFieldId.
    */
+  @java.lang.Deprecated
   long getCustomFieldId();
 
   /**

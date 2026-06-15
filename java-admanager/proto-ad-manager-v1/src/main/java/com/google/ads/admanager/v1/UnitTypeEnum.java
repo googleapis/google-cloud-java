@@ -185,6 +185,22 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>IN_TARGET_IMPRESSIONS = 7;</code>
      */
     IN_TARGET_IMPRESSIONS(7),
+    /**
+     *
+     *
+     * <pre>
+     * The number of completed views reported by creatives associated with the
+     * line item. A completed view is defined as having watched the entirety of
+     * the in-stream video ad and is only supported for standard reservation
+     * video line items. The
+     * [LineItem.line_item_type][google.ads.admanager.v1.LineItem.line_item_type]
+     * must be
+     * [LineItemTypeEnum.LineItemType.STANDARD][google.ads.admanager.v1.LineItemTypeEnum.LineItemType.STANDARD].
+     * </pre>
+     *
+     * <code>COMPLETED_VIEWS = 8;</code>
+     */
+    COMPLETED_VIEWS(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -309,6 +325,23 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
      */
     public static final int IN_TARGET_IMPRESSIONS_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * The number of completed views reported by creatives associated with the
+     * line item. A completed view is defined as having watched the entirety of
+     * the in-stream video ad and is only supported for standard reservation
+     * video line items. The
+     * [LineItem.line_item_type][google.ads.admanager.v1.LineItem.line_item_type]
+     * must be
+     * [LineItemTypeEnum.LineItemType.STANDARD][google.ads.admanager.v1.LineItemTypeEnum.LineItemType.STANDARD].
+     * </pre>
+     *
+     * <code>COMPLETED_VIEWS = 8;</code>
+     */
+    public static final int COMPLETED_VIEWS_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -349,6 +382,8 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
           return VIEWABLE_IMPRESSIONS;
         case 7:
           return IN_TARGET_IMPRESSIONS;
+        case 8:
+          return COMPLETED_VIEWS;
         default:
           return null;
       }

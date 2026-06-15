@@ -191,7 +191,9 @@ public interface ExecutionConfigOrBuilder
    * Optional. The Cloud KMS key to use for encryption.
    * </pre>
    *
-   * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -204,7 +206,9 @@ public interface ExecutionConfigOrBuilder
    * Optional. The Cloud KMS key to use for encryption.
    * </pre>
    *
-   * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */
@@ -441,6 +445,104 @@ public interface ExecutionConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.AuthenticationConfigOrBuilder getAuthenticationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getResourceManagerTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsResourceManagerTags(java.lang.String key);
+
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getResourceManagerTagsOrThrow(java.lang.String key);
 
   com.google.cloud.dataproc.v1.ExecutionConfig.NetworkCase getNetworkCase();
 }

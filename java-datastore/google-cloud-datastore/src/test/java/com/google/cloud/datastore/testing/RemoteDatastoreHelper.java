@@ -26,7 +26,6 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
-import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.time.Duration;
@@ -113,12 +112,7 @@ public class RemoteDatastoreHelper {
             .setDatabaseId(databaseId)
             .setNamespace(UUID.randomUUID().toString())
             .setRetrySettings(retrySettings());
-    if (transportOptions instanceof GrpcTransportOptions) {
-      datastoreOptionBuilder =
-          datastoreOptionBuilder.setTransportOptions((GrpcTransportOptions) transportOptions);
-    } else {
-      datastoreOptionBuilder = datastoreOptionBuilder.setTransportOptions(transportOptions);
-    }
+    datastoreOptionBuilder = datastoreOptionBuilder.setTransportOptions(transportOptions);
 
     if (openTelemetrySdk != null) {
       datastoreOptionBuilder.setOpenTelemetryOptions(

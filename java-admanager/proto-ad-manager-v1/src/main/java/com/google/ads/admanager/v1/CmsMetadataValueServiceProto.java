@@ -52,6 +52,22 @@ public final class CmsMetadataValueServiceProto extends com.google.protobuf.Gene
       internal_static_google_ads_admanager_v1_ListCmsMetadataValuesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCmsMetadataValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -82,21 +98,43 @@ public final class CmsMetadataValueServiceProto extends com.google.protobuf.Gene
           + "\023cms_metadata_values\030\001"
           + " \003(\0132).google.ads.admanager.v1.CmsMetadataValue\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\331\003\n"
+          + "total_size\030\003 \001(\005\"\243\001\n"
+          + "%BatchActivateCmsMetadataValuesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\340A\002\372A+\n"
+          + ")admanager.googleapis.com/CmsMetadataValue\"(\n"
+          + "&BatchActivateCmsMetadataValuesResponse\"\245\001\n"
+          + "\'BatchDeactivateCmsMetadataValuesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\340A\002\372A+\n"
+          + ")admanager.googleapis.com/CmsMetadataValue\"*\n"
+          + "(BatchDeactivateCmsMetadataValuesResponse2\202\010\n"
           + "\027CmsMetadataValueService\022\257\001\n"
-          + "\023GetCmsMetadataValue\0223.google.ads.admanager.v1.GetCmsMetadataV"
-          + "alueRequest\032).google.ads.admanager.v1.Cm"
-          + "sMetadataValue\"8\332A\004name\202\323\344\223\002+\022)/v1/{name=networks/*/cmsMetadataValues/*}\022\302\001\n"
-          + "\025ListCmsMetadataValues\0225.google.ads.admanage"
-          + "r.v1.ListCmsMetadataValuesRequest\0326.google.ads.admanager.v1.ListCmsMetadataValue"
-          + "sResponse\":\332A\006parent\202\323\344\223\002+\022)/v1/{parent="
-          + "networks/*}/cmsMetadataValues\032G\312A\030admana"
-          + "ger.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\320\001\n"
-          + "\033com.google.ads.admanager.v1B\034CmsMetadataValueServiceP"
-          + "rotoP\001Z@google.golang.org/genproto/googl"
-          + "eapis/ads/admanager/v1;admanager\252\002\027Googl"
-          + "e.Ads.AdManager.V1\312\002\027Google\\Ads\\AdManage"
-          + "r\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\023GetCmsMetadataValue\0223.google.ads.admanage"
+          + "r.v1.GetCmsMetadataValueRequest\032).google"
+          + ".ads.admanager.v1.CmsMetadataValue\"8\332A\004n"
+          + "ame\202\323\344\223\002+\022)/v1/{name=networks/*/cmsMetadataValues/*}\022\302\001\n"
+          + "\025ListCmsMetadataValues\0225.google.ads.admanager.v1.ListCmsMetadata"
+          + "ValuesRequest\0326.google.ads.admanager.v1."
+          + "ListCmsMetadataValuesResponse\":\332A\006parent"
+          + "\202\323\344\223\002+\022)/v1/{parent=networks/*}/cmsMetadataValues\022\364\001\n"
+          + "\036BatchActivateCmsMetadataValues\022>.google.ads.admanager.v1.BatchActi"
+          + "vateCmsMetadataValuesRequest\032?.google.ads.admanager.v1.BatchActivateCmsMetadataV"
+          + "aluesResponse\"Q\332A\014parent,names\202\323\344\223\002<\"7/v"
+          + "1/{parent=networks/*}/cmsMetadataValues:batchActivate:\001*\022\374\001\n"
+          + " BatchDeactivateCmsMetadataValues\022@.google.ads.admanager.v1."
+          + "BatchDeactivateCmsMetadataValuesRequest\032A.google.ads.admanager.v1.BatchDeactivat"
+          + "eCmsMetadataValuesResponse\"S\332A\014parent,na"
+          + "mes\202\323\344\223\002>\"9/v1/{parent=networks/*}/cmsMe"
+          + "tadataValues:batchDeactivate:\001*\032z\312A\030adma"
+          + "nager.googleapis.com\322A\\https://www.googl"
+          + "eapis.com/auth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\320\001\n"
+          + "\033com.google.ads.admanager.v1B\034CmsMetadata"
+          + "ValueServiceProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;adma"
+          + "nager\252\002\027Google.Ads.AdManager.V1\312\002\027Google"
+          + "\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -132,6 +170,34 @@ public final class CmsMetadataValueServiceProto extends com.google.protobuf.Gene
             new java.lang.String[] {
               "CmsMetadataValues", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesResponse_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataValuesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesResponse_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataValuesResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.CmsMetadataValueMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

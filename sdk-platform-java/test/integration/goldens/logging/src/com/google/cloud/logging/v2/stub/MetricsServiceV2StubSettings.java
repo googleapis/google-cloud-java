@@ -298,7 +298,7 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
 
   @Override
   protected LibraryMetadata getLibraryMetadata() {
-    return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
+    return LibraryMetadata.newBuilder().build();
   }
 
   /** Builder for MetricsServiceV2StubSettings. */

@@ -299,6 +299,43 @@ public interface AudienceMemberOrBuilder
    *
    *
    * <pre>
+   * Group of multiple identifier types.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+   *
+   * @return Whether the compositeData field is set.
+   */
+  boolean hasCompositeData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Group of multiple identifier types.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+   *
+   * @return The compositeData.
+   */
+  com.google.ads.datamanager.v1.CompositeData getCompositeData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Group of multiple identifier types.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+   */
+  com.google.ads.datamanager.v1.CompositeDataOrBuilder getCompositeDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The consent setting for the user.
    * </pre>
    *

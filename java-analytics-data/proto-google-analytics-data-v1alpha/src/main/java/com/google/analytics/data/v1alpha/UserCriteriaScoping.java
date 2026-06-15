@@ -200,7 +200,7 @@ public enum UserCriteriaScoping implements com.google.protobuf.ProtocolMessageEn
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final UserCriteriaScoping[] VALUES = values();

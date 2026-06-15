@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 import static com.google.cloud.BaseService.EXCEPTION_HANDLER;
 
 import com.google.api.core.InternalApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.RetryHelper;
@@ -65,7 +64,14 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
   private final DatastoreOptions datastoreOptions;
   private final DatastoreMetricsRecorder metricsRecorder;
 
-  @ObsoleteApi("Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder")
+  /**
+   * This constructor is deprecated.
+   *
+   * <p>Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder
+   *
+   * @deprecated Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder
+   */
+  @Deprecated
   public RetryAndTraceDatastoreRpcDecorator(
       DatastoreRpc datastoreRpc,
       TraceUtil otelTraceUtil,

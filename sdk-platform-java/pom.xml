@@ -83,17 +83,6 @@
     </profile>
 
     <profile>
-      <id>full-project-coverage</id>
-      <activation>
-        <property>
-          <name>enableFullTestCoverage</name>
-        </property>
-      </activation>
-      <modules>
-      </modules>
-    </profile>
-
-    <profile>
       <id>activate-showcase-coverage</id>
       <activation>
         <property>

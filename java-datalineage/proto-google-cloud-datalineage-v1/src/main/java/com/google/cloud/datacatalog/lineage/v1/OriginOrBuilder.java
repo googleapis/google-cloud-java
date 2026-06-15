@@ -33,8 +33,9 @@ public interface OriginOrBuilder
    * Type of the source.
    *
    * Use of a source_type other than `CUSTOM` for process creation
-   * or updating is highly discouraged, and may be restricted in the future
-   * without notice.
+   * or updating is highly discouraged. It might be restricted in the future
+   * without notice. There will be increase in cost if you use any of the source
+   * types other than `CUSTOM`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -50,8 +51,9 @@ public interface OriginOrBuilder
    * Type of the source.
    *
    * Use of a source_type other than `CUSTOM` for process creation
-   * or updating is highly discouraged, and may be restricted in the future
-   * without notice.
+   * or updating is highly discouraged. It might be restricted in the future
+   * without notice. There will be increase in cost if you use any of the source
+   * types other than `CUSTOM`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -64,8 +66,8 @@ public interface OriginOrBuilder
    *
    *
    * <pre>
-   * If the source_type isn't CUSTOM, the value of this field should be a GCP
-   * resource name of the system, which reports lineage. The project and
+   * If the source_type isn't CUSTOM, the value of this field should be a Google
+   * Cloud resource name of the system, which reports lineage. The project and
    * location parts of the resource name must match the project and location of
    * the lineage resource being created. Examples:
    *
@@ -85,8 +87,8 @@ public interface OriginOrBuilder
    *
    *
    * <pre>
-   * If the source_type isn't CUSTOM, the value of this field should be a GCP
-   * resource name of the system, which reports lineage. The project and
+   * If the source_type isn't CUSTOM, the value of this field should be a Google
+   * Cloud resource name of the system, which reports lineage. The project and
    * location parts of the resource name must match the project and location of
    * the lineage resource being created. Examples:
    *

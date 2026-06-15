@@ -138,30 +138,36 @@ public interface EntitySignalsMappingOrBuilder
    *
    *
    * <pre>
-   * Output only. `EntitySignalsMapping` ID.
+   * Output only. Deprecated: `EntitySignalsMapping` ID.
    * </pre>
    *
    * <code>
-   * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
    * @return Whether the entitySignalsMappingId field is set.
    */
+  @java.lang.Deprecated
   boolean hasEntitySignalsMappingId();
 
   /**
    *
    *
    * <pre>
-   * Output only. `EntitySignalsMapping` ID.
+   * Output only. Deprecated: `EntitySignalsMapping` ID.
    * </pre>
    *
    * <code>
-   * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
    * @return The entitySignalsMappingId.
    */
+  @java.lang.Deprecated
   long getEntitySignalsMappingId();
 
   /**

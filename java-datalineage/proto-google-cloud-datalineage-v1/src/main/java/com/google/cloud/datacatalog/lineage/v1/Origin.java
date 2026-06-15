@@ -151,6 +151,36 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      * <code>DATAPROC = 6;</code>
      */
     DATAPROC(6),
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI
+     * </pre>
+     *
+     * <code>VERTEX_AI = 7;</code>
+     */
+    VERTEX_AI(7),
+    /**
+     *
+     *
+     * <pre>
+     * Dataflow
+     * </pre>
+     *
+     * <code>DATAFLOW = 8;</code>
+     */
+    DATAFLOW(8),
+    /**
+     *
+     *
+     * <pre>
+     * Looker Core
+     * </pre>
+     *
+     * <code>LOOKER_CORE = 9;</code>
+     */
+    LOOKER_CORE(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -241,6 +271,39 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      */
     public static final int DATAPROC_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * Vertex AI
+     * </pre>
+     *
+     * <code>VERTEX_AI = 7;</code>
+     */
+    public static final int VERTEX_AI_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataflow
+     * </pre>
+     *
+     * <code>DATAFLOW = 8;</code>
+     */
+    public static final int DATAFLOW_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Looker Core
+     * </pre>
+     *
+     * <code>LOOKER_CORE = 9;</code>
+     */
+    public static final int LOOKER_CORE_VALUE = 9;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -279,6 +342,12 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
           return LOOKER_STUDIO;
         case 6:
           return DATAPROC;
+        case 7:
+          return VERTEX_AI;
+        case 8:
+          return DATAFLOW;
+        case 9:
+          return LOOKER_CORE;
         default:
           return null;
       }
@@ -342,8 +411,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
    * Type of the source.
    *
    * Use of a source_type other than `CUSTOM` for process creation
-   * or updating is highly discouraged, and may be restricted in the future
-   * without notice.
+   * or updating is highly discouraged. It might be restricted in the future
+   * without notice. There will be increase in cost if you use any of the source
+   * types other than `CUSTOM`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -362,8 +432,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
    * Type of the source.
    *
    * Use of a source_type other than `CUSTOM` for process creation
-   * or updating is highly discouraged, and may be restricted in the future
-   * without notice.
+   * or updating is highly discouraged. It might be restricted in the future
+   * without notice. There will be increase in cost if you use any of the source
+   * types other than `CUSTOM`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -388,8 +459,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If the source_type isn't CUSTOM, the value of this field should be a GCP
-   * resource name of the system, which reports lineage. The project and
+   * If the source_type isn't CUSTOM, the value of this field should be a Google
+   * Cloud resource name of the system, which reports lineage. The project and
    * location parts of the resource name must match the project and location of
    * the lineage resource being created. Examples:
    *
@@ -420,8 +491,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If the source_type isn't CUSTOM, the value of this field should be a GCP
-   * resource name of the system, which reports lineage. The project and
+   * If the source_type isn't CUSTOM, the value of this field should be a Google
+   * Cloud resource name of the system, which reports lineage. The project and
    * location parts of the resource name must match the project and location of
    * the lineage resource being created. Examples:
    *
@@ -792,8 +863,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      * Type of the source.
      *
      * Use of a source_type other than `CUSTOM` for process creation
-     * or updating is highly discouraged, and may be restricted in the future
-     * without notice.
+     * or updating is highly discouraged. It might be restricted in the future
+     * without notice. There will be increase in cost if you use any of the source
+     * types other than `CUSTOM`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -812,8 +884,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      * Type of the source.
      *
      * Use of a source_type other than `CUSTOM` for process creation
-     * or updating is highly discouraged, and may be restricted in the future
-     * without notice.
+     * or updating is highly discouraged. It might be restricted in the future
+     * without notice. There will be increase in cost if you use any of the source
+     * types other than `CUSTOM`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -835,8 +908,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      * Type of the source.
      *
      * Use of a source_type other than `CUSTOM` for process creation
-     * or updating is highly discouraged, and may be restricted in the future
-     * without notice.
+     * or updating is highly discouraged. It might be restricted in the future
+     * without notice. There will be increase in cost if you use any of the source
+     * types other than `CUSTOM`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -859,8 +933,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      * Type of the source.
      *
      * Use of a source_type other than `CUSTOM` for process creation
-     * or updating is highly discouraged, and may be restricted in the future
-     * without notice.
+     * or updating is highly discouraged. It might be restricted in the future
+     * without notice. There will be increase in cost if you use any of the source
+     * types other than `CUSTOM`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -885,8 +960,9 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      * Type of the source.
      *
      * Use of a source_type other than `CUSTOM` for process creation
-     * or updating is highly discouraged, and may be restricted in the future
-     * without notice.
+     * or updating is highly discouraged. It might be restricted in the future
+     * without notice. There will be increase in cost if you use any of the source
+     * types other than `CUSTOM`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.lineage.v1.Origin.SourceType source_type = 1;</code>
@@ -906,8 +982,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the source_type isn't CUSTOM, the value of this field should be a GCP
-     * resource name of the system, which reports lineage. The project and
+     * If the source_type isn't CUSTOM, the value of this field should be a Google
+     * Cloud resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
      *
@@ -937,8 +1013,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the source_type isn't CUSTOM, the value of this field should be a GCP
-     * resource name of the system, which reports lineage. The project and
+     * If the source_type isn't CUSTOM, the value of this field should be a Google
+     * Cloud resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
      *
@@ -968,8 +1044,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the source_type isn't CUSTOM, the value of this field should be a GCP
-     * resource name of the system, which reports lineage. The project and
+     * If the source_type isn't CUSTOM, the value of this field should be a Google
+     * Cloud resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
      *
@@ -998,8 +1074,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the source_type isn't CUSTOM, the value of this field should be a GCP
-     * resource name of the system, which reports lineage. The project and
+     * If the source_type isn't CUSTOM, the value of this field should be a Google
+     * Cloud resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
      *
@@ -1024,8 +1100,8 @@ public final class Origin extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If the source_type isn't CUSTOM, the value of this field should be a GCP
-     * resource name of the system, which reports lineage. The project and
+     * If the source_type isn't CUSTOM, the value of this field should be a Google
+     * Cloud resource name of the system, which reports lineage. The project and
      * location parts of the resource name must match the project and location of
      * the lineage resource being created. Examples:
      *

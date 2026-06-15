@@ -53,6 +53,9 @@ public final class Label extends com.google.protobuf.GeneratedMessage
 
   private Label() {
     name_ = "";
+    displayName_ = "";
+    description_ = "";
+    types_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +73,7 @@ public final class Label extends com.google.protobuf.GeneratedMessage
             com.google.ads.admanager.v1.Label.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -125,6 +129,299 @@ public final class Label extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the Label. This attribute has a maximum length of
+   * 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the Label. This attribute has a maximum length of
+   * 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the Label. This attribute has a maximum length of
+   * 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the label. This attribute has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the label. This attribute has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the label. This attribute has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACTIVE_FIELD_NUMBER = 5;
+  private boolean active_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the label is active.
+   * </pre>
+   *
+   * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the active field is set.
+   */
+  @java.lang.Override
+  public boolean hasActive() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the label is active.
+   * </pre>
+   *
+   * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The active.
+   */
+  @java.lang.Override
+  public boolean getActive() {
+    return active_;
+  }
+
+  public static final int TYPES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList types_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.ads.admanager.v1.LabelTypeEnum.LabelType>
+      types_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.ads.admanager.v1.LabelTypeEnum.LabelType>() {
+            public com.google.ads.admanager.v1.LabelTypeEnum.LabelType convert(int from) {
+              com.google.ads.admanager.v1.LabelTypeEnum.LabelType result =
+                  com.google.ads.admanager.v1.LabelTypeEnum.LabelType.forNumber(from);
+              return result == null
+                  ? com.google.ads.admanager.v1.LabelTypeEnum.LabelType.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return A list containing the types.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.LabelTypeEnum.LabelType> getTypesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.ads.admanager.v1.LabelTypeEnum.LabelType>(types_, types_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return The count of types.
+   */
+  @java.lang.Override
+  public int getTypesCount() {
+    return types_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The types at the given index.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LabelTypeEnum.LabelType getTypes(int index) {
+    return types_converter_.convert(types_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for types.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getTypesValueList() {
+    return types_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of types at the given index.
+   */
+  @java.lang.Override
+  public int getTypesValue(int index) {
+    return types_.getInt(index);
+  }
+
+  private int typesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -139,8 +436,25 @@ public final class Label extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, description_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(5, active_);
+    }
+    if (getTypesList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(typesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < types_.size(); i++) {
+      output.writeEnumNoTag(types_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -153,6 +467,27 @@ public final class Label extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, description_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, active_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < types_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(types_.getInt(i));
+      }
+      size += dataSize;
+      if (!getTypesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      typesMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +505,19 @@ public final class Label extends com.google.protobuf.GeneratedMessage
     com.google.ads.admanager.v1.Label other = (com.google.ads.admanager.v1.Label) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasActive() != other.hasActive()) return false;
+    if (hasActive()) {
+      if (getActive() != other.getActive()) return false;
+    }
+    if (!types_.equals(other.types_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +531,22 @@ public final class Label extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasActive()) {
+      hash = (37 * hash) + ACTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getActive());
+    }
+    if (getTypesCount() > 0) {
+      hash = (37 * hash) + TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + types_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +687,10 @@ public final class Label extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      displayName_ = "";
+      description_ = "";
+      active_ = false;
+      types_ = emptyIntList();
       return this;
     }
 
@@ -361,6 +729,24 @@ public final class Label extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.active_ = active_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        types_.makeImmutable();
+        result.types_ = types_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -378,6 +764,30 @@ public final class Label extends com.google.protobuf.GeneratedMessage
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (other.hasDisplayName()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasDescription()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasActive()) {
+        setActive(other.getActive());
+      }
+      if (!other.types_.isEmpty()) {
+        if (types_.isEmpty()) {
+          types_ = other.types_;
+          types_.makeImmutable();
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureTypesIsMutable();
+          types_.addAll(other.types_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -412,6 +822,42 @@ public final class Label extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 40:
+              {
+                active_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+            case 56:
+              {
+                int tmpRaw = input.readEnum();
+                ensureTypesIsMutable();
+                types_.addInt(tmpRaw);
+                break;
+              } // case 56
+            case 58:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTypesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  types_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -543,6 +989,599 @@ public final class Label extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of the Label. This attribute has a maximum length of
+     * 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of the Label. This attribute has a maximum length of
+     * 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of the Label. This attribute has a maximum length of
+     * 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of the Label. This attribute has a maximum length of
+     * 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of the Label. This attribute has a maximum length of
+     * 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Display name of the Label. This attribute has a maximum length of
+     * 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the label. This attribute has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the label. This attribute has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the label. This attribute has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the label. This attribute has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the label. This attribute has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A description of the label. This attribute has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean active_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies whether or not the label is active.
+     * </pre>
+     *
+     * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the active field is set.
+     */
+    @java.lang.Override
+    public boolean hasActive() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies whether or not the label is active.
+     * </pre>
+     *
+     * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The active.
+     */
+    @java.lang.Override
+    public boolean getActive() {
+      return active_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies whether or not the label is active.
+     * </pre>
+     *
+     * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The active to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActive(boolean value) {
+
+      active_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies whether or not the label is active.
+     * </pre>
+     *
+     * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActive() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      active_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList types_ = emptyIntList();
+
+    private void ensureTypesIsMutable() {
+      if (!types_.isModifiable()) {
+        types_ = makeMutableCopy(types_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @return A list containing the types.
+     */
+    public java.util.List<com.google.ads.admanager.v1.LabelTypeEnum.LabelType> getTypesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.ads.admanager.v1.LabelTypeEnum.LabelType>(types_, types_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @return The count of types.
+     */
+    public int getTypesCount() {
+      return types_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The types at the given index.
+     */
+    public com.google.ads.admanager.v1.LabelTypeEnum.LabelType getTypes(int index) {
+      return types_converter_.convert(types_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The types to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypes(int index, com.google.ads.admanager.v1.LabelTypeEnum.LabelType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTypesIsMutable();
+      types_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param value The types to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTypes(com.google.ads.admanager.v1.LabelTypeEnum.LabelType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTypesIsMutable();
+      types_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param values The types to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTypes(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.LabelTypeEnum.LabelType> values) {
+      ensureTypesIsMutable();
+      for (com.google.ads.admanager.v1.LabelTypeEnum.LabelType value : values) {
+        types_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTypes() {
+      types_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for types.
+     */
+    public java.util.List<java.lang.Integer> getTypesValueList() {
+      types_.makeImmutable();
+      return types_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of types at the given index.
+     */
+    public int getTypesValue(int index) {
+      return types_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for types to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypesValue(int index, int value) {
+      ensureTypesIsMutable();
+      types_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for types to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTypesValue(int value) {
+      ensureTypesIsMutable();
+      types_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unordered list. The types of the Label.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for types to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureTypesIsMutable();
+      for (int value : values) {
+        types_.addInt(value);
+      }
       onChanged();
       return this;
     }

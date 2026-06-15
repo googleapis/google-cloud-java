@@ -651,7 +651,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     }
     Opts<ObjectTargetOpt> targetOpts = composeRequest.getTargetOpts();
     StorageObject targetPb = codecs.blobInfo().encode(composeRequest.getTarget());
-    Map<StorageRpc.Option, ?> targetOptions = targetOpts.getRpcOptions();
+    Map<StorageRpc.Option, Object> targetOptions = Maps.newHashMap(targetOpts.getRpcOptions());
+    if (composeRequest.isDeleteSourceObjects()) {
+      targetOptions.put(StorageRpc.Option.DELETE_SOURCE_OBJECTS, true);
+    }
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsCompose(sources, targetPb, targetOptions);
     return run(

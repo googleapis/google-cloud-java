@@ -681,7 +681,7 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
   @Override
   protected LibraryMetadata getLibraryMetadata() {
-    return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
+    return LibraryMetadata.newBuilder().build();
   }
 
   /** Builder for ConfigServiceV2StubSettings. */

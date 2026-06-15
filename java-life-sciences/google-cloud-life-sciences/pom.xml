@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-life-sciences</artifactId>
-  <version>0.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+  <version>0.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Life Sciences</name>
   <description>Cloud Life Sciences is a suite of services and tools for managing, processing, and transforming life sciences data.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-life-sciences-parent</artifactId>
-    <version>0.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+    <version>0.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-life-sciences</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-life-sciences-v2beta</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -73,11 +75,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-life-sciences-v2beta</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

@@ -5648,7 +5648,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this nodepool is QRM specific, meaning nodes can be only
+     * Denotes that this node pool is QRM specific, meaning nodes can be only
      * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
      * API.
      * </pre>
@@ -5714,7 +5714,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Denotes that this nodepool is QRM specific, meaning nodes can be only
+     * Denotes that this node pool is QRM specific, meaning nodes can be only
      * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
      * API.
      * </pre>
@@ -6043,7 +6043,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Denotes that this nodepool is QRM specific, meaning nodes can be only
+       * Denotes that this node pool is QRM specific, meaning nodes can be only
        * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
        * API.
        * </pre>
@@ -6061,7 +6061,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Denotes that this nodepool is QRM specific, meaning nodes can be only
+       * Denotes that this node pool is QRM specific, meaning nodes can be only
        * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
        * API.
        * </pre>
@@ -6083,7 +6083,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Denotes that this nodepool is QRM specific, meaning nodes can be only
+       * Denotes that this node pool is QRM specific, meaning nodes can be only
        * obtained through queuing via the Cluster Autoscaler ProvisioningRequest
        * API.
        * </pre>
@@ -6160,6 +6160,80 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The duration of the PDB timeout period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+     *
+     * @return Whether the pdbTimeoutDuration field is set.
+     */
+    boolean hasPdbTimeoutDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the PDB timeout period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+     *
+     * @return The pdbTimeoutDuration.
+     */
+    com.google.protobuf.Duration getPdbTimeoutDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the PDB timeout period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getPdbTimeoutDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the grace termination period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+     *
+     * @return Whether the graceTerminationDuration field is set.
+     */
+    boolean hasGraceTerminationDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the grace termination period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+     *
+     * @return The graceTerminationDuration.
+     */
+    com.google.protobuf.Duration getGraceTerminationDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the grace termination period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getGraceTerminationDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Whether to respect PDB during node pool deletion.
      * </pre>
      *
@@ -6188,7 +6262,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * NodeDrainConfig contains the node drain related configurations for this
-   * nodepool.
+   * node pool.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.NodePool.NodeDrainConfig}
@@ -6232,6 +6306,112 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    public static final int PDB_TIMEOUT_DURATION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration pdbTimeoutDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the PDB timeout period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+     *
+     * @return Whether the pdbTimeoutDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasPdbTimeoutDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the PDB timeout period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+     *
+     * @return The pdbTimeoutDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getPdbTimeoutDuration() {
+      return pdbTimeoutDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : pdbTimeoutDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the PDB timeout period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getPdbTimeoutDurationOrBuilder() {
+      return pdbTimeoutDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : pdbTimeoutDuration_;
+    }
+
+    public static final int GRACE_TERMINATION_DURATION_FIELD_NUMBER = 2;
+    private com.google.protobuf.Duration graceTerminationDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the grace termination period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+     *
+     * @return Whether the graceTerminationDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasGraceTerminationDuration() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the grace termination period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+     *
+     * @return The graceTerminationDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getGraceTerminationDuration() {
+      return graceTerminationDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : graceTerminationDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The duration of the grace termination period for node drain.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getGraceTerminationDurationOrBuilder() {
+      return graceTerminationDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : graceTerminationDuration_;
+    }
+
     public static final int RESPECT_PDB_DURING_NODE_POOL_DELETION_FIELD_NUMBER = 3;
     private boolean respectPdbDuringNodePoolDeletion_ = false;
 
@@ -6248,7 +6428,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasRespectPdbDuringNodePoolDeletion() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -6282,6 +6462,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getPdbTimeoutDuration());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getGraceTerminationDuration());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeBool(3, respectPdbDuringNodePoolDeletion_);
       }
       getUnknownFields().writeTo(output);
@@ -6294,6 +6480,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPdbTimeoutDuration());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getGraceTerminationDuration());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 3, respectPdbDuringNodePoolDeletion_);
@@ -6314,6 +6509,15 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       com.google.container.v1.NodePool.NodeDrainConfig other =
           (com.google.container.v1.NodePool.NodeDrainConfig) obj;
 
+      if (hasPdbTimeoutDuration() != other.hasPdbTimeoutDuration()) return false;
+      if (hasPdbTimeoutDuration()) {
+        if (!getPdbTimeoutDuration().equals(other.getPdbTimeoutDuration())) return false;
+      }
+      if (hasGraceTerminationDuration() != other.hasGraceTerminationDuration()) return false;
+      if (hasGraceTerminationDuration()) {
+        if (!getGraceTerminationDuration().equals(other.getGraceTerminationDuration()))
+          return false;
+      }
       if (hasRespectPdbDuringNodePoolDeletion() != other.hasRespectPdbDuringNodePoolDeletion())
         return false;
       if (hasRespectPdbDuringNodePoolDeletion()) {
@@ -6331,6 +6535,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPdbTimeoutDuration()) {
+        hash = (37 * hash) + PDB_TIMEOUT_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPdbTimeoutDuration().hashCode();
+      }
+      if (hasGraceTerminationDuration()) {
+        hash = (37 * hash) + GRACE_TERMINATION_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getGraceTerminationDuration().hashCode();
+      }
       if (hasRespectPdbDuringNodePoolDeletion()) {
         hash = (37 * hash) + RESPECT_PDB_DURING_NODE_POOL_DELETION_FIELD_NUMBER;
         hash =
@@ -6443,7 +6655,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * NodeDrainConfig contains the node drain related configurations for this
-     * nodepool.
+     * node pool.
      * </pre>
      *
      * Protobuf type {@code google.container.v1.NodePool.NodeDrainConfig}
@@ -6468,16 +6680,36 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.container.v1.NodePool.NodeDrainConfig.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetPdbTimeoutDurationFieldBuilder();
+          internalGetGraceTerminationDurationFieldBuilder();
+        }
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        pdbTimeoutDuration_ = null;
+        if (pdbTimeoutDurationBuilder_ != null) {
+          pdbTimeoutDurationBuilder_.dispose();
+          pdbTimeoutDurationBuilder_ = null;
+        }
+        graceTerminationDuration_ = null;
+        if (graceTerminationDurationBuilder_ != null) {
+          graceTerminationDurationBuilder_.dispose();
+          graceTerminationDurationBuilder_ = null;
+        }
         respectPdbDuringNodePoolDeletion_ = false;
         return this;
       }
@@ -6517,8 +6749,22 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.respectPdbDuringNodePoolDeletion_ = respectPdbDuringNodePoolDeletion_;
+          result.pdbTimeoutDuration_ =
+              pdbTimeoutDurationBuilder_ == null
+                  ? pdbTimeoutDuration_
+                  : pdbTimeoutDurationBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.graceTerminationDuration_ =
+              graceTerminationDurationBuilder_ == null
+                  ? graceTerminationDuration_
+                  : graceTerminationDurationBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.respectPdbDuringNodePoolDeletion_ = respectPdbDuringNodePoolDeletion_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -6536,6 +6782,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       public Builder mergeFrom(com.google.container.v1.NodePool.NodeDrainConfig other) {
         if (other == com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance())
           return this;
+        if (other.hasPdbTimeoutDuration()) {
+          mergePdbTimeoutDuration(other.getPdbTimeoutDuration());
+        }
+        if (other.hasGraceTerminationDuration()) {
+          mergeGraceTerminationDuration(other.getGraceTerminationDuration());
+        }
         if (other.hasRespectPdbDuringNodePoolDeletion()) {
           setRespectPdbDuringNodePoolDeletion(other.getRespectPdbDuringNodePoolDeletion());
         }
@@ -6565,10 +6817,25 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
               case 0:
                 done = true;
                 break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetPdbTimeoutDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetGraceTerminationDurationFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               case 24:
                 {
                   respectPdbDuringNodePoolDeletion_ = input.readBool();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -6590,6 +6857,395 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
 
       private int bitField0_;
 
+      private com.google.protobuf.Duration pdbTimeoutDuration_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          pdbTimeoutDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       *
+       * @return Whether the pdbTimeoutDuration field is set.
+       */
+      public boolean hasPdbTimeoutDuration() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       *
+       * @return The pdbTimeoutDuration.
+       */
+      public com.google.protobuf.Duration getPdbTimeoutDuration() {
+        if (pdbTimeoutDurationBuilder_ == null) {
+          return pdbTimeoutDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : pdbTimeoutDuration_;
+        } else {
+          return pdbTimeoutDurationBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      public Builder setPdbTimeoutDuration(com.google.protobuf.Duration value) {
+        if (pdbTimeoutDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pdbTimeoutDuration_ = value;
+        } else {
+          pdbTimeoutDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      public Builder setPdbTimeoutDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (pdbTimeoutDurationBuilder_ == null) {
+          pdbTimeoutDuration_ = builderForValue.build();
+        } else {
+          pdbTimeoutDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      public Builder mergePdbTimeoutDuration(com.google.protobuf.Duration value) {
+        if (pdbTimeoutDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && pdbTimeoutDuration_ != null
+              && pdbTimeoutDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getPdbTimeoutDurationBuilder().mergeFrom(value);
+          } else {
+            pdbTimeoutDuration_ = value;
+          }
+        } else {
+          pdbTimeoutDurationBuilder_.mergeFrom(value);
+        }
+        if (pdbTimeoutDuration_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      public Builder clearPdbTimeoutDuration() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pdbTimeoutDuration_ = null;
+        if (pdbTimeoutDurationBuilder_ != null) {
+          pdbTimeoutDurationBuilder_.dispose();
+          pdbTimeoutDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getPdbTimeoutDurationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetPdbTimeoutDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getPdbTimeoutDurationOrBuilder() {
+        if (pdbTimeoutDurationBuilder_ != null) {
+          return pdbTimeoutDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return pdbTimeoutDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : pdbTimeoutDuration_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the PDB timeout period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration pdb_timeout_duration = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetPdbTimeoutDurationFieldBuilder() {
+        if (pdbTimeoutDurationBuilder_ == null) {
+          pdbTimeoutDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getPdbTimeoutDuration(), getParentForChildren(), isClean());
+          pdbTimeoutDuration_ = null;
+        }
+        return pdbTimeoutDurationBuilder_;
+      }
+
+      private com.google.protobuf.Duration graceTerminationDuration_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          graceTerminationDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       *
+       * @return Whether the graceTerminationDuration field is set.
+       */
+      public boolean hasGraceTerminationDuration() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       *
+       * @return The graceTerminationDuration.
+       */
+      public com.google.protobuf.Duration getGraceTerminationDuration() {
+        if (graceTerminationDurationBuilder_ == null) {
+          return graceTerminationDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : graceTerminationDuration_;
+        } else {
+          return graceTerminationDurationBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      public Builder setGraceTerminationDuration(com.google.protobuf.Duration value) {
+        if (graceTerminationDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          graceTerminationDuration_ = value;
+        } else {
+          graceTerminationDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      public Builder setGraceTerminationDuration(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (graceTerminationDurationBuilder_ == null) {
+          graceTerminationDuration_ = builderForValue.build();
+        } else {
+          graceTerminationDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      public Builder mergeGraceTerminationDuration(com.google.protobuf.Duration value) {
+        if (graceTerminationDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && graceTerminationDuration_ != null
+              && graceTerminationDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getGraceTerminationDurationBuilder().mergeFrom(value);
+          } else {
+            graceTerminationDuration_ = value;
+          }
+        } else {
+          graceTerminationDurationBuilder_.mergeFrom(value);
+        }
+        if (graceTerminationDuration_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      public Builder clearGraceTerminationDuration() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        graceTerminationDuration_ = null;
+        if (graceTerminationDurationBuilder_ != null) {
+          graceTerminationDurationBuilder_.dispose();
+          graceTerminationDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      public com.google.protobuf.Duration.Builder getGraceTerminationDurationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetGraceTerminationDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getGraceTerminationDurationOrBuilder() {
+        if (graceTerminationDurationBuilder_ != null) {
+          return graceTerminationDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return graceTerminationDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : graceTerminationDuration_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The duration of the grace termination period for node drain.
+       * </pre>
+       *
+       * <code>optional .google.protobuf.Duration grace_termination_duration = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetGraceTerminationDurationFieldBuilder() {
+        if (graceTerminationDurationBuilder_ == null) {
+          graceTerminationDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getGraceTerminationDuration(), getParentForChildren(), isClean());
+          graceTerminationDuration_ = null;
+        }
+        return graceTerminationDurationBuilder_;
+      }
+
       private boolean respectPdbDuringNodePoolDeletion_;
 
       /**
@@ -6605,7 +7261,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public boolean hasRespectPdbDuringNodePoolDeletion() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
 
       /**
@@ -6639,7 +7295,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       public Builder setRespectPdbDuringNodePoolDeletion(boolean value) {
 
         respectPdbDuringNodePoolDeletion_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6656,7 +7312,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearRespectPdbDuringNodePoolDeletion() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         respectPdbDuringNodePoolDeletion_ = false;
         onChanged();
         return this;
@@ -6710,6 +7366,2020 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.container.v1.NodePool.NodeDrainConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ExclusionUntilEndOfSupportOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.NodePool.ExclusionUntilEndOfSupport)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the exclusion is enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The start time of the maintenance exclusion. It is output
+     * only. It is the exclusion creation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The start time of the maintenance exclusion. It is output
+     * only. It is the exclusion creation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The startTime.
+     */
+    com.google.protobuf.Timestamp getStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The start time of the maintenance exclusion. It is output
+     * only. It is the exclusion creation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The end time of the maintenance exclusion. It is output
+     * only. It is the cluster control plane version's end of support time, or
+     * end of extended support time when the cluster is on extended support
+     * channel.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    boolean hasEndTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The end time of the maintenance exclusion. It is output
+     * only. It is the cluster control plane version's end of support time, or
+     * end of extended support time when the cluster is on extended support
+     * channel.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
+     */
+    com.google.protobuf.Timestamp getEndTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The end time of the maintenance exclusion. It is output
+     * only. It is the cluster control plane version's end of support time, or
+     * end of extended support time when the cluster is on extended support
+     * channel.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the maintenance exclusion for the node pool.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.NodePool.ExclusionUntilEndOfSupport}
+   */
+  public static final class ExclusionUntilEndOfSupport extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.NodePool.ExclusionUntilEndOfSupport)
+      ExclusionUntilEndOfSupportOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ExclusionUntilEndOfSupport");
+    }
+
+    // Use ExclusionUntilEndOfSupport.newBuilder() to construct.
+    private ExclusionUntilEndOfSupport(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExclusionUntilEndOfSupport() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_ExclusionUntilEndOfSupport_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_ExclusionUntilEndOfSupport_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.class,
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the exclusion is enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp startTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The start time of the maintenance exclusion. It is output
+     * only. It is the exclusion creation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The start time of the maintenance exclusion. It is output
+     * only. It is the exclusion creation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStartTime() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The start time of the maintenance exclusion. It is output
+     * only. It is the exclusion creation time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp endTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The end time of the maintenance exclusion. It is output
+     * only. It is the cluster control plane version's end of support time, or
+     * end of extended support time when the cluster is on extended support
+     * channel.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The end time of the maintenance exclusion. It is output
+     * only. It is the cluster control plane version's end of support time, or
+     * end of extended support time when the cluster is on extended support
+     * channel.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getEndTime() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The end time of the maintenance exclusion. It is output
+     * only. It is the cluster control plane version's end of support time, or
+     * end of extended support time when the cluster is on extended support
+     * channel.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getStartTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(3, getEndTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStartTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.NodePool.ExclusionUntilEndOfSupport)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.NodePool.ExclusionUntilEndOfSupport other =
+          (com.google.container.v1.NodePool.ExclusionUntilEndOfSupport) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime().equals(other.getStartTime())) return false;
+      }
+      if (hasEndTime() != other.hasEndTime()) return false;
+      if (hasEndTime()) {
+        if (!getEndTime().equals(other.getEndTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      if (hasEndTime()) {
+        hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEndTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.NodePool.ExclusionUntilEndOfSupport prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the maintenance exclusion for the node pool.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.NodePool.ExclusionUntilEndOfSupport}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.NodePool.ExclusionUntilEndOfSupport)
+        com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_ExclusionUntilEndOfSupport_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_ExclusionUntilEndOfSupport_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.class,
+                com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetStartTimeFieldBuilder();
+          internalGetEndTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
+          endTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_ExclusionUntilEndOfSupport_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport
+          getDefaultInstanceForType() {
+        return com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport build() {
+        com.google.container.v1.NodePool.ExclusionUntilEndOfSupport result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport buildPartial() {
+        com.google.container.v1.NodePool.ExclusionUntilEndOfSupport result =
+            new com.google.container.v1.NodePool.ExclusionUntilEndOfSupport(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1.NodePool.ExclusionUntilEndOfSupport result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.NodePool.ExclusionUntilEndOfSupport) {
+          return mergeFrom((com.google.container.v1.NodePool.ExclusionUntilEndOfSupport) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.NodePool.ExclusionUntilEndOfSupport other) {
+        if (other
+            == com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.getDefaultInstance())
+          return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
+        }
+        if (other.hasEndTime()) {
+          mergeEndTime(other.getEndTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the exclusion is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the exclusion is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the exclusion is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp startTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          startTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The startTime.
+       */
+      public com.google.protobuf.Timestamp getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
+          } else {
+            startTime_ = value;
+          }
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+        if (startTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetStartTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The start time of the maintenance exclusion. It is output
+       * only. It is the exclusion creation time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          internalGetStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp endTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          endTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the endTime field is set.
+       */
+      public boolean hasEndTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The endTime.
+       */
+      public com.google.protobuf.Timestamp getEndTime() {
+        if (endTimeBuilder_ == null) {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        } else {
+          return endTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endTime_ = value;
+        } else {
+          endTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (endTimeBuilder_ == null) {
+          endTime_ = builderForValue.build();
+        } else {
+          endTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && endTime_ != null
+              && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
+          } else {
+            endTime_ = value;
+          }
+        } else {
+          endTimeBuilder_.mergeFrom(value);
+        }
+        if (endTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearEndTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
+          endTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetEndTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+        if (endTimeBuilder_ != null) {
+          return endTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The end time of the maintenance exclusion. It is output
+       * only. It is the cluster control plane version's end of support time, or
+       * end of extended support time when the cluster is on extended support
+       * channel.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          internalGetEndTimeFieldBuilder() {
+        if (endTimeBuilder_ == null) {
+          endTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getEndTime(), getParentForChildren(), isClean());
+          endTime_ = null;
+        }
+        return endTimeBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool.ExclusionUntilEndOfSupport)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.NodePool.ExclusionUntilEndOfSupport)
+    private static final com.google.container.v1.NodePool.ExclusionUntilEndOfSupport
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.NodePool.ExclusionUntilEndOfSupport();
+    }
+
+    public static com.google.container.v1.NodePool.ExclusionUntilEndOfSupport getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExclusionUntilEndOfSupport> PARSER =
+        new com.google.protobuf.AbstractParser<ExclusionUntilEndOfSupport>() {
+          @java.lang.Override
+          public ExclusionUntilEndOfSupport parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExclusionUntilEndOfSupport> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExclusionUntilEndOfSupport> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface NodePoolMaintenancePolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.NodePool.NodePoolMaintenancePolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The exclusion until end of support for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the exclusionUntilEndOfSupport field is set.
+     */
+    boolean hasExclusionUntilEndOfSupport();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The exclusion until end of support for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The exclusionUntilEndOfSupport.
+     */
+    com.google.container.v1.NodePool.ExclusionUntilEndOfSupport getExclusionUntilEndOfSupport();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The exclusion until end of support for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder
+        getExclusionUntilEndOfSupportOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the maintenance policy for the node pool.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.NodePool.NodePoolMaintenancePolicy}
+   */
+  public static final class NodePoolMaintenancePolicy extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.NodePool.NodePoolMaintenancePolicy)
+      NodePoolMaintenancePolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "NodePoolMaintenancePolicy");
+    }
+
+    // Use NodePoolMaintenancePolicy.newBuilder() to construct.
+    private NodePoolMaintenancePolicy(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NodePoolMaintenancePolicy() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_NodePoolMaintenancePolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_NodePoolMaintenancePolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.NodePool.NodePoolMaintenancePolicy.class,
+              com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int EXCLUSION_UNTIL_END_OF_SUPPORT_FIELD_NUMBER = 1;
+    private com.google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusionUntilEndOfSupport_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The exclusion until end of support for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the exclusionUntilEndOfSupport field is set.
+     */
+    @java.lang.Override
+    public boolean hasExclusionUntilEndOfSupport() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The exclusion until end of support for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The exclusionUntilEndOfSupport.
+     */
+    @java.lang.Override
+    public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport
+        getExclusionUntilEndOfSupport() {
+      return exclusionUntilEndOfSupport_ == null
+          ? com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.getDefaultInstance()
+          : exclusionUntilEndOfSupport_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The exclusion until end of support for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder
+        getExclusionUntilEndOfSupportOrBuilder() {
+      return exclusionUntilEndOfSupport_ == null
+          ? com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.getDefaultInstance()
+          : exclusionUntilEndOfSupport_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getExclusionUntilEndOfSupport());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getExclusionUntilEndOfSupport());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.NodePool.NodePoolMaintenancePolicy)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.NodePool.NodePoolMaintenancePolicy other =
+          (com.google.container.v1.NodePool.NodePoolMaintenancePolicy) obj;
+
+      if (hasExclusionUntilEndOfSupport() != other.hasExclusionUntilEndOfSupport()) return false;
+      if (hasExclusionUntilEndOfSupport()) {
+        if (!getExclusionUntilEndOfSupport().equals(other.getExclusionUntilEndOfSupport()))
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasExclusionUntilEndOfSupport()) {
+        hash = (37 * hash) + EXCLUSION_UNTIL_END_OF_SUPPORT_FIELD_NUMBER;
+        hash = (53 * hash) + getExclusionUntilEndOfSupport().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the maintenance policy for the node pool.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.NodePool.NodePoolMaintenancePolicy}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.NodePool.NodePoolMaintenancePolicy)
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_NodePoolMaintenancePolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_NodePoolMaintenancePolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicy.class,
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.NodePool.NodePoolMaintenancePolicy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetExclusionUntilEndOfSupportFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        exclusionUntilEndOfSupport_ = null;
+        if (exclusionUntilEndOfSupportBuilder_ != null) {
+          exclusionUntilEndOfSupportBuilder_.dispose();
+          exclusionUntilEndOfSupportBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_NodePoolMaintenancePolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.NodePoolMaintenancePolicy
+          getDefaultInstanceForType() {
+        return com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.NodePoolMaintenancePolicy build() {
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.NodePoolMaintenancePolicy buildPartial() {
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy result =
+            new com.google.container.v1.NodePool.NodePoolMaintenancePolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1.NodePool.NodePoolMaintenancePolicy result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.exclusionUntilEndOfSupport_ =
+              exclusionUntilEndOfSupportBuilder_ == null
+                  ? exclusionUntilEndOfSupport_
+                  : exclusionUntilEndOfSupportBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.NodePool.NodePoolMaintenancePolicy) {
+          return mergeFrom((com.google.container.v1.NodePool.NodePoolMaintenancePolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.NodePool.NodePoolMaintenancePolicy other) {
+        if (other
+            == com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance())
+          return this;
+        if (other.hasExclusionUntilEndOfSupport()) {
+          mergeExclusionUntilEndOfSupport(other.getExclusionUntilEndOfSupport());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetExclusionUntilEndOfSupportFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.container.v1.NodePool.ExclusionUntilEndOfSupport
+          exclusionUntilEndOfSupport_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupport,
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder,
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder>
+          exclusionUntilEndOfSupportBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the exclusionUntilEndOfSupport field is set.
+       */
+      public boolean hasExclusionUntilEndOfSupport() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The exclusionUntilEndOfSupport.
+       */
+      public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport
+          getExclusionUntilEndOfSupport() {
+        if (exclusionUntilEndOfSupportBuilder_ == null) {
+          return exclusionUntilEndOfSupport_ == null
+              ? com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.getDefaultInstance()
+              : exclusionUntilEndOfSupport_;
+        } else {
+          return exclusionUntilEndOfSupportBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExclusionUntilEndOfSupport(
+          com.google.container.v1.NodePool.ExclusionUntilEndOfSupport value) {
+        if (exclusionUntilEndOfSupportBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          exclusionUntilEndOfSupport_ = value;
+        } else {
+          exclusionUntilEndOfSupportBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExclusionUntilEndOfSupport(
+          com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder builderForValue) {
+        if (exclusionUntilEndOfSupportBuilder_ == null) {
+          exclusionUntilEndOfSupport_ = builderForValue.build();
+        } else {
+          exclusionUntilEndOfSupportBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeExclusionUntilEndOfSupport(
+          com.google.container.v1.NodePool.ExclusionUntilEndOfSupport value) {
+        if (exclusionUntilEndOfSupportBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && exclusionUntilEndOfSupport_ != null
+              && exclusionUntilEndOfSupport_
+                  != com.google.container.v1.NodePool.ExclusionUntilEndOfSupport
+                      .getDefaultInstance()) {
+            getExclusionUntilEndOfSupportBuilder().mergeFrom(value);
+          } else {
+            exclusionUntilEndOfSupport_ = value;
+          }
+        } else {
+          exclusionUntilEndOfSupportBuilder_.mergeFrom(value);
+        }
+        if (exclusionUntilEndOfSupport_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearExclusionUntilEndOfSupport() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        exclusionUntilEndOfSupport_ = null;
+        if (exclusionUntilEndOfSupportBuilder_ != null) {
+          exclusionUntilEndOfSupportBuilder_.dispose();
+          exclusionUntilEndOfSupportBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder
+          getExclusionUntilEndOfSupportBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetExclusionUntilEndOfSupportFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder
+          getExclusionUntilEndOfSupportOrBuilder() {
+        if (exclusionUntilEndOfSupportBuilder_ != null) {
+          return exclusionUntilEndOfSupportBuilder_.getMessageOrBuilder();
+        } else {
+          return exclusionUntilEndOfSupport_ == null
+              ? com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.getDefaultInstance()
+              : exclusionUntilEndOfSupport_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The exclusion until end of support for the node pool.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.NodePool.ExclusionUntilEndOfSupport exclusion_until_end_of_support = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupport,
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder,
+              com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder>
+          internalGetExclusionUntilEndOfSupportFieldBuilder() {
+        if (exclusionUntilEndOfSupportBuilder_ == null) {
+          exclusionUntilEndOfSupportBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.container.v1.NodePool.ExclusionUntilEndOfSupport,
+                  com.google.container.v1.NodePool.ExclusionUntilEndOfSupport.Builder,
+                  com.google.container.v1.NodePool.ExclusionUntilEndOfSupportOrBuilder>(
+                  getExclusionUntilEndOfSupport(), getParentForChildren(), isClean());
+          exclusionUntilEndOfSupport_ = null;
+        }
+        return exclusionUntilEndOfSupportBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool.NodePoolMaintenancePolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.NodePool.NodePoolMaintenancePolicy)
+    private static final com.google.container.v1.NodePool.NodePoolMaintenancePolicy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.NodePool.NodePoolMaintenancePolicy();
+    }
+
+    public static com.google.container.v1.NodePool.NodePoolMaintenancePolicy getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NodePoolMaintenancePolicy> PARSER =
+        new com.google.protobuf.AbstractParser<NodePoolMaintenancePolicy>() {
+          @java.lang.Override
+          public NodePoolMaintenancePolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NodePoolMaintenancePolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NodePoolMaintenancePolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicy getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -7258,7 +9928,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5025
+   *     google/container/v1/cluster_service.proto;l=5361
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -7289,7 +9959,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5025
+   *     google/container/v1/cluster_service.proto;l=5361
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -7952,6 +10622,66 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         : nodeDrainConfig_;
   }
 
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 118;
+  private com.google.container.v1.NodePool.NodePoolMaintenancePolicy maintenancePolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodePoolMaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder() {
+    return maintenancePolicy_ == null
+        ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8031,6 +10761,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(116, getNodeDrainConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(118, getMaintenancePolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -8120,6 +10853,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(116, getNodeDrainConfig());
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(118, getMaintenancePolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8189,6 +10925,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     if (hasNodeDrainConfig() != other.hasNodeDrainConfig()) return false;
     if (hasNodeDrainConfig()) {
       if (!getNodeDrainConfig().equals(other.getNodeDrainConfig())) return false;
+    }
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -8272,6 +11012,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     if (hasNodeDrainConfig()) {
       hash = (37 * hash) + NODE_DRAIN_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNodeDrainConfig().hashCode();
+    }
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -8430,6 +11174,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         internalGetQueuedProvisioningFieldBuilder();
         internalGetBestEffortProvisioningFieldBuilder();
         internalGetNodeDrainConfigFieldBuilder();
+        internalGetMaintenancePolicyFieldBuilder();
       }
     }
 
@@ -8508,6 +11253,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       if (nodeDrainConfigBuilder_ != null) {
         nodeDrainConfigBuilder_.dispose();
         nodeDrainConfigBuilder_ = null;
+      }
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
       }
       return this;
     }
@@ -8648,6 +11398,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
             nodeDrainConfigBuilder_ == null ? nodeDrainConfig_ : nodeDrainConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.maintenancePolicy_ =
+            maintenancePolicyBuilder_ == null
+                ? maintenancePolicy_
+                : maintenancePolicyBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -8776,6 +11533,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasNodeDrainConfig()) {
         mergeNodeDrainConfig(other.getNodeDrainConfig());
+      }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8955,6 +11715,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00200000;
                 break;
               } // case 930
+            case 946:
+              {
+                input.readMessage(
+                    internalGetMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 946
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10392,7 +13159,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5025
+     *     google/container/v1/cluster_service.proto;l=5361
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -10422,7 +13189,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5025
+     *     google/container/v1/cluster_service.proto;l=5361
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -10452,7 +13219,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5025
+     *     google/container/v1/cluster_service.proto;l=5361
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -10481,7 +13248,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5025
+     *     google/container/v1/cluster_service.proto;l=5361
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10506,7 +13273,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5025
+     *     google/container/v1/cluster_service.proto;l=5361
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -12875,6 +15642,225 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         nodeDrainConfig_ = null;
       }
       return nodeDrainConfigBuilder_;
+    }
+
+    private com.google.container.v1.NodePool.NodePoolMaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenancePolicy(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && maintenancePolicy_ != null
+            && maintenancePolicy_
+                != com.google.container.v1.NodePool.NodePoolMaintenancePolicy
+                    .getDefaultInstance()) {
+          getMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          maintenancePolicy_ = value;
+        }
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+      if (maintenancePolicy_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder
+        getMaintenancePolicyBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return internalGetMaintenancePolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder
+        getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder>
+        internalGetMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicy,
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder,
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool)

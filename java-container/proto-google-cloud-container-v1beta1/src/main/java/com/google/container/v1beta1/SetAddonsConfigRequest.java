@@ -91,7 +91,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4756
+   *     google/container/v1beta1/cluster_service.proto;l=5052
    * @return The projectId.
    */
   @java.lang.Override
@@ -120,7 +120,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4756
+   *     google/container/v1beta1/cluster_service.proto;l=5052
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -155,7 +155,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4762
+   *     google/container/v1beta1/cluster_service.proto;l=5058
    * @return The zone.
    */
   @java.lang.Override
@@ -185,7 +185,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4762
+   *     google/container/v1beta1/cluster_service.proto;l=5058
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -218,7 +218,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4766
+   *     google/container/v1beta1/cluster_service.proto;l=5062
    * @return The clusterId.
    */
   @java.lang.Override
@@ -246,7 +246,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4766
+   *     google/container/v1beta1/cluster_service.proto;l=5062
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -821,7 +821,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4756
+     *     google/container/v1beta1/cluster_service.proto;l=5052
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -849,7 +849,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4756
+     *     google/container/v1beta1/cluster_service.proto;l=5052
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -877,7 +877,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4756
+     *     google/container/v1beta1/cluster_service.proto;l=5052
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -904,7 +904,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4756
+     *     google/container/v1beta1/cluster_service.proto;l=5052
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -927,7 +927,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4756
+     *     google/container/v1beta1/cluster_service.proto;l=5052
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -958,7 +958,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4762
+     *     google/container/v1beta1/cluster_service.proto;l=5058
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -987,7 +987,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4762
+     *     google/container/v1beta1/cluster_service.proto;l=5058
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1016,7 +1016,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4762
+     *     google/container/v1beta1/cluster_service.proto;l=5058
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1044,7 +1044,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4762
+     *     google/container/v1beta1/cluster_service.proto;l=5058
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1068,7 +1068,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4762
+     *     google/container/v1beta1/cluster_service.proto;l=5058
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1097,7 +1097,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4766
+     *     google/container/v1beta1/cluster_service.proto;l=5062
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1124,7 +1124,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4766
+     *     google/container/v1beta1/cluster_service.proto;l=5062
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1151,7 +1151,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4766
+     *     google/container/v1beta1/cluster_service.proto;l=5062
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1177,7 +1177,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4766
+     *     google/container/v1beta1/cluster_service.proto;l=5062
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1199,7 +1199,7 @@ public final class SetAddonsConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetAddonsConfigRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4766
+     *     google/container/v1beta1/cluster_service.proto;l=5062
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

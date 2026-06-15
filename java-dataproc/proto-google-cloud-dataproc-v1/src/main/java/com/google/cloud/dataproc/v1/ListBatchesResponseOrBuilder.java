@@ -30,10 +30,12 @@ public interface ListBatchesResponseOrBuilder
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Batch> getBatchesList();
 
@@ -41,10 +43,12 @@ public interface ListBatchesResponseOrBuilder
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.Batch getBatches(int index);
 
@@ -52,10 +56,12 @@ public interface ListBatchesResponseOrBuilder
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getBatchesCount();
 
@@ -63,10 +69,12 @@ public interface ListBatchesResponseOrBuilder
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.BatchOrBuilder> getBatchesOrBuilderList();
 
@@ -74,10 +82,12 @@ public interface ListBatchesResponseOrBuilder
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataproc.v1.BatchOrBuilder getBatchesOrBuilder(int index);
 

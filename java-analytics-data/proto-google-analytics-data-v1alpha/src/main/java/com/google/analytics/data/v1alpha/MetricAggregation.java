@@ -215,7 +215,7 @@ public enum MetricAggregation implements com.google.protobuf.ProtocolMessageEnum
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(6);
+        .get(7);
   }
 
   private static final MetricAggregation[] VALUES = values();

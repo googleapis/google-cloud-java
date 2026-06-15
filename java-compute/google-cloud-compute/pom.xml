@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.102.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.104.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>jar</packaging>
   <name>Google Compute Engine</name>
   <description>Compute Engine delivers configurable virtual machines running in
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-compute-parent</artifactId>
-    <version>1.102.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+    <version>1.104.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute</site.installationModule>
@@ -22,10 +22,12 @@
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-compute-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -92,6 +94,49 @@
       <artifactId>google-cloud-core</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-monitoring</artifactId>
+      <version>3.95.0-SNAPSHOT</version> <!-- {x-version-update:google-cloud-monitoring:current} -->
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-exporter-otlp</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Logback dependencies are used to intercept logs for validation in tests, consistent with ITActionableErrorsLogging -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-trace</artifactId>
+      <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
 
     <!-- Need testing utility classes for generated REST clients tests -->
     <dependency>
@@ -106,5 +151,52 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
+		<!-- Needed for trace client -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-auth</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <environmentVariables>
+            <GOOGLE_SDK_JAVA_LOGGING>true</GOOGLE_SDK_JAVA_LOGGING>
+          </environmentVariables>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <environmentVariables>
+            <GOOGLE_SDK_JAVA_LOGGING>true</GOOGLE_SDK_JAVA_LOGGING>
+          </environmentVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>enable-integration-tests</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>2.0.16</version>
+          <scope>test</scope>
+        </dependency>
+			</dependencies>
+    </profile>
+  </profiles>
 </project>

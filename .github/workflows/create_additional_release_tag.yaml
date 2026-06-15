@@ -15,7 +15,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
     - name: Set up Git
       run: |
         git config --local user.email "action@github.com"
@@ -25,7 +25,7 @@ jobs:
     - name: Create additional tags
       shell: bash
       run: |
-        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax')
+        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable')
         for ARTIFACT_ID in "${ARTIFACT_IDS[@]}"; do
           VERSION=$(grep "^${ARTIFACT_ID}:" versions.txt | cut -d':' -f2 | tr -d '[:space:]')
           TAG_NAME="${ARTIFACT_ID}/v$VERSION"

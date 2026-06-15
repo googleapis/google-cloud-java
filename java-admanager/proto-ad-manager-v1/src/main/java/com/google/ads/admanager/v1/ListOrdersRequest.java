@@ -227,6 +227,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Expression to filter the response.
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
+   *
+   * &lt;b&gt;Filterable fields:&lt;/b&gt;
+   * &lt;ul style="list-style-type:none"&gt;
+   * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;/ul&gt;
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -253,6 +276,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * Optional. Expression to filter the response.
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
+   *
+   * &lt;b&gt;Filterable fields:&lt;/b&gt;
+   * &lt;ul style="list-style-type:none"&gt;
+   * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;/ul&gt;
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1104,6 +1150,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * &lt;b&gt;Filterable fields:&lt;/b&gt;
+     * &lt;ul style="list-style-type:none"&gt;
+     * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;/ul&gt;
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1129,6 +1198,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * &lt;b&gt;Filterable fields:&lt;/b&gt;
+     * &lt;ul style="list-style-type:none"&gt;
+     * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;/ul&gt;
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1154,6 +1246,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * &lt;b&gt;Filterable fields:&lt;/b&gt;
+     * &lt;ul style="list-style-type:none"&gt;
+     * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;/ul&gt;
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1178,6 +1293,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * &lt;b&gt;Filterable fields:&lt;/b&gt;
+     * &lt;ul style="list-style-type:none"&gt;
+     * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;/ul&gt;
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1198,6 +1336,29 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * Optional. Expression to filter the response.
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
+     *
+     * &lt;b&gt;Filterable fields:&lt;/b&gt;
+     * &lt;ul style="list-style-type:none"&gt;
+     * &lt;li&gt;&lt;code&gt;advertiser&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;appliedTeams&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;creator&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;programmatic&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;salesperson&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondarySalespeople&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+     * &lt;/ul&gt;
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

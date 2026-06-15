@@ -57,11 +57,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
+@Ignore("Flaky test, tracked in b/509979376")
 public class LocationAwareSharedBackendReplicaHarnessTest {
 
   private static final String PROJECT = "fake-project";

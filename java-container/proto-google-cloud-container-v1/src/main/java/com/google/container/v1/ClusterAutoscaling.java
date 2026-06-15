@@ -278,6 +278,16 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      * <code>NO_PERFORMANCE = 1;</code>
      */
     NO_PERFORMANCE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use default configuration.
+     * </pre>
+     *
+     * <code>NONE = 2;</code>
+     */
+    NONE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -313,6 +323,17 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
      */
     public static final int NO_PERFORMANCE_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * Use default configuration.
+     * </pre>
+     *
+     * <code>NONE = 2;</code>
+     */
+    public static final int NONE_VALUE = 2;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -341,6 +362,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
           return AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED;
         case 1:
           return NO_PERFORMANCE;
+        case 2:
+          return NONE;
         default:
           return null;
       }

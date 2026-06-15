@@ -56,7 +56,8 @@ public interface CountersOrBuilder
    *
    *
    * <pre>
-   * Output only. Number of objects failed.
+   * Output only. The number of objects that failed due to user errors or
+   * service errors.
    * </pre>
    *
    * <code>int64 failed_object_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -92,4 +93,104 @@ public interface CountersOrBuilder
    * @return The totalBytesFound.
    */
   long getTotalBytesFound();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts created. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the objectCustomContextsCreated field is set.
+   */
+  boolean hasObjectCustomContextsCreated();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts created. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The objectCustomContextsCreated.
+   */
+  long getObjectCustomContextsCreated();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts deleted. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the objectCustomContextsDeleted field is set.
+   */
+  boolean hasObjectCustomContextsDeleted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts deleted. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The objectCustomContextsDeleted.
+   */
+  long getObjectCustomContextsDeleted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts updated. This counter tracks
+   * custom contexts where the key already existed, but the payload was
+   * modified. This field is only populated for jobs with the
+   * UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the objectCustomContextsUpdated field is set.
+   */
+  boolean hasObjectCustomContextsUpdated();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts updated. This counter tracks
+   * custom contexts where the key already existed, but the payload was
+   * modified. This field is only populated for jobs with the
+   * UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The objectCustomContextsUpdated.
+   */
+  long getObjectCustomContextsUpdated();
 }

@@ -153,7 +153,11 @@ import javax.annotation.Generated;
 public class BatchControllerStubSettings extends StubSettings<BatchControllerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/dataproc")
+          .add("https://www.googleapis.com/auth/dataproc.read-only")
+          .build();
 
   private final UnaryCallSettings<CreateBatchRequest, Operation> createBatchSettings;
   private final OperationCallSettings<CreateBatchRequest, Batch, BatchOperationMetadata>

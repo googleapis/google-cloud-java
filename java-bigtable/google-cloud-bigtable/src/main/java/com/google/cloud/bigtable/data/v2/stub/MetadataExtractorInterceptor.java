@@ -1,0 +1,252 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.data.v2.stub;
+
+import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.bigtable.v2.ClusterInformation;
+import com.google.bigtable.v2.PeerInfo;
+import com.google.bigtable.v2.ResponseParams;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
+import com.google.common.base.Strings;
+import com.google.protobuf.InvalidProtocolBufferException;
+import io.grpc.Attributes;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ClientInterceptors;
+import io.grpc.ForwardingClientCall;
+import io.grpc.ForwardingClientCallListener;
+import io.grpc.Grpc;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import io.grpc.Status;
+import io.grpc.alts.AltsContextUtil;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+import java.time.Duration;
+import java.util.Base64;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.annotation.Nullable;
+
+@InternalApi
+public class MetadataExtractorInterceptor implements ClientInterceptor {
+  private final SidebandData sidebandData = new SidebandData();
+
+  public GrpcCallContext injectInto(GrpcCallContext ctx) {
+    // TODO: migrate to using .withTransportChannel
+    //  This will require a change on gax's side to expose the underlying ManagedChannel in
+    //  GrpcTransportChannel (its currently package private).
+    return ctx.withChannel(ClientInterceptors.intercept(ctx.getChannel(), this))
+        .withCallOptions(ctx.getCallOptions().withOption(SidebandData.KEY, sidebandData));
+  }
+
+  @Override
+  public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+      MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
+    return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+        channel.newCall(methodDescriptor, callOptions)) {
+      @Override
+      public void start(Listener<RespT> responseListener, Metadata headers) {
+        sidebandData.reset();
+
+        super.start(
+            new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
+                responseListener) {
+              @Override
+              public void onHeaders(Metadata headers) {
+                sidebandData.onResponseHeaders(headers, getAttributes());
+                super.onHeaders(headers);
+              }
+
+              @Override
+              public void onClose(Status status, Metadata trailers) {
+                sidebandData.onClose(status, trailers, getAttributes());
+                super.onClose(status, trailers);
+              }
+            },
+            headers);
+      }
+    };
+  }
+
+  public SidebandData getSidebandData() {
+    return sidebandData;
+  }
+
+  public static class SidebandData {
+    private static final CallOptions.Key<SidebandData> KEY =
+        CallOptions.Key.create("bigtable-sideband");
+
+    @Nullable
+    public static SidebandData from(CallOptions callOptions) {
+      return callOptions.getOption(KEY);
+    }
+
+    private static final Metadata.Key<String> SERVER_TIMING_HEADER_KEY =
+        Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER);
+    private static final Pattern SERVER_TIMING_HEADER_PATTERN =
+        Pattern.compile(".*dur=(?<dur>\\d+)");
+    private static final Metadata.Key<byte[]> LOCATION_METADATA_KEY =
+        Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
+    private static final Metadata.Key<String> PEER_INFO_KEY =
+        Metadata.Key.of("bigtable-peer-info", Metadata.ASCII_STRING_MARSHALLER);
+
+    @Nullable private volatile ClusterInformation clusterInfo;
+    @Nullable private volatile PeerInfo peerInfo;
+    @Nullable private volatile Duration gfeTiming;
+    @Nullable private volatile Util.IpProtocol ipProtocol;
+    private volatile boolean isAlts = false;
+
+    @Nullable
+    public ClusterInformation getClusterInfo() {
+      return clusterInfo;
+    }
+
+    @Nullable
+    public PeerInfo getPeerInfo() {
+      return peerInfo;
+    }
+
+    @Nullable
+    public Duration getGfeTiming() {
+      return gfeTiming;
+    }
+
+    @Nullable
+    public Util.IpProtocol getIpProtocol() {
+      return ipProtocol;
+    }
+
+    public boolean isAlts() {
+      return isAlts;
+    }
+
+    private void reset() {
+      clusterInfo = null;
+      peerInfo = null;
+      gfeTiming = null;
+      ipProtocol = Util.IpProtocol.UNKNOWN;
+    }
+
+    void onResponseHeaders(Metadata md, Attributes attributes) {
+      clusterInfo = extractClusterInfo(md);
+      gfeTiming = extractGfeLatency(md);
+      peerInfo = extractPeerInfo(md, gfeTiming, attributes);
+      ipProtocol = extractIpProtocol(attributes);
+    }
+
+    void onClose(Status status, Metadata trailers, Attributes attributes) {
+      isAlts = AltsContextUtil.check(attributes);
+      if (ipProtocol == null) {
+        ipProtocol = extractIpProtocol(attributes);
+      }
+      if (clusterInfo == null) {
+        clusterInfo = extractClusterInfo(trailers);
+      }
+    }
+
+    private static Util.IpProtocol extractIpProtocol(Attributes attributes) {
+      SocketAddress remoteAddr = attributes.get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR);
+      if (remoteAddr instanceof InetSocketAddress) {
+        InetSocketAddress inetAddr = (InetSocketAddress) remoteAddr;
+        if (inetAddr.getAddress() instanceof Inet4Address) {
+          return Util.IpProtocol.IPV4;
+        } else if (inetAddr.getAddress() instanceof Inet6Address) {
+          return Util.IpProtocol.IPV6;
+        }
+      }
+      return Util.IpProtocol.UNKNOWN;
+    }
+
+    @Nullable
+    private static Duration extractGfeLatency(Metadata metadata) {
+      String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
+      if (serverTiming == null) {
+        return null;
+      }
+      Matcher matcher = SERVER_TIMING_HEADER_PATTERN.matcher(serverTiming);
+      // this should always be true
+      if (matcher.find()) {
+        return Duration.ofMillis(Long.parseLong(matcher.group("dur")));
+      }
+      return null;
+    }
+
+    @Nullable
+    private static PeerInfo extractPeerInfo(
+        Metadata metadata, Duration gfeTiming, Attributes attributes) {
+      String encodedStr = metadata.get(PEER_INFO_KEY);
+      PeerInfo peerInfo = PeerInfo.newBuilder().build();
+      if (!Strings.isNullOrEmpty(encodedStr)) {
+        try {
+          byte[] decoded = Base64.getUrlDecoder().decode(encodedStr);
+          peerInfo = PeerInfo.parseFrom(decoded);
+        } catch (Exception e) {
+          throw new IllegalArgumentException(
+              "Failed to parse "
+                  + PEER_INFO_KEY.name()
+                  + " from the response header value: "
+                  + encodedStr);
+        }
+      }
+
+      // TODO: remove this once transport_type is being sent by the server
+      // This is a temporary workaround to detect directpath until its available from
+      // the server
+      if (peerInfo.getTransportType() == PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN) {
+        peerInfo =
+            peerInfo.toBuilder()
+                .setTransportType(inferTransportType(gfeTiming, attributes))
+                .build();
+      }
+
+      return peerInfo;
+    }
+
+    private static PeerInfo.TransportType inferTransportType(
+        Duration gfeTiming, Attributes attributes) {
+      boolean isAlts = AltsContextUtil.check(attributes);
+      if (isAlts) {
+        return PeerInfo.TransportType.TRANSPORT_TYPE_DIRECT_ACCESS;
+      } else if (gfeTiming != null) {
+        return PeerInfo.TransportType.TRANSPORT_TYPE_CLOUD_PATH;
+      }
+      return PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN;
+    }
+
+    @Nullable
+    private static ClusterInformation extractClusterInfo(Metadata metadata) {
+      byte[] encoded = metadata.get(LOCATION_METADATA_KEY);
+      if (encoded != null) {
+        try {
+          ResponseParams responseParams = ResponseParams.parseFrom(encoded);
+          return ClusterInformation.newBuilder()
+              .setZoneId(responseParams.getZoneId())
+              .setClusterId(responseParams.getClusterId())
+              .build();
+        } catch (InvalidProtocolBufferException e) {
+          // Fail silently and return null
+        }
+      }
+      return null;
+    }
+  }
+}

@@ -25,7 +25,7 @@ if [[ "$column_name" == "released" ]]; then
   column_index=2
 elif [[ "$column_name" == "current" ]]; then
   column_index=3
-elif "$column_name" != "current" ]]; then
+elif [[ "$column_name" != "current" ]]; then
   echo "Error: column_name must be either 'released' or 'current'"
   exit 1
 fi

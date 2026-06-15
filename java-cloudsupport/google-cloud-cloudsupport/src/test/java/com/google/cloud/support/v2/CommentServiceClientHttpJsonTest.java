@@ -180,7 +180,9 @@ public class CommentServiceClientHttpJsonTest {
   public void createCommentTest() throws Exception {
     Comment expectedResponse =
         Comment.newBuilder()
-            .setName("name3373707")
+            .setName(
+                CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCreator(Actor.newBuilder().build())
             .setBody("body3029410")
@@ -230,7 +232,9 @@ public class CommentServiceClientHttpJsonTest {
   public void createCommentTest2() throws Exception {
     Comment expectedResponse =
         Comment.newBuilder()
-            .setName("name3373707")
+            .setName(
+                CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCreator(Actor.newBuilder().build())
             .setBody("body3029410")
@@ -270,6 +274,108 @@ public class CommentServiceClientHttpJsonTest {
       String parent = "projects/project-2178/cases/case-2178";
       Comment comment = Comment.newBuilder().build();
       client.createComment(parent, comment);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCommentTest() throws Exception {
+    Comment expectedResponse =
+        Comment.newBuilder()
+            .setName(
+                CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator(Actor.newBuilder().build())
+            .setBody("body3029410")
+            .setPlainTextBody("plainTextBody-1301059495")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CommentName name =
+        CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]");
+
+    Comment actualResponse = client.getComment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCommentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CommentName name =
+          CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]");
+      client.getComment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCommentTest2() throws Exception {
+    Comment expectedResponse =
+        Comment.newBuilder()
+            .setName(
+                CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCreator(Actor.newBuilder().build())
+            .setBody("body3029410")
+            .setPlainTextBody("plainTextBody-1301059495")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name-8757/name-8757/cases/case-8757/comments/comment-8757";
+
+    Comment actualResponse = client.getComment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCommentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name-8757/name-8757/cases/case-8757/comments/comment-8757";
+      client.getComment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

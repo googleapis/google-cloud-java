@@ -785,13 +785,14 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
 
   public static final HttpJsonMemorystoreStub create(ClientContext clientContext)
       throws IOException {
-    return new HttpJsonMemorystoreStub(MemorystoreStubSettings.newBuilder().build(), clientContext);
+    return new HttpJsonMemorystoreStub(
+        MemorystoreStubSettings.newHttpJsonBuilder().build(), clientContext);
   }
 
   public static final HttpJsonMemorystoreStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonMemorystoreStub(
-        MemorystoreStubSettings.newBuilder().build(), clientContext, callableFactory);
+        MemorystoreStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
   }
 
   /**

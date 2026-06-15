@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tpu</artifactId>
-  <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+  <version>2.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud TPU</name>
   <description>Cloud TPU are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tpu-parent</artifactId>
-    <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+    <version>2.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-tpu</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-tpu-v2</artifactId>
@@ -53,6 +54,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-tpu-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -81,6 +83,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-tpu-v1</artifactId>
@@ -96,6 +99,7 @@
       <artifactId>grpc-google-cloud-tpu-v2alpha1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>

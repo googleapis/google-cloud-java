@@ -21,6 +21,7 @@ import static org.junit.Assert.assertThrows;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
@@ -115,7 +116,7 @@ public class DatastoreImplMetricsTest {
                     .build());
 
     if (TelemetryConstants.Transport.GRPC.equals(transport)) {
-      builder.setTransportOptions(GrpcTransportOptions.newBuilder().build());
+      builder.setTransportOptions((TransportOptions) GrpcTransportOptions.newBuilder().build());
     } else {
       builder.setTransportOptions(HttpTransportOptions.newBuilder().build());
     }

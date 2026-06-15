@@ -77,51 +77,6 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_ProjectIdAndProjectEndpoint() throws Exception {
-    IllegalArgumentException exception =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                new DatastoreOptions.Builder()
-                    .projectId(PROJECT_ID)
-                    .projectEndpoint(
-                        "http://localhost:1234/datastore/v1beta42/projects/project-id"));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains("Cannot set both project endpoint and project ID");
-  }
-
-  @Test
-  public void options_LocalHostAndProjectEndpoint() throws Exception {
-    IllegalArgumentException exception =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                new DatastoreOptions.Builder()
-                    .localHost("localhost:8080")
-                    .projectEndpoint(
-                        "http://localhost:1234/datastore/v1beta42/projects/project-id"));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains("Can set at most one of project endpoint, host, and local host");
-  }
-
-  @Test
-  public void options_HostAndProjectEndpoint() throws Exception {
-    IllegalArgumentException exception =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                new DatastoreOptions.Builder()
-                    .host("foo-datastore.googleapis.com")
-                    .projectEndpoint(
-                        "http://localhost:1234/datastore/v1beta42/projects/project-id"));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains("Can set at most one of project endpoint, host, and local host");
-  }
-
-  @Test
   public void options_HostAndLocalHost() throws Exception {
     IllegalArgumentException exception =
         assertThrows(
@@ -233,34 +188,6 @@ public class DatastoreClientTest {
         factory.create(new DatastoreOptions.Builder().projectId(PROJECT_ID).build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("https://datastore.googleapis.com/v1/projects/project-id");
-  }
-
-  @Test
-  public void create_ProjectEndpoint() {
-    Datastore datastore =
-        factory.create(
-            new DatastoreOptions.Builder()
-                .projectEndpoint("http://prom-qa/datastore/v1beta42/projects/project-id")
-                .build());
-    assertThat(datastore.remoteRpc.getUrl())
-        .isEqualTo("http://prom-qa/datastore/v1beta42/projects/project-id");
-  }
-
-  @Test
-  public void create_ProjectEndpointNoScheme() {
-    IllegalArgumentException exception =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                factory.create(
-                    new DatastoreOptions.Builder()
-                        .projectEndpoint("localhost:1234/datastore/v1beta42/projects/project-id")
-                        .build()));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains(
-            "Project endpoint \"localhost:1234/datastore/v1beta42/projects/project-id\" must"
-                + " include scheme.");
   }
 
   @Test

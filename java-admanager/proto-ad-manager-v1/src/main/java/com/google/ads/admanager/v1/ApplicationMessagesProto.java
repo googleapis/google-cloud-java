@@ -55,24 +55,54 @@ public final class ApplicationMessagesProto extends com.google.protobuf.Generate
     java.lang.String[] descriptorData = {
       "\n"
           + "2google/ads/admanager/v1/application_me"
-          + "ssages.proto\022\027google.ads.admanager.v1\032\037g"
-          + "oogle/api/field_behavior.proto\032\031google/api/resource.proto\"\313\001\n"
+          + "ssages.proto\022\027google.ads.admanager.v1\032/g"
+          + "oogle/ads/admanager/v1/application_enums"
+          + ".proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\202\010\n"
           + "\013Application\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
-          + "\014display_name\030\004 \001(\tB\003\340A\001H\000\210\001\001:x\352Au\n"
-          + "$admanager.googleapis.com/Application\0222networks/{network_code}/applica"
-          + "tions/{application}*\014applications2\013applicationB\017\n\r"
-          + "_display_nameB\314\001\n"
-          + "\033com.google.ads.admanager.v1B\030ApplicationMessagesProt"
-          + "oP\001Z@google.golang.org/genproto/googleap"
-          + "is/ads/admanager/v1;admanager\252\002\027Google.A"
-          + "ds.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V"
-          + "1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\014display_name\030\004 \001(\tB\003\340A\002H\000\210\001\001\022\036\n"
+          + "\014app_store_id\030\005 \001(\tB\003\340A\001H\001\210\001\001\022W\n\n"
+          + "app_stores\030\007 \003(\0162>.google.ads.a"
+          + "dmanager.v1.ApplicationStoreEnum.ApplicationStoreB\003\340A\001\022\032\n"
+          + "\010archived\030\010 \001(\010B\003\340A\003H\002\210\001\001\022(\n"
+          + "\026app_store_display_name\030\t \001(\tB\003\340A\003H\003\210\001\001\022\"\n"
+          + "\020application_code\030\n"
+          + " \001(\tB\003\340A\003H\004\210\001\001\022\033\n"
+          + "\tdeveloper\030\013 \001(\tB\003\340A\003H\005\210\001\001\022`\n"
+          + "\010platform\030\014 \001(\0162D.google.ads.admanager.v1.Applic"
+          + "ationPlatformEnum.ApplicationPlatformB\003\340A\003H\006\210\001\001\022\026\n"
+          + "\004free\030\r"
+          + " \001(\010B\003\340A\003H\007\210\001\001\022\036\n"
+          + "\014download_url\030\016 \001(\tB\003\340A\003H\010\210\001\001\022s\n"
+          + "\017approval_status\030\017 \001(\0162P.google.ads.admanager.v1.Appli"
+          + "cationApprovalStatusEnum.ApplicationApprovalStatusB\003\340A\003H\t\210\001\001\022s\n"
+          + "\027webview_claiming_status\030\020 \001(\0162H.google.ads.admanager.v1."
+          + "WebviewClaimingStatusEnum.WebviewClaimingStatusB\003\340A\003H\n"
+          + "\210\001\001:x\352Au\n"
+          + "$admanager.googleapis.com/Application\0222networks/{network_"
+          + "code}/applications/{application}*\014applications2\013applicationB\017\n\r"
+          + "_display_nameB\017\n\r"
+          + "_app_store_idB\013\n"
+          + "\t_archivedB\031\n"
+          + "\027_app_store_display_nameB\023\n"
+          + "\021_application_codeB\014\n\n"
+          + "_developerB\013\n"
+          + "\t_platformB\007\n"
+          + "\005_freeB\017\n\r"
+          + "_download_urlB\022\n"
+          + "\020_approval_statusB\032\n"
+          + "\030_webview_claiming_statusB\314\001\n"
+          + "\033com.google.ads.admanager.v1B\030ApplicationMessagesProtoP\001Z@goo"
+          + "gle.golang.org/genproto/googleapis/ads/a"
+          + "dmanager/v1;admanager\252\002\027Google.Ads.AdMan"
+          + "ager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goog"
+          + "le::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.ApplicationEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -82,9 +112,22 @@ public final class ApplicationMessagesProto extends com.google.protobuf.Generate
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Application_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName",
+              "Name",
+              "DisplayName",
+              "AppStoreId",
+              "AppStores",
+              "Archived",
+              "AppStoreDisplayName",
+              "ApplicationCode",
+              "Developer",
+              "Platform",
+              "Free",
+              "DownloadUrl",
+              "ApprovalStatus",
+              "WebviewClaimingStatus",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.ApplicationEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

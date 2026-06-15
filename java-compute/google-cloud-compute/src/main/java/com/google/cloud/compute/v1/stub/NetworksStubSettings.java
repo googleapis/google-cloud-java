@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
+import com.google.cloud.compute.v1.CancelRequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoute;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
@@ -160,6 +161,11 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
   private final UnaryCallSettings<AddPeeringNetworkRequest, Operation> addPeeringSettings;
   private final OperationCallSettings<AddPeeringNetworkRequest, Operation, Operation>
       addPeeringOperationSettings;
+  private final UnaryCallSettings<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringSettings;
+  private final OperationCallSettings<
+          CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationSettings;
   private final UnaryCallSettings<DeleteNetworkRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteNetworkRequest, Operation, Operation>
       deleteOperationSettings;
@@ -324,6 +330,18 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
   public OperationCallSettings<AddPeeringNetworkRequest, Operation, Operation>
       addPeeringOperationSettings() {
     return addPeeringOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelRequestRemovePeering. */
+  public UnaryCallSettings<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringSettings() {
+    return cancelRequestRemovePeeringSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelRequestRemovePeering. */
+  public OperationCallSettings<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationSettings() {
+    return cancelRequestRemovePeeringOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to delete. */
@@ -513,6 +531,10 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
 
     addPeeringSettings = settingsBuilder.addPeeringSettings().build();
     addPeeringOperationSettings = settingsBuilder.addPeeringOperationSettings().build();
+    cancelRequestRemovePeeringSettings =
+        settingsBuilder.cancelRequestRemovePeeringSettings().build();
+    cancelRequestRemovePeeringOperationSettings =
+        settingsBuilder.cancelRequestRemovePeeringOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -550,6 +572,11 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     private final UnaryCallSettings.Builder<AddPeeringNetworkRequest, Operation> addPeeringSettings;
     private final OperationCallSettings.Builder<AddPeeringNetworkRequest, Operation, Operation>
         addPeeringOperationSettings;
+    private final UnaryCallSettings.Builder<CancelRequestRemovePeeringNetworkRequest, Operation>
+        cancelRequestRemovePeeringSettings;
+    private final OperationCallSettings.Builder<
+            CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+        cancelRequestRemovePeeringOperationSettings;
     private final UnaryCallSettings.Builder<DeleteNetworkRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteNetworkRequest, Operation, Operation>
         deleteOperationSettings;
@@ -640,6 +667,8 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
 
       addPeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addPeeringOperationSettings = OperationCallSettings.newBuilder();
+      cancelRequestRemovePeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelRequestRemovePeeringOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -662,6 +691,7 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addPeeringSettings,
+              cancelRequestRemovePeeringSettings,
               deleteSettings,
               getSettings,
               getEffectiveFirewallsSettings,
@@ -681,6 +711,9 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
 
       addPeeringSettings = settings.addPeeringSettings.toBuilder();
       addPeeringOperationSettings = settings.addPeeringOperationSettings.toBuilder();
+      cancelRequestRemovePeeringSettings = settings.cancelRequestRemovePeeringSettings.toBuilder();
+      cancelRequestRemovePeeringOperationSettings =
+          settings.cancelRequestRemovePeeringOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -705,6 +738,7 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addPeeringSettings,
+              cancelRequestRemovePeeringSettings,
               deleteSettings,
               getSettings,
               getEffectiveFirewallsSettings,
@@ -733,6 +767,11 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .addPeeringSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .cancelRequestRemovePeeringSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -796,6 +835,31 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<AddPeeringNetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .cancelRequestRemovePeeringOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CancelRequestRemovePeeringNetworkRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -1012,6 +1076,19 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     public OperationCallSettings.Builder<AddPeeringNetworkRequest, Operation, Operation>
         addPeeringOperationSettings() {
       return addPeeringOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelRequestRemovePeering. */
+    public UnaryCallSettings.Builder<CancelRequestRemovePeeringNetworkRequest, Operation>
+        cancelRequestRemovePeeringSettings() {
+      return cancelRequestRemovePeeringSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelRequestRemovePeering. */
+    public OperationCallSettings.Builder<
+            CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+        cancelRequestRemovePeeringOperationSettings() {
+      return cancelRequestRemovePeeringOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */

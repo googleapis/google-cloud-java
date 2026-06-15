@@ -19,9 +19,19 @@ package com.google.ads.admanager.v1.stub;
 import static com.google.ads.admanager.v1.ApplicationServiceClient.ListApplicationsPagedResponse;
 
 import com.google.ads.admanager.v1.Application;
+import com.google.ads.admanager.v1.BatchArchiveApplicationsRequest;
+import com.google.ads.admanager.v1.BatchArchiveApplicationsResponse;
+import com.google.ads.admanager.v1.BatchCreateApplicationsRequest;
+import com.google.ads.admanager.v1.BatchCreateApplicationsResponse;
+import com.google.ads.admanager.v1.BatchUnarchiveApplicationsRequest;
+import com.google.ads.admanager.v1.BatchUnarchiveApplicationsResponse;
+import com.google.ads.admanager.v1.BatchUpdateApplicationsRequest;
+import com.google.ads.admanager.v1.BatchUpdateApplicationsResponse;
+import com.google.ads.admanager.v1.CreateApplicationRequest;
 import com.google.ads.admanager.v1.GetApplicationRequest;
 import com.google.ads.admanager.v1.ListApplicationsRequest;
 import com.google.ads.admanager.v1.ListApplicationsResponse;
+import com.google.ads.admanager.v1.UpdateApplicationRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -126,11 +136,257 @@ public class HttpJsonApplicationServiceStub extends ApplicationServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateApplicationRequest, Application>
+      createApplicationMethodDescriptor =
+          ApiMethodDescriptor.<CreateApplicationRequest, Application>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.ApplicationService/CreateApplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateApplicationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/applications",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateApplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateApplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("application", request.getApplication(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Application>newBuilder()
+                      .setDefaultInstance(Application.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ApplicationService/BatchCreateApplications")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateApplicationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/applications:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateApplicationsResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateApplicationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateApplicationRequest, Application>
+      updateApplicationMethodDescriptor =
+          ApiMethodDescriptor.<UpdateApplicationRequest, Application>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.ApplicationService/UpdateApplication")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateApplicationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{application.name=networks/*/applications/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateApplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "application.name", request.getApplication().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateApplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("application", request.getApplication(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Application>newBuilder()
+                      .setDefaultInstance(Application.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ApplicationService/BatchUpdateApplications")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateApplicationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/applications:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateApplicationsResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateApplicationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ApplicationService/BatchArchiveApplications")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchArchiveApplicationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/applications:batchArchive",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchArchiveApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchArchiveApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchArchiveApplicationsResponse>newBuilder()
+                      .setDefaultInstance(BatchArchiveApplicationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ApplicationService/BatchUnarchiveApplications")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUnarchiveApplicationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/applications:batchUnarchive",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUnarchiveApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUnarchiveApplicationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUnarchiveApplicationsResponse>newBuilder()
+                      .setDefaultInstance(BatchUnarchiveApplicationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetApplicationRequest, Application> getApplicationCallable;
   private final UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable;
   private final UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
       listApplicationsPagedCallable;
+  private final UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable;
+  private final UnaryCallable<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsCallable;
+  private final UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable;
+  private final UnaryCallable<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsCallable;
+  private final UnaryCallable<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsCallable;
+  private final UnaryCallable<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -199,6 +455,86 @@ public class HttpJsonApplicationServiceStub extends ApplicationServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CreateApplicationRequest, Application> createApplicationTransportSettings =
+        HttpJsonCallSettings.<CreateApplicationRequest, Application>newBuilder()
+            .setMethodDescriptor(createApplicationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+        batchCreateApplicationsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateApplicationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateApplicationRequest, Application> updateApplicationTransportSettings =
+        HttpJsonCallSettings.<UpdateApplicationRequest, Application>newBuilder()
+            .setMethodDescriptor(updateApplicationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "application.name", String.valueOf(request.getApplication().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+        batchUpdateApplicationsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateApplicationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+        batchArchiveApplicationsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>newBuilder()
+                .setMethodDescriptor(batchArchiveApplicationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+        batchUnarchiveApplicationsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>newBuilder()
+                .setMethodDescriptor(batchUnarchiveApplicationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getApplicationCallable =
         callableFactory.createUnaryCallable(
@@ -209,6 +545,36 @@ public class HttpJsonApplicationServiceStub extends ApplicationServiceStub {
     this.listApplicationsPagedCallable =
         callableFactory.createPagedCallable(
             listApplicationsTransportSettings, settings.listApplicationsSettings(), clientContext);
+    this.createApplicationCallable =
+        callableFactory.createUnaryCallable(
+            createApplicationTransportSettings,
+            settings.createApplicationSettings(),
+            clientContext);
+    this.batchCreateApplicationsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateApplicationsTransportSettings,
+            settings.batchCreateApplicationsSettings(),
+            clientContext);
+    this.updateApplicationCallable =
+        callableFactory.createUnaryCallable(
+            updateApplicationTransportSettings,
+            settings.updateApplicationSettings(),
+            clientContext);
+    this.batchUpdateApplicationsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateApplicationsTransportSettings,
+            settings.batchUpdateApplicationsSettings(),
+            clientContext);
+    this.batchArchiveApplicationsCallable =
+        callableFactory.createUnaryCallable(
+            batchArchiveApplicationsTransportSettings,
+            settings.batchArchiveApplicationsSettings(),
+            clientContext);
+    this.batchUnarchiveApplicationsCallable =
+        callableFactory.createUnaryCallable(
+            batchUnarchiveApplicationsTransportSettings,
+            settings.batchUnarchiveApplicationsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -219,6 +585,12 @@ public class HttpJsonApplicationServiceStub extends ApplicationServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getApplicationMethodDescriptor);
     methodDescriptors.add(listApplicationsMethodDescriptor);
+    methodDescriptors.add(createApplicationMethodDescriptor);
+    methodDescriptors.add(batchCreateApplicationsMethodDescriptor);
+    methodDescriptors.add(updateApplicationMethodDescriptor);
+    methodDescriptors.add(batchUpdateApplicationsMethodDescriptor);
+    methodDescriptors.add(batchArchiveApplicationsMethodDescriptor);
+    methodDescriptors.add(batchUnarchiveApplicationsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -237,6 +609,40 @@ public class HttpJsonApplicationServiceStub extends ApplicationServiceStub {
   public UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
       listApplicationsPagedCallable() {
     return listApplicationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
+    return createApplicationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsCallable() {
+    return batchCreateApplicationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
+    return updateApplicationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsCallable() {
+    return batchUpdateApplicationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsCallable() {
+    return batchArchiveApplicationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsCallable() {
+    return batchUnarchiveApplicationsCallable;
   }
 
   @Override

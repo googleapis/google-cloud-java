@@ -135,14 +135,19 @@ public final class Role extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `Role` ID.
+   * Output only. Deprecated: `Role` ID.
    * </pre>
    *
-   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+   *     google/ads/admanager/v1/role_messages.proto;l=44
    * @return Whether the roleId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRoleId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -151,14 +156,19 @@ public final class Role extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `Role` ID.
+   * Output only. Deprecated: `Role` ID.
    * </pre>
    *
-   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+   *     google/ads/admanager/v1/role_messages.proto;l=44
    * @return The roleId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getRoleId() {
     return roleId_;
   }
@@ -971,14 +981,19 @@ public final class Role extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Role` ID.
+     * Output only. Deprecated: `Role` ID.
      * </pre>
      *
-     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+     *     google/ads/admanager/v1/role_messages.proto;l=44
      * @return Whether the roleId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasRoleId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -987,14 +1002,19 @@ public final class Role extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Role` ID.
+     * Output only. Deprecated: `Role` ID.
      * </pre>
      *
-     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+     *     google/ads/admanager/v1/role_messages.proto;l=44
      * @return The roleId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getRoleId() {
       return roleId_;
     }
@@ -1003,14 +1023,19 @@ public final class Role extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Role` ID.
+     * Output only. Deprecated: `Role` ID.
      * </pre>
      *
-     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+     *     google/ads/admanager/v1/role_messages.proto;l=44
      * @param value The roleId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRoleId(long value) {
 
       roleId_ = value;
@@ -1023,13 +1048,18 @@ public final class Role extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Role` ID.
+     * Output only. Deprecated: `Role` ID.
      * </pre>
      *
-     * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+     *     google/ads/admanager/v1/role_messages.proto;l=44
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRoleId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       roleId_ = 0L;

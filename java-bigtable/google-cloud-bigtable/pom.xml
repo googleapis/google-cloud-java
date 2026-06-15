@@ -1,0 +1,854 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>google-cloud-bigtable</artifactId>
+  <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  <packaging>jar</packaging>
+  <name>Google Cloud Bigtable</name>
+  <url>https://github.com/googleapis/java-bigtable</url>
+  <description>
+    Java idiomatic client for Google Cloud Bigtable.
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-bigtable-parent</artifactId>
+    <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  </parent>
+  <properties>
+    <!-- The version that will be embedded in the published jar via maven-resources-plugin -->
+    <java-bigtable.version>2.80.0-SNAPSHOT</java-bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+
+    <site.installationModule>google-cloud-bigtable</site.installationModule>
+
+    <!-- Enable the ability to skip unit tests and only run integration tests,
+         while still respecting global skipTests override. -->
+    <skipTests>false</skipTests>
+    <skipUnitTests>${skipTests}</skipUnitTests>
+    <skipITs>${skipTests}</skipITs>
+    <!-- Configure test logging output. By default tests print info logs to stdout/err.
+     However for kokoro runs to enable better debugging of connection failures,
+     the `enable-verbose-grpc-logs` profile is enabled.
+     It will enable verbose logs and redirect output to a test specific file in the integration tests report directory.
+     These propeties should only be set by the `enable-verbose-grpc-logs` profile -->
+    <java-log-config>src/test/resources/logging.properties</java-log-config>
+    <!-- Use client defined default endpoints -->
+    <!-- Can be overriden on the commandline via `-Dbigtable.cfe-data-endpoint=bigtableadmin.googleapis.com:443` -->
+    <bigtable.cfe-data-endpoint/>
+    <bigtable.cfe-jwt-audience/>
+    <bigtable.cfe-admin-endpoint/>
+    <bigtable.directpath-data-endpoint/>
+    <bigtable.directpath-jwt-audience/>
+    <bigtable.directpath-admin-endpoint/>
+
+    <!-- This is used by bigtable-prod-batch-it profile to ensure that tests work on the batch endpoint.
+     Also, this property will be augmented by `internal-bigtable-prod-batch-it-prop-helper` profile -->
+    <bigtable.cfe-data-batch-endpoint>batch-bigtable.googleapis.com:443</bigtable.cfe-data-batch-endpoint>
+
+    <!-- These are needed to compile the protobuf used by Changestream merging acceptance test. -->
+    <test-protoc-grpc.version>1.76.3</test-protoc-grpc.version>
+    <test-protoc.version>4.33.2</test-protoc.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigtable-deps-bom</artifactId>
+        <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigtable-bom</artifactId>
+        <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!-- NOTE: Dependencies are organized into two groups, production and test.
+         Within a group, dependencies are sorted by (groupId, artifactId) -->
+    <!-- Production dependencies -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
+    <!-- {x-generated-proto-dependencies-start} -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
+    </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-common-protos</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-credentials</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-alts</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.checkerframework</groupId>
+      <artifactId>checker-qual</artifactId>
+    </dependency>
+    <!-- Runtime dependencies for credentials -->
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-gson</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-auth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-util</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-googleapis</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-rls</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-opentelemetry</artifactId>
+      <exclusions>
+        <!-- TODO: remove this once grpc is aligned with google-cloud-shared-dependencies -->
+        <!-- Exclude grpc otel version to avoid conflicts -->
+        <exclusion>
+          <groupId>io.opentelemetry</groupId>
+          <artifactId>opentelemetry-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.threeten</groupId>
+      <artifactId>threetenbp</artifactId>
+    </dependency>
+
+    <!-- metrics dependencies -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-metrics</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>detector-resources-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-monitoring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+    </dependency>
+
+    <!-- export custom metrics to cloud console -->
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>exporter-metrics</artifactId>
+    </dependency>
+
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <!-- Need testing utility classes for generated gRPC clients tests -->
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable-emulator</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-conformance-tests</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <!--
+        * The protos for bigtable are already included in the classpath
+          as the declared dependency above. Exclude it here.
+        * Exclude the firestore protos to prevent creating a dependency
+          diamond with any transitive dependencies.
+        * Exclude protobuf-java to prefer the version declared here
+          in the project.
+        -->
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth.extensions</groupId>
+      <artifactId>truth-proto-extension</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-impl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-testlib</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>enable-enforcer-rules</id>
+      <activation>
+        <property>
+          <!-- By default, Maven runs the enforcer rules. The shared release script
+            may pass profile name that doesn't exist in this project. Let's ignore
+            the enforcer rule (requireProfileIdsExist) in that case, leveraging
+            the presence of the performRelease property. -->
+          <name>!performRelease</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <version>3.6.2</version>
+            <executions>
+              <!-- Prevent users from mistyping a profile name -->
+              <execution>
+                <id>enforce-valid-profile</id>
+                <configuration>
+                  <rules>
+                    <requireProfileIdsExist/>
+                  </rules>
+                </configuration>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+              </execution>
+            </executions>
+            <!--
+              workaround for https://github.com/mojohaus/extra-enforcer-rules/issues/132
+              Remove when it's fixed upstream.
+            -->
+            <dependencies>
+              <dependency>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>extra-enforcer-rules</artifactId>
+                <version>1.8.0</version>
+              </dependency>
+              <dependency>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>maven-dependency-tree</artifactId>
+                <version>3.3.0</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>error-prone</id>
+      <activation>
+        <!-- errorprone requires >= jdk17 -->
+        <jdk>[17,)</jdk>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                <fork>true</fork>
+
+                <compilerArgs>
+                  <arg>-XDcompilePolicy=simple</arg>
+                  <arg>--should-stop=ifError=FLOW</arg>
+                  <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:MissingSummary:OFF -Xep:InlineMeSuggester:OFF -Xep:AutoValueImmutableFields:OFF -Xep:ObjectEqualsForPrimitives:OFF -Xep:JavaDurationGetSecondsToToSeconds:OFF</arg>
+                  <arg>${errorprone.javac.args}</arg>
+
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                  <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                  <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                  <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                </compilerArgs>
+                <annotationProcessorPaths combine.children="append">
+                  <path>
+                    <groupId>com.google.errorprone</groupId>
+                    <artifactId>error_prone_core</artifactId>
+                    <version>${errorprone.version}</version>
+                  </path>
+                </annotationProcessorPaths>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+    <profile>
+      <id>enable-verbose-grpc-logs</id>
+      <properties>
+        <bigtable.enable-grpc-logs>true</bigtable.enable-grpc-logs>
+        <java-log-config>src/test/resources/logging-verbose.properties</java-log-config>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <configuration>
+              <forkCount>1</forkCount>
+              <parallel>none</parallel>
+              <redirectTestOutputToFile>true</redirectTestOutputToFile>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>bigtable-emulator-it</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>emulator-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>emulator</bigtable.env>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/emulator-it</bigtable.grpc-log-dir>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/emulator-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-prod-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prod-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-it</bigtable.grpc-log-dir>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/prod-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- internal profile to provide a sensible default for bigtable.cfe-data-batch-endpoint based on
+    bigtable.cfe-data-endpoint -->
+    <profile>
+      <id>internal-bigtable-prod-batch-it-prop-helper</id>
+      <activation>
+        <property>
+          <name>bigtable.cfe-data-endpoint</name>
+        </property>
+      </activation>
+      <properties>
+        <bigtable.cfe-data-batch-endpoint>batch-${bigtable.cfe-data-endpoint}</bigtable.cfe-data-batch-endpoint>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>bigtable-prod-batch-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prod-batch-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-batch-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-batch-it</bigtable.grpc-log-dir>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-batch-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/prod-batch-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-directpath-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>directpath-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
+                    <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
+                  </systemPropertyVariables>
+                  <environmentVariables>
+                    <CBT_ENABLE_DIRECTPATH>true</CBT_ENABLE_DIRECTPATH>
+                  </environmentVariables>
+                  <includes>
+                    <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/directpath-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-cfe-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>cfe-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/cfe-it</bigtable.grpc-log-dir>
+                    <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-cfe-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/cfe-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+
+    <profile>
+      <id>bigtable-directpath-ipv4only-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>directpath-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
+                    <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>
+                  </systemPropertyVariables>
+                  <environmentVariables>
+                    <CBT_ENABLE_DIRECTPATH>true</CBT_ENABLE_DIRECTPATH>
+                  </environmentVariables>
+                  <includes>
+                    <!-- TODO(igorbernstein): Once the control plane is accessible via directpath, add admin tests -->
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-directpath-ipv4only-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/directpath-ipv4only-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.7.1</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <version>0.6.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-compile</goal>
+              <goal>test-compile-custom</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <protocArtifact>
+            com.google.protobuf:protoc:${test-protoc.version}:exe:${os.detected.classifier}
+          </protocArtifact>
+          <pluginId>grpc-java</pluginId>
+          <pluginArtifact>
+            io.grpc:protoc-gen-grpc-java:${test-protoc-grpc.version}:exe:${os.detected.classifier}
+          </pluginArtifact>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/generated-sources/java/</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <!--
+            grpc-auth is not directly used transitively, but is pulled to align with other grpc parts
+            opencensus-impl-core is brought in transitively through opencensus-impl
+            -->
+          <ignoredUsedUndeclaredDependencies>
+            <ignoredUsedUndeclaredDependency>io.opencensus:opencensus-impl-core</ignoredUsedUndeclaredDependency>
+          </ignoredUsedUndeclaredDependencies>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <!-- enabled by profiles -->
+          <skip>true</skip>
+
+          <!-- Enable concurrent test execution by default -->
+          <!-- Using processes instead of threads because BuiltinMetricsIT updates a global variable when
+           enabling metrics collection. It only works with cloud environment and will fail with permission
+           denied when running against emulators. Running in different processes make sure the state is
+           only set on the process for BuiltinMetricsIT test. -->
+          <forkCount>4</forkCount>
+          <reuseForks>false</reuseForks>
+
+          <!-- print full stacktraces by default -->
+          <trimStackTrace>false</trimStackTrace>
+          <systemPropertyVariables>
+            <java.util.logging.config.file>${java-log-config}</java.util.logging.config.file>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+
+        <configuration>
+          <!-- enable the ability to skip unit tests, while running integration tests -->
+          <skipTests>${skipUnitTests}</skipTests>
+
+          <!-- Enable concurrent test execution by default -->
+          <parallel>classes</parallel>
+          <threadCount>10</threadCount>
+
+          <trimStackTrace>false</trimStackTrace>
+
+          <systemPropertyVariables>
+            <java.util.logging.config.file>src/test/resources/logging.properties</java.util.logging.config.file>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

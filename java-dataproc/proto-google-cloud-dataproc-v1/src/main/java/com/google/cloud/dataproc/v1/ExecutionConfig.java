@@ -63,6 +63,18 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_dataproc_v1_ExecutionConfig_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 12:
+        return internalGetResourceManagerTags();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -403,7 +415,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The Cloud KMS key to use for encryption.
    * </pre>
    *
-   * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -427,7 +441,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The Cloud KMS key to use for encryption.
    * </pre>
    *
-   * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */
@@ -744,6 +760,145 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
         : authenticationConfig_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 12;
+
+  private static final class ResourceManagerTagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.SharedProto
+                .internal_static_google_cloud_dataproc_v1_ExecutionConfig_ResourceManagerTagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResourceManagerTags() {
+    if (resourceManagerTags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+    }
+    return resourceManagerTags_;
+  }
+
+  public int getResourceManagerTagsCount() {
+    return internalGetResourceManagerTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsResourceManagerTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetResourceManagerTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+    return getResourceManagerTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+    return internalGetResourceManagerTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Associates Resource Manager tags with the workload nodes.
+   * There is a max limit of 30 tags.
+   * Keys and values can be either in numeric format, such as
+   * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+   * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -785,6 +940,11 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getAuthenticationConfig());
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetResourceManagerTags(),
+        ResourceManagerTagsDefaultEntryHolder.defaultEntry,
+        12);
     getUnknownFields().writeTo(output);
   }
 
@@ -827,6 +987,16 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getAuthenticationConfig());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceManagerTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceManagerTags__ =
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, resourceManagerTags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -859,6 +1029,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
     if (hasAuthenticationConfig()) {
       if (!getAuthenticationConfig().equals(other.getAuthenticationConfig())) return false;
     }
+    if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
+      return false;
     if (!getNetworkCase().equals(other.getNetworkCase())) return false;
     switch (networkCase_) {
       case 4:
@@ -902,6 +1074,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
     if (hasAuthenticationConfig()) {
       hash = (37 * hash) + AUTHENTICATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAuthenticationConfig().hashCode();
+    }
+    if (!internalGetResourceManagerTags().getMap().isEmpty()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
     }
     switch (networkCase_) {
       case 4:
@@ -1034,6 +1210,28 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_dataproc_v1_ExecutionConfig_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 12:
+          return internalGetResourceManagerTags();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 12:
+          return internalGetMutableResourceManagerTags();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1085,6 +1283,7 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
         authenticationConfigBuilder_.dispose();
         authenticationConfigBuilder_ = null;
       }
+      internalGetMutableResourceManagerTags().clear();
       networkCase_ = 0;
       network_ = null;
       return this;
@@ -1153,6 +1352,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
                 : authenticationConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.resourceManagerTags_ = internalGetResourceManagerTags();
+        result.resourceManagerTags_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1207,6 +1410,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasAuthenticationConfig()) {
         mergeAuthenticationConfig(other.getAuthenticationConfig());
       }
+      internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
+      bitField0_ |= 0x00000200;
       switch (other.getNetworkCase()) {
         case NETWORK_URI:
           {
@@ -1311,6 +1516,19 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    resourceManagerTags__ =
+                        input.readMessage(
+                            ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableResourceManagerTags()
+                    .getMutableMap()
+                    .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1925,7 +2143,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Cloud KMS key to use for encryption.
      * </pre>
      *
-     * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The kmsKey.
      */
@@ -1948,7 +2168,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Cloud KMS key to use for encryption.
      * </pre>
      *
-     * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for kmsKey.
      */
@@ -1971,7 +2193,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Cloud KMS key to use for encryption.
      * </pre>
      *
-     * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The kmsKey to set.
      * @return This builder for chaining.
@@ -1993,7 +2217,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Cloud KMS key to use for encryption.
      * </pre>
      *
-     * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2011,7 +2237,9 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Cloud KMS key to use for encryption.
      * </pre>
      *
-     * <code>string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
@@ -3002,6 +3230,234 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessage
         authenticationConfig_ = null;
       }
       return authenticationConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourceManagerTags() {
+      if (resourceManagerTags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      return resourceManagerTags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResourceManagerTags() {
+      if (resourceManagerTags_ == null) {
+        resourceManagerTags_ =
+            com.google.protobuf.MapField.newMapField(
+                ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!resourceManagerTags_.isMutable()) {
+        resourceManagerTags_ = resourceManagerTags_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return resourceManagerTags_;
+    }
+
+    public int getResourceManagerTagsCount() {
+      return internalGetResourceManagerTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetResourceManagerTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getResourceManagerTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+      return getResourceManagerTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+      return internalGetResourceManagerTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getResourceManagerTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearResourceManagerTags() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableResourceManagerTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableResourceManagerTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putResourceManagerTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Associates Resource Manager tags with the workload nodes.
+     * There is a max limit of 30 tags.
+     * Keys and values can be either in numeric format, such as
+     * `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}`, or in namespaced
+     * format, such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllResourceManagerTags(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.ExecutionConfig)

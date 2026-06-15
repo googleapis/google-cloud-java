@@ -81,6 +81,50 @@ public final class CaseAttachmentServiceGrpc {
     return getListAttachmentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2.GetAttachmentRequest, com.google.cloud.support.v2.Attachment>
+      getGetAttachmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAttachment",
+      requestType = com.google.cloud.support.v2.GetAttachmentRequest.class,
+      responseType = com.google.cloud.support.v2.Attachment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2.GetAttachmentRequest, com.google.cloud.support.v2.Attachment>
+      getGetAttachmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.support.v2.GetAttachmentRequest,
+            com.google.cloud.support.v2.Attachment>
+        getGetAttachmentMethod;
+    if ((getGetAttachmentMethod = CaseAttachmentServiceGrpc.getGetAttachmentMethod) == null) {
+      synchronized (CaseAttachmentServiceGrpc.class) {
+        if ((getGetAttachmentMethod = CaseAttachmentServiceGrpc.getGetAttachmentMethod) == null) {
+          CaseAttachmentServiceGrpc.getGetAttachmentMethod =
+              getGetAttachmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.support.v2.GetAttachmentRequest,
+                          com.google.cloud.support.v2.Attachment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAttachment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2.GetAttachmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2.Attachment.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CaseAttachmentServiceMethodDescriptorSupplier("GetAttachment"))
+                      .build();
+        }
+      }
+    }
+    return getGetAttachmentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CaseAttachmentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CaseAttachmentServiceStub> factory =
@@ -158,6 +202,44 @@ public final class CaseAttachmentServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListAttachmentsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an attachment associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$attachment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB")
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    default void getAttachment(
+        com.google.cloud.support.v2.GetAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Attachment> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAttachmentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -211,6 +293,46 @@ public final class CaseAttachmentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an attachment associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$attachment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB")
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public void getAttachment(
+        com.google.cloud.support.v2.GetAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Attachment> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAttachmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -245,6 +367,43 @@ public final class CaseAttachmentServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an attachment associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$attachment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB")
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.cloud.support.v2.Attachment getAttachment(
+        com.google.cloud.support.v2.GetAttachmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -278,6 +437,43 @@ public final class CaseAttachmentServiceGrpc {
         com.google.cloud.support.v2.ListAttachmentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an attachment associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$attachment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB")
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.cloud.support.v2.Attachment getAttachment(
+        com.google.cloud.support.v2.GetAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
     }
   }
 
@@ -315,9 +511,48 @@ public final class CaseAttachmentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAttachmentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve an attachment associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * attachment="projects/some-project/cases/23598314/attachments/0684M00000P3h1fQAB"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$attachment"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .get(name="projects/some-project/cases/43595344/attachments/0684M00000P3h1fQAB")
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.support.v2.Attachment>
+        getAttachment(com.google.cloud.support.v2.GetAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAttachmentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ATTACHMENTS = 0;
+  private static final int METHODID_GET_ATTACHMENT = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -340,6 +575,12 @@ public final class CaseAttachmentServiceGrpc {
           serviceImpl.listAttachments(
               (com.google.cloud.support.v2.ListAttachmentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.support.v2.ListAttachmentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ATTACHMENT:
+          serviceImpl.getAttachment(
+              (com.google.cloud.support.v2.GetAttachmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.support.v2.Attachment>)
                   responseObserver);
           break;
         default:
@@ -367,6 +608,12 @@ public final class CaseAttachmentServiceGrpc {
                     com.google.cloud.support.v2.ListAttachmentsRequest,
                     com.google.cloud.support.v2.ListAttachmentsResponse>(
                     service, METHODID_LIST_ATTACHMENTS)))
+        .addMethod(
+            getGetAttachmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.support.v2.GetAttachmentRequest,
+                    com.google.cloud.support.v2.Attachment>(service, METHODID_GET_ATTACHMENT)))
         .build();
   }
 
@@ -419,6 +666,7 @@ public final class CaseAttachmentServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CaseAttachmentServiceFileDescriptorSupplier())
                       .addMethod(getListAttachmentsMethod())
+                      .addMethod(getGetAttachmentMethod())
                       .build();
         }
       }

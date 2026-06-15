@@ -108,7 +108,10 @@ import javax.annotation.Generated;
 public class ContentServiceStubSettings extends StubSettings<ContentServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/admanager")
+          .add("https://www.googleapis.com/auth/admanager.readonly")
+          .build();
 
   private final UnaryCallSettings<GetContentRequest, Content> getContentSettings;
   private final PagedCallSettings<ListContentRequest, ListContentResponse, ListContentPagedResponse>

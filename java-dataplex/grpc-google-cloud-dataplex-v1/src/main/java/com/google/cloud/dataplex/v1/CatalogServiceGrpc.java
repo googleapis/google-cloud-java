@@ -956,6 +956,48 @@ public final class CatalogServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ModifyEntryRequest, com.google.cloud.dataplex.v1.Entry>
+      getModifyEntryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModifyEntry",
+      requestType = com.google.cloud.dataplex.v1.ModifyEntryRequest.class,
+      responseType = com.google.cloud.dataplex.v1.Entry.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.ModifyEntryRequest, com.google.cloud.dataplex.v1.Entry>
+      getModifyEntryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.ModifyEntryRequest, com.google.cloud.dataplex.v1.Entry>
+        getModifyEntryMethod;
+    if ((getModifyEntryMethod = CatalogServiceGrpc.getModifyEntryMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getModifyEntryMethod = CatalogServiceGrpc.getModifyEntryMethod) == null) {
+          CatalogServiceGrpc.getModifyEntryMethod =
+              getModifyEntryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.ModifyEntryRequest,
+                          com.google.cloud.dataplex.v1.Entry>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ModifyEntry"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.ModifyEntryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.Entry.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier("ModifyEntry"))
+                      .build();
+        }
+      }
+    }
+    return getModifyEntryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataplex.v1.SearchEntriesRequest,
           com.google.cloud.dataplex.v1.SearchEntriesResponse>
       getSearchEntriesMethod;
@@ -2053,6 +2095,20 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    default void modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyEntryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches for Entries matching the given query and scope.
      * </pre>
      */
@@ -2668,6 +2724,22 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public void modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModifyEntryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches for Entries matching the given query and scope.
      * </pre>
      */
@@ -3242,6 +3314,19 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getModifyEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches for Entries matching the given query and scope.
      * </pre>
      */
@@ -3758,6 +3843,19 @@ public final class CatalogServiceGrpc {
         com.google.cloud.dataplex.v1.LookupEntryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLookupEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Entry modifyEntry(
+        com.google.cloud.dataplex.v1.ModifyEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyEntryMethod(), getCallOptions(), request);
     }
 
     /**
@@ -4281,6 +4379,19 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Modifies an entry using the permission on the source system.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dataplex.v1.Entry>
+        modifyEntry(com.google.cloud.dataplex.v1.ModifyEntryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModifyEntryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches for Entries matching the given query and scope.
      * </pre>
      */
@@ -4523,22 +4634,23 @@ public final class CatalogServiceGrpc {
   private static final int METHODID_LIST_ENTRIES = 18;
   private static final int METHODID_GET_ENTRY = 19;
   private static final int METHODID_LOOKUP_ENTRY = 20;
-  private static final int METHODID_SEARCH_ENTRIES = 21;
-  private static final int METHODID_CREATE_METADATA_JOB = 22;
-  private static final int METHODID_GET_METADATA_JOB = 23;
-  private static final int METHODID_LIST_METADATA_JOBS = 24;
-  private static final int METHODID_CANCEL_METADATA_JOB = 25;
-  private static final int METHODID_CREATE_ENTRY_LINK = 26;
-  private static final int METHODID_UPDATE_ENTRY_LINK = 27;
-  private static final int METHODID_DELETE_ENTRY_LINK = 28;
-  private static final int METHODID_LOOKUP_ENTRY_LINKS = 29;
-  private static final int METHODID_LOOKUP_CONTEXT = 30;
-  private static final int METHODID_GET_ENTRY_LINK = 31;
-  private static final int METHODID_CREATE_METADATA_FEED = 32;
-  private static final int METHODID_GET_METADATA_FEED = 33;
-  private static final int METHODID_LIST_METADATA_FEEDS = 34;
-  private static final int METHODID_DELETE_METADATA_FEED = 35;
-  private static final int METHODID_UPDATE_METADATA_FEED = 36;
+  private static final int METHODID_MODIFY_ENTRY = 21;
+  private static final int METHODID_SEARCH_ENTRIES = 22;
+  private static final int METHODID_CREATE_METADATA_JOB = 23;
+  private static final int METHODID_GET_METADATA_JOB = 24;
+  private static final int METHODID_LIST_METADATA_JOBS = 25;
+  private static final int METHODID_CANCEL_METADATA_JOB = 26;
+  private static final int METHODID_CREATE_ENTRY_LINK = 27;
+  private static final int METHODID_UPDATE_ENTRY_LINK = 28;
+  private static final int METHODID_DELETE_ENTRY_LINK = 29;
+  private static final int METHODID_LOOKUP_ENTRY_LINKS = 30;
+  private static final int METHODID_LOOKUP_CONTEXT = 31;
+  private static final int METHODID_GET_ENTRY_LINK = 32;
+  private static final int METHODID_CREATE_METADATA_FEED = 33;
+  private static final int METHODID_GET_METADATA_FEED = 34;
+  private static final int METHODID_LIST_METADATA_FEEDS = 35;
+  private static final int METHODID_DELETE_METADATA_FEED = 36;
+  private static final int METHODID_UPDATE_METADATA_FEED = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4667,6 +4779,11 @@ public final class CatalogServiceGrpc {
         case METHODID_LOOKUP_ENTRY:
           serviceImpl.lookupEntry(
               (com.google.cloud.dataplex.v1.LookupEntryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry>) responseObserver);
+          break;
+        case METHODID_MODIFY_ENTRY:
+          serviceImpl.modifyEntry(
+              (com.google.cloud.dataplex.v1.ModifyEntryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entry>) responseObserver);
           break;
         case METHODID_SEARCH_ENTRIES:
@@ -4909,6 +5026,12 @@ public final class CatalogServiceGrpc {
                     com.google.cloud.dataplex.v1.LookupEntryRequest,
                     com.google.cloud.dataplex.v1.Entry>(service, METHODID_LOOKUP_ENTRY)))
         .addMethod(
+            getModifyEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ModifyEntryRequest,
+                    com.google.cloud.dataplex.v1.Entry>(service, METHODID_MODIFY_ENTRY)))
+        .addMethod(
             getSearchEntriesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -5082,6 +5205,7 @@ public final class CatalogServiceGrpc {
                       .addMethod(getListEntriesMethod())
                       .addMethod(getGetEntryMethod())
                       .addMethod(getLookupEntryMethod())
+                      .addMethod(getModifyEntryMethod())
                       .addMethod(getSearchEntriesMethod())
                       .addMethod(getCreateMetadataJobMethod())
                       .addMethod(getGetMetadataJobMethod())

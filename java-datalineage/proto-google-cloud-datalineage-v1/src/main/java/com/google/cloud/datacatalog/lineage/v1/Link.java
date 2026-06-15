@@ -57,6 +57,7 @@ public final class Link extends com.google.protobuf.GeneratedMessage
 
   private Link() {
     name_ = "";
+    dependencyInfo_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +73,593 @@ public final class Link extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.datacatalog.lineage.v1.Link.class,
             com.google.cloud.datacatalog.lineage.v1.Link.Builder.class);
+  }
+
+  public interface DependencyInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.lineage.v1.Link.DependencyInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of dependency.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for dependencyType.
+     */
+    int getDependencyTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of dependency.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+     *
+     * @return The dependencyType.
+     */
+    com.google.cloud.datacatalog.lineage.v1.DependencyType getDependencyType();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dependency info describes how one entity depends on another.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datacatalog.lineage.v1.Link.DependencyInfo}
+   */
+  public static final class DependencyInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.Link.DependencyInfo)
+      DependencyInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DependencyInfo");
+    }
+
+    // Use DependencyInfo.newBuilder() to construct.
+    private DependencyInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DependencyInfo() {
+      dependencyType_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datacatalog.lineage.v1.LineageProto
+          .internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datacatalog.lineage.v1.LineageProto
+          .internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.class,
+              com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder.class);
+    }
+
+    public static final int DEPENDENCY_TYPE_FIELD_NUMBER = 1;
+    private int dependencyType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of dependency.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for dependencyType.
+     */
+    @java.lang.Override
+    public int getDependencyTypeValue() {
+      return dependencyType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of dependency.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+     *
+     * @return The dependencyType.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.lineage.v1.DependencyType getDependencyType() {
+      com.google.cloud.datacatalog.lineage.v1.DependencyType result =
+          com.google.cloud.datacatalog.lineage.v1.DependencyType.forNumber(dependencyType_);
+      return result == null
+          ? com.google.cloud.datacatalog.lineage.v1.DependencyType.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (dependencyType_
+          != com.google.cloud.datacatalog.lineage.v1.DependencyType.DEPENDENCY_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, dependencyType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dependencyType_
+          != com.google.cloud.datacatalog.lineage.v1.DependencyType.DEPENDENCY_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, dependencyType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo other =
+          (com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo) obj;
+
+      if (dependencyType_ != other.dependencyType_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DEPENDENCY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + dependencyType_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dependency info describes how one entity depends on another.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datacatalog.lineage.v1.Link.DependencyInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.lineage.v1.Link.DependencyInfo)
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datacatalog.lineage.v1.LineageProto
+            .internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datacatalog.lineage.v1.LineageProto
+            .internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.class,
+                com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dependencyType_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datacatalog.lineage.v1.LineageProto
+            .internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo build() {
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo buildPartial() {
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo result =
+            new com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dependencyType_ = dependencyType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo) {
+          return mergeFrom((com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo other) {
+        if (other
+            == com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.getDefaultInstance())
+          return this;
+        if (other.dependencyType_ != 0) {
+          setDependencyTypeValue(other.getDependencyTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  dependencyType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dependencyType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of dependency.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+       *
+       * @return The enum numeric value on the wire for dependencyType.
+       */
+      @java.lang.Override
+      public int getDependencyTypeValue() {
+        return dependencyType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of dependency.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for dependencyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDependencyTypeValue(int value) {
+        dependencyType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of dependency.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+       *
+       * @return The dependencyType.
+       */
+      @java.lang.Override
+      public com.google.cloud.datacatalog.lineage.v1.DependencyType getDependencyType() {
+        com.google.cloud.datacatalog.lineage.v1.DependencyType result =
+            com.google.cloud.datacatalog.lineage.v1.DependencyType.forNumber(dependencyType_);
+        return result == null
+            ? com.google.cloud.datacatalog.lineage.v1.DependencyType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of dependency.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+       *
+       * @param value The dependencyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDependencyType(
+          com.google.cloud.datacatalog.lineage.v1.DependencyType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dependencyType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of dependency.
+       * </pre>
+       *
+       * <code>.google.cloud.datacatalog.lineage.v1.DependencyType dependency_type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDependencyType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dependencyType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.lineage.v1.Link.DependencyInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.lineage.v1.Link.DependencyInfo)
+    private static final com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo();
+    }
+
+    public static com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DependencyInfo> PARSER =
+        new com.google.protobuf.AbstractParser<DependencyInfo>() {
+          @java.lang.Override
+          public DependencyInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DependencyInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DependencyInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -338,6 +926,101 @@ public final class Link extends com.google.protobuf.GeneratedMessage
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
+  public static final int DEPENDENCY_INFO_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>
+      dependencyInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>
+      getDependencyInfoList() {
+    return dependencyInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder>
+      getDependencyInfoOrBuilderList() {
+    return dependencyInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDependencyInfoCount() {
+    return dependencyInfo_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo getDependencyInfo(int index) {
+    return dependencyInfo_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder
+      getDependencyInfoOrBuilder(int index) {
+    return dependencyInfo_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -367,6 +1050,9 @@ public final class Link extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(5, getEndTime());
     }
+    for (int i = 0; i < dependencyInfo_.size(); i++) {
+      output.writeMessage(6, dependencyInfo_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -390,6 +1076,9 @@ public final class Link extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndTime());
+    }
+    for (int i = 0; i < dependencyInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, dependencyInfo_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -424,6 +1113,7 @@ public final class Link extends com.google.protobuf.GeneratedMessage
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (!getDependencyInfoList().equals(other.getDependencyInfoList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -452,6 +1142,10 @@ public final class Link extends com.google.protobuf.GeneratedMessage
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
+    }
+    if (getDependencyInfoCount() > 0) {
+      hash = (37 * hash) + DEPENDENCY_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getDependencyInfoList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -602,6 +1296,7 @@ public final class Link extends com.google.protobuf.GeneratedMessage
         internalGetTargetFieldBuilder();
         internalGetStartTimeFieldBuilder();
         internalGetEndTimeFieldBuilder();
+        internalGetDependencyInfoFieldBuilder();
       }
     }
 
@@ -630,6 +1325,13 @@ public final class Link extends com.google.protobuf.GeneratedMessage
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      if (dependencyInfoBuilder_ == null) {
+        dependencyInfo_ = java.util.Collections.emptyList();
+      } else {
+        dependencyInfo_ = null;
+        dependencyInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -657,11 +1359,24 @@ public final class Link extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.datacatalog.lineage.v1.Link buildPartial() {
       com.google.cloud.datacatalog.lineage.v1.Link result =
           new com.google.cloud.datacatalog.lineage.v1.Link(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.datacatalog.lineage.v1.Link result) {
+      if (dependencyInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          dependencyInfo_ = java.util.Collections.unmodifiableList(dependencyInfo_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.dependencyInfo_ = dependencyInfo_;
+      } else {
+        result.dependencyInfo_ = dependencyInfoBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.datacatalog.lineage.v1.Link result) {
@@ -717,6 +1432,33 @@ public final class Link extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (dependencyInfoBuilder_ == null) {
+        if (!other.dependencyInfo_.isEmpty()) {
+          if (dependencyInfo_.isEmpty()) {
+            dependencyInfo_ = other.dependencyInfo_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureDependencyInfoIsMutable();
+            dependencyInfo_.addAll(other.dependencyInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dependencyInfo_.isEmpty()) {
+          if (dependencyInfoBuilder_.isEmpty()) {
+            dependencyInfoBuilder_.dispose();
+            dependencyInfoBuilder_ = null;
+            dependencyInfo_ = other.dependencyInfo_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            dependencyInfoBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDependencyInfoFieldBuilder()
+                    : null;
+          } else {
+            dependencyInfoBuilder_.addAllMessages(other.dependencyInfo_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -775,6 +1517,20 @@ public final class Link extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo m =
+                    input.readMessage(
+                        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.parser(),
+                        extensionRegistry);
+                if (dependencyInfoBuilder_ == null) {
+                  ensureDependencyInfoIsMutable();
+                  dependencyInfo_.add(m);
+                } else {
+                  dependencyInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1690,6 +2446,448 @@ public final class Link extends com.google.protobuf.GeneratedMessage
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>
+        dependencyInfo_ = java.util.Collections.emptyList();
+
+    private void ensureDependencyInfoIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        dependencyInfo_ =
+            new java.util.ArrayList<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>(
+                dependencyInfo_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo,
+            com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder,
+            com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder>
+        dependencyInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>
+        getDependencyInfoList() {
+      if (dependencyInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dependencyInfo_);
+      } else {
+        return dependencyInfoBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDependencyInfoCount() {
+      if (dependencyInfoBuilder_ == null) {
+        return dependencyInfo_.size();
+      } else {
+        return dependencyInfoBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo getDependencyInfo(
+        int index) {
+      if (dependencyInfoBuilder_ == null) {
+        return dependencyInfo_.get(index);
+      } else {
+        return dependencyInfoBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDependencyInfo(
+        int index, com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo value) {
+      if (dependencyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.set(index, value);
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDependencyInfo(
+        int index,
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder builderForValue) {
+      if (dependencyInfoBuilder_ == null) {
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencyInfo(
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo value) {
+      if (dependencyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.add(value);
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencyInfo(
+        int index, com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo value) {
+      if (dependencyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.add(index, value);
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencyInfo(
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder builderForValue) {
+      if (dependencyInfoBuilder_ == null) {
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDependencyInfo(
+        int index,
+        com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder builderForValue) {
+      if (dependencyInfoBuilder_ == null) {
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDependencyInfo(
+        java.lang.Iterable<? extends com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>
+            values) {
+      if (dependencyInfoBuilder_ == null) {
+        ensureDependencyInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependencyInfo_);
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDependencyInfo() {
+      if (dependencyInfoBuilder_ == null) {
+        dependencyInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDependencyInfo(int index) {
+      if (dependencyInfoBuilder_ == null) {
+        ensureDependencyInfoIsMutable();
+        dependencyInfo_.remove(index);
+        onChanged();
+      } else {
+        dependencyInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder
+        getDependencyInfoBuilder(int index) {
+      return internalGetDependencyInfoFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder
+        getDependencyInfoOrBuilder(int index) {
+      if (dependencyInfoBuilder_ == null) {
+        return dependencyInfo_.get(index);
+      } else {
+        return dependencyInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder>
+        getDependencyInfoOrBuilderList() {
+      if (dependencyInfoBuilder_ != null) {
+        return dependencyInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dependencyInfo_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder
+        addDependencyInfoBuilder() {
+      return internalGetDependencyInfoFieldBuilder()
+          .addBuilder(
+              com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder
+        addDependencyInfoBuilder(int index) {
+      return internalGetDependencyInfoFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dependency info of the link (applies only to column level
+     * links).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder>
+        getDependencyInfoBuilderList() {
+      return internalGetDependencyInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo,
+            com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder,
+            com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder>
+        internalGetDependencyInfoFieldBuilder() {
+      if (dependencyInfoBuilder_ == null) {
+        dependencyInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo,
+                com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo.Builder,
+                com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder>(
+                dependencyInfo_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        dependencyInfo_ = null;
+      }
+      return dependencyInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.lineage.v1.Link)

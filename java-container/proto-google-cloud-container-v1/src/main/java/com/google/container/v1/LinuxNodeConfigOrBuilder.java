@@ -44,6 +44,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -59,6 +62,8 @@ public interface LinuxNodeConfigOrBuilder
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -111,6 +116,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -126,6 +134,8 @@ public interface LinuxNodeConfigOrBuilder
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -182,6 +192,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -197,6 +210,8 @@ public interface LinuxNodeConfigOrBuilder
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -249,6 +264,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -264,6 +282,8 @@ public interface LinuxNodeConfigOrBuilder
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -320,6 +340,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -335,6 +358,8 @@ public interface LinuxNodeConfigOrBuilder
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -527,6 +552,52 @@ public interface LinuxNodeConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customNodeInit field is set.
+   */
+  boolean hasCustomNodeInit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customNodeInit.
+   */
+  com.google.container.v1.LinuxNodeConfig.CustomNodeInit getCustomNodeInit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.CustomNodeInitOrBuilder getCustomNodeInitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Enables and configures swap space on nodes.
    * If omitted, swap is disabled.
    * </pre>
@@ -618,4 +689,48 @@ public interface LinuxNodeConfigOrBuilder
    */
   com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder
       getNodeKernelModuleLoadingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accurateTimeConfig field is set.
+   */
+  boolean hasAccurateTimeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accurateTimeConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig.AccurateTimeConfig getAccurateTimeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.AccurateTimeConfigOrBuilder
+      getAccurateTimeConfigOrBuilder();
 }

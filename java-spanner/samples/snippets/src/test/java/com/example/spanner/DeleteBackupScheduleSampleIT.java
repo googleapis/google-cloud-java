@@ -41,8 +41,17 @@ public class DeleteBackupScheduleSampleIT extends SampleTestBaseV2 {
                 CreateFullBackupScheduleSample.createFullBackupSchedule(
                     projectId, instanceId, databaseId, backupScheduleId);
               } finally {
-                DeleteBackupScheduleSample.deleteBackupSchedule(
-                    projectId, instanceId, databaseId, backupScheduleId);
+                try {
+                  DeleteBackupScheduleSample.deleteBackupSchedule(
+                      projectId, instanceId, databaseId, backupScheduleId);
+                } catch (Exception e) {
+                  System.out.println(
+                      "Failed to delete backup schedule "
+                          + backupScheduleId
+                          + " due to "
+                          + e.getMessage()
+                          + ", skipping...");
+                }
               }
             });
     assertThat(out).contains(String.format("Deleted backup schedule: %s", backupScheduleName));

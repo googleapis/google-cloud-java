@@ -127,6 +127,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CancelAsyncQueryReasoningEngine</td>
+ *      <td><p> Cancels an AsyncQueryReasoningEngine operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelAsyncQueryReasoningEngine(CancelAsyncQueryReasoningEngineRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelAsyncQueryReasoningEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -523,6 +537,76 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
   public final UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
       asyncQueryReasoningEngineCallable() {
     return stub.asyncQueryReasoningEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AsyncQueryReasoningEngine operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   CancelAsyncQueryReasoningEngineRequest request =
+   *       CancelAsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setOperationName("operationName91797650")
+   *           .build();
+   *   CancelAsyncQueryReasoningEngineResponse response =
+   *       reasoningEngineExecutionServiceClient.cancelAsyncQueryReasoningEngine(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelAsyncQueryReasoningEngineResponse cancelAsyncQueryReasoningEngine(
+      CancelAsyncQueryReasoningEngineRequest request) {
+    return cancelAsyncQueryReasoningEngineCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AsyncQueryReasoningEngine operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   CancelAsyncQueryReasoningEngineRequest request =
+   *       CancelAsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setOperationName("operationName91797650")
+   *           .build();
+   *   ApiFuture<CancelAsyncQueryReasoningEngineResponse> future =
+   *       reasoningEngineExecutionServiceClient
+   *           .cancelAsyncQueryReasoningEngineCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CancelAsyncQueryReasoningEngineResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    return stub.cancelAsyncQueryReasoningEngineCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

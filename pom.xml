@@ -15,6 +15,7 @@
     <module>google-cloud-jar-parent</module>
     <module>google-cloud-pom-parent</module>
     <module>google-auth-library-java</module>
+    <module>grpc-gcp-java</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
@@ -39,6 +40,7 @@
     <module>java-assured-workloads</module>
     <module>java-auditmanager</module>
     <module>java-automl</module>
+    <module>java-backstory</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
     <module>java-batch</module>
@@ -50,12 +52,14 @@
     <module>java-biglake</module>
     <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
+    <module>java-bigquery-jdbc</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
     <module>java-bigquerystorage</module>
+    <module>java-bigtable</module>
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
@@ -96,6 +100,7 @@
     <module>java-datastream</module>
     <module>java-deploy</module>
     <module>java-developerconnect</module>
+    <module>java-developerknowledge</module>
     <module>java-devicestreaming</module>
     <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>
@@ -114,6 +119,7 @@
     <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
     <module>java-financialservices</module>
+    <module>java-firestore</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
     <module>java-geminidataanalytics</module>
@@ -124,6 +130,7 @@
     <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
+    <module>java-health</module>
     <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>
@@ -189,6 +196,7 @@
     <module>java-privilegedaccessmanager</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
+    <module>java-pubsub</module>
     <module>java-rapidmigrationassessment</module>
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>

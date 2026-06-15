@@ -205,4 +205,77 @@ public interface LinkOrBuilder
    * <code>.google.protobuf.Timestamp end_time = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo>
+      getDependencyInfoList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfo getDependencyInfo(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDependencyInfoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder>
+      getDependencyInfoOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dependency info of the link (applies only to column level
+   * links).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datacatalog.lineage.v1.Link.DependencyInfo dependency_info = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoOrBuilder getDependencyInfoOrBuilder(
+      int index);
 }

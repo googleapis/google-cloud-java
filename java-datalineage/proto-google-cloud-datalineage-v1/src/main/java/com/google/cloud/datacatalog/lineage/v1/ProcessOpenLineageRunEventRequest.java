@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEvent].
+ * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.Lineage.ProcessOpenLineageRunEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest}
@@ -194,12 +194,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * A unique identifier for this request. Restricted to 36 ASCII characters.
-   * A random UUID is recommended. This request is idempotent only if a
-   * `request_id` is provided.
+   * Optional. A unique identifier for this request. Restricted to 36 ASCII
+   * characters. A random UUID is recommended. This request is idempotent only
+   * if a `request_id` is provided.
    * </pre>
    *
-   * <code>string request_id = 3;</code>
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The requestId.
    */
@@ -220,12 +222,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * A unique identifier for this request. Restricted to 36 ASCII characters.
-   * A random UUID is recommended. This request is idempotent only if a
-   * `request_id` is provided.
+   * Optional. A unique identifier for this request. Restricted to 36 ASCII
+   * characters. A random UUID is recommended. This request is idempotent only
+   * if a `request_id` is provided.
    * </pre>
    *
-   * <code>string request_id = 3;</code>
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for requestId.
    */
@@ -433,7 +437,7 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
    *
    * <pre>
    * Request message for
-   * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEvent].
+   * [ProcessOpenLineageRunEvent][google.cloud.datacatalog.lineage.v1.Lineage.ProcessOpenLineageRunEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest}
@@ -970,12 +974,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A unique identifier for this request. Restricted to 36 ASCII characters.
-     * A random UUID is recommended. This request is idempotent only if a
-     * `request_id` is provided.
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The requestId.
      */
@@ -995,12 +1001,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A unique identifier for this request. Restricted to 36 ASCII characters.
-     * A random UUID is recommended. This request is idempotent only if a
-     * `request_id` is provided.
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for requestId.
      */
@@ -1020,12 +1028,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A unique identifier for this request. Restricted to 36 ASCII characters.
-     * A random UUID is recommended. This request is idempotent only if a
-     * `request_id` is provided.
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1044,12 +1054,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A unique identifier for this request. Restricted to 36 ASCII characters.
-     * A random UUID is recommended. This request is idempotent only if a
-     * `request_id` is provided.
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1064,12 +1076,14 @@ public final class ProcessOpenLineageRunEventRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A unique identifier for this request. Restricted to 36 ASCII characters.
-     * A random UUID is recommended. This request is idempotent only if a
-     * `request_id` is provided.
+     * Optional. A unique identifier for this request. Restricted to 36 ASCII
+     * characters. A random UUID is recommended. This request is idempotent only
+     * if a `request_id` is provided.
      * </pre>
      *
-     * <code>string request_id = 3;</code>
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.

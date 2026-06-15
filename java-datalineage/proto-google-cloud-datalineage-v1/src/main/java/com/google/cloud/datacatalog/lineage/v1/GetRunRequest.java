@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [GetRun][google.cloud.datacatalog.lineage.v1.GetRun].
+ * [GetRun][google.cloud.datacatalog.lineage.v1.Lineage.GetRun].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.GetRunRequest}
@@ -294,7 +294,7 @@ public final class GetRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Request message for
-   * [GetRun][google.cloud.datacatalog.lineage.v1.GetRun].
+   * [GetRun][google.cloud.datacatalog.lineage.v1.Lineage.GetRun].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.GetRunRequest}

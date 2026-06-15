@@ -22,8 +22,6 @@ import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.Transaction;
-
 import java.util.UUID;
 
 /**
@@ -49,8 +47,8 @@ import java.util.UUID;
  *   <li>{@code transaction_attempt_count} — number of commit attempts for the transaction.
  * </ul>
  *
- * <p>To verify metrics in Cloud Monitoring after running this sample, navigate to:
- * <b>Cloud Console → Monitoring → Metrics Explorer</b> and filter by:
+ * <p>To verify metrics in Cloud Monitoring after running this sample, navigate to: <b>Cloud Console
+ * → Monitoring → Metrics Explorer</b> and filter by:
  *
  * <pre>
  *   Metric  : custom.googleapis.com/internal/client/transaction_latency
@@ -87,8 +85,7 @@ public class DatastoreMetricsSample {
     // [END datastore_client_side_metrics_default]
 
     try (Datastore datastore = options.getService()) {
-      System.out.printf(
-          "Connected to project=%s database=%s%n", projectId, databaseId);
+      System.out.printf("Connected to project=%s database=%s%n", projectId, databaseId);
       System.out.println(
           "Built-in metrics are explicitly enabled and will be exported to"
               + " Google Cloud Monitoring under custom.googleapis.com/internal/client/*");
@@ -141,8 +138,7 @@ public class DatastoreMetricsSample {
     System.out.printf(
         "Transaction committed: status=%s value=%d%n",
         updated.getString("status"), updated.getLong("value"));
-    System.out.println(
-        "  → transaction_latency and transaction_attempt_count metrics recorded.");
+    System.out.println("  → transaction_latency and transaction_attempt_count metrics recorded.");
 
     // Step 3: Clean up.
     datastore.delete(key);

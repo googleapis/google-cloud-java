@@ -752,7 +752,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @param entitySignalsMapping Required. The `EntitySignalsMapping` to update.
    *     <p>The EntitySignalsMapping's name is used to identify the EntitySignalsMapping to update.
    *     Format: `networks/{network_code}/entitySignalsMappings/{entity_signals_mapping}`
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntitySignalsMapping updateEntitySignalsMapping(

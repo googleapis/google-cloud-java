@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/BaseBigtableTableAdminClient*</className>
+        <method>*snapshot*</method>
+        <to>*snapshot*</to>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredMutateRowsCallable*</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredReadRowsCallable*</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MeasuredUnaryCallable*</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/tracing/WrappedTracerFactory*</className>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/readrows/PointReadTimeoutCallable</className>
+    </difference>
+    <difference>
+        <!-- change method args is ok because EnhancedBigtableStub is InternalApi -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- change method types is ok because EnhancedBigtableStub is InternalApi -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub</className>
+        <method>*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- method name change is ok because EnhancedBigtableStub is InternalApi -->
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStub</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi that was renamed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/CompositeTracerFactory</className>
+    </difference>
+    <!-- InternalApi was renamed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsConvertExceptionCallable</className>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracer</className>
+    </difference>
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/ErrorCountPerConnectionMetricTracker</className>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracer$Builder</className>
+    </difference>
+    <!-- change method args is ok because HeaderTracerStreamingCallable is InternalApi -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerStreamingCallable</className>
+        <method>*</method>
+    </difference>
+    <!-- change method args is ok because HeaderTracerUnaryCallable is InternalApi -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerUnaryCallable</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerStreamingCallable</className>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerUnaryCallable</className>
+    </difference>
+    <!-- InternalApi that was moved -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsConvertExceptionCallable</className>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/reframing/ReframingResponseObserver</className>
+        <to>com/google/api/gax/rpc/StateCheckingResponseObserver</to>
+    </difference>
+    <!-- change method return type is ok because Heartbeat is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/Heartbeat</className>
+        <method>*getEstimatedLowWatermark*</method>
+        <to>org.threeten.bp.Instant</to>
+    </difference>
+    <!-- change method return type is ok because CloseStream is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/CloseStream</className>
+        <method>*getStatus*</method>
+        <to>com.google.cloud.bigtable.common.Status</to>
+    </difference>
+    <!-- add new method is ok because CloseStream is InternalApi -->
+    <difference>
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/CloseStream</className>
+        <method>*getNewPartitions*</method>
+    </difference>
+    <!-- change method return type is ok because ChangeStreamMutation is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamMutation</className>
+        <method>*getCommitTimestamp*</method>
+        <to>org.threeten.bp.Instant</to>
+    </difference>
+    <!-- change method return type is ok because ChangeStreamMutation is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamMutation</className>
+        <method>*getEstimatedLowWatermark*</method>
+        <to>org.threeten.bp.Instant</to>
+    </difference>
+    <!-- change method argument type is ok because ChangeStreamRecordAdapter is InternalApi -->
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamRecordAdapter$ChangeStreamRecordBuilder</className>
+        <method>*</method>
+        <to>*</to>
+    </difference>
+    <!-- change method argument type is ok because ReadChangeStreamQuery is InternalApi -->
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ReadChangeStreamQuery</className>
+        <method>*</method>
+        <to>*</to>
+    </difference>
+    <!-- change method argument type is ok because MutateRowsBatchingDescriptor is InternalApi -->
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsBatchingDescriptor</className>
+        <method>*</method>
+        <to>*</to>
+    </difference>
+    <!-- Removed methods in an internal class -->
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/internal/RowSetUtil</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/readrows/RowMerger</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableTracerBatchedUnaryCallable</className>
+    </difference>
+    <!-- InternalApi constructor was updated -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BuiltinMetricsTracerFactory</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>6001</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/retrying/ApiResultRetryAlgorithm</className>
+        <field>*</field>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsRetryingCallable</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/MutateRowsException</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7009</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/MutateRowsException</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/ErrorCountPerConnectionMetricTracker</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/MutationApi</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamRecordAdapter$ChangeStreamRecordBuilder</className>
+        <method>*</method>
+    </difference>
+    <!-- BetaApi was updated -->
+    <difference>
+        <differenceType>2000</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type</className>
+    </difference>
+    <difference>
+        <differenceType>2000</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$SumAggregateInput</className>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$SumAggregateInput</className>
+        <to>com/google/cloud/bigtable/admin/v2/models/Type</to>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Aggregate</className>
+        <to>com/google/cloud/bigtable/admin/v2/models/Type</to>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Bytes</className>
+        <to>com/google/cloud/bigtable/admin/v2/models/Type</to>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Int64</className>
+        <to>com/google/cloud/bigtable/admin/v2/models/Type</to>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Int64</className>
+        <to>com/google/cloud/bigtable/admin/v2/models/Type$SumAggregateInput</to>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Raw</className>
+        <to>com/google/cloud/bigtable/admin/v2/models/Type</to>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Int64$Encoding$BigEndianBytes</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7002</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/models/Type$Int64$Encoding$BigEndianBytes</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- change method args is ok because EnhancedBigtableTableAdminStub is InternalApi -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/admin/v2/stub/EnhancedBigtableTableAdminStub</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableCloudMonitoringExporter</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/DefaultMetricsProvider</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/internal/*</className>
+        <method>*getTimestamp(*)</method>
+        <to>java.time.Instant</to>
+    </difference>
+    <difference>
+        <!-- ChangeStream api is internal, only used by apache/beam-->
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamMutation</className>
+        <method>*get*Time()</method>
+    </difference>
+    <difference>
+        <!-- Heartbeat is part of the ChangeStream api, which is internal and only used by apache/beam-->
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/Heartbeat</className>
+        <method>*getEstimatedLowWatermarkTime()</method>
+    </difference>
+    <difference>
+        <!-- TargetId is an InternalApi-->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/TargetId</className>
+        <method>*scopedForMaterializedView()</method>
+    </difference>
+    <difference>
+        <!-- BigtableCloudMonitoringExporter is InternalApi -->
+        <differenceType>7009</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableCloudMonitoringExporter</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/BigtableDataClient</className>
+        <method>*executeQuery*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- BetaApi was renamed -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was renamed -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement$Builder</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was renamed -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/Statement$Builder</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was added -->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/StructReader</className>
+        <method>*getProtoMessage(*)</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was added -->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/StructReader</className>
+        <method>*getProtoEnum(*)</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was added -->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/SqlType</className>
+        <method>*protoOf(*)</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessProto</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessEnum</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessProto</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessEnum</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- BetaApi was added -->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/SqlType</className>
+        <method>*enumOf(*)</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was added -->
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/sql/SqlType</className>
+        <method>*getUnqualifiedName*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/internal/SqlRowMergerUtil</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallContext</className>
+        <method>*ExecuteQueryCallContext*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7009</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallContext</className>
+        <method>*ExecuteQueryCallContext*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallContext</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallable</className>
+        <method>*ExecuteQueryCallable*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/ExecuteQueryCallable</className>
+        <method>*call*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/MetadataResolvingCallable</className>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/sql/SqlRowMerger</className>
+        <method>*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableChannelPool</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableTransportChannelProvider</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <differenceType>4001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/BigtableChannelPrimer</className>
+        <to>com/google/api/gax/grpc/ChannelPrimer</to>
+    </difference>
+    <difference>
+        <differenceType>4001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/NoOpChannelPrimer</className>
+        <to>com/google/api/gax/grpc/ChannelPrimer</to>
+    </difference>
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableChannelPool</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableTransportChannelProvider</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <!-- change method return type is ok because BigtableChannelPrimer is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/BigtableChannelPrimer</className>
+        <method>*sendPrimeRequestsAsync*</method>
+        <to>com.google.api.core.ApiFuture</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableChannelPoolSettings</className>
+        <method>com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings$LoadBalancingStrategy getLoadBalancingStrategy()</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableChannelPoolSettings$Builder</className>
+        <method>com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings$Builder setLoadBalancingStrategy(com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings$LoadBalancingStrategy)</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettings$InternalMetricsProvider</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/Util</className>
+        <method>*</method>
+    </difference>
+</differences>

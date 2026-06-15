@@ -1044,6 +1044,20 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
+   * Output only. Whether this is a silent message. Silent messages are messages
+   * where Chat suppresses push notifications for recipients.
+   * </pre>
+   *
+   * <code>bool silent = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The silent.
+   */
+  boolean getSilent();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A custom ID for the message. You can use field to identify a
    * message, or to get, delete, or update a message. To set a custom ID,
    * specify the

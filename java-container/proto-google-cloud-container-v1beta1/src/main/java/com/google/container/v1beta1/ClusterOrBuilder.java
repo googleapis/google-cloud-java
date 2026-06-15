@@ -110,7 +110,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2985
+   *     google/container/v1beta1/cluster_service.proto;l=3158
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -136,7 +136,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2998
+   *     google/container/v1beta1/cluster_service.proto;l=3171
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -162,7 +162,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2998
+   *     google/container/v1beta1/cluster_service.proto;l=3171
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -964,7 +964,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_authorized_networks_config is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=3110
+   *     See google/container/v1beta1/cluster_service.proto;l=3283
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -986,7 +986,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_authorized_networks_config is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=3110
+   *     See google/container/v1beta1/cluster_service.proto;l=3283
    * @return The masterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -1211,7 +1211,7 @@ public interface ClusterOrBuilder
    * <code>bool private_cluster = 28 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.private_cluster is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3133
+   *     google/container/v1beta1/cluster_service.proto;l=3306
    * @return The privateCluster.
    */
   @java.lang.Deprecated
@@ -1231,7 +1231,7 @@ public interface ClusterOrBuilder
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3140
+   *     google/container/v1beta1/cluster_service.proto;l=3313
    * @return The masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1251,7 +1251,7 @@ public interface ClusterOrBuilder
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3140
+   *     google/container/v1beta1/cluster_service.proto;l=3313
    * @return The bytes for masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1794,7 +1794,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.TpuConfig tpu_config = 47 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3196
+   *     google/container/v1beta1/cluster_service.proto;l=3369
    * @return Whether the tpuConfig field is set.
    */
   @java.lang.Deprecated
@@ -1812,7 +1812,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.TpuConfig tpu_config = 47 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3196
+   *     google/container/v1beta1/cluster_service.proto;l=3369
    * @return The tpuConfig.
    */
   @java.lang.Deprecated
@@ -1985,7 +1985,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3215
+   *     google/container/v1beta1/cluster_service.proto;l=3388
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -2004,7 +2004,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3215
+   *     google/container/v1beta1/cluster_service.proto;l=3388
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -2198,6 +2198,54 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * The node pool upgrade concurrency config of the cluster.
+   * This field is used for auto upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePoolUpgradeConcurrencyConfig node_pool_upgrade_concurrency_config = 172;
+   * </code>
+   *
+   * @return Whether the nodePoolUpgradeConcurrencyConfig field is set.
+   */
+  boolean hasNodePoolUpgradeConcurrencyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The node pool upgrade concurrency config of the cluster.
+   * This field is used for auto upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePoolUpgradeConcurrencyConfig node_pool_upgrade_concurrency_config = 172;
+   * </code>
+   *
+   * @return The nodePoolUpgradeConcurrencyConfig.
+   */
+  com.google.container.v1beta1.NodePoolUpgradeConcurrencyConfig
+      getNodePoolUpgradeConcurrencyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The node pool upgrade concurrency config of the cluster.
+   * This field is used for auto upgrade.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePoolUpgradeConcurrencyConfig node_pool_upgrade_concurrency_config = 172;
+   * </code>
+   */
+  com.google.container.v1beta1.NodePoolUpgradeConcurrencyConfigOrBuilder
+      getNodePoolUpgradeConcurrencyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Deprecated, use
    * [NodePool.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters.nodePools)
    * instead. The current version of the node software components.
@@ -2210,7 +2258,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3260
+   *     google/container/v1beta1/cluster_service.proto;l=3437
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -2232,7 +2280,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3260
+   *     google/container/v1beta1/cluster_service.proto;l=3437
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -2310,7 +2358,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3273
+   *     google/container/v1beta1/cluster_service.proto;l=3450
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -2330,7 +2378,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3273
+   *     google/container/v1beta1/cluster_service.proto;l=3450
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -2398,7 +2446,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3290
+   *     google/container/v1beta1/cluster_service.proto;l=3467
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2416,7 +2464,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3290
+   *     google/container/v1beta1/cluster_service.proto;l=3467
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2434,7 +2482,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3290
+   *     google/container/v1beta1/cluster_service.proto;l=3467
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -2453,7 +2501,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3290
+   *     google/container/v1beta1/cluster_service.proto;l=3467
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -2473,7 +2521,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3295
+   *     google/container/v1beta1/cluster_service.proto;l=3472
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2554,7 +2602,7 @@ public interface ClusterOrBuilder
    * <code>bool enable_tpu = 115 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.enable_tpu is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3313
+   *     google/container/v1beta1/cluster_service.proto;l=3490
    * @return The enableTpu.
    */
   @java.lang.Deprecated
@@ -2576,7 +2624,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3320
+   *     google/container/v1beta1/cluster_service.proto;l=3497
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -2598,7 +2646,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3320
+   *     google/container/v1beta1/cluster_service.proto;l=3497
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -2964,7 +3012,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3354
+   *     google/container/v1beta1/cluster_service.proto;l=3531
    * @return Whether the protectConfig field is set.
    */
   @java.lang.Deprecated
@@ -2983,7 +3031,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3354
+   *     google/container/v1beta1/cluster_service.proto;l=3531
    * @return The protectConfig.
    */
   @java.lang.Deprecated
@@ -3112,10 +3160,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Enable/Disable Security Posture API features for the cluster.
+   * Optional. Enable/Disable Security Posture API features for the cluster.
    * </pre>
    *
-   * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+   * <code>
+   * .google.container.v1beta1.SecurityPostureConfig security_posture_config = 145 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the securityPostureConfig field is set.
    */
@@ -3125,10 +3175,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Enable/Disable Security Posture API features for the cluster.
+   * Optional. Enable/Disable Security Posture API features for the cluster.
    * </pre>
    *
-   * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+   * <code>
+   * .google.container.v1beta1.SecurityPostureConfig security_posture_config = 145 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The securityPostureConfig.
    */
@@ -3138,10 +3190,12 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Enable/Disable Security Posture API features for the cluster.
+   * Optional. Enable/Disable Security Posture API features for the cluster.
    * </pre>
    *
-   * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
+   * <code>
+   * .google.container.v1beta1.SecurityPostureConfig security_posture_config = 145 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.container.v1beta1.SecurityPostureConfigOrBuilder getSecurityPostureConfigOrBuilder();
 
@@ -3203,7 +3257,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.enterprise_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3377
+   *     google/container/v1beta1/cluster_service.proto;l=3555
    * @return Whether the enterpriseConfig field is set.
    */
   @java.lang.Deprecated
@@ -3223,7 +3277,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.Cluster.enterprise_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3377
+   *     google/container/v1beta1/cluster_service.proto;l=3555
    * @return The enterpriseConfig.
    */
   @java.lang.Deprecated
@@ -3286,37 +3340,62 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
-   * <code>.google.container.v1beta1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   * <code>
+   * .google.container.v1beta1.CompliancePostureConfig compliance_posture_config = 151 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.Cluster.compliance_posture_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=3565
    * @return Whether the compliancePostureConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasCompliancePostureConfig();
 
   /**
    *
    *
    * <pre>
+   * Optional. Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
-   * <code>.google.container.v1beta1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   * <code>
+   * .google.container.v1beta1.CompliancePostureConfig compliance_posture_config = 151 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.Cluster.compliance_posture_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=3565
    * @return The compliancePostureConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.CompliancePostureConfig getCompliancePostureConfig();
 
   /**
    *
    *
    * <pre>
+   * Optional. Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
-   * <code>.google.container.v1beta1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   * <code>
+   * .google.container.v1beta1.CompliancePostureConfig compliance_posture_config = 151 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.CompliancePostureConfigOrBuilder
       getCompliancePostureConfigOrBuilder();
 
@@ -3540,6 +3619,49 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for scheduled upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ScheduleUpgradeConfig schedule_upgrade_config = 165 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scheduleUpgradeConfig field is set.
+   */
+  boolean hasScheduleUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for scheduled upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ScheduleUpgradeConfig schedule_upgrade_config = 165 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scheduleUpgradeConfig.
+   */
+  com.google.container.v1beta1.ScheduleUpgradeConfig getScheduleUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for scheduled upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ScheduleUpgradeConfig schedule_upgrade_config = 165 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.ScheduleUpgradeConfigOrBuilder getScheduleUpgradeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for sync Secret Manager secrets as k8s secrets.
    * </pre>
    *
@@ -3613,4 +3735,129 @@ public interface ClusterOrBuilder
    */
   com.google.container.v1beta1.ManagedOpenTelemetryConfigOrBuilder
       getManagedOpentelemetryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for control plane egress control.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ControlPlaneEgress control_plane_egress = 169;</code>
+   *
+   * @return Whether the controlPlaneEgress field is set.
+   */
+  boolean hasControlPlaneEgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for control plane egress control.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ControlPlaneEgress control_plane_egress = 169;</code>
+   *
+   * @return The controlPlaneEgress.
+   */
+  com.google.container.v1beta1.ControlPlaneEgress getControlPlaneEgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for control plane egress control.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ControlPlaneEgress control_plane_egress = 169;</code>
+   */
+  com.google.container.v1beta1.ControlPlaneEgressOrBuilder getControlPlaneEgressOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for managed machine learning diagnostics.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig managed_machine_learning_diagnostics_config = 171;
+   * </code>
+   *
+   * @return Whether the managedMachineLearningDiagnosticsConfig field is set.
+   */
+  boolean hasManagedMachineLearningDiagnosticsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for managed machine learning diagnostics.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig managed_machine_learning_diagnostics_config = 171;
+   * </code>
+   *
+   * @return The managedMachineLearningDiagnosticsConfig.
+   */
+  com.google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig
+      getManagedMachineLearningDiagnosticsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for managed machine learning diagnostics.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig managed_machine_learning_diagnostics_config = 171;
+   * </code>
+   */
+  com.google.container.v1beta1.ManagedMachineLearningDiagnosticsConfigOrBuilder
+      getManagedMachineLearningDiagnosticsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Node Creation Mode.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeCreationConfig node_creation_config = 174 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeCreationConfig field is set.
+   */
+  boolean hasNodeCreationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Node Creation Mode.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeCreationConfig node_creation_config = 174 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeCreationConfig.
+   */
+  com.google.container.v1beta1.NodeCreationConfig getNodeCreationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Node Creation Mode.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeCreationConfig node_creation_config = 174 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.NodeCreationConfigOrBuilder getNodeCreationConfigOrBuilder();
 }

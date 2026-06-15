@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [DeleteLineageEvent][google.cloud.datacatalog.lineage.v1.DeleteLineageEvent].
+ * [DeleteLineageEvent][google.cloud.datacatalog.lineage.v1.Lineage.DeleteLineageEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest}
@@ -135,11 +135,11 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * If set to true and the lineage event is not found, the request
+   * Optional. If set to true and the lineage event is not found, the request
    * succeeds but the server doesn't perform any actions.
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
@@ -324,7 +324,7 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Request message for
-   * [DeleteLineageEvent][google.cloud.datacatalog.lineage.v1.DeleteLineageEvent].
+   * [DeleteLineageEvent][google.cloud.datacatalog.lineage.v1.Lineage.DeleteLineageEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest}
@@ -615,11 +615,11 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If set to true and the lineage event is not found, the request
+     * Optional. If set to true and the lineage event is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMissing.
      */
@@ -632,11 +632,11 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If set to true and the lineage event is not found, the request
+     * Optional. If set to true and the lineage event is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMissing to set.
      * @return This builder for chaining.
@@ -653,11 +653,11 @@ public final class DeleteLineageEventRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * If set to true and the lineage event is not found, the request
+     * Optional. If set to true and the lineage event is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

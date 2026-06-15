@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+import "google/bigtable/v2/bigtable.proto";
+import "google/bigtable/v2/session.proto";
+import "google/protobuf/duration.proto";
+import "google/rpc/status.proto";
+
+package google.bigtable.v2;
+
+option csharp_namespace = "Google.Cloud.Bigtable.V2";
+option php_namespace = "Google\\Cloud\\Bigtable\\V2";
+option ruby_package = "Google::Cloud::Bigtable::V2";
+option java_multiple_files = true;
+option java_package = "com.google.bigtable.v2";
+option java_outer_classname = "FakeSessionProto";
+
+service FakeSession {
+  rpc OpenSession(stream SessionRequest) returns (stream SessionResponse) {
+    option (google.bigtable.v2.rpc_session_type) = SESSION_TYPE_TEST;
+  }
+}
+
+message OpenFakeSessionRequest {
+  option (google.bigtable.v2.open_session_type) = SESSION_TYPE_TEST;
+
+  google.protobuf.Duration go_away_delay = 2;
+
+  // session set up phase
+  message StreamError {
+    google.rpc.Status status = 1;
+    map<string, string> metadata = 2;
+
+    // create a session but return a stream error after the delay
+    google.protobuf.Duration delay = 3;
+  }
+
+  StreamError stream_error = 3;
+  SessionParametersResponse session_params = 4;
+
+  // session steady phase
+  message Action {
+    google.protobuf.Duration delay = 1;
+    oneof payload {
+      VirtualRpcResponse response = 2;
+      ErrorResponse error_response = 3;
+    }
+  }
+  message ActionList {
+    bool repeat = 1; // if we should reuse the same action
+    repeated Action actions = 2;
+  }
+  map<int64, ActionList> vrpc_actions = 6;
+  google.bigtable.v2.SessionRefreshConfig refresh_config = 7;
+  google.protobuf.Duration refresh_config_delay = 8;
+}
+
+message OpenFakeSessionResponse {
+  option (google.bigtable.v2.open_session_type) = SESSION_TYPE_TEST;
+}
+
+message FakeSessionOpRequest {
+  option (google.bigtable.v2.vrpc_session_type) = SESSION_TYPE_TEST;
+
+  oneof payload {
+    SessionFakeScriptedRequest scripted_request = 1;
+  }
+}
+
+message SessionFakeScriptedRequest {
+  int64 tag = 1;
+}
+
+message SessionFakeScriptedResponse {
+  string message = 1;
+}
+
+message FakeSessionOpResponse {
+  option (google.bigtable.v2.vrpc_session_type) = SESSION_TYPE_TEST;
+
+  oneof payload {
+    SessionFakeScriptedResponse scripted = 1;
+  }
+}

@@ -32,7 +32,10 @@ class ServiceStubSettingsClassComposerTest {
   static Stream<Arguments> data() {
     return Stream.of(
         Arguments.of(
-            "EchoStubSettings.golden", GrpcRestTestProtoLoader.instance().parseShowcaseEcho()),
+            "EchoStubSettings.golden",
+            GrpcRestTestProtoLoader.instance().parseShowcaseEcho().toBuilder()
+                .setGenerateVersionJava(true)
+                .build()),
         Arguments.of(
             "WickedStubSettings.golden", GrpcRestTestProtoLoader.instance().parseShowcaseWicked()));
   }

@@ -25,8 +25,8 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  * <pre>
  * Message representing references to BigQuery tables and property graphs.
- * At least one of `table_references` or `property_graph_references` must be
- * populated.
+ * At least one of `table_references`, `property_graph_references`, or
+ * `search_scope` must be populated.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences}
@@ -55,6 +55,7 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
 
   private BigQueryTableReferences() {
     tableReferences_ = java.util.Collections.emptyList();
+    propertyGraphReferences_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -163,6 +164,113 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     return tableReferences_.get(index);
   }
 
+  public static final int PROPERTY_GRAPH_REFERENCES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>
+      propertyGraphReferences_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>
+      getPropertyGraphReferencesList() {
+    return propertyGraphReferences_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+      getPropertyGraphReferencesOrBuilderList() {
+    return propertyGraphReferences_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPropertyGraphReferencesCount() {
+    return propertyGraphReferences_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+      getPropertyGraphReferences(int index) {
+    return propertyGraphReferences_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
+      getPropertyGraphReferencesOrBuilder(int index) {
+    return propertyGraphReferences_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -180,6 +288,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     for (int i = 0; i < tableReferences_.size(); i++) {
       output.writeMessage(1, tableReferences_.get(i));
     }
+    for (int i = 0; i < propertyGraphReferences_.size(); i++) {
+      output.writeMessage(2, propertyGraphReferences_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -191,6 +302,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     size = 0;
     for (int i = 0; i < tableReferences_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, tableReferences_.get(i));
+    }
+    for (int i = 0; i < propertyGraphReferences_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, propertyGraphReferences_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -209,6 +325,8 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         (com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences) obj;
 
     if (!getTableReferencesList().equals(other.getTableReferencesList())) return false;
+    if (!getPropertyGraphReferencesList().equals(other.getPropertyGraphReferencesList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -223,6 +341,10 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     if (getTableReferencesCount() > 0) {
       hash = (37 * hash) + TABLE_REFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getTableReferencesList().hashCode();
+    }
+    if (getPropertyGraphReferencesCount() > 0) {
+      hash = (37 * hash) + PROPERTY_GRAPH_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyGraphReferencesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -332,8 +454,8 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    * <pre>
    * Message representing references to BigQuery tables and property graphs.
-   * At least one of `table_references` or `property_graph_references` must be
-   * populated.
+   * At least one of `table_references`, `property_graph_references`, or
+   * `search_scope` must be populated.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences}
@@ -376,6 +498,13 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         tableReferencesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (propertyGraphReferencesBuilder_ == null) {
+        propertyGraphReferences_ = java.util.Collections.emptyList();
+      } else {
+        propertyGraphReferences_ = null;
+        propertyGraphReferencesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -423,6 +552,16 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         result.tableReferences_ = tableReferences_;
       } else {
         result.tableReferences_ = tableReferencesBuilder_.build();
+      }
+      if (propertyGraphReferencesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          propertyGraphReferences_ =
+              java.util.Collections.unmodifiableList(propertyGraphReferences_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.propertyGraphReferences_ = propertyGraphReferences_;
+      } else {
+        result.propertyGraphReferences_ = propertyGraphReferencesBuilder_.build();
       }
     }
 
@@ -474,6 +613,33 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
           }
         }
       }
+      if (propertyGraphReferencesBuilder_ == null) {
+        if (!other.propertyGraphReferences_.isEmpty()) {
+          if (propertyGraphReferences_.isEmpty()) {
+            propertyGraphReferences_ = other.propertyGraphReferences_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePropertyGraphReferencesIsMutable();
+            propertyGraphReferences_.addAll(other.propertyGraphReferences_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.propertyGraphReferences_.isEmpty()) {
+          if (propertyGraphReferencesBuilder_.isEmpty()) {
+            propertyGraphReferencesBuilder_.dispose();
+            propertyGraphReferencesBuilder_ = null;
+            propertyGraphReferences_ = other.propertyGraphReferences_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            propertyGraphReferencesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetPropertyGraphReferencesFieldBuilder()
+                    : null;
+          } else {
+            propertyGraphReferencesBuilder_.addAllMessages(other.propertyGraphReferences_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -514,6 +680,21 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+                            .parser(),
+                        extensionRegistry);
+                if (propertyGraphReferencesBuilder_ == null) {
+                  ensurePropertyGraphReferencesIsMutable();
+                  propertyGraphReferences_.add(m);
+                } else {
+                  propertyGraphReferencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -963,6 +1144,499 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         tableReferences_ = null;
       }
       return tableReferencesBuilder_;
+    }
+
+    private java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>
+        propertyGraphReferences_ = java.util.Collections.emptyList();
+
+    private void ensurePropertyGraphReferencesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        propertyGraphReferences_ =
+            new java.util.ArrayList<
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>(
+                propertyGraphReferences_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+        propertyGraphReferencesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>
+        getPropertyGraphReferencesList() {
+      if (propertyGraphReferencesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(propertyGraphReferences_);
+      } else {
+        return propertyGraphReferencesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPropertyGraphReferencesCount() {
+      if (propertyGraphReferencesBuilder_ == null) {
+        return propertyGraphReferences_.size();
+      } else {
+        return propertyGraphReferencesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+        getPropertyGraphReferences(int index) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        return propertyGraphReferences_.get(index);
+      } else {
+        return propertyGraphReferencesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPropertyGraphReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference value) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.set(index, value);
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPropertyGraphReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+            builderForValue) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyGraphReferences(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference value) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.add(value);
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyGraphReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference value) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.add(index, value);
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyGraphReferences(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+            builderForValue) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.add(builderForValue.build());
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPropertyGraphReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+            builderForValue) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPropertyGraphReferences(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>
+            values) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        ensurePropertyGraphReferencesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, propertyGraphReferences_);
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPropertyGraphReferences() {
+      if (propertyGraphReferencesBuilder_ == null) {
+        propertyGraphReferences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePropertyGraphReferences(int index) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        ensurePropertyGraphReferencesIsMutable();
+        propertyGraphReferences_.remove(index);
+        onChanged();
+      } else {
+        propertyGraphReferencesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+        getPropertyGraphReferencesBuilder(int index) {
+      return internalGetPropertyGraphReferencesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
+        getPropertyGraphReferencesOrBuilder(int index) {
+      if (propertyGraphReferencesBuilder_ == null) {
+        return propertyGraphReferences_.get(index);
+      } else {
+        return propertyGraphReferencesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+        getPropertyGraphReferencesOrBuilderList() {
+      if (propertyGraphReferencesBuilder_ != null) {
+        return propertyGraphReferencesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(propertyGraphReferences_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+        addPropertyGraphReferencesBuilder() {
+      return internalGetPropertyGraphReferencesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+        addPropertyGraphReferencesBuilder(int index) {
+      return internalGetPropertyGraphReferencesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Preview feature. References to BigQuery property graphs.
+     * Note: Data sources must exclusively use either tables or property graphs,
+     * not both. When using property graphs, a maximum of one graph reference is
+     * supported.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder>
+        getPropertyGraphReferencesBuilderList() {
+      return internalGetPropertyGraphReferencesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+        internalGetPropertyGraphReferencesFieldBuilder() {
+      if (propertyGraphReferencesBuilder_ == null) {
+        propertyGraphReferencesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta
+                    .BigQueryPropertyGraphReferenceOrBuilder>(
+                propertyGraphReferences_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        propertyGraphReferences_ = null;
+      }
+      return propertyGraphReferencesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences)

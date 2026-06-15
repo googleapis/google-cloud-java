@@ -38,6 +38,7 @@ import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -45,6 +46,7 @@ import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -655,6 +657,43 @@ public class HttpJsonSpannerStub extends SpannerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateMethodDescriptor =
+          ApiMethodDescriptor.<FetchCacheUpdateRequest, CacheUpdate>newBuilder()
+              .setFullMethodName("google.spanner.v1.Spanner/FetchCacheUpdate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchCacheUpdateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{database=projects/*/instances/*/databases/*}:cacheUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchCacheUpdateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "database", request.getDatabase());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchCacheUpdateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearDatabase().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CacheUpdate>newBuilder()
+                      .setDefaultInstance(CacheUpdate.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
   private final UnaryCallable<BatchCreateSessionsRequest, BatchCreateSessionsResponse>
       batchCreateSessionsCallable;
@@ -676,6 +715,8 @@ public class HttpJsonSpannerStub extends SpannerStub {
   private final UnaryCallable<PartitionQueryRequest, PartitionResponse> partitionQueryCallable;
   private final UnaryCallable<PartitionReadRequest, PartitionResponse> partitionReadCallable;
   private final ServerStreamingCallable<BatchWriteRequest, BatchWriteResponse> batchWriteCallable;
+  private final ServerStreamingCallable<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -911,6 +952,18 @@ public class HttpJsonSpannerStub extends SpannerStub {
                 })
             .setResourceNameExtractor(request -> request.getSession())
             .build();
+    HttpJsonCallSettings<FetchCacheUpdateRequest, CacheUpdate> fetchCacheUpdateTransportSettings =
+        HttpJsonCallSettings.<FetchCacheUpdateRequest, CacheUpdate>newBuilder()
+            .setMethodDescriptor(fetchCacheUpdateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("database", String.valueOf(request.getDatabase()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getDatabase())
+            .build();
 
     this.createSessionCallable =
         callableFactory.createUnaryCallable(
@@ -967,6 +1020,9 @@ public class HttpJsonSpannerStub extends SpannerStub {
     this.batchWriteCallable =
         callableFactory.createServerStreamingCallable(
             batchWriteTransportSettings, settings.batchWriteSettings(), clientContext);
+    this.fetchCacheUpdateCallable =
+        callableFactory.createServerStreamingCallable(
+            fetchCacheUpdateTransportSettings, settings.fetchCacheUpdateSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -991,6 +1047,7 @@ public class HttpJsonSpannerStub extends SpannerStub {
     methodDescriptors.add(partitionQueryMethodDescriptor);
     methodDescriptors.add(partitionReadMethodDescriptor);
     methodDescriptors.add(batchWriteMethodDescriptor);
+    methodDescriptors.add(fetchCacheUpdateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1079,6 +1136,11 @@ public class HttpJsonSpannerStub extends SpannerStub {
   @Override
   public ServerStreamingCallable<BatchWriteRequest, BatchWriteResponse> batchWriteCallable() {
     return batchWriteCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<FetchCacheUpdateRequest, CacheUpdate> fetchCacheUpdateCallable() {
+    return fetchCacheUpdateCallable;
   }
 
   @Override

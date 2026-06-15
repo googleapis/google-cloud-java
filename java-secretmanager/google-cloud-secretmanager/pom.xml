@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-secretmanager</artifactId>
-  <version>2.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
+  <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Secret Manager</name>
   <description>Java idiomatic client for Google Cloud Secret Manager</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-secretmanager-parent</artifactId>
-    <version>2.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
+    <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-secretmanager</site.installationModule>
@@ -40,6 +40,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-secretmanager-v1beta1</artifactId>
@@ -50,11 +51,12 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-iam-v1</artifactId>
+      <artifactId>proto-google-cloud-secretmanager-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-secretmanager-v1</artifactId>
+      <artifactId>proto-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -83,20 +85,10 @@
     </dependency>
 
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-secretmanager-v1beta1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- Test dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-core</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -107,6 +99,18 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-secretmanager-v1beta2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
