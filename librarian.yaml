@@ -388,6 +388,22 @@ libraries:
       product_documentation_override: https://cloud.google.com/automl/docs/
       rest_documentation: https://cloud.google.com/automl/docs/reference/rest
       rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
+  - name: backstory
+    version: 0.2.0-SNAPSHOT
+    apis:
+      - path: backstory
+        java:
+          proto_artifact_id_override: proto-google-cloud-backstory
+          generate_gapic: false
+          generate_grpc: false
+          generate_resource_names: false
+    java:
+      api_id_override: backstory.googleapis.com
+      api_description_override: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
+      library_type_override: GAPIC_AUTO
+      name_pretty_override: Malachite Common Protos
+      product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
   - name: backupdr
     version: 0.53.0-SNAPSHOT
     apis:
