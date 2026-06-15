@@ -733,8 +733,6 @@ class BatcherImplTest {
    */
   @Test
   void testUnclosedBatchersAreLogged() throws Exception {
-    final long DELAY_TIME = 30L;
-    int actualRemaining = 0;
     await()
         .atMost(Duration.ofSeconds(5))
         .until(
@@ -743,7 +741,6 @@ class BatcherImplTest {
               System.runFinalization();
               return BatcherReference.cleanQueue() == 0;
             });
-    assertThat(actualRemaining).isAtMost(0);
     underTest = createDefaultBatcherImpl(batchingSettings, null);
     Batcher<Integer, Integer> extraBatcher = createDefaultBatcherImpl(batchingSettings, null);
 
@@ -802,8 +799,6 @@ class BatcherImplTest {
   @Test
   void testClosedBatchersAreNotLogged() throws Exception {
     // Clean out the existing instances
-    final long DELAY_TIME = 30L;
-    int actualRemaining = 0;
     await()
         .atMost(Duration.ofSeconds(5))
         .until(
@@ -812,7 +807,6 @@ class BatcherImplTest {
               System.runFinalization();
               return BatcherReference.cleanQueue() == 0;
             });
-    assertThat(actualRemaining).isAtMost(0);
 
     // Capture logs
     final List<LogRecord> records = new ArrayList<>(1);
