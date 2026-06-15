@@ -19,7 +19,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
@@ -93,8 +92,11 @@ public class StreamWriter implements AutoCloseable {
    */
   private final String streamName;
 
-  /** This is the library version may or may not include library version id. */
-  private final String fullTraceId;
+  /** Client id of the writer. */
+  private final String clientId;
+
+  /** User provided trace id. */
+  private final String traceId;
 
   /** Every writer has a fixed proto schema or arrow schema. */
   private final AppendRowsSchema writerSchema;
@@ -256,7 +258,8 @@ public class StreamWriter implements AutoCloseable {
     BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
     this.requestProfilerHook =
         new RequestProfiler.RequestProfilerHook(builder.enableRequestProfiler);
-    this.fullTraceId = builder.getFullTraceId();
+    this.clientId = builder.clientId;
+    this.traceId = builder.traceId;
     if (builder.enableRequestProfiler) {
       // Request profiler is enabled on singleton level, from now on a periodical flush will be
       // started
@@ -275,7 +278,8 @@ public class StreamWriter implements AutoCloseable {
                   builder.maxInflightBytes,
                   builder.maxRetryDuration,
                   builder.limitExceededBehavior,
-                  builder.getFullTraceId(),
+                  builder.clientId,
+                  builder.traceId,
                   builder.compressorName,
                   clientSettings,
                   builder.retrySettings,
@@ -395,8 +399,12 @@ public class StreamWriter implements AutoCloseable {
     projectAndDatasetToLocation = allocateProjectLocationCache();
   }
 
-  String getFullTraceId() {
-    return fullTraceId;
+  String getClientId() {
+    return clientId;
+  }
+
+  String getTraceId() {
+    return traceId;
   }
 
   AppendRowsRequest.MissingValueInterpretation getDefaultValueInterpretation() {
@@ -1118,18 +1126,6 @@ public class StreamWriter implements AutoCloseable {
     /** Builds the {@code StreamWriterV2}. */
     public StreamWriter build() throws IOException {
       return new StreamWriter(this);
-    }
-
-    String getFullTraceId() {
-      String clientWithVersion =
-          GaxProperties.getLibraryVersion(StreamWriter.class).isEmpty()
-              ? clientId
-              : clientId + ":" + GaxProperties.getLibraryVersion(StreamWriter.class);
-      if (traceId == null || traceId.isEmpty()) {
-        return clientWithVersion;
-      } else {
-        return clientWithVersion + " " + traceId;
-      }
     }
   }
 
