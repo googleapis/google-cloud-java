@@ -37,6 +37,7 @@ excluded_modules=(
   'google-auth-library-java/oauth2_http'
   'java-storage'
   'java-storage-nio'
+  'java-shared-config'
   'java-firestore'
   'java-bigtable'
   'java-pubsub'

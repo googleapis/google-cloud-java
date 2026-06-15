@@ -1059,3 +1059,5 @@ google-cloud-developer-knowledge:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-developer-knowledge-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-developer-knowledge-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-backstory:0.1.0:0.2.0-SNAPSHOT
+google-cloud-shared-config:1.17.0:1.17.1-SNAPSHOT
+native-image-shared-config:1.17.0:1.17.1-SNAPSHOT

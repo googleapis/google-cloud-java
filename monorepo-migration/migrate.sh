@@ -501,7 +501,9 @@ done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep 
 
 # 7.12b Align all version markers across the monorepo
 echo "Aligning all version markers using apply_versions.sh..."
+cp "${MONOREPO_ROOT}/generation/apply_versions.sh" generation/apply_versions.sh
 bash generation/apply_versions.sh versions.txt current
+
 
 # 7.12c Sync all owlbot.py formatting
 echo "Syncing all owlbot.py formatting..."
