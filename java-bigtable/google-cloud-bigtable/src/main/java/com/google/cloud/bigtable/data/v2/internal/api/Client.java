@@ -43,15 +43,28 @@ import io.opencensus.stats.Stats;
 import io.opencensus.tags.Tags;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.IOException;
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Client implements AutoCloseable {
+  private static final Logger logger = Logger.getLogger(Client.class.getName());
+
+  // Per-pool drain budget during close. One full watchdog tick (5 min) plus 1 min buffer; if a
+  // pool can't drain in that window, something is genuinely wrong on the server side and we give
+  // up on it so close() returns. The watchdog interval is what makes the worst case finite.
+  private static final Duration POOL_DRAIN_TIMEOUT = Duration.ofMinutes(6);
+
   public static final FeatureFlags BASE_FEATURE_FLAGS =
       FeatureFlags.newBuilder()
           .setReverseScans(false)
@@ -91,6 +104,10 @@ public class Client implements AutoCloseable {
   private final Resource<ClientConfigurationManager> configManager;
 
   private final Set<SessionPool<?>> sessionPools = Collections.newSetFromMap(new WeakHashMap<>());
+  // Set true at the start of close(); guards openTableAsync / openAuthorizedViewAsync /
+  // openMaterializedViewAsync so concurrent opens during shutdown don't create pools the close
+  // path won't see.
+  private final AtomicBoolean closed = new AtomicBoolean(false);
 
   public static Client create(ClientSettings settings) throws IOException {
     FeatureFlags featureFlags =
@@ -218,17 +235,49 @@ public class Client implements AutoCloseable {
 
   @Override
   public void close() {
-    sessionPools.forEach(
-        pool ->
-            pool.close(
-                CloseSessionRequest.newBuilder()
-                    .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
-                    .setDescription("Client closing")
-                    .build()));
-    // Drain user-callback first so pool.close's cancelWithResult listener notifications complete
-    // before we tear down the surrounding executors and timer. Without this, the late onClose
-    // submissions race the shutdown and get RejectedExecutionException, silently dropping the
-    // user's terminal onClose.
+    if (!closed.compareAndSet(false, true)) {
+      return; // idempotent
+    }
+
+    List<SessionPool<?>> toClose;
+    synchronized (sessionPools) {
+      toClose = new ArrayList<>(sessionPools);
+    }
+
+    CloseSessionRequest closeReq =
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("Client closing")
+            .build();
+
+    // Phase 1: initiate graceful close on each pool. Returns immediately; sessions transition
+    // CLOSING → graceful CloseSessionRequest → WAIT_SERVER_CLOSE → CLOSED asynchronously.
+    toClose.forEach(p -> p.close(closeReq));
+
+    // Phase 2: wait for sessions to drain. The pool's watchdog stays alive during this wait and
+    // escalates anything stuck in WAIT_SERVER_CLOSE longer than its tick interval (5 min). Once
+    // a pool's last session reaches CLOSED, drainedFuture completes and awaitTerminated returns.
+    // Sequential: worst case is POOL_DRAIN_TIMEOUT * N pools, but the happy path drains in << 1s.
+    for (SessionPool<?> pool : toClose) {
+      try {
+        if (!pool.awaitTerminated(POOL_DRAIN_TIMEOUT)) {
+          logger.warning(
+              "SessionPool did not drain within "
+                  + POOL_DRAIN_TIMEOUT
+                  + "; abandoning and continuing shutdown");
+        }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        logger.log(Level.WARNING, "Interrupted while draining SessionPool", e);
+        break;
+      }
+    }
+
+    // Phase 3: tear down infrastructure. By this point all listener.onClose tasks for in-flight
+    // RPCs are queued on their op executors (which run on userCallbackExecutor), and no new
+    // session responses are coming since every session is CLOSED. The 5s await inside
+    // userCallbackExecutor.close() is therefore just a guard for tasks in flight — it should
+    // return immediately in the typical case.
     userCallbackExecutor.close();
     metrics.close();
     channelPool.close();
@@ -238,7 +287,14 @@ public class Client implements AutoCloseable {
     backgroundExecutor.close();
   }
 
+  private void checkNotClosed() {
+    if (closed.get()) {
+      throw new IllegalStateException("Client is closed");
+    }
+  }
+
   public TableAsync openTableAsync(String tableId, Permission permission) {
+    checkNotClosed();
     TableAsync tableAsync =
         TableAsync.createAndStart(
             featureFlags,
@@ -257,6 +313,7 @@ public class Client implements AutoCloseable {
 
   public AuthorizedViewAsync openAuthorizedViewAsync(
       String tableId, String viewId, OpenAuthorizedViewRequest.Permission permission) {
+    checkNotClosed();
     AuthorizedViewAsync viewAsync =
         AuthorizedViewAsync.createAndStart(
             featureFlags,
@@ -276,6 +333,7 @@ public class Client implements AutoCloseable {
 
   public MaterializedViewAsync openMaterializedViewAsync(
       String viewId, OpenMaterializedViewRequest.Permission permission) {
+    checkNotClosed();
     MaterializedViewAsync viewAsync =
         MaterializedViewAsync.createAndStart(
             featureFlags,
