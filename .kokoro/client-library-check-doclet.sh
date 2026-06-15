@@ -76,7 +76,9 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/..
 
 # Make artifacts available for 'mvn validate' at the bottom
+pushd java-shared-config
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q --no-transfer-progress
+popd
 
 # Get version of doclet used to generate Cloud RAD for javadoc testing with the doclet below
 rm -rf java-docfx-doclet
