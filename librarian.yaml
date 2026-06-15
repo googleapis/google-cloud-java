@@ -510,6 +510,7 @@ libraries:
       - path: google/cloud/bigquery/biglake/v1alpha1
     java:
       api_description_override: The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.
+      released_version: 0.81.1
       name_pretty_override: BigLake
       product_documentation_override: https://cloud.google.com/biglake
   - name: bigquery-data-exchange
@@ -1564,7 +1565,6 @@ libraries:
       name_pretty_override: Error Reporting
       product_documentation_override: https://cloud.google.com/error-reporting
       billing_not_required: true
-      released_version: 0.215.0-beta-SNAPSHOT
   - name: essential-contacts
     version: 2.94.0-SNAPSHOT
     apis:
@@ -1674,6 +1674,7 @@ libraries:
         - google-cloud-firestore
         - google-cloud-firestore-bom
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5337669
+      released_version: 3.43.1
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Firestore
       product_documentation_override: https://cloud.google.com/firestore
