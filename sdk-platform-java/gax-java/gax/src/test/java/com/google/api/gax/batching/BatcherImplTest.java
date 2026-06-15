@@ -837,21 +837,19 @@ class BatcherImplTest {
         }
       }
       // Run GC a few times to give the batchers a chance to be collected
-      final AtomicInteger runs = new AtomicInteger(0);
       await()
           .pollInterval(Duration.ofMillis(10))
+          .during(Duration.ofMillis(200))
           .atMost(Duration.ofSeconds(2))
           .until(
               () -> {
                 System.gc();
                 System.runFinalization();
                 BatcherReference.cleanQueue();
-                return runs.incrementAndGet() >= 20;
+                synchronized (records) {
+                  return records.isEmpty();
+                }
               });
-
-      synchronized (records) {
-        assertThat(records).isEmpty();
-      }
     } finally {
       // reset logging
       batcherLogger.setFilter(oldFilter);
