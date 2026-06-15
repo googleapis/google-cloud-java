@@ -226,7 +226,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -241,7 +242,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -256,7 +258,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -272,7 +275,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1248,7 +1252,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1264,7 +1269,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1279,7 +1285,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1295,7 +1302,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1311,7 +1319,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1335,7 +1344,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1358,7 +1368,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1378,7 +1389,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1397,7 +1409,8 @@ public final class ListIcebergCatalogsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. The list of unreachable cloud regions for router fanout.
+     * Output only. The list of unreachable cloud regions. If non-empty, the
+     * result set might be incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

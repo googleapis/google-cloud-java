@@ -4,7 +4,7 @@
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.97.0</version><!-- {x-version-update:google-area120-tables:current} -->
+  <version>0.98.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   <name>Google Area 120 Tables Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.87.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,28 +26,32 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables</artifactId>
-        <version>0.97.0</version><!-- {x-version-update:google-area120-tables:current} -->
+        <version>0.98.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
-        <version>0.97.0</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
+        <version>0.98.0-SNAPSHOT</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-area120-tables-v1alpha1</artifactId>
-        <version>0.97.0</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
+        <version>0.98.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-area120-tables</module>
     <module>grpc-google-area120-tables-v1alpha1</module>
     <module>proto-google-area120-tables-v1alpha1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-area120-tables-bom</module>
   </modules>
 

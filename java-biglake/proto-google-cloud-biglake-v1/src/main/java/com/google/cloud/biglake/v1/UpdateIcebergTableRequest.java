@@ -81,7 +81,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Table to commit in the format:
-   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+   * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -108,7 +108,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Table to commit in the format:
-   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+   * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -137,14 +137,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-   * `application/json`. Added this field for easier json parsing.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the httpBody field is set.
    */
@@ -157,14 +153,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-   * `application/json`. Added this field for easier json parsing.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The httpBody.
    */
@@ -177,14 +169,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-   * `application/json`. Added this field for easier json parsing.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder() {
@@ -553,7 +541,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Table to commit in the format:
-     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+     * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -579,7 +567,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Table to commit in the format:
-     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+     * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -605,7 +593,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Table to commit in the format:
-     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+     * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -630,7 +618,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Table to commit in the format:
-     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+     * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -651,7 +639,7 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Table to commit in the format:
-     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+     * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -683,14 +671,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the httpBody field is set.
      */
@@ -702,14 +686,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The httpBody.
      */
@@ -725,14 +705,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setHttpBody(com.google.api.HttpBody value) {
       if (httpBodyBuilder_ == null) {
@@ -752,14 +728,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setHttpBody(com.google.api.HttpBody.Builder builderForValue) {
       if (httpBodyBuilder_ == null) {
@@ -776,14 +748,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeHttpBody(com.google.api.HttpBody value) {
       if (httpBodyBuilder_ == null) {
@@ -808,14 +776,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearHttpBody() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -832,14 +796,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.api.HttpBody.Builder getHttpBodyBuilder() {
       bitField0_ |= 0x00000002;
@@ -851,14 +811,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder() {
       if (httpBodyBuilder_ != null) {
@@ -872,14 +828,10 @@ public final class UpdateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-     * `application/json`. Added this field for easier json parsing.
+     * Required.
      * </pre>
      *
-     * <code>
-     * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.api.HttpBody,
