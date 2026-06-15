@@ -1762,6 +1762,16 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     assertNull(newAccessToken);
   }
 
+  @Test
+  void getRequestMetadata_withUniverseAndDelegation_throws() {
+    ServiceAccountCredentials credentials =
+        createDefaultBuilderWithKey(OAuth2Utils.privateKeyFromPkcs8(PRIVATE_KEY_PKCS8))
+            .setUniverseDomain("example.com")
+            .setServiceAccountUser("user@example.com")
+            .build();
+    assertThrows(IOException.class, () -> credentials.getRequestMetadata(CALL_URI));
+  }
+
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
       throws IOException {
     assertNotNull(metadata);
