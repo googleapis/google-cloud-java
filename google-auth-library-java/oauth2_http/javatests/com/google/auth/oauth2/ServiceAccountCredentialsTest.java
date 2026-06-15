@@ -1762,6 +1762,17 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     assertNull(newAccessToken);
   }
 
+  @Test
+  void getRequestMetadata_withMultipleScopes_selfSignedJWT() throws IOException {
+    List<String> scopes = Arrays.asList("scope1", "scope2");
+    ServiceAccountCredentials credentials =
+        createDefaultBuilderWithKey(OAuth2Utils.privateKeyFromPkcs8(PRIVATE_KEY_PKCS8))
+            .setScopes(scopes)
+            .setUseJwtAccessWithScope(true)
+            .build();
+    verifyJwtAccess(credentials.getRequestMetadata(CALL_URI), "scope1 scope2");
+  }
+
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
       throws IOException {
     assertNotNull(metadata);
