@@ -99,7 +99,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @Timeout(30)
-@Nested
 @ExtendWith(MockitoExtension.class)
 public class SessionPoolImplTest {
   private static final ClientInfo CLIENT_INFO =
@@ -170,12 +169,15 @@ public class SessionPoolImplTest {
   }
 
   @AfterEach
-  void tearDown() {
+  void tearDown() throws InterruptedException {
     sessionPool.close(
         CloseSessionRequest.newBuilder()
             .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
             .setDescription("close session")
             .build());
+    // Wait for sessions to drain so the watchdog can be closed before testTimer.stop() races
+    // with its self-reschedule loop.
+    sessionPool.awaitTerminated(Duration.ofSeconds(10));
     channelPool.close();
     // channel gets shutdown in channelPool.close()
     server.shutdownNow();
@@ -278,6 +280,43 @@ public class SessionPoolImplTest {
         testSessionPool.close(CloseSessionRequest.getDefaultInstance());
       }
     }
+  }
+
+  @Test
+  void awaitTerminatedReturnsTrueWhenPoolIsEmpty() throws InterruptedException {
+    // A pool that was never started has no sessions; close() should complete drainedFuture
+    // immediately and awaitTerminated should return true without blocking.
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("empty pool")
+            .build());
+    assertThat(sessionPool.awaitTerminated(Duration.ofMillis(100))).isTrue();
+  }
+
+  @Test
+  void awaitTerminatedReturnsTrueAfterSessionsDrain()
+      throws InterruptedException, ExecutionException, TimeoutException {
+    // Start a real session, issue + complete a vRPC so the session is fully open, then close
+    // the pool and verify awaitTerminated returns true (sessions cleanly drained).
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> resultFuture = new UnaryResponseFuture<>();
+    vrpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(Deadline.after(10, TimeUnit.SECONDS), true, vrpcTracer),
+        resultFuture);
+    resultFuture.get(10, TimeUnit.SECONDS);
+
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("after drain")
+            .build());
+
+    assertThat(sessionPool.awaitTerminated(Duration.ofSeconds(10))).isTrue();
   }
 
   @Test
