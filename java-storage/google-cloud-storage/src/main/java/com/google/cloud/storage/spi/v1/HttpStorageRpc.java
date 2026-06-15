@@ -924,8 +924,9 @@ public class HttpStorageRpc implements StorageRpc {
       MediaHttpDownloader mediaHttpDownloader = req.getMediaHttpDownloader();
       mediaHttpDownloader.setDirectDownloadEnabled(true);
 
-      // Check if this is a full object download (no Range header set)
-      boolean isFullObjectDownload = (req.getRequestHeaders().getRange() == null);
+      // Check if this is a full object download (no Range header set or Range header starting at 0)
+      boolean isFullObjectDownload =
+          HttpStorageRpcHasherHelper.isRangeZeroOrNull(req.getRequestHeaders().getRange());
 
       OutputStream activeStream =
           HttpStorageRpcHasherHelper.INSTANCE.wrap(outputStream, isFullObjectDownload);

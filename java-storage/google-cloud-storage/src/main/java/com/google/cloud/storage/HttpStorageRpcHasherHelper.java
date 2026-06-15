@@ -61,7 +61,7 @@ public final class HttpStorageRpcHasherHelper {
    * @throws IOException if the checksums do not match.
    */
   public void validate(HttpResponse response, byte[] content) throws IOException {
-    if (isTranscoded(response)) {
+    if (isTranscoded(response) || !isFullObjectResponse(response)) {
       return;
     }
     Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(response);
@@ -79,7 +79,7 @@ public final class HttpStorageRpcHasherHelper {
    */
   @SuppressWarnings("UnstableApiUsage")
   public void validate(HttpResponse response, OutputStream activeStream) throws IOException {
-    if (isTranscoded(response)) {
+    if (isTranscoded(response) || !isFullObjectResponse(response)) {
       return;
     }
     if (activeStream instanceof HashingOutputStream) {
@@ -91,6 +91,41 @@ public final class HttpStorageRpcHasherHelper {
         validateCrc32c(expectedCrc32cBase64, targetStream.hash().asInt());
       }
     }
+  }
+
+  public static boolean isRangeZeroOrNull(String rangeHeader) {
+    if (rangeHeader == null) {
+      return true;
+    }
+    String trimmed = rangeHeader.trim();
+    if (trimmed.startsWith("bytes=")) {
+      String range = trimmed.substring(6).trim();
+      return range.startsWith("0-");
+    }
+    return false;
+  }
+
+  private static boolean isFullObjectResponse(HttpResponse response) {
+    int statusCode = response.getStatusCode();
+    if (statusCode == 200) {
+      return true;
+    }
+    if (statusCode == 206) {
+      String contentRange = response.getHeaders().getContentRange();
+      if (contentRange != null) {
+        try {
+          HttpContentRange parsedRange = HttpContentRange.parse(contentRange);
+          if (parsedRange instanceof HttpContentRange.Total) {
+            HttpContentRange.Total totalRange = (HttpContentRange.Total) parsedRange;
+            return totalRange.range().beginOffset() == 0
+                && totalRange.range().endOffsetInclusive() + 1 == totalRange.getSize();
+          }
+        } catch (Exception e) {
+          // Ignore and return false
+        }
+      }
+    }
+    return false;
   }
 
   private boolean isTranscoded(HttpResponse response) {
