@@ -5337,6 +5337,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (remainingMillis <= 0) {
               remainingMillis = 1;
             }
+
             long delay = Math.min(remainingMillis, 50);
             if (thread.getState() == Thread.State.NEW) {
               Thread.sleep(delay);
