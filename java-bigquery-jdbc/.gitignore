@@ -3,6 +3,7 @@ target-it/**
 **/*logs*/**
 **/ITBigQueryJDBCLocalTest.java
 **/BigQueryStatementE2EBenchmark.java
+.agents/
 
 tools/**/*.class
 tools/**/drivers/**
