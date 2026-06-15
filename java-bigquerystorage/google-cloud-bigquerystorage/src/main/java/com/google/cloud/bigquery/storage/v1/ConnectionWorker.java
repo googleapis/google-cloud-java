@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.NanoClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
@@ -125,11 +126,6 @@ class ConnectionWorker implements AutoCloseable {
    * Behavior when inflight queue is exceeded. Only supports Block or Throw, default is Block.
    */
   private final FlowController.LimitExceededBehavior limitExceededBehavior;
-
-  /*
-   * TraceId for debugging purpose.
-   */
-  private final String traceId;
 
   /*
    * Enables compression on the wire.
@@ -562,6 +558,7 @@ class ConnectionWorker implements AutoCloseable {
       long maxInflightBytes,
       Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
+      String clientlibId,
       String traceId,
       @Nullable String compressorName,
       BigQueryWriteSettings clientSettings,
@@ -578,6 +575,7 @@ class ConnectionWorker implements AutoCloseable {
         maxInflightBytes,
         maxRetryDuration,
         limitExceededBehavior,
+        clientlibId,
         traceId,
         compressorName,
         clientSettings,
@@ -595,6 +593,7 @@ class ConnectionWorker implements AutoCloseable {
       long maxInflightBytes,
       Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
+      String clientlibId,
       String traceId,
       @Nullable String compressorName,
       BigQueryWriteSettings clientSettings,
@@ -611,6 +610,7 @@ class ConnectionWorker implements AutoCloseable {
         maxInflightBytes,
         maxRetryDuration,
         limitExceededBehavior,
+        clientlibId,
         traceId,
         compressorName,
         clientSettings,
@@ -628,6 +628,7 @@ class ConnectionWorker implements AutoCloseable {
       long maxInflightBytes,
       Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
+      String clientlibId,
       String traceId,
       @Nullable String compressorName,
       BigQueryWriteSettings clientSettings,
@@ -652,14 +653,14 @@ class ConnectionWorker implements AutoCloseable {
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
     this.limitExceededBehavior = limitExceededBehavior;
-    this.traceId = traceId;
+    String fullTraceId = getFullTraceId(clientlibId, this.writerId, traceId);
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.compressorName = compressorName;
     this.retrySettings = retrySettings;
     this.requestProfilerHook = new RequestProfiler.RequestProfilerHook(enableRequestProfiler);
     this.telemetryMetrics =
-        new TelemetryMetrics(this, enableOpenTelemetry, getTableName(), writerId, traceId);
+        new TelemetryMetrics(this, enableOpenTelemetry, getTableName(), writerId, fullTraceId);
     this.healthCheckMetrics = new HealthCheckMetrics();
     this.isMultiplexing = isMultiplexing;
 
@@ -987,6 +988,22 @@ class ConnectionWorker implements AutoCloseable {
     return (long) Math.min(Math.pow(2, retryCount) * 50, 60000);
   }
 
+  private static String getFullTraceId(String clientlibId, String writerId, String traceId) {
+    String clientWithVersion =
+        GaxProperties.getLibraryVersion(StreamWriter.class).isEmpty()
+            ? clientlibId
+            : clientlibId + ":" + GaxProperties.getLibraryVersion(StreamWriter.class);
+    if (writerId != null && !writerId.isEmpty()) {
+      clientWithVersion =
+          clientWithVersion.isEmpty() ? writerId : clientWithVersion + ":" + writerId;
+    }
+    if (traceId == null || traceId.isEmpty()) {
+      return clientWithVersion;
+    } else {
+      return clientWithVersion + " " + traceId;
+    }
+  }
+
   @VisibleForTesting
   void setTestOnlyAppendLoopSleepTime(long testOnlyAppendLoopSleepTime) {
     this.testOnlyAppendLoopSleepTime = testOnlyAppendLoopSleepTime;
@@ -1260,7 +1277,11 @@ class ConnectionWorker implements AutoCloseable {
           // If we are at the first request for every table switch, including the first request in
           // the connection, we will attach both stream name and table schema to the request.
           destinationSet.add(streamName);
-          originalRequestBuilder.setTraceId(wrapper.streamWriter.getFullTraceId());
+          originalRequestBuilder.setTraceId(
+              getFullTraceId(
+                  wrapper.streamWriter.getClientId(),
+                  this.writerId,
+                  wrapper.streamWriter.getTraceId()));
         } else if (!isMultiplexing) {
           // If we are not in multiplexing and not in the first request, clear the stream name.
           originalRequestBuilder.clearWriteStream();

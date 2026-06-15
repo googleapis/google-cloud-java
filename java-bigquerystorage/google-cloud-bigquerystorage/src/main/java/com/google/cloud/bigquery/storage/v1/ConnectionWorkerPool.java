@@ -317,7 +317,8 @@ public class ConnectionWorkerPool {
           streamWriter.getStreamName(),
           streamWriter.getLocation(),
           streamWriter.getWriterSchema(),
-          streamWriter.getFullTraceId());
+          streamWriter.getClientId(),
+          streamWriter.getTraceId());
     } else {
       ConnectionWorker existingBestConnection =
           pickBestLoadConnection(
@@ -337,7 +338,8 @@ public class ConnectionWorkerPool {
             streamWriter.getStreamName(),
             streamWriter.getLocation(),
             streamWriter.getWriterSchema(),
-            streamWriter.getFullTraceId());
+            streamWriter.getClientId(),
+            streamWriter.getTraceId());
       } else {
         // Stick to the original connection if all the connections are overwhelmed.
         if (existingConnectionWorker != null) {
@@ -396,7 +398,8 @@ public class ConnectionWorkerPool {
       String streamName,
       String location,
       AppendFormats.AppendRowsSchema writeSchema,
-      String fullTraceId)
+      String clientId,
+      String traceId)
       throws IOException {
     if (enableTesting) {
       // Though atomic integer is super lightweight, add extra if check in case adding future logic.
@@ -411,7 +414,8 @@ public class ConnectionWorkerPool {
             maxInflightBytes,
             maxRetryDuration,
             limitExceededBehavior,
-            fullTraceId,
+            clientId,
+            traceId,
             compressorName,
             clientSettings,
             retrySettings,
