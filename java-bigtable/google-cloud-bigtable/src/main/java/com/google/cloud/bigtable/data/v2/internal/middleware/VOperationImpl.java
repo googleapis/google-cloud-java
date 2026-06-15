@@ -93,17 +93,26 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
         new CleanupListener<>(listener, grpcContext, cancellationListener);
     exec.runInline(() -> chain.start(req, ctx, wrapped));
     // Register AFTER chain.start so a context-cancel that fires immediately is sequenced behind
-    // start. runInline runs chain.start synchronously, so it has fully completed by the time the
-    // listener is registered. Matches ClientCallImpl's ordering (grpc-java issue #1343).
+    // start. Matches ClientCallImpl's ordering (grpc-java issue #1343).
     //
-    // If the chain reached a terminal onClose synchronously inside runInline (uncaught-handler
-    // recovery, immediate failure), CleanupListener already tried to remove a listener that was
-    // never registered (no-op). Skip the addListener in that case — otherwise we'd register a
-    // listener on grpcContext that nothing will ever remove, pinning the entire chain for the
-    // lifetime of the (potentially long-lived) gRPC Context.
-    if (!wrapped.closed) {
-      grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
-    }
+    // Queueing the registration onto the op executor is what makes the closed-check sound: any
+    // onClose that chain.start enqueued during runInline drains FIRST (FIFO), so by the time this
+    // task runs wrapped.closed reflects whether onClose has already fired. If it has, we skip
+    // addListener — otherwise the listener would pin the chain on grpcContext for its lifetime
+    // (CleanupListener.onClose already called removeListener as a no-op pre-registration). If
+    // grpcContext gets cancelled between start() returning and this task running, the
+    // directExecutor below fires the listener immediately on addListener, so cancel still
+    // propagates correctly.
+    //
+    // runInline is the right verb here: when chain.start enqueued nothing (common path), the
+    // executor is idle and the body runs inline on this thread — no extra context switch. When
+    // chain.start did enqueue an onClose, runInline takes the queue branch and FIFO drains both.
+    exec.runInline(
+        () -> {
+          if (!wrapped.closed) {
+            grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
+          }
+        });
   }
 
   @Override

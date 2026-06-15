@@ -35,6 +35,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Message;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
+import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
@@ -177,6 +178,11 @@ public class TableBaseTest {
 
     @Override
     public void close(CloseSessionRequest req) {}
+
+    @Override
+    public boolean awaitTerminated(Duration timeout) {
+      return true;
+    }
 
     @Override
     public SessionPoolInfo getInfo() {

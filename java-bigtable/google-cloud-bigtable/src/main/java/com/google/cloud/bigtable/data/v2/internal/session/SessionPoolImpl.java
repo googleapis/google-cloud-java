@@ -64,7 +64,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -132,6 +135,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   @GuardedBy("this")
   private boolean closed = false;
+
+  // Completed when this pool has been close()d AND every session has reached the CLOSED terminal
+  // state. Drives Client.close()'s drain barrier so that listener.onClose tasks finish queueing
+  // onto userCallbackExecutor before that executor is shut down.
+  private final CompletableFuture<Void> drainedFuture = new CompletableFuture<>();
 
   @GuardedBy("this")
   private BigtableTimer.Timeout retryCreateSessionFuture = null;
@@ -293,8 +301,13 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         retryCreateSessionFuture.cancel();
         retryCreateSessionFuture = null;
       }
-      watchdog.close();
+      // Watchdog stays alive past close() so it can escalate any session that lingers in
+      // WAIT_SERVER_CLOSE during shutdown. awaitTerminated() takes ownership of closing it.
       sessions.close(req);
+      // If the pool had no sessions, drainedFuture would never be completed by onSessionClose.
+      if (sessions.getAllSessions().isEmpty()) {
+        drainedFuture.complete(null);
+      }
     }
 
     // cancelWithResult trampolines through ctx.getExecutor() — required because the public
@@ -305,6 +318,23 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
             Status.CANCELLED.withDescription("SessionPool closed: " + req));
     for (PendingVRpc<?, ?> pendingRpc : toCancel) {
       pendingRpc.cancelWithResult(closeResult);
+    }
+  }
+
+  @Override
+  public boolean awaitTerminated(Duration timeout) throws InterruptedException {
+    try {
+      drainedFuture.get(timeout.toNanos(), TimeUnit.NANOSECONDS);
+      return true;
+    } catch (TimeoutException e) {
+      return false;
+    } catch (ExecutionException e) {
+      // drainedFuture is only completed via .complete(null), never .completeExceptionally —
+      // a CancellationException would still be wrapped here. Treat as a bug.
+      throw new IllegalStateException("drainedFuture failed unexpectedly", e);
+    } finally {
+      // Close the watchdog on the way out — drained or timed out, its job is done.
+      watchdog.close();
     }
   }
 
@@ -515,6 +545,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // If the pool is closed then there is nothing else to do
       // dont need to create a replacement session and pending vRpcs get cleaned up in close()
       if (poolState == PoolState.CLOSED) {
+        // Signal awaitTerminated() once the last session has drained.
+        if (sessions.getAllSessions().isEmpty()) {
+          drainedFuture.complete(null);
+        }
         return;
       }
 
