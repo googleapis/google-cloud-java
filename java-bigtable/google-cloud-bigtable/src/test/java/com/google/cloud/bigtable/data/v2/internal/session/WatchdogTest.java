@@ -85,6 +85,11 @@ public class WatchdogTest {
     }
 
     @Override
+    public Registration onStop(Runnable hook) {
+      return () -> {};
+    }
+
+    @Override
     public void stop() {}
   }
 
