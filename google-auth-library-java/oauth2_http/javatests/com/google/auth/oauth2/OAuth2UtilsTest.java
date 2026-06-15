@@ -41,6 +41,20 @@ import org.junit.jupiter.api.Test;
 class OAuth2UtilsTest {
 
   @Test
+  void testPrivateKeyFromPkcs8_invalidKey() {
+    String invalidKey = "-----BEGIN PRIVATE KEY-----\n" +
+        "INVALID_KEY_DATA\n" +
+        "-----END PRIVATE KEY-----\n";
+    assertThrows(java.io.IOException.class, () -> OAuth2Utils.privateKeyFromPkcs8(invalidKey));
+  }
+
+  @Test
+  void testPrivateKeyFromPkcs8_malformedPem() {
+    String malformedKey = "just some random string";
+    assertThrows(java.io.IOException.class, () -> OAuth2Utils.privateKeyFromPkcs8(malformedKey));
+  }
+
+  @Test
   void testValidCredentials() {
     String username = "testUser";
     String password = "testPassword";
