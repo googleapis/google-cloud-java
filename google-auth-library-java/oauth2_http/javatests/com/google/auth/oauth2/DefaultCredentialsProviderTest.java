@@ -116,6 +116,20 @@ class DefaultCredentialsProviderTest {
   }
 
   @Test
+  void getDefaultCredentials_windowsMissingAppData_throws() {
+    // When APPDATA is unset on Windows, the ADC resolution should fail gracefully
+    // with a structured missing credentials exception, rather than crashing with an NPE.
+    MockHttpTransportFactory transportFactory = new MockHttpTransportFactory();
+    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
+    testProvider.setProperty("os.name", "windows");
+    testProvider.setEnv("APPDATA", null);
+
+    IOException e =
+        assertThrows(IOException.class, () -> testProvider.getDefaultCredentials(transportFactory));
+    assertEquals(DefaultCredentialsProvider.CLOUDSDK_MISSING_CREDENTIALS, e.getMessage());
+  }
+
+  @Test
   void getDefaultCredentials_noCredentialsSandbox_throwsNonSecurity() {
     MockHttpTransportFactory transportFactory = new MockHttpTransportFactory();
     TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
