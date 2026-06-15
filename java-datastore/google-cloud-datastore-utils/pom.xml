@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore-utils</artifactId>
-    <version>3.1.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
     <packaging>jar</packaging>
     <name>Google Cloud Datastore Utilities</name>
     <url>https://github.com/googleapis/google-cloud-java</url>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore-parent</artifactId>
-        <version>3.1.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
     </parent>
     <properties>
         <site.installationModule>google-cloud-datastore-utils</site.installationModule>
@@ -84,6 +84,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.google.api</groupId>
+            <artifactId>gax</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -123,6 +128,7 @@
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>--should-stop=ifError=FLOW</arg>
                                 <arg>-Xplugin:ErrorProne -XepExcludedPaths:.*/generated-sources/.*</arg>
+                                <arg>${errorprone.javac.args}</arg>
 
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -140,7 +146,7 @@
                                 <path>
                                     <groupId>com.google.errorprone</groupId>
                                     <artifactId>error_prone_core</artifactId>
-                                    <version>${error-prone.version}</version>
+                                    <version>${errorprone.version}</version>
                                 </path>
                             </annotationProcessorPaths>
                         </configuration>

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-trace</artifactId>
-  <version>2.93.0</version><!-- {x-version-update:google-cloud-trace:current} -->
+  <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Trace</name>
   <description>
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-trace-parent</artifactId>
-    <version>2.93.0</version><!-- {x-version-update:google-cloud-trace:current} -->
+    <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-trace</site.installationModule>
@@ -42,6 +42,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v1</artifactId>
@@ -50,6 +51,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v2</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -82,6 +84,7 @@
       <artifactId>google-cloud-core</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-trace-v1</artifactId>
@@ -92,6 +95,7 @@
       <artifactId>grpc-google-cloud-trace-v2</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

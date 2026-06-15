@@ -22,6 +22,7 @@ import com.google.cloud.modelarmor.v1.ModelArmorClient;
 import com.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadata;
 import com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest;
 import com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse;
+import com.google.cloud.modelarmor.v1.StreamingMode;
 import com.google.cloud.modelarmor.v1.TemplateName;
 
 public class SyncSanitizeModelResponse {
@@ -44,6 +45,7 @@ public class SyncSanitizeModelResponse {
               .setUserPrompt("userPrompt1504308495")
               .setMultiLanguageDetectionMetadata(
                   MultiLanguageDetectionMetadata.newBuilder().build())
+              .setStreamingMode(StreamingMode.forNumber(0))
               .build();
       SanitizeModelResponseResponse response = modelArmorClient.sanitizeModelResponse(request);
     }

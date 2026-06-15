@@ -73,6 +73,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
             com.google.bigtable.v2.SampleRowKeysRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -319,6 +320,67 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int ROW_RANGE_FIELD_NUMBER = 6;
+  private com.google.bigtable.v2.RowRange rowRange_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row range to sample. If not specified, samples
+   * from all rows.
+   * The output will always return the end key in the range as the last sample
+   * returned.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rowRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasRowRange() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row range to sample. If not specified, samples
+   * from all rows.
+   * The output will always return the end key in the range as the last sample
+   * returned.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rowRange.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.RowRange getRowRange() {
+    return rowRange_ == null ? com.google.bigtable.v2.RowRange.getDefaultInstance() : rowRange_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row range to sample. If not specified, samples
+   * from all rows.
+   * The output will always return the end key in the range as the last sample
+   * returned.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.RowRangeOrBuilder getRowRangeOrBuilder() {
+    return rowRange_ == null ? com.google.bigtable.v2.RowRange.getDefaultInstance() : rowRange_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -345,6 +407,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(materializedViewName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, materializedViewName_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getRowRange());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -366,6 +431,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(materializedViewName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, materializedViewName_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRowRange());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -386,6 +454,10 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (!getAuthorizedViewName().equals(other.getAuthorizedViewName())) return false;
     if (!getMaterializedViewName().equals(other.getMaterializedViewName())) return false;
     if (!getAppProfileId().equals(other.getAppProfileId())) return false;
+    if (hasRowRange() != other.hasRowRange()) return false;
+    if (hasRowRange()) {
+      if (!getRowRange().equals(other.getRowRange())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -405,6 +477,10 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getMaterializedViewName().hashCode();
     hash = (37 * hash) + APP_PROFILE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppProfileId().hashCode();
+    if (hasRowRange()) {
+      hash = (37 * hash) + ROW_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRowRange().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -535,10 +611,19 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.bigtable.v2.SampleRowKeysRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetRowRangeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -549,6 +634,11 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       authorizedViewName_ = "";
       materializedViewName_ = "";
       appProfileId_ = "";
+      rowRange_ = null;
+      if (rowRangeBuilder_ != null) {
+        rowRangeBuilder_.dispose();
+        rowRangeBuilder_ = null;
+      }
       return this;
     }
 
@@ -597,6 +687,12 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.appProfileId_ = appProfileId_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.rowRange_ = rowRangeBuilder_ == null ? rowRange_ : rowRangeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -630,6 +726,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         appProfileId_ = other.appProfileId_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasRowRange()) {
+        mergeRowRange(other.getRowRange());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -681,6 +780,13 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetRowRangeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1227,6 +1333,232 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.bigtable.v2.RowRange rowRange_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.RowRange,
+            com.google.bigtable.v2.RowRange.Builder,
+            com.google.bigtable.v2.RowRangeOrBuilder>
+        rowRangeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rowRange field is set.
+     */
+    public boolean hasRowRange() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rowRange.
+     */
+    public com.google.bigtable.v2.RowRange getRowRange() {
+      if (rowRangeBuilder_ == null) {
+        return rowRange_ == null ? com.google.bigtable.v2.RowRange.getDefaultInstance() : rowRange_;
+      } else {
+        return rowRangeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRowRange(com.google.bigtable.v2.RowRange value) {
+      if (rowRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rowRange_ = value;
+      } else {
+        rowRangeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRowRange(com.google.bigtable.v2.RowRange.Builder builderForValue) {
+      if (rowRangeBuilder_ == null) {
+        rowRange_ = builderForValue.build();
+      } else {
+        rowRangeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRowRange(com.google.bigtable.v2.RowRange value) {
+      if (rowRangeBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && rowRange_ != null
+            && rowRange_ != com.google.bigtable.v2.RowRange.getDefaultInstance()) {
+          getRowRangeBuilder().mergeFrom(value);
+        } else {
+          rowRange_ = value;
+        }
+      } else {
+        rowRangeBuilder_.mergeFrom(value);
+      }
+      if (rowRange_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRowRange() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      rowRange_ = null;
+      if (rowRangeBuilder_ != null) {
+        rowRangeBuilder_.dispose();
+        rowRangeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.bigtable.v2.RowRange.Builder getRowRangeBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetRowRangeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.bigtable.v2.RowRangeOrBuilder getRowRangeOrBuilder() {
+      if (rowRangeBuilder_ != null) {
+        return rowRangeBuilder_.getMessageOrBuilder();
+      } else {
+        return rowRange_ == null ? com.google.bigtable.v2.RowRange.getDefaultInstance() : rowRange_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The row range to sample. If not specified, samples
+     * from all rows.
+     * The output will always return the end key in the range as the last sample
+     * returned.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.RowRange,
+            com.google.bigtable.v2.RowRange.Builder,
+            com.google.bigtable.v2.RowRangeOrBuilder>
+        internalGetRowRangeFieldBuilder() {
+      if (rowRangeBuilder_ == null) {
+        rowRangeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.v2.RowRange,
+                com.google.bigtable.v2.RowRange.Builder,
+                com.google.bigtable.v2.RowRangeOrBuilder>(
+                getRowRange(), getParentForChildren(), isClean());
+        rowRange_ = null;
+      }
+      return rowRangeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.SampleRowKeysRequest)

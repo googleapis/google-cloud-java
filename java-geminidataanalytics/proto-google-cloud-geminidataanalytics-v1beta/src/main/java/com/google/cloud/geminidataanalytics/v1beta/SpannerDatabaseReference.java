@@ -54,10 +54,12 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
   private SpannerDatabaseReference() {
     engine_ = 0;
     projectId_ = "";
-    region_ = "";
     instanceId_ = "";
     databaseId_ = "";
     tableIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    databaseTableReferences_ = java.util.Collections.emptyList();
+    priority_ = "";
+    requestTag_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -343,59 +345,6 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     }
   }
 
-  public static final int REGION_FIELD_NUMBER = 2;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object region_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. The region of the instance.
-   * </pre>
-   *
-   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The region.
-   */
-  @java.lang.Override
-  public java.lang.String getRegion() {
-    java.lang.Object ref = region_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      region_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. The region of the instance.
-   * </pre>
-   *
-   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for region.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getRegionBytes() {
-    java.lang.Object ref = region_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      region_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int INSTANCE_ID_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -570,6 +519,223 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     return tableIds_.getByteString(index);
   }
 
+  public static final int DATABASE_TABLE_REFERENCES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+      databaseTableReferences_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+      getDatabaseTableReferencesList() {
+    return databaseTableReferences_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+      getDatabaseTableReferencesOrBuilderList() {
+    return databaseTableReferences_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDatabaseTableReferencesCount() {
+    return databaseTableReferences_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+      getDatabaseTableReferences(int index) {
+    return databaseTableReferences_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder
+      getDatabaseTableReferencesOrBuilder(int index) {
+    return databaseTableReferences_.get(index);
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object priority_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Priority for the queries to Spanner. Should be a value supported
+   * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+   * ignored. See
+   * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+   * for complete list.
+   * </pre>
+   *
+   * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The priority.
+   */
+  @java.lang.Override
+  public java.lang.String getPriority() {
+    java.lang.Object ref = priority_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      priority_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Priority for the queries to Spanner. Should be a value supported
+   * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+   * ignored. See
+   * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+   * for complete list.
+   * </pre>
+   *
+   * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for priority.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPriorityBytes() {
+    java.lang.Object ref = priority_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      priority_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_TAG_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestTag_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Tag to be attached to all queries to Spanner. Allows to identify and
+   * monitor queries sent to Spanner by the GDA service.
+   * </pre>
+   *
+   * <code>string request_tag = 9;</code>
+   *
+   * @return The requestTag.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestTag() {
+    java.lang.Object ref = requestTag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestTag_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tag to be attached to all queries to Spanner. Allows to identify and
+   * monitor queries sent to Spanner by the GDA service.
+   * </pre>
+   *
+   * <code>string request_tag = 9;</code>
+   *
+   * @return The bytes for requestTag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestTagBytes() {
+    java.lang.Object ref = requestTag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestTag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -587,9 +753,6 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, projectId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(region_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, region_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, instanceId_);
     }
@@ -605,6 +768,15 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
             .getNumber()) {
       output.writeEnum(6, engine_);
     }
+    for (int i = 0; i < databaseTableReferences_.size(); i++) {
+      output.writeMessage(7, databaseTableReferences_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(priority_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, priority_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestTag_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, requestTag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -616,9 +788,6 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, projectId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(region_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, region_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, instanceId_);
@@ -640,6 +809,17 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, engine_);
     }
+    for (int i = 0; i < databaseTableReferences_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, databaseTableReferences_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(priority_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, priority_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestTag_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, requestTag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -658,10 +838,13 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
 
     if (engine_ != other.engine_) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
-    if (!getRegion().equals(other.getRegion())) return false;
     if (!getInstanceId().equals(other.getInstanceId())) return false;
     if (!getDatabaseId().equals(other.getDatabaseId())) return false;
     if (!getTableIdsList().equals(other.getTableIdsList())) return false;
+    if (!getDatabaseTableReferencesList().equals(other.getDatabaseTableReferencesList()))
+      return false;
+    if (!getPriority().equals(other.getPriority())) return false;
+    if (!getRequestTag().equals(other.getRequestTag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -677,8 +860,6 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     hash = (53 * hash) + engine_;
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceId().hashCode();
     hash = (37 * hash) + DATABASE_ID_FIELD_NUMBER;
@@ -687,6 +868,14 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       hash = (37 * hash) + TABLE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getTableIdsList().hashCode();
     }
+    if (getDatabaseTableReferencesCount() > 0) {
+      hash = (37 * hash) + DATABASE_TABLE_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabaseTableReferencesList().hashCode();
+    }
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + getPriority().hashCode();
+    hash = (37 * hash) + REQUEST_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestTag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -832,10 +1021,18 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       bitField0_ = 0;
       engine_ = 0;
       projectId_ = "";
-      region_ = "";
       instanceId_ = "";
       databaseId_ = "";
       tableIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (databaseTableReferencesBuilder_ == null) {
+        databaseTableReferences_ = java.util.Collections.emptyList();
+      } else {
+        databaseTableReferences_ = null;
+        databaseTableReferencesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      priority_ = "";
+      requestTag_ = "";
       return this;
     }
 
@@ -865,11 +1062,26 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     public com.google.cloud.geminidataanalytics.v1beta.SpannerDatabaseReference buildPartial() {
       com.google.cloud.geminidataanalytics.v1beta.SpannerDatabaseReference result =
           new com.google.cloud.geminidataanalytics.v1beta.SpannerDatabaseReference(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.geminidataanalytics.v1beta.SpannerDatabaseReference result) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          databaseTableReferences_ =
+              java.util.Collections.unmodifiableList(databaseTableReferences_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.databaseTableReferences_ = databaseTableReferences_;
+      } else {
+        result.databaseTableReferences_ = databaseTableReferencesBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -882,17 +1094,20 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
         result.projectId_ = projectId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.region_ = region_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.instanceId_ = instanceId_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.databaseId_ = databaseId_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         tableIds_.makeImmutable();
         result.tableIds_ = tableIds_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.priority_ = priority_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.requestTag_ = requestTag_;
       }
     }
 
@@ -920,29 +1135,61 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getRegion().isEmpty()) {
-        region_ = other.region_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.tableIds_.isEmpty()) {
         if (tableIds_.isEmpty()) {
           tableIds_ = other.tableIds_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
         } else {
           ensureTableIdsIsMutable();
           tableIds_.addAll(other.tableIds_);
         }
+        onChanged();
+      }
+      if (databaseTableReferencesBuilder_ == null) {
+        if (!other.databaseTableReferences_.isEmpty()) {
+          if (databaseTableReferences_.isEmpty()) {
+            databaseTableReferences_ = other.databaseTableReferences_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureDatabaseTableReferencesIsMutable();
+            databaseTableReferences_.addAll(other.databaseTableReferences_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.databaseTableReferences_.isEmpty()) {
+          if (databaseTableReferencesBuilder_.isEmpty()) {
+            databaseTableReferencesBuilder_.dispose();
+            databaseTableReferencesBuilder_ = null;
+            databaseTableReferences_ = other.databaseTableReferences_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            databaseTableReferencesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDatabaseTableReferencesFieldBuilder()
+                    : null;
+          } else {
+            databaseTableReferencesBuilder_.addAllMessages(other.databaseTableReferences_);
+          }
+        }
+      }
+      if (!other.getPriority().isEmpty()) {
+        priority_ = other.priority_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getRequestTag().isEmpty()) {
+        requestTag_ = other.requestTag_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -977,22 +1224,16 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000002;
                 break;
               } // case 10
-            case 18:
-              {
-                region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 18
             case 26:
               {
                 instanceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 databaseId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1008,6 +1249,32 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 48
+            case 58:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.parser(),
+                        extensionRegistry);
+                if (databaseTableReferencesBuilder_ == null) {
+                  ensureDatabaseTableReferencesIsMutable();
+                  databaseTableReferences_.add(m);
+                } else {
+                  databaseTableReferencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            case 66:
+              {
+                priority_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
+            case 74:
+              {
+                requestTag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1247,117 +1514,6 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       return this;
     }
 
-    private java.lang.Object region_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. The region of the instance.
-     * </pre>
-     *
-     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The region.
-     */
-    public java.lang.String getRegion() {
-      java.lang.Object ref = region_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        region_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. The region of the instance.
-     * </pre>
-     *
-     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The bytes for region.
-     */
-    public com.google.protobuf.ByteString getRegionBytes() {
-      java.lang.Object ref = region_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        region_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. The region of the instance.
-     * </pre>
-     *
-     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The region to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegion(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      region_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. The region of the instance.
-     * </pre>
-     *
-     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearRegion() {
-      region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Required. The region of the instance.
-     * </pre>
-     *
-     * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The bytes for region to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      region_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object instanceId_ = "";
 
     /**
@@ -1423,7 +1579,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       instanceId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1441,7 +1597,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
      */
     public Builder clearInstanceId() {
       instanceId_ = getDefaultInstance().getInstanceId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1464,7 +1620,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       instanceId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1534,7 +1690,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       databaseId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1552,7 +1708,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
      */
     public Builder clearDatabaseId() {
       databaseId_ = getDefaultInstance().getDatabaseId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1575,7 +1731,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       databaseId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1587,7 +1743,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       if (!tableIds_.isModifiable()) {
         tableIds_ = new com.google.protobuf.LazyStringArrayList(tableIds_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
     }
 
     /**
@@ -1672,7 +1828,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       }
       ensureTableIdsIsMutable();
       tableIds_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1695,7 +1851,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       }
       ensureTableIdsIsMutable();
       tableIds_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1715,7 +1871,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     public Builder addAllTableIds(java.lang.Iterable<java.lang.String> values) {
       ensureTableIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tableIds_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1733,7 +1889,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
      */
     public Builder clearTableIds() {
       tableIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ;
       onChanged();
       return this;
@@ -1758,7 +1914,722 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       ensureTableIdsIsMutable();
       tableIds_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+        databaseTableReferences_ = java.util.Collections.emptyList();
+
+    private void ensureDatabaseTableReferencesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        databaseTableReferences_ =
+            new java.util.ArrayList<
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>(
+                databaseTableReferences_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+        databaseTableReferencesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+        getDatabaseTableReferencesList() {
+      if (databaseTableReferencesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(databaseTableReferences_);
+      } else {
+        return databaseTableReferencesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDatabaseTableReferencesCount() {
+      if (databaseTableReferencesBuilder_ == null) {
+        return databaseTableReferences_.size();
+      } else {
+        return databaseTableReferencesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+        getDatabaseTableReferences(int index) {
+      if (databaseTableReferencesBuilder_ == null) {
+        return databaseTableReferences_.get(index);
+      } else {
+        return databaseTableReferencesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatabaseTableReferences(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference value) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.set(index, value);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatabaseTableReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+            builderForValue) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference value) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(value);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference value) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(index, value);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+            builderForValue) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(builderForValue.build());
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+            builderForValue) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDatabaseTableReferences(
+        java.lang.Iterable<
+                ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+            values) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, databaseTableReferences_);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDatabaseTableReferences() {
+      if (databaseTableReferencesBuilder_ == null) {
+        databaseTableReferences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDatabaseTableReferences(int index) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.remove(index);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+        getDatabaseTableReferencesBuilder(int index) {
+      return internalGetDatabaseTableReferencesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder
+        getDatabaseTableReferencesOrBuilder(int index) {
+      if (databaseTableReferencesBuilder_ == null) {
+        return databaseTableReferences_.get(index);
+      } else {
+        return databaseTableReferencesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+        getDatabaseTableReferencesOrBuilderList() {
+      if (databaseTableReferencesBuilder_ != null) {
+        return databaseTableReferencesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(databaseTableReferences_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+        addDatabaseTableReferencesBuilder() {
+      return internalGetDatabaseTableReferencesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+        addDatabaseTableReferencesBuilder(int index) {
+      return internalGetDatabaseTableReferencesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder>
+        getDatabaseTableReferencesBuilderList() {
+      return internalGetDatabaseTableReferencesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+        internalGetDatabaseTableReferencesFieldBuilder() {
+      if (databaseTableReferencesBuilder_ == null) {
+        databaseTableReferencesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference,
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>(
+                databaseTableReferences_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        databaseTableReferences_ = null;
+      }
+      return databaseTableReferencesBuilder_;
+    }
+
+    private java.lang.Object priority_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Priority for the queries to Spanner. Should be a value supported
+     * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+     * ignored. See
+     * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+     * for complete list.
+     * </pre>
+     *
+     * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The priority.
+     */
+    public java.lang.String getPriority() {
+      java.lang.Object ref = priority_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        priority_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Priority for the queries to Spanner. Should be a value supported
+     * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+     * ignored. See
+     * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+     * for complete list.
+     * </pre>
+     *
+     * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for priority.
+     */
+    public com.google.protobuf.ByteString getPriorityBytes() {
+      java.lang.Object ref = priority_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        priority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Priority for the queries to Spanner. Should be a value supported
+     * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+     * ignored. See
+     * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+     * for complete list.
+     * </pre>
+     *
+     * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      priority_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Priority for the queries to Spanner. Should be a value supported
+     * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+     * ignored. See
+     * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+     * for complete list.
+     * </pre>
+     *
+     * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      priority_ = getDefaultInstance().getPriority();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Priority for the queries to Spanner. Should be a value supported
+     * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+     * ignored. See
+     * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+     * for complete list.
+     * </pre>
+     *
+     * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      priority_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestTag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Tag to be attached to all queries to Spanner. Allows to identify and
+     * monitor queries sent to Spanner by the GDA service.
+     * </pre>
+     *
+     * <code>string request_tag = 9;</code>
+     *
+     * @return The requestTag.
+     */
+    public java.lang.String getRequestTag() {
+      java.lang.Object ref = requestTag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestTag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tag to be attached to all queries to Spanner. Allows to identify and
+     * monitor queries sent to Spanner by the GDA service.
+     * </pre>
+     *
+     * <code>string request_tag = 9;</code>
+     *
+     * @return The bytes for requestTag.
+     */
+    public com.google.protobuf.ByteString getRequestTagBytes() {
+      java.lang.Object ref = requestTag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestTag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tag to be attached to all queries to Spanner. Allows to identify and
+     * monitor queries sent to Spanner by the GDA service.
+     * </pre>
+     *
+     * <code>string request_tag = 9;</code>
+     *
+     * @param value The requestTag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestTag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestTag_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tag to be attached to all queries to Spanner. Allows to identify and
+     * monitor queries sent to Spanner by the GDA service.
+     * </pre>
+     *
+     * <code>string request_tag = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestTag() {
+      requestTag_ = getDefaultInstance().getRequestTag();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tag to be attached to all queries to Spanner. Allows to identify and
+     * monitor queries sent to Spanner by the GDA service.
+     * </pre>
+     *
+     * <code>string request_tag = 9;</code>
+     *
+     * @param value The bytes for requestTag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestTagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestTag_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

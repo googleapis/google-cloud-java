@@ -41,6 +41,18 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExperimentConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExperimentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_TrafficAllocation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_TrafficAllocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_Deployment_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_Deployment_fieldAccessorTable;
@@ -53,26 +65,49 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
 
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/cloud/ces/v1beta/deployment.pro"
+      "\n"
+          + "(google/cloud/ces/v1beta/deployment.pro"
           + "to\022\027google.cloud.ces.v1beta\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
           + "e.proto\032$google/cloud/ces/v1beta/common."
-          + "proto\032\037google/protobuf/timestamp.proto\"\310"
-          + "\003\n\nDeployment\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\031\n\014disp"
-          + "lay_name\030\010 \001(\tB\003\340A\002\022:\n\013app_version\030\002 \001(\t"
-          + "B%\340A\001\372A\037\n\035ces.googleapis.com/AppVersion\022"
-          + "E\n\017channel_profile\030\003 \001(\0132\'.google.cloud."
-          + "ces.v1beta.ChannelProfileB\003\340A\002\0224\n\013create"
-          + "_time\030\004 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\022\021\n\004etag\030\007 \001(\tB\003\340A\003:\211\001"
-          + "\352A\205\001\n\035ces.googleapis.com/Deployment\022Kpro"
-          + "jects/{project}/locations/{location}/app"
-          + "s/{app}/deployments/{deployment}*\013deploy"
-          + "ments2\ndeploymentBc\n\033com.google.cloud.ce"
-          + "s.v1betaB\023ChannelProfileProtoP\001Z-cloud.g"
-          + "oogle.com/go/ces/apiv1beta/cespb;cespbb\006"
-          + "proto3"
+          + "proto\032\037google/protobuf/timestamp.proto\"\205\004\n"
+          + "\020ExperimentConfig\022V\n"
+          + "\017version_release\030\001"
+          + " \001(\01328.google.cloud.ces.v1beta.ExperimentConfig.VersionReleaseB\003\340A\001\032\307\002\n"
+          + "\016VersionRelease\022C\n"
+          + "\005state\030\001"
+          + " \001(\0162/.google.cloud.ces.v1beta.ExperimentConfig.StateB\003\340A\001\022l\n"
+          + "\023traffic_allocations\030\002 \003(\0132J.google.cloud."
+          + "ces.v1beta.ExperimentConfig.VersionRelease.TrafficAllocationB\003\340A\001\032\201\001\n"
+          + "\021TrafficAllocation\022\017\n"
+          + "\002id\030\001 \001(\tB\003\340A\001\022\037\n"
+          + "\022traffic_percentage\030\002 \001(\005B\003\340A\001\022:\n"
+          + "\013app_version\030\003 \001(\tB%\340A\001\372A\037\n"
+          + "\035ces.googleapis.com/AppVersion\"O\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007PENDING\020\001\022\013\n"
+          + "\007RUNNING\020\002\022\010\n"
+          + "\004DONE\020\003\022\013\n"
+          + "\007EXPIRED\020\004\"\223\004\n\n"
+          + "Deployment\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\010 \001(\tB\003\340A\002\022:\n"
+          + "\013app_version\030\002 \001(\tB%\340A\001\372A\037\n"
+          + "\035ces.googleapis.com/AppVersion\022E\n"
+          + "\017channel_profile\030\003"
+          + " \001(\0132\'.google.cloud.ces.v1beta.ChannelProfileB\003\340A\002\0224\n"
+          + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\004etag\030\007 \001(\tB\003\340A\003\022I\n"
+          + "\021experiment_config\030\t"
+          + " \001(\0132).google.cloud.ces.v1beta.ExperimentConfigB\003\340A\001:\211\001\352A\205\001\n"
+          + "\035ces.googleapis.com/Deployment\022Kprojects/{project}/locations/{location}/apps/{ap"
+          + "p}/deployments/{deployment}*\013deployments2\n"
+          + "deploymentBc\n"
+          + "\033com.google.cloud.ces.v1betaB\023ChannelProfileProtoP\001Z-cloud.google"
+          + ".com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,8 +118,33 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
               com.google.cloud.ces.v1beta.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
-    internal_static_google_cloud_ces_v1beta_Deployment_descriptor =
+    internal_static_google_cloud_ces_v1beta_ExperimentConfig_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_cloud_ces_v1beta_ExperimentConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExperimentConfig_descriptor,
+            new java.lang.String[] {
+              "VersionRelease",
+            });
+    internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_descriptor =
+        internal_static_google_cloud_ces_v1beta_ExperimentConfig_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_descriptor,
+            new java.lang.String[] {
+              "State", "TrafficAllocations",
+            });
+    internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_TrafficAllocation_descriptor =
+        internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_TrafficAllocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExperimentConfig_VersionRelease_TrafficAllocation_descriptor,
+            new java.lang.String[] {
+              "Id", "TrafficPercentage", "AppVersion",
+            });
+    internal_static_google_cloud_ces_v1beta_Deployment_descriptor =
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_ces_v1beta_Deployment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Deployment_descriptor,
@@ -96,6 +156,7 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
               "CreateTime",
               "UpdateTime",
               "Etag",
+              "ExperimentConfig",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -23,7 +23,6 @@ import com.google.common.truth.FailureMetadata;
 import com.google.common.truth.Subject;
 import com.google.rpc.RetryInfo;
 import java.time.Duration;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 public final class VRpcResultSubject extends Subject {
@@ -47,12 +46,14 @@ public final class VRpcResultSubject extends Subject {
   }
 
   public ComparableSubject<Duration> retryInfoDelay() {
-    return check("retryInfo.delay")
-        .that(
-            Optional.ofNullable(actual.getRetryInfo())
-                .map(RetryInfo::getRetryDelay)
-                .map(d -> Duration.ofSeconds(d.getSeconds()).plus(Duration.ofNanos(d.getNanos())))
-                .orElse(null));
+    RetryInfo retryInfo = actual.getRetryInfo();
+    Duration delay = null;
+    if (retryInfo != null) {
+      delay =
+          Duration.ofSeconds(retryInfo.getRetryDelay().getSeconds())
+              .plus(Duration.ofNanos(retryInfo.getRetryDelay().getNanos()));
+    }
+    return check("retryInfo.delay").that(delay);
   }
 
   public ComparableSubject<Duration> backendLatency() {
