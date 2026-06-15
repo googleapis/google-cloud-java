@@ -32,7 +32,14 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+import com.google.api.client.util.Clock;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
@@ -109,5 +116,30 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     tokenCredential.refresh();
     IdTokenCredentials deserializedCredentials = serializeAndDeserialize(tokenCredential);
     assertEquals(tokenCredential, deserializedCredentials);
+  }
+
+  @Test
+  void caching() throws IOException {
+    IdTokenProvider mockProvider = mock(IdTokenProvider.class);
+    IdToken idToken = IdToken.create(ComputeEngineCredentialsTest.STANDARD_ID_TOKEN);
+    when(mockProvider.idTokenWithAudience(anyString(), any())).thenReturn(idToken);
+
+    IdTokenCredentials credentials =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(mockProvider)
+            .setTargetAudience("https://foo.bar")
+            .build();
+    credentials.clock =
+        new Clock() {
+          @Override
+          public long currentTimeMillis() {
+            return 1564471451000L; // 2019-07-30T08:24:11Z (STANDARD_ID_TOKEN iat)
+          }
+        };
+
+    credentials.refreshIfExpired();
+    credentials.refreshIfExpired();
+
+    verify(mockProvider, times(1)).idTokenWithAudience(anyString(), any());
   }
 }
