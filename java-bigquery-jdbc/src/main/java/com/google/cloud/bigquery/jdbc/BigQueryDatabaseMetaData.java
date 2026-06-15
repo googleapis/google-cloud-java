@@ -5333,7 +5333,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               throw new TimeoutException();
             }
             long remainingMillis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
-            if (remainingMillis <= 0) {
+            if (remainingMillis == 0) {
               remainingMillis = 1;
             }
 
