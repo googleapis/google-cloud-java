@@ -129,13 +129,7 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
             .setIdTokenProvider(mockProvider)
             .setTargetAudience("https://foo.bar")
             .build();
-    credentials.clock =
-        new Clock() {
-          @Override
-          public long currentTimeMillis() {
-            return 1564471451000L; // 2019-07-30T08:24:11Z (STANDARD_ID_TOKEN iat)
-          }
-        };
+    credentials.clock = () -> 1564471451000L; // 2019-07-30T08:24:11Z (STANDARD_ID_TOKEN iat)
 
     credentials.refreshIfExpired();
     credentials.refreshIfExpired();
