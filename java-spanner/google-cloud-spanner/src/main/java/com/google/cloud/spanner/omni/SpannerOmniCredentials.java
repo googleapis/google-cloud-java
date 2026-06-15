@@ -50,20 +50,22 @@ public class SpannerOmniCredentials extends GoogleCredentials {
 
   public static SecretBytes convertToSecretBytes(char[] passwordChars) {
     byte[] passwordBytes = null;
+    ByteBuffer byteBuffer = null;
     try {
       CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
       CharBuffer charBuffer = CharBuffer.wrap(passwordChars);
-      ByteBuffer byteBuffer =
-          ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
+      byteBuffer = ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
       encoder.encode(charBuffer, byteBuffer, true);
       encoder.flush(byteBuffer);
       byteBuffer.flip();
       passwordBytes = new byte[byteBuffer.remaining()];
       byteBuffer.get(passwordBytes);
-      Arrays.fill(byteBuffer.array(), (byte) 0);
       return SecretBytes.copyFrom(
           passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
     } finally {
+      if (byteBuffer != null) {
+        Arrays.fill(byteBuffer.array(), (byte) 0);
+      }
       if (passwordBytes != null) {
         Arrays.fill(passwordBytes, (byte) 0);
       }

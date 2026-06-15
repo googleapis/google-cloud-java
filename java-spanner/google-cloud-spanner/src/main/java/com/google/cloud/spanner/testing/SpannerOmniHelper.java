@@ -73,7 +73,7 @@ public class SpannerOmniHelper {
     builder.setType(SpannerOptions.InstanceType.OMNI);
     String username = System.getProperty(USERNAME, "");
     String password = System.getProperty(PASSWORD, "");
-    if (!Strings.isNullOrEmpty(username)) {
+    if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
       builder.login(username, password.toCharArray());
     }
     if (usePlainText) {

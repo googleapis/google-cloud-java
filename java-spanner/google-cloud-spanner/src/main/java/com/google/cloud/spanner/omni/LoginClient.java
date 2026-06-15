@@ -129,7 +129,7 @@ public class LoginClient {
             initialResponse.getOpaqueResponse().getInitialResponse();
 
         ByteString envelope = initialOpaqueResponse.getMaskedResponse();
-        if (envelope.size() < 65) {
+        if (envelope.size() != 65) {
           throw new GeneralSecurityException("Invalid envelope size: " + envelope.size());
         }
 
@@ -233,7 +233,7 @@ public class LoginClient {
           OpaqueUtil.xorBytes(
               initialOpaqueResponse.getMaskedResponse().toByteArray(), credentialResponsePad);
       ByteString envelope = ByteString.copyFrom(serializedEnvelope);
-      if (envelope.size() < 65) {
+      if (envelope.size() != 65) {
         throw new GeneralSecurityException("Invalid envelope size: " + envelope.size());
       }
       ByteString serverPublicKey = envelope.substring(0, 33);
