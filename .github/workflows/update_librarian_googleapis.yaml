@@ -22,6 +22,8 @@ on:
       - '.github/workflows/update_librarian_googleapis.yaml'
 jobs:
   update-librarian-googleapis:
+  # This condition blocks the job from running on any fork
+    if: github.repository_owner == 'googleapis'
     runs-on: ubuntu-24.04
     defaults:
       run:
