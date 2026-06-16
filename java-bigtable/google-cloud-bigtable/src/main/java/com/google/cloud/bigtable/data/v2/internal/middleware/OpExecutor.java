@@ -37,6 +37,14 @@ import javax.annotation.concurrent.GuardedBy;
  * throws propagate (caught by the backing executor in production; surfaced to the calling thread
  * when the backing is {@link MoreExecutors#directExecutor()}, which is what makes fail-fast test
  * handlers like {@code t -> throw new AssertionError(t)} work).
+ *
+ * <p>Distinct from {@link io.grpc.SynchronizationContext} (used in {@code SessionImpl}). That
+ * primitive drains on whichever thread first calls {@code execute()} while idle — appropriate for
+ * state serialization on infrastructure threads (transport, session sync) that were going to do
+ * that work anyway. {@code OpExecutor} always hands off to its {@code backing} executor (typically
+ * the isolated user-callback pool) so chain callbacks never run on transport, session-sync, or
+ * timer-dispatch threads. Do not reach for {@code SynchronizationContext} as a "simpler"
+ * replacement; the two primitives have opposite goals.
  */
 public final class OpExecutor implements Executor {
 
