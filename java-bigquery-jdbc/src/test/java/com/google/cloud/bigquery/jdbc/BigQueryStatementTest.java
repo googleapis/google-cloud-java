@@ -486,6 +486,20 @@ public class BigQueryStatementTest {
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
   }
 
+  @Test
+  public void testCancelDoesNotRollbackTransaction() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isTransactionStarted();
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    statementSpy.jobIds.add(jobId);
+
+    statementSpy.cancel();
+
+    // Cancel should call bigquery.cancel() but not rollback the transaction
+    verify(bigquery).cancel(eq(jobId));
+    verify(bigQueryConnection, Mockito.never()).rollback();
+    verify(bigQueryConnection).removeStatement(statementSpy);
+  }
+
   @ParameterizedTest
   @ValueSource(booleans = {true, false})
   public void testGetStatementType(boolean isReadOnlyTokenUsed) throws Exception {
