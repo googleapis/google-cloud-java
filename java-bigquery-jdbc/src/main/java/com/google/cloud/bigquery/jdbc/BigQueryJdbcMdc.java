@@ -82,14 +82,14 @@ class BigQueryJdbcMdc {
   }
 
   /**
-   * Creates a new bounded cached thread pool ExecutorService that automatically propagates MDC
-   * connection context from the submitting thread to the executing thread.
+   * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
+   * context from the submitting thread to the executing thread.
    */
-  static ExecutorService newBoundedCachedThreadPool(int maxThreads, ThreadFactory threadFactory) {
+  static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
     return new MdcThreadPoolExecutor(
         "Query Executor Pool",
         0,
-        maxThreads,
+        Integer.MAX_VALUE,
         60L,
         TimeUnit.SECONDS,
         new java.util.concurrent.SynchronousQueue<>(),
@@ -97,11 +97,11 @@ class BigQueryJdbcMdc {
   }
 
   /**
-   * Creates a new bounded cached thread pool ExecutorService that automatically propagates MDC
-   * connection context from the submitting thread to the executing thread.
+   * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
+   * context from the submitting thread to the executing thread.
    */
-  static ExecutorService newBoundedCachedThreadPool(int maxThreads) {
-    return newBoundedCachedThreadPool(maxThreads, Executors.defaultThreadFactory());
+  static ExecutorService newCachedThreadPool() {
+    return newCachedThreadPool(Executors.defaultThreadFactory());
   }
 
   private static class MdcThreadFactory implements ThreadFactory {

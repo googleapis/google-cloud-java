@@ -174,7 +174,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean useQueryCache;
   String queryDialect;
   int metadataFetchThreadCount;
-  int queryProcessThreadCount;
   boolean allowLargeResults;
   String destinationTable;
   String destinationDataset;
@@ -341,7 +340,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
       this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
       this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
-      this.queryProcessThreadCount = ds.getQueryProcessThreadCount();
       this.requestReason = ds.getRequestReason();
       this.connectionPoolSize = ds.getConnectionPoolSize();
       this.listenerPoolSize = ds.getListenerPoolSize();
@@ -354,7 +352,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(metadataFetchThreadCount);
       // Cached pool executes queries immediately without queueing and reclaims all idle threads
       // when inactive, minimizing resources.
-      this.queryExecutor = BigQueryJdbcMdc.newBoundedCachedThreadPool(queryProcessThreadCount);
+      this.queryExecutor = BigQueryJdbcMdc.newCachedThreadPool();
     }
   }
 
@@ -708,10 +706,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   int getMetadataFetchThreadCount() {
     return this.metadataFetchThreadCount;
-  }
-
-  int getQueryProcessThreadCount() {
-    return this.queryProcessThreadCount;
   }
 
   boolean isEnableWriteAPI() {

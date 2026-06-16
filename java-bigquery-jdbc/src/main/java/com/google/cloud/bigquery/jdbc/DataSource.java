@@ -86,7 +86,6 @@ public class DataSource implements javax.sql.DataSource {
   private Boolean filterTablesOnDefaultDataset;
   private Integer requestGoogleDriveScope;
   private Integer metadataFetchThreadCount;
-  private Integer queryProcessThreadCount;
   private String sslTrustStorePath;
   private String sslTrustStorePassword;
   private Map<String, String> labels;
@@ -249,9 +248,6 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
               (ds, val) -> ds.setMetadataFetchThreadCount(Integer.parseInt(val)))
-          .put(
-              BigQueryJdbcUrlUtility.QUERY_PROCESS_THREAD_COUNT_PROPERTY_NAME,
-              (ds, val) -> ds.setQueryProcessThreadCount(Integer.parseInt(val)))
           .put(
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
               DataSource::setSSLTrustStorePath)
@@ -569,11 +565,7 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
           String.valueOf(this.metadataFetchThreadCount));
     }
-    if (this.queryProcessThreadCount != null) {
-      connectionProperties.setProperty(
-          BigQueryJdbcUrlUtility.QUERY_PROCESS_THREAD_COUNT_PROPERTY_NAME,
-          String.valueOf(this.queryProcessThreadCount));
-    }
+
     if (this.sslTrustStorePath != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
@@ -1092,24 +1084,6 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME);
     }
     this.metadataFetchThreadCount = metadataFetchThreadCount;
-  }
-
-  public Integer getQueryProcessThreadCount() {
-    return queryProcessThreadCount != null
-        ? queryProcessThreadCount
-        : BigQueryJdbcUrlUtility.DEFAULT_QUERY_PROCESS_THREAD_COUNT_VALUE;
-  }
-
-  public void setQueryProcessThreadCount(Integer queryProcessThreadCount) {
-    if (queryProcessThreadCount != null) {
-      // Must be at least 4 to avoid thread starvation deadlocks between interdependent
-      // producer-consumer tasks (like nextPageWorker and populateBufferWorker).
-      validateMin(
-          queryProcessThreadCount,
-          4,
-          BigQueryJdbcUrlUtility.QUERY_PROCESS_THREAD_COUNT_PROPERTY_NAME);
-    }
-    this.queryProcessThreadCount = queryProcessThreadCount;
   }
 
   public String getSSLTrustStorePath() {
