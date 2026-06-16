@@ -60,13 +60,13 @@ EOF
 
 function replace_sdk_platform_java_config_version() {
   version=$1
-  # replace version
-  xmllint --shell <(cat pom.xml) << EOF
+  # replace version in the shared parent POM
+  xmllint --shell <(cat ../google-cloud-pom-parent/pom.xml) << EOF
   setns x=http://maven.apache.org/POM/4.0.0
   cd .//x:artifactId[text()="sdk-platform-java-config"]
   cd ../x:version
   set ${version}
-  save pom.xml
+  save ../google-cloud-pom-parent/pom.xml
 EOF
 }
 REPO=$1

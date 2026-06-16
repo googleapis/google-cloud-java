@@ -60,13 +60,13 @@ EOF
 
 function replace_sdk_platform_java_config_version() {
   version=$1
-  # replace version
-  xmllint --shell <(cat pom.xml) << EOF
+  # replace version in the shared parent POM
+  xmllint --shell <(cat ../google-cloud-pom-parent/pom.xml) << EOF
   setns x=http://maven.apache.org/POM/4.0.0
   cd .//x:artifactId[text()="sdk-platform-java-config"]
   cd ../x:version
   set ${version}
-  save pom.xml
+  save ../google-cloud-pom-parent/pom.xml
 EOF
 }
 
@@ -132,16 +132,18 @@ else
   replace_sdk_platform_java_config_version "${SDK_PLATFORM_JAVA_CONFIG_VERSION}"
 fi
 
+export BUILD_SUBDIR=${REPO}
+
 case ${JOB_TYPE} in
 dependencies)
-    .kokoro/dependencies.sh
+    ../.kokoro/dependencies.sh
     RETURN_CODE=$?
     ;;
 flatten-plugin)
     # This creates .flattened-pom.xml
-    echo "Before running .kokoro/build.sh"
-    .kokoro/build.sh
-    echo "After running .kokoro/build.sh"
+    echo "Before running ../.kokoro/build.sh"
+    ../.kokoro/build.sh
+    echo "After running ../.kokoro/build.sh"
     pushd google-cloud-*
     mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
         | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
@@ -156,12 +158,8 @@ flatten-plugin)
     popd
     ;;
 *)
-    # Here we replace the com.coveo fmt plugin with the spotify version.
-	# This `sed` won't be needed once downstream repositories update
-	# `.kokoro/build.sh` to use the `com.spotify.fmt` group ID.
-    sed -i 's/com.coveo:fmt-maven-plugin/com.spotify.fmt:fmt-maven-plugin/' .kokoro/build.sh
     # This reads the JOB_TYPE environmental variable
-    .kokoro/build.sh
+    ../.kokoro/build.sh
     RETURN_CODE=$?
     ;;
 esac
