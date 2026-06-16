@@ -328,7 +328,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
       json.put("client_secret", clientSecret);
     }
     if (quotaProjectId != null) {
-      json.put("quota_project", clientSecret);
+      json.put("quota_project_id", quotaProjectId);
     }
     json.setFactory(JSON_FACTORY);
     String text = json.toPrettyString();
