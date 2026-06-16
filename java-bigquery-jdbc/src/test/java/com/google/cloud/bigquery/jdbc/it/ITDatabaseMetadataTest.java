@@ -49,7 +49,6 @@ import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  static final String connection_uri = ITBase.connectionUrl;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static String DATASET;
@@ -62,7 +61,6 @@ public class ITDatabaseMetadataTest extends ITBase {
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static final String TABLE_NAME = "JDBC_DBMETADATA_TEST_TABLE" + randomNumber;
-  private static String connectionUrl = ITBase.connectionUrl;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
@@ -79,8 +77,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Disabled
   @Test
   public void testGetCatalogs() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -95,8 +92,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   // metadata
   @Test
   public void testGetSchemas() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -109,8 +105,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetTableTypes() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
       // this is either 3 or 4 in different projects
@@ -124,8 +119,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetTables() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -140,8 +134,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   // TODO: Make it return non-empty
   @Test
   public void testGetTablePrivileges() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -154,8 +147,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetClientInfoProperties() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -170,8 +162,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetColumns() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -185,8 +176,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Disabled
   @Test
   public void testDriverMetadataInfo() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -201,8 +191,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Disabled
   @Test
   public void testProcedure() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
 
@@ -216,8 +205,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Disabled
   @Test
   public void testAllBooleanMethods() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
       // This method toggles between true and false in different environments
@@ -243,8 +231,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Disabled
   @Test
   public void testAllIntMethods() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
       verifyIntMethods(metaData);
@@ -260,8 +247,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testAllStringMethods() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
       verifyAllStringMethods(metaData, "procedure");
@@ -273,8 +259,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testGetPrimaryKeys() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData metaData = connection.getMetaData();
     try {
       verifyGetPrimaryKeys(connection, metaData, DATASET);
@@ -286,8 +271,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testTableConstraints() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     ResultSet primaryKey1 =
         connection
             .getMetaData()
@@ -347,8 +331,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testMetadataResultSetsDoNotInterfere() throws SQLException {
-    try (Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG))) {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
       DatabaseMetaData metaData = connection.getMetaData();
 
       // Get primary keys for table 1
@@ -382,8 +365,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Test
   public void testDatabaseMetadataGetCatalogs() throws SQLException {
 
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
     try (ResultSet rs = databaseMetaData.getCatalogs()) {
       assertNotNull(rs, "ResultSet from getCatalogs() should not be null");
@@ -405,8 +387,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Test
   public void testDatabaseMetadataGetProcedures() throws SQLException {
 
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String procedureName = "create_customer";
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -427,8 +408,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Test
   public void testDatabaseMetadataGetProcedureColumns() throws SQLException {
 
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
 
     // --- Test Case 1: Specific schema and procedure, null column name pattern ---
@@ -492,8 +472,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Test
   public void testDatabaseMetadataGetColumns() throws SQLException {
 
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -684,8 +663,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testDatabaseMetadataGetTables() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
     String DATASET = "JDBC_TABLE_TYPES_TEST";
 
@@ -785,8 +763,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testDatabaseMetadataGetSchemas() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
 
     // Test case 1: Get all schemas with catalog and check for the presence of specific schemas
@@ -822,8 +799,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testDatabaseMetadataGetSchemasNoArgs() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
     String expectedCatalog = connection.getCatalog();
     assertNotNull(expectedCatalog, "Project ID (catalog) from connection should not be null");
@@ -858,8 +834,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   public void testDatabaseMetaDataGetFunctions() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
     String testSchema = "JDBC_TABLE_TYPES_TEST";
     String testCatalog = PROJECT_ID;
@@ -970,8 +945,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Disabled
   @Test
   public void testDatabaseMetadataGetFunctionColumns() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
     String testCatalog = PROJECT_ID;
     String testSchema = "JDBC_TABLE_TYPES_TEST";
@@ -1164,7 +1138,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     String table2InSpecificDataset = "external_table";
 
     String connectionUrl =
-        ITDatabaseMetadataTest.connectionUrl
+        ITBase.connectionUrl
             + "DefaultDataset="
             + defaultDatasetValue
             + ";FilterTablesOnDefaultDataset=1";
@@ -1233,7 +1207,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     String[] columnsInSpecificTable = {"id", "name", "created_at"};
 
     String connectionUrl =
-        ITDatabaseMetadataTest.connectionUrl
+        ITBase.connectionUrl
             + "DefaultDataset="
             + defaultDatasetValue
             + ";FilterTablesOnDefaultDataset=1";

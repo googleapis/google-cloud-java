@@ -183,7 +183,7 @@ public class ITBase extends BigQueryJdbcBaseTest {
     return TestUtilities.getBaseConnectionUrl();
   }
 
-  public static String connectionUrl =
+  public static final String connectionUrl =
       getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
 
   public static final String createDatasetQuery =
