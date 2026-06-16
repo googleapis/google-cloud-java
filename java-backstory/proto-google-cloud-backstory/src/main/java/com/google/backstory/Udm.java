@@ -2723,10 +2723,10 @@ public final class Udm extends com.google.protobuf.GeneratedFile {
           + "\n"
           + "UNDETECTED\020\001\022\016\n\n"
           + "SUSPICIOUS\020\002\022\r\n"
-          + "\tMALICIOUS\020\003B\215\001\n"
-          + "\024com.google.backstoryP\001Z9google.golang.org/genproto/googleapis/backstory"
-          + ";backstory\252\002\020Google.Backstory\312\002\020Google\\B"
-          + "ackstory\352\002\021Google::Backstoryb\006proto3"
+          + "\tMALICIOUS\020\003B\211\001\n"
+          + "\024com.google.backstoryP\001Z5cloud.google.com/go/backstory/backstorypb;backs"
+          + "torypb\252\002\020Google.Backstory\312\002\020Google\\Backs"
+          + "tory\352\002\021Google::Backstoryb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
