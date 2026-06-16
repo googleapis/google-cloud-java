@@ -69,9 +69,10 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
     if (started) {
-      listener.onClose(
+      VRpcResult alreadyStarted =
           VRpcResult.createRejectedError(
-              Status.FAILED_PRECONDITION.withDescription("operation is already started")));
+              Status.FAILED_PRECONDITION.withDescription("operation is already started"));
+      ctx.getExecutor().execute(() -> listener.onClose(alreadyStarted));
       return;
     }
 
@@ -115,6 +116,11 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
         new Done(
             VRpcResult.createRejectedError(
                 Status.CANCELLED.withDescription(message).withCause(finalCause))));
+  }
+
+  @Override
+  public boolean isDone() {
+    return currentState.isDone();
   }
 
   @Override
@@ -392,10 +398,6 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     @Override
     public void onStart() {
-      if (!started) {
-        LOG.fine("operation is not started yet.");
-        return;
-      }
       // Per-attempt tracer pairing is owned by Active.onExit; Done just runs the user listener
       // and the per-operation tracer finish.
       Stopwatch appTimer = Stopwatch.createStarted();

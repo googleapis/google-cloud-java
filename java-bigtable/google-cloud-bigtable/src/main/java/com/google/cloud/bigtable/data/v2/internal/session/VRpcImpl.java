@@ -197,6 +197,11 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   }
 
   @Override
+  public boolean isDone() {
+    return state.get() == State.CLOSED;
+  }
+
+  @Override
   public void requestNext() {
     throw new UnsupportedOperationException("streamed RPCs are not supported yet");
   }
