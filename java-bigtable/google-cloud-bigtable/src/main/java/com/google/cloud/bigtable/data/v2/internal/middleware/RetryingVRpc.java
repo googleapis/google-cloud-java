@@ -134,12 +134,17 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     if (currentState.isDone()) {
       return;
     }
+    // Give the outgoing state a chance to release per-state resources (timers, registrations,
+    // tracer pairings). Default is a no-op; states that hold cleanup-worthy resources override.
+    currentState.onExit();
     this.currentState = state;
     currentState.onStart();
   }
 
   abstract static class State {
     public abstract void onStart();
+
+    public void onExit() {}
 
     public void onCancel(String reason, Throwable throwable) {}
 
@@ -164,6 +169,16 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   class Active extends State {
 
     private VRpc<ReqT, RespT> attempt;
+    // Tracer pairing flag scoped to this attempt. finishAttempt is idempotent via this flag so
+    // listener path, cancel path, and onExit safety net never double-fire.
+    private boolean attemptFinished = false;
+
+    private void finishAttempt(VRpcResult result) {
+      if (!attemptFinished) {
+        attemptFinished = true;
+        tracer.onAttemptFinish(result);
+      }
+    }
 
     @Override
     public void onStart() {
@@ -195,12 +210,12 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
               }
               if (userThrow != null) {
                 // Classify as USER_FAILURE (not CANCELLED, which is what the OpExecutor uncaught
-                // handler would produce via chain.cancel). Finish tracing for the in-flight
-                // attempt, cancel the underlying gRPC call so no further events arrive (its later
-                // onClose is dropped by the currentState != Active.this guard), and transition
-                // directly to Done with the user-error result.
+                // handler would produce via chain.cancel). Finish the attempt's tracer span
+                // with the user-error result, cancel the underlying gRPC call so no further
+                // events arrive (its later onClose is dropped by the currentState !=
+                // Active.this guard), and transition directly to Done.
                 VRpcResult userResult = VRpcResult.createUserError(userThrow);
-                tracer.onAttemptFinish(userResult);
+                finishAttempt(userResult);
                 attempt.cancel("User callback threw", userThrow);
                 onStateChange(new Done(userResult));
               }
@@ -209,7 +224,6 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
             @Override
             public void onClose(VRpcResult result) {
               context.getExecutor().throwIfNotInThisExecutor();
-              tracer.onAttemptFinish(result);
               if (currentState != Active.this) {
                 LOG.log(
                     Level.FINE,
@@ -218,6 +232,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                     result);
                 return;
               }
+              finishAttempt(result);
               if (shouldRetry(result)) {
                 context = context.createForNextAttempt();
                 Duration retryDelay =
@@ -240,12 +255,27 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     @Override
     public void onCancel(String reason, Throwable throwable) {
-      // attempt could be null if attemptFactory.get() throws an exception. In which case sync
-      // context uncaught exception handler will be called, which calls cancel on the current
-      // state before transition into done state.
+      // Pair the onAttemptStart fired in onStart with an onAttemptFinish at the moment we
+      // abandon the attempt — the later server onClose for the cancelled attempt is dropped by
+      // the stale-state guard, so this is the only chance to balance the tracer.
+      finishAttempt(
+          VRpcResult.createRejectedError(
+              Status.CANCELLED.withDescription(reason).withCause(throwable)));
+      // attempt could be null if attemptFactory.get() threw before assignment.
       if (attempt != null) {
         attempt.cancel(reason, throwable);
       }
+    }
+
+    @Override
+    public void onExit() {
+      // Defense-in-depth: every existing exit path (listener.onClose, onMessage user-throw,
+      // onCancel) calls finishAttempt with a meaningful result before transitioning. This catches
+      // any new exit path that forgets, recording a generic 'abandoned' instead of leaking the
+      // tracer span.
+      finishAttempt(
+          VRpcResult.createRejectedError(
+              Status.CANCELLED.withDescription("attempt abandoned during transition")));
     }
 
     boolean shouldRetry(VRpcResult result) {
@@ -281,9 +311,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     private final Duration retryDelay;
     private BigtableTimer.Timeout future;
     // Registered with the timer on entry so a Client.close that stops the timer drives this
-    // Scheduled to a CANCELLED Done instead of silently discarding the pending timeout. Cleared
-    // on every exit path (normal fire, cancel, hook fire) to avoid accumulating dead entries on
-    // a long-lived Client.
+    // Scheduled to a CANCELLED Done instead of silently discarding the pending timeout.
     private BigtableTimer.Registration stopHook;
 
     Scheduled(Duration retryDelay) {
@@ -304,15 +332,14 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                         .execute(
                             () ->
                                 grpcContext
-                                    .wrap(() -> otelContext.wrap(this::onTimerFired).run())
+                                    .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
                                     .run()),
                 Durations.toMillis(retryDelay),
                 TimeUnit.MILLISECONDS);
       } catch (IllegalStateException e) {
         // Timer was stopped between Active.onClose deciding to retry and this task running on the
         // op executor. Race window is narrow (post-drain shutdown), but cover it cleanly so the
-        // op-executor uncaught handler does not have to.
-        unregisterStopHook();
+        // op-executor uncaught handler does not have to. onExit will release the stopHook.
         onStateChange(
             new Done(
                 VRpcResult.createRejectedError(
@@ -321,11 +348,6 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                             "Executor shutting down, can't schedule operation for retry.")
                         .withCause(e))));
       }
-    }
-
-    private void onTimerFired() {
-      unregisterStopHook();
-      onStateChange(new Idle());
     }
 
     // Invoked from BigtableTimer.stop on the close thread. Trampoline back to the op executor so
@@ -346,18 +368,14 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
               });
     }
 
-    private void unregisterStopHook() {
+    @Override
+    public void onExit() {
+      // Consolidated cleanup: runs on every exit path (normal fire → Idle, cancel → Done,
+      // shutdown hook → Done). Both fields may be null if schedule threw an ISE before assignment.
       if (stopHook != null) {
         stopHook.unregister();
         stopHook = null;
       }
-    }
-
-    @Override
-    public void onCancel(String reason, Throwable throwable) {
-      unregisterStopHook();
-      // future can be null if schedule throws and we end up here via the op-executor uncaught
-      // path.
       if (future != null && !future.isCancelled()) {
         future.cancel();
       }
@@ -378,6 +396,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
         LOG.fine("operation is not started yet.");
         return;
       }
+      // Per-attempt tracer pairing is owned by Active.onExit; Done just runs the user listener
+      // and the per-operation tracer finish.
       Stopwatch appTimer = Stopwatch.createStarted();
       try {
         listener.onClose(result);
