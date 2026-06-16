@@ -778,6 +778,13 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     @Override
+    public boolean isDone() {
+      // realCall set in drainTo's lambda; once we hand off, it's the source of truth.
+      // Pre-handoff, isCancelled tracks our own terminal state.
+      return realCall != null ? realCall.isDone() : isCancelled;
+    }
+
+    @Override
     public void requestNext() {
       if (realCall != null) {
         realCall.requestNext();

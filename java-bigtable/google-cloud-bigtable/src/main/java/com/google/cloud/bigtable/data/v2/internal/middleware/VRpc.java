@@ -60,6 +60,14 @@ public interface VRpc<ReqT, RespT> {
   void cancel(@Nullable String message, @Nullable Throwable cause);
 
   /**
+   * True once a terminal result has been (or is about to be) delivered to the listener; future
+   * events on this VRpc are no-ops. Callers use this to detect a synchronous terminal during
+   * {@link #start} — e.g. VOperationImpl checks this to avoid registering a gRPC cancellation
+   * listener that would never be removed because the chain already finished.
+   */
+  boolean isDone();
+
+  /**
    * TBD - server streaming rpcs. This will be used to request more data. Unlike gRPC's request(n),
    * starting a call will implicitly request the first message.
    */

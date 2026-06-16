@@ -58,6 +58,11 @@ class VOperationImplTest {
           }
 
           @Override
+          public boolean isDone() {
+            return false;
+          }
+
+          @Override
           public void requestNext() {}
         };
 
@@ -88,9 +93,9 @@ class VOperationImplTest {
 
   @Test
   void asyncOnCloseFromChainDoesNotPropagateLaterContextCancel() throws InterruptedException {
-    // Regression for the wrapped.closed TOCTOU. When chain.start asynchronously queues an
+    // Regression for the chain-already-done TOCTOU. When chain.start asynchronously queues an
     // onClose via the op executor, the addListener task (also queued through the op executor
-    // by VOperationImpl.start) drains FIFO after the onClose and observes wrapped.closed=true,
+    // by VOperationImpl.start) drains FIFO after the onClose and observes chain.isDone()=true,
     // so the cancellationListener is NOT registered. A later grpcContext.cancel therefore has
     // no path to reach chain.cancel — which is correct because the chain has already terminated.
     Context.CancellableContext grpcContext = Context.current().withCancellation();
@@ -100,20 +105,29 @@ class VOperationImplTest {
 
     VRpc<String, String> chain =
         new VRpc<String, String>() {
+          private volatile boolean done = false;
+
           @Override
           public void start(String req, VRpcCallContext ctx, VRpcListener<String> listener) {
             // Simulate PendingVRpc pool-closed branch / VRpcImpl deadline short-circuit.
             ctx.getExecutor()
                 .execute(
-                    () ->
-                        listener.onClose(
-                            VRpcResult.createUncommitedError(
-                                Status.UNAVAILABLE.withDescription("fast-fail"))));
+                    () -> {
+                      done = true;
+                      listener.onClose(
+                          VRpcResult.createUncommitedError(
+                              Status.UNAVAILABLE.withDescription("fast-fail")));
+                    });
           }
 
           @Override
           public void cancel(@Nullable String msg, @Nullable Throwable cause) {
             chainCancelCount.incrementAndGet();
+          }
+
+          @Override
+          public boolean isDone() {
+            return done;
           }
 
           @Override
