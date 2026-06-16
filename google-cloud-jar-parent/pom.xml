@@ -220,6 +220,8 @@
         <configuration>
           <skip>${skipUnitTests}</skip>
           <excludes>
+            <!-- We are excluding generated client unit tests to save CI time. -->
+            <!-- We use the narrow v*/* pattern (single asterisk) to protect manual tests in sub-packages (like v1/client/ or v2/internal/api/). -->
             <exclude>**/v*/*ClientTest.java</exclude>
             <exclude>**/v*/*ClientHttpJsonTest.java</exclude>
           </excludes>
