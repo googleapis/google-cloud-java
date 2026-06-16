@@ -36,6 +36,8 @@ import com.google.cloud.dataplex.v1.ListDataAssetsResponse;
 import com.google.cloud.dataplex.v1.ListDataProductsRequest;
 import com.google.cloud.dataplex.v1.ListDataProductsResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessRequest;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessResponse;
 import com.google.cloud.dataplex.v1.UpdateDataAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateDataProductRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -111,6 +113,11 @@ public abstract class DataProductServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDataProductRequest, Operation> updateDataProductCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDataProductCallable()");
+  }
+
+  public UnaryCallable<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessCallable() {
+    throw new UnsupportedOperationException("Not implemented: requestDataProductAccessCallable()");
   }
 
   public OperationCallable<CreateDataAssetRequest, DataAsset, OperationMetadata>

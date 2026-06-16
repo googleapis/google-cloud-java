@@ -106,6 +106,45 @@ public interface SourceSpecOrBuilder
    *
    *
    * <pre>
+   * The path to a single source file in Cloud Storage.
+   * </pre>
+   *
+   * <code>string gcs_file_path = 4;</code>
+   *
+   * @return Whether the gcsFilePath field is set.
+   */
+  boolean hasGcsFilePath();
+
+  /**
+   *
+   *
+   * <pre>
+   * The path to a single source file in Cloud Storage.
+   * </pre>
+   *
+   * <code>string gcs_file_path = 4;</code>
+   *
+   * @return The gcsFilePath.
+   */
+  java.lang.String getGcsFilePath();
+
+  /**
+   *
+   *
+   * <pre>
+   * The path to a single source file in Cloud Storage.
+   * </pre>
+   *
+   * <code>string gcs_file_path = 4;</code>
+   *
+   * @return The bytes for gcsFilePath.
+   */
+  com.google.protobuf.ByteString getGcsFilePathBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The optional field to specify the encoding of the sql bytes.
    * </pre>
    *

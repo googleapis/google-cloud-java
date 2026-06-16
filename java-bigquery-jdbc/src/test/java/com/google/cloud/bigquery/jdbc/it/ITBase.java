@@ -32,6 +32,150 @@ import java.util.List;
 
 public class ITBase extends BigQueryJdbcBaseTest {
 
+  private static String sharedDataset;
+  private static String sharedDataset2;
+
+  private static final String DDL_IT_CALLABLE_STMT_PROC_DML_TABLE =
+      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_TABLE`\n"
+          + "(\n"
+          + "  name STRING,\n"
+          + "  id INT64,\n"
+          + "  result STRING\n"
+          + ");\n";
+
+  private static final String DDL_IT_CALLABLE_STMT_PROC_TABLE =
+      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.IT_CALLABLE_STMT_PROC_TABLE`\n"
+          + "(\n"
+          + "  name STRING,\n"
+          + "  id INT64,\n"
+          + "  result STRING\n"
+          + ");\n";
+
+  private static final String DDL_IT_CALLABLE_STMT_PROC_DML_INSERT_TEST =
+      "CREATE OR REPLACE PROCEDURE `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_INSERT_TEST`(in_name STRING, in_id INT64, in_result STRING)\n"
+          + "BEGIN\n"
+          + "  INSERT INTO `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_TABLE` VALUES(in_name, in_id, in_result);\n"
+          + "END;\n";
+
+  private static final String DDL_IT_CALLABLE_STMT_PROC_DML_UPDATE_TEST =
+      "CREATE OR REPLACE PROCEDURE `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_UPDATE_TEST`(in_name STRING, in_id INT64, in_result STRING)\n"
+          + "BEGIN\n"
+          + "  UPDATE `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_TABLE` SET name = in_name, result = in_result WHERE id = in_id;\n"
+          + "END;\n";
+
+  private static final String DDL_IT_CALLABLE_STMT_PROC_DML_DELETE_TEST =
+      "CREATE OR REPLACE PROCEDURE `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_DELETE_TEST`(in_id INT64)\n"
+          + "BEGIN\n"
+          + "  DELETE FROM `%1$s.%2$s.IT_CALLABLE_STMT_PROC_DML_TABLE` WHERE id = in_id;\n"
+          + "END;\n";
+
+  private static final String DDL_IT_CALLABLE_STMT_PROC_TEST =
+      "CREATE OR REPLACE PROCEDURE `%1$s.%2$s.IT_CALLABLE_STMT_PROC_TEST`(name STRING, id INT64, OUT result STRING)\n"
+          + "BEGIN\n"
+          + "  SET result = CONCAT(name, '-', id);\n"
+          + "  INSERT INTO `%1$s.%2$s.IT_CALLABLE_STMT_PROC_TABLE` VALUES(name, id, result);\n"
+          + "END;\n";
+
+  private static final String DDL_JDBC_CONSTRAINTS_TEST_TABLE3 =
+      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE3`\n"
+          + "(\n"
+          + "  address STRING,\n"
+          + "  PRIMARY KEY (address) NOT ENFORCED\n"
+          + ");\n";
+
+  private static final String DDL_JDBC_CONSTRAINTS_TEST_TABLE2 =
+      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE2`\n"
+          + "(\n"
+          + "  first_name STRING,\n"
+          + "  last_name STRING,\n"
+          + "  PRIMARY KEY (first_name, last_name) NOT ENFORCED\n"
+          + ");\n";
+
+  private static final String DDL_JDBC_CONSTRAINTS_TEST_TABLE =
+      "CREATE TABLE IF NOT EXISTS `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE`\n"
+          + "(\n"
+          + "  id INT64,\n"
+          + "  name STRING,\n"
+          + "  second_name STRING,\n"
+          + "  address STRING,\n"
+          + "  PRIMARY KEY (id) NOT ENFORCED,\n"
+          + "  CONSTRAINT my_fk FOREIGN KEY (name, second_name) REFERENCES `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE2`(first_name, last_name) NOT ENFORCED,\n"
+          + "  CONSTRAINT my_fk2 FOREIGN KEY (address) REFERENCES `%1$s.%2$s.JDBC_CONSTRAINTS_TEST_TABLE3`(address) NOT ENFORCED\n"
+          + ");\n";
+
+  private static final String CREATE_RESOURCES_SCRIPT =
+      DDL_IT_CALLABLE_STMT_PROC_DML_TABLE
+          + DDL_IT_CALLABLE_STMT_PROC_TABLE
+          + DDL_JDBC_CONSTRAINTS_TEST_TABLE3
+          + DDL_JDBC_CONSTRAINTS_TEST_TABLE2
+          + DDL_JDBC_CONSTRAINTS_TEST_TABLE
+          + DDL_IT_CALLABLE_STMT_PROC_DML_INSERT_TEST
+          + DDL_IT_CALLABLE_STMT_PROC_DML_UPDATE_TEST
+          + DDL_IT_CALLABLE_STMT_PROC_DML_DELETE_TEST
+          + DDL_IT_CALLABLE_STMT_PROC_TEST;
+
+  public static synchronized String getSharedDataset() {
+    if (sharedDataset == null) {
+      sharedDataset =
+          "JDBC_IT_SHARED_"
+              + System.currentTimeMillis()
+              + "_"
+              + (100 + new java.util.Random().nextInt(900));
+      try {
+        setUpDataset(sharedDataset);
+        registerShutdownHook(sharedDataset);
+        createSharedResources(sharedDataset);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException(e);
+      }
+    }
+    return sharedDataset;
+  }
+
+  public static synchronized String getSharedDataset2() {
+    if (sharedDataset2 == null) {
+      sharedDataset2 =
+          "JDBC_IT_SHARED_2_"
+              + System.currentTimeMillis()
+              + "_"
+              + (100 + new java.util.Random().nextInt(900));
+      try {
+        setUpDataset(sharedDataset2);
+        registerShutdownHook(sharedDataset2);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException(e);
+      }
+    }
+    return sharedDataset2;
+  }
+
+  private static void createSharedResources(String dataset) throws InterruptedException {
+    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
+    String project = DEFAULT_CATALOG;
+    String script = String.format(CREATE_RESOURCES_SCRIPT, project, dataset);
+    bigQuery.query(QueryJobConfiguration.of(script));
+  }
+
+  private static void registerShutdownHook(final String dataset) {
+    Runtime.getRuntime()
+        .addShutdownHook(
+            new Thread(
+                () -> {
+                  try {
+                    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
+                    bigQuery.query(
+                        QueryJobConfiguration.of(
+                            String.format(dropSchema, DEFAULT_CATALOG, dataset)));
+                    System.out.println("Cleaned up shared dataset: " + dataset);
+                  } catch (Exception e) {
+                    System.err.println(
+                        "Failed to cleanup shared dataset " + dataset + ": " + e.getMessage());
+                  }
+                }));
+  }
+
   public static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   public static String connectionUrl =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="

@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.jdbc.it.ITConnectionTest;
 import com.google.cloud.bigquery.jdbc.it.ITDatabaseMetadataTest;
 import com.google.cloud.bigquery.jdbc.it.ITDriverTest;
 import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
+import com.google.cloud.bigquery.jdbc.it.ITStatementTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
@@ -36,6 +37,7 @@ import org.junit.platform.suite.api.Suite;
   ITConnectionPoolingTest.class,
   ITDatabaseMetadataTest.class,
   ITDriverTest.class,
-  ITResultSetMetadataTest.class
+  ITResultSetMetadataTest.class,
+  ITStatementTest.class
 })
 public class ITPresubmitTests {}

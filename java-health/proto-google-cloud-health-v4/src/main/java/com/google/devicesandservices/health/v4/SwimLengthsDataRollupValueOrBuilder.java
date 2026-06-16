@@ -33,7 +33,20 @@ public interface SwimLengthsDataRollupValueOrBuilder
    * Total number of swim strokes in the interval.
    * </pre>
    *
-   * <code>int64 stroke_count_sum = 1;</code>
+   * <code>optional int64 stroke_count_sum = 1;</code>
+   *
+   * @return Whether the strokeCountSum field is set.
+   */
+  boolean hasStrokeCountSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of swim strokes in the interval.
+   * </pre>
+   *
+   * <code>optional int64 stroke_count_sum = 1;</code>
    *
    * @return The strokeCountSum.
    */

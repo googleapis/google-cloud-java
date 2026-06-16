@@ -621,10 +621,16 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         // (within the refresh margin).
         mockedTimeInMillis = expirationTimeInMillis - refreshMarginInMillis + 60000;
         when(mockClock.currentTimeMillis())
-            .thenReturn(
-                mockedTimeInMillis, // First call: Stale (triggers the async refresh)
-                currentTimeInMillis // Subsequent calls: Fresh (skips redundant refreshes)
-                );
+            .thenAnswer(
+                invocation -> {
+                  // If the async refresh has already been triggered (request count >= 2),
+                  // return the fresh time to skip redundant refreshes.
+                  // Note: 1st request was the initial blocking refresh.
+                  if (mockStsTransportFactory.transport.getRequestCount() >= 2) {
+                    return currentTimeInMillis;
+                  }
+                  return mockedTimeInMillis;
+                });
         break;
       case BLOCKING:
         // Set mocked time so that the token requires immediate refresh (just after the minimum

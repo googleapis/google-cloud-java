@@ -57,6 +57,10 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperationCondition_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Aggregate_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Aggregate_fieldAccessorTable;
@@ -72,26 +76,29 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + ">google/cloud/saasplatform/saasservicemgmt/v1beta1/common.proto\0221google.cloud.s"
           + "aasplatform.saasservicemgmt.v1beta1\032\037goo"
-          + "gle/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"O\n"
+          + "gle/api/field_behavior.proto\032\031google/api"
+          + "/resource.proto\032\037google/protobuf/timestamp.proto\"O\n"
           + "\tBlueprint\022\027\n"
           + "\007package\030\001 \001(\tB\006\340A\001\340A\005\022\023\n"
           + "\006engine\030\002 \001(\tB\003\340A\003\022\024\n"
-          + "\007version\030\003 \001(\tB\003\340A\003\"\325\001\n"
+          + "\007version\030\003 \001(\tB\003\340A\003\"\353\001\n"
           + "\014UnitVariable\022\030\n"
           + "\010variable\030\001 \001(\tB\006\340A\002\340A\005\022Z\n"
-          + "\004type\030\002 \001(\0162"
-          + "D.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariable.TypeB\006\340A\001\340A\005\022\022\n"
-          + "\005value\030\003 \001(\tB\003\340A\001\";\n"
+          + "\004type\030\002 \001(\0162D.google.clou"
+          + "d.saasplatform.saasservicemgmt.v1beta1.UnitVariable.TypeB\006\340A\001\340A\005\022\022\n"
+          + "\005value\030\003 \001(\tB\003\340A\001\"Q\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006STRING\020\001\022\007\n"
           + "\003INT\020\002\022\010\n"
-          + "\004BOOL\020\003\"\373\003\n\r"
+          + "\004BOOL\020\003\022\n\n"
+          + "\006STRUCT\020\004\022\010\n"
+          + "\004LIST\020\005\"\310\004\n\r"
           + "UnitCondition\022\\\n"
-          + "\006status\030\001 \001(\0162G.googl"
-          + "e.cloud.saasplatform.saasservicemgmt.v1beta1.UnitCondition.StatusB\003\340A\002\022X\n"
-          + "\004type\030\002 \001(\0162E.google.cloud.saasplatform.saasser"
-          + "vicemgmt.v1beta1.UnitCondition.TypeB\003\340A\002\022=\n"
+          + "\006status\030\001 \001(\0162G.google.cloud.saasplatform.saasservic"
+          + "emgmt.v1beta1.UnitCondition.StatusB\003\340A\002\022X\n"
+          + "\004type\030\002 \001(\0162E.google.cloud.saasplatfor"
+          + "m.saasservicemgmt.v1beta1.UnitCondition.TypeB\003\340A\002\022=\n"
           + "\024last_transition_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022\024\n"
           + "\007message\030\004 \001(\tB\003\340A\002\022\023\n"
@@ -100,18 +107,20 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\022STATUS_UNSPECIFIED\020\000\022\022\n"
           + "\016STATUS_UNKNOWN\020\001\022\017\n"
           + "\013STATUS_TRUE\020\002\022\020\n"
-          + "\014STATUS_FALSE\020\003\"o\n"
+          + "\014STATUS_FALSE\020\003\"\273\001\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\016\n\n"
           + "TYPE_READY\020\001\022\021\n\r"
           + "TYPE_UPDATING\020\002\022\024\n"
           + "\020TYPE_PROVISIONED\020\003\022\030\n"
-          + "\024TYPE_OPERATION_ERROR\020\004\"\314\004\n"
+          + "\024TYPE_OPERATION_ERROR\020\004\022&\n"
+          + "\"TYPE_APP_CREATED_OR_ALREADY_EXISTS\020\005\022\"\n"
+          + "\036TYPE_APP_COMPONENTS_REGISTERED\020\006\"\351\004\n"
           + "\026UnitOperationCondition\022e\n"
-          + "\006status\030\001 \001(\0162P.google.cloud.saasplatform.saasservicemgmt.v1be"
-          + "ta1.UnitOperationCondition.StatusB\003\340A\002\022a\n"
-          + "\004type\030\002 \001(\0162N.google.cloud.saasplatform"
-          + ".saasservicemgmt.v1beta1.UnitOperationCondition.TypeB\003\340A\002\022=\n"
+          + "\006status\030\001 \001(\0162P.google.cloud.saasplatform.saasservicemgm"
+          + "t.v1beta1.UnitOperationCondition.StatusB\003\340A\002\022a\n"
+          + "\004type\030\002 \001(\0162N.google.cloud.saaspl"
+          + "atform.saasservicemgmt.v1beta1.UnitOperationCondition.TypeB\003\340A\002\022=\n"
           + "\024last_transition_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022\024\n"
           + "\007message\030\004 \001(\tB\003\340A\002\022\023\n"
@@ -120,7 +129,7 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\022STATUS_UNSPECIFIED\020\000\022\022\n"
           + "\016STATUS_UNKNOWN\020\001\022\017\n"
           + "\013STATUS_TRUE\020\002\022\020\n"
-          + "\014STATUS_FALSE\020\003\"\244\001\n"
+          + "\014STATUS_FALSE\020\003\"\301\001\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\022\n"
           + "\016TYPE_SCHEDULED\020\002\022\020\n"
@@ -128,7 +137,26 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\016TYPE_SUCCEEDED\020\004\022\022\n"
           + "\016TYPE_CANCELLED\020\005\022\024\n"
           + "\020TYPE_APP_CREATED\020\006\022\"\n"
-          + "\036TYPE_APP_COMPONENTS_REGISTERED\020\007\"3\n"
+          + "\036TYPE_APP_COMPONENTS_REGISTERED\020\007\022\033\n"
+          + "\027TYPE_WORKLOAD_SUCCEEDED\020\010\"\317\003\n\r"
+          + "SaasCondition\022\\\n"
+          + "\006status\030\001 \001(\0162G.google.cloud.saasplatform.saa"
+          + "sservicemgmt.v1beta1.SaasCondition.StatusB\003\340A\002\022X\n"
+          + "\004type\030\006 \001(\0162E.google.cloud.saas"
+          + "platform.saasservicemgmt.v1beta1.SaasCondition.TypeB\003\340A\002\022=\n"
+          + "\024last_transition_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022\024\n"
+          + "\007message\030\004 \001(\tB\003\340A\002\022\023\n"
+          + "\006reason\030\005 \001(\tB\003\340A\002\"W\n"
+          + "\006Status\022\026\n"
+          + "\022STATUS_UNSPECIFIED\020\000\022\022\n"
+          + "\016STATUS_UNKNOWN\020\001\022\017\n"
+          + "\013STATUS_TRUE\020\002\022\020\n"
+          + "\014STATUS_FALSE\020\003\"C\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\016\n\n"
+          + "TYPE_READY\020\001\022\025\n"
+          + "\021TYPE_SYNCHRONIZED\020\002\"3\n"
           + "\tAggregate\022\022\n"
           + "\005group\030\001 \001(\tB\003\340A\002\022\022\n"
           + "\005count\030\002 \001(\005B\003\340A\002*\226\001\n"
@@ -139,18 +167,19 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\tRETRIABLE\020\003\022\r\n"
           + "\tIGNORABLE\020\004\022\014\n"
           + "\010STANDARD\020\005B\307\002\n"
-          + "5com.google.cloud.saasplatform.saasservicemgmt.v1be"
-          + "ta1B\013CommonProtoP\001Z_cloud.google.com/go/saasplatform/saasservicemgmt/apiv1beta1/"
-          + "saasservicemgmtpb;saasservicemgmtpb\252\0021Google.Cloud.SaasPlatform.SaasServiceMgmt."
-          + "V1Beta1\312\0021Google\\Cloud\\SaasPlatform\\Saas"
-          + "ServiceMgmt\\V1beta1\352\0025Google::Cloud::Saa"
-          + "sPlatform::SaasServiceMgmt::V1beta1b\006proto3"
+          + "5com.google.cloud.saasplatform.saasservicemgmt.v1beta1B\013CommonProtoP\001Z"
+          + "_cloud.google.com/go/saasplatform/saasservicemgmt/apiv1beta1/saasservicemgmtpb;s"
+          + "aasservicemgmtpb\252\0021Google.Cloud.SaasPlat"
+          + "form.SaasServiceMgmt.V1Beta1\312\0021Google\\Cl"
+          + "oud\\SaasPlatform\\SaasServiceMgmt\\V1beta1"
+          + "\352\0025Google::Cloud::SaasPlatform::SaasServiceMgmt::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Blueprint_descriptor =
@@ -185,8 +214,16 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Status", "Type", "LastTransitionTime", "Message", "Reason",
             });
-    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Aggregate_descriptor =
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_descriptor,
+            new java.lang.String[] {
+              "Status", "Type", "LastTransitionTime", "Message", "Reason",
+            });
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Aggregate_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Aggregate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Aggregate_descriptor,
@@ -195,6 +232,7 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

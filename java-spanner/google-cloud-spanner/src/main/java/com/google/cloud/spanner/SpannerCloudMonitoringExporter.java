@@ -42,13 +42,15 @@ import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.export.MetricExporter;
-import io.opentelemetry.sdk.resources.Resource;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -69,13 +71,12 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
   // This the quota limit from Cloud Monitoring. More details in
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
-  private final AtomicBoolean spannerExportFailureLogged = new AtomicBoolean(false);
-  private final AtomicBoolean lastExportSkippedData = new AtomicBoolean(false);
+  private final Set<String> spannerExportFailureLoggedProjects = ConcurrentHashMap.newKeySet();
   private final MetricServiceClient client;
-  private final String spannerProjectId;
+  private final Supplier<String> fallbackProjectIdSupplier;
 
   static SpannerCloudMonitoringExporter create(
-      String projectId,
+      Supplier<String> fallbackProjectIdSupplier,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
       String universeDomain)
@@ -114,13 +115,19 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.createServiceTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
 
     return new SpannerCloudMonitoringExporter(
-        projectId, MetricServiceClient.create(settingsBuilder.build()));
+        fallbackProjectIdSupplier, MetricServiceClient.create(settingsBuilder.build()));
   }
 
   @VisibleForTesting
-  SpannerCloudMonitoringExporter(String projectId, MetricServiceClient client) {
+  SpannerCloudMonitoringExporter(MetricServiceClient client) {
+    this(() -> null, client);
+  }
+
+  @VisibleForTesting
+  SpannerCloudMonitoringExporter(
+      Supplier<String> fallbackProjectIdSupplier, MetricServiceClient client) {
     this.client = client;
-    this.spannerProjectId = projectId;
+    this.fallbackProjectIdSupplier = fallbackProjectIdSupplier;
   }
 
   @Override
@@ -140,29 +147,8 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
 
   /** Export client built in metrics */
   private CompletableResultCode exportSpannerClientMetrics(Collection<MetricData> collection) {
-    // Filter spanner metrics. Only include metrics that contain a valid project.
-    List<MetricData> spannerMetricData = collection.stream().collect(Collectors.toList());
-
-    // Log warnings for metrics that will be skipped.
-    boolean mustFilter = false;
-    if (spannerMetricData.stream()
-        .map(metricData -> metricData.getResource())
-        .anyMatch(this::shouldSkipPointDataDueToProjectId)) {
-      logger.log(
-          Level.WARNING, "Some metric data contain a different projectId. These will be skipped.");
-      mustFilter = true;
-    }
-
-    if (mustFilter) {
-      spannerMetricData =
-          spannerMetricData.stream()
-              .filter(this::shouldSkipMetricData)
-              .collect(Collectors.toList());
-    }
-    lastExportSkippedData.set(mustFilter);
-
     // Skips exporting if there's none
-    if (spannerMetricData.isEmpty()) {
+    if (collection.isEmpty()) {
       return CompletableResultCode.ofSuccess();
     }
 
@@ -170,7 +156,7 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     try {
       spannerTimeSeries =
           SpannerCloudMonitoringExporterUtils.convertToSpannerTimeSeries(
-              spannerMetricData, this.spannerProjectId);
+              collection, fallbackProjectIdSupplier.get());
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,
@@ -179,9 +165,48 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofFailure();
     }
 
-    ProjectName projectName = ProjectName.of(spannerProjectId);
+    if (spannerTimeSeries.isEmpty()) {
+      return CompletableResultCode.ofSuccess();
+    }
 
-    ApiFuture<List<Empty>> futureList = exportTimeSeriesInBatch(projectName, spannerTimeSeries);
+    Map<String, List<TimeSeries>> timeSeriesByProject =
+        spannerTimeSeries.stream()
+            .collect(
+                Collectors.groupingBy(
+                    timeSeries ->
+                        timeSeries
+                            .getResource()
+                            .getLabelsMap()
+                            .get(BuiltInMetricsConstant.PROJECT_ID_KEY.getKey())));
+
+    List<ApiFuture<List<Empty>>> futures = new ArrayList<>();
+    for (Map.Entry<String, List<TimeSeries>> entry : timeSeriesByProject.entrySet()) {
+      ProjectName projectName = ProjectName.of(entry.getKey());
+      ApiFuture<List<Empty>> future = exportTimeSeriesInBatch(projectName, entry.getValue());
+      ApiFutures.addCallback(
+          future,
+          new ApiFutureCallback<List<Empty>>() {
+            @Override
+            public void onFailure(Throwable throwable) {
+              logExportFailure(throwable, projectName);
+            }
+
+            @Override
+            public void onSuccess(List<Empty> ignored) {
+              spannerExportFailureLoggedProjects.remove(projectName.getProject());
+            }
+          },
+          MoreExecutors.directExecutor());
+      futures.add(future);
+    }
+
+    ApiFuture<List<List<Empty>>> groupedFuture = ApiFutures.allAsList(futures);
+    ApiFuture<List<Empty>> futureList =
+        ApiFutures.transform(
+            groupedFuture,
+            groupedResults ->
+                groupedResults.stream().flatMap(List::stream).collect(Collectors.toList()),
+            MoreExecutors.directExecutor());
 
     CompletableResultCode spannerExportCode = new CompletableResultCode();
     ApiFutures.addCallback(
@@ -189,27 +214,11 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
         new ApiFutureCallback<List<Empty>>() {
           @Override
           public void onFailure(Throwable throwable) {
-            if (spannerExportFailureLogged.compareAndSet(false, true)) {
-              String msg = "createServiceTimeSeries request failed for spanner metrics.";
-              if (throwable instanceof PermissionDeniedException) {
-                // TODO: Add the link of public documentation when available in the log message.
-                msg +=
-                    String.format(
-                        " Need monitoring metric writer permission on project=%s. Follow"
-                            + " https://cloud.google.com/spanner/docs/view-manage-client-side-metrics#access-client-side-metrics"
-                            + " to set up permissions",
-                        projectName.getProject());
-              }
-              logger.log(Level.WARNING, msg, throwable);
-            }
             spannerExportCode.fail();
           }
 
           @Override
           public void onSuccess(List<Empty> empty) {
-            // When an export succeeded reset the export failure flag to false so if there's a
-            // transient failure it'll be logged.
-            spannerExportFailureLogged.set(false);
             spannerExportCode.succeed();
           }
         },
@@ -218,16 +227,22 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     return spannerExportCode;
   }
 
-  private boolean shouldSkipMetricData(MetricData metricData) {
-    return shouldSkipPointDataDueToProjectId(metricData.getResource());
-  }
-
-  private boolean shouldSkipPointDataDueToProjectId(Resource resource) {
-    return !spannerProjectId.equals(SpannerCloudMonitoringExporterUtils.getProjectId(resource));
-  }
-
-  boolean lastExportSkippedData() {
-    return this.lastExportSkippedData.get();
+  private void logExportFailure(Throwable throwable, ProjectName projectName) {
+    if (spannerExportFailureLoggedProjects.add(projectName.getProject())) {
+      String msg = "createServiceTimeSeries request failed for spanner metrics.";
+      if (throwable instanceof PermissionDeniedException) {
+        msg +=
+            String.format(
+                " Need monitoring metric writer permission on project=%s. Follow"
+                    + " https://cloud.google.com/spanner/docs/view-manage-client-side-metrics"
+                    + "#access-client-side-metrics"
+                    + " to set up permissions",
+                projectName.getProject());
+      } else {
+        msg += String.format(" project=%s.", projectName.getProject());
+      }
+      logger.log(Level.WARNING, msg, throwable);
+    }
   }
 
   private ApiFuture<List<Empty>> exportTimeSeriesInBatch(

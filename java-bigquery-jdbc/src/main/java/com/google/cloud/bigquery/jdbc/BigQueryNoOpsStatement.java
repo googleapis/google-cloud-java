@@ -27,24 +27,11 @@ abstract class BigQueryNoOpsStatement implements Statement {
 
   @Override
   public void setCursorName(String name) throws SQLException {
-    // TODO: ResultSet Concurrency is read only(Not updatable)
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
-  }
-
-  @Override
-  public <T> T unwrap(Class<T> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
-  }
-
-  @Override
-  public boolean isWrapperFor(Class<?> iface) throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
   }
 
   @Override
   public ResultSet getGeneratedKeys() throws SQLException {
-    // TODO: Returns an empty resultset.
-    // return empty ResultSet
     throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
   }
 

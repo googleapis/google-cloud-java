@@ -198,10 +198,11 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Time when the workflow was created.
+   * Output only. Time when the workflow was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -211,10 +212,11 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Time when the workflow was created.
+   * Output only. Time when the workflow was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -224,10 +226,11 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Time when the workflow was created.
+   * Output only. Time when the workflow was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -235,10 +238,12 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Time when the workflow was last updated.
+   * Output only. Time when the workflow was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastUpdateTime field is set.
    */
@@ -248,10 +253,12 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Time when the workflow was last updated.
+   * Output only. Time when the workflow was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastUpdateTime.
    */
@@ -261,10 +268,12 @@ public interface MigrationWorkflowOrBuilder
    *
    *
    * <pre>
-   * Time when the workflow was last updated.
+   * Output only. Time when the workflow was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
 }

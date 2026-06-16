@@ -68,6 +68,7 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
             com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int STROKE_COUNT_SUM_FIELD_NUMBER = 1;
   private long strokeCountSum_ = 0L;
 
@@ -78,7 +79,23 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
    * Total number of swim strokes in the interval.
    * </pre>
    *
-   * <code>int64 stroke_count_sum = 1;</code>
+   * <code>optional int64 stroke_count_sum = 1;</code>
+   *
+   * @return Whether the strokeCountSum field is set.
+   */
+  @java.lang.Override
+  public boolean hasStrokeCountSum() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of swim strokes in the interval.
+   * </pre>
+   *
+   * <code>optional int64 stroke_count_sum = 1;</code>
    *
    * @return The strokeCountSum.
    */
@@ -101,7 +118,7 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (strokeCountSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(1, strokeCountSum_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (strokeCountSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, strokeCountSum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,7 +149,10 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
     com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue other =
         (com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue) obj;
 
-    if (getStrokeCountSum() != other.getStrokeCountSum()) return false;
+    if (hasStrokeCountSum() != other.hasStrokeCountSum()) return false;
+    if (hasStrokeCountSum()) {
+      if (getStrokeCountSum() != other.getStrokeCountSum()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -144,8 +164,10 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + STROKE_COUNT_SUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStrokeCountSum());
+    if (hasStrokeCountSum()) {
+      hash = (37 * hash) + STROKE_COUNT_SUM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStrokeCountSum());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -329,9 +351,12 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
     private void buildPartial0(
         com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.strokeCountSum_ = strokeCountSum_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -350,7 +375,7 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
       if (other
           == com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue
               .getDefaultInstance()) return this;
-      if (other.getStrokeCountSum() != 0L) {
+      if (other.hasStrokeCountSum()) {
         setStrokeCountSum(other.getStrokeCountSum());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -413,7 +438,23 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
      * Total number of swim strokes in the interval.
      * </pre>
      *
-     * <code>int64 stroke_count_sum = 1;</code>
+     * <code>optional int64 stroke_count_sum = 1;</code>
+     *
+     * @return Whether the strokeCountSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasStrokeCountSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Total number of swim strokes in the interval.
+     * </pre>
+     *
+     * <code>optional int64 stroke_count_sum = 1;</code>
      *
      * @return The strokeCountSum.
      */
@@ -429,7 +470,7 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
      * Total number of swim strokes in the interval.
      * </pre>
      *
-     * <code>int64 stroke_count_sum = 1;</code>
+     * <code>optional int64 stroke_count_sum = 1;</code>
      *
      * @param value The strokeCountSum to set.
      * @return This builder for chaining.
@@ -449,7 +490,7 @@ public final class SwimLengthsDataRollupValue extends com.google.protobuf.Genera
      * Total number of swim strokes in the interval.
      * </pre>
      *
-     * <code>int64 stroke_count_sum = 1;</code>
+     * <code>optional int64 stroke_count_sum = 1;</code>
      *
      * @return This builder for chaining.
      */

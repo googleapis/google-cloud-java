@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-datastore:current}
-  static final String VERSION = "2.42.0-SNAPSHOT";
+  static final String VERSION = "3.2.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

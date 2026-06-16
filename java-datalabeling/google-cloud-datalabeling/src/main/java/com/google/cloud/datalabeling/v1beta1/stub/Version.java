@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-datalabeling:current}
-  static final String VERSION = "0.213.0-SNAPSHOT";
+  static final String VERSION = "0.214.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

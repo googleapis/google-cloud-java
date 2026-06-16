@@ -592,6 +592,103 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetIntelligenceFinding</td>
+ *      <td><p> Gets the `IntelligenceFinding` for a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIntelligenceFinding(GetIntelligenceFindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIntelligenceFinding(IntelligenceFindingName name)
+ *           <li><p> getIntelligenceFinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIntelligenceFindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListIntelligenceFindings</td>
+ *      <td><p> Lists the `IntelligenceFinding` resources for the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listIntelligenceFindings(ListIntelligenceFindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listIntelligenceFindings(LocationName parent)
+ *           <li><p> listIntelligenceFindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listIntelligenceFindingsPagedCallable()
+ *           <li><p> listIntelligenceFindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SummarizeIntelligenceFindings</td>
+ *      <td><p> Summarize the intelligence findings for the specified scope(org, folder or project).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> summarizeIntelligenceFindings(SummarizeIntelligenceFindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> summarizeIntelligenceFindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> summarizeIntelligenceFindingsPagedCallable()
+ *           <li><p> summarizeIntelligenceFindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIntelligenceFindingRevision</td>
+ *      <td><p> Gets the `IntelligenceFindingRevision` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIntelligenceFindingRevision(GetIntelligenceFindingRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIntelligenceFindingRevision(IntelligenceFindingRevisionName name)
+ *           <li><p> getIntelligenceFindingRevision(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIntelligenceFindingRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListIntelligenceFindingRevisions</td>
+ *      <td><p> Lists all the revisions of an `IntelligenceFinding` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listIntelligenceFindingRevisions(ListIntelligenceFindingRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listIntelligenceFindingRevisions(IntelligenceFindingName parent)
+ *           <li><p> listIntelligenceFindingRevisions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listIntelligenceFindingRevisionsPagedCallable()
+ *           <li><p> listIntelligenceFindingRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -3915,7 +4012,7 @@ public class StorageControlClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
-   *   ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy response = storageControlClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -3947,8 +4044,7 @@ public class StorageControlClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
-   *   String resource =
-   *       AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString();
+   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Policy response = storageControlClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -3979,8 +4075,7 @@ public class StorageControlClient implements BackgroundResource {
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = storageControlClient.getIamPolicy(request);
@@ -4011,8 +4106,7 @@ public class StorageControlClient implements BackgroundResource {
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = storageControlClient.getIamPolicyCallable().futureCall(request);
@@ -4040,7 +4134,7 @@ public class StorageControlClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
-   *   ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = storageControlClient.setIamPolicy(resource, policy);
    * }
@@ -4077,8 +4171,7 @@ public class StorageControlClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
-   *   String resource =
-   *       AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString();
+   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = storageControlClient.setIamPolicy(resource, policy);
    * }
@@ -4114,8 +4207,7 @@ public class StorageControlClient implements BackgroundResource {
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4147,8 +4239,7 @@ public class StorageControlClient implements BackgroundResource {
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4179,7 +4270,7 @@ public class StorageControlClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
-   *   ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       storageControlClient.testIamPermissions(resource, permissions);
@@ -4220,8 +4311,7 @@ public class StorageControlClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
-   *   String resource =
-   *       AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString();
+   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       storageControlClient.testIamPermissions(resource, permissions);
@@ -4264,8 +4354,7 @@ public class StorageControlClient implements BackgroundResource {
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = storageControlClient.testIamPermissions(request);
@@ -4298,8 +4387,7 @@ public class StorageControlClient implements BackgroundResource {
    * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]").toString())
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -4312,6 +4400,764 @@ public class StorageControlClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFinding` for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   IntelligenceFindingName name =
+   *       IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+   *   IntelligenceFinding response = storageControlClient.getIntelligenceFinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `IntelligenceFinding` resource.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IntelligenceFinding getIntelligenceFinding(IntelligenceFindingName name) {
+    GetIntelligenceFindingRequest request =
+        GetIntelligenceFindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getIntelligenceFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFinding` for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String name =
+   *       IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *           .toString();
+   *   IntelligenceFinding response = storageControlClient.getIntelligenceFinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `IntelligenceFinding` resource.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IntelligenceFinding getIntelligenceFinding(String name) {
+    GetIntelligenceFindingRequest request =
+        GetIntelligenceFindingRequest.newBuilder().setName(name).build();
+    return getIntelligenceFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFinding` for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   GetIntelligenceFindingRequest request =
+   *       GetIntelligenceFindingRequest.newBuilder()
+   *           .setName(
+   *               IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *                   .toString())
+   *           .build();
+   *   IntelligenceFinding response = storageControlClient.getIntelligenceFinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IntelligenceFinding getIntelligenceFinding(GetIntelligenceFindingRequest request) {
+    return getIntelligenceFindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFinding` for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   GetIntelligenceFindingRequest request =
+   *       GetIntelligenceFindingRequest.newBuilder()
+   *           .setName(
+   *               IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<IntelligenceFinding> future =
+   *       storageControlClient.getIntelligenceFindingCallable().futureCall(request);
+   *   // Do something.
+   *   IntelligenceFinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable() {
+    return stub.getIntelligenceFindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `IntelligenceFinding` resources for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (IntelligenceFinding element :
+   *       storageControlClient.listIntelligenceFindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the `IntelligenceFinding` resource.
+   *     <p>Format: `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(LocationName parent) {
+    ListIntelligenceFindingsRequest request =
+        ListIntelligenceFindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listIntelligenceFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `IntelligenceFinding` resources for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (IntelligenceFinding element :
+   *       storageControlClient.listIntelligenceFindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the `IntelligenceFinding` resource.
+   *     <p>Format: `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(String parent) {
+    ListIntelligenceFindingsRequest request =
+        ListIntelligenceFindingsRequest.newBuilder().setParent(parent).build();
+    return listIntelligenceFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `IntelligenceFinding` resources for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListIntelligenceFindingsRequest request =
+   *       ListIntelligenceFindingsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (IntelligenceFinding element :
+   *       storageControlClient.listIntelligenceFindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(
+      ListIntelligenceFindingsRequest request) {
+    return listIntelligenceFindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `IntelligenceFinding` resources for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListIntelligenceFindingsRequest request =
+   *       ListIntelligenceFindingsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<IntelligenceFinding> future =
+   *       storageControlClient.listIntelligenceFindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (IntelligenceFinding element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable() {
+    return stub.listIntelligenceFindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `IntelligenceFinding` resources for the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListIntelligenceFindingsRequest request =
+   *       ListIntelligenceFindingsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListIntelligenceFindingsResponse response =
+   *         storageControlClient.listIntelligenceFindingsCallable().call(request);
+   *     for (IntelligenceFinding element : response.getIntelligenceFindingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable() {
+    return stub.listIntelligenceFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (FindingSummary element :
+   *       storageControlClient.summarizeIntelligenceFindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The scope to summarize the findings for. Format: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `folders/{folder}/locations/{location}` - `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SummarizeIntelligenceFindingsPagedResponse summarizeIntelligenceFindings(
+      String parent) {
+    SummarizeIntelligenceFindingsRequest request =
+        SummarizeIntelligenceFindingsRequest.newBuilder().setParent(parent).build();
+    return summarizeIntelligenceFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   SummarizeIntelligenceFindingsRequest request =
+   *       SummarizeIntelligenceFindingsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (FindingSummary element :
+   *       storageControlClient.summarizeIntelligenceFindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SummarizeIntelligenceFindingsPagedResponse summarizeIntelligenceFindings(
+      SummarizeIntelligenceFindingsRequest request) {
+    return summarizeIntelligenceFindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   SummarizeIntelligenceFindingsRequest request =
+   *       SummarizeIntelligenceFindingsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<FindingSummary> future =
+   *       storageControlClient.summarizeIntelligenceFindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FindingSummary element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable() {
+    return stub.summarizeIntelligenceFindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   SummarizeIntelligenceFindingsRequest request =
+   *       SummarizeIntelligenceFindingsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     SummarizeIntelligenceFindingsResponse response =
+   *         storageControlClient.summarizeIntelligenceFindingsCallable().call(request);
+   *     for (FindingSummary element : response.getFindingSummariesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable() {
+    return stub.summarizeIntelligenceFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFindingRevision` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   IntelligenceFindingRevisionName name =
+   *       IntelligenceFindingRevisionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]");
+   *   IntelligenceFindingRevision response =
+   *       storageControlClient.getIntelligenceFindingRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `IntelligenceFindingRevision` resource. ## Format:
+   *     <p>`projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IntelligenceFindingRevision getIntelligenceFindingRevision(
+      IntelligenceFindingRevisionName name) {
+    GetIntelligenceFindingRevisionRequest request =
+        GetIntelligenceFindingRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getIntelligenceFindingRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFindingRevision` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String name =
+   *       IntelligenceFindingRevisionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+   *           .toString();
+   *   IntelligenceFindingRevision response =
+   *       storageControlClient.getIntelligenceFindingRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `IntelligenceFindingRevision` resource. ## Format:
+   *     <p>`projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IntelligenceFindingRevision getIntelligenceFindingRevision(String name) {
+    GetIntelligenceFindingRevisionRequest request =
+        GetIntelligenceFindingRevisionRequest.newBuilder().setName(name).build();
+    return getIntelligenceFindingRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFindingRevision` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   GetIntelligenceFindingRevisionRequest request =
+   *       GetIntelligenceFindingRevisionRequest.newBuilder()
+   *           .setName(
+   *               IntelligenceFindingRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   IntelligenceFindingRevision response =
+   *       storageControlClient.getIntelligenceFindingRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IntelligenceFindingRevision getIntelligenceFindingRevision(
+      GetIntelligenceFindingRevisionRequest request) {
+    return getIntelligenceFindingRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the `IntelligenceFindingRevision` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   GetIntelligenceFindingRevisionRequest request =
+   *       GetIntelligenceFindingRevisionRequest.newBuilder()
+   *           .setName(
+   *               IntelligenceFindingRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<IntelligenceFindingRevision> future =
+   *       storageControlClient.getIntelligenceFindingRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   IntelligenceFindingRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable() {
+    return stub.getIntelligenceFindingRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the revisions of an `IntelligenceFinding` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   IntelligenceFindingName parent =
+   *       IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+   *   for (IntelligenceFindingRevision element :
+   *       storageControlClient.listIntelligenceFindingRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the `IntelligenceFindingRevision` resource. ## Format:
+   *     <p>`projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntelligenceFindingRevisionsPagedResponse listIntelligenceFindingRevisions(
+      IntelligenceFindingName parent) {
+    ListIntelligenceFindingRevisionsRequest request =
+        ListIntelligenceFindingRevisionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listIntelligenceFindingRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the revisions of an `IntelligenceFinding` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String parent =
+   *       IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *           .toString();
+   *   for (IntelligenceFindingRevision element :
+   *       storageControlClient.listIntelligenceFindingRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the `IntelligenceFindingRevision` resource. ## Format:
+   *     <p>`projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntelligenceFindingRevisionsPagedResponse listIntelligenceFindingRevisions(
+      String parent) {
+    ListIntelligenceFindingRevisionsRequest request =
+        ListIntelligenceFindingRevisionsRequest.newBuilder().setParent(parent).build();
+    return listIntelligenceFindingRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the revisions of an `IntelligenceFinding` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListIntelligenceFindingRevisionsRequest request =
+   *       ListIntelligenceFindingRevisionsRequest.newBuilder()
+   *           .setParent(
+   *               IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (IntelligenceFindingRevision element :
+   *       storageControlClient.listIntelligenceFindingRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIntelligenceFindingRevisionsPagedResponse listIntelligenceFindingRevisions(
+      ListIntelligenceFindingRevisionsRequest request) {
+    return listIntelligenceFindingRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the revisions of an `IntelligenceFinding` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListIntelligenceFindingRevisionsRequest request =
+   *       ListIntelligenceFindingRevisionsRequest.newBuilder()
+   *           .setParent(
+   *               IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<IntelligenceFindingRevision> future =
+   *       storageControlClient.listIntelligenceFindingRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (IntelligenceFindingRevision element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable() {
+    return stub.listIntelligenceFindingRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the revisions of an `IntelligenceFinding` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListIntelligenceFindingRevisionsRequest request =
+   *       ListIntelligenceFindingRevisionsRequest.newBuilder()
+   *           .setParent(
+   *               IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListIntelligenceFindingRevisionsResponse response =
+   *         storageControlClient.listIntelligenceFindingRevisionsCallable().call(request);
+   *     for (IntelligenceFindingRevision element : response.getIntelligenceFindingRevisionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable() {
+    return stub.listIntelligenceFindingRevisionsCallable();
   }
 
   @Override
@@ -4574,6 +5420,297 @@ public class StorageControlClient implements BackgroundResource {
     protected ListAnywhereCachesFixedSizeCollection createCollection(
         List<ListAnywhereCachesPage> pages, int collectionSize) {
       return new ListAnywhereCachesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListIntelligenceFindingsPagedResponse
+      extends AbstractPagedListResponse<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          IntelligenceFinding,
+          ListIntelligenceFindingsPage,
+          ListIntelligenceFindingsFixedSizeCollection> {
+
+    public static ApiFuture<ListIntelligenceFindingsPagedResponse> createAsync(
+        PageContext<
+                ListIntelligenceFindingsRequest,
+                ListIntelligenceFindingsResponse,
+                IntelligenceFinding>
+            context,
+        ApiFuture<ListIntelligenceFindingsResponse> futureResponse) {
+      ApiFuture<ListIntelligenceFindingsPage> futurePage =
+          ListIntelligenceFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListIntelligenceFindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListIntelligenceFindingsPagedResponse(ListIntelligenceFindingsPage page) {
+      super(page, ListIntelligenceFindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListIntelligenceFindingsPage
+      extends AbstractPage<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          IntelligenceFinding,
+          ListIntelligenceFindingsPage> {
+
+    private ListIntelligenceFindingsPage(
+        PageContext<
+                ListIntelligenceFindingsRequest,
+                ListIntelligenceFindingsResponse,
+                IntelligenceFinding>
+            context,
+        ListIntelligenceFindingsResponse response) {
+      super(context, response);
+    }
+
+    private static ListIntelligenceFindingsPage createEmptyPage() {
+      return new ListIntelligenceFindingsPage(null, null);
+    }
+
+    @Override
+    protected ListIntelligenceFindingsPage createPage(
+        PageContext<
+                ListIntelligenceFindingsRequest,
+                ListIntelligenceFindingsResponse,
+                IntelligenceFinding>
+            context,
+        ListIntelligenceFindingsResponse response) {
+      return new ListIntelligenceFindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListIntelligenceFindingsPage> createPageAsync(
+        PageContext<
+                ListIntelligenceFindingsRequest,
+                ListIntelligenceFindingsResponse,
+                IntelligenceFinding>
+            context,
+        ApiFuture<ListIntelligenceFindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListIntelligenceFindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          IntelligenceFinding,
+          ListIntelligenceFindingsPage,
+          ListIntelligenceFindingsFixedSizeCollection> {
+
+    private ListIntelligenceFindingsFixedSizeCollection(
+        List<ListIntelligenceFindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListIntelligenceFindingsFixedSizeCollection createEmptyCollection() {
+      return new ListIntelligenceFindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListIntelligenceFindingsFixedSizeCollection createCollection(
+        List<ListIntelligenceFindingsPage> pages, int collectionSize) {
+      return new ListIntelligenceFindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SummarizeIntelligenceFindingsPagedResponse
+      extends AbstractPagedListResponse<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          FindingSummary,
+          SummarizeIntelligenceFindingsPage,
+          SummarizeIntelligenceFindingsFixedSizeCollection> {
+
+    public static ApiFuture<SummarizeIntelligenceFindingsPagedResponse> createAsync(
+        PageContext<
+                SummarizeIntelligenceFindingsRequest,
+                SummarizeIntelligenceFindingsResponse,
+                FindingSummary>
+            context,
+        ApiFuture<SummarizeIntelligenceFindingsResponse> futureResponse) {
+      ApiFuture<SummarizeIntelligenceFindingsPage> futurePage =
+          SummarizeIntelligenceFindingsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SummarizeIntelligenceFindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SummarizeIntelligenceFindingsPagedResponse(SummarizeIntelligenceFindingsPage page) {
+      super(page, SummarizeIntelligenceFindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SummarizeIntelligenceFindingsPage
+      extends AbstractPage<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          FindingSummary,
+          SummarizeIntelligenceFindingsPage> {
+
+    private SummarizeIntelligenceFindingsPage(
+        PageContext<
+                SummarizeIntelligenceFindingsRequest,
+                SummarizeIntelligenceFindingsResponse,
+                FindingSummary>
+            context,
+        SummarizeIntelligenceFindingsResponse response) {
+      super(context, response);
+    }
+
+    private static SummarizeIntelligenceFindingsPage createEmptyPage() {
+      return new SummarizeIntelligenceFindingsPage(null, null);
+    }
+
+    @Override
+    protected SummarizeIntelligenceFindingsPage createPage(
+        PageContext<
+                SummarizeIntelligenceFindingsRequest,
+                SummarizeIntelligenceFindingsResponse,
+                FindingSummary>
+            context,
+        SummarizeIntelligenceFindingsResponse response) {
+      return new SummarizeIntelligenceFindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SummarizeIntelligenceFindingsPage> createPageAsync(
+        PageContext<
+                SummarizeIntelligenceFindingsRequest,
+                SummarizeIntelligenceFindingsResponse,
+                FindingSummary>
+            context,
+        ApiFuture<SummarizeIntelligenceFindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SummarizeIntelligenceFindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          FindingSummary,
+          SummarizeIntelligenceFindingsPage,
+          SummarizeIntelligenceFindingsFixedSizeCollection> {
+
+    private SummarizeIntelligenceFindingsFixedSizeCollection(
+        List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SummarizeIntelligenceFindingsFixedSizeCollection createEmptyCollection() {
+      return new SummarizeIntelligenceFindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SummarizeIntelligenceFindingsFixedSizeCollection createCollection(
+        List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
+      return new SummarizeIntelligenceFindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListIntelligenceFindingRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          IntelligenceFindingRevision,
+          ListIntelligenceFindingRevisionsPage,
+          ListIntelligenceFindingRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListIntelligenceFindingRevisionsPagedResponse> createAsync(
+        PageContext<
+                ListIntelligenceFindingRevisionsRequest,
+                ListIntelligenceFindingRevisionsResponse,
+                IntelligenceFindingRevision>
+            context,
+        ApiFuture<ListIntelligenceFindingRevisionsResponse> futureResponse) {
+      ApiFuture<ListIntelligenceFindingRevisionsPage> futurePage =
+          ListIntelligenceFindingRevisionsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListIntelligenceFindingRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListIntelligenceFindingRevisionsPagedResponse(
+        ListIntelligenceFindingRevisionsPage page) {
+      super(page, ListIntelligenceFindingRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListIntelligenceFindingRevisionsPage
+      extends AbstractPage<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          IntelligenceFindingRevision,
+          ListIntelligenceFindingRevisionsPage> {
+
+    private ListIntelligenceFindingRevisionsPage(
+        PageContext<
+                ListIntelligenceFindingRevisionsRequest,
+                ListIntelligenceFindingRevisionsResponse,
+                IntelligenceFindingRevision>
+            context,
+        ListIntelligenceFindingRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListIntelligenceFindingRevisionsPage createEmptyPage() {
+      return new ListIntelligenceFindingRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListIntelligenceFindingRevisionsPage createPage(
+        PageContext<
+                ListIntelligenceFindingRevisionsRequest,
+                ListIntelligenceFindingRevisionsResponse,
+                IntelligenceFindingRevision>
+            context,
+        ListIntelligenceFindingRevisionsResponse response) {
+      return new ListIntelligenceFindingRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListIntelligenceFindingRevisionsPage> createPageAsync(
+        PageContext<
+                ListIntelligenceFindingRevisionsRequest,
+                ListIntelligenceFindingRevisionsResponse,
+                IntelligenceFindingRevision>
+            context,
+        ApiFuture<ListIntelligenceFindingRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListIntelligenceFindingRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          IntelligenceFindingRevision,
+          ListIntelligenceFindingRevisionsPage,
+          ListIntelligenceFindingRevisionsFixedSizeCollection> {
+
+    private ListIntelligenceFindingRevisionsFixedSizeCollection(
+        List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListIntelligenceFindingRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListIntelligenceFindingRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListIntelligenceFindingRevisionsFixedSizeCollection createCollection(
+        List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
+      return new ListIntelligenceFindingRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

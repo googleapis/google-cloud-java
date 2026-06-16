@@ -62,6 +62,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -207,7 +208,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
+  private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
+  private final ExecutorService metadataExecutor;
+  private final ExecutorService queryExecutor;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -343,6 +347,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
+      this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(metadataFetchThreadCount);
+      this.queryExecutor = BigQueryJdbcMdc.newCachedThreadPool();
     }
   }
 
@@ -762,12 +768,16 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setClientInfo(String name, String value) {
-    // no-op
+    if (value == null) {
+      this.clientInfo.remove(name);
+    } else {
+      this.clientInfo.setProperty(name, value);
+    }
   }
 
   @Override
   public String getClientInfo(String name) {
-    return null;
+    return this.clientInfo.getProperty(name);
   }
 
   @Override
@@ -776,13 +786,22 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   @Override
+  public String nativeSQL(String sql) throws SQLException {
+    checkClosed();
+    return sql;
+  }
+
+  @Override
   public Properties getClientInfo() {
-    return null;
+    return this.clientInfo;
   }
 
   @Override
   public void setClientInfo(Properties properties) {
-    // no-op
+    this.clientInfo.clear();
+    if (properties != null) {
+      this.clientInfo.putAll(properties);
+    }
   }
 
   @Override
@@ -923,23 +942,91 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private void closeImpl() throws SQLException {
+    SQLException exceptionToThrow = null;
     try {
       if (this.bigQueryReadClient != null) {
         this.bigQueryReadClient.shutdown();
-        this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
-        this.bigQueryReadClient.close();
       }
-
       if (this.bigQueryWriteClient != null) {
         this.bigQueryWriteClient.shutdown();
-        this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
-        this.bigQueryWriteClient.close();
+      }
+      if (this.metadataExecutor != null) {
+        this.metadataExecutor.shutdown();
+      }
+      if (this.queryExecutor != null) {
+        this.queryExecutor.shutdown();
       }
 
       for (Statement statement : this.openStatements) {
-        statement.close();
+        try {
+          statement.close();
+        } catch (SQLException e) {
+          if (exceptionToThrow == null) {
+            exceptionToThrow = e;
+          } else {
+            exceptionToThrow.addSuppressed(e);
+          }
+        }
       }
       this.openStatements.clear();
+
+      boolean interrupted = Thread.currentThread().isInterrupted();
+
+      try {
+        if (this.bigQueryReadClient != null) {
+          if (interrupted) {
+            this.bigQueryReadClient.shutdownNow();
+          } else {
+            this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
+          }
+        }
+        if (this.bigQueryWriteClient != null) {
+          if (interrupted) {
+            this.bigQueryWriteClient.shutdownNow();
+          } else {
+            this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
+          }
+        }
+        if (this.metadataExecutor != null) {
+          if (interrupted || !this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+            this.metadataExecutor.shutdownNow();
+          }
+        }
+        if (this.queryExecutor != null) {
+          if (interrupted || !this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+            this.queryExecutor.shutdownNow();
+          }
+        }
+      } catch (InterruptedException e) {
+        interrupted = true;
+        if (this.bigQueryReadClient != null) {
+          this.bigQueryReadClient.shutdownNow();
+        }
+        if (this.bigQueryWriteClient != null) {
+          this.bigQueryWriteClient.shutdownNow();
+        }
+        if (this.metadataExecutor != null) {
+          this.metadataExecutor.shutdownNow();
+        }
+        if (this.queryExecutor != null) {
+          this.queryExecutor.shutdownNow();
+        }
+      } finally {
+        try {
+          if (this.bigQueryReadClient != null) {
+            this.bigQueryReadClient.close();
+          }
+        } finally {
+          if (this.bigQueryWriteClient != null) {
+            this.bigQueryWriteClient.close();
+          }
+        }
+      }
+
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+        throw new InterruptedException("Interrupted awaiting executor termination");
+      }
     } catch (ConcurrentModificationException ex) {
       throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
@@ -948,7 +1035,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       BigQueryJdbcMdc.clear();
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
     }
+    if (exceptionToThrow != null) {
+      throw exceptionToThrow;
+    }
     this.isClosed = true;
+  }
+
+  ExecutorService getExecutorService() {
+    return this.queryExecutor;
+  }
+
+  ExecutorService getMetadataExecutor() {
+    return this.metadataExecutor;
   }
 
   @Override
@@ -1205,5 +1303,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;
+  }
+
+  @Override
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
+  }
+
+  @Override
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 }

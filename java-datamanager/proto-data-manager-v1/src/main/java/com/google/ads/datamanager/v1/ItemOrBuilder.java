@@ -186,4 +186,203 @@ public interface ItemOrBuilder
    */
   com.google.ads.datamanager.v1.ItemParameterOrBuilder getAdditionalItemParametersOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Merchant Center ID associated with the item. For Store Sales
+   * events this will override the value set at the cart level.  This field is
+   * ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The merchantId.
+   */
+  java.lang.String getMerchantId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Merchant Center ID associated with the item. For Store Sales
+   * events this will override the value set at the cart level.  This field is
+   * ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for merchantId.
+   */
+  com.google.protobuf.ByteString getMerchantIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The feed label of the Merchant Center feed. If countries are
+   * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+   * used instead. For Store Sales events this will override the value set at
+   * the cart level. This field is ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The merchantFeedLabel.
+   */
+  java.lang.String getMerchantFeedLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The feed label of the Merchant Center feed. If countries are
+   * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+   * used instead. For Store Sales events this will override the value set at
+   * the cart level. This field is ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for merchantFeedLabel.
+   */
+  com.google.protobuf.ByteString getMerchantFeedLabelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code in ISO 639-1 associated with the Merchant
+   * Center feed where your items are uploaded.
+   * </pre>
+   *
+   * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The merchantFeedLanguageCode.
+   */
+  java.lang.String getMerchantFeedLanguageCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code in ISO 639-1 associated with the Merchant
+   * Center feed where your items are uploaded.
+   * </pre>
+   *
+   * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for merchantFeedLanguageCode.
+   */
+  com.google.protobuf.ByteString getMerchantFeedLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this item within the event,
+   * for cases where the conversion value is different for each item.
+   * </pre>
+   *
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  boolean hasConversionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this item within the event,
+   * for cases where the conversion value is different for each item.
+   * </pre>
+   *
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionValue.
+   */
+  double getConversionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.datamanager.v1.ItemCustomVariable> getCustomVariablesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.ItemCustomVariable getCustomVariables(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCustomVariablesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder>
+      getCustomVariablesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder getCustomVariablesOrBuilder(int index);
 }

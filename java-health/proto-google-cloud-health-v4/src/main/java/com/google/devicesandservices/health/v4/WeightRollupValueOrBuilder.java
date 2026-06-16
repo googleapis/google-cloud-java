@@ -33,7 +33,20 @@ public interface WeightRollupValueOrBuilder
    * Average weight in grams.
    * </pre>
    *
-   * <code>double weight_grams_avg = 1;</code>
+   * <code>optional double weight_grams_avg = 1;</code>
+   *
+   * @return Whether the weightGramsAvg field is set.
+   */
+  boolean hasWeightGramsAvg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Average weight in grams.
+   * </pre>
+   *
+   * <code>optional double weight_grams_avg = 1;</code>
    *
    * @return The weightGramsAvg.
    */

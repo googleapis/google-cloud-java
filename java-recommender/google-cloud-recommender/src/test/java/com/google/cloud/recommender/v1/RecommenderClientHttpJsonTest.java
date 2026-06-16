@@ -661,6 +661,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -722,6 +723,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -781,6 +783,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -852,6 +855,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -917,6 +921,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -980,6 +985,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1045,6 +1051,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1108,6 +1115,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1173,6 +1181,7 @@ public class RecommenderClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllAssociatedInsights(new ArrayList<Recommendation.InsightReference>())
             .setXorGroupId("xorGroupId-2095769825")
+            .addAllTargetResources(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -16,7 +16,10 @@
 
 package com.google.devicesandservices.health.v4.stub;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
@@ -29,21 +32,33 @@ import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.devicesandservices.health.v4.GetIdentityRequest;
+import com.google.devicesandservices.health.v4.GetIrnProfileRequest;
+import com.google.devicesandservices.health.v4.GetPairedDeviceRequest;
 import com.google.devicesandservices.health.v4.GetProfileRequest;
 import com.google.devicesandservices.health.v4.GetSettingsRequest;
 import com.google.devicesandservices.health.v4.Identity;
+import com.google.devicesandservices.health.v4.IrnProfile;
+import com.google.devicesandservices.health.v4.ListPairedDevicesRequest;
+import com.google.devicesandservices.health.v4.ListPairedDevicesResponse;
+import com.google.devicesandservices.health.v4.PairedDevice;
 import com.google.devicesandservices.health.v4.Profile;
 import com.google.devicesandservices.health.v4.Settings;
 import com.google.devicesandservices.health.v4.UpdateProfileRequest;
@@ -112,8 +127,10 @@ public class HealthProfileServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/googlehealth.activity_and_fitness.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.ecg.readonly")
           .add(
               "https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.irn.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.profile.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.settings.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.sleep.readonly")
@@ -124,6 +141,70 @@ public class HealthProfileServiceStubSettings
   private final UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings;
   private final UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings;
   private final UnaryCallSettings<GetIdentityRequest, Identity> getIdentitySettings;
+  private final UnaryCallSettings<GetIrnProfileRequest, IrnProfile> getIrnProfileSettings;
+  private final UnaryCallSettings<GetPairedDeviceRequest, PairedDevice> getPairedDeviceSettings;
+  private final PagedCallSettings<
+          ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+      listPairedDevicesSettings;
+
+  private static final PagedListDescriptor<
+          ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice>
+      LIST_PAIRED_DEVICES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPairedDevicesRequest injectToken(
+                ListPairedDevicesRequest payload, String token) {
+              return ListPairedDevicesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPairedDevicesRequest injectPageSize(
+                ListPairedDevicesRequest payload, int pageSize) {
+              return ListPairedDevicesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPairedDevicesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPairedDevicesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PairedDevice> extractResources(ListPairedDevicesResponse payload) {
+              return payload.getPairedDevicesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+      LIST_PAIRED_DEVICES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPairedDevicesRequest,
+              ListPairedDevicesResponse,
+              ListPairedDevicesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPairedDevicesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesResponse> callable,
+                ListPairedDevicesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPairedDevicesResponse> futureResponse) {
+              PageContext<ListPairedDevicesRequest, ListPairedDevicesResponse, PairedDevice>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PAIRED_DEVICES_PAGE_STR_DESC, request, context);
+              return ListPairedDevicesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getProfile. */
   public UnaryCallSettings<GetProfileRequest, Profile> getProfileSettings() {
@@ -148,6 +229,23 @@ public class HealthProfileServiceStubSettings
   /** Returns the object with the settings used for calls to getIdentity. */
   public UnaryCallSettings<GetIdentityRequest, Identity> getIdentitySettings() {
     return getIdentitySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIrnProfile. */
+  public UnaryCallSettings<GetIrnProfileRequest, IrnProfile> getIrnProfileSettings() {
+    return getIrnProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPairedDevice. */
+  public UnaryCallSettings<GetPairedDeviceRequest, PairedDevice> getPairedDeviceSettings() {
+    return getPairedDeviceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPairedDevices. */
+  public PagedCallSettings<
+          ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+      listPairedDevicesSettings() {
+    return listPairedDevicesSettings;
   }
 
   public HealthProfileServiceStub createStub() throws IOException {
@@ -266,6 +364,9 @@ public class HealthProfileServiceStubSettings
     getSettingsSettings = settingsBuilder.getSettingsSettings().build();
     updateSettingsSettings = settingsBuilder.updateSettingsSettings().build();
     getIdentitySettings = settingsBuilder.getIdentitySettings().build();
+    getIrnProfileSettings = settingsBuilder.getIrnProfileSettings().build();
+    getPairedDeviceSettings = settingsBuilder.getPairedDeviceSettings().build();
+    listPairedDevicesSettings = settingsBuilder.listPairedDevicesSettings().build();
   }
 
   @Override
@@ -286,6 +387,12 @@ public class HealthProfileServiceStubSettings
     private final UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings;
     private final UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings;
     private final UnaryCallSettings.Builder<GetIdentityRequest, Identity> getIdentitySettings;
+    private final UnaryCallSettings.Builder<GetIrnProfileRequest, IrnProfile> getIrnProfileSettings;
+    private final UnaryCallSettings.Builder<GetPairedDeviceRequest, PairedDevice>
+        getPairedDeviceSettings;
+    private final PagedCallSettings.Builder<
+            ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+        listPairedDevicesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -297,7 +404,6 @@ public class HealthProfileServiceStubSettings
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -325,8 +431,6 @@ public class HealthProfileServiceStubSettings
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -342,6 +446,9 @@ public class HealthProfileServiceStubSettings
       getSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIdentitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIrnProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getPairedDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPairedDevicesSettings = PagedCallSettings.newBuilder(LIST_PAIRED_DEVICES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -349,7 +456,10 @@ public class HealthProfileServiceStubSettings
               updateProfileSettings,
               getSettingsSettings,
               updateSettingsSettings,
-              getIdentitySettings);
+              getIdentitySettings,
+              getIrnProfileSettings,
+              getPairedDeviceSettings,
+              listPairedDevicesSettings);
       initDefaults(this);
     }
 
@@ -361,6 +471,9 @@ public class HealthProfileServiceStubSettings
       getSettingsSettings = settings.getSettingsSettings.toBuilder();
       updateSettingsSettings = settings.updateSettingsSettings.toBuilder();
       getIdentitySettings = settings.getIdentitySettings.toBuilder();
+      getIrnProfileSettings = settings.getIrnProfileSettings.toBuilder();
+      getPairedDeviceSettings = settings.getPairedDeviceSettings.toBuilder();
+      listPairedDevicesSettings = settings.listPairedDevicesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -368,7 +481,10 @@ public class HealthProfileServiceStubSettings
               updateProfileSettings,
               getSettingsSettings,
               updateSettingsSettings,
-              getIdentitySettings);
+              getIdentitySettings,
+              getIrnProfileSettings,
+              getPairedDeviceSettings,
+              listPairedDevicesSettings);
     }
 
     private static Builder createDefault() {
@@ -418,8 +534,23 @@ public class HealthProfileServiceStubSettings
 
       builder
           .getIdentitySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIrnProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPairedDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPairedDevicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       return builder;
     }
@@ -462,6 +593,24 @@ public class HealthProfileServiceStubSettings
     /** Returns the builder for the settings used for calls to getIdentity. */
     public UnaryCallSettings.Builder<GetIdentityRequest, Identity> getIdentitySettings() {
       return getIdentitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIrnProfile. */
+    public UnaryCallSettings.Builder<GetIrnProfileRequest, IrnProfile> getIrnProfileSettings() {
+      return getIrnProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPairedDevice. */
+    public UnaryCallSettings.Builder<GetPairedDeviceRequest, PairedDevice>
+        getPairedDeviceSettings() {
+      return getPairedDeviceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPairedDevices. */
+    public PagedCallSettings.Builder<
+            ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+        listPairedDevicesSettings() {
+      return listPairedDevicesSettings;
     }
 
     @Override

@@ -198,12 +198,14 @@ public class SaasRolloutsClientTest {
                 RolloutKindName.of("[PROJECT]", "[LOCATION]", "[ROLLOUT_KIND_ID]").toString())
             .setStats(RolloutStats.newBuilder().build())
             .setControl(RolloutControl.newBuilder().build())
+            .setEffectiveUnitFilter("effectiveUnitFilter-1314013405")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockSaasRollouts.addResponse(expectedResponse);
 
@@ -255,12 +257,14 @@ public class SaasRolloutsClientTest {
                 RolloutKindName.of("[PROJECT]", "[LOCATION]", "[ROLLOUT_KIND_ID]").toString())
             .setStats(RolloutStats.newBuilder().build())
             .setControl(RolloutControl.newBuilder().build())
+            .setEffectiveUnitFilter("effectiveUnitFilter-1314013405")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockSaasRollouts.addResponse(expectedResponse);
 
@@ -312,12 +316,14 @@ public class SaasRolloutsClientTest {
                 RolloutKindName.of("[PROJECT]", "[LOCATION]", "[ROLLOUT_KIND_ID]").toString())
             .setStats(RolloutStats.newBuilder().build())
             .setControl(RolloutControl.newBuilder().build())
+            .setEffectiveUnitFilter("effectiveUnitFilter-1314013405")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockSaasRollouts.addResponse(expectedResponse);
 
@@ -375,12 +381,14 @@ public class SaasRolloutsClientTest {
                 RolloutKindName.of("[PROJECT]", "[LOCATION]", "[ROLLOUT_KIND_ID]").toString())
             .setStats(RolloutStats.newBuilder().build())
             .setControl(RolloutControl.newBuilder().build())
+            .setEffectiveUnitFilter("effectiveUnitFilter-1314013405")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockSaasRollouts.addResponse(expectedResponse);
 
@@ -438,12 +446,14 @@ public class SaasRolloutsClientTest {
                 RolloutKindName.of("[PROJECT]", "[LOCATION]", "[ROLLOUT_KIND_ID]").toString())
             .setStats(RolloutStats.newBuilder().build())
             .setControl(RolloutControl.newBuilder().build())
+            .setEffectiveUnitFilter("effectiveUnitFilter-1314013405")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockSaasRollouts.addResponse(expectedResponse);
 

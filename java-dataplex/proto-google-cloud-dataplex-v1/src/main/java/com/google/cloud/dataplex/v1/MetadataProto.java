@@ -356,7 +356,7 @@ public final class MetadataProto extends com.google.protobuf.GeneratedFile {
           + "StorageSystem\022\036\n"
           + "\032STORAGE_SYSTEM_UNSPECIFIED\020\000\022\021\n\r"
           + "CLOUD_STORAGE\020\001\022\014\n"
-          + "\010BIGQUERY\020\0022\211\016\n"
+          + "\010BIGQUERY\020\0022\275\016\n"
           + "\017MetadataService\022\275\001\n"
           + "\014CreateEntity\022-.google.cloud.dataplex.v1.CreateEntityRequest\032"
           + " .google.cloud.dataplex.v1.Entity\"\\\332A\r"
@@ -393,11 +393,12 @@ public final class MetadataProto extends com.google.protobuf.GeneratedFile {
           + "oud.dataplex.v1.ListPartitionsResponse\"Z"
           + "\332A\006parent\202\323\344\223\002K\022I/v1/{parent=projects/*/"
           + "locations/*/lakes/*/zones/*/entities/*}/"
-          + "partitions\032K\312A\027dataplex.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-platformBi\n"
+          + "partitions\032\177\312A\027dataplex.googleapis.com\322A"
+          + "bhttps://www.googleapis.com/auth/cloud-p"
+          + "latform,https://www.googleapis.com/auth/dataplex.read-writeBi\n"
           + "\034com.google.cloud.dataplex.v1B\r"
-          + "MetadataProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006prot"
-          + "o3"
+          + "MetadataProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;data"
+          + "plexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -48,16 +48,6 @@ abstract class BigQueryNoOpsConnection implements Connection {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
-  }
-
-  @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return false;
-  }
-
-  @Override
   public boolean isReadOnly() {
     return false;
   }
@@ -67,8 +57,6 @@ abstract class BigQueryNoOpsConnection implements Connection {
 
   @Override
   public void setCatalog(String catalog) {}
-
-  // TODO: post MVP feature
 
   @Override
   public Map<String, Class<?>> getTypeMap() throws SQLException {

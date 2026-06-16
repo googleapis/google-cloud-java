@@ -72,6 +72,888 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
             com.google.cloud.ces.v1beta.GenerateAppResourceRequest.Builder.class);
   }
 
+  public interface AppVersionContextOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the app version to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+     * </pre>
+     *
+     * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The appVersion.
+     */
+    java.lang.String getAppVersion();
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the app version to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+     * </pre>
+     *
+     * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for appVersion.
+     */
+    com.google.protobuf.ByteString getAppVersionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the target agent to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+     * </pre>
+     *
+     * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The agentResourceName.
+     */
+    java.lang.String getAgentResourceName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the target agent to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+     * </pre>
+     *
+     * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for agentResourceName.
+     */
+    com.google.protobuf.ByteString getAgentResourceNameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext}
+   */
+  public static final class AppVersionContext extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+      AppVersionContextOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AppVersionContext");
+    }
+
+    // Use AppVersionContext.newBuilder() to construct.
+    private AppVersionContext(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AppVersionContext() {
+      appVersion_ = "";
+      agentResourceName_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.AgentServiceProto
+          .internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppVersionContext_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.AgentServiceProto
+          .internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppVersionContext_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.class,
+              com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder
+                  .class);
+    }
+
+    public static final int APP_VERSION_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object appVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the app version to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+     * </pre>
+     *
+     * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The appVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getAppVersion() {
+      java.lang.Object ref = appVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appVersion_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the app version to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+     * </pre>
+     *
+     * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for appVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAppVersionBytes() {
+      java.lang.Object ref = appVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        appVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AGENT_RESOURCE_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object agentResourceName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the target agent to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+     * </pre>
+     *
+     * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The agentResourceName.
+     */
+    @java.lang.Override
+    public java.lang.String getAgentResourceName() {
+      java.lang.Object ref = agentResourceName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agentResourceName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the target agent to be used by the LLM assistant.
+     * Format:
+     * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+     * </pre>
+     *
+     * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for agentResourceName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAgentResourceNameBytes() {
+      java.lang.Object ref = agentResourceName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        agentResourceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appVersion_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, appVersion_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agentResourceName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, agentResourceName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appVersion_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, appVersion_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agentResourceName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, agentResourceName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext other =
+          (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) obj;
+
+      if (!getAppVersion().equals(other.getAppVersion())) return false;
+      if (!getAgentResourceName().equals(other.getAgentResourceName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getAppVersion().hashCode();
+      hash = (37 * hash) + AGENT_RESOURCE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentResourceName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.AgentServiceProto
+            .internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppVersionContext_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.AgentServiceProto
+            .internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppVersionContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.class,
+                com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        appVersion_ = "";
+        agentResourceName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.AgentServiceProto
+            .internal_static_google_cloud_ces_v1beta_GenerateAppResourceRequest_AppVersionContext_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+          getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext build() {
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+          buildPartial() {
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext result =
+            new com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.appVersion_ = appVersion_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.agentResourceName_ = agentResourceName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) {
+          return mergeFrom(
+              (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext other) {
+        if (other
+            == com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+                .getDefaultInstance()) return this;
+        if (!other.getAppVersion().isEmpty()) {
+          appVersion_ = other.appVersion_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getAgentResourceName().isEmpty()) {
+          agentResourceName_ = other.agentResourceName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  appVersion_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  agentResourceName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object appVersion_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the app version to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+       * </pre>
+       *
+       * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The appVersion.
+       */
+      public java.lang.String getAppVersion() {
+        java.lang.Object ref = appVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the app version to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+       * </pre>
+       *
+       * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for appVersion.
+       */
+      public com.google.protobuf.ByteString getAppVersionBytes() {
+        java.lang.Object ref = appVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          appVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the app version to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+       * </pre>
+       *
+       * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The appVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAppVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appVersion_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the app version to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+       * </pre>
+       *
+       * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAppVersion() {
+        appVersion_ = getDefaultInstance().getAppVersion();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the app version to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+       * </pre>
+       *
+       * <code>string app_version = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for appVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAppVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        appVersion_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object agentResourceName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the target agent to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+       * </pre>
+       *
+       * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The agentResourceName.
+       */
+      public java.lang.String getAgentResourceName() {
+        java.lang.Object ref = agentResourceName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          agentResourceName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the target agent to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+       * </pre>
+       *
+       * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for agentResourceName.
+       */
+      public com.google.protobuf.ByteString getAgentResourceNameBytes() {
+        java.lang.Object ref = agentResourceName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          agentResourceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the target agent to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+       * </pre>
+       *
+       * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The agentResourceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgentResourceName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentResourceName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the target agent to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+       * </pre>
+       *
+       * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAgentResourceName() {
+        agentResourceName_ = getDefaultInstance().getAgentResourceName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the target agent to be used by the LLM assistant.
+       * Format:
+       * `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
+       * </pre>
+       *
+       * <code>string agent_resource_name = 2 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for agentResourceName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAgentResourceNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        agentResourceName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+    private static final com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext();
+    }
+
+    public static com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AppVersionContext> PARSER =
+        new com.google.protobuf.AbstractParser<AppVersionContext>() {
+          @java.lang.Override
+          public AppVersionContext parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AppVersionContext> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppVersionContext> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface RefineInstructionsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.GenerateAppResourceRequest.RefineInstructions)
@@ -10272,6 +11154,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     AGENT(2),
     TOOL(4),
     TOOLSET(6),
+    APP_VERSION_CONTEXT(12),
     RESOURCE_NOT_SET(0);
     private final int value;
 
@@ -10297,6 +11180,8 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
           return TOOL;
         case 6:
           return TOOLSET;
+        case 12:
+          return APP_VERSION_CONTEXT;
         case 0:
           return RESOURCE_NOT_SET;
         default:
@@ -10482,6 +11367,70 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       return (com.google.cloud.ces.v1beta.Toolset) resource_;
     }
     return com.google.cloud.ces.v1beta.Toolset.getDefaultInstance();
+  }
+
+  public static final int APP_VERSION_CONTEXT_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+   * </code>
+   *
+   * @return Whether the appVersionContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppVersionContext() {
+    return resourceCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+   * </code>
+   *
+   * @return The appVersionContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+      getAppVersionContext() {
+    if (resourceCase_ == 12) {
+      return (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) resource_;
+    }
+    return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder
+      getAppVersionContextOrBuilder() {
+    if (resourceCase_ == 12) {
+      return (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) resource_;
+    }
+    return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        .getDefaultInstance();
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -11066,6 +12015,10 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(11, getHillClimbingFixConfig());
     }
+    if (resourceCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) resource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -11122,6 +12075,12 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getHillClimbingFixConfig());
+    }
+    if (resourceCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12,
+              (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext) resource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -11181,6 +12140,9 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       case 6:
         if (!getToolset().equals(other.getToolset())) return false;
         break;
+      case 12:
+        if (!getAppVersionContext().equals(other.getAppVersionContext())) return false;
+        break;
       case 0:
       default:
     }
@@ -11237,6 +12199,10 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       case 6:
         hash = (37 * hash) + TOOLSET_FIELD_NUMBER;
         hash = (53 * hash) + getToolset().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + APP_VERSION_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getAppVersionContext().hashCode();
         break;
       case 0:
       default:
@@ -11407,6 +12373,9 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       if (toolsetBuilder_ != null) {
         toolsetBuilder_.clear();
       }
+      if (appVersionContextBuilder_ != null) {
+        appVersionContextBuilder_.clear();
+      }
       parent_ = "";
       if (refineInstructionsBuilder_ == null) {
         refineInstructions_ = java.util.Collections.emptyList();
@@ -11414,7 +12383,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         refineInstructions_ = null;
         refineInstructionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       toolGenerationConfig_ = null;
       if (toolGenerationConfigBuilder_ != null) {
         toolGenerationConfigBuilder_.dispose();
@@ -11486,9 +12455,9 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     private void buildPartialRepeatedFields(
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest result) {
       if (refineInstructionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           refineInstructions_ = java.util.Collections.unmodifiableList(refineInstructions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.refineInstructions_ = refineInstructions_;
       } else {
@@ -11498,46 +12467,46 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
 
     private void buildPartial0(com.google.cloud.ces.v1beta.GenerateAppResourceRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.toolGenerationConfig_ =
             toolGenerationConfigBuilder_ == null
                 ? toolGenerationConfig_
                 : toolGenerationConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.appGenerationConfig_ =
             appGenerationConfigBuilder_ == null
                 ? appGenerationConfig_
                 : appGenerationConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.evaluationGenerationConfig_ =
             evaluationGenerationConfigBuilder_ == null
                 ? evaluationGenerationConfig_
                 : evaluationGenerationConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.evaluationPersonasGenerationConfig_ =
             evaluationPersonasGenerationConfigBuilder_ == null
                 ? evaluationPersonasGenerationConfig_
                 : evaluationPersonasGenerationConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.qualityReportGenerationConfig_ =
             qualityReportGenerationConfigBuilder_ == null
                 ? qualityReportGenerationConfig_
                 : qualityReportGenerationConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.hillClimbingFixConfig_ =
             hillClimbingFixConfigBuilder_ == null
                 ? hillClimbingFixConfig_
@@ -11559,6 +12528,9 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       if (resourceCase_ == 6 && toolsetBuilder_ != null) {
         result.resource_ = toolsetBuilder_.build();
       }
+      if (resourceCase_ == 12 && appVersionContextBuilder_ != null) {
+        result.resource_ = appVersionContextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -11576,14 +12548,14 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (refineInstructionsBuilder_ == null) {
         if (!other.refineInstructions_.isEmpty()) {
           if (refineInstructions_.isEmpty()) {
             refineInstructions_ = other.refineInstructions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureRefineInstructionsIsMutable();
             refineInstructions_.addAll(other.refineInstructions_);
@@ -11596,7 +12568,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
             refineInstructionsBuilder_.dispose();
             refineInstructionsBuilder_ = null;
             refineInstructions_ = other.refineInstructions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             refineInstructionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetRefineInstructionsFieldBuilder()
@@ -11640,6 +12612,11 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
             mergeToolset(other.getToolset());
             break;
           }
+        case APP_VERSION_CONTEXT:
+          {
+            mergeAppVersionContext(other.getAppVersionContext());
+            break;
+          }
         case RESOURCE_NOT_SET:
           {
             break;
@@ -11674,7 +12651,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
@@ -11708,7 +12685,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     internalGetToolGenerationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -11721,7 +12698,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     internalGetAppGenerationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -11729,7 +12706,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
                 input.readMessage(
                     internalGetEvaluationGenerationConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -11737,7 +12714,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
                 input.readMessage(
                     internalGetEvaluationPersonasGenerationConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
@@ -11745,16 +12722,23 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
                 input.readMessage(
                     internalGetQualityReportGenerationConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetHillClimbingFixConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetAppVersionContextFieldBuilder().getBuilder(), extensionRegistry);
+                resourceCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12460,6 +13444,259 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       return toolsetBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext,
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder,
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder>
+        appVersionContextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     *
+     * @return Whether the appVersionContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppVersionContext() {
+      return resourceCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     *
+     * @return The appVersionContext.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+        getAppVersionContext() {
+      if (appVersionContextBuilder_ == null) {
+        if (resourceCase_ == 12) {
+          return (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+              resource_;
+        }
+        return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+            .getDefaultInstance();
+      } else {
+        if (resourceCase_ == 12) {
+          return appVersionContextBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    public Builder setAppVersionContext(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext value) {
+      if (appVersionContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resource_ = value;
+        onChanged();
+      } else {
+        appVersionContextBuilder_.setMessage(value);
+      }
+      resourceCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    public Builder setAppVersionContext(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder
+            builderForValue) {
+      if (appVersionContextBuilder_ == null) {
+        resource_ = builderForValue.build();
+        onChanged();
+      } else {
+        appVersionContextBuilder_.setMessage(builderForValue.build());
+      }
+      resourceCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    public Builder mergeAppVersionContext(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext value) {
+      if (appVersionContextBuilder_ == null) {
+        if (resourceCase_ == 12
+            && resource_
+                != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+                    .getDefaultInstance()) {
+          resource_ =
+              com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.newBuilder(
+                      (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+                          resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resource_ = value;
+        }
+        onChanged();
+      } else {
+        if (resourceCase_ == 12) {
+          appVersionContextBuilder_.mergeFrom(value);
+        } else {
+          appVersionContextBuilder_.setMessage(value);
+        }
+      }
+      resourceCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    public Builder clearAppVersionContext() {
+      if (appVersionContextBuilder_ == null) {
+        if (resourceCase_ == 12) {
+          resourceCase_ = 0;
+          resource_ = null;
+          onChanged();
+        }
+      } else {
+        if (resourceCase_ == 12) {
+          resourceCase_ = 0;
+          resource_ = null;
+        }
+        appVersionContextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder
+        getAppVersionContextBuilder() {
+      return internalGetAppVersionContextFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder
+        getAppVersionContextOrBuilder() {
+      if ((resourceCase_ == 12) && (appVersionContextBuilder_ != null)) {
+        return appVersionContextBuilder_.getMessageOrBuilder();
+      } else {
+        if (resourceCase_ == 12) {
+          return (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+              resource_;
+        }
+        return com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app version context specifying the base snapshot and target agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext,
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder,
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder>
+        internalGetAppVersionContextFieldBuilder() {
+      if (appVersionContextBuilder_ == null) {
+        if (!(resourceCase_ == 12)) {
+          resource_ =
+              com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext
+                  .getDefaultInstance();
+        }
+        appVersionContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext,
+                com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext.Builder,
+                com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder>(
+                (com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext)
+                    resource_,
+                getParentForChildren(),
+                isClean());
+        resource_ = null;
+      }
+      resourceCase_ = 12;
+      onChanged();
+      return appVersionContextBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
 
     /**
@@ -12531,7 +13768,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12551,7 +13788,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -12576,7 +13813,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12586,12 +13823,12 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         refineInstructions_ = java.util.Collections.emptyList();
 
     private void ensureRefineInstructionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         refineInstructions_ =
             new java.util.ArrayList<
                 com.google.cloud.ces.v1beta.GenerateAppResourceRequest.RefineInstructions>(
                 refineInstructions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -12853,7 +14090,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public Builder clearRefineInstructions() {
       if (refineInstructionsBuilder_ == null) {
         refineInstructions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         refineInstructionsBuilder_.clear();
@@ -13009,7 +14246,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
                 com.google.cloud.ces.v1beta.GenerateAppResourceRequest.RefineInstructions.Builder,
                 com.google.cloud.ces.v1beta.GenerateAppResourceRequest.RefineInstructionsOrBuilder>(
                 refineInstructions_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         refineInstructions_ = null;
@@ -13039,7 +14276,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return Whether the toolGenerationConfig field is set.
      */
     public boolean hasToolGenerationConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -13088,7 +14325,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         toolGenerationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -13112,7 +14349,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         toolGenerationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -13131,7 +14368,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public Builder mergeToolGenerationConfig(
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest.ToolGenerationConfig value) {
       if (toolGenerationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && toolGenerationConfig_ != null
             && toolGenerationConfig_
                 != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.ToolGenerationConfig
@@ -13144,7 +14381,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         toolGenerationConfigBuilder_.mergeFrom(value);
       }
       if (toolGenerationConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -13162,7 +14399,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearToolGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       toolGenerationConfig_ = null;
       if (toolGenerationConfigBuilder_ != null) {
         toolGenerationConfigBuilder_.dispose();
@@ -13185,7 +14422,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.ToolGenerationConfig.Builder
         getToolGenerationConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetToolGenerationConfigFieldBuilder().getBuilder();
     }
@@ -13264,7 +14501,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return Whether the appGenerationConfig field is set.
      */
     public boolean hasAppGenerationConfig() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -13313,7 +14550,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         appGenerationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13337,7 +14574,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         appGenerationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13356,7 +14593,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public Builder mergeAppGenerationConfig(
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppGenerationConfig value) {
       if (appGenerationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && appGenerationConfig_ != null
             && appGenerationConfig_
                 != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppGenerationConfig
@@ -13369,7 +14606,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         appGenerationConfigBuilder_.mergeFrom(value);
       }
       if (appGenerationConfig_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -13387,7 +14624,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearAppGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       appGenerationConfig_ = null;
       if (appGenerationConfigBuilder_ != null) {
         appGenerationConfigBuilder_.dispose();
@@ -13410,7 +14647,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppGenerationConfig.Builder
         getAppGenerationConfigBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetAppGenerationConfigFieldBuilder().getBuilder();
     }
@@ -13491,7 +14728,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return Whether the evaluationGenerationConfig field is set.
      */
     public boolean hasEvaluationGenerationConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -13540,7 +14777,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         evaluationGenerationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13564,7 +14801,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         evaluationGenerationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13583,7 +14820,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public Builder mergeEvaluationGenerationConfig(
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest.EvaluationGenerationConfig value) {
       if (evaluationGenerationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && evaluationGenerationConfig_ != null
             && evaluationGenerationConfig_
                 != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.EvaluationGenerationConfig
@@ -13596,7 +14833,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         evaluationGenerationConfigBuilder_.mergeFrom(value);
       }
       if (evaluationGenerationConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -13614,7 +14851,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearEvaluationGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       evaluationGenerationConfig_ = null;
       if (evaluationGenerationConfigBuilder_ != null) {
         evaluationGenerationConfigBuilder_.dispose();
@@ -13637,7 +14874,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.EvaluationGenerationConfig.Builder
         getEvaluationGenerationConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetEvaluationGenerationConfigFieldBuilder().getBuilder();
     }
@@ -13724,7 +14961,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return Whether the evaluationPersonasGenerationConfig field is set.
      */
     public boolean hasEvaluationPersonasGenerationConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -13774,7 +15011,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         evaluationPersonasGenerationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13799,7 +15036,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         evaluationPersonasGenerationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13819,7 +15056,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest.EvaluationPersonasGenerationConfig
             value) {
       if (evaluationPersonasGenerationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && evaluationPersonasGenerationConfig_ != null
             && evaluationPersonasGenerationConfig_
                 != com.google.cloud.ces.v1beta.GenerateAppResourceRequest
@@ -13832,7 +15069,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         evaluationPersonasGenerationConfigBuilder_.mergeFrom(value);
       }
       if (evaluationPersonasGenerationConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -13850,7 +15087,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearEvaluationPersonasGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       evaluationPersonasGenerationConfig_ = null;
       if (evaluationPersonasGenerationConfigBuilder_ != null) {
         evaluationPersonasGenerationConfigBuilder_.dispose();
@@ -13874,7 +15111,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.EvaluationPersonasGenerationConfig
             .Builder
         getEvaluationPersonasGenerationConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetEvaluationPersonasGenerationConfigFieldBuilder().getBuilder();
     }
@@ -13961,7 +15198,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return Whether the qualityReportGenerationConfig field is set.
      */
     public boolean hasQualityReportGenerationConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -14011,7 +15248,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         qualityReportGenerationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -14035,7 +15272,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         qualityReportGenerationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -14055,7 +15292,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
             value) {
       if (qualityReportGenerationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && qualityReportGenerationConfig_ != null
             && qualityReportGenerationConfig_
                 != com.google.cloud.ces.v1beta.GenerateAppResourceRequest
@@ -14068,7 +15305,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         qualityReportGenerationConfigBuilder_.mergeFrom(value);
       }
       if (qualityReportGenerationConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -14086,7 +15323,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearQualityReportGenerationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       qualityReportGenerationConfig_ = null;
       if (qualityReportGenerationConfigBuilder_ != null) {
         qualityReportGenerationConfigBuilder_.dispose();
@@ -14110,7 +15347,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.QualityReportGenerationConfig
             .Builder
         getQualityReportGenerationConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetQualityReportGenerationConfigFieldBuilder().getBuilder();
     }
@@ -14194,7 +15431,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * @return Whether the hillClimbingFixConfig field is set.
      */
     public boolean hasHillClimbingFixConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -14243,7 +15480,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         hillClimbingFixConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -14267,7 +15504,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
       } else {
         hillClimbingFixConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -14286,7 +15523,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
     public Builder mergeHillClimbingFixConfig(
         com.google.cloud.ces.v1beta.GenerateAppResourceRequest.HillClimbingFixConfig value) {
       if (hillClimbingFixConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && hillClimbingFixConfig_ != null
             && hillClimbingFixConfig_
                 != com.google.cloud.ces.v1beta.GenerateAppResourceRequest.HillClimbingFixConfig
@@ -14299,7 +15536,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
         hillClimbingFixConfigBuilder_.mergeFrom(value);
       }
       if (hillClimbingFixConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -14317,7 +15554,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearHillClimbingFixConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       hillClimbingFixConfig_ = null;
       if (hillClimbingFixConfigBuilder_ != null) {
         hillClimbingFixConfigBuilder_.dispose();
@@ -14340,7 +15577,7 @@ public final class GenerateAppResourceRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.ces.v1beta.GenerateAppResourceRequest.HillClimbingFixConfig.Builder
         getHillClimbingFixConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetHillClimbingFixConfigFieldBuilder().getBuilder();
     }

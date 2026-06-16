@@ -3,19 +3,20 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-*   @googleapis/cloud-sdk-java-team
+*   @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
 
 # java-vertexai has maintainers
-/java-vertexai/   @googleapis/vertexai-team @googleapis/cloud-sdk-java-team
-/java-bigquerystorage/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
-/java-bigquery/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
-/java-bigquery-jdbc/ @googleapis/bigquery-developer-tools-team @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
-/grpc-gcp-java/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
-/java-spanner/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
-/java-spanner-jdbc/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
-/google-auth-library-java/ @googleapis/cloud-sdk-auth-team @googleapis/cloud-sdk-java-team @googleapis/aion-team
-/java-storage/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team
-/java-storage-nio/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team
-/java-pubsub/ @googleapis/pubsub-team @googleapis/cloud-sdk-java-team
-/java-bigtable/ @googleapis/bigtable-team @googleapis/cloud-sdk-java-team
-/java-firestore/ @googleapis/firestore-team @googleapis/cloud-sdk-java-team
+/java-vertexai/   @googleapis/vertexai-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-bigquerystorage/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-bigquery/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-bigquery-jdbc/ @googleapis/bigquery-developer-tools-team @googleapis/bigquery-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/grpc-gcp-java/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-spanner/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-spanner-jdbc/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/google-auth-library-java/ @googleapis/cloud-sdk-auth-team @googleapis/cloud-sdk-java-team @googleapis/aion-team @googleapis/cloud-sdk-librarian-team
+/java-storage/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-storage-nio/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-pubsub/ @googleapis/pubsub-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-bigtable/ @googleapis/bigtable-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/java-firestore/ @googleapis/firestore-team @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team
+/librarian.yaml @googleapis/cloud-sdk-java-team @googleapis/cloud-sdk-librarian-team

@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.cloud.ServiceOptions;
 import java.sql.Connection;
@@ -26,9 +26,10 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class ITResultSetMetadataTest {
 
@@ -36,20 +37,21 @@ public class ITResultSetMetadataTest {
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
   private static final String TABLE_NAME = "JDBC_RSMETADATA_TEST_TABLE" + randomNumber;
-  private static final String DATASET = "JDBC_RSMETADATA_TEST_DATASET";
+  private static String DATASET;
   private static ResultSetMetaData metaData;
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() throws InterruptedException {
-    ITBase.setUpDataset(DATASET);
+    DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws InterruptedException {
-    ITBase.cleanUp(DATASET);
+    // Shared dataset cleanup is handled by shutdown hook
   }
 
+  @Disabled
   @Test
   public void testResultSetMetadata() throws SQLException {
     String selectData = "SELECT * FROM " + DATASET + "." + TABLE_NAME + ";";

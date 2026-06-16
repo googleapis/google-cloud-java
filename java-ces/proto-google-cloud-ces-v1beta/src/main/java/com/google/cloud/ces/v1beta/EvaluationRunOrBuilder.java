@@ -634,7 +634,7 @@ public interface EvaluationRunOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationRun.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1209
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1283
    * @return Whether the error field is set.
    */
   @java.lang.Deprecated
@@ -653,7 +653,7 @@ public interface EvaluationRunOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationRun.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1209
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1283
    * @return The error.
    */
   @java.lang.Deprecated
@@ -1028,4 +1028,34 @@ public interface EvaluationRunOrBuilder
    * @return The goldenRunMethod.
    */
   com.google.cloud.ces.v1beta.GoldenRunMethod getGoldenRunMethod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The operation that created this evaluation run.
+   * Format:
+   * `projects/{project}/locations/{location}/operations/{operation}`
+   * </pre>
+   *
+   * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The operation.
+   */
+  java.lang.String getOperation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The operation that created this evaluation run.
+   * Format:
+   * `projects/{project}/locations/{location}/operations/{operation}`
+   * </pre>
+   *
+   * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for operation.
+   */
+  com.google.protobuf.ByteString getOperationBytes();
 }

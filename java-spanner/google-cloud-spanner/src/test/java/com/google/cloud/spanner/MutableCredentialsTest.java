@@ -86,6 +86,8 @@ public class MutableCredentialsTest {
   public void testCreateMutableCredentialsWithDefaultScopes() throws IOException {
     Set<String> defaultScopes = SpannerOptions.SCOPES;
     when(initialCredentials.createScoped(defaultScopes)).thenReturn(initialScopedCredentials);
+    when(initialScopedCredentials.createWithUseJwtAccessWithScope(true))
+        .thenReturn(initialScopedCredentials);
     when(initialScopedCredentials.getAuthenticationType()).thenReturn(initialAuthType);
     when(initialScopedCredentials.getRequestMetadata(any(URI.class))).thenReturn(initialMetadata);
     when(initialScopedCredentials.getUniverseDomain()).thenReturn(initialUniverseDomain);
@@ -172,6 +174,8 @@ public class MutableCredentialsTest {
 
   private void setupInitialCredentials() throws IOException {
     when(initialCredentials.createScoped(scopes)).thenReturn(initialScopedCredentials);
+    when(initialScopedCredentials.createWithUseJwtAccessWithScope(true))
+        .thenReturn(initialScopedCredentials);
     when(initialCredentials.createScoped(Collections.emptyList()))
         .thenReturn(initialScopedCredentials);
     when(initialScopedCredentials.getAuthenticationType()).thenReturn(initialAuthType);
@@ -185,6 +189,8 @@ public class MutableCredentialsTest {
 
   private void setupUpdatedCredentials() throws IOException {
     when(updatedCredentials.createScoped(scopes)).thenReturn(updatedScopedCredentials);
+    when(updatedScopedCredentials.createWithUseJwtAccessWithScope(true))
+        .thenReturn(updatedScopedCredentials);
     when(updatedScopedCredentials.getAuthenticationType()).thenReturn(updatedAuthType);
     when(updatedScopedCredentials.getRequestMetadata(any(URI.class))).thenReturn(updatedMetadata);
     when(updatedScopedCredentials.getUniverseDomain()).thenReturn(updatedUniverseDomain);

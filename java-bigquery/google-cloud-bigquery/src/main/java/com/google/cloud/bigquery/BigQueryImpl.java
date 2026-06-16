@@ -416,7 +416,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         new Supplier<JobId>() {
           @Override
           public JobId get() {
-            return JobId.of();
+            // Explicitly set the location for a new job when provided in options.
+            // Otherwise, the job may be created with an incorrect location
+            // (e.g. in transaction mode outside the US).
+            return JobId.of().setLocation(getOptions().getLocation());
           }
         };
     return create(jobInfo, idProvider, options);
@@ -449,7 +452,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.createJob")
-              .setAllAttributes(jobInfo.getJobId().getOtelAttributes())
+              .setAllAttributes(
+                  jobInfo.getJobId() != null
+                      ? jobInfo.getJobId().getOtelAttributes()
+                      : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
@@ -2069,7 +2075,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.queryWithTimeout")
-              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : null)
+              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
@@ -2122,7 +2128,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.getQueryResults")
-              .setAllAttributes(jobId.getOtelAttributes())
+              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }

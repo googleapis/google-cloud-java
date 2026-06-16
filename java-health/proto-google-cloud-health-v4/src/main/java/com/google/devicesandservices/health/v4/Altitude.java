@@ -140,7 +140,23 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
    * Required. Altitude gain in millimeters over the observed interval.
    * </pre>
    *
-   * <code>int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the gainMillimeters field is set.
+   */
+  @java.lang.Override
+  public boolean hasGainMillimeters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Altitude gain in millimeters over the observed interval.
+   * </pre>
+   *
+   * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The gainMillimeters.
    */
@@ -166,7 +182,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getInterval());
     }
-    if (gainMillimeters_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(3, gainMillimeters_);
     }
     getUnknownFields().writeTo(output);
@@ -181,7 +197,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getInterval());
     }
-    if (gainMillimeters_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, gainMillimeters_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -204,7 +220,10 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
     if (hasInterval()) {
       if (!getInterval().equals(other.getInterval())) return false;
     }
-    if (getGainMillimeters() != other.getGainMillimeters()) return false;
+    if (hasGainMillimeters() != other.hasGainMillimeters()) return false;
+    if (hasGainMillimeters()) {
+      if (getGainMillimeters() != other.getGainMillimeters()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -220,8 +239,10 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
     }
-    hash = (37 * hash) + GAIN_MILLIMETERS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGainMillimeters());
+    if (hasGainMillimeters()) {
+      hash = (37 * hash) + GAIN_MILLIMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGainMillimeters());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -421,6 +442,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.gainMillimeters_ = gainMillimeters_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -441,7 +463,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
       if (other.hasInterval()) {
         mergeInterval(other.getInterval());
       }
-      if (other.getGainMillimeters() != 0L) {
+      if (other.hasGainMillimeters()) {
         setGainMillimeters(other.getGainMillimeters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -730,7 +752,23 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      * Required. Altitude gain in millimeters over the observed interval.
      * </pre>
      *
-     * <code>int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the gainMillimeters field is set.
+     */
+    @java.lang.Override
+    public boolean hasGainMillimeters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Altitude gain in millimeters over the observed interval.
+     * </pre>
+     *
+     * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The gainMillimeters.
      */
@@ -746,7 +784,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      * Required. Altitude gain in millimeters over the observed interval.
      * </pre>
      *
-     * <code>int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The gainMillimeters to set.
      * @return This builder for chaining.
@@ -766,7 +804,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      * Required. Altitude gain in millimeters over the observed interval.
      * </pre>
      *
-     * <code>int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

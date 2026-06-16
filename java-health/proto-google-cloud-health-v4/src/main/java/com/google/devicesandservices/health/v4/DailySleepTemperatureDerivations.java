@@ -131,7 +131,28 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
    * temperature samples taken from the user’s sleep.
    * </pre>
    *
-   * <code>double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the nightlyTemperatureCelsius field is set.
+   */
+  @java.lang.Override
+  public boolean hasNightlyTemperatureCelsius() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The user's nightly skin temperature. It is the mean of skin
+   * temperature samples taken from the user’s sleep.
+   * </pre>
+   *
+   * <code>
+   * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The nightlyTemperatureCelsius.
    */
@@ -151,7 +172,28 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
    * user's nightly skin temperature over the past 30 days.
    * </pre>
    *
-   * <code>double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the baselineTemperatureCelsius field is set.
+   */
+  @java.lang.Override
+  public boolean hasBaselineTemperatureCelsius() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user's baseline skin temperature. It is the median of the
+   * user's nightly skin temperature over the past 30 days.
+   * </pre>
+   *
+   * <code>
+   * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The baselineTemperatureCelsius.
    */
@@ -171,7 +213,27 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
    * temperature (temperature - baseline) over the past 30 days.
    * </pre>
    *
-   * <code>double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the relativeNightlyStddev30dCelsius field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelativeNightlyStddev30DCelsius() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The standard deviation of the user’s relative nightly skin
+   * temperature (temperature - baseline) over the past 30 days.
+   * </pre>
+   *
+   * <code>
+   * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The relativeNightlyStddev30dCelsius.
@@ -198,13 +260,13 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(nightlyTemperatureCelsius_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, nightlyTemperatureCelsius_);
     }
-    if (java.lang.Double.doubleToRawLongBits(baselineTemperatureCelsius_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(3, baselineTemperatureCelsius_);
     }
-    if (java.lang.Double.doubleToRawLongBits(relativeNightlyStddev30DCelsius_) != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeDouble(4, relativeNightlyStddev30DCelsius_);
     }
     getUnknownFields().writeTo(output);
@@ -219,15 +281,15 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(nightlyTemperatureCelsius_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(2, nightlyTemperatureCelsius_);
     }
-    if (java.lang.Double.doubleToRawLongBits(baselineTemperatureCelsius_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(3, baselineTemperatureCelsius_);
     }
-    if (java.lang.Double.doubleToRawLongBits(relativeNightlyStddev30DCelsius_) != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(
               4, relativeNightlyStddev30DCelsius_);
@@ -253,13 +315,23 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
     if (hasDate()) {
       if (!getDate().equals(other.getDate())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getNightlyTemperatureCelsius())
-        != java.lang.Double.doubleToLongBits(other.getNightlyTemperatureCelsius())) return false;
-    if (java.lang.Double.doubleToLongBits(getBaselineTemperatureCelsius())
-        != java.lang.Double.doubleToLongBits(other.getBaselineTemperatureCelsius())) return false;
-    if (java.lang.Double.doubleToLongBits(getRelativeNightlyStddev30DCelsius())
-        != java.lang.Double.doubleToLongBits(other.getRelativeNightlyStddev30DCelsius()))
+    if (hasNightlyTemperatureCelsius() != other.hasNightlyTemperatureCelsius()) return false;
+    if (hasNightlyTemperatureCelsius()) {
+      if (java.lang.Double.doubleToLongBits(getNightlyTemperatureCelsius())
+          != java.lang.Double.doubleToLongBits(other.getNightlyTemperatureCelsius())) return false;
+    }
+    if (hasBaselineTemperatureCelsius() != other.hasBaselineTemperatureCelsius()) return false;
+    if (hasBaselineTemperatureCelsius()) {
+      if (java.lang.Double.doubleToLongBits(getBaselineTemperatureCelsius())
+          != java.lang.Double.doubleToLongBits(other.getBaselineTemperatureCelsius())) return false;
+    }
+    if (hasRelativeNightlyStddev30DCelsius() != other.hasRelativeNightlyStddev30DCelsius())
       return false;
+    if (hasRelativeNightlyStddev30DCelsius()) {
+      if (java.lang.Double.doubleToLongBits(getRelativeNightlyStddev30DCelsius())
+          != java.lang.Double.doubleToLongBits(other.getRelativeNightlyStddev30DCelsius()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -275,21 +347,27 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate().hashCode();
     }
-    hash = (37 * hash) + NIGHTLY_TEMPERATURE_CELSIUS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getNightlyTemperatureCelsius()));
-    hash = (37 * hash) + BASELINE_TEMPERATURE_CELSIUS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getBaselineTemperatureCelsius()));
-    hash = (37 * hash) + RELATIVE_NIGHTLY_STDDEV_30D_CELSIUS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getRelativeNightlyStddev30DCelsius()));
+    if (hasNightlyTemperatureCelsius()) {
+      hash = (37 * hash) + NIGHTLY_TEMPERATURE_CELSIUS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getNightlyTemperatureCelsius()));
+    }
+    if (hasBaselineTemperatureCelsius()) {
+      hash = (37 * hash) + BASELINE_TEMPERATURE_CELSIUS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getBaselineTemperatureCelsius()));
+    }
+    if (hasRelativeNightlyStddev30DCelsius()) {
+      hash = (37 * hash) + RELATIVE_NIGHTLY_STDDEV_30D_CELSIUS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRelativeNightlyStddev30DCelsius()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -499,12 +577,15 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nightlyTemperatureCelsius_ = nightlyTemperatureCelsius_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.baselineTemperatureCelsius_ = baselineTemperatureCelsius_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.relativeNightlyStddev30DCelsius_ = relativeNightlyStddev30DCelsius_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -529,13 +610,13 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
       if (other.hasDate()) {
         mergeDate(other.getDate());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getNightlyTemperatureCelsius()) != 0) {
+      if (other.hasNightlyTemperatureCelsius()) {
         setNightlyTemperatureCelsius(other.getNightlyTemperatureCelsius());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getBaselineTemperatureCelsius()) != 0) {
+      if (other.hasBaselineTemperatureCelsius()) {
         setBaselineTemperatureCelsius(other.getBaselineTemperatureCelsius());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getRelativeNightlyStddev30DCelsius()) != 0) {
+      if (other.hasRelativeNightlyStddev30DCelsius()) {
         setRelativeNightlyStddev30DCelsius(other.getRelativeNightlyStddev30DCelsius());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -801,7 +882,27 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * temperature samples taken from the user’s sleep.
      * </pre>
      *
-     * <code>double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the nightlyTemperatureCelsius field is set.
+     */
+    @java.lang.Override
+    public boolean hasNightlyTemperatureCelsius() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The user's nightly skin temperature. It is the mean of skin
+     * temperature samples taken from the user’s sleep.
+     * </pre>
+     *
+     * <code>
+     * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The nightlyTemperatureCelsius.
@@ -819,7 +920,8 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * temperature samples taken from the user’s sleep.
      * </pre>
      *
-     * <code>double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The nightlyTemperatureCelsius to set.
@@ -841,7 +943,8 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * temperature samples taken from the user’s sleep.
      * </pre>
      *
-     * <code>double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -863,7 +966,27 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * user's nightly skin temperature over the past 30 days.
      * </pre>
      *
-     * <code>double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the baselineTemperatureCelsius field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaselineTemperatureCelsius() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user's baseline skin temperature. It is the median of the
+     * user's nightly skin temperature over the past 30 days.
+     * </pre>
+     *
+     * <code>
+     * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The baselineTemperatureCelsius.
@@ -881,7 +1004,8 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * user's nightly skin temperature over the past 30 days.
      * </pre>
      *
-     * <code>double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The baselineTemperatureCelsius to set.
@@ -903,7 +1027,8 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * user's nightly skin temperature over the past 30 days.
      * </pre>
      *
-     * <code>double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -926,7 +1051,26 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the relativeNightlyStddev30dCelsius field is set.
+     */
+    @java.lang.Override
+    public boolean hasRelativeNightlyStddev30DCelsius() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The standard deviation of the user’s relative nightly skin
+     * temperature (temperature - baseline) over the past 30 days.
+     * </pre>
+     *
+     * <code>
+     * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The relativeNightlyStddev30dCelsius.
@@ -945,7 +1089,7 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The relativeNightlyStddev30dCelsius to set.
@@ -968,7 +1112,7 @@ public final class DailySleepTemperatureDerivations extends com.google.protobuf.
      * </pre>
      *
      * <code>
-     * double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

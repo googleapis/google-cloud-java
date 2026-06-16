@@ -69,6 +69,14 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsResponse_fieldAccessorTable;
@@ -88,6 +96,22 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_QueryStatsInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_QueryStatsInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_ResourceId_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_ResourceId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_QueryStats_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_QueryStats_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_QueryMetrics_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_QueryMetrics_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_databasecenter_v1beta_AggregateFleetResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -145,11 +169,12 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "0google/cloud/databasecenter/v1beta/service.proto\022\"google.cloud.databasecenter."
           + "v1beta\032\034google/api/annotations.proto\032\027go"
           + "ogle/api/client.proto\032\037google/api/field_"
-          + "behavior.proto\0324google/cloud/databasecenter/v1beta/affiliation.proto\0327google/clo"
-          + "ud/databasecenter/v1beta/machine_config.proto\0324google/cloud/databasecenter/v1bet"
-          + "a/maintenance.proto\0324google/cloud/databasecenter/v1beta/metric_data.proto\0320googl"
-          + "e/cloud/databasecenter/v1beta/product.pr"
-          + "oto\0320google/cloud/databasecenter/v1beta/signals.proto\032\026google/type/date.proto\"\\\n"
+          + "behavior.proto\032\031google/api/resource.prot"
+          + "o\0324google/cloud/databasecenter/v1beta/affiliation.proto\0327google/cloud/databasece"
+          + "nter/v1beta/machine_config.proto\0324google/cloud/databasecenter/v1beta/maintenance"
+          + ".proto\0324google/cloud/databasecenter/v1beta/metric_data.proto\0320google/cloud/datab"
+          + "asecenter/v1beta/product.proto\0320google/cloud/databasecenter/v1beta/signals.proto"
+          + "\032\036google/protobuf/duration.proto\032\026google/type/date.proto\"\\\n"
           + "\024QueryProductsRequest\022\023\n"
           + "\006parent\030\003 \001(\tB\003\340A\002\022\026\n"
           + "\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\n"
@@ -161,26 +186,26 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\"QueryDatabaseResourceGroupsRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\002 \001(\tB\003\340A\001\022T\n"
-          + "\022signal_type_groups\030\003 \003(\01323.google.cloud.data"
-          + "basecenter.v1beta.SignalTypeGroupB\003\340A\001\022M\n"
-          + "\016signal_filters\030\004"
-          + " \003(\01320.google.cloud.databasecenter.v1beta.SignalFilterB\003\340A\001\022\025\n"
+          + "\022signal_type_groups\030\003 \003(\0132"
+          + "3.google.cloud.databasecenter.v1beta.SignalTypeGroupB\003\340A\001\022M\n"
+          + "\016signal_filters\030\004 \003("
+          + "\01320.google.cloud.databasecenter.v1beta.SignalFilterB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\006 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\007 \001(\tB\003\340A\001\"\254\001\n"
           + "#QueryDatabaseResourceGroupsResponse\022R\n"
-          + "\017resource_groups\030\001"
-          + " \003(\01329.google.cloud.databasecenter.v1beta.DatabaseResourceGroup\022\027\n"
+          + "\017resource_groups\030\001 \003(\01329.goog"
+          + "le.cloud.databasecenter.v1beta.DatabaseResourceGroup\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006\"\254\001\n"
           + "\025DatabaseResourceGroup\022L\n"
-          + "\016root_resources\030\001"
-          + " \003(\01324.google.cloud.databasecenter.v1beta.DatabaseResource\022E\n\r"
-          + "signal_groups\030\002"
-          + " \003(\0132..google.cloud.databasecenter.v1beta.IssueCount\"\242\010\n"
+          + "\016root_resources\030\001 \003(\01324.goog"
+          + "le.cloud.databasecenter.v1beta.DatabaseResource\022E\n\r"
+          + "signal_groups\030\002 \003(\0132..google."
+          + "cloud.databasecenter.v1beta.IssueCount\"\242\010\n"
           + "\020DatabaseResource\022M\n"
-          + "\017child_resources\030\001 \003(\01324.google.cloud"
-          + ".databasecenter.v1beta.DatabaseResource\022\032\n"
+          + "\017child_resources\030\001"
+          + " \003(\01324.google.cloud.databasecenter.v1beta.DatabaseResource\022\032\n"
           + "\022full_resource_name\030\003 \001(\t\022\021\n"
           + "\tcontainer\030\004 \001(\t\022<\n"
           + "\007product\030\005 \001(\0132+.google.cloud.databasecenter.v1beta.Product\022\020\n"
@@ -188,32 +213,44 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006labels\030\007 \003(\0132).google.cloud.databasecenter.v1beta.Label\0225\n"
           + "\004tags\030\020 \003(\0132\'.google.cloud.databasecenter.v1beta.Tag\022\025\n\r"
           + "resource_type\030\010 \001(\t\022N\n"
-          + "\021sub_resource_type\030\t"
-          + " \001(\01623.google.cloud.databasecenter.v1beta.SubResourceType\022I\n"
+          + "\021sub_resource_type\030\t \001(\01623.google.c"
+          + "loud.databasecenter.v1beta.SubResourceType\022I\n"
           + "\016machine_config\030\014"
-          + " \001(\01321.google.cloud.databasecenter.v1beta.MachineConfig\022F\n\r"
+          + " \001(\01321.google.cloud.databasecenter.v1beta.MachineConfig\022F\n"
+          + "\r"
           + "signal_groups\030\n"
           + " \003(\0132/.google.cloud.databasecenter.v1beta.SignalGroup\022<\n"
           + "\007metrics\030\r"
           + " \001(\0132+.google.cloud.databasecenter.v1beta.Metrics\022O\n"
-          + "\021resource_category\030\016"
-          + " \001(\01624.google.cloud.databasecenter.v1beta.ResourceCategory\022\025\n\r"
+          + "\021resource_category\030\016 \001(\01624"
+          + ".google.cloud.databasecenter.v1beta.ResourceCategory\022\025\n\r"
           + "resource_name\030\017 \001(\t\022P\n"
-          + "\017backupdr_config\030\021 \001("
-          + "\01322.google.cloud.databasecenter.v1beta.BackupDRConfigB\003\340A\001\022<\n"
+          + "\017backupdr_config\030\021"
+          + " \001(\01322.google.cloud.databasecenter.v1beta.BackupDRConfigB\003\340A\001\022<\n"
           + "\007edition\030\022 \001(\0162+.google.cloud.databasecenter.v1beta.Edition\022R\n"
-          + "\020maintenance_info\030\023 \001(\01323.google.clou"
-          + "d.databasecenter.v1beta.MaintenanceInfoB\003\340A\001\022J\n"
-          + "\014affiliations\030\024 \003(\0132/.google.clou"
-          + "d.databasecenter.v1beta.AffiliationB\003\340A\001\"\342\001\n"
+          + "\020maintenance_info\030\023"
+          + " \001(\01323.google.cloud.databasecenter.v1beta.MaintenanceInfoB\003\340A\001\022J\n"
+          + "\014affiliations\030\024"
+          + " \003(\0132/.google.cloud.databasecenter.v1beta.AffiliationB\003\340A\001\"\342\001\n"
           + "\032AggregateIssueStatsRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\002 \001(\tB\003\340A\001\022T\n"
-          + "\022signal_type_groups\030\003 \003(\01323.google.cloud.dat"
-          + "abasecenter.v1beta.SignalTypeGroupB\003\340A\001\0222\n\r"
+          + "\022signal_type_groups\030\003 \003(\013"
+          + "23.google.cloud.databasecenter.v1beta.SignalTypeGroupB\003\340A\001\0222\n\r"
           + "baseline_date\030\004"
           + " \001(\0132\021.google.type.DateB\003\340A\001H\000\210\001\001B\020\n"
-          + "\016_baseline_date\"\313\001\n"
+          + "\016_baseline_date\"\216\001\n"
+          + "\032AggregateQueryStatsRequest\022\023\n"
+          + "\006parent\030\001 \001(\tB\003\340A\002\022\025\n"
+          + "\010order_by\030\002 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\003 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\005 \001(\tB\003\340A\001\"\231\001\n"
+          + "\033AggregateQueryStatsResponse\022G\n"
+          + "\013query_stats\030\001"
+          + " \003(\01322.google.cloud.databasecenter.v1beta.QueryStatsInfo\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"\313\001\n"
           + "\033AggregateIssueStatsResponse\022N\n"
           + "\021issue_group_stats\030\001"
           + " \003(\01323.google.cloud.databasecenter.v1beta.IssueGroupStats\022\035\n"
@@ -251,10 +288,43 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "page_token\030\006 \001(\tB\003\340A\001\0222\n\r"
           + "baseline_date\030\007"
           + " \001(\0132\021.google.type.DateB\003\340A\001H\000\210\001\001B\020\n"
-          + "\016_baseline_date\"\323\001\n"
+          + "\016_baseline_date\"\245\001\n"
+          + "\016QueryStatsInfo\022N\n"
+          + "\026aggregated_query_stats\030\001 \001(\0132"
+          + "..google.cloud.databasecenter.v1beta.QueryStats\022C\n"
+          + "\013query_stats\030\002"
+          + " \003(\0132..google.cloud.databasecenter.v1beta.QueryStats\"}\n\n"
+          + "ResourceId\022\032\n"
+          + "\022full_resource_name\030\001 \001(\t\022\025\n\r"
+          + "resource_type\030\002 \001(\t\022<\n"
+          + "\007product\030\003 \001(\0132+"
+          + ".google.cloud.databasecenter.v1beta.Product\"\302\002\n\n"
+          + "QueryStats\022\022\n\n"
+          + "query_hash\030\001 \001(\t\022\030\n"
+          + "\020normalized_query\030\002 \001(\t\022\035\n\r"
+          + "resource_type\030\004 \001(\tB\006\372A\003\n"
+          + "\001*\022D\n"
+          + "\014resource_ids\030\005 \003(\0132.."
+          + "google.cloud.databasecenter.v1beta.ResourceId\022G\n\r"
+          + "query_metrics\030\006 \001(\01320.google.cl"
+          + "oud.databasecenter.v1beta.QueryMetrics\022X\n"
+          + "\026inefficient_query_info\030\007 \001(\01328.google."
+          + "cloud.databasecenter.v1beta.InefficientQueryInfo\"\345\002\n"
+          + "\014QueryMetrics\022\027\n"
+          + "\017execution_count\030\001 \001(\003\022/\n"
+          + "\014avg_cpu_time\030\002 \001(\0132\031.google.protobuf.Duration\0221\n"
+          + "\016total_cpu_time\030\003 \001(\0132\031.google.protobuf.Duration\022\026\n"
+          + "\016rows_processed\030\004 \001(\003\022V\n"
+          + "\016metrics_window\030\005 \001(\0162>"
+          + ".google.cloud.databasecenter.v1beta.QueryMetrics.MetricsWindow\"h\n\r"
+          + "MetricsWindow\022\036\n"
+          + "\032METRICS_WINDOW_UNSPECIFIED\020\000\022\020\n"
+          + "\014LAST_ONE_DAY\020\001\022\021\n\r"
+          + "LAST_ONE_WEEK\020\002\022\022\n"
+          + "\016LAST_TWO_WEEKS\020\003\"\323\001\n"
           + "\026AggregateFleetResponse\022C\n"
-          + "\004rows\030\001 \003(\01325.google.c"
-          + "loud.databasecenter.v1beta.AggregateFleetRow\022#\n"
+          + "\004rows\030\001"
+          + " \003(\01325.google.cloud.databasecenter.v1beta.AggregateFleetRow\022#\n"
           + "\033resource_groups_total_count\030\002 \001(\005\022\034\n"
           + "\024resource_total_count\030\003 \001(\005\022\027\n"
           + "\017next_page_token\030\004 \001(\t\022\030\n"
@@ -263,26 +333,26 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\tdimension\030\001 \003(\0132-.google.cloud.databasecenter.v1beta.Dimension\022\035\n"
           + "\025resource_groups_count\030\002 \001(\005\022\027\n"
           + "\017resources_count\030\003 \001(\005\022Q\n\r"
-          + "delta_details\030\004"
-          + " \001(\01320.google.cloud.databasecenter.v1beta.DeltaDetailsB\003\340A\001H\000\210\001\001B\020\n"
+          + "delta_details\030\004 \001(\01320.google.c"
+          + "loud.databasecenter.v1beta.DeltaDetailsB\003\340A\001H\000\210\001\001B\020\n"
           + "\016_delta_details\"\241\006\n"
           + "\tDimension\022\023\n"
           + "\tcontainer\030\002 \001(\tH\000\022G\n"
           + "\014product_type\030\003"
           + " \001(\0162/.google.cloud.databasecenter.v1beta.ProductTypeH\000\022D\n"
-          + "\016product_engine\030\004"
-          + " \001(\0162*.google.cloud.databasecenter.v1beta.EngineH\000\022\031\n"
+          + "\016product_engine\030\004 \001(\0162"
+          + "*.google.cloud.databasecenter.v1beta.EngineH\000\022\031\n"
           + "\017product_version\030\005 \001(\tH\000\022\022\n"
           + "\010location\030\006 \001(\tH\000\022\027\n\r"
           + "resource_type\030\007 \001(\tH\000\022P\n"
-          + "\021sub_resource_type\030\010"
-          + " \001(\01623.google.cloud.databasecenter.v1beta.SubResourceTypeH\000\022Q\n"
-          + "\021resource_category\030\t"
-          + " \001(\01624.google.cloud.databasecenter.v1beta.ResourceCategoryH\000\022M\n"
+          + "\021sub_resource_type\030\010 \001(\01623.google.cloud."
+          + "databasecenter.v1beta.SubResourceTypeH\000\022Q\n"
+          + "\021resource_category\030\t \001(\01624.google.clou"
+          + "d.databasecenter.v1beta.ResourceCategoryH\000\022M\n"
           + "\017management_type\030\n"
           + " \001(\01622.google.cloud.databasecenter.v1beta.ManagementTypeH\000\022>\n"
-          + "\007edition\030\013 \001(\0162+"
-          + ".google.cloud.databasecenter.v1beta.EditionH\000\022\021\n"
+          + "\007edition\030\013"
+          + " \001(\0162+.google.cloud.databasecenter.v1beta.EditionH\000\022\021\n"
           + "\007tag_key\030\014 \001(\tH\000\022\023\n"
           + "\ttag_value\030\r"
           + " \001(\tH\000\022\024\n\n"
@@ -300,25 +370,25 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\022QueryIssuesRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\002 \001(\tB\003\340A\001\022_\n"
-          + "\027signal_products_filters\030\003 \003(\01329.google.cloud.datab"
-          + "asecenter.v1beta.SignalProductsFiltersB\003\340A\001\022\025\n"
+          + "\027signal_products_filters\030\003 \003(\0132"
+          + "9.google.cloud.databasecenter.v1beta.SignalProductsFiltersB\003\340A\001\022\025\n"
           + "\010order_by\030\004 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\005 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\006 \001(\tB\003\340A\001\"\245\001\n"
           + "\025SignalProductsFilters\022H\n"
-          + "\013signal_type\030\001 \001"
-          + "(\0162..google.cloud.databasecenter.v1beta.SignalTypeB\003\340A\001\022B\n"
-          + "\010products\030\002 \003(\0132+.goog"
-          + "le.cloud.databasecenter.v1beta.ProductB\003\340A\001\"\234\001\n"
+          + "\013signal_type\030\001"
+          + " \001(\0162..google.cloud.databasecenter.v1beta.SignalTypeB\003\340A\001\022B\n"
+          + "\010products\030\002"
+          + " \003(\0132+.google.cloud.databasecenter.v1beta.ProductB\003\340A\001\"\234\001\n"
           + "\023QueryIssuesResponse\022R\n"
-          + "\017resource_issues\030\001"
-          + " \003(\01329.google.cloud.databasecenter.v1beta.DatabaseResourceIssue\022\027\n"
+          + "\017resource_issues\030\001 \003(\01329.googl"
+          + "e.cloud.databasecenter.v1beta.DatabaseResourceIssue\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006\"\233\001\n"
           + "\025DatabaseResourceIssue\022:\n"
           + "\006signal\030\001 \001(\0132*.google.cloud.databasecenter.v1beta.Signal\022F\n"
-          + "\010resource\030\002 \001(\01324.google.clou"
-          + "d.databasecenter.v1beta.DatabaseResource\"D\n"
+          + "\010resource\030\002"
+          + " \001(\01324.google.cloud.databasecenter.v1beta.DatabaseResource\"D\n"
           + "\003Tag\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t\022\016\n"
@@ -330,10 +400,10 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\007product\030\003 \001(\0132+.google.cloud.databasecenter.v1beta.Product\022\020\n"
           + "\010location\030\004 \001(\t\"\262\001\n"
           + "\014DeltaDetails\022P\n"
-          + "\023increased_resources\030\001"
-          + " \003(\01323.google.cloud.databasecenter.v1beta.ResourceDetails\022P\n"
-          + "\023decreased_resources\030\002 \003(\01323.google.cloud"
-          + ".databasecenter.v1beta.ResourceDetails*m\n"
+          + "\023increased_resources\030\001 "
+          + "\003(\01323.google.cloud.databasecenter.v1beta.ResourceDetails\022P\n"
+          + "\023decreased_resources\030\002"
+          + " \003(\01323.google.cloud.databasecenter.v1beta.ResourceDetails*m\n"
           + "\007Edition\022\027\n"
           + "\023EDITION_UNSPECIFIED\020\000\022\026\n"
           + "\022EDITION_ENTERPRISE\020\001\022\033\n"
@@ -359,32 +429,35 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\007CLUSTER\020\002\022\014\n"
           + "\010DATABASE\020\003\022\013\n"
           + "\007DATASET\020\004\022\017\n"
-          + "\013RESERVATION\020\0052\377\007\n"
+          + "\013RESERVATION\020\0052\306\n\n"
           + "\016DatabaseCenter\022\243\001\n\r"
-          + "QueryProducts\0228.google.cloud.databasecenter.v1beta.QueryProd"
-          + "uctsRequest\0329.google.cloud.databasecente"
-          + "r.v1beta.QueryProductsResponse\"\035\202\323\344\223\002\027\022\025/v1beta:queryProducts\022\247\001\n"
-          + "\016AggregateFleet\0229.google.cloud.databasecenter.v1beta.Ag"
-          + "gregateFleetRequest\032:.google.cloud.datab"
-          + "asecenter.v1beta.AggregateFleetResponse\"\036\202\323\344\223\002\030\022\026/v1beta:aggregateFleet\022\336\001\n"
-          + "\033QueryDatabaseResourceGroups\022F.google.cloud.d"
-          + "atabasecenter.v1beta.QueryDatabaseResourceGroupsRequest\032G.google.cloud.databasec"
-          + "enter.v1beta.QueryDatabaseResourceGroups"
-          + "Response\".\202\323\344\223\002(\"#/v1beta:queryDatabaseResourceGroups:\001*\022\276\001\n"
-          + "\023AggregateIssueStats\022>.google.cloud.databasecenter.v1beta.Ag"
-          + "gregateIssueStatsRequest\032?.google.cloud."
-          + "databasecenter.v1beta.AggregateIssueStatsResponse\"&\202\323\344\223\002"
-          + " \"\033/v1beta:aggregateIssueStats:\001*\022\247\001\n"
-          + "\013QueryIssues\0226.google.cloud.databasecenter.v1beta.QueryIssuesReques"
-          + "t\0327.google.cloud.databasecenter.v1beta.Q"
-          + "ueryIssuesResponse\"\'\332A\006parent\202\323\344\223\002\030\"\023/v1"
-          + "beta:queryIssues:\001*\032Q\312A\035databasecenter.g"
-          + "oogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\372\001\n"
-          + "&com.google.cloud.databasecenter.v1betaB\014ServiceProtoP"
-          + "\001ZNcloud.google.com/go/databasecenter/apiv1beta/databasecenterpb;databasecenterp"
-          + "b\252\002\"Google.Cloud.DatabaseCenter.V1Beta\312\002"
-          + "\"Google\\Cloud\\DatabaseCenter\\V1beta\352\002%Go"
-          + "ogle::Cloud::DatabaseCenter::V1betab\006proto3"
+          + "QueryProducts\0228.google.cloud.databasecenter.v1beta.QueryProductsRequest\0329.google"
+          + ".cloud.databasecenter.v1beta.QueryProduc"
+          + "tsResponse\"\035\202\323\344\223\002\027\022\025/v1beta:queryProducts\022\247\001\n"
+          + "\016AggregateFleet\0229.google.cloud.databasecenter.v1beta.AggregateFleetRequest\032"
+          + ":.google.cloud.databasecenter.v1beta.Agg"
+          + "regateFleetResponse\"\036\202\323\344\223\002\030\022\026/v1beta:aggregateFleet\022\336\001\n"
+          + "\033QueryDatabaseResourceGroups\022F.google.cloud.databasecenter.v1beta"
+          + ".QueryDatabaseResourceGroupsRequest\032G.google.cloud.databasecenter.v1beta.QueryDa"
+          + "tabaseResourceGroupsResponse\".\202\323\344\223\002(\"#/v1beta:queryDatabaseResourceGroups:\001*\022\276\001\n"
+          + "\023AggregateIssueStats\022>.google.cloud.databasecenter.v1beta.AggregateIssueStatsReq"
+          + "uest\032?.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse\"&\202\323\344\223\002"
+          + " \"\033/v1beta:aggregateIssueStats:\001*\022\304\002\n"
+          + "\023AggregateQueryStats\022>.google.cloud.databasecen"
+          + "ter.v1beta.AggregateQueryStatsRequest\032?.google.cloud.databasecenter.v1beta.Aggre"
+          + "gateQueryStatsResponse\"\253\001\202\323\344\223\002\244\001\"4/v1bet"
+          + "a/{parent=organizations/*}:aggregateQueryStats:\001*Z3\"./v1beta/{parent=folders/*}:"
+          + "aggregateQueryStats:\001*Z4\"//v1beta/{parent=projects/*}:aggregateQueryStats:\001*\022\247\001\n"
+          + "\013QueryIssues\0226.google.cloud.databasecent"
+          + "er.v1beta.QueryIssuesRequest\0327.google.cloud.databasecenter.v1beta.QueryIssuesRes"
+          + "ponse\"\'\332A\006parent\202\323\344\223\002\030\"\023/v1beta:queryIss"
+          + "ues:\001*\032Q\312A\035databasecenter.googleapis.com"
+          + "\322A.https://www.googleapis.com/auth/cloud-platformB\372\001\n"
+          + "&com.google.cloud.databasecenter.v1betaB\014ServiceProtoP\001ZNcloud.goog"
+          + "le.com/go/databasecenter/apiv1beta/datab"
+          + "asecenterpb;databasecenterpb\252\002\"Google.Cl"
+          + "oud.DatabaseCenter.V1Beta\312\002\"Google\\Cloud"
+          + "\\DatabaseCenter\\V1beta\352\002%Google::Cloud::DatabaseCenter::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -393,12 +466,14 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.databasecenter.v1beta.AffiliationProto.getDescriptor(),
               com.google.cloud.databasecenter.v1beta.MachineConfigProto.getDescriptor(),
               com.google.cloud.databasecenter.v1beta.MaintenanceProto.getDescriptor(),
               com.google.cloud.databasecenter.v1beta.MetricDataProto.getDescriptor(),
               com.google.cloud.databasecenter.v1beta.ProductProto.getDescriptor(),
               com.google.cloud.databasecenter.v1beta.SignalsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
             });
     internal_static_google_cloud_databasecenter_v1beta_QueryProductsRequest_descriptor =
@@ -480,8 +555,24 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Parent", "Filter", "SignalTypeGroups", "BaselineDate",
             });
-    internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsResponse_descriptor =
+    internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsRequest_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "OrderBy", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_AggregateQueryStatsResponse_descriptor,
+            new java.lang.String[] {
+              "QueryStats", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsResponse_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_AggregateIssueStatsResponse_descriptor,
@@ -489,7 +580,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "IssueGroupStats", "TotalResourcesCount", "TotalResourceGroupsCount", "Unreachable",
             });
     internal_static_google_cloud_databasecenter_v1beta_IssueGroupStats_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_databasecenter_v1beta_IssueGroupStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_IssueGroupStats_descriptor,
@@ -502,7 +593,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "IssueStats",
             });
     internal_static_google_cloud_databasecenter_v1beta_IssueStats_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_databasecenter_v1beta_IssueStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_IssueStats_descriptor,
@@ -510,7 +601,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "SignalType", "ResourceCount", "DeltaDetails", "IssueSeverity",
             });
     internal_static_google_cloud_databasecenter_v1beta_Label_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_databasecenter_v1beta_Label_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_Label_descriptor,
@@ -518,15 +609,52 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value", "Source",
             });
     internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRequest_descriptor,
             new java.lang.String[] {
               "Parent", "Filter", "GroupBy", "OrderBy", "PageSize", "PageToken", "BaselineDate",
             });
+    internal_static_google_cloud_databasecenter_v1beta_QueryStatsInfo_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_databasecenter_v1beta_QueryStatsInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_QueryStatsInfo_descriptor,
+            new java.lang.String[] {
+              "AggregatedQueryStats", "QueryStats",
+            });
+    internal_static_google_cloud_databasecenter_v1beta_ResourceId_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_cloud_databasecenter_v1beta_ResourceId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_ResourceId_descriptor,
+            new java.lang.String[] {
+              "FullResourceName", "ResourceType", "Product",
+            });
+    internal_static_google_cloud_databasecenter_v1beta_QueryStats_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_cloud_databasecenter_v1beta_QueryStats_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_QueryStats_descriptor,
+            new java.lang.String[] {
+              "QueryHash",
+              "NormalizedQuery",
+              "ResourceType",
+              "ResourceIds",
+              "QueryMetrics",
+              "InefficientQueryInfo",
+            });
+    internal_static_google_cloud_databasecenter_v1beta_QueryMetrics_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_cloud_databasecenter_v1beta_QueryMetrics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_QueryMetrics_descriptor,
+            new java.lang.String[] {
+              "ExecutionCount", "AvgCpuTime", "TotalCpuTime", "RowsProcessed", "MetricsWindow",
+            });
     internal_static_google_cloud_databasecenter_v1beta_AggregateFleetResponse_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_databasecenter_v1beta_AggregateFleetResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_AggregateFleetResponse_descriptor,
@@ -538,7 +666,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Unreachable",
             });
     internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRow_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_AggregateFleetRow_descriptor,
@@ -546,7 +674,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Dimension", "ResourceGroupsCount", "ResourcesCount", "DeltaDetails",
             });
     internal_static_google_cloud_databasecenter_v1beta_Dimension_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_databasecenter_v1beta_Dimension_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_Dimension_descriptor,
@@ -573,7 +701,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Dimension",
             });
     internal_static_google_cloud_databasecenter_v1beta_BackupDRConfig_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_databasecenter_v1beta_BackupDRConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_BackupDRConfig_descriptor,
@@ -581,7 +709,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "BackupdrManaged",
             });
     internal_static_google_cloud_databasecenter_v1beta_QueryIssuesRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_databasecenter_v1beta_QueryIssuesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_QueryIssuesRequest_descriptor,
@@ -589,7 +717,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Filter", "SignalProductsFilters", "OrderBy", "PageSize", "PageToken",
             });
     internal_static_google_cloud_databasecenter_v1beta_SignalProductsFilters_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_databasecenter_v1beta_SignalProductsFilters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_SignalProductsFilters_descriptor,
@@ -597,7 +725,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "SignalType", "Products",
             });
     internal_static_google_cloud_databasecenter_v1beta_QueryIssuesResponse_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_databasecenter_v1beta_QueryIssuesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_QueryIssuesResponse_descriptor,
@@ -605,7 +733,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "ResourceIssues", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_databasecenter_v1beta_DatabaseResourceIssue_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_databasecenter_v1beta_DatabaseResourceIssue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_DatabaseResourceIssue_descriptor,
@@ -613,7 +741,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Signal", "Resource",
             });
     internal_static_google_cloud_databasecenter_v1beta_Tag_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_databasecenter_v1beta_Tag_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_Tag_descriptor,
@@ -621,7 +749,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value", "Source", "Inherited",
             });
     internal_static_google_cloud_databasecenter_v1beta_ResourceDetails_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_databasecenter_v1beta_ResourceDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_ResourceDetails_descriptor,
@@ -629,7 +757,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "FullResourceName", "Container", "Product", "Location",
             });
     internal_static_google_cloud_databasecenter_v1beta_DeltaDetails_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_databasecenter_v1beta_DeltaDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_DeltaDetails_descriptor,
@@ -640,12 +768,14 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.databasecenter.v1beta.AffiliationProto.getDescriptor();
     com.google.cloud.databasecenter.v1beta.MachineConfigProto.getDescriptor();
     com.google.cloud.databasecenter.v1beta.MaintenanceProto.getDescriptor();
     com.google.cloud.databasecenter.v1beta.MetricDataProto.getDescriptor();
     com.google.cloud.databasecenter.v1beta.ProductProto.getDescriptor();
     com.google.cloud.databasecenter.v1beta.SignalsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -654,6 +784,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

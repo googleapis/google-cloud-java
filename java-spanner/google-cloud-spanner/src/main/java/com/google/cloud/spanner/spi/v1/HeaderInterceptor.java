@@ -16,6 +16,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import static com.google.api.gax.grpc.GrpcCallContext.TRACER_KEY;
+import static com.google.cloud.spanner.BuiltInMetricsConstant.UNDEFINED_PROJECT_ID;
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.DATABASE_ID;
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.INSTANCE_ID;
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.METHOD;
@@ -268,7 +269,7 @@ class HeaderInterceptor implements ClientInterceptor {
       return databaseNameCache.get(
           googleResourcePrefix,
           () -> {
-            String projectId = "undefined-project";
+            String projectId = UNDEFINED_PROJECT_ID;
             String instanceId = "undefined-database";
             String databaseId = "undefined-database";
             Matcher matcher = GOOGLE_CLOUD_RESOURCE_PREFIX_PATTERN.matcher(googleResourcePrefix);
@@ -329,6 +330,10 @@ class HeaderInterceptor implements ClientInterceptor {
         key,
         () -> {
           Map<String, String> attributes = new HashMap<>();
+          if (!UNDEFINED_PROJECT_ID.equals(databaseName.getProject())) {
+            attributes.put(
+                BuiltInMetricsConstant.PROJECT_ID_KEY.getKey(), databaseName.getProject());
+          }
           attributes.put(BuiltInMetricsConstant.DATABASE_KEY.getKey(), databaseName.getDatabase());
           attributes.put(
               BuiltInMetricsConstant.INSTANCE_ID_KEY.getKey(), databaseName.getInstance());

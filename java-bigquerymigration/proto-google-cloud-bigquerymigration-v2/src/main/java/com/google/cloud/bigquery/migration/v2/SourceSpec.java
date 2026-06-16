@@ -81,6 +81,7 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BASE_URI(1),
     LITERAL(2),
+    GCS_FILE_PATH(4),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -104,6 +105,8 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
           return BASE_URI;
         case 2:
           return LITERAL;
+        case 4:
+          return GCS_FILE_PATH;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -247,6 +250,79 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.bigquery.migration.v2.Literal.getDefaultInstance();
   }
 
+  public static final int GCS_FILE_PATH_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * The path to a single source file in Cloud Storage.
+   * </pre>
+   *
+   * <code>string gcs_file_path = 4;</code>
+   *
+   * @return Whether the gcsFilePath field is set.
+   */
+  public boolean hasGcsFilePath() {
+    return sourceCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The path to a single source file in Cloud Storage.
+   * </pre>
+   *
+   * <code>string gcs_file_path = 4;</code>
+   *
+   * @return The gcsFilePath.
+   */
+  public java.lang.String getGcsFilePath() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 4) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 4) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The path to a single source file in Cloud Storage.
+   * </pre>
+   *
+   * <code>string gcs_file_path = 4;</code>
+   *
+   * @return The bytes for gcsFilePath.
+   */
+  public com.google.protobuf.ByteString getGcsFilePathBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 4) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 4) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ENCODING_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -323,6 +399,9 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encoding_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, encoding_);
     }
+    if (sourceCase_ == 4) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -342,6 +421,9 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encoding_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, encoding_);
+    }
+    if (sourceCase_ == 4) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -368,6 +450,9 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
       case 2:
         if (!getLiteral().equals(other.getLiteral())) return false;
         break;
+      case 4:
+        if (!getGcsFilePath().equals(other.getGcsFilePath())) return false;
+        break;
       case 0:
       default:
     }
@@ -392,6 +477,10 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + LITERAL_FIELD_NUMBER;
         hash = (53 * hash) + getLiteral().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + GCS_FILE_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsFilePath().hashCode();
         break;
       case 0:
       default:
@@ -579,7 +668,7 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.bigquery.migration.v2.SourceSpec result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.encoding_ = encoding_;
       }
     }
@@ -607,7 +696,7 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getEncoding().isEmpty()) {
         encoding_ = other.encoding_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -621,6 +710,13 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
         case LITERAL:
           {
             mergeLiteral(other.getLiteral());
+            break;
+          }
+        case GCS_FILE_PATH:
+          {
+            sourceCase_ = 4;
+            source_ = other.source_;
+            onChanged();
             break;
           }
         case SOURCE_NOT_SET:
@@ -670,9 +766,16 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 encoding_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 4;
+                source_ = s;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1063,6 +1166,145 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
       return literalBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The path to a single source file in Cloud Storage.
+     * </pre>
+     *
+     * <code>string gcs_file_path = 4;</code>
+     *
+     * @return Whether the gcsFilePath field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsFilePath() {
+      return sourceCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The path to a single source file in Cloud Storage.
+     * </pre>
+     *
+     * <code>string gcs_file_path = 4;</code>
+     *
+     * @return The gcsFilePath.
+     */
+    @java.lang.Override
+    public java.lang.String getGcsFilePath() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 4) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 4) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The path to a single source file in Cloud Storage.
+     * </pre>
+     *
+     * <code>string gcs_file_path = 4;</code>
+     *
+     * @return The bytes for gcsFilePath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGcsFilePathBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 4) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 4) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The path to a single source file in Cloud Storage.
+     * </pre>
+     *
+     * <code>string gcs_file_path = 4;</code>
+     *
+     * @param value The gcsFilePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGcsFilePath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 4;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The path to a single source file in Cloud Storage.
+     * </pre>
+     *
+     * <code>string gcs_file_path = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGcsFilePath() {
+      if (sourceCase_ == 4) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The path to a single source file in Cloud Storage.
+     * </pre>
+     *
+     * <code>string gcs_file_path = 4;</code>
+     *
+     * @param value The bytes for gcsFilePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGcsFilePathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 4;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object encoding_ = "";
 
     /**
@@ -1128,7 +1370,7 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       encoding_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1146,7 +1388,7 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEncoding() {
       encoding_ = getDefaultInstance().getEncoding();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1169,7 +1411,7 @@ public final class SourceSpec extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       encoding_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

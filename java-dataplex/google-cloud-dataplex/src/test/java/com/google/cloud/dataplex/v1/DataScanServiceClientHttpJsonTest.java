@@ -114,6 +114,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -178,6 +179,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -242,6 +244,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -265,6 +268,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -308,6 +312,7 @@ public class DataScanServiceClientHttpJsonTest {
               .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
               .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
               .setType(DataScanType.forNumber(0))
+              .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataScanAsync(dataScan, updateMask).get();
@@ -422,6 +427,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -477,6 +483,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -708,6 +715,7 @@ public class DataScanServiceClientHttpJsonTest {
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setPartialFailureMessage("partialFailureMessage-1000286466")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -759,6 +767,7 @@ public class DataScanServiceClientHttpJsonTest {
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setPartialFailureMessage("partialFailureMessage-1000286466")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -898,6 +907,90 @@ public class DataScanServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-881/locations/location-881/dataScans/dataScan-881";
       client.listDataScanJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDataScanJobTest() throws Exception {
+    CancelDataScanJobResponse expectedResponse = CancelDataScanJobResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+
+    CancelDataScanJobResponse actualResponse = client.cancelDataScanJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelDataScanJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+      client.cancelDataScanJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDataScanJobTest2() throws Exception {
+    CancelDataScanJobResponse expectedResponse = CancelDataScanJobResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7138/locations/location-7138/dataScans/dataScan-7138/jobs/job-7138";
+
+    CancelDataScanJobResponse actualResponse = client.cancelDataScanJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelDataScanJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7138/locations/location-7138/dataScans/dataScan-7138/jobs/job-7138";
+      client.cancelDataScanJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

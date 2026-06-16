@@ -135,6 +135,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -197,6 +198,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -259,6 +261,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -317,6 +320,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -461,6 +465,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -519,6 +524,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -575,6 +581,7 @@ public class CertificateAuthorityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestedNotBeforeTime(Timestamp.newBuilder().build())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
 
@@ -1827,6 +1834,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
             .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
             .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -1882,6 +1890,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
             .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
             .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -1937,6 +1946,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
             .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
             .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -1989,6 +1999,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
             .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
             .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);
@@ -2030,6 +2041,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
             .setIssuancePolicy(CaPool.IssuancePolicy.newBuilder().build())
             .setPublishingOptions(CaPool.PublishingOptions.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .build();
     mockCertificateAuthorityService.addResponse(expectedResponse);

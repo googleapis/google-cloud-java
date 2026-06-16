@@ -1077,8 +1077,9 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setMetadataFetchThreadCount(Integer metadataFetchThreadCount) {
     if (metadataFetchThreadCount != null) {
-      validateNonNegative(
+      validateMin(
           metadataFetchThreadCount,
+          1,
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME);
     }
     this.metadataFetchThreadCount = metadataFetchThreadCount;
@@ -1368,13 +1369,16 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) {
-    return null;
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return false;
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 
   private static void validateNonNegative(long val, String propertyName) {
@@ -1382,6 +1386,15 @@ public class DataSource implements javax.sql.DataSource {
       throw new BigQueryJdbcRuntimeException(
           String.format(
               "Invalid value for %s. It must be greater than or equal to 0.", propertyName));
+    }
+  }
+
+  /** Validates that a property value is greater than or equal to a minimum threshold. */
+  private static void validateMin(long val, long min, String propertyName) {
+    if (val < min) {
+      throw new BigQueryJdbcRuntimeException(
+          String.format(
+              "Invalid value for %s. It must be greater than or equal to %d.", propertyName, min));
     }
   }
 }
