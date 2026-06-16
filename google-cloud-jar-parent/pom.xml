@@ -21,6 +21,7 @@
   <properties>
     <skipUnitTests>false</skipUnitTests>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
+    <surefire.excludes>**/v*/*ClientTest.java,**/v*/*ClientHttpJsonTest.java</surefire.excludes>
   </properties>
 
   <dependencyManagement>
@@ -219,11 +220,14 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skip>${skipUnitTests}</skip>
+          <!-- Exclude generated client unit tests directly under versioned packages (e.g., v1, v2)
+               to save CI execution time. We use the narrow 'v*/*' pattern (single asterisk)
+               instead of 'v*/**' to ensure we do not exclude manually written unit tests
+               which live in sub-packages (e.g., v1/client/ or v2/internal/api/). 
+               If a module has customized subclass tests under a versioned package, 
+               override <surefire.excludes/> to empty in its local pom.xml (e.g., google-cloud-bigquerystorage). -->
           <excludes>
-            <!-- We are excluding generated client unit tests to save CI time. -->
-            <!-- We use the narrow v*/* pattern (single asterisk) to protect manual tests in sub-packages (like v1/client/ or v2/internal/api/). -->
-            <exclude>**/v*/*ClientTest.java</exclude>
-            <exclude>**/v*/*ClientHttpJsonTest.java</exclude>
+            <exclude>${surefire.excludes}</exclude>
           </excludes>
         </configuration>
       </plugin>

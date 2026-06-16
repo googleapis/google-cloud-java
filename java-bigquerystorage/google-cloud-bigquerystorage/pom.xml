@@ -15,6 +15,7 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerystorage</site.installationModule>
+    <surefire.excludes></surefire.excludes>
   </properties>
   <dependencyManagement>
     <dependencies>
