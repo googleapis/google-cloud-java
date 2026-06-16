@@ -47,7 +47,7 @@ jobs:
         java-version: 11
     - name: Install java-shared-dependencies
       run: |
-        mvn install -pl sdk-platform-java/java-shared-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+        mvn install -pl sdk-platform-java/java-shared-dependencies,sdk-platform-java/java-shared-dependencies/first-party-dependencies,sdk-platform-java/java-shared-dependencies/third-party-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
@@ -87,7 +87,7 @@ jobs:
     - run: sudo apt-get install libxml2-utils
     - name: Install java-shared-dependencies
       run: |
-        mvn install -pl sdk-platform-java/java-shared-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+        mvn install -pl sdk-platform-java/java-shared-dependencies,sdk-platform-java/java-shared-dependencies/first-party-dependencies,sdk-platform-java/java-shared-dependencies/third-party-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
@@ -126,7 +126,7 @@ jobs:
     - run: sudo apt-get install libxml2-utils
     - name: Install java-shared-dependencies
       run: |
-        mvn install -pl sdk-platform-java/java-shared-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+        mvn install -pl sdk-platform-java/java-shared-dependencies,sdk-platform-java/java-shared-dependencies/first-party-dependencies,sdk-platform-java/java-shared-dependencies/third-party-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
