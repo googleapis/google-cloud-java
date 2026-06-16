@@ -165,6 +165,29 @@ public class MockDataProductServiceImpl extends DataProductServiceImplBase {
   }
 
   @Override
+  public void requestDataProductAccess(
+      RequestDataProductAccessRequest request,
+      StreamObserver<RequestDataProductAccessResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RequestDataProductAccessResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RequestDataProductAccessResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RequestDataProductAccess, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RequestDataProductAccessResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createDataAsset(
       CreateDataAssetRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

@@ -33,7 +33,20 @@ public interface FloorsRollupValueOrBuilder
    * Sum of the floors count.
    * </pre>
    *
-   * <code>int64 count_sum = 1;</code>
+   * <code>optional int64 count_sum = 1;</code>
+   *
+   * @return Whether the countSum field is set.
+   */
+  boolean hasCountSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the floors count.
+   * </pre>
+   *
+   * <code>optional int64 count_sum = 1;</code>
    *
    * @return The countSum.
    */

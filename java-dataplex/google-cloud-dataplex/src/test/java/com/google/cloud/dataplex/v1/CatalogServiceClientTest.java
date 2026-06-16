@@ -1954,6 +1954,69 @@ public class CatalogServiceClientTest {
   }
 
   @Test
+  public void modifyEntryTest() throws Exception {
+    Entry expectedResponse =
+        Entry.newBuilder()
+            .setName(EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setEntryType("entryType-479362356")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .setParentEntry("parentEntry991029736")
+            .setFullyQualifiedName("fullyQualifiedName288467357")
+            .setEntrySource(EntrySource.newBuilder().build())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    ModifyEntryRequest request =
+        ModifyEntryRequest.newBuilder()
+            .setName("name3373707")
+            .setEntry(Entry.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .setDeleteMissingAspects(true)
+            .addAllAspectKeys(new ArrayList<String>())
+            .build();
+
+    Entry actualResponse = client.modifyEntry(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyEntryRequest actualRequest = ((ModifyEntryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getEntry(), actualRequest.getEntry());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(request.getDeleteMissingAspects(), actualRequest.getDeleteMissingAspects());
+    Assert.assertEquals(request.getAspectKeysList(), actualRequest.getAspectKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyEntryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      ModifyEntryRequest request =
+          ModifyEntryRequest.newBuilder()
+              .setName("name3373707")
+              .setEntry(Entry.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setDeleteMissingAspects(true)
+              .addAllAspectKeys(new ArrayList<String>())
+              .build();
+      client.modifyEntry(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void searchEntriesTest() throws Exception {
     SearchEntriesResult responsesElement = SearchEntriesResult.newBuilder().build();
     SearchEntriesResponse expectedResponse =
@@ -2719,6 +2782,7 @@ public class CatalogServiceClientTest {
         LookupContextRequest.newBuilder()
             .setName("name3373707")
             .addAllResources(new ArrayList<String>())
+            .setContext("context951530927")
             .putAllOptions(new HashMap<String, String>())
             .build();
 
@@ -2731,6 +2795,7 @@ public class CatalogServiceClientTest {
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getResourcesList(), actualRequest.getResourcesList());
+    Assert.assertEquals(request.getContext(), actualRequest.getContext());
     Assert.assertEquals(request.getOptionsMap(), actualRequest.getOptionsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -2748,6 +2813,7 @@ public class CatalogServiceClientTest {
           LookupContextRequest.newBuilder()
               .setName("name3373707")
               .addAllResources(new ArrayList<String>())
+              .setContext("context951530927")
               .putAllOptions(new HashMap<String, String>())
               .build();
       client.lookupContext(request);

@@ -68,6 +68,7 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
             com.google.devicesandservices.health.v4.BodyFatRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int BODY_FAT_PERCENTAGE_AVG_FIELD_NUMBER = 1;
   private double bodyFatPercentageAvg_ = 0D;
 
@@ -78,7 +79,23 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
    * Average body fat percentage.
    * </pre>
    *
-   * <code>double body_fat_percentage_avg = 1;</code>
+   * <code>optional double body_fat_percentage_avg = 1;</code>
+   *
+   * @return Whether the bodyFatPercentageAvg field is set.
+   */
+  @java.lang.Override
+  public boolean hasBodyFatPercentageAvg() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Average body fat percentage.
+   * </pre>
+   *
+   * <code>optional double body_fat_percentage_avg = 1;</code>
    *
    * @return The bodyFatPercentageAvg.
    */
@@ -101,7 +118,7 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (java.lang.Double.doubleToRawLongBits(bodyFatPercentageAvg_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(1, bodyFatPercentageAvg_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Double.doubleToRawLongBits(bodyFatPercentageAvg_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, bodyFatPercentageAvg_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,8 +149,11 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
     com.google.devicesandservices.health.v4.BodyFatRollupValue other =
         (com.google.devicesandservices.health.v4.BodyFatRollupValue) obj;
 
-    if (java.lang.Double.doubleToLongBits(getBodyFatPercentageAvg())
-        != java.lang.Double.doubleToLongBits(other.getBodyFatPercentageAvg())) return false;
+    if (hasBodyFatPercentageAvg() != other.hasBodyFatPercentageAvg()) return false;
+    if (hasBodyFatPercentageAvg()) {
+      if (java.lang.Double.doubleToLongBits(getBodyFatPercentageAvg())
+          != java.lang.Double.doubleToLongBits(other.getBodyFatPercentageAvg())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -145,11 +165,13 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + BODY_FAT_PERCENTAGE_AVG_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getBodyFatPercentageAvg()));
+    if (hasBodyFatPercentageAvg()) {
+      hash = (37 * hash) + BODY_FAT_PERCENTAGE_AVG_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getBodyFatPercentageAvg()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,9 +350,12 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
 
     private void buildPartial0(com.google.devicesandservices.health.v4.BodyFatRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.bodyFatPercentageAvg_ = bodyFatPercentageAvg_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -346,7 +371,7 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.devicesandservices.health.v4.BodyFatRollupValue other) {
       if (other == com.google.devicesandservices.health.v4.BodyFatRollupValue.getDefaultInstance())
         return this;
-      if (java.lang.Double.doubleToRawLongBits(other.getBodyFatPercentageAvg()) != 0) {
+      if (other.hasBodyFatPercentageAvg()) {
         setBodyFatPercentageAvg(other.getBodyFatPercentageAvg());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -409,7 +434,23 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
      * Average body fat percentage.
      * </pre>
      *
-     * <code>double body_fat_percentage_avg = 1;</code>
+     * <code>optional double body_fat_percentage_avg = 1;</code>
+     *
+     * @return Whether the bodyFatPercentageAvg field is set.
+     */
+    @java.lang.Override
+    public boolean hasBodyFatPercentageAvg() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Average body fat percentage.
+     * </pre>
+     *
+     * <code>optional double body_fat_percentage_avg = 1;</code>
      *
      * @return The bodyFatPercentageAvg.
      */
@@ -425,7 +466,7 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
      * Average body fat percentage.
      * </pre>
      *
-     * <code>double body_fat_percentage_avg = 1;</code>
+     * <code>optional double body_fat_percentage_avg = 1;</code>
      *
      * @param value The bodyFatPercentageAvg to set.
      * @return This builder for chaining.
@@ -445,7 +486,7 @@ public final class BodyFatRollupValue extends com.google.protobuf.GeneratedMessa
      * Average body fat percentage.
      * </pre>
      *
-     * <code>double body_fat_percentage_avg = 1;</code>
+     * <code>optional double body_fat_percentage_avg = 1;</code>
      *
      * @return This builder for chaining.
      */

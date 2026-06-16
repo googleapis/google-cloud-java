@@ -76,7 +76,20 @@ public interface HeightOrBuilder
    * Required. Height of the user in millimeters.
    * </pre>
    *
-   * <code>int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the heightMillimeters field is set.
+   */
+  boolean hasHeightMillimeters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Height of the user in millimeters.
+   * </pre>
+   *
+   * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The heightMillimeters.
    */

@@ -21,23 +21,9 @@
  *
  * <p>======================= IcebergCatalogServiceClient =======================
  *
- * <p>Service Description: Iceberg Catalog Service API: this implements the open-source Iceberg REST
- * Catalog API. See the API definition here:
- * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
- *
- * <p>The API is defined as OpenAPI 3.1.1 spec.
- *
- * <p>Currently we only support the following methods: - GetConfig/GetIcebergCatalogConfig -
- * ListIcebergNamespaces - CheckIcebergNamespaceExists - GetIcebergNamespace -
- * CreateIcebergNamespace (only supports single level) - DeleteIcebergNamespace -
- * UpdateIcebergNamespace properties - ListTableIdentifiers - CreateIcebergTable -
- * DeleteIcebergTable - GetIcebergTable - UpdateIcebergTable (CommitTable) -
- * LoadIcebergTableCredentials - RegisterTable
- *
- * <p>Users are required to provided the `X-Goog-User-Project` header with the project id or number
- * which can be different from the bucket project id. That project will be charged for the API calls
- * and the calling user must have access to that project. The caller must have
- * `serviceusage.services.use` permission on the project.
+ * <p>Service Description: Lakehouse runtime catalog supports the following catalog management
+ * methods: - GetIcebergCatalog - ListIcebergCatalogs - DeleteIcebergCatalog - UpdateIcebergCatalog
+ * - CreateIcebergCatalog - FailoverIcebergCatalog
  *
  * <p>Sample for IcebergCatalogServiceClient:
  *

@@ -398,7 +398,24 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
    * body weight / min.
    * </pre>
    *
-   * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the vo2Max field is set.
+   */
+  @java.lang.Override
+  public boolean hasVo2Max() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Daily VO2 max value measured as in ml consumed oxygen / kg of
+   * body weight / min.
+   * </pre>
+   *
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The vo2Max.
    */
@@ -484,7 +501,23 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
    * Optional. The covariance of the VO2 max value.
    * </pre>
    *
-   * <code>double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the vo2MaxCovariance field is set.
+   */
+  @java.lang.Override
+  public boolean hasVo2MaxCovariance() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The covariance of the VO2 max value.
+   * </pre>
+   *
+   * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The vo2MaxCovariance.
    */
@@ -510,7 +543,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(vo2Max_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, vo2Max_);
     }
     if (estimated_ != false) {
@@ -522,7 +555,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(4, cardioFitnessLevel_);
     }
-    if (java.lang.Double.doubleToRawLongBits(vo2MaxCovariance_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(5, vo2MaxCovariance_);
     }
     getUnknownFields().writeTo(output);
@@ -537,7 +570,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(vo2Max_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, vo2Max_);
     }
     if (estimated_ != false) {
@@ -549,7 +582,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, cardioFitnessLevel_);
     }
-    if (java.lang.Double.doubleToRawLongBits(vo2MaxCovariance_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, vo2MaxCovariance_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -572,12 +605,18 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
     if (hasDate()) {
       if (!getDate().equals(other.getDate())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getVo2Max())
-        != java.lang.Double.doubleToLongBits(other.getVo2Max())) return false;
+    if (hasVo2Max() != other.hasVo2Max()) return false;
+    if (hasVo2Max()) {
+      if (java.lang.Double.doubleToLongBits(getVo2Max())
+          != java.lang.Double.doubleToLongBits(other.getVo2Max())) return false;
+    }
     if (getEstimated() != other.getEstimated()) return false;
     if (cardioFitnessLevel_ != other.cardioFitnessLevel_) return false;
-    if (java.lang.Double.doubleToLongBits(getVo2MaxCovariance())
-        != java.lang.Double.doubleToLongBits(other.getVo2MaxCovariance())) return false;
+    if (hasVo2MaxCovariance() != other.hasVo2MaxCovariance()) return false;
+    if (hasVo2MaxCovariance()) {
+      if (java.lang.Double.doubleToLongBits(getVo2MaxCovariance())
+          != java.lang.Double.doubleToLongBits(other.getVo2MaxCovariance())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -593,19 +632,24 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate().hashCode();
     }
-    hash = (37 * hash) + VO2_MAX_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getVo2Max()));
+    if (hasVo2Max()) {
+      hash = (37 * hash) + VO2_MAX_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getVo2Max()));
+    }
     hash = (37 * hash) + ESTIMATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEstimated());
     hash = (37 * hash) + CARDIO_FITNESS_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + cardioFitnessLevel_;
-    hash = (37 * hash) + VO2_MAX_COVARIANCE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getVo2MaxCovariance()));
+    if (hasVo2MaxCovariance()) {
+      hash = (37 * hash) + VO2_MAX_COVARIANCE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getVo2MaxCovariance()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -808,6 +852,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.vo2Max_ = vo2Max_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.estimated_ = estimated_;
@@ -817,6 +862,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.vo2MaxCovariance_ = vo2MaxCovariance_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -837,7 +883,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
       if (other.hasDate()) {
         mergeDate(other.getDate());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getVo2Max()) != 0) {
+      if (other.hasVo2Max()) {
         setVo2Max(other.getVo2Max());
       }
       if (other.getEstimated() != false) {
@@ -846,7 +892,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
       if (other.cardioFitnessLevel_ != 0) {
         setCardioFitnessLevelValue(other.getCardioFitnessLevelValue());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getVo2MaxCovariance()) != 0) {
+      if (other.hasVo2MaxCovariance()) {
         setVo2MaxCovariance(other.getVo2MaxCovariance());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1118,7 +1164,24 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
      * body weight / min.
      * </pre>
      *
-     * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the vo2Max field is set.
+     */
+    @java.lang.Override
+    public boolean hasVo2Max() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Daily VO2 max value measured as in ml consumed oxygen / kg of
+     * body weight / min.
+     * </pre>
+     *
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The vo2Max.
      */
@@ -1135,7 +1198,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
      * body weight / min.
      * </pre>
      *
-     * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The vo2Max to set.
      * @return This builder for chaining.
@@ -1156,7 +1219,7 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
      * body weight / min.
      * </pre>
      *
-     * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1350,7 +1413,25 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
      * Optional. The covariance of the VO2 max value.
      * </pre>
      *
-     * <code>double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vo2MaxCovariance field is set.
+     */
+    @java.lang.Override
+    public boolean hasVo2MaxCovariance() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The covariance of the VO2 max value.
+     * </pre>
+     *
+     * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The vo2MaxCovariance.
      */
@@ -1366,7 +1447,8 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
      * Optional. The covariance of the VO2 max value.
      * </pre>
      *
-     * <code>double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The vo2MaxCovariance to set.
      * @return This builder for chaining.
@@ -1386,7 +1468,8 @@ public final class DailyVO2Max extends com.google.protobuf.GeneratedMessage
      * Optional. The covariance of the VO2 max value.
      * </pre>
      *
-     * <code>double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */

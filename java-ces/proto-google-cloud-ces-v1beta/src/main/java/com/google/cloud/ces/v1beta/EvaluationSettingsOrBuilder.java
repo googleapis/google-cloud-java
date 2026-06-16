@@ -152,4 +152,79 @@ public interface EvaluationSettingsOrBuilder
    * @return The scenarioEvaluationToolCallBehaviour.
    */
   com.google.cloud.ces.v1beta.EvaluationToolCallBehaviour getScenarioEvaluationToolCallBehaviour();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the default metrics for evaluations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metricsConfig field is set.
+   */
+  boolean hasMetricsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the default metrics for evaluations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metricsConfig.
+   */
+  com.google.cloud.ces.v1beta.EvaluationMetricsConfig getMetricsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the default metrics for evaluations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder getMetricsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for scenario evaluations. If not provided,
+   * will default to QUALITY_OPTIMIZED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scenarioExecutionMode.
+   */
+  int getScenarioExecutionModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for scenario evaluations. If not provided,
+   * will default to QUALITY_OPTIMIZED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scenarioExecutionMode.
+   */
+  com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode getScenarioExecutionMode();
 }

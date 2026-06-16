@@ -113,7 +113,22 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
      * Required. Minimum heart rate for this zone in beats per minute.
      * </pre>
      *
-     * <code>int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the minBeatsPerMinute field is set.
+     */
+    boolean hasMinBeatsPerMinute();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Minimum heart rate for this zone in beats per minute.
+     * </pre>
+     *
+     * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The minBeatsPerMinute.
      */
@@ -126,7 +141,22 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
      * Required. Maximum heart rate for this zone in beats per minute.
      * </pre>
      *
-     * <code>int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the maxBeatsPerMinute field is set.
+     */
+    boolean hasMaxBeatsPerMinute();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Maximum heart rate for this zone in beats per minute.
+     * </pre>
+     *
+     * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The maxBeatsPerMinute.
      */
@@ -183,6 +213,7 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
                   .class);
     }
 
+    private int bitField0_;
     public static final int HEART_RATE_ZONE_TYPE_FIELD_NUMBER = 1;
     private int heartRateZoneType_ = 0;
 
@@ -236,7 +267,25 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
      * Required. Minimum heart rate for this zone in beats per minute.
      * </pre>
      *
-     * <code>int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the minBeatsPerMinute field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinBeatsPerMinute() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Minimum heart rate for this zone in beats per minute.
+     * </pre>
+     *
+     * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The minBeatsPerMinute.
      */
@@ -255,7 +304,25 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
      * Required. Maximum heart rate for this zone in beats per minute.
      * </pre>
      *
-     * <code>int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the maxBeatsPerMinute field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxBeatsPerMinute() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Maximum heart rate for this zone in beats per minute.
+     * </pre>
+     *
+     * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The maxBeatsPerMinute.
      */
@@ -284,10 +351,10 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
               .getNumber()) {
         output.writeEnum(1, heartRateZoneType_);
       }
-      if (minBeatsPerMinute_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt64(2, minBeatsPerMinute_);
       }
-      if (maxBeatsPerMinute_ != 0L) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt64(3, maxBeatsPerMinute_);
       }
       getUnknownFields().writeTo(output);
@@ -305,10 +372,10 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, heartRateZoneType_);
       }
-      if (minBeatsPerMinute_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, minBeatsPerMinute_);
       }
-      if (maxBeatsPerMinute_ != 0L) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, maxBeatsPerMinute_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -329,8 +396,14 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
           (com.google.devicesandservices.health.v4.DailyHeartRateZones.HeartRateZone) obj;
 
       if (heartRateZoneType_ != other.heartRateZoneType_) return false;
-      if (getMinBeatsPerMinute() != other.getMinBeatsPerMinute()) return false;
-      if (getMaxBeatsPerMinute() != other.getMaxBeatsPerMinute()) return false;
+      if (hasMinBeatsPerMinute() != other.hasMinBeatsPerMinute()) return false;
+      if (hasMinBeatsPerMinute()) {
+        if (getMinBeatsPerMinute() != other.getMinBeatsPerMinute()) return false;
+      }
+      if (hasMaxBeatsPerMinute() != other.hasMaxBeatsPerMinute()) return false;
+      if (hasMaxBeatsPerMinute()) {
+        if (getMaxBeatsPerMinute() != other.getMaxBeatsPerMinute()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -344,10 +417,14 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HEART_RATE_ZONE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + heartRateZoneType_;
-      hash = (37 * hash) + MIN_BEATS_PER_MINUTE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinBeatsPerMinute());
-      hash = (37 * hash) + MAX_BEATS_PER_MINUTE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxBeatsPerMinute());
+      if (hasMinBeatsPerMinute()) {
+        hash = (37 * hash) + MIN_BEATS_PER_MINUTE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinBeatsPerMinute());
+      }
+      if (hasMaxBeatsPerMinute()) {
+        hash = (37 * hash) + MAX_BEATS_PER_MINUTE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxBeatsPerMinute());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -544,12 +621,16 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.heartRateZoneType_ = heartRateZoneType_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.minBeatsPerMinute_ = minBeatsPerMinute_;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.maxBeatsPerMinute_ = maxBeatsPerMinute_;
+          to_bitField0_ |= 0x00000002;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -572,10 +653,10 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
         if (other.heartRateZoneType_ != 0) {
           setHeartRateZoneTypeValue(other.getHeartRateZoneTypeValue());
         }
-        if (other.getMinBeatsPerMinute() != 0L) {
+        if (other.hasMinBeatsPerMinute()) {
           setMinBeatsPerMinute(other.getMinBeatsPerMinute());
         }
-        if (other.getMaxBeatsPerMinute() != 0L) {
+        if (other.hasMaxBeatsPerMinute()) {
           setMaxBeatsPerMinute(other.getMaxBeatsPerMinute());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -758,7 +839,25 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
        * Required. Minimum heart rate for this zone in beats per minute.
        * </pre>
        *
-       * <code>int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the minBeatsPerMinute field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinBeatsPerMinute() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Minimum heart rate for this zone in beats per minute.
+       * </pre>
+       *
+       * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The minBeatsPerMinute.
        */
@@ -774,7 +873,8 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
        * Required. Minimum heart rate for this zone in beats per minute.
        * </pre>
        *
-       * <code>int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The minBeatsPerMinute to set.
        * @return This builder for chaining.
@@ -794,7 +894,8 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
        * Required. Minimum heart rate for this zone in beats per minute.
        * </pre>
        *
-       * <code>int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 min_beats_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -814,7 +915,25 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
        * Required. Maximum heart rate for this zone in beats per minute.
        * </pre>
        *
-       * <code>int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the maxBeatsPerMinute field is set.
+       */
+      @java.lang.Override
+      public boolean hasMaxBeatsPerMinute() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Maximum heart rate for this zone in beats per minute.
+       * </pre>
+       *
+       * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The maxBeatsPerMinute.
        */
@@ -830,7 +949,8 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
        * Required. Maximum heart rate for this zone in beats per minute.
        * </pre>
        *
-       * <code>int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The maxBeatsPerMinute to set.
        * @return This builder for chaining.
@@ -850,7 +970,8 @@ public final class DailyHeartRateZones extends com.google.protobuf.GeneratedMess
        * Required. Maximum heart rate for this zone in beats per minute.
        * </pre>
        *
-       * <code>int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 max_beats_per_minute = 3 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return This builder for chaining.
        */

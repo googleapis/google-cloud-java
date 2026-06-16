@@ -223,7 +223,7 @@ public class AbstractReadContextTest {
   }
 
   @Test
-  public void getChannelHintOptionsPrefersTransactionHintWhenGrpcGcpEnabled() {
+  public void getChannelHintOptionsUsesChannelIdAffinityWhenGrpcGcpEnabled() {
     Map<SpannerRpc.Option, ?> sessionHint =
         SessionClient.optionMap(SessionClient.SessionOption.channelHint(7L));
 
@@ -231,7 +231,8 @@ public class AbstractReadContextTest {
         AbstractReadContext.getChannelHintOptions(sessionHint, 11L, true);
 
     assertThat(result).isNotSameInstanceAs(sessionHint);
-    assertEquals(Long.valueOf(11L), Option.CHANNEL_HINT.getLong(result));
+    assertThat(result).containsKey(Option.CHANNEL_ID_AFFINITY);
+    assertThat(result).doesNotContainKey(Option.CHANNEL_HINT);
   }
 
   @Test

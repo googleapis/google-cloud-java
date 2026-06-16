@@ -1436,7 +1436,23 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
    * Required. The heart rate value in beats per minute.
    * </pre>
    *
-   * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the beatsPerMinute field is set.
+   */
+  @java.lang.Override
+  public boolean hasBeatsPerMinute() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The heart rate value in beats per minute.
+   * </pre>
+   *
+   * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The beatsPerMinute.
    */
@@ -1463,7 +1479,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMetadata() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -1522,10 +1538,10 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getSampleTime());
     }
-    if (beatsPerMinute_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(4, beatsPerMinute_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getMetadata());
     }
     getUnknownFields().writeTo(output);
@@ -1540,10 +1556,10 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSampleTime());
     }
-    if (beatsPerMinute_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, beatsPerMinute_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetadata());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1566,7 +1582,10 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
     if (hasSampleTime()) {
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
-    if (getBeatsPerMinute() != other.getBeatsPerMinute()) return false;
+    if (hasBeatsPerMinute() != other.hasBeatsPerMinute()) return false;
+    if (hasBeatsPerMinute()) {
+      if (getBeatsPerMinute() != other.getBeatsPerMinute()) return false;
+    }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
@@ -1586,8 +1605,10 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SAMPLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSampleTime().hashCode();
     }
-    hash = (37 * hash) + BEATS_PER_MINUTE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBeatsPerMinute());
+    if (hasBeatsPerMinute()) {
+      hash = (37 * hash) + BEATS_PER_MINUTE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBeatsPerMinute());
+    }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -1796,10 +1817,11 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.beatsPerMinute_ = beatsPerMinute_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1820,7 +1842,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
       if (other.hasSampleTime()) {
         mergeSampleTime(other.getSampleTime());
       }
-      if (other.getBeatsPerMinute() != 0L) {
+      if (other.hasBeatsPerMinute()) {
         setBeatsPerMinute(other.getBeatsPerMinute());
       }
       if (other.hasMetadata()) {
@@ -2119,7 +2141,23 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      * Required. The heart rate value in beats per minute.
      * </pre>
      *
-     * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the beatsPerMinute field is set.
+     */
+    @java.lang.Override
+    public boolean hasBeatsPerMinute() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The heart rate value in beats per minute.
+     * </pre>
+     *
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The beatsPerMinute.
      */
@@ -2135,7 +2173,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      * Required. The heart rate value in beats per minute.
      * </pre>
      *
-     * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The beatsPerMinute to set.
      * @return This builder for chaining.
@@ -2155,7 +2193,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      * Required. The heart rate value in beats per minute.
      * </pre>
      *
-     * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

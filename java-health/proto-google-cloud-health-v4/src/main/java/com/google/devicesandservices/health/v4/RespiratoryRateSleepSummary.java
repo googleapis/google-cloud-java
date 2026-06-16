@@ -81,7 +81,22 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
      * Required. Average breaths per minute.
      * </pre>
      *
-     * <code>double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the breathsPerMinute field is set.
+     */
+    boolean hasBreathsPerMinute();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Average breaths per minute.
+     * </pre>
+     *
+     * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The breathsPerMinute.
      */
@@ -94,7 +109,22 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
      * Optional. Standard deviation of the respiratory rate during sleep.
      * </pre>
      *
-     * <code>double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardDeviation field is set.
+     */
+    boolean hasStandardDeviation();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Standard deviation of the respiratory rate during sleep.
+     * </pre>
+     *
+     * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The standardDeviation.
      */
@@ -107,7 +137,20 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
      * Optional. How trustworthy the data is for the computation.
      * </pre>
      *
-     * <code>double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the signalToNoise field is set.
+     */
+    boolean hasSignalToNoise();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. How trustworthy the data is for the computation.
+     * </pre>
+     *
+     * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The signalToNoise.
      */
@@ -166,6 +209,7 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
                   .RespiratoryRateSleepSummaryStatistics.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BREATHS_PER_MINUTE_FIELD_NUMBER = 1;
     private double breathsPerMinute_ = 0D;
 
@@ -176,7 +220,25 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
      * Required. Average breaths per minute.
      * </pre>
      *
-     * <code>double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the breathsPerMinute field is set.
+     */
+    @java.lang.Override
+    public boolean hasBreathsPerMinute() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Average breaths per minute.
+     * </pre>
+     *
+     * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The breathsPerMinute.
      */
@@ -195,7 +257,25 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
      * Optional. Standard deviation of the respiratory rate during sleep.
      * </pre>
      *
-     * <code>double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardDeviation field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardDeviation() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Standard deviation of the respiratory rate during sleep.
+     * </pre>
+     *
+     * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The standardDeviation.
      */
@@ -214,7 +294,23 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
      * Optional. How trustworthy the data is for the computation.
      * </pre>
      *
-     * <code>double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the signalToNoise field is set.
+     */
+    @java.lang.Override
+    public boolean hasSignalToNoise() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. How trustworthy the data is for the computation.
+     * </pre>
+     *
+     * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The signalToNoise.
      */
@@ -237,13 +333,13 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (java.lang.Double.doubleToRawLongBits(breathsPerMinute_) != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeDouble(1, breathsPerMinute_);
       }
-      if (java.lang.Double.doubleToRawLongBits(standardDeviation_) != 0) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeDouble(2, standardDeviation_);
       }
-      if (java.lang.Double.doubleToRawLongBits(signalToNoise_) != 0) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeDouble(3, signalToNoise_);
       }
       getUnknownFields().writeTo(output);
@@ -255,13 +351,13 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Double.doubleToRawLongBits(breathsPerMinute_) != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, breathsPerMinute_);
       }
-      if (java.lang.Double.doubleToRawLongBits(standardDeviation_) != 0) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, standardDeviation_);
       }
-      if (java.lang.Double.doubleToRawLongBits(signalToNoise_) != 0) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, signalToNoise_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -287,12 +383,21 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
                       .RespiratoryRateSleepSummaryStatistics)
                   obj;
 
-      if (java.lang.Double.doubleToLongBits(getBreathsPerMinute())
-          != java.lang.Double.doubleToLongBits(other.getBreathsPerMinute())) return false;
-      if (java.lang.Double.doubleToLongBits(getStandardDeviation())
-          != java.lang.Double.doubleToLongBits(other.getStandardDeviation())) return false;
-      if (java.lang.Double.doubleToLongBits(getSignalToNoise())
-          != java.lang.Double.doubleToLongBits(other.getSignalToNoise())) return false;
+      if (hasBreathsPerMinute() != other.hasBreathsPerMinute()) return false;
+      if (hasBreathsPerMinute()) {
+        if (java.lang.Double.doubleToLongBits(getBreathsPerMinute())
+            != java.lang.Double.doubleToLongBits(other.getBreathsPerMinute())) return false;
+      }
+      if (hasStandardDeviation() != other.hasStandardDeviation()) return false;
+      if (hasStandardDeviation()) {
+        if (java.lang.Double.doubleToLongBits(getStandardDeviation())
+            != java.lang.Double.doubleToLongBits(other.getStandardDeviation())) return false;
+      }
+      if (hasSignalToNoise() != other.hasSignalToNoise()) return false;
+      if (hasSignalToNoise()) {
+        if (java.lang.Double.doubleToLongBits(getSignalToNoise())
+            != java.lang.Double.doubleToLongBits(other.getSignalToNoise())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -304,21 +409,27 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BREATHS_PER_MINUTE_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getBreathsPerMinute()));
-      hash = (37 * hash) + STANDARD_DEVIATION_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getStandardDeviation()));
-      hash = (37 * hash) + SIGNAL_TO_NOISE_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getSignalToNoise()));
+      if (hasBreathsPerMinute()) {
+        hash = (37 * hash) + BREATHS_PER_MINUTE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getBreathsPerMinute()));
+      }
+      if (hasStandardDeviation()) {
+        hash = (37 * hash) + STANDARD_DEVIATION_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getStandardDeviation()));
+      }
+      if (hasSignalToNoise()) {
+        hash = (37 * hash) + SIGNAL_TO_NOISE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getSignalToNoise()));
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -539,15 +650,20 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
                   .RespiratoryRateSleepSummaryStatistics
               result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.breathsPerMinute_ = breathsPerMinute_;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.standardDeviation_ = standardDeviation_;
+          to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.signalToNoise_ = signalToNoise_;
+          to_bitField0_ |= 0x00000004;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -573,13 +689,13 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
         if (other
             == com.google.devicesandservices.health.v4.RespiratoryRateSleepSummary
                 .RespiratoryRateSleepSummaryStatistics.getDefaultInstance()) return this;
-        if (java.lang.Double.doubleToRawLongBits(other.getBreathsPerMinute()) != 0) {
+        if (other.hasBreathsPerMinute()) {
           setBreathsPerMinute(other.getBreathsPerMinute());
         }
-        if (java.lang.Double.doubleToRawLongBits(other.getStandardDeviation()) != 0) {
+        if (other.hasStandardDeviation()) {
           setStandardDeviation(other.getStandardDeviation());
         }
-        if (java.lang.Double.doubleToRawLongBits(other.getSignalToNoise()) != 0) {
+        if (other.hasSignalToNoise()) {
           setSignalToNoise(other.getSignalToNoise());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -654,7 +770,25 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Required. Average breaths per minute.
        * </pre>
        *
-       * <code>double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the breathsPerMinute field is set.
+       */
+      @java.lang.Override
+      public boolean hasBreathsPerMinute() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Average breaths per minute.
+       * </pre>
+       *
+       * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return The breathsPerMinute.
        */
@@ -670,7 +804,8 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Required. Average breaths per minute.
        * </pre>
        *
-       * <code>double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @param value The breathsPerMinute to set.
        * @return This builder for chaining.
@@ -690,7 +825,8 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Required. Average breaths per minute.
        * </pre>
        *
-       * <code>double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional double breaths_per_minute = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -710,7 +846,25 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Optional. Standard deviation of the respiratory rate during sleep.
        * </pre>
        *
-       * <code>double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the standardDeviation field is set.
+       */
+      @java.lang.Override
+      public boolean hasStandardDeviation() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Standard deviation of the respiratory rate during sleep.
+       * </pre>
+       *
+       * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The standardDeviation.
        */
@@ -726,7 +880,8 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Optional. Standard deviation of the respiratory rate during sleep.
        * </pre>
        *
-       * <code>double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The standardDeviation to set.
        * @return This builder for chaining.
@@ -746,7 +901,8 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Optional. Standard deviation of the respiratory rate during sleep.
        * </pre>
        *
-       * <code>double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional double standard_deviation = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -766,7 +922,23 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Optional. How trustworthy the data is for the computation.
        * </pre>
        *
-       * <code>double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the signalToNoise field is set.
+       */
+      @java.lang.Override
+      public boolean hasSignalToNoise() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. How trustworthy the data is for the computation.
+       * </pre>
+       *
+       * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The signalToNoise.
        */
@@ -782,7 +954,7 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Optional. How trustworthy the data is for the computation.
        * </pre>
        *
-       * <code>double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The signalToNoise to set.
        * @return This builder for chaining.
@@ -802,7 +974,7 @@ public final class RespiratoryRateSleepSummary extends com.google.protobuf.Gener
        * Optional. How trustworthy the data is for the computation.
        * </pre>
        *
-       * <code>double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional double signal_to_noise = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */

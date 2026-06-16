@@ -77,7 +77,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     private Tracer openTelemetryTracer;
     private ResultRetryAlgorithm<?> resultRetryAlgorithm;
 
-    private Builder() {}
+    private Builder() {
+      setUseJwtAccessWithScope(false);
+    }
 
     private Builder(BigQueryOptions options) {
       super(options);

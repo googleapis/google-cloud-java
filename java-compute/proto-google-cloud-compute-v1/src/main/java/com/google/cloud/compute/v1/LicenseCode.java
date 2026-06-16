@@ -58,13 +58,17 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
   }
 
   private LicenseCode() {
+    allowedReplacementLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     creationTimestamp_ = "";
     description_ = "";
+    incompatibleLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
     licenseAlias_ = java.util.Collections.emptyList();
     name_ = "";
+    requiredCoattachedLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
     state_ = "";
+    updateTimestamp_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -307,6 +311,115 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  public static final int ALLOWED_REPLACEMENT_LICENSES_FIELD_NUMBER = 195677718;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList allowedReplacementLicenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @return A list containing the allowedReplacementLicenses.
+   */
+  public com.google.protobuf.ProtocolStringList getAllowedReplacementLicensesList() {
+    return allowedReplacementLicenses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @return The count of allowedReplacementLicenses.
+   */
+  public int getAllowedReplacementLicensesCount() {
+    return allowedReplacementLicenses_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedReplacementLicenses at the given index.
+   */
+  public java.lang.String getAllowedReplacementLicenses(int index) {
+    return allowedReplacementLicenses_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedReplacementLicenses at the given index.
+   */
+  public com.google.protobuf.ByteString getAllowedReplacementLicensesBytes(int index) {
+    return allowedReplacementLicenses_.getByteString(index);
+  }
+
+  public static final int APPENDABLE_TO_DISK_FIELD_NUMBER = 16959254;
+  private boolean appendableToDisk_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be appended to an existing disk's set of
+   * licenses.
+   * </pre>
+   *
+   * <code>optional bool appendable_to_disk = 16959254;</code>
+   *
+   * @return Whether the appendableToDisk field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppendableToDisk() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be appended to an existing disk's set of
+   * licenses.
+   * </pre>
+   *
+   * <code>optional bool appendable_to_disk = 16959254;</code>
+   *
+   * @return The appendableToDisk.
+   */
+  @java.lang.Override
+  public boolean getAppendableToDisk() {
+    return appendableToDisk_;
+  }
+
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
 
   @SuppressWarnings("serial")
@@ -326,7 +439,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -397,7 +510,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -465,7 +578,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -483,6 +596,82 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public long getId() {
     return id_;
+  }
+
+  public static final int INCOMPATIBLE_LICENSES_FIELD_NUMBER = 334239768;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList incompatibleLicenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @return A list containing the incompatibleLicenses.
+   */
+  public com.google.protobuf.ProtocolStringList getIncompatibleLicensesList() {
+    return incompatibleLicenses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @return The count of incompatibleLicenses.
+   */
+  public int getIncompatibleLicensesCount() {
+    return incompatibleLicenses_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The incompatibleLicenses at the given index.
+   */
+  public java.lang.String getIncompatibleLicenses(int index) {
+    return incompatibleLicenses_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the incompatibleLicenses at the given index.
+   */
+  public com.google.protobuf.ByteString getIncompatibleLicensesBytes(int index) {
+    return incompatibleLicenses_.getByteString(index);
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -504,7 +693,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -644,6 +833,97 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     return licenseAlias_.get(index);
   }
 
+  public static final int MINIMUM_RETENTION_FIELD_NUMBER = 155398189;
+  private com.google.cloud.compute.v1.Duration minimumRetention_;
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+   *
+   * @return Whether the minimumRetention field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinimumRetention() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+   *
+   * @return The minimumRetention.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getMinimumRetention() {
+    return minimumRetention_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : minimumRetention_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getMinimumRetentionOrBuilder() {
+    return minimumRetention_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : minimumRetention_;
+  }
+
+  public static final int MULTI_TENANT_ONLY_FIELD_NUMBER = 274395163;
+  private boolean multiTenantOnly_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on multi tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool multi_tenant_only = 274395163;</code>
+   *
+   * @return Whether the multiTenantOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiTenantOnly() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on multi tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool multi_tenant_only = 274395163;</code>
+   *
+   * @return The multiTenantOnly.
+   */
+  @java.lang.Override
+  public boolean getMultiTenantOnly() {
+    return multiTenantOnly_;
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
 
   @SuppressWarnings("serial")
@@ -663,7 +943,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -716,6 +996,156 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int OS_LICENSE_FIELD_NUMBER = 487986406;
+  private boolean osLicense_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, indicates this is an OS license. Only one OS license can be
+   * attached to a disk or image at a time.
+   * </pre>
+   *
+   * <code>optional bool os_license = 487986406;</code>
+   *
+   * @return Whether the osLicense field is set.
+   */
+  @java.lang.Override
+  public boolean hasOsLicense() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, indicates this is an OS license. Only one OS license can be
+   * attached to a disk or image at a time.
+   * </pre>
+   *
+   * <code>optional bool os_license = 487986406;</code>
+   *
+   * @return The osLicense.
+   */
+  @java.lang.Override
+  public boolean getOsLicense() {
+    return osLicense_;
+  }
+
+  public static final int REMOVABLE_FROM_DISK_FIELD_NUMBER = 25854638;
+  private boolean removableFromDisk_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be removed from a disk's set of licenses, with no
+   * replacement license needed.
+   * </pre>
+   *
+   * <code>optional bool removable_from_disk = 25854638;</code>
+   *
+   * @return Whether the removableFromDisk field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemovableFromDisk() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be removed from a disk's set of licenses, with no
+   * replacement license needed.
+   * </pre>
+   *
+   * <code>optional bool removable_from_disk = 25854638;</code>
+   *
+   * @return The removableFromDisk.
+   */
+  @java.lang.Override
+  public boolean getRemovableFromDisk() {
+    return removableFromDisk_;
+  }
+
+  public static final int REQUIRED_COATTACHED_LICENSES_FIELD_NUMBER = 129195265;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList requiredCoattachedLicenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @return A list containing the requiredCoattachedLicenses.
+   */
+  public com.google.protobuf.ProtocolStringList getRequiredCoattachedLicensesList() {
+    return requiredCoattachedLicenses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @return The count of requiredCoattachedLicenses.
+   */
+  public int getRequiredCoattachedLicensesCount() {
+    return requiredCoattachedLicenses_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The requiredCoattachedLicenses at the given index.
+   */
+  public java.lang.String getRequiredCoattachedLicenses(int index) {
+    return requiredCoattachedLicenses_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredCoattachedLicenses at the given index.
+   */
+  public com.google.protobuf.ByteString getRequiredCoattachedLicensesBytes(int index) {
+    return requiredCoattachedLicenses_.getByteString(index);
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
 
   @SuppressWarnings("serial")
@@ -734,7 +1164,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -785,6 +1215,41 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SOLE_TENANT_ONLY_FIELD_NUMBER = 427525559;
+  private boolean soleTenantOnly_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on sole tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool sole_tenant_only = 427525559;</code>
+   *
+   * @return Whether the soleTenantOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasSoleTenantOnly() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on sole tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool sole_tenant_only = 427525559;</code>
+   *
+   * @return The soleTenantOnly.
+   */
+  @java.lang.Override
+  public boolean getSoleTenantOnly() {
+    return soleTenantOnly_;
+  }
+
   public static final int STATE_FIELD_NUMBER = 109757585;
 
   @SuppressWarnings("serial")
@@ -804,7 +1269,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -874,7 +1339,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTransferable() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -894,6 +1359,78 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     return transferable_;
   }
 
+  public static final int UPDATE_TIMESTAMP_FIELD_NUMBER = 120894752;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateTimestamp_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Last update timestamp inRFC3339
+   * text format.
+   * </pre>
+   *
+   * <code>optional string update_timestamp = 120894752;</code>
+   *
+   * @return Whether the updateTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTimestamp() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Last update timestamp inRFC3339
+   * text format.
+   * </pre>
+   *
+   * <code>optional string update_timestamp = 120894752;</code>
+   *
+   * @return The updateTimestamp.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdateTimestamp() {
+    java.lang.Object ref = updateTimestamp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updateTimestamp_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Last update timestamp inRFC3339
+   * text format.
+   * </pre>
+   *
+   * <code>optional string update_timestamp = 120894752;</code>
+   *
+   * @return The bytes for updateTimestamp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUpdateTimestampBytes() {
+    java.lang.Object ref = updateTimestamp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      updateTimestamp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -908,32 +1445,65 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeBool(4349893, transferable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(16959254, appendableToDisk_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeBool(25854638, removableFromDisk_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
     for (int i = 0; i < licenseAlias_.size(); i++) {
       output.writeMessage(43550930, licenseAlias_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
+    if (((bitField0_ & 0x00004000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 120894752, updateTimestamp_);
+    }
+    for (int i = 0; i < requiredCoattachedLicenses_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 129195265, requiredCoattachedLicenses_.getRaw(i));
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(155398189, getMinimumRetention());
+    }
+    for (int i = 0; i < allowedReplacementLicenses_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 195677718, allowedReplacementLicenses_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(274395163, multiTenantOnly_);
+    }
+    for (int i = 0; i < incompatibleLicenses_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 334239768, incompatibleLicenses_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeBool(427525559, soleTenantOnly_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(487986406, osLicense_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -944,33 +1514,80 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4349893, transferable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16959254, appendableToDisk_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(25854638, removableFromDisk_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
     for (int i = 0; i < licenseAlias_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(43550930, licenseAlias_.get(i));
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(120894752, updateTimestamp_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < requiredCoattachedLicenses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(requiredCoattachedLicenses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getRequiredCoattachedLicensesList().size();
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              155398189, getMinimumRetention());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < allowedReplacementLicenses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(allowedReplacementLicenses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getAllowedReplacementLicensesList().size();
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(274395163, multiTenantOnly_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < incompatibleLicenses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(incompatibleLicenses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getIncompatibleLicensesList().size();
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(427525559, soleTenantOnly_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(487986406, osLicense_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -987,6 +1604,12 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     }
     com.google.cloud.compute.v1.LicenseCode other = (com.google.cloud.compute.v1.LicenseCode) obj;
 
+    if (!getAllowedReplacementLicensesList().equals(other.getAllowedReplacementLicensesList()))
+      return false;
+    if (hasAppendableToDisk() != other.hasAppendableToDisk()) return false;
+    if (hasAppendableToDisk()) {
+      if (getAppendableToDisk() != other.getAppendableToDisk()) return false;
+    }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
       if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
@@ -999,18 +1622,41 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     if (hasId()) {
       if (getId() != other.getId()) return false;
     }
+    if (!getIncompatibleLicensesList().equals(other.getIncompatibleLicensesList())) return false;
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
     }
     if (!getLicenseAliasList().equals(other.getLicenseAliasList())) return false;
+    if (hasMinimumRetention() != other.hasMinimumRetention()) return false;
+    if (hasMinimumRetention()) {
+      if (!getMinimumRetention().equals(other.getMinimumRetention())) return false;
+    }
+    if (hasMultiTenantOnly() != other.hasMultiTenantOnly()) return false;
+    if (hasMultiTenantOnly()) {
+      if (getMultiTenantOnly() != other.getMultiTenantOnly()) return false;
+    }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (hasOsLicense() != other.hasOsLicense()) return false;
+    if (hasOsLicense()) {
+      if (getOsLicense() != other.getOsLicense()) return false;
+    }
+    if (hasRemovableFromDisk() != other.hasRemovableFromDisk()) return false;
+    if (hasRemovableFromDisk()) {
+      if (getRemovableFromDisk() != other.getRemovableFromDisk()) return false;
+    }
+    if (!getRequiredCoattachedLicensesList().equals(other.getRequiredCoattachedLicensesList()))
+      return false;
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
+    }
+    if (hasSoleTenantOnly() != other.hasSoleTenantOnly()) return false;
+    if (hasSoleTenantOnly()) {
+      if (getSoleTenantOnly() != other.getSoleTenantOnly()) return false;
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
@@ -1019,6 +1665,10 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     if (hasTransferable() != other.hasTransferable()) return false;
     if (hasTransferable()) {
       if (getTransferable() != other.getTransferable()) return false;
+    }
+    if (hasUpdateTimestamp() != other.hasUpdateTimestamp()) return false;
+    if (hasUpdateTimestamp()) {
+      if (!getUpdateTimestamp().equals(other.getUpdateTimestamp())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1031,6 +1681,14 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getAllowedReplacementLicensesCount() > 0) {
+      hash = (37 * hash) + ALLOWED_REPLACEMENT_LICENSES_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowedReplacementLicensesList().hashCode();
+    }
+    if (hasAppendableToDisk()) {
+      hash = (37 * hash) + APPENDABLE_TO_DISK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAppendableToDisk());
+    }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getCreationTimestamp().hashCode();
@@ -1043,6 +1701,10 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
+    if (getIncompatibleLicensesCount() > 0) {
+      hash = (37 * hash) + INCOMPATIBLE_LICENSES_FIELD_NUMBER;
+      hash = (53 * hash) + getIncompatibleLicensesList().hashCode();
+    }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
@@ -1051,13 +1713,37 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + LICENSE_ALIAS_FIELD_NUMBER;
       hash = (53 * hash) + getLicenseAliasList().hashCode();
     }
+    if (hasMinimumRetention()) {
+      hash = (37 * hash) + MINIMUM_RETENTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMinimumRetention().hashCode();
+    }
+    if (hasMultiTenantOnly()) {
+      hash = (37 * hash) + MULTI_TENANT_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiTenantOnly());
+    }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
+    if (hasOsLicense()) {
+      hash = (37 * hash) + OS_LICENSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOsLicense());
+    }
+    if (hasRemovableFromDisk()) {
+      hash = (37 * hash) + REMOVABLE_FROM_DISK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRemovableFromDisk());
+    }
+    if (getRequiredCoattachedLicensesCount() > 0) {
+      hash = (37 * hash) + REQUIRED_COATTACHED_LICENSES_FIELD_NUMBER;
+      hash = (53 * hash) + getRequiredCoattachedLicensesList().hashCode();
+    }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSoleTenantOnly()) {
+      hash = (37 * hash) + SOLE_TENANT_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSoleTenantOnly());
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -1066,6 +1752,10 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     if (hasTransferable()) {
       hash = (37 * hash) + TRANSFERABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTransferable());
+    }
+    if (hasUpdateTimestamp()) {
+      hash = (37 * hash) + UPDATE_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTimestamp().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1203,19 +1893,32 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.compute.v1.LicenseCode.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetLicenseAliasFieldBuilder();
+        internalGetMinimumRetentionFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      allowedReplacementLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      appendableToDisk_ = false;
       creationTimestamp_ = "";
       description_ = "";
       id_ = 0L;
+      incompatibleLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kind_ = "";
       if (licenseAliasBuilder_ == null) {
         licenseAlias_ = java.util.Collections.emptyList();
@@ -1223,11 +1926,22 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         licenseAlias_ = null;
         licenseAliasBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
+      minimumRetention_ = null;
+      if (minimumRetentionBuilder_ != null) {
+        minimumRetentionBuilder_.dispose();
+        minimumRetentionBuilder_ = null;
+      }
+      multiTenantOnly_ = false;
       name_ = "";
+      osLicense_ = false;
+      removableFromDisk_ = false;
+      requiredCoattachedLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       selfLink_ = "";
+      soleTenantOnly_ = false;
       state_ = "";
       transferable_ = false;
+      updateTimestamp_ = "";
       return this;
     }
 
@@ -1265,9 +1979,9 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.LicenseCode result) {
       if (licenseAliasBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           licenseAlias_ = java.util.Collections.unmodifiableList(licenseAlias_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.licenseAlias_ = licenseAlias_;
       } else {
@@ -1277,38 +1991,79 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.compute.v1.LicenseCode result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.creationTimestamp_ = creationTimestamp_;
+        allowedReplacementLicenses_.makeImmutable();
+        result.allowedReplacementLicenses_ = allowedReplacementLicenses_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appendableToDisk_ = appendableToDisk_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.description_ = description_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.id_ = id_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.name_ = name_;
-        to_bitField0_ |= 0x00000010;
+        incompatibleLicenses_.makeImmutable();
+        result.incompatibleLicenses_ = incompatibleLicenses_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.selfLink_ = selfLink_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x00000040;
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.transferable_ = transferable_;
+        result.minimumRetention_ =
+            minimumRetentionBuilder_ == null ? minimumRetention_ : minimumRetentionBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.multiTenantOnly_ = multiTenantOnly_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.osLicense_ = osLicense_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.removableFromDisk_ = removableFromDisk_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        requiredCoattachedLicenses_.makeImmutable();
+        result.requiredCoattachedLicenses_ = requiredCoattachedLicenses_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.soleTenantOnly_ = soleTenantOnly_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.state_ = state_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.transferable_ = transferable_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.updateTimestamp_ = updateTimestamp_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1325,29 +2080,52 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.LicenseCode other) {
       if (other == com.google.cloud.compute.v1.LicenseCode.getDefaultInstance()) return this;
+      if (!other.allowedReplacementLicenses_.isEmpty()) {
+        if (allowedReplacementLicenses_.isEmpty()) {
+          allowedReplacementLicenses_ = other.allowedReplacementLicenses_;
+          bitField0_ |= 0x00000001;
+        } else {
+          ensureAllowedReplacementLicensesIsMutable();
+          allowedReplacementLicenses_.addAll(other.allowedReplacementLicenses_);
+        }
+        onChanged();
+      }
+      if (other.hasAppendableToDisk()) {
+        setAppendableToDisk(other.getAppendableToDisk());
+      }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
       }
+      if (!other.incompatibleLicenses_.isEmpty()) {
+        if (incompatibleLicenses_.isEmpty()) {
+          incompatibleLicenses_ = other.incompatibleLicenses_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureIncompatibleLicensesIsMutable();
+          incompatibleLicenses_.addAll(other.incompatibleLicenses_);
+        }
+        onChanged();
+      }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (licenseAliasBuilder_ == null) {
         if (!other.licenseAlias_.isEmpty()) {
           if (licenseAlias_.isEmpty()) {
             licenseAlias_ = other.licenseAlias_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureLicenseAliasIsMutable();
             licenseAlias_.addAll(other.licenseAlias_);
@@ -1360,7 +2138,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
             licenseAliasBuilder_.dispose();
             licenseAliasBuilder_ = null;
             licenseAlias_ = other.licenseAlias_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
             licenseAliasBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetLicenseAliasFieldBuilder()
@@ -1370,23 +2148,53 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasMinimumRetention()) {
+        mergeMinimumRetention(other.getMinimumRetention());
+      }
+      if (other.hasMultiTenantOnly()) {
+        setMultiTenantOnly(other.getMultiTenantOnly());
+      }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (other.hasOsLicense()) {
+        setOsLicense(other.getOsLicense());
+      }
+      if (other.hasRemovableFromDisk()) {
+        setRemovableFromDisk(other.getRemovableFromDisk());
+      }
+      if (!other.requiredCoattachedLicenses_.isEmpty()) {
+        if (requiredCoattachedLicenses_.isEmpty()) {
+          requiredCoattachedLicenses_ = other.requiredCoattachedLicenses_;
+          bitField0_ |= 0x00002000;
+        } else {
+          ensureRequiredCoattachedLicensesIsMutable();
+          requiredCoattachedLicenses_.addAll(other.requiredCoattachedLicenses_);
+        }
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00004000;
         onChanged();
+      }
+      if (other.hasSoleTenantOnly()) {
+        setSoleTenantOnly(other.getSoleTenantOnly());
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasTransferable()) {
         setTransferable(other.getTransferable());
+      }
+      if (other.hasUpdateTimestamp()) {
+        updateTimestamp_ = other.updateTimestamp_;
+        bitField0_ |= 0x00040000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1417,31 +2225,43 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26989658
             case 34799144:
               {
                 transferable_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 34799144
+            case 135674032:
+              {
+                appendableToDisk_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 135674032
+            case 206837104:
+              {
+                removableFromDisk_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 206837104
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 244202930
             case 348407442:
@@ -1461,21 +2281,73 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 878060682
+            case 967158018:
+              {
+                updateTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 967158018
+            case 1033562122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRequiredCoattachedLicensesIsMutable();
+                requiredCoattachedLicenses_.add(s);
+                break;
+              } // case 1033562122
+            case 1243185514:
+              {
+                input.readMessage(
+                    internalGetMinimumRetentionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 1243185514
+            case 1565421746:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAllowedReplacementLicensesIsMutable();
+                allowedReplacementLicenses_.add(s);
+                break;
+              } // case 1565421746
+            case -2099805992:
+              {
+                multiTenantOnly_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -2099805992
+            case -1621049150:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIncompatibleLicensesIsMutable();
+                incompatibleLicenses_.add(s);
+                break;
+              } // case -1621049150
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -911466526
+            case -874762824:
+              {
+                soleTenantOnly_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case -874762824
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -645248918
+            case -391076048:
+              {
+                osLicense_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case -391076048
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1495,6 +2367,275 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
+    private com.google.protobuf.LazyStringArrayList allowedReplacementLicenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAllowedReplacementLicensesIsMutable() {
+      if (!allowedReplacementLicenses_.isModifiable()) {
+        allowedReplacementLicenses_ =
+            new com.google.protobuf.LazyStringArrayList(allowedReplacementLicenses_);
+      }
+      bitField0_ |= 0x00000001;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @return A list containing the allowedReplacementLicenses.
+     */
+    public com.google.protobuf.ProtocolStringList getAllowedReplacementLicensesList() {
+      allowedReplacementLicenses_.makeImmutable();
+      return allowedReplacementLicenses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @return The count of allowedReplacementLicenses.
+     */
+    public int getAllowedReplacementLicensesCount() {
+      return allowedReplacementLicenses_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedReplacementLicenses at the given index.
+     */
+    public java.lang.String getAllowedReplacementLicenses(int index) {
+      return allowedReplacementLicenses_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedReplacementLicenses at the given index.
+     */
+    public com.google.protobuf.ByteString getAllowedReplacementLicensesBytes(int index) {
+      return allowedReplacementLicenses_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowedReplacementLicenses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowedReplacementLicenses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllowedReplacementLicensesIsMutable();
+      allowedReplacementLicenses_.set(index, value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @param value The allowedReplacementLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowedReplacementLicenses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllowedReplacementLicensesIsMutable();
+      allowedReplacementLicenses_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @param values The allowedReplacementLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllowedReplacementLicenses(java.lang.Iterable<java.lang.String> values) {
+      ensureAllowedReplacementLicensesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedReplacementLicenses_);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowedReplacementLicenses() {
+      allowedReplacementLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
+     * </pre>
+     *
+     * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+     *
+     * @param value The bytes of the allowedReplacementLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowedReplacementLicensesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAllowedReplacementLicensesIsMutable();
+      allowedReplacementLicenses_.add(value);
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean appendableToDisk_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
+     * </pre>
+     *
+     * <code>optional bool appendable_to_disk = 16959254;</code>
+     *
+     * @return Whether the appendableToDisk field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppendableToDisk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
+     * </pre>
+     *
+     * <code>optional bool appendable_to_disk = 16959254;</code>
+     *
+     * @return The appendableToDisk.
+     */
+    @java.lang.Override
+    public boolean getAppendableToDisk() {
+      return appendableToDisk_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
+     * </pre>
+     *
+     * <code>optional bool appendable_to_disk = 16959254;</code>
+     *
+     * @param value The appendableToDisk to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppendableToDisk(boolean value) {
+
+      appendableToDisk_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
+     * </pre>
+     *
+     * <code>optional bool appendable_to_disk = 16959254;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppendableToDisk() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      appendableToDisk_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object creationTimestamp_ = "";
 
     /**
@@ -1510,7 +2651,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1579,7 +2720,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1598,7 +2739,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1622,7 +2763,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1641,7 +2782,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1707,7 +2848,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1725,7 +2866,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1748,7 +2889,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1769,7 +2910,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1805,7 +2946,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1823,8 +2964,209 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList incompatibleLicenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureIncompatibleLicensesIsMutable() {
+      if (!incompatibleLicenses_.isModifiable()) {
+        incompatibleLicenses_ = new com.google.protobuf.LazyStringArrayList(incompatibleLicenses_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @return A list containing the incompatibleLicenses.
+     */
+    public com.google.protobuf.ProtocolStringList getIncompatibleLicensesList() {
+      incompatibleLicenses_.makeImmutable();
+      return incompatibleLicenses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @return The count of incompatibleLicenses.
+     */
+    public int getIncompatibleLicensesCount() {
+      return incompatibleLicenses_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The incompatibleLicenses at the given index.
+     */
+    public java.lang.String getIncompatibleLicenses(int index) {
+      return incompatibleLicenses_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the incompatibleLicenses at the given index.
+     */
+    public com.google.protobuf.ByteString getIncompatibleLicensesBytes(int index) {
+      return incompatibleLicenses_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The incompatibleLicenses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncompatibleLicenses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncompatibleLicensesIsMutable();
+      incompatibleLicenses_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @param value The incompatibleLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncompatibleLicenses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncompatibleLicensesIsMutable();
+      incompatibleLicenses_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @param values The incompatibleLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncompatibleLicenses(java.lang.Iterable<java.lang.String> values) {
+      ensureIncompatibleLicensesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, incompatibleLicenses_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncompatibleLicenses() {
+      incompatibleLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
+     * </pre>
+     *
+     * <code>repeated string incompatible_licenses = 334239768;</code>
+     *
+     * @param value The bytes of the incompatibleLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncompatibleLicensesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncompatibleLicensesIsMutable();
+      incompatibleLicenses_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1844,7 +3186,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1913,7 +3255,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1932,7 +3274,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1956,7 +3298,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1965,11 +3307,11 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureLicenseAliasIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         licenseAlias_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.LicenseCodeLicenseAlias>(
                 licenseAlias_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2220,7 +3562,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     public Builder clearLicenseAlias() {
       if (licenseAliasBuilder_ == null) {
         licenseAlias_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         licenseAliasBuilder_.clear();
@@ -2367,10 +3709,286 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.LicenseCodeLicenseAlias,
                 com.google.cloud.compute.v1.LicenseCodeLicenseAlias.Builder,
                 com.google.cloud.compute.v1.LicenseCodeLicenseAliasOrBuilder>(
-                licenseAlias_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                licenseAlias_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         licenseAlias_ = null;
       }
       return licenseAliasBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.Duration minimumRetention_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        minimumRetentionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     *
+     * @return Whether the minimumRetention field is set.
+     */
+    public boolean hasMinimumRetention() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     *
+     * @return The minimumRetention.
+     */
+    public com.google.cloud.compute.v1.Duration getMinimumRetention() {
+      if (minimumRetentionBuilder_ == null) {
+        return minimumRetention_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : minimumRetention_;
+      } else {
+        return minimumRetentionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    public Builder setMinimumRetention(com.google.cloud.compute.v1.Duration value) {
+      if (minimumRetentionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        minimumRetention_ = value;
+      } else {
+        minimumRetentionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    public Builder setMinimumRetention(
+        com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (minimumRetentionBuilder_ == null) {
+        minimumRetention_ = builderForValue.build();
+      } else {
+        minimumRetentionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    public Builder mergeMinimumRetention(com.google.cloud.compute.v1.Duration value) {
+      if (minimumRetentionBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && minimumRetention_ != null
+            && minimumRetention_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          getMinimumRetentionBuilder().mergeFrom(value);
+        } else {
+          minimumRetention_ = value;
+        }
+      } else {
+        minimumRetentionBuilder_.mergeFrom(value);
+      }
+      if (minimumRetention_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    public Builder clearMinimumRetention() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      minimumRetention_ = null;
+      if (minimumRetentionBuilder_ != null) {
+        minimumRetentionBuilder_.dispose();
+        minimumRetentionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getMinimumRetentionBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetMinimumRetentionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getMinimumRetentionOrBuilder() {
+      if (minimumRetentionBuilder_ != null) {
+        return minimumRetentionBuilder_.getMessageOrBuilder();
+      } else {
+        return minimumRetention_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : minimumRetention_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        internalGetMinimumRetentionFieldBuilder() {
+      if (minimumRetentionBuilder_ == null) {
+        minimumRetentionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getMinimumRetention(), getParentForChildren(), isClean());
+        minimumRetention_ = null;
+      }
+      return minimumRetentionBuilder_;
+    }
+
+    private boolean multiTenantOnly_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on multi tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool multi_tenant_only = 274395163;</code>
+     *
+     * @return Whether the multiTenantOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiTenantOnly() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on multi tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool multi_tenant_only = 274395163;</code>
+     *
+     * @return The multiTenantOnly.
+     */
+    @java.lang.Override
+    public boolean getMultiTenantOnly() {
+      return multiTenantOnly_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on multi tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool multi_tenant_only = 274395163;</code>
+     *
+     * @param value The multiTenantOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultiTenantOnly(boolean value) {
+
+      multiTenantOnly_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on multi tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool multi_tenant_only = 274395163;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultiTenantOnly() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      multiTenantOnly_ = false;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object name_ = "";
@@ -2388,7 +4006,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2457,7 +4075,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2476,7 +4094,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2500,7 +4118,361 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private boolean osLicense_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
+     * </pre>
+     *
+     * <code>optional bool os_license = 487986406;</code>
+     *
+     * @return Whether the osLicense field is set.
+     */
+    @java.lang.Override
+    public boolean hasOsLicense() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
+     * </pre>
+     *
+     * <code>optional bool os_license = 487986406;</code>
+     *
+     * @return The osLicense.
+     */
+    @java.lang.Override
+    public boolean getOsLicense() {
+      return osLicense_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
+     * </pre>
+     *
+     * <code>optional bool os_license = 487986406;</code>
+     *
+     * @param value The osLicense to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsLicense(boolean value) {
+
+      osLicense_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
+     * </pre>
+     *
+     * <code>optional bool os_license = 487986406;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOsLicense() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      osLicense_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean removableFromDisk_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
+     * </pre>
+     *
+     * <code>optional bool removable_from_disk = 25854638;</code>
+     *
+     * @return Whether the removableFromDisk field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemovableFromDisk() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
+     * </pre>
+     *
+     * <code>optional bool removable_from_disk = 25854638;</code>
+     *
+     * @return The removableFromDisk.
+     */
+    @java.lang.Override
+    public boolean getRemovableFromDisk() {
+      return removableFromDisk_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
+     * </pre>
+     *
+     * <code>optional bool removable_from_disk = 25854638;</code>
+     *
+     * @param value The removableFromDisk to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRemovableFromDisk(boolean value) {
+
+      removableFromDisk_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
+     * </pre>
+     *
+     * <code>optional bool removable_from_disk = 25854638;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRemovableFromDisk() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      removableFromDisk_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList requiredCoattachedLicenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRequiredCoattachedLicensesIsMutable() {
+      if (!requiredCoattachedLicenses_.isModifiable()) {
+        requiredCoattachedLicenses_ =
+            new com.google.protobuf.LazyStringArrayList(requiredCoattachedLicenses_);
+      }
+      bitField0_ |= 0x00002000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @return A list containing the requiredCoattachedLicenses.
+     */
+    public com.google.protobuf.ProtocolStringList getRequiredCoattachedLicensesList() {
+      requiredCoattachedLicenses_.makeImmutable();
+      return requiredCoattachedLicenses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @return The count of requiredCoattachedLicenses.
+     */
+    public int getRequiredCoattachedLicensesCount() {
+      return requiredCoattachedLicenses_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The requiredCoattachedLicenses at the given index.
+     */
+    public java.lang.String getRequiredCoattachedLicenses(int index) {
+      return requiredCoattachedLicenses_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the requiredCoattachedLicenses at the given index.
+     */
+    public com.google.protobuf.ByteString getRequiredCoattachedLicensesBytes(int index) {
+      return requiredCoattachedLicenses_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The requiredCoattachedLicenses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredCoattachedLicenses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequiredCoattachedLicensesIsMutable();
+      requiredCoattachedLicenses_.set(index, value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @param value The requiredCoattachedLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredCoattachedLicenses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequiredCoattachedLicensesIsMutable();
+      requiredCoattachedLicenses_.add(value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @param values The requiredCoattachedLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequiredCoattachedLicenses(java.lang.Iterable<java.lang.String> values) {
+      ensureRequiredCoattachedLicensesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requiredCoattachedLicenses_);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredCoattachedLicenses() {
+      requiredCoattachedLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
+     * </pre>
+     *
+     * <code>repeated string required_coattached_licenses = 129195265;</code>
+     *
+     * @param value The bytes of the requiredCoattachedLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredCoattachedLicensesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRequiredCoattachedLicensesIsMutable();
+      requiredCoattachedLicenses_.add(value);
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2519,7 +4491,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -2585,7 +4557,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2603,7 +4575,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -2626,7 +4598,79 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private boolean soleTenantOnly_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on sole tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool sole_tenant_only = 427525559;</code>
+     *
+     * @return Whether the soleTenantOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasSoleTenantOnly() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on sole tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool sole_tenant_only = 427525559;</code>
+     *
+     * @return The soleTenantOnly.
+     */
+    @java.lang.Override
+    public boolean getSoleTenantOnly() {
+      return soleTenantOnly_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on sole tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool sole_tenant_only = 427525559;</code>
+     *
+     * @param value The soleTenantOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoleTenantOnly(boolean value) {
+
+      soleTenantOnly_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, this license can only be used on VMs on sole tenant nodes.
+     * </pre>
+     *
+     * <code>optional bool sole_tenant_only = 427525559;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSoleTenantOnly() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      soleTenantOnly_ = false;
       onChanged();
       return this;
     }
@@ -2646,7 +4690,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -2715,7 +4759,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -2734,7 +4778,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -2758,7 +4802,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -2779,7 +4823,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTransferable() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -2815,7 +4859,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
     public Builder setTransferable(boolean value) {
 
       transferable_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -2833,8 +4877,140 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTransferable() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00020000);
       transferable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object updateTimestamp_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Last update timestamp inRFC3339
+     * text format.
+     * </pre>
+     *
+     * <code>optional string update_timestamp = 120894752;</code>
+     *
+     * @return Whether the updateTimestamp field is set.
+     */
+    public boolean hasUpdateTimestamp() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Last update timestamp inRFC3339
+     * text format.
+     * </pre>
+     *
+     * <code>optional string update_timestamp = 120894752;</code>
+     *
+     * @return The updateTimestamp.
+     */
+    public java.lang.String getUpdateTimestamp() {
+      java.lang.Object ref = updateTimestamp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updateTimestamp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Last update timestamp inRFC3339
+     * text format.
+     * </pre>
+     *
+     * <code>optional string update_timestamp = 120894752;</code>
+     *
+     * @return The bytes for updateTimestamp.
+     */
+    public com.google.protobuf.ByteString getUpdateTimestampBytes() {
+      java.lang.Object ref = updateTimestamp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        updateTimestamp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Last update timestamp inRFC3339
+     * text format.
+     * </pre>
+     *
+     * <code>optional string update_timestamp = 120894752;</code>
+     *
+     * @param value The updateTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateTimestamp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      updateTimestamp_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Last update timestamp inRFC3339
+     * text format.
+     * </pre>
+     *
+     * <code>optional string update_timestamp = 120894752;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateTimestamp() {
+      updateTimestamp_ = getDefaultInstance().getUpdateTimestamp();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Last update timestamp inRFC3339
+     * text format.
+     * </pre>
+     *
+     * <code>optional string update_timestamp = 120894752;</code>
+     *
+     * @param value The bytes for updateTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateTimestampBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      updateTimestamp_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

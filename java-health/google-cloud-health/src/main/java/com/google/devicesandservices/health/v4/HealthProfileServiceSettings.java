@@ -16,6 +16,8 @@
 
 package com.google.devicesandservices.health.v4;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.devicesandservices.health.v4.stub.HealthProfileServiceStubSettings;
@@ -109,6 +112,23 @@ public class HealthProfileServiceSettings extends ClientSettings<HealthProfileSe
   /** Returns the object with the settings used for calls to getIdentity. */
   public UnaryCallSettings<GetIdentityRequest, Identity> getIdentitySettings() {
     return ((HealthProfileServiceStubSettings) getStubSettings()).getIdentitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIrnProfile. */
+  public UnaryCallSettings<GetIrnProfileRequest, IrnProfile> getIrnProfileSettings() {
+    return ((HealthProfileServiceStubSettings) getStubSettings()).getIrnProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPairedDevice. */
+  public UnaryCallSettings<GetPairedDeviceRequest, PairedDevice> getPairedDeviceSettings() {
+    return ((HealthProfileServiceStubSettings) getStubSettings()).getPairedDeviceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPairedDevices. */
+  public PagedCallSettings<
+          ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+      listPairedDevicesSettings() {
+    return ((HealthProfileServiceStubSettings) getStubSettings()).listPairedDevicesSettings();
   }
 
   public static final HealthProfileServiceSettings create(HealthProfileServiceStubSettings stub)
@@ -247,6 +267,24 @@ public class HealthProfileServiceSettings extends ClientSettings<HealthProfileSe
     /** Returns the builder for the settings used for calls to getIdentity. */
     public UnaryCallSettings.Builder<GetIdentityRequest, Identity> getIdentitySettings() {
       return getStubSettingsBuilder().getIdentitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIrnProfile. */
+    public UnaryCallSettings.Builder<GetIrnProfileRequest, IrnProfile> getIrnProfileSettings() {
+      return getStubSettingsBuilder().getIrnProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPairedDevice. */
+    public UnaryCallSettings.Builder<GetPairedDeviceRequest, PairedDevice>
+        getPairedDeviceSettings() {
+      return getStubSettingsBuilder().getPairedDeviceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPairedDevices. */
+    public PagedCallSettings.Builder<
+            ListPairedDevicesRequest, ListPairedDevicesResponse, ListPairedDevicesPagedResponse>
+        listPairedDevicesSettings() {
+      return getStubSettingsBuilder().listPairedDevicesSettings();
     }
 
     @Override

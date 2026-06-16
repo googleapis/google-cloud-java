@@ -42,6 +42,7 @@ import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GcpManagedChannel;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
@@ -76,8 +77,6 @@ import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
 import com.google.spanner.v1.TypeCode;
-import io.grpc.CallOptions;
-import io.grpc.ClientCall;
 import io.grpc.Context;
 import io.grpc.Contexts;
 import io.grpc.ManagedChannelBuilder;
@@ -125,8 +124,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
 
 @RunWith(Parameterized.class)
 public class GapicSpannerRpcTest {
@@ -481,7 +478,7 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
-  public void testNewCallContextWithGrpcGcpUsesRawAffinityKeyWithoutDcp() {
+  public void testNewCallContextWithGrpcGcpUsesChannelAffinityRefWithoutDcp() {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("some-project")
@@ -491,8 +488,7 @@ public class GapicSpannerRpcTest {
             .build();
     GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
     Map<SpannerRpc.Option, Object> grpcGcpOptions = new HashMap<>();
-    grpcGcpOptions.put(Option.CHANNEL_HINT, 7L);
-    grpcGcpOptions.put(Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
+    grpcGcpOptions.put(Option.CHANNEL_ID_AFFINITY, new ChannelAffinityRef());
 
     GrpcCallContext callContext =
         rpc.newCallContext(
@@ -501,15 +497,14 @@ public class GapicSpannerRpcTest {
             ExecuteSqlRequest.getDefaultInstance(),
             SpannerGrpc.getExecuteSqlMethod());
 
-    assertEquals("7", callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
-    assertEquals(
-        Boolean.TRUE,
-        callContext.getCallOptions().getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY));
+    assertNull(callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
+    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY))
+        .isNotNull();
     rpc.shutdown();
   }
 
   @Test
-  public void testNewCallContextWithGrpcGcpUsesRawAffinityKeyWithDcp() {
+  public void testNewCallContextWithGrpcGcpUsesChannelIdAffinityWithDcp() {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("some-project")
@@ -518,7 +513,7 @@ public class GapicSpannerRpcTest {
             .build();
     GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
     Map<SpannerRpc.Option, Object> grpcGcpOptions = new HashMap<>();
-    grpcGcpOptions.put(Option.CHANNEL_HINT, 7L);
+    grpcGcpOptions.put(Option.CHANNEL_ID_AFFINITY, new ChannelAffinityRef());
 
     GrpcCallContext callContext =
         rpc.newCallContext(
@@ -527,29 +522,10 @@ public class GapicSpannerRpcTest {
             ExecuteSqlRequest.getDefaultInstance(),
             SpannerGrpc.getExecuteSqlMethod());
 
-    assertEquals("7", callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
+    assertNull(callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
+    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY))
+        .isNotNull();
     rpc.shutdown();
-  }
-
-  @SuppressWarnings("unchecked")
-  @Test
-  public void testClearChannelHintAffinityCancelsSyntheticGrpcGcpCall() {
-    GcpManagedChannel channel = Mockito.mock(GcpManagedChannel.class);
-    ClientCall<ExecuteSqlRequest, com.google.spanner.v1.ResultSet> call =
-        Mockito.mock(ClientCall.class);
-    ArgumentCaptor<CallOptions> callOptionsCaptor = ArgumentCaptor.forClass(CallOptions.class);
-    Mockito.when(
-            channel.newCall(
-                Mockito.eq(SpannerGrpc.getExecuteSqlMethod()), callOptionsCaptor.capture()))
-        .thenReturn(call);
-
-    GrpcGcpAffinityUtil.clearChannelHintAffinity(channel, 7L);
-
-    assertEquals("7", callOptionsCaptor.getValue().getOption(GcpManagedChannel.AFFINITY_KEY));
-    assertEquals(
-        Boolean.TRUE,
-        callOptionsCaptor.getValue().getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY));
-    Mockito.verify(call).cancel("Cloud Spanner transaction closed", null);
   }
 
   @Test

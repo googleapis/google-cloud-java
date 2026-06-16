@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-issue-resolution</artifactId>
-  <version>1.21.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+  <version>1.22.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant Issue Resolution API</name>
   <description>Merchant Issue Resolution API Programatically manage your Merchant Issues</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-issue-resolution-parent</artifactId>
-    <version>1.21.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+    <version>1.22.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-issue-resolution</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-issue-resolution-v1</artifactId>
@@ -49,6 +50,7 @@
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-issue-resolution-v1beta</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -80,11 +82,18 @@
       <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>grpc-google-shopping-merchant-issue-resolution-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.shopping.api.grpc</groupId>
+      <artifactId>grpc-google-shopping-merchant-issue-resolution-v1beta</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
@@ -96,11 +105,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.shopping.api.grpc</groupId>
-      <artifactId>grpc-google-shopping-merchant-issue-resolution-v1beta</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

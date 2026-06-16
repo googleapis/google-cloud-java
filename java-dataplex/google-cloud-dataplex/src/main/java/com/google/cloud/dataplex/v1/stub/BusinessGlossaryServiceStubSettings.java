@@ -177,7 +177,12 @@ public class BusinessGlossaryServiceStubSettings
     extends StubSettings<BusinessGlossaryServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateGlossaryRequest, Operation> createGlossarySettings;
   private final OperationCallSettings<CreateGlossaryRequest, Glossary, OperationMetadata>

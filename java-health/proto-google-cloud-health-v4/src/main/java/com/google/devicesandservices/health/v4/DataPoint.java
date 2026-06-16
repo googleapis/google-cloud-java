@@ -101,8 +101,12 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     ACTIVITY_LEVEL(26),
     VO2_MAX(27),
     DAILY_VO2_MAX(28),
+    NUTRITION_LOG(29),
+    IRREGULAR_RHYTHM_NOTIFICATION(30),
+    ELECTROCARDIOGRAM(31),
     DAILY_HEART_RATE_ZONES(32),
     HYDRATION_LOG(33),
+    FOOD(34),
     TIME_IN_HEART_RATE_ZONE(35),
     ACTIVE_MINUTES(36),
     RESPIRATORY_RATE_SLEEP_SUMMARY(37),
@@ -110,6 +114,10 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     SWIM_LENGTHS_DATA(39),
     HEIGHT(40),
     BASAL_ENERGY_BURNED(41),
+    CORE_BODY_TEMPERATURE(42),
+    ACTIVE_ENERGY_BURNED(44),
+    FOOD_MEASUREMENT_UNIT(45),
+    BLOOD_GLUCOSE(46),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -171,10 +179,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
           return VO2_MAX;
         case 28:
           return DAILY_VO2_MAX;
+        case 29:
+          return NUTRITION_LOG;
+        case 30:
+          return IRREGULAR_RHYTHM_NOTIFICATION;
+        case 31:
+          return ELECTROCARDIOGRAM;
         case 32:
           return DAILY_HEART_RATE_ZONES;
         case 33:
           return HYDRATION_LOG;
+        case 34:
+          return FOOD;
         case 35:
           return TIME_IN_HEART_RATE_ZONE;
         case 36:
@@ -189,6 +205,14 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
           return HEIGHT;
         case 41:
           return BASAL_ENERGY_BURNED;
+        case 42:
+          return CORE_BODY_TEMPERATURE;
+        case 44:
+          return ACTIVE_ENERGY_BURNED;
+        case 45:
+          return FOOD_MEASUREMENT_UNIT;
+        case 46:
+          return BLOOD_GLUCOSE;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -1520,6 +1544,198 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     return com.google.devicesandservices.health.v4.DailyVO2Max.getDefaultInstance();
   }
 
+  public static final int NUTRITION_LOG_FIELD_NUMBER = 29;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `nutrition-log` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nutritionLog field is set.
+   */
+  @java.lang.Override
+  public boolean hasNutritionLog() {
+    return dataCase_ == 29;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `nutrition-log` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nutritionLog.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.NutritionLog getNutritionLog() {
+    if (dataCase_ == 29) {
+      return (com.google.devicesandservices.health.v4.NutritionLog) data_;
+    }
+    return com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `nutrition-log` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.NutritionLogOrBuilder getNutritionLogOrBuilder() {
+    if (dataCase_ == 29) {
+      return (com.google.devicesandservices.health.v4.NutritionLog) data_;
+    }
+    return com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance();
+  }
+
+  public static final int IRREGULAR_RHYTHM_NOTIFICATION_FIELD_NUMBER = 30;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `irregular-rhythm-notification` session
+   * data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the irregularRhythmNotification field is set.
+   */
+  @java.lang.Override
+  public boolean hasIrregularRhythmNotification() {
+    return dataCase_ == 30;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `irregular-rhythm-notification` session
+   * data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The irregularRhythmNotification.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.IrregularRhythmNotification
+      getIrregularRhythmNotification() {
+    if (dataCase_ == 30) {
+      return (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_;
+    }
+    return com.google.devicesandservices.health.v4.IrregularRhythmNotification.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `irregular-rhythm-notification` session
+   * data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.IrregularRhythmNotificationOrBuilder
+      getIrregularRhythmNotificationOrBuilder() {
+    if (dataCase_ == 30) {
+      return (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_;
+    }
+    return com.google.devicesandservices.health.v4.IrregularRhythmNotification.getDefaultInstance();
+  }
+
+  public static final int ELECTROCARDIOGRAM_FIELD_NUMBER = 31;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `electrocardiogram` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the electrocardiogram field is set.
+   */
+  @java.lang.Override
+  public boolean hasElectrocardiogram() {
+    return dataCase_ == 31;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `electrocardiogram` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The electrocardiogram.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.Electrocardiogram getElectrocardiogram() {
+    if (dataCase_ == 31) {
+      return (com.google.devicesandservices.health.v4.Electrocardiogram) data_;
+    }
+    return com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `electrocardiogram` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.ElectrocardiogramOrBuilder
+      getElectrocardiogramOrBuilder() {
+    if (dataCase_ == 31) {
+      return (com.google.devicesandservices.health.v4.Electrocardiogram) data_;
+    }
+    return com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance();
+  }
+
   public static final int DAILY_HEART_RATE_ZONES_FIELD_NUMBER = 32;
 
   /**
@@ -1645,6 +1861,66 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       return (com.google.devicesandservices.health.v4.HydrationLog) data_;
     }
     return com.google.devicesandservices.health.v4.HydrationLog.getDefaultInstance();
+  }
+
+  public static final int FOOD_FIELD_NUMBER = 34;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the food field is set.
+   */
+  @java.lang.Override
+  public boolean hasFood() {
+    return dataCase_ == 34;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The food.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.Food getFood() {
+    if (dataCase_ == 34) {
+      return (com.google.devicesandservices.health.v4.Food) data_;
+    }
+    return com.google.devicesandservices.health.v4.Food.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.FoodOrBuilder getFoodOrBuilder() {
+    if (dataCase_ == 34) {
+      return (com.google.devicesandservices.health.v4.Food) data_;
+    }
+    return com.google.devicesandservices.health.v4.Food.getDefaultInstance();
   }
 
   public static final int TIME_IN_HEART_RATE_ZONE_FIELD_NUMBER = 35;
@@ -2092,6 +2368,258 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     return com.google.devicesandservices.health.v4.BasalEnergyBurned.getDefaultInstance();
   }
 
+  public static final int CORE_BODY_TEMPERATURE_FIELD_NUMBER = 42;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the coreBodyTemperature field is set.
+   */
+  @java.lang.Override
+  public boolean hasCoreBodyTemperature() {
+    return dataCase_ == 42;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The coreBodyTemperature.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.CoreBodyTemperature getCoreBodyTemperature() {
+    if (dataCase_ == 42) {
+      return (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_;
+    }
+    return com.google.devicesandservices.health.v4.CoreBodyTemperature.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder
+      getCoreBodyTemperatureOrBuilder() {
+    if (dataCase_ == 42) {
+      return (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_;
+    }
+    return com.google.devicesandservices.health.v4.CoreBodyTemperature.getDefaultInstance();
+  }
+
+  public static final int ACTIVE_ENERGY_BURNED_FIELD_NUMBER = 44;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `active-energy-burned` interval data
+   * type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the activeEnergyBurned field is set.
+   */
+  @java.lang.Override
+  public boolean hasActiveEnergyBurned() {
+    return dataCase_ == 44;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `active-energy-burned` interval data
+   * type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The activeEnergyBurned.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.ActiveEnergyBurned getActiveEnergyBurned() {
+    if (dataCase_ == 44) {
+      return (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_;
+    }
+    return com.google.devicesandservices.health.v4.ActiveEnergyBurned.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `active-energy-burned` interval data
+   * type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder
+      getActiveEnergyBurnedOrBuilder() {
+    if (dataCase_ == 44) {
+      return (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_;
+    }
+    return com.google.devicesandservices.health.v4.ActiveEnergyBurned.getDefaultInstance();
+  }
+
+  public static final int FOOD_MEASUREMENT_UNIT_FIELD_NUMBER = 45;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food measurement unit details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the foodMeasurementUnit field is set.
+   */
+  @java.lang.Override
+  public boolean hasFoodMeasurementUnit() {
+    return dataCase_ == 45;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food measurement unit details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The foodMeasurementUnit.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.FoodMeasurementUnit getFoodMeasurementUnit() {
+    if (dataCase_ == 45) {
+      return (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_;
+    }
+    return com.google.devicesandservices.health.v4.FoodMeasurementUnit.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food measurement unit details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.FoodMeasurementUnitOrBuilder
+      getFoodMeasurementUnitOrBuilder() {
+    if (dataCase_ == 45) {
+      return (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_;
+    }
+    return com.google.devicesandservices.health.v4.FoodMeasurementUnit.getDefaultInstance();
+  }
+
+  public static final int BLOOD_GLUCOSE_FIELD_NUMBER = 46;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `blood-glucose` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bloodGlucose field is set.
+   */
+  @java.lang.Override
+  public boolean hasBloodGlucose() {
+    return dataCase_ == 46;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `blood-glucose` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bloodGlucose.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.BloodGlucose getBloodGlucose() {
+    if (dataCase_ == 46) {
+      return (com.google.devicesandservices.health.v4.BloodGlucose) data_;
+    }
+    return com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `blood-glucose` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder getBloodGlucoseOrBuilder() {
+    if (dataCase_ == 46) {
+      return (com.google.devicesandservices.health.v4.BloodGlucose) data_;
+    }
+    return com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -2328,11 +2856,24 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 28) {
       output.writeMessage(28, (com.google.devicesandservices.health.v4.DailyVO2Max) data_);
     }
+    if (dataCase_ == 29) {
+      output.writeMessage(29, (com.google.devicesandservices.health.v4.NutritionLog) data_);
+    }
+    if (dataCase_ == 30) {
+      output.writeMessage(
+          30, (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_);
+    }
+    if (dataCase_ == 31) {
+      output.writeMessage(31, (com.google.devicesandservices.health.v4.Electrocardiogram) data_);
+    }
     if (dataCase_ == 32) {
       output.writeMessage(32, (com.google.devicesandservices.health.v4.DailyHeartRateZones) data_);
     }
     if (dataCase_ == 33) {
       output.writeMessage(33, (com.google.devicesandservices.health.v4.HydrationLog) data_);
+    }
+    if (dataCase_ == 34) {
+      output.writeMessage(34, (com.google.devicesandservices.health.v4.Food) data_);
     }
     if (dataCase_ == 35) {
       output.writeMessage(35, (com.google.devicesandservices.health.v4.TimeInHeartRateZone) data_);
@@ -2355,6 +2896,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     }
     if (dataCase_ == 41) {
       output.writeMessage(41, (com.google.devicesandservices.health.v4.BasalEnergyBurned) data_);
+    }
+    if (dataCase_ == 42) {
+      output.writeMessage(42, (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_);
+    }
+    if (dataCase_ == 44) {
+      output.writeMessage(44, (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_);
+    }
+    if (dataCase_ == 45) {
+      output.writeMessage(45, (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_);
+    }
+    if (dataCase_ == 46) {
+      output.writeMessage(46, (com.google.devicesandservices.health.v4.BloodGlucose) data_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2476,6 +3029,21 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.devicesandservices.health.v4.DailyVO2Max) data_);
     }
+    if (dataCase_ == 29) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, (com.google.devicesandservices.health.v4.NutritionLog) data_);
+    }
+    if (dataCase_ == 30) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_);
+    }
+    if (dataCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, (com.google.devicesandservices.health.v4.Electrocardiogram) data_);
+    }
     if (dataCase_ == 32) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2485,6 +3053,11 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               33, (com.google.devicesandservices.health.v4.HydrationLog) data_);
+    }
+    if (dataCase_ == 34) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              34, (com.google.devicesandservices.health.v4.Food) data_);
     }
     if (dataCase_ == 35) {
       size +=
@@ -2520,6 +3093,26 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               41, (com.google.devicesandservices.health.v4.BasalEnergyBurned) data_);
+    }
+    if (dataCase_ == 42) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              42, (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_);
+    }
+    if (dataCase_ == 44) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              44, (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_);
+    }
+    if (dataCase_ == 45) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              45, (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_);
+    }
+    if (dataCase_ == 46) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              46, (com.google.devicesandservices.health.v4.BloodGlucose) data_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2609,11 +3202,24 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       case 28:
         if (!getDailyVo2Max().equals(other.getDailyVo2Max())) return false;
         break;
+      case 29:
+        if (!getNutritionLog().equals(other.getNutritionLog())) return false;
+        break;
+      case 30:
+        if (!getIrregularRhythmNotification().equals(other.getIrregularRhythmNotification()))
+          return false;
+        break;
+      case 31:
+        if (!getElectrocardiogram().equals(other.getElectrocardiogram())) return false;
+        break;
       case 32:
         if (!getDailyHeartRateZones().equals(other.getDailyHeartRateZones())) return false;
         break;
       case 33:
         if (!getHydrationLog().equals(other.getHydrationLog())) return false;
+        break;
+      case 34:
+        if (!getFood().equals(other.getFood())) return false;
         break;
       case 35:
         if (!getTimeInHeartRateZone().equals(other.getTimeInHeartRateZone())) return false;
@@ -2636,6 +3242,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         break;
       case 41:
         if (!getBasalEnergyBurned().equals(other.getBasalEnergyBurned())) return false;
+        break;
+      case 42:
+        if (!getCoreBodyTemperature().equals(other.getCoreBodyTemperature())) return false;
+        break;
+      case 44:
+        if (!getActiveEnergyBurned().equals(other.getActiveEnergyBurned())) return false;
+        break;
+      case 45:
+        if (!getFoodMeasurementUnit().equals(other.getFoodMeasurementUnit())) return false;
+        break;
+      case 46:
+        if (!getBloodGlucose().equals(other.getBloodGlucose())) return false;
         break;
       case 0:
       default:
@@ -2742,6 +3360,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + DAILY_VO2_MAX_FIELD_NUMBER;
         hash = (53 * hash) + getDailyVo2Max().hashCode();
         break;
+      case 29:
+        hash = (37 * hash) + NUTRITION_LOG_FIELD_NUMBER;
+        hash = (53 * hash) + getNutritionLog().hashCode();
+        break;
+      case 30:
+        hash = (37 * hash) + IRREGULAR_RHYTHM_NOTIFICATION_FIELD_NUMBER;
+        hash = (53 * hash) + getIrregularRhythmNotification().hashCode();
+        break;
+      case 31:
+        hash = (37 * hash) + ELECTROCARDIOGRAM_FIELD_NUMBER;
+        hash = (53 * hash) + getElectrocardiogram().hashCode();
+        break;
       case 32:
         hash = (37 * hash) + DAILY_HEART_RATE_ZONES_FIELD_NUMBER;
         hash = (53 * hash) + getDailyHeartRateZones().hashCode();
@@ -2749,6 +3379,10 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       case 33:
         hash = (37 * hash) + HYDRATION_LOG_FIELD_NUMBER;
         hash = (53 * hash) + getHydrationLog().hashCode();
+        break;
+      case 34:
+        hash = (37 * hash) + FOOD_FIELD_NUMBER;
+        hash = (53 * hash) + getFood().hashCode();
         break;
       case 35:
         hash = (37 * hash) + TIME_IN_HEART_RATE_ZONE_FIELD_NUMBER;
@@ -2777,6 +3411,22 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       case 41:
         hash = (37 * hash) + BASAL_ENERGY_BURNED_FIELD_NUMBER;
         hash = (53 * hash) + getBasalEnergyBurned().hashCode();
+        break;
+      case 42:
+        hash = (37 * hash) + CORE_BODY_TEMPERATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getCoreBodyTemperature().hashCode();
+        break;
+      case 44:
+        hash = (37 * hash) + ACTIVE_ENERGY_BURNED_FIELD_NUMBER;
+        hash = (53 * hash) + getActiveEnergyBurned().hashCode();
+        break;
+      case 45:
+        hash = (37 * hash) + FOOD_MEASUREMENT_UNIT_FIELD_NUMBER;
+        hash = (53 * hash) + getFoodMeasurementUnit().hashCode();
+        break;
+      case 46:
+        hash = (37 * hash) + BLOOD_GLUCOSE_FIELD_NUMBER;
+        hash = (53 * hash) + getBloodGlucose().hashCode();
         break;
       case 0:
       default:
@@ -2930,6 +3580,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       if (stepsBuilder_ != null) {
         stepsBuilder_.clear();
       }
@@ -2993,11 +3644,23 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       if (dailyVo2MaxBuilder_ != null) {
         dailyVo2MaxBuilder_.clear();
       }
+      if (nutritionLogBuilder_ != null) {
+        nutritionLogBuilder_.clear();
+      }
+      if (irregularRhythmNotificationBuilder_ != null) {
+        irregularRhythmNotificationBuilder_.clear();
+      }
+      if (electrocardiogramBuilder_ != null) {
+        electrocardiogramBuilder_.clear();
+      }
       if (dailyHeartRateZonesBuilder_ != null) {
         dailyHeartRateZonesBuilder_.clear();
       }
       if (hydrationLogBuilder_ != null) {
         hydrationLogBuilder_.clear();
+      }
+      if (foodBuilder_ != null) {
+        foodBuilder_.clear();
       }
       if (timeInHeartRateZoneBuilder_ != null) {
         timeInHeartRateZoneBuilder_.clear();
@@ -3019,6 +3682,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       }
       if (basalEnergyBurnedBuilder_ != null) {
         basalEnergyBurnedBuilder_.clear();
+      }
+      if (coreBodyTemperatureBuilder_ != null) {
+        coreBodyTemperatureBuilder_.clear();
+      }
+      if (activeEnergyBurnedBuilder_ != null) {
+        activeEnergyBurnedBuilder_.clear();
+      }
+      if (foodMeasurementUnitBuilder_ != null) {
+        foodMeasurementUnitBuilder_.clear();
+      }
+      if (bloodGlucoseBuilder_ != null) {
+        bloodGlucoseBuilder_.clear();
       }
       name_ = "";
       dataSource_ = null;
@@ -3058,6 +3733,9 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       buildPartialOneofs(result);
       onBuilt();
       return result;
@@ -3065,11 +3743,15 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.devicesandservices.health.v4.DataPoint result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+    }
+
+    private void buildPartial1(com.google.devicesandservices.health.v4.DataPoint result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000040) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x80000000) != 0)) {
+      if (((from_bitField1_ & 0x00000080) != 0)) {
         result.dataSource_ = dataSourceBuilder_ == null ? dataSource_ : dataSourceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -3142,11 +3824,23 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       if (dataCase_ == 28 && dailyVo2MaxBuilder_ != null) {
         result.data_ = dailyVo2MaxBuilder_.build();
       }
+      if (dataCase_ == 29 && nutritionLogBuilder_ != null) {
+        result.data_ = nutritionLogBuilder_.build();
+      }
+      if (dataCase_ == 30 && irregularRhythmNotificationBuilder_ != null) {
+        result.data_ = irregularRhythmNotificationBuilder_.build();
+      }
+      if (dataCase_ == 31 && electrocardiogramBuilder_ != null) {
+        result.data_ = electrocardiogramBuilder_.build();
+      }
       if (dataCase_ == 32 && dailyHeartRateZonesBuilder_ != null) {
         result.data_ = dailyHeartRateZonesBuilder_.build();
       }
       if (dataCase_ == 33 && hydrationLogBuilder_ != null) {
         result.data_ = hydrationLogBuilder_.build();
+      }
+      if (dataCase_ == 34 && foodBuilder_ != null) {
+        result.data_ = foodBuilder_.build();
       }
       if (dataCase_ == 35 && timeInHeartRateZoneBuilder_ != null) {
         result.data_ = timeInHeartRateZoneBuilder_.build();
@@ -3169,6 +3863,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       if (dataCase_ == 41 && basalEnergyBurnedBuilder_ != null) {
         result.data_ = basalEnergyBurnedBuilder_.build();
       }
+      if (dataCase_ == 42 && coreBodyTemperatureBuilder_ != null) {
+        result.data_ = coreBodyTemperatureBuilder_.build();
+      }
+      if (dataCase_ == 44 && activeEnergyBurnedBuilder_ != null) {
+        result.data_ = activeEnergyBurnedBuilder_.build();
+      }
+      if (dataCase_ == 45 && foodMeasurementUnitBuilder_ != null) {
+        result.data_ = foodMeasurementUnitBuilder_.build();
+      }
+      if (dataCase_ == 46 && bloodGlucoseBuilder_ != null) {
+        result.data_ = bloodGlucoseBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3186,7 +3892,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       if (other.hasDataSource()) {
@@ -3298,6 +4004,21 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
             mergeDailyVo2Max(other.getDailyVo2Max());
             break;
           }
+        case NUTRITION_LOG:
+          {
+            mergeNutritionLog(other.getNutritionLog());
+            break;
+          }
+        case IRREGULAR_RHYTHM_NOTIFICATION:
+          {
+            mergeIrregularRhythmNotification(other.getIrregularRhythmNotification());
+            break;
+          }
+        case ELECTROCARDIOGRAM:
+          {
+            mergeElectrocardiogram(other.getElectrocardiogram());
+            break;
+          }
         case DAILY_HEART_RATE_ZONES:
           {
             mergeDailyHeartRateZones(other.getDailyHeartRateZones());
@@ -3306,6 +4027,11 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         case HYDRATION_LOG:
           {
             mergeHydrationLog(other.getHydrationLog());
+            break;
+          }
+        case FOOD:
+          {
+            mergeFood(other.getFood());
             break;
           }
         case TIME_IN_HEART_RATE_ZONE:
@@ -3343,6 +4069,26 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
             mergeBasalEnergyBurned(other.getBasalEnergyBurned());
             break;
           }
+        case CORE_BODY_TEMPERATURE:
+          {
+            mergeCoreBodyTemperature(other.getCoreBodyTemperature());
+            break;
+          }
+        case ACTIVE_ENERGY_BURNED:
+          {
+            mergeActiveEnergyBurned(other.getActiveEnergyBurned());
+            break;
+          }
+        case FOOD_MEASUREMENT_UNIT:
+          {
+            mergeFoodMeasurementUnit(other.getFoodMeasurementUnit());
+            break;
+          }
+        case BLOOD_GLUCOSE:
+          {
+            mergeBloodGlucose(other.getBloodGlucose());
+            break;
+          }
         case DATA_NOT_SET:
           {
             break;
@@ -3377,14 +4123,14 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(
                     internalGetDataSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
@@ -3530,6 +4276,28 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 28;
                 break;
               } // case 226
+            case 234:
+              {
+                input.readMessage(
+                    internalGetNutritionLogFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 29;
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    internalGetIrregularRhythmNotificationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 30;
+                break;
+              } // case 242
+            case 250:
+              {
+                input.readMessage(
+                    internalGetElectrocardiogramFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 31;
+                break;
+              } // case 250
             case 258:
               {
                 input.readMessage(
@@ -3544,6 +4312,12 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 33;
                 break;
               } // case 266
+            case 274:
+              {
+                input.readMessage(internalGetFoodFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 34;
+                break;
+              } // case 274
             case 282:
               {
                 input.readMessage(
@@ -3593,6 +4367,34 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 41;
                 break;
               } // case 330
+            case 338:
+              {
+                input.readMessage(
+                    internalGetCoreBodyTemperatureFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 42;
+                break;
+              } // case 338
+            case 354:
+              {
+                input.readMessage(
+                    internalGetActiveEnergyBurnedFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 44;
+                break;
+              } // case 354
+            case 362:
+              {
+                input.readMessage(
+                    internalGetFoodMeasurementUnitFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 45;
+                break;
+              } // case 362
+            case 370:
+              {
+                input.readMessage(
+                    internalGetBloodGlucoseFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 46;
+                break;
+              } // case 370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3625,6 +4427,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4.Steps,
@@ -8772,6 +9575,760 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.NutritionLog,
+            com.google.devicesandservices.health.v4.NutritionLog.Builder,
+            com.google.devicesandservices.health.v4.NutritionLogOrBuilder>
+        nutritionLogBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nutritionLog field is set.
+     */
+    @java.lang.Override
+    public boolean hasNutritionLog() {
+      return dataCase_ == 29;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nutritionLog.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.NutritionLog getNutritionLog() {
+      if (nutritionLogBuilder_ == null) {
+        if (dataCase_ == 29) {
+          return (com.google.devicesandservices.health.v4.NutritionLog) data_;
+        }
+        return com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance();
+      } else {
+        if (dataCase_ == 29) {
+          return nutritionLogBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNutritionLog(com.google.devicesandservices.health.v4.NutritionLog value) {
+      if (nutritionLogBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        nutritionLogBuilder_.setMessage(value);
+      }
+      dataCase_ = 29;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNutritionLog(
+        com.google.devicesandservices.health.v4.NutritionLog.Builder builderForValue) {
+      if (nutritionLogBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        nutritionLogBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 29;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNutritionLog(com.google.devicesandservices.health.v4.NutritionLog value) {
+      if (nutritionLogBuilder_ == null) {
+        if (dataCase_ == 29
+            && data_ != com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.NutritionLog.newBuilder(
+                      (com.google.devicesandservices.health.v4.NutritionLog) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 29) {
+          nutritionLogBuilder_.mergeFrom(value);
+        } else {
+          nutritionLogBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 29;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNutritionLog() {
+      if (nutritionLogBuilder_ == null) {
+        if (dataCase_ == 29) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 29) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        nutritionLogBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.NutritionLog.Builder getNutritionLogBuilder() {
+      return internalGetNutritionLogFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.NutritionLogOrBuilder
+        getNutritionLogOrBuilder() {
+      if ((dataCase_ == 29) && (nutritionLogBuilder_ != null)) {
+        return nutritionLogBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 29) {
+          return (com.google.devicesandservices.health.v4.NutritionLog) data_;
+        }
+        return com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `nutrition-log` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.NutritionLog,
+            com.google.devicesandservices.health.v4.NutritionLog.Builder,
+            com.google.devicesandservices.health.v4.NutritionLogOrBuilder>
+        internalGetNutritionLogFieldBuilder() {
+      if (nutritionLogBuilder_ == null) {
+        if (!(dataCase_ == 29)) {
+          data_ = com.google.devicesandservices.health.v4.NutritionLog.getDefaultInstance();
+        }
+        nutritionLogBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.NutritionLog,
+                com.google.devicesandservices.health.v4.NutritionLog.Builder,
+                com.google.devicesandservices.health.v4.NutritionLogOrBuilder>(
+                (com.google.devicesandservices.health.v4.NutritionLog) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 29;
+      onChanged();
+      return nutritionLogBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.IrregularRhythmNotification,
+            com.google.devicesandservices.health.v4.IrregularRhythmNotification.Builder,
+            com.google.devicesandservices.health.v4.IrregularRhythmNotificationOrBuilder>
+        irregularRhythmNotificationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the irregularRhythmNotification field is set.
+     */
+    @java.lang.Override
+    public boolean hasIrregularRhythmNotification() {
+      return dataCase_ == 30;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The irregularRhythmNotification.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.IrregularRhythmNotification
+        getIrregularRhythmNotification() {
+      if (irregularRhythmNotificationBuilder_ == null) {
+        if (dataCase_ == 30) {
+          return (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_;
+        }
+        return com.google.devicesandservices.health.v4.IrregularRhythmNotification
+            .getDefaultInstance();
+      } else {
+        if (dataCase_ == 30) {
+          return irregularRhythmNotificationBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.IrregularRhythmNotification
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIrregularRhythmNotification(
+        com.google.devicesandservices.health.v4.IrregularRhythmNotification value) {
+      if (irregularRhythmNotificationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        irregularRhythmNotificationBuilder_.setMessage(value);
+      }
+      dataCase_ = 30;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIrregularRhythmNotification(
+        com.google.devicesandservices.health.v4.IrregularRhythmNotification.Builder
+            builderForValue) {
+      if (irregularRhythmNotificationBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        irregularRhythmNotificationBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 30;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIrregularRhythmNotification(
+        com.google.devicesandservices.health.v4.IrregularRhythmNotification value) {
+      if (irregularRhythmNotificationBuilder_ == null) {
+        if (dataCase_ == 30
+            && data_
+                != com.google.devicesandservices.health.v4.IrregularRhythmNotification
+                    .getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.IrregularRhythmNotification.newBuilder(
+                      (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 30) {
+          irregularRhythmNotificationBuilder_.mergeFrom(value);
+        } else {
+          irregularRhythmNotificationBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 30;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIrregularRhythmNotification() {
+      if (irregularRhythmNotificationBuilder_ == null) {
+        if (dataCase_ == 30) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 30) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        irregularRhythmNotificationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.IrregularRhythmNotification.Builder
+        getIrregularRhythmNotificationBuilder() {
+      return internalGetIrregularRhythmNotificationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.IrregularRhythmNotificationOrBuilder
+        getIrregularRhythmNotificationOrBuilder() {
+      if ((dataCase_ == 30) && (irregularRhythmNotificationBuilder_ != null)) {
+        return irregularRhythmNotificationBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 30) {
+          return (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_;
+        }
+        return com.google.devicesandservices.health.v4.IrregularRhythmNotification
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `irregular-rhythm-notification` session
+     * data type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.IrregularRhythmNotification,
+            com.google.devicesandservices.health.v4.IrregularRhythmNotification.Builder,
+            com.google.devicesandservices.health.v4.IrregularRhythmNotificationOrBuilder>
+        internalGetIrregularRhythmNotificationFieldBuilder() {
+      if (irregularRhythmNotificationBuilder_ == null) {
+        if (!(dataCase_ == 30)) {
+          data_ =
+              com.google.devicesandservices.health.v4.IrregularRhythmNotification
+                  .getDefaultInstance();
+        }
+        irregularRhythmNotificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.IrregularRhythmNotification,
+                com.google.devicesandservices.health.v4.IrregularRhythmNotification.Builder,
+                com.google.devicesandservices.health.v4.IrregularRhythmNotificationOrBuilder>(
+                (com.google.devicesandservices.health.v4.IrregularRhythmNotification) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 30;
+      onChanged();
+      return irregularRhythmNotificationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.Electrocardiogram,
+            com.google.devicesandservices.health.v4.Electrocardiogram.Builder,
+            com.google.devicesandservices.health.v4.ElectrocardiogramOrBuilder>
+        electrocardiogramBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the electrocardiogram field is set.
+     */
+    @java.lang.Override
+    public boolean hasElectrocardiogram() {
+      return dataCase_ == 31;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The electrocardiogram.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.Electrocardiogram getElectrocardiogram() {
+      if (electrocardiogramBuilder_ == null) {
+        if (dataCase_ == 31) {
+          return (com.google.devicesandservices.health.v4.Electrocardiogram) data_;
+        }
+        return com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance();
+      } else {
+        if (dataCase_ == 31) {
+          return electrocardiogramBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setElectrocardiogram(
+        com.google.devicesandservices.health.v4.Electrocardiogram value) {
+      if (electrocardiogramBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        electrocardiogramBuilder_.setMessage(value);
+      }
+      dataCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setElectrocardiogram(
+        com.google.devicesandservices.health.v4.Electrocardiogram.Builder builderForValue) {
+      if (electrocardiogramBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        electrocardiogramBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeElectrocardiogram(
+        com.google.devicesandservices.health.v4.Electrocardiogram value) {
+      if (electrocardiogramBuilder_ == null) {
+        if (dataCase_ == 31
+            && data_
+                != com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.Electrocardiogram.newBuilder(
+                      (com.google.devicesandservices.health.v4.Electrocardiogram) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 31) {
+          electrocardiogramBuilder_.mergeFrom(value);
+        } else {
+          electrocardiogramBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearElectrocardiogram() {
+      if (electrocardiogramBuilder_ == null) {
+        if (dataCase_ == 31) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 31) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        electrocardiogramBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Electrocardiogram.Builder
+        getElectrocardiogramBuilder() {
+      return internalGetElectrocardiogramFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.ElectrocardiogramOrBuilder
+        getElectrocardiogramOrBuilder() {
+      if ((dataCase_ == 31) && (electrocardiogramBuilder_ != null)) {
+        return electrocardiogramBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 31) {
+          return (com.google.devicesandservices.health.v4.Electrocardiogram) data_;
+        }
+        return com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `electrocardiogram` session data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.Electrocardiogram,
+            com.google.devicesandservices.health.v4.Electrocardiogram.Builder,
+            com.google.devicesandservices.health.v4.ElectrocardiogramOrBuilder>
+        internalGetElectrocardiogramFieldBuilder() {
+      if (electrocardiogramBuilder_ == null) {
+        if (!(dataCase_ == 31)) {
+          data_ = com.google.devicesandservices.health.v4.Electrocardiogram.getDefaultInstance();
+        }
+        electrocardiogramBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.Electrocardiogram,
+                com.google.devicesandservices.health.v4.Electrocardiogram.Builder,
+                com.google.devicesandservices.health.v4.ElectrocardiogramOrBuilder>(
+                (com.google.devicesandservices.health.v4.Electrocardiogram) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 31;
+      onChanged();
+      return electrocardiogramBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4.DailyHeartRateZones,
             com.google.devicesandservices.health.v4.DailyHeartRateZones.Builder,
             com.google.devicesandservices.health.v4.DailyHeartRateZonesOrBuilder>
@@ -9266,6 +10823,241 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       dataCase_ = 33;
       onChanged();
       return hydrationLogBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.Food,
+            com.google.devicesandservices.health.v4.Food.Builder,
+            com.google.devicesandservices.health.v4.FoodOrBuilder>
+        foodBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the food field is set.
+     */
+    @java.lang.Override
+    public boolean hasFood() {
+      return dataCase_ == 34;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The food.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.Food getFood() {
+      if (foodBuilder_ == null) {
+        if (dataCase_ == 34) {
+          return (com.google.devicesandservices.health.v4.Food) data_;
+        }
+        return com.google.devicesandservices.health.v4.Food.getDefaultInstance();
+      } else {
+        if (dataCase_ == 34) {
+          return foodBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.Food.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFood(com.google.devicesandservices.health.v4.Food value) {
+      if (foodBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        foodBuilder_.setMessage(value);
+      }
+      dataCase_ = 34;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFood(com.google.devicesandservices.health.v4.Food.Builder builderForValue) {
+      if (foodBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        foodBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 34;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFood(com.google.devicesandservices.health.v4.Food value) {
+      if (foodBuilder_ == null) {
+        if (dataCase_ == 34
+            && data_ != com.google.devicesandservices.health.v4.Food.getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.Food.newBuilder(
+                      (com.google.devicesandservices.health.v4.Food) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 34) {
+          foodBuilder_.mergeFrom(value);
+        } else {
+          foodBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 34;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFood() {
+      if (foodBuilder_ == null) {
+        if (dataCase_ == 34) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 34) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        foodBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Food.Builder getFoodBuilder() {
+      return internalGetFoodFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.FoodOrBuilder getFoodOrBuilder() {
+      if ((dataCase_ == 34) && (foodBuilder_ != null)) {
+        return foodBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 34) {
+          return (com.google.devicesandservices.health.v4.Food) data_;
+        }
+        return com.google.devicesandservices.health.v4.Food.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.Food,
+            com.google.devicesandservices.health.v4.Food.Builder,
+            com.google.devicesandservices.health.v4.FoodOrBuilder>
+        internalGetFoodFieldBuilder() {
+      if (foodBuilder_ == null) {
+        if (!(dataCase_ == 34)) {
+          data_ = com.google.devicesandservices.health.v4.Food.getDefaultInstance();
+        }
+        foodBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.Food,
+                com.google.devicesandservices.health.v4.Food.Builder,
+                com.google.devicesandservices.health.v4.FoodOrBuilder>(
+                (com.google.devicesandservices.health.v4.Food) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 34;
+      onChanged();
+      return foodBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<
@@ -11011,6 +12803,996 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       return basalEnergyBurnedBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.CoreBodyTemperature,
+            com.google.devicesandservices.health.v4.CoreBodyTemperature.Builder,
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder>
+        coreBodyTemperatureBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the coreBodyTemperature field is set.
+     */
+    @java.lang.Override
+    public boolean hasCoreBodyTemperature() {
+      return dataCase_ == 42;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The coreBodyTemperature.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.CoreBodyTemperature getCoreBodyTemperature() {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (dataCase_ == 42) {
+          return (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_;
+        }
+        return com.google.devicesandservices.health.v4.CoreBodyTemperature.getDefaultInstance();
+      } else {
+        if (dataCase_ == 42) {
+          return coreBodyTemperatureBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.CoreBodyTemperature.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCoreBodyTemperature(
+        com.google.devicesandservices.health.v4.CoreBodyTemperature value) {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        coreBodyTemperatureBuilder_.setMessage(value);
+      }
+      dataCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCoreBodyTemperature(
+        com.google.devicesandservices.health.v4.CoreBodyTemperature.Builder builderForValue) {
+      if (coreBodyTemperatureBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        coreBodyTemperatureBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCoreBodyTemperature(
+        com.google.devicesandservices.health.v4.CoreBodyTemperature value) {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (dataCase_ == 42
+            && data_
+                != com.google.devicesandservices.health.v4.CoreBodyTemperature
+                    .getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.CoreBodyTemperature.newBuilder(
+                      (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 42) {
+          coreBodyTemperatureBuilder_.mergeFrom(value);
+        } else {
+          coreBodyTemperatureBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCoreBodyTemperature() {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (dataCase_ == 42) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 42) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        coreBodyTemperatureBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.CoreBodyTemperature.Builder
+        getCoreBodyTemperatureBuilder() {
+      return internalGetCoreBodyTemperatureFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder
+        getCoreBodyTemperatureOrBuilder() {
+      if ((dataCase_ == 42) && (coreBodyTemperatureBuilder_ != null)) {
+        return coreBodyTemperatureBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 42) {
+          return (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_;
+        }
+        return com.google.devicesandservices.health.v4.CoreBodyTemperature.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `core-body-temperature` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.CoreBodyTemperature,
+            com.google.devicesandservices.health.v4.CoreBodyTemperature.Builder,
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder>
+        internalGetCoreBodyTemperatureFieldBuilder() {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (!(dataCase_ == 42)) {
+          data_ = com.google.devicesandservices.health.v4.CoreBodyTemperature.getDefaultInstance();
+        }
+        coreBodyTemperatureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.CoreBodyTemperature,
+                com.google.devicesandservices.health.v4.CoreBodyTemperature.Builder,
+                com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder>(
+                (com.google.devicesandservices.health.v4.CoreBodyTemperature) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 42;
+      onChanged();
+      return coreBodyTemperatureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.ActiveEnergyBurned,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurned.Builder,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder>
+        activeEnergyBurnedBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the activeEnergyBurned field is set.
+     */
+    @java.lang.Override
+    public boolean hasActiveEnergyBurned() {
+      return dataCase_ == 44;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The activeEnergyBurned.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.ActiveEnergyBurned getActiveEnergyBurned() {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (dataCase_ == 44) {
+          return (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_;
+        }
+        return com.google.devicesandservices.health.v4.ActiveEnergyBurned.getDefaultInstance();
+      } else {
+        if (dataCase_ == 44) {
+          return activeEnergyBurnedBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.ActiveEnergyBurned.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setActiveEnergyBurned(
+        com.google.devicesandservices.health.v4.ActiveEnergyBurned value) {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        activeEnergyBurnedBuilder_.setMessage(value);
+      }
+      dataCase_ = 44;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setActiveEnergyBurned(
+        com.google.devicesandservices.health.v4.ActiveEnergyBurned.Builder builderForValue) {
+      if (activeEnergyBurnedBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        activeEnergyBurnedBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 44;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeActiveEnergyBurned(
+        com.google.devicesandservices.health.v4.ActiveEnergyBurned value) {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (dataCase_ == 44
+            && data_
+                != com.google.devicesandservices.health.v4.ActiveEnergyBurned
+                    .getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.ActiveEnergyBurned.newBuilder(
+                      (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 44) {
+          activeEnergyBurnedBuilder_.mergeFrom(value);
+        } else {
+          activeEnergyBurnedBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 44;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearActiveEnergyBurned() {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (dataCase_ == 44) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 44) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        activeEnergyBurnedBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.ActiveEnergyBurned.Builder
+        getActiveEnergyBurnedBuilder() {
+      return internalGetActiveEnergyBurnedFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder
+        getActiveEnergyBurnedOrBuilder() {
+      if ((dataCase_ == 44) && (activeEnergyBurnedBuilder_ != null)) {
+        return activeEnergyBurnedBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 44) {
+          return (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_;
+        }
+        return com.google.devicesandservices.health.v4.ActiveEnergyBurned.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `active-energy-burned` interval data
+     * type collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.ActiveEnergyBurned,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurned.Builder,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder>
+        internalGetActiveEnergyBurnedFieldBuilder() {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (!(dataCase_ == 44)) {
+          data_ = com.google.devicesandservices.health.v4.ActiveEnergyBurned.getDefaultInstance();
+        }
+        activeEnergyBurnedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.ActiveEnergyBurned,
+                com.google.devicesandservices.health.v4.ActiveEnergyBurned.Builder,
+                com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder>(
+                (com.google.devicesandservices.health.v4.ActiveEnergyBurned) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 44;
+      onChanged();
+      return activeEnergyBurnedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.FoodMeasurementUnit,
+            com.google.devicesandservices.health.v4.FoodMeasurementUnit.Builder,
+            com.google.devicesandservices.health.v4.FoodMeasurementUnitOrBuilder>
+        foodMeasurementUnitBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the foodMeasurementUnit field is set.
+     */
+    @java.lang.Override
+    public boolean hasFoodMeasurementUnit() {
+      return dataCase_ == 45;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The foodMeasurementUnit.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.FoodMeasurementUnit getFoodMeasurementUnit() {
+      if (foodMeasurementUnitBuilder_ == null) {
+        if (dataCase_ == 45) {
+          return (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_;
+        }
+        return com.google.devicesandservices.health.v4.FoodMeasurementUnit.getDefaultInstance();
+      } else {
+        if (dataCase_ == 45) {
+          return foodMeasurementUnitBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.FoodMeasurementUnit.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFoodMeasurementUnit(
+        com.google.devicesandservices.health.v4.FoodMeasurementUnit value) {
+      if (foodMeasurementUnitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        foodMeasurementUnitBuilder_.setMessage(value);
+      }
+      dataCase_ = 45;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFoodMeasurementUnit(
+        com.google.devicesandservices.health.v4.FoodMeasurementUnit.Builder builderForValue) {
+      if (foodMeasurementUnitBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        foodMeasurementUnitBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 45;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFoodMeasurementUnit(
+        com.google.devicesandservices.health.v4.FoodMeasurementUnit value) {
+      if (foodMeasurementUnitBuilder_ == null) {
+        if (dataCase_ == 45
+            && data_
+                != com.google.devicesandservices.health.v4.FoodMeasurementUnit
+                    .getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.FoodMeasurementUnit.newBuilder(
+                      (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 45) {
+          foodMeasurementUnitBuilder_.mergeFrom(value);
+        } else {
+          foodMeasurementUnitBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 45;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFoodMeasurementUnit() {
+      if (foodMeasurementUnitBuilder_ == null) {
+        if (dataCase_ == 45) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 45) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        foodMeasurementUnitBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.FoodMeasurementUnit.Builder
+        getFoodMeasurementUnitBuilder() {
+      return internalGetFoodMeasurementUnitFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.FoodMeasurementUnitOrBuilder
+        getFoodMeasurementUnitOrBuilder() {
+      if ((dataCase_ == 45) && (foodMeasurementUnitBuilder_ != null)) {
+        return foodMeasurementUnitBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 45) {
+          return (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_;
+        }
+        return com.google.devicesandservices.health.v4.FoodMeasurementUnit.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The food measurement unit details.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.FoodMeasurementUnit,
+            com.google.devicesandservices.health.v4.FoodMeasurementUnit.Builder,
+            com.google.devicesandservices.health.v4.FoodMeasurementUnitOrBuilder>
+        internalGetFoodMeasurementUnitFieldBuilder() {
+      if (foodMeasurementUnitBuilder_ == null) {
+        if (!(dataCase_ == 45)) {
+          data_ = com.google.devicesandservices.health.v4.FoodMeasurementUnit.getDefaultInstance();
+        }
+        foodMeasurementUnitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.FoodMeasurementUnit,
+                com.google.devicesandservices.health.v4.FoodMeasurementUnit.Builder,
+                com.google.devicesandservices.health.v4.FoodMeasurementUnitOrBuilder>(
+                (com.google.devicesandservices.health.v4.FoodMeasurementUnit) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 45;
+      onChanged();
+      return foodMeasurementUnitBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.BloodGlucose,
+            com.google.devicesandservices.health.v4.BloodGlucose.Builder,
+            com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder>
+        bloodGlucoseBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bloodGlucose field is set.
+     */
+    @java.lang.Override
+    public boolean hasBloodGlucose() {
+      return dataCase_ == 46;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bloodGlucose.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.BloodGlucose getBloodGlucose() {
+      if (bloodGlucoseBuilder_ == null) {
+        if (dataCase_ == 46) {
+          return (com.google.devicesandservices.health.v4.BloodGlucose) data_;
+        }
+        return com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance();
+      } else {
+        if (dataCase_ == 46) {
+          return bloodGlucoseBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBloodGlucose(com.google.devicesandservices.health.v4.BloodGlucose value) {
+      if (bloodGlucoseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        bloodGlucoseBuilder_.setMessage(value);
+      }
+      dataCase_ = 46;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBloodGlucose(
+        com.google.devicesandservices.health.v4.BloodGlucose.Builder builderForValue) {
+      if (bloodGlucoseBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        bloodGlucoseBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 46;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBloodGlucose(com.google.devicesandservices.health.v4.BloodGlucose value) {
+      if (bloodGlucoseBuilder_ == null) {
+        if (dataCase_ == 46
+            && data_ != com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance()) {
+          data_ =
+              com.google.devicesandservices.health.v4.BloodGlucose.newBuilder(
+                      (com.google.devicesandservices.health.v4.BloodGlucose) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 46) {
+          bloodGlucoseBuilder_.mergeFrom(value);
+        } else {
+          bloodGlucoseBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 46;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBloodGlucose() {
+      if (bloodGlucoseBuilder_ == null) {
+        if (dataCase_ == 46) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 46) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        bloodGlucoseBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.BloodGlucose.Builder getBloodGlucoseBuilder() {
+      return internalGetBloodGlucoseFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder
+        getBloodGlucoseOrBuilder() {
+      if ((dataCase_ == 46) && (bloodGlucoseBuilder_ != null)) {
+        return bloodGlucoseBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 46) {
+          return (com.google.devicesandservices.health.v4.BloodGlucose) data_;
+        }
+        return com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data for points in the `blood-glucose` sample data type
+     * collection.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.BloodGlucose,
+            com.google.devicesandservices.health.v4.BloodGlucose.Builder,
+            com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder>
+        internalGetBloodGlucoseFieldBuilder() {
+      if (bloodGlucoseBuilder_ == null) {
+        if (!(dataCase_ == 46)) {
+          data_ = com.google.devicesandservices.health.v4.BloodGlucose.getDefaultInstance();
+        }
+        bloodGlucoseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.BloodGlucose,
+                com.google.devicesandservices.health.v4.BloodGlucose.Builder,
+                com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder>(
+                (com.google.devicesandservices.health.v4.BloodGlucose) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 46;
+      onChanged();
+      return bloodGlucoseBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -11133,7 +13915,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11170,7 +13952,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -11212,7 +13994,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11238,7 +14020,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      * @return Whether the dataSource field is set.
      */
     public boolean hasDataSource() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
 
     /**
@@ -11284,7 +14066,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       } else {
         dataSourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11307,7 +14089,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       } else {
         dataSourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11325,7 +14107,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDataSource(com.google.devicesandservices.health.v4.DataSource value) {
       if (dataSourceBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000080) != 0)
             && dataSource_ != null
             && dataSource_
                 != com.google.devicesandservices.health.v4.DataSource.getDefaultInstance()) {
@@ -11337,7 +14119,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         dataSourceBuilder_.mergeFrom(value);
       }
       if (dataSource_ != null) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -11355,7 +14137,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000080);
       dataSource_ = null;
       if (dataSourceBuilder_ != null) {
         dataSourceBuilder_.dispose();
@@ -11377,7 +14159,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.devicesandservices.health.v4.DataSource.Builder getDataSourceBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000080;
       onChanged();
       return internalGetDataSourceFieldBuilder().getBuilder();
     }

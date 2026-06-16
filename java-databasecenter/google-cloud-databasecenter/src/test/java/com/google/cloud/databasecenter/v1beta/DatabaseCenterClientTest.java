@@ -17,6 +17,7 @@
 package com.google.cloud.databasecenter.v1beta;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateQueryStatsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
@@ -327,6 +328,68 @@ public class DatabaseCenterClientTest {
               .setBaselineDate(Date.newBuilder().build())
               .build();
       client.aggregateIssueStats(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void aggregateQueryStatsTest() throws Exception {
+    QueryStatsInfo responsesElement = QueryStatsInfo.newBuilder().build();
+    AggregateQueryStatsResponse expectedResponse =
+        AggregateQueryStatsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueryStats(Arrays.asList(responsesElement))
+            .build();
+    mockDatabaseCenter.addResponse(expectedResponse);
+
+    AggregateQueryStatsRequest request =
+        AggregateQueryStatsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setOrderBy("orderBy-1207110587")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    AggregateQueryStatsPagedResponse pagedListResponse = client.aggregateQueryStats(request);
+
+    List<QueryStatsInfo> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueryStatsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatabaseCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AggregateQueryStatsRequest actualRequest = ((AggregateQueryStatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void aggregateQueryStatsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatabaseCenter.addException(exception);
+
+    try {
+      AggregateQueryStatsRequest request =
+          AggregateQueryStatsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.aggregateQueryStats(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

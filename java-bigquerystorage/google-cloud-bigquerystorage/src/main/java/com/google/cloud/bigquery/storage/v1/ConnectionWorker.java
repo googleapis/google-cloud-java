@@ -52,6 +52,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -140,13 +141,16 @@ class ConnectionWorker implements AutoCloseable {
    * Tracks current inflight requests in the stream.
    */
   @GuardedBy("lock")
-  private long inflightRequests = 0;
+  private final AtomicLong inflightRequests = new AtomicLong(0);
 
   /*
    * Tracks current inflight bytes in the stream.
    */
   @GuardedBy("lock")
-  private long inflightBytes = 0;
+  private final AtomicLong inflightBytes = new AtomicLong(0);
+
+  private final TrackRequestQueueEarliestSendTime trackRequestQueueEarliestSendTime =
+      new TrackRequestQueueEarliestSendTime();
 
   /*
    * Tracks how often the stream was closed due to a retriable error. Streaming will stop when the
@@ -395,7 +399,7 @@ class ConnectionWorker implements AutoCloseable {
       healthCheckFields.queuedRequestCountMax = windowedQueuedRequestsMax;
       healthCheckFields.queuedRetryCountMax = windowedQueuedRetriesMax;
       healthCheckFields.msecLongestResponseWaitTime = windowedMilliResponseWaitTimeMax;
-      healthCheckFields.inflightBytes = inflightBytes;
+      healthCheckFields.inflightBytes = inflightBytes.get();
       healthCheckFields.requestsSentCount = windowedRequestsSent;
       healthCheckFields.responseCount = windowedResponsesAcked;
       if (HEALTH_CHECK_INTERVAL.toMillis() > 0) {
@@ -779,8 +783,8 @@ class ConnectionWorker implements AutoCloseable {
   @GuardedBy("lock")
   private void addMessageToWaitingQueue(
       AppendRequestAndResponse requestWrapper, boolean addToFront) {
-    ++this.inflightRequests;
-    this.inflightBytes += requestWrapper.messageSize;
+    this.inflightRequests.incrementAndGet();
+    this.inflightBytes.addAndGet(requestWrapper.messageSize);
     hasMessageInWaitingQueue.signal();
     requestProfilerHook.startOperation(
         RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
@@ -896,11 +900,11 @@ class ConnectionWorker implements AutoCloseable {
       }
       // Check if queue is going to be full before adding the request.
       if (this.limitExceededBehavior == FlowController.LimitExceededBehavior.ThrowException) {
-        if (this.inflightRequests + 1 >= this.maxInflightRequests) {
+        if (this.inflightRequests.get() + 1 >= this.maxInflightRequests) {
           throw new Exceptions.InflightRequestsLimitExceededException(
               writerId, this.maxInflightRequests);
         }
-        if (this.inflightBytes + requestWrapper.messageSize >= this.maxInflightBytes) {
+        if (this.inflightBytes.get() + requestWrapper.messageSize >= this.maxInflightBytes) {
           throw new Exceptions.InflightBytesLimitExceededException(writerId, this.maxInflightBytes);
         }
       }
@@ -926,8 +930,9 @@ class ConnectionWorker implements AutoCloseable {
         return requestWrapper.appendResult;
       }
       requestProfilerHook.startOperation(RequestProfiler.OperationName.WAIT_QUEUE, requestUniqueId);
-      ++this.inflightRequests;
-      this.inflightBytes += requestWrapper.messageSize;
+      this.inflightRequests.incrementAndGet();
+      this.inflightBytes.addAndGet(requestWrapper.messageSize);
+      requestWrapper.placedInWaitingQueueTime = Instant.now();
       waitingRequestQueue.addLast(requestWrapper);
       healthCheckMetrics.updateWindowedQueuedRequestsMax(
           waitingRequestQueue.size() + inflightRequestQueue.size(), queuedRetryCount.get());
@@ -937,9 +942,9 @@ class ConnectionWorker implements AutoCloseable {
       try {
         maybeWaitForInflightQuota();
       } catch (StatusRuntimeException ex) {
-        --this.inflightRequests;
+        this.inflightRequests.decrementAndGet();
         waitingRequestQueue.pollLast();
-        this.inflightBytes -= requestWrapper.messageSize;
+        this.inflightBytes.addAndGet(-requestWrapper.messageSize);
         throw ex;
       }
       requestProfilerHook.endOperation(
@@ -953,8 +958,8 @@ class ConnectionWorker implements AutoCloseable {
   @GuardedBy("lock")
   private void maybeWaitForInflightQuota() {
     long start_time = System.currentTimeMillis();
-    while (this.inflightRequests >= this.maxInflightRequests
-        || this.inflightBytes >= this.maxInflightBytes) {
+    while (this.inflightRequests.get() >= this.maxInflightRequests
+        || this.inflightBytes.get() >= this.maxInflightBytes) {
       try {
         inflightReduced.await(100, TimeUnit.MILLISECONDS);
       } catch (InterruptedException e) {
@@ -995,6 +1000,11 @@ class ConnectionWorker implements AutoCloseable {
   void setTestOnlyRunTimeExceptionInAppendLoop(
       RuntimeException testOnlyRunTimeExceptionInAppendLoop) {
     this.testOnlyRunTimeExceptionInAppendLoop = testOnlyRunTimeExceptionInAppendLoop;
+  }
+
+  @VisibleForTesting
+  Instant getEarliestSendTime() {
+    return trackRequestQueueEarliestSendTime.getEarliestSendTime();
   }
 
   @VisibleForTesting()
@@ -1151,10 +1161,11 @@ class ConnectionWorker implements AutoCloseable {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
         // Check whether we should error out the current append loop.
         if (inflightRequestQueue.size() > 0) {
-          Instant sendInstant = inflightRequestQueue.getFirst().requestSendTimeStamp;
+          AppendRequestAndResponse firstRequest = inflightRequestQueue.getFirst();
+          Instant sendInstant = firstRequest.requestSendTimeStamp;
           if (sendInstant != null) {
             healthCheckMetrics.updateResponseWait(sendInstant);
-            throwIfWaitCallbackTooLong(sendInstant);
+            throwIfWaitCallbackTooLong(firstRequest);
           }
         }
         healthCheckMetrics.periodicHealthCheck();
@@ -1187,6 +1198,7 @@ class ConnectionWorker implements AutoCloseable {
           requestProfilerHook.endOperation(
               RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
           waitForBackoffIfNecessary(requestWrapper);
+          requestWrapper.placedInInflightQueueTime = Instant.now();
           this.inflightRequestQueue.add(requestWrapper);
           localQueue.addLast(requestWrapper);
           healthCheckMetrics.updateRequestsSent(requestWrapper.messageSize);
@@ -1226,7 +1238,9 @@ class ConnectionWorker implements AutoCloseable {
         firstRequestForTableOrSchemaSwitch = true;
       }
       while (!localQueue.isEmpty()) {
-        localQueue.peekFirst().setRequestSendQueueTime();
+        AppendRequestAndResponse head = localQueue.peekFirst();
+        head.setRequestSendQueueTime();
+        trackRequestQueueEarliestSendTime.captureEarliest(head.requestSendTimeStamp);
         AppendRequestAndResponse wrapper = localQueue.pollFirst();
         AppendRowsRequest originalRequest = wrapper.message;
         String requestUniqueId = wrapper.requestUniqueId;
@@ -1339,11 +1353,21 @@ class ConnectionWorker implements AutoCloseable {
     log.info("Append thread is done. Stream: " + streamName + " id: " + writerId);
   }
 
-  private void throwIfWaitCallbackTooLong(Instant timeToCheck) {
+  private void throwIfWaitCallbackTooLong(AppendRequestAndResponse requestWrapper) {
+    Instant timeToCheck = requestWrapper.requestSendTimeStamp;
+    if (timeToCheck == null) {
+      return;
+    }
     Duration milliSinceLastCallback = Duration.between(timeToCheck, Instant.now());
     if (milliSinceLastCallback.compareTo(MAXIMUM_REQUEST_CALLBACK_WAIT_TIME) > 0) {
       throw new Exceptions.MaximumRequestCallbackWaitTimeExceededException(
-          milliSinceLastCallback, writerId, MAXIMUM_REQUEST_CALLBACK_WAIT_TIME);
+          milliSinceLastCallback,
+          writerId,
+          MAXIMUM_REQUEST_CALLBACK_WAIT_TIME,
+          requestWrapper.requestReceivedTime,
+          requestWrapper.placedInWaitingQueueTime,
+          requestWrapper.placedInInflightQueueTime,
+          requestWrapper.dispatchTimes);
     }
   }
 
@@ -1629,6 +1653,9 @@ class ConnectionWorker implements AutoCloseable {
     if (response.hasError()) {
       if (retryOnRetryableError(Code.values()[response.getError().getCode()], requestWrapper)) {
         log.info("Attempting to retry on error: " + response.getError().toString());
+        // Note that if we are retrying a request it is still in the system so we don't refresh the
+        // earliest send time. That way we can keep track of the earliest send time based on the
+        // first time the request was sent, which gives us a better idea of load on this worker.
         return;
       }
     }
@@ -1640,6 +1667,10 @@ class ConnectionWorker implements AutoCloseable {
         this.lock.unlock();
       }
     }
+    // Since we have processed a response and have now removed that request from the system, go
+    // ahead and refresh the earliest send time, based on the remaining requests that are
+    // outstanding.
+    trackRequestQueueEarliestSendTime.discardAndRefresh();
 
     // We need a separate thread pool to unblock the next request callback.
     // Otherwise user may call append inside request callback, which may be blocked on waiting
@@ -1775,8 +1806,8 @@ class ConnectionWorker implements AutoCloseable {
     AppendRequestAndResponse requestWrapper =
         pollLast ? inflightRequestQueue.pollLast() : inflightRequestQueue.poll();
     requestWrapper.requestSendTimeStamp = null;
-    --this.inflightRequests;
-    this.inflightBytes -= requestWrapper.messageSize;
+    this.inflightRequests.decrementAndGet();
+    this.inflightBytes.addAndGet(-requestWrapper.messageSize);
     this.inflightReduced.signal();
     return requestWrapper;
   }
@@ -1824,6 +1855,11 @@ class ConnectionWorker implements AutoCloseable {
     // If a response is no longer expected this is set back to null.
     Instant requestSendTimeStamp;
 
+    final Instant requestReceivedTime;
+    Instant placedInWaitingQueueTime;
+    Instant placedInInflightQueueTime;
+    final List<Instant> dispatchTimes = new ArrayList<>();
+
     AppendRequestAndResponse(
         AppendRowsRequest message,
         StreamWriter streamWriter,
@@ -1852,18 +1888,26 @@ class ConnectionWorker implements AutoCloseable {
         this.retryAlgorithm = null;
       }
       this.recordBatchRowCount = recordBatchRowCount;
+      this.requestReceivedTime = Instant.now();
     }
 
     void setRequestSendQueueTime() {
       requestSendTimeStamp = Instant.now();
+      dispatchTimes.add(requestSendTimeStamp);
     }
   }
 
   /** Returns the current workload of this worker. */
   public Load getLoad() {
+    Duration timeSinceLastCallback = Duration.ZERO;
+    Instant earliestSendTime = trackRequestQueueEarliestSendTime.getEarliestSendTime();
+    if (earliestSendTime != null) {
+      timeSinceLastCallback = Duration.between(earliestSendTime, Instant.now());
+    }
     return Load.create(
-        inflightBytes,
-        inflightRequests,
+        timeSinceLastCallback,
+        inflightBytes.get(),
+        inflightRequests.get(),
         destinationSet.size(),
         maxInflightBytes,
         maxInflightRequests);
@@ -1876,10 +1920,14 @@ class ConnectionWorker implements AutoCloseable {
   @AutoValue
   public abstract static class Load {
 
-    // Consider the load on this worker to be overwhelmed when above some percentage of
-    // in-flight bytes or in-flight requests count.
+    // Consider the load on this worker to be overwhelmed when above some inflight latency or
+    // percentage of in-flight bytes or in-flight requests count.
+    private static Duration overwhelmedTimeSinceLastCallback = Duration.ofSeconds(3);
     private static double overwhelmedInflightCount = 0.2;
     private static double overwhelmedInflightBytes = 0.2;
+
+    // Time we have spent waiting for a response in the worker.
+    abstract Duration timeSinceLastCallback();
 
     // Number of in-flight requests bytes in the worker.
     abstract long inFlightRequestsBytes();
@@ -1897,12 +1945,14 @@ class ConnectionWorker implements AutoCloseable {
     abstract long maxInflightCount();
 
     static Load create(
+        Duration timeSinceLastCallback,
         long inFlightRequestsBytes,
         long inFlightRequestsCount,
         long destinationCount,
         long maxInflightBytes,
         long maxInflightCount) {
       return new AutoValue_ConnectionWorker_Load(
+          timeSinceLastCallback,
           inFlightRequestsBytes,
           inFlightRequestsCount,
           destinationCount,
@@ -1914,20 +1964,29 @@ class ConnectionWorker implements AutoCloseable {
       // Consider only in flight bytes and count for now, as by experiment those two are the most
       // efficient and has great simplity.
       return inFlightRequestsCount() > overwhelmedInflightCount * maxInflightCount()
-          || inFlightRequestsBytes() > overwhelmedInflightBytes * maxInflightBytes();
+          || inFlightRequestsBytes() > overwhelmedInflightBytes * maxInflightBytes()
+          || timeSinceLastCallback().compareTo(overwhelmedTimeSinceLastCallback) > 0;
     }
 
-    // Compares two different load. First compare in flight request bytes split by size 1024 bucket.
+    // Compares two different load. First compare the timeSinceLastCallback bucketed into 1 second
+    // intervals.
+    // Then compare in flight request bytes split by size 1024 bucket.
     // Then compare the inflight requests count.
     // Then compare destination count of the two connections.
     public static final Comparator<Load> LOAD_COMPARATOR =
-        Comparator.comparing((Load key) -> (int) (key.inFlightRequestsBytes() / 1024))
+        Comparator.comparing((Load key) -> (int) key.timeSinceLastCallback().getSeconds())
+            .thenComparing((Load key) -> (int) (key.inFlightRequestsBytes() / 1024))
             .thenComparing((Load key) -> (int) (key.inFlightRequestsCount() / 100))
             .thenComparing(Load::destinationCount);
 
     // Compares two different load without bucket, used in smaller scale unit testing.
+    // First compare the timeSinceLastCallback.
+    // Then compare in flight request bytes.
+    // Then compare the inflight requests count.
+    // Then compare destination count of the two connections.
     public static final Comparator<Load> TEST_LOAD_COMPARATOR =
-        Comparator.comparing((Load key) -> (int) key.inFlightRequestsBytes())
+        Comparator.comparing(Load::timeSinceLastCallback)
+            .thenComparing((Load key) -> (int) key.inFlightRequestsBytes())
             .thenComparing((Load key) -> (int) key.inFlightRequestsCount())
             .thenComparing(Load::destinationCount);
 
@@ -1939,6 +1998,11 @@ class ConnectionWorker implements AutoCloseable {
     @VisibleForTesting
     public static void setOverwhelmedCountsThreshold(double newThreshold) {
       overwhelmedInflightCount = newThreshold;
+    }
+
+    @VisibleForTesting
+    public static void setOverwhelmedTimeSinceLastCallbackThreshold(Duration newThreshold) {
+      overwhelmedTimeSinceLastCallback = newThreshold;
     }
   }
 
@@ -1963,6 +2027,38 @@ class ConnectionWorker implements AutoCloseable {
 
     static TableSchemaAndTimestamp create(long updateTimeStamp, TableSchema updatedSchema) {
       return new AutoValue_ConnectionWorker_TableSchemaAndTimestamp(updateTimeStamp, updatedSchema);
+    }
+  }
+
+  class TrackRequestQueueEarliestSendTime {
+    private final AtomicReference<Instant> earliestSendTime = new AtomicReference<>(null);
+
+    public void captureEarliest(Instant sendTime) {
+      // This method records the given sendTime only if earliestSendTime is currently NULL.
+      if (sendTime == null) {
+        return;
+      }
+      earliestSendTime.compareAndSet(null, sendTime);
+    }
+
+    public void discardAndRefresh() {
+      Instant newEarliestSendTime = null;
+      lock.lock();
+      try {
+        if (!inflightRequestQueue.isEmpty()) {
+          AppendRequestAndResponse head = inflightRequestQueue.peekFirst();
+          if (head != null) {
+            newEarliestSendTime = head.requestSendTimeStamp;
+          }
+        }
+      } finally {
+        lock.unlock();
+      }
+      earliestSendTime.set(newEarliestSendTime);
+    }
+
+    public Instant getEarliestSendTime() {
+      return earliestSendTime.get();
     }
   }
 }

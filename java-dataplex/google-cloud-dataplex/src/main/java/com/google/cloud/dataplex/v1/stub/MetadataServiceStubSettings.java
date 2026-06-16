@@ -134,7 +134,10 @@ import javax.annotation.Generated;
 public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .build();
 
   private final UnaryCallSettings<CreateEntityRequest, Entity> createEntitySettings;
   private final UnaryCallSettings<UpdateEntityRequest, Entity> updateEntitySettings;

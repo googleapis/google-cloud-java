@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-network-security</artifactId>
-  <version>0.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
+  <version>0.97.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
   <packaging>jar</packaging>
   <name>Google Network Security API</name>
   <description>Network Security API n/a</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-network-security-parent</artifactId>
-    <version>0.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
+    <version>0.97.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-network-security</site.installationModule>
@@ -55,6 +55,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-network-security-v1</artifactId>
@@ -63,6 +64,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-network-security-v1beta1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -91,6 +93,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-network-security-v1beta1</artifactId>
@@ -101,6 +104,7 @@
       <artifactId>grpc-google-cloud-network-security-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

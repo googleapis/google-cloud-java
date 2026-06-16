@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-websecurityscanner-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+  <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
   <name>Google Cloud Web Security Scanner Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.87.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,45 +26,48 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.180.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.180.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1</artifactId>
-        <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.180.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.180.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1</artifactId>
-        <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-websecurityscanner</artifactId>
-        <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+        <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-websecurityscanner</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
     <module>grpc-google-cloud-websecurityscanner-v1beta</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
     <module>proto-google-cloud-websecurityscanner-v1beta</module>
     <module>proto-google-cloud-websecurityscanner-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-websecurityscanner-bom</module>
   </modules>
 

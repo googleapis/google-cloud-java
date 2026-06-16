@@ -69,6 +69,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
             com.google.devicesandservices.health.v4.RunVO2MaxRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RATE_MIN_FIELD_NUMBER = 1;
   private double rateMin_ = 0D;
 
@@ -79,7 +80,23 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
    * Minimum value of run VO2 max in the interval..
    * </pre>
    *
-   * <code>double rate_min = 1;</code>
+   * <code>optional double rate_min = 1;</code>
+   *
+   * @return Whether the rateMin field is set.
+   */
+  @java.lang.Override
+  public boolean hasRateMin() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum value of run VO2 max in the interval..
+   * </pre>
+   *
+   * <code>optional double rate_min = 1;</code>
    *
    * @return The rateMin.
    */
@@ -98,7 +115,23 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
    * Maximum value of run VO2 max in the interval.
    * </pre>
    *
-   * <code>double rate_max = 2;</code>
+   * <code>optional double rate_max = 2;</code>
+   *
+   * @return Whether the rateMax field is set.
+   */
+  @java.lang.Override
+  public boolean hasRateMax() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum value of run VO2 max in the interval.
+   * </pre>
+   *
+   * <code>optional double rate_max = 2;</code>
    *
    * @return The rateMax.
    */
@@ -117,7 +150,23 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
    * Average value of run VO2 max in the interval.
    * </pre>
    *
-   * <code>double rate_avg = 3;</code>
+   * <code>optional double rate_avg = 3;</code>
+   *
+   * @return Whether the rateAvg field is set.
+   */
+  @java.lang.Override
+  public boolean hasRateAvg() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Average value of run VO2 max in the interval.
+   * </pre>
+   *
+   * <code>optional double rate_avg = 3;</code>
    *
    * @return The rateAvg.
    */
@@ -140,13 +189,13 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (java.lang.Double.doubleToRawLongBits(rateMin_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(1, rateMin_);
     }
-    if (java.lang.Double.doubleToRawLongBits(rateMax_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, rateMax_);
     }
-    if (java.lang.Double.doubleToRawLongBits(rateAvg_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(3, rateAvg_);
     }
     getUnknownFields().writeTo(output);
@@ -158,13 +207,13 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Double.doubleToRawLongBits(rateMin_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, rateMin_);
     }
-    if (java.lang.Double.doubleToRawLongBits(rateMax_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, rateMax_);
     }
-    if (java.lang.Double.doubleToRawLongBits(rateAvg_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, rateAvg_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -183,12 +232,21 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
     com.google.devicesandservices.health.v4.RunVO2MaxRollupValue other =
         (com.google.devicesandservices.health.v4.RunVO2MaxRollupValue) obj;
 
-    if (java.lang.Double.doubleToLongBits(getRateMin())
-        != java.lang.Double.doubleToLongBits(other.getRateMin())) return false;
-    if (java.lang.Double.doubleToLongBits(getRateMax())
-        != java.lang.Double.doubleToLongBits(other.getRateMax())) return false;
-    if (java.lang.Double.doubleToLongBits(getRateAvg())
-        != java.lang.Double.doubleToLongBits(other.getRateAvg())) return false;
+    if (hasRateMin() != other.hasRateMin()) return false;
+    if (hasRateMin()) {
+      if (java.lang.Double.doubleToLongBits(getRateMin())
+          != java.lang.Double.doubleToLongBits(other.getRateMin())) return false;
+    }
+    if (hasRateMax() != other.hasRateMax()) return false;
+    if (hasRateMax()) {
+      if (java.lang.Double.doubleToLongBits(getRateMax())
+          != java.lang.Double.doubleToLongBits(other.getRateMax())) return false;
+    }
+    if (hasRateAvg() != other.hasRateAvg()) return false;
+    if (hasRateAvg()) {
+      if (java.lang.Double.doubleToLongBits(getRateAvg())
+          != java.lang.Double.doubleToLongBits(other.getRateAvg())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -200,21 +258,27 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RATE_MIN_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getRateMin()));
-    hash = (37 * hash) + RATE_MAX_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getRateMax()));
-    hash = (37 * hash) + RATE_AVG_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getRateAvg()));
+    if (hasRateMin()) {
+      hash = (37 * hash) + RATE_MIN_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRateMin()));
+    }
+    if (hasRateMax()) {
+      hash = (37 * hash) + RATE_MAX_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRateMax()));
+    }
+    if (hasRateAvg()) {
+      hash = (37 * hash) + RATE_AVG_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRateAvg()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -398,15 +462,20 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
     private void buildPartial0(
         com.google.devicesandservices.health.v4.RunVO2MaxRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.rateMin_ = rateMin_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.rateMax_ = rateMax_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.rateAvg_ = rateAvg_;
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -423,13 +492,13 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
       if (other
           == com.google.devicesandservices.health.v4.RunVO2MaxRollupValue.getDefaultInstance())
         return this;
-      if (java.lang.Double.doubleToRawLongBits(other.getRateMin()) != 0) {
+      if (other.hasRateMin()) {
         setRateMin(other.getRateMin());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getRateMax()) != 0) {
+      if (other.hasRateMax()) {
         setRateMax(other.getRateMax());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getRateAvg()) != 0) {
+      if (other.hasRateAvg()) {
         setRateAvg(other.getRateAvg());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -504,7 +573,23 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Minimum value of run VO2 max in the interval..
      * </pre>
      *
-     * <code>double rate_min = 1;</code>
+     * <code>optional double rate_min = 1;</code>
+     *
+     * @return Whether the rateMin field is set.
+     */
+    @java.lang.Override
+    public boolean hasRateMin() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum value of run VO2 max in the interval..
+     * </pre>
+     *
+     * <code>optional double rate_min = 1;</code>
      *
      * @return The rateMin.
      */
@@ -520,7 +605,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Minimum value of run VO2 max in the interval..
      * </pre>
      *
-     * <code>double rate_min = 1;</code>
+     * <code>optional double rate_min = 1;</code>
      *
      * @param value The rateMin to set.
      * @return This builder for chaining.
@@ -540,7 +625,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Minimum value of run VO2 max in the interval..
      * </pre>
      *
-     * <code>double rate_min = 1;</code>
+     * <code>optional double rate_min = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -560,7 +645,23 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Maximum value of run VO2 max in the interval.
      * </pre>
      *
-     * <code>double rate_max = 2;</code>
+     * <code>optional double rate_max = 2;</code>
+     *
+     * @return Whether the rateMax field is set.
+     */
+    @java.lang.Override
+    public boolean hasRateMax() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Maximum value of run VO2 max in the interval.
+     * </pre>
+     *
+     * <code>optional double rate_max = 2;</code>
      *
      * @return The rateMax.
      */
@@ -576,7 +677,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Maximum value of run VO2 max in the interval.
      * </pre>
      *
-     * <code>double rate_max = 2;</code>
+     * <code>optional double rate_max = 2;</code>
      *
      * @param value The rateMax to set.
      * @return This builder for chaining.
@@ -596,7 +697,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Maximum value of run VO2 max in the interval.
      * </pre>
      *
-     * <code>double rate_max = 2;</code>
+     * <code>optional double rate_max = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -616,7 +717,23 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Average value of run VO2 max in the interval.
      * </pre>
      *
-     * <code>double rate_avg = 3;</code>
+     * <code>optional double rate_avg = 3;</code>
+     *
+     * @return Whether the rateAvg field is set.
+     */
+    @java.lang.Override
+    public boolean hasRateAvg() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Average value of run VO2 max in the interval.
+     * </pre>
+     *
+     * <code>optional double rate_avg = 3;</code>
      *
      * @return The rateAvg.
      */
@@ -632,7 +749,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Average value of run VO2 max in the interval.
      * </pre>
      *
-     * <code>double rate_avg = 3;</code>
+     * <code>optional double rate_avg = 3;</code>
      *
      * @param value The rateAvg to set.
      * @return This builder for chaining.
@@ -652,7 +769,7 @@ public final class RunVO2MaxRollupValue extends com.google.protobuf.GeneratedMes
      * Average value of run VO2 max in the interval.
      * </pre>
      *
-     * <code>double rate_avg = 3;</code>
+     * <code>optional double rate_avg = 3;</code>
      *
      * @return This builder for chaining.
      */

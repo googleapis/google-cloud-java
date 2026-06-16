@@ -22,6 +22,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -224,6 +225,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> sanitizeModelResponseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamSanitizeUserPrompt</td>
+ *      <td><p> Streaming version of Sanitize User Prompt.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamSanitizeUserPromptCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamSanitizeModelResponse</td>
+ *      <td><p> Streaming version of Sanitizes Model Response.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamSanitizeModelResponseCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1189,6 +1210,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPromptData(DataItem.newBuilder().build())
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
    * }
@@ -1220,6 +1242,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPromptData(DataItem.newBuilder().build())
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   ApiFuture<SanitizeUserPromptResponse> future =
    *       modelArmorClient.sanitizeUserPromptCallable().futureCall(request);
@@ -1253,6 +1276,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPrompt("userPrompt1504308495")
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   SanitizeModelResponseResponse response = modelArmorClient.sanitizeModelResponse(request);
    * }
@@ -1286,6 +1310,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPrompt("userPrompt1504308495")
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   ApiFuture<SanitizeModelResponseResponse> future =
    *       modelArmorClient.sanitizeModelResponseCallable().futureCall(request);
@@ -1297,6 +1322,77 @@ public class ModelArmorClient implements BackgroundResource {
   public final UnaryCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
       sanitizeModelResponseCallable() {
     return stub.sanitizeModelResponseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Streaming version of Sanitize User Prompt.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+   *   BidiStream<SanitizeUserPromptRequest, SanitizeUserPromptResponse> bidiStream =
+   *       modelArmorClient.streamSanitizeUserPromptCallable().call();
+   *   SanitizeUserPromptRequest request =
+   *       SanitizeUserPromptRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (SanitizeUserPromptResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    return stub.streamSanitizeUserPromptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Streaming version of Sanitizes Model Response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+   *   BidiStream<SanitizeModelResponseRequest, SanitizeModelResponseResponse> bidiStream =
+   *       modelArmorClient.streamSanitizeModelResponseCallable().call();
+   *   SanitizeModelResponseRequest request =
+   *       SanitizeModelResponseRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setModelResponseData(DataItem.newBuilder().build())
+   *           .setUserPrompt("userPrompt1504308495")
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (SanitizeModelResponseResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    return stub.streamSanitizeModelResponseCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

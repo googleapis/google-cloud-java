@@ -79,7 +79,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * LLM generated context for the resources.
+   * Pre-formatted block of text containing the context for the requested
+   * resources.
    * </pre>
    *
    * <code>string context = 1;</code>
@@ -103,7 +104,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * LLM generated context for the resources.
+   * Pre-formatted block of text containing the context for the requested
+   * resources.
    * </pre>
    *
    * <code>string context = 1;</code>
@@ -439,7 +441,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * LLM generated context for the resources.
+     * Pre-formatted block of text containing the context for the requested
+     * resources.
      * </pre>
      *
      * <code>string context = 1;</code>
@@ -462,7 +465,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * LLM generated context for the resources.
+     * Pre-formatted block of text containing the context for the requested
+     * resources.
      * </pre>
      *
      * <code>string context = 1;</code>
@@ -485,7 +489,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * LLM generated context for the resources.
+     * Pre-formatted block of text containing the context for the requested
+     * resources.
      * </pre>
      *
      * <code>string context = 1;</code>
@@ -507,7 +512,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * LLM generated context for the resources.
+     * Pre-formatted block of text containing the context for the requested
+     * resources.
      * </pre>
      *
      * <code>string context = 1;</code>
@@ -525,7 +531,8 @@ public final class LookupContextResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * LLM generated context for the resources.
+     * Pre-formatted block of text containing the context for the requested
+     * resources.
      * </pre>
      *
      * <code>string context = 1;</code>
