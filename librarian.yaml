@@ -1848,7 +1848,6 @@ libraries:
     keep:
       - src/main/java/io/grafeas/v1/stub/Version.java
     java:
-      alternate_headers: java-grafeas/license-header.txt
       api_description_override: n/a
       artifact_id: grafeas
       client_documentation_override: https://cloud.google.com/java/docs/reference/grafeas/latest/overview
