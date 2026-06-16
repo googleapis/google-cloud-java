@@ -511,6 +511,11 @@ public class VRpcTracerTest {
     }
 
     @Override
+    public boolean isDone() {
+      return false;
+    }
+
+    @Override
     public void requestNext() {
       throw new UnsupportedOperationException();
     }

@@ -95,21 +95,21 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
     // Register AFTER chain.start so a context-cancel that fires immediately is sequenced behind
     // start. Matches ClientCallImpl's ordering (grpc-java issue #1343).
     //
-    // Queueing the registration onto the op executor is what makes the closed-check sound: any
+    // Queueing the registration onto the op executor is what makes the isDone-check sound: any
     // onClose that chain.start enqueued during runInline drains FIRST (FIFO), so by the time this
-    // task runs wrapped.closed reflects whether onClose has already fired. If it has, we skip
-    // addListener — otherwise the listener would pin the chain on grpcContext for its lifetime
-    // (CleanupListener.onClose already called removeListener as a no-op pre-registration). If
-    // grpcContext gets cancelled between start() returning and this task running, the
-    // directExecutor below fires the listener immediately on addListener, so cancel still
-    // propagates correctly.
+    // task runs chain.isDone() reflects whether the chain has already reached terminal. If it
+    // has, we skip addListener — otherwise the listener would pin the chain on grpcContext for
+    // its lifetime (CleanupListener.onClose already called removeListener as a no-op
+    // pre-registration). If grpcContext gets cancelled between start() returning and this task
+    // running, the directExecutor below fires the listener immediately on addListener, so cancel
+    // still propagates correctly.
     //
     // runInline is the right verb here: when chain.start enqueued nothing (common path), the
     // executor is idle and the body runs inline on this thread — no extra context switch. When
     // chain.start did enqueue an onClose, runInline takes the queue branch and FIFO drains both.
     exec.runInline(
         () -> {
-          if (!wrapped.closed) {
+          if (!chain.isDone()) {
             grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
           }
         });
@@ -123,10 +123,6 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
   private static class CleanupListener<RespT> extends ForwardListener<RespT> {
     private final Context grpcContext;
     private final Context.CancellationListener cancellationListener;
-    // Read by VOperationImpl.start on the caller thread after runInline returns. runInline runs
-    // chain.start synchronously, so any sync onClose has completed (and this flag been set) by
-    // the time start() reads it on the same thread — no synchronization needed.
-    volatile boolean closed = false;
 
     CleanupListener(
         VRpcListener<RespT> delegate,
@@ -139,7 +135,6 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
 
     @Override
     public void onClose(VRpcResult result) {
-      closed = true;
       grpcContext.removeListener(cancellationListener);
       super.onClose(result);
     }

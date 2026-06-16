@@ -220,6 +220,11 @@ public class TableBaseTest {
     public void cancel(@Nullable String message, @Nullable Throwable cause) {}
 
     @Override
+    public boolean isDone() {
+      return false;
+    }
+
+    @Override
     public void requestNext() {}
   }
 }

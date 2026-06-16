@@ -37,6 +37,11 @@ public class ForwardingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   }
 
   @Override
+  public boolean isDone() {
+    return delegate.isDone();
+  }
+
+  @Override
   public void requestNext() {
     delegate.requestNext();
   }
