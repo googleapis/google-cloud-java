@@ -689,4 +689,84 @@ public class BigQueryStatementTest {
             BigQueryJdbcException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
   }
+
+  @Test
+  public void testPreparedStatementExecuteQueryWithLargeResults() throws Exception {
+    // Setup connection mocks to return large results settings
+    doReturn(true).when(bigQueryConnection).isAllowLargeResults();
+    doReturn("test_dataset").when(bigQueryConnection).getDestinationDataset();
+    doReturn("test_table").when(bigQueryConnection).getDestinationTable();
+
+    com.google.cloud.bigquery.Dataset dataset = mock(com.google.cloud.bigquery.Dataset.class);
+    doReturn(dataset).when(bigquery).getDataset(any(com.google.cloud.bigquery.DatasetId.class));
+
+    // Create PreparedStatement
+    BigQueryPreparedStatement preparedStatement =
+        new BigQueryPreparedStatement(bigQueryConnection, query);
+    BigQueryPreparedStatement preparedStatementSpy = Mockito.spy(preparedStatement);
+
+    TableResult result = Mockito.mock(TableResult.class);
+    BigQueryJsonResultSet jsonResultSet = mock(BigQueryJsonResultSet.class);
+    QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
+    Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
+
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
+    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(result);
+
+    Job dryRunJob = getJobMock(null, jobConfiguration, StatementType.SELECT);
+    doReturn(dryRunJob).when(bigquery).create(any(JobInfo.class));
+
+    // Act
+    preparedStatementSpy.executeQuery();
+
+    // Assert
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration capturedConfig = captor.getValue();
+
+    assertThat(capturedConfig.getDestinationTable())
+        .isEqualTo(TableId.of("test_dataset", "test_table"));
+    assertThat(capturedConfig.allowLargeResults()).isTrue();
+  }
+
+  @Test
+  public void testPreparedStatementExecuteWithLargeResults() throws Exception {
+    // Setup connection mocks to return large results settings
+    doReturn(true).when(bigQueryConnection).isAllowLargeResults();
+    doReturn("test_dataset").when(bigQueryConnection).getDestinationDataset();
+    doReturn("test_table").when(bigQueryConnection).getDestinationTable();
+
+    com.google.cloud.bigquery.Dataset dataset = mock(com.google.cloud.bigquery.Dataset.class);
+    doReturn(dataset).when(bigquery).getDataset(any(com.google.cloud.bigquery.DatasetId.class));
+
+    // Create PreparedStatement
+    BigQueryPreparedStatement preparedStatement =
+        new BigQueryPreparedStatement(bigQueryConnection, query);
+    BigQueryPreparedStatement preparedStatementSpy = Mockito.spy(preparedStatement);
+
+    TableResult result = Mockito.mock(TableResult.class);
+    BigQueryJsonResultSet jsonResultSet = mock(BigQueryJsonResultSet.class);
+    QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
+    Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
+
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
+    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(result);
+
+    Job dryRunJob = getJobMock(null, jobConfiguration, StatementType.SELECT);
+    doReturn(dryRunJob).when(bigquery).create(any(JobInfo.class));
+
+    // Act
+    preparedStatementSpy.execute();
+
+    // Assert
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration capturedConfig = captor.getValue();
+
+    assertThat(capturedConfig.getDestinationTable())
+        .isEqualTo(TableId.of("test_dataset", "test_table"));
+    assertThat(capturedConfig.allowLargeResults()).isTrue();
+  }
 }
