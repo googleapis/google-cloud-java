@@ -45,6 +45,9 @@ jobs:
       with:
         distribution: zulu
         java-version: 11
+    - name: Install java-shared-dependencies
+      run: |
+        mvn install -pl sdk-platform-java/java-shared-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
@@ -82,6 +85,9 @@ jobs:
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
+    - name: Install java-shared-dependencies
+      run: |
+        mvn install -pl sdk-platform-java/java-shared-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
@@ -118,6 +124,9 @@ jobs:
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
+    - name: Install java-shared-dependencies
+      run: |
+        mvn install -pl sdk-platform-java/java-shared-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
