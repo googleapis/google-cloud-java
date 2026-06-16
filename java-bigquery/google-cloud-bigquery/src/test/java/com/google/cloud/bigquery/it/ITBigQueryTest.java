@@ -1184,6 +1184,9 @@ class ITBigQueryTest {
     Job jobLargeTable = bigquery.create(JobInfo.of(configurationLargeTable));
     jobLargeTable = jobLargeTable.waitFor();
     assertNull(jobLargeTable.getStatus().getError());
+
+    // Warmup query to initialize connection and avoid cold start timeout in subsequent tests
+    bigquery.query(QueryJobConfiguration.of("SELECT 1"));
   }
 
   @AfterAll

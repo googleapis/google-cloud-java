@@ -250,7 +250,7 @@ interface Hasher {
     private final Crc32cValue<?> expected;
     private final Crc32cLengthKnown actual;
 
-    private UncheckedChecksumMismatchException(Crc32cValue<?> expected, Crc32cLengthKnown actual) {
+    UncheckedChecksumMismatchException(Crc32cValue<?> expected, Crc32cLengthKnown actual) {
       super(
           String.format(
               "Mismatch checksum value. Expected %s actual %s",
