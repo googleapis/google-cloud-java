@@ -160,10 +160,7 @@ public class TestUtilities {
 
   public static String getBaseConnectionUrl() {
     String baseUrl = getBaseUrl();
-    String flags = getUrlFlags();
-    if (!flags.isEmpty() && !flags.endsWith(";")) {
-      flags += ";";
-    }
-    return "jdbc:bigquery://" + baseUrl + ";" + flags;
+    String flags = getUrlFlags().trim();
+    return "jdbc:bigquery://" + baseUrl + ";" + flags + ";";
   }
 }
