@@ -44,6 +44,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.channels.Channels;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -94,6 +95,9 @@ class ConnectionWorkerTest {
     testBigQueryWrite = new FakeBigQueryWrite();
     ConnectionWorker.setMaxInflightQueueWaitTime(300000);
     ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofMinutes(10));
+    ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.2);
+    ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.2);
+    ConnectionWorker.Load.setOverwhelmedTimeSinceLastCallbackThreshold(Duration.ofSeconds(3));
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(testBigQueryWrite));
@@ -865,29 +869,116 @@ class ConnectionWorkerTest {
     // In flight bytes bucket is split as per 1024 requests per bucket.
     // When in flight bytes is in lower bucket, even destination count is higher and request count
     // is higher, the load is still smaller.
-    Load load1 = ConnectionWorker.Load.create(1000, 2000, 100, 1000, 10);
-    Load load2 = ConnectionWorker.Load.create(2000, 1000, 10, 1000, 10);
+    Load load1 = ConnectionWorker.Load.create(Duration.ZERO, 1000, 2000, 100, 1000, 10);
+    Load load2 = ConnectionWorker.Load.create(Duration.ZERO, 2000, 1000, 10, 1000, 10);
     assertThat(Load.LOAD_COMPARATOR.compare(load1, load2)).isLessThan(0);
 
     // In flight bytes in the same bucke of request bytes will compare request count.
-    Load load3 = ConnectionWorker.Load.create(1, 300, 10, 0, 10);
-    Load load4 = ConnectionWorker.Load.create(10, 1, 10, 0, 10);
+    Load load3 = ConnectionWorker.Load.create(Duration.ZERO, 1, 300, 10, 0, 10);
+    Load load4 = ConnectionWorker.Load.create(Duration.ZERO, 10, 1, 10, 0, 10);
     assertThat(Load.LOAD_COMPARATOR.compare(load3, load4)).isGreaterThan(0);
 
     // In flight request and bytes in the same bucket will compare the destination count.
-    Load load5 = ConnectionWorker.Load.create(200, 1, 10, 1000, 10);
-    Load load6 = ConnectionWorker.Load.create(100, 10, 10, 1000, 10);
+    Load load5 = ConnectionWorker.Load.create(Duration.ZERO, 200, 1, 10, 1000, 10);
+    Load load6 = ConnectionWorker.Load.create(Duration.ZERO, 100, 10, 10, 1000, 10);
     assertThat(Load.LOAD_COMPARATOR.compare(load5, load6) == 0).isTrue();
+
+    // timeSinceLastCallback has the highest priority.
+    // load7 has higher timeSinceLastCallback (2s -> bucket 2) but lower other parameters.
+    // load8 has lower timeSinceLastCallback (0s -> bucket 0) but higher other parameters.
+    Load load7 = ConnectionWorker.Load.create(Duration.ofSeconds(2), 0, 0, 0, 10, 10);
+    Load load8 = ConnectionWorker.Load.create(Duration.ZERO, 10000, 10000, 100, 10, 10);
+    assertThat(Load.LOAD_COMPARATOR.compare(load7, load8)).isGreaterThan(0);
   }
 
   @Test
   void testLoadIsOverWhelmed() {
-    // Only in flight request is considered in current overwhelmed calculation.
-    Load load1 = ConnectionWorker.Load.create(60, 10, 100, 90, 100);
+    // In-flight requests, bytes, and timeSinceLastCallback are considered in overwhelmed
+    // calculation.
+
+    // Overwhelmed by request count
+    Load load1 = ConnectionWorker.Load.create(Duration.ZERO, 60, 10, 100, 90, 100);
     assertThat(load1.isOverwhelmed()).isTrue();
 
-    Load load2 = ConnectionWorker.Load.create(1, 1, 100, 100, 100);
+    // Not overwhelmed
+    Load load2 = ConnectionWorker.Load.create(Duration.ZERO, 1, 1, 100, 100, 100);
     assertThat(load2.isOverwhelmed()).isFalse();
+
+    // Under threshold (3s) for timeSinceLastCallback
+    Load load3 = ConnectionWorker.Load.create(Duration.ofSeconds(2), 0, 0, 0, 100, 100);
+    assertThat(load3.isOverwhelmed()).isFalse();
+
+    // Over threshold (3s) for timeSinceLastCallback
+    Load load4 = ConnectionWorker.Load.create(Duration.ofSeconds(4), 0, 0, 0, 100, 100);
+    assertThat(load4.isOverwhelmed()).isTrue();
+  }
+
+  @Test
+  void testGetLoad_timeSinceLastCallback() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
+    try (ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            null,
+            createProtoSchema("foo"),
+            10,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /*isMultiplexing*/ false)) {
+
+      // Initially empty, should be zero.
+      assertThat(connectionWorker.getLoad().timeSinceLastCallback()).isEqualTo(Duration.ZERO);
+
+      // Keep response in flight
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(5));
+
+      // Send a message
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"hello"}), 0);
+
+      // Wait a bit to ensure it is sent and in flight queue
+      Thread.sleep(500);
+
+      Load load = connectionWorker.getLoad();
+      assertThat(load.timeSinceLastCallback()).isGreaterThan(Duration.ZERO);
+      assertThat(load.timeSinceLastCallback())
+          .isLessThan(Duration.ofSeconds(2)); // Should be around 500ms
+    }
+  }
+
+  @Test
+  void testLoadCompare_timeSinceLastCallback() {
+    // Same bytes, same count, same destination, different timeSinceLastCallback
+    // Bucketed by 1 second (1000ms).
+
+    // 100ms and 200ms are in the same bucket (0).
+    Load load1 = ConnectionWorker.Load.create(Duration.ofMillis(100), 0, 0, 0, 0, 0);
+    Load load2 = ConnectionWorker.Load.create(Duration.ofMillis(200), 0, 0, 0, 0, 0);
+    assertThat(Load.LOAD_COMPARATOR.compare(load1, load2)).isEqualTo(0);
+
+    // 100ms and 1200ms are in different buckets (0 vs 1).
+    Load load3 = ConnectionWorker.Load.create(Duration.ofMillis(1200), 0, 0, 0, 0, 0);
+    assertThat(Load.LOAD_COMPARATOR.compare(load1, load3)).isLessThan(0);
+    assertThat(Load.LOAD_COMPARATOR.compare(load3, load1)).isGreaterThan(0);
+  }
+
+  @Test
+  void testTestLoadCompare_timeSinceLastCallback() {
+    // TEST_LOAD_COMPARATOR compares timeSinceLastCallback unbucketed.
+    // 1s and 2s should be different.
+    Load load1 = ConnectionWorker.Load.create(Duration.ofSeconds(1), 0, 0, 0, 0, 0);
+    Load load2 = ConnectionWorker.Load.create(Duration.ofSeconds(2), 0, 0, 0, 0, 0);
+    assertThat(Load.TEST_LOAD_COMPARATOR.compare(load1, load2)).isLessThan(0);
+    assertThat(Load.TEST_LOAD_COMPARATOR.compare(load2, load1)).isGreaterThan(0);
   }
 
   @Test
@@ -1433,6 +1524,24 @@ class ConnectionWorkerTest {
     }
   }
 
+  private ConnectionWorker createConnectionWorker() throws IOException {
+    return new ConnectionWorker(
+        TEST_STREAM_1,
+        "us",
+        createProtoSchema("foo"),
+        100000,
+        100000,
+        Duration.ofSeconds(100),
+        FlowController.LimitExceededBehavior.Block,
+        TEST_TRACE_ID,
+        null,
+        client.getSettings(),
+        retrySettings,
+        /* enableRequestProfiler= */ false,
+        /* enableOpenTelemetry= */ false,
+        /* isMultiplexing= */ false);
+  }
+
   @Test
   void testInflightRetryCountHealthMetricExactlyOnce() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
@@ -1503,5 +1612,116 @@ class ConnectionWorkerTest {
     assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
     assertEquals(3, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
     assertEquals("projects/p1/datasets/d1/tables/t1/streams/s1", healthCheckFields.streamName);
+  }
+
+  @Test
+  void testEarliestSendTime_outstandingRequest() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      // Stuck response to keep request in flight
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ofSeconds(10));
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+
+      Instant beforeSend = Instant.now();
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+
+      // Wait a bit to ensure it is sent and send time is captured
+      Thread.sleep(500);
+      Instant afterSend = Instant.now();
+
+      Instant earliestSendTime = connectionWorker.getEarliestSendTime();
+      assertThat(earliestSendTime).isNotNull();
+      assertThat(earliestSendTime).isAtLeast(beforeSend);
+      assertThat(earliestSendTime).isAtMost(afterSend);
+
+      // Clean up
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ZERO);
+      future.get();
+    }
+  }
+
+  @Test
+  void testEarliestSendTime_requestSuccess() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+
+      // Wait for success response
+      future.get();
+
+      // Verify state is NULL
+      assertThat(connectionWorker.getEarliestSendTime()).isNull();
+    }
+  }
+
+  @Test
+  void testEarliestSendTime_retryScenario() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      // Stuck first response to ensure we can capture send time
+      testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(500));
+
+      // Fail enough times to exhaust retries (maxAttempts + 1)
+      testBigQueryWrite.addResponse(
+          new DummyResponseSupplierWillFailThenSucceed(
+              new FakeBigQueryWriteImpl.Response(createAppendResponse(0)),
+              /* totalFailCount= */ retrySettings.getMaxAttempts() + 1,
+              com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL.ordinal()).build()));
+
+      Instant beforeSend = Instant.now();
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+
+      // Wait for first attempt to be sent (response sleep is 500ms)
+      Thread.sleep(200);
+      Instant afterSend = Instant.now();
+
+      Instant earliestSendTime = connectionWorker.getEarliestSendTime();
+      assertThat(earliestSendTime).isNotNull();
+      assertThat(earliestSendTime).isAtLeast(beforeSend);
+      assertThat(earliestSendTime).isAtMost(afterSend);
+
+      // Wait for first response to arrive (500ms) and retry to be scheduled.
+      // Retry will be scheduled with 500ms delay (initialRetryDelay).
+      // So it will be sent at ~1000ms.
+      // We check state at 800ms (after first failure but before retry is sent).
+      Thread.sleep(600); // 200ms + 600ms = 800ms from start.
+
+      Instant earliestSendTimeAfterFirstFailure = connectionWorker.getEarliestSendTime();
+      assertThat(earliestSendTimeAfterFirstFailure).isEqualTo(earliestSendTime);
+
+      // Wait for all retries to exhaust and fail.
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> {
+                future.get(5, TimeUnit.SECONDS);
+              });
+      assertThat(ex.getCause()).isInstanceOf(StatusRuntimeException.class);
+      assertThat(((StatusRuntimeException) ex.getCause()).getStatus().getCode())
+          .isEqualTo(Code.INTERNAL);
+
+      // Once exhausted, state should be null
+      assertThat(connectionWorker.getEarliestSendTime()).isNull();
+    }
   }
 }
