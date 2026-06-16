@@ -387,6 +387,7 @@ class DefaultCredentialsProviderTest {
     assertNotNull(((GdchCredentials) defaultCredentials).getApiAudience());
   }
 
+  @Test
   void getDefaultCredentials_quota_project() throws IOException {
     InputStream userStream =
         UserCredentialsTest.writeUserStream(

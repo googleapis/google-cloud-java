@@ -448,4 +448,42 @@ public class ChecksumResultSetTest {
           () -> resultSet.retry(abortedException));
     }
   }
+
+  @Test
+  public void testEmptyString() {
+    ChecksumResultSet resultSet = createStringValChecksumResultSet("");
+    assertTrue(resultSet.next());
+  }
+
+  @Test
+  public void testSingleCharMultiByteString() {
+    ChecksumResultSet resultSet = createStringValChecksumResultSet("ä");
+    assertTrue(resultSet.next());
+  }
+
+  @Test
+  public void testLongMixedUtf8String() {
+    ChecksumResultSet resultSet = createStringValChecksumResultSet("aaa\uD841\uDF0E");
+    assertTrue(resultSet.next());
+  }
+
+  private ChecksumResultSet createStringValChecksumResultSet(String value) {
+    Type type = Type.struct(StructField.of("stringVal", Type.string()));
+    Struct row = Struct.newBuilder().set("stringVal").to(value).build();
+
+    ParsedStatement parsedStatement = mock(ParsedStatement.class);
+    Statement statement = Statement.of("select * from foo");
+    when(parsedStatement.getStatement()).thenReturn(statement);
+    ReadWriteTransaction transaction = mock(ReadWriteTransaction.class);
+    when(transaction.runWithRetry(any(Callable.class)))
+        .thenAnswer(invocationOnMock -> ((Callable<?>) invocationOnMock.getArgument(0)).call());
+    when(transaction.getStatementExecutor()).thenReturn(mock(StatementExecutor.class));
+
+    ResultSet queryResult = ResultSets.forRows(type, ImmutableList.of(row));
+    return new ChecksumResultSet(
+        transaction,
+        DirectExecuteResultSet.ofResultSet(queryResult),
+        parsedStatement,
+        AnalyzeMode.NONE);
+  }
 }

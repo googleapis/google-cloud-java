@@ -4,7 +4,7 @@
 
     <artifactId>google-cloud-bigtable-parent</artifactId>
     <packaging>pom</packaging>
-    <version>2.79.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <name>Google Cloud Bigtable Parent</name>
     <url>https://github.com/googleapis/google-cloud-java</url>
     <description>
@@ -14,7 +14,7 @@
     <parent>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-jar-parent</artifactId>
-      <version>1.87.0</version><!-- {x-version-update:google-cloud-java:current} -->
+      <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
       <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
     </parent>
 
@@ -144,39 +144,40 @@
         <github.global.server>github</github.global.server>
         <site.installationModule>google-cloud-bigtable-parent</site.installationModule>
         <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-
-        <!-- Utility -->
-        <error-prone.version>2.38.0</error-prone.version>
+        <errorprone.version>2.48.0</errorprone.version>
+        <errorprone.javac.args>-g</errorprone.javac.args>
     </properties>
 
     <dependencyManagement>
         <dependencies>
 
+            <!-- {x-generated-dependencies-start} -->
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>proto-google-cloud-bigtable-v2</artifactId>
-                <version>2.79.0</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
+                <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
-                <version>2.79.0</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
+                <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-                <version>2.79.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+                <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-                <version>2.79.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
+                <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-admin-v2:current} -->
             </dependency>
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-bigtable</artifactId>
-                <version>2.79.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+                <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
             </dependency>
+            <!-- {x-generated-dependencies-end} -->
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-conformance-tests</artifactId>
@@ -347,14 +348,43 @@
         <skipTests>true</skipTests>
       </properties>
     </profile>
+    <profile>
+      <id>errorprone-jdk8</id>
+      <activation>
+        <jdk>[1.8,17)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.38.0</errorprone.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk17</id>
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.42.0</errorprone.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk21</id>
+      <activation>
+        <jdk>21</jdk>
+      </activation>
+      <properties>
+        <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
+      </properties>
+    </profile>
     </profiles>
 
     <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-bigtable</module>
     <module>grpc-google-cloud-bigtable-admin-v2</module>
     <module>grpc-google-cloud-bigtable-v2</module>
     <module>proto-google-cloud-bigtable-admin-v2</module>
     <module>proto-google-cloud-bigtable-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-bigtable-emulator-core</module>
     <module>google-cloud-bigtable-emulator</module>
     <module>google-cloud-bigtable-bom</module>

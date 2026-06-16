@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iap</artifactId>
-  <version>0.49.0</version><!-- {x-version-update:google-cloud-iap:current} -->
+  <version>0.50.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Identity-Aware Proxy API</name>
   <description>Cloud Identity-Aware Proxy API Controls access to cloud applications running on Google Cloud Platform.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-iap-parent</artifactId>
-    <version>0.49.0</version><!-- {x-version-update:google-cloud-iap:current} -->
+    <version>0.50.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iap:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-iap</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-iap-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-iap-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

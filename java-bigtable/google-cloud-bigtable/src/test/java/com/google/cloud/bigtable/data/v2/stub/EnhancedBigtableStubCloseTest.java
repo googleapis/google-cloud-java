@@ -81,6 +81,7 @@ public class EnhancedBigtableStubCloseTest {
   }
 
   @Test
+  @SuppressWarnings("NullArgumentForNonNullParameter")
   public void outstandingRequestsFinishAfterClose() throws Exception {
     ApiFuture<List<Row>> resultFuture =
         stub.readRowsCallable().all().futureCall(Query.create(TableId.of("table1")));
@@ -99,6 +100,7 @@ public class EnhancedBigtableStubCloseTest {
 
   class FakeBigtable extends BigtableGrpc.BigtableImplBase {
     @Override
+    @SuppressWarnings("NullArgumentForNonNullParameter")
     public void readRows(
         ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
 

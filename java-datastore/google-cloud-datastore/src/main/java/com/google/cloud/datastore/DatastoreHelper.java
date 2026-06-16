@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore;
 
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,11 +37,13 @@ class DatastoreHelper {
   }
 
   static Entity get(Transaction reader, Key key) {
-    return Iterators.getNext(reader.get(new Key[] {key}), null);
+    Iterator<Entity> results = reader.get(new Key[] {key});
+    return results.hasNext() ? results.next() : null;
   }
 
   static Entity get(Datastore reader, Key key, ReadOption... options) {
-    return Iterators.getNext(reader.get(Collections.singletonList(key), options), null);
+    Iterator<Entity> results = reader.get(Collections.singletonList(key), options);
+    return results.hasNext() ? results.next() : null;
   }
 
   static Entity add(DatastoreWriter writer, FullEntity<?> entity) {

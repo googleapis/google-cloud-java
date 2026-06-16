@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-15-intel, ubuntu-22.04, windows-2022 ]
-        java: [ 11, 17 ]
+        os: [ macos-15, ubuntu-24.04, windows-2025 ]
+        java: [ 11, 17, 21, 25, 26 ]
     runs-on: ${{ matrix.os }}
     steps:
       - run: git config --global core.longpaths true
@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-15-intel, ubuntu-22.04, windows-2022 ]
+        os: [ macos-15, ubuntu-24.04, windows-2025 ]
     runs-on: ${{ matrix.os }}
     steps:
       - run: git config --global core.longpaths true
