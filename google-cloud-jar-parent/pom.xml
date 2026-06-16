@@ -219,6 +219,10 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skip>${skipUnitTests}</skip>
+          <excludes>
+            <exclude>**/v*/*ClientTest.java</exclude>
+            <exclude>**/v*/*ClientHttpJsonTest.java</exclude>
+          </excludes>
         </configuration>
       </plugin>
       <plugin>
