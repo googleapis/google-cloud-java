@@ -78,8 +78,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 import org.apache.avro.Conversions;
 import org.apache.avro.LogicalTypes;
@@ -1214,13 +1214,19 @@ class ITBigQueryStorageTest {
           .setReadOptions(TableReadOptions.newBuilder().setRowRestriction(filter).build());
     }
 
-    final CreateReadSessionRequest request = createSessionRequestBuilder.build();
-    ReadSession session =
-        await()
-            .atMost(Duration.ofSeconds(30))
-            .pollInterval(Duration.ofSeconds(1))
-            .ignoreException(NotFoundException.class)
-            .until(() -> client.createReadSession(request), Objects::nonNull);
+    CreateReadSessionRequest request = createSessionRequestBuilder.build();
+    AtomicReference<ReadSession> sessionRef = new AtomicReference<>();
+    await()
+        .atMost(Duration.ofSeconds(10))
+        .pollInterval(Duration.ofSeconds(1))
+        // retry if the newly-created table has not yet fully propagated
+        .ignoreException(NotFoundException.class)
+        .until(
+            () -> {
+              sessionRef.set(client.createReadSession(request));
+              return true;
+            });
+    ReadSession session = sessionRef.get();
     assertEquals(
         1,
         session.getStreamsCount(),
