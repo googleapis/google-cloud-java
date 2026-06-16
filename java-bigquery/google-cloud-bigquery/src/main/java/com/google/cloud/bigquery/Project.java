@@ -20,9 +20,21 @@ import com.google.api.core.BetaApi;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Google BigQuery Project information. A project is the top-level container for Google Cloud
+ * resources, and holds BigQuery dataset collections. This class wraps a BigQuery project resource,
+ * providing details such as the project's unique alphanumeric ID, numeric project number, and
+ * friendly display name.
+ *
+ * <p>Objects of this class can be obtained by listing projects accessible to the caller using
+ * {@link BigQuery#listProjects(BigQuery.ProjectListOption...)}.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/docs/reference/rest/v2/projects/list">Projects:
+ *     list</a>
+ */
 @BetaApi
 public class Project implements Serializable {
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = -8123877292090683890L;
 
   private final String id;
   private final String numericId;
@@ -36,18 +48,22 @@ public class Project implements Serializable {
     this.friendlyName = friendlyName;
   }
 
+  /** Returns the resource ID of the project. */
   public String getId() {
     return id;
   }
 
+  /** Returns the unique numeric project number. */
   public String getNumericId() {
     return numericId;
   }
 
+  /** Returns the unique alphanumeric project ID. */
   public String getProjectId() {
     return projectId;
   }
 
+  /** Returns the user-defined display name of the project. */
   public String getFriendlyName() {
     return friendlyName;
   }

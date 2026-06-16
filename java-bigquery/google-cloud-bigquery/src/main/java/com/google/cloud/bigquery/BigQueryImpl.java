@@ -328,6 +328,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
+  @BetaApi
   public Page<Project> listProjects(ProjectListOption... options) {
     Span projectsList = null;
     if (getOptions().isOpenTelemetryTracingEnabled()

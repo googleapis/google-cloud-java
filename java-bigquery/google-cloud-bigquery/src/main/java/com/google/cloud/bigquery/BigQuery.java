@@ -307,8 +307,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   }
 
   /** Class for specifying project list options. */
+  @BetaApi
   class ProjectListOption extends Option {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -7256063598324265038L;
 
     private ProjectListOption(BigQueryRpc.Option option, Object value) {
       super(option, value);
@@ -974,7 +975,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @param options options for listing projects
    * @return a page of projects
    */
-  @InternalApi
+  @BetaApi
   Page<Project> listProjects(ProjectListOption... options);
 
   /**
