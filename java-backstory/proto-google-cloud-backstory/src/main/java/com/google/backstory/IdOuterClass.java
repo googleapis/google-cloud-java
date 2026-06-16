@@ -61,10 +61,10 @@ public final class IdOuterClass extends com.google.protobuf.GeneratedFile {
           + "TIONS\020\002\022\r\n\tUPPERCASE\020\003\022\030\n\024MACHINE_INTELL"
           + "IGENCE\020\004\022\033\n\027SECURITY_COMMAND_CENTER\020\005\022\017\n"
           + "\013UNSPECIFIED\020\006\022\016\n\nSOAR_ALERT\020\007\022\017\n\013VIRUS_"
-          + "TOTAL\020\010B\215\001\n\024com.google.backstoryP\001Z9goog"
-          + "le.golang.org/genproto/googleapis/backst"
-          + "ory;backstory\252\002\020Google.Backstory\312\002\020Googl"
-          + "e\\Backstory\352\002\021Google::Backstoryb\006proto3"
+          + "TOTAL\020\010B\211\001\n\024com.google.backstoryP\001Z5clou"
+          + "d.google.com/go/backstory/backstorypb;ba"
+          + "ckstorypb\252\002\020Google.Backstory\312\002\020Google\\Ba"
+          + "ckstory\352\002\021Google::Backstoryb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
