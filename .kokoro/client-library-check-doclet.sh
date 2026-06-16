@@ -120,11 +120,9 @@ git --no-pager diff
 echo "--------"
 mvn install "-DskipTests=true" "-Dmaven.javadoc.skip=true" "-Dgcloud.download.skip=true" "-Dcheckstyle.skip=true" -B -V -q --no-transfer-progress
 popd
+popd
 
 # Check javadoc generation with the doclet
-rm -rf "${REPO}"
-git clone "https://github.com/googleapis/${REPO}.git" --depth=1
-
 pushd ${REPO}
 replace_sdk_platform_java_config_version "${SDK_PLATFORM_JAVA_CONFIG_VERSION}"
 
@@ -145,3 +143,8 @@ if [ "${RETURN_CODE}" == 0 ]; then
 else
   echo "Javadoc generation FAILED with doclet"
 fi
+
+popd
+git checkout -- ${REPO}
+
+exit ${RETURN_CODE}

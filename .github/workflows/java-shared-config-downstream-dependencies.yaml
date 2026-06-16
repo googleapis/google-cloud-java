@@ -42,6 +42,11 @@ jobs:
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
+    - name: Pre-build dependencies
+      run: |
+        LIB_DIR="${{matrix.repo}}"
+        LIB_NAME="google-cloud-${LIB_DIR#java-}"
+        mvn install -pl ${LIB_DIR}/${LIB_NAME} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - run: .kokoro/client-library-check.sh ${{matrix.repo}} dependencies
 
   flatten-plugin-check:
@@ -57,7 +62,8 @@ jobs:
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
+    - name: Pre-build dependencies
+      run: mvn install -pl java-storage/google-cloud-storage -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - run: .kokoro/client-library-check.sh java-storage flatten-plugin
       env:
-        REPO_TAG: v2.9.3
-        EXPECTED_DEPENDENCIES_LIST: java-storage-v2.9.3-expected-flattened-dependencies.txt
+        EXPECTED_DEPENDENCIES_LIST: java-storage-expected-flattened-dependencies.txt

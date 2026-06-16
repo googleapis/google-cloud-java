@@ -221,11 +221,6 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
           java-shared-config:
             - 'java-shared-config/**'
-            - 'google-auth-library-java/**/*.java'
-            - 'google-auth-library-java/**/pom.xml'
-            - 'sdk-platform-java/**/*.java'
-            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
-            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
   split-units:
     runs-on: ubuntu-latest
     needs: changes

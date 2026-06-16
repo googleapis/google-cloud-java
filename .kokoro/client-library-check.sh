@@ -122,14 +122,6 @@ popd
 popd
 
 # Check this BOM against a few java client libraries
-# java-bigquery
-rm -rf "${REPO}"
-if [ -z "${REPO_TAG}" ]; then
-  git clone "https://github.com/googleapis/${REPO}.git" --depth=1
-else
-  git clone "https://github.com/googleapis/${REPO}.git" --depth=1 --branch "${REPO_TAG}"
-fi
-
 pushd ${REPO}
 
 # If using an older version of java-storage, continue replacing java-shared-config version otherwise replace
@@ -173,6 +165,9 @@ flatten-plugin)
     RETURN_CODE=$?
     ;;
 esac
+
+popd
+git checkout -- ${REPO}
 
 echo "exiting with ${RETURN_CODE}"
 exit ${RETURN_CODE}
