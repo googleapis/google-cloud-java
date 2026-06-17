@@ -174,6 +174,53 @@ public final class GapicUnbufferedReadableByteChannelTest {
   }
 
   @Test
+  public void validateCumulativeChecksum_disabled_noFailureOnMismatch() throws IOException {
+    ChecksummedTestContent testContent =
+        ChecksummedTestContent.of(DataGenerator.base64Characters().genBytes(10));
+
+    Object metadata =
+        Object.newBuilder()
+            .setSize(testContent.length())
+            .setChecksums(
+                ObjectChecksums.newBuilder().setCrc32C(testContent.getCrc32c() + 1).build())
+            .build();
+
+    ResponseContentLifecycleManager<ReadObjectResponse> manager =
+        ResponseContentLifecycleManager.noop();
+
+    try (GapicUnbufferedReadableByteChannel c =
+        new GapicUnbufferedReadableByteChannel(
+            SettableApiFuture.create(),
+            new ZeroCopyServerStreamingCallable<>(
+                new ServerStreamingCallable<ReadObjectRequest, ReadObjectResponse>() {
+                  @Override
+                  public void call(
+                      ReadObjectRequest request,
+                      ResponseObserver<ReadObjectResponse> respond,
+                      ApiCallContext context) {
+                    respond.onStart(TestUtils.nullStreamController());
+                    respond.onResponse(
+                        ReadObjectResponse.newBuilder()
+                            .setChecksummedData(testContent.asChecksummedData())
+                            .setMetadata(metadata)
+                            .build());
+                    respond.onComplete();
+                  }
+                },
+                manager),
+            ReadObjectRequest.getDefaultInstance(),
+            Hasher.noop(),
+            Retrier.attemptOnce(),
+            Retrying.neverRetry())) {
+
+      ByteBuffer buffer = ByteBuffer.allocate(15);
+      int read = (int) c.read(new ByteBuffer[] {buffer}, 0, 1);
+      assertThat(read).isEqualTo(testContent.length());
+      assertThat(xxd(buffer)).isEqualTo(xxd(testContent.getBytes()));
+    }
+  }
+
+
   public void validateCumulativeChecksum_skippedForRangedRead() throws IOException {
     ChecksummedTestContent testContent =
         ChecksummedTestContent.of(DataGenerator.base64Characters().genBytes(10));
