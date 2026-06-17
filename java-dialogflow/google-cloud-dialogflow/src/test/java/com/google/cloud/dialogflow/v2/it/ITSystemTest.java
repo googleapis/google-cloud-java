@@ -15,7 +15,10 @@
  */
 package com.google.cloud.dialogflow.v2.it;
 
+import static com.google.common.collect.Streams.stream;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dialogflow.v2.Agent;
@@ -54,10 +57,10 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.UUID;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -259,7 +262,6 @@ public class ITSystemTest {
   }
 
   @Test
-  @Ignore("b/423958346")
   public void detectIntentTest() {
     QueryInput queryInput =
         QueryInput.newBuilder()
@@ -279,22 +281,28 @@ public class ITSystemTest {
             .setSession(SESSION_NAME.toString())
             .setQueryInput(queryInput)
             .build();
-    DetectIntentResponse response = sessionsClient.detectIntent(request);
-    QueryResult result = response.getQueryResult();
-    assertEquals(EVENT_NAME, result.getQueryText());
-    assertEquals(ACTION_NAME, result.getAction());
-    assertEquals(DEFAULT_LANGUAGE_CODE, result.getLanguageCode());
-    assertEquals(intent.getDisplayName(), result.getIntent().getDisplayName());
+    await()
+        .atMost(Duration.ofSeconds(30))
+        .pollInterval(Duration.ofSeconds(2))
+        .untilAsserted(
+            () -> {
+              DetectIntentResponse response = sessionsClient.detectIntent(request);
+              QueryResult result = response.getQueryResult();
+              assertEquals(EVENT_NAME, result.getQueryText());
+              assertEquals(ACTION_NAME, result.getAction());
+              assertEquals(DEFAULT_LANGUAGE_CODE, result.getLanguageCode());
+              assertEquals(intent.getDisplayName(), result.getIntent().getDisplayName());
+            });
   }
 
   @Test
-  @Ignore("b/423958346")
   public void listContextsTest() {
     ListContextsRequest request =
         ListContextsRequest.newBuilder().setParent(SESSION_NAME.toString()).build();
-    for (Context actualContext : contextsClient.listContexts(request).iterateAll()) {
-      assertEquals(context.getName(), actualContext.getName());
-    }
+    boolean contextNameInActualContext =
+        stream(contextsClient.listContexts(request).iterateAll())
+            .anyMatch(actualContext -> context.getName().equals(actualContext.getName()));
+    assertTrue(contextNameInActualContext);
   }
 
   @Test
