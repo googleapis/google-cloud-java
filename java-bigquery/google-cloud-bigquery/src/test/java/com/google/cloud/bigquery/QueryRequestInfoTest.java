@@ -159,6 +159,13 @@ public class QueryRequestInfoTest {
   QueryRequestInfo REQUEST_INFO_SUPPORTED =
       new QueryRequestInfo(
           QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build());
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED =
+      QUERY_JOB_CONFIGURATION_SUPPORTED.toBuilder()
+          .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+          .build();
+  QueryRequestInfo REQUEST_INFO_REQUIRED_SUPPORTED =
+      new QueryRequestInfo(
+          QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build());
 
   @Test
   public void testIsFastQuerySupported() {
@@ -166,8 +173,10 @@ public class QueryRequestInfoTest {
     JobId jobIdNotSupported = JobId.newBuilder().setJob("random-job-id").build();
     assertEquals(false, REQUEST_INFO.isFastQuerySupported(jobIdSupported));
     assertEquals(true, REQUEST_INFO_SUPPORTED.isFastQuerySupported(jobIdSupported));
+    assertEquals(true, REQUEST_INFO_REQUIRED_SUPPORTED.isFastQuerySupported(jobIdSupported));
     assertEquals(false, REQUEST_INFO.isFastQuerySupported(jobIdNotSupported));
     assertEquals(false, REQUEST_INFO_SUPPORTED.isFastQuerySupported(jobIdNotSupported));
+    assertEquals(false, REQUEST_INFO_REQUIRED_SUPPORTED.isFastQuerySupported(jobIdNotSupported));
   }
 
   @Test
