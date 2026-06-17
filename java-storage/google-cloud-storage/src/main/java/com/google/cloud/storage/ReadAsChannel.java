@@ -46,7 +46,7 @@ import javax.annotation.concurrent.Immutable;
 @BetaApi
 @Immutable
 public final class ReadAsChannel extends BaseConfig<ScatteringByteChannel, StreamingRead> {
-  static final ReadAsChannel INSTANCE = new ReadAsChannel(RangeSpec.all(), Hasher.enabled());
+  static final ReadAsChannel INSTANCE = new ReadAsChannel(RangeSpec.all(), Hasher.defaultHasher());
 
   private final RangeSpec range;
   private final Hasher hasher;
@@ -97,7 +97,7 @@ public final class ReadAsChannel extends BaseConfig<ScatteringByteChannel, Strea
    */
   @BetaApi
   boolean getCrc32cValidationEnabled() {
-    return Hasher.enabled().equals(hasher);
+    return !Hasher.noop().equals(hasher);
   }
 
   /**
@@ -111,7 +111,7 @@ public final class ReadAsChannel extends BaseConfig<ScatteringByteChannel, Strea
    */
   @BetaApi
   ReadAsChannel withCrc32cValidationEnabled(boolean enabled) {
-    if (enabled && Hasher.enabled().equals(hasher)) {
+    if (enabled && !Hasher.noop().equals(hasher)) {
       return this;
     } else if (!enabled && Hasher.noop().equals(hasher)) {
       return this;

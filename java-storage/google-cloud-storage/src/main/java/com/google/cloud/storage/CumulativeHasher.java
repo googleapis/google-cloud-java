@@ -40,7 +40,7 @@ final class CumulativeHasher implements Hasher {
     this.delegate = delegate;
     this.startOffset = startOffset;
     this.limit = limit;
-    this.cumulativeHash = Crc32cValue.zero();
+    this.cumulativeHash = delegate.initialValue();
   }
 
   @Override
@@ -112,8 +112,11 @@ final class CumulativeHasher implements Hasher {
   void validateCumulativeChecksum(Object metadata)
       throws UncheckedCumulativeChecksumMismatchException {
     if (qualifiesForVerification(metadata)) {
-      Crc32cValue<?> expected = Crc32cValue.of(metadata.getChecksums().getCrc32C());
       Crc32cLengthKnown actual = getCumulativeHash();
+      if (actual == null) {
+        return;
+      }
+      Crc32cValue<?> expected = Crc32cValue.of(metadata.getChecksums().getCrc32C());
       if (!actual.eqValue(expected)) {
         throw new UncheckedCumulativeChecksumMismatchException(expected, actual);
       }
@@ -121,7 +124,7 @@ final class CumulativeHasher implements Hasher {
   }
 
   private void accumulate(Crc32cLengthKnown actual) {
-    cumulativeHash = cumulativeHash.concat(actual);
+    cumulativeHash = nullSafeConcat(cumulativeHash, actual);
   }
 
   Crc32cLengthKnown getCumulativeHash() {

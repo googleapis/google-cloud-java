@@ -46,7 +46,7 @@ public final class ReadAsFutureByteString
     extends BaseConfig<ApiFuture<DisposableByteString>, AccumulatingRead<DisposableByteString>> {
 
   static final ReadAsFutureByteString INSTANCE =
-      new ReadAsFutureByteString(RangeSpec.all(), Hasher.enabled());
+      new ReadAsFutureByteString(RangeSpec.all(), Hasher.defaultHasher());
 
   private final RangeSpec range;
   private final Hasher hasher;
@@ -97,7 +97,7 @@ public final class ReadAsFutureByteString
    */
   @BetaApi
   boolean getCrc32cValidationEnabled() {
-    return Hasher.enabled().equals(hasher);
+    return !Hasher.noop().equals(hasher);
   }
 
   /**
@@ -111,7 +111,7 @@ public final class ReadAsFutureByteString
    */
   @BetaApi
   ReadAsFutureByteString withCrc32cValidationEnabled(boolean enabled) {
-    if (enabled && Hasher.enabled().equals(hasher)) {
+    if (enabled && !Hasher.noop().equals(hasher)) {
       return this;
     } else if (!enabled && Hasher.noop().equals(hasher)) {
       return this;

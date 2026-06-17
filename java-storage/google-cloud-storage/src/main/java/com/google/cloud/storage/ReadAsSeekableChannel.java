@@ -46,7 +46,7 @@ import javax.annotation.concurrent.Immutable;
 public final class ReadAsSeekableChannel extends ReadProjectionConfig<SeekableByteChannel> {
 
   static final ReadAsSeekableChannel INSTANCE =
-      new ReadAsSeekableChannel(Hasher.enabled(), LinearExponentialRangeSpecFunction.INSTANCE);
+      new ReadAsSeekableChannel(Hasher.defaultHasher(), LinearExponentialRangeSpecFunction.INSTANCE);
 
   private final Hasher hasher;
   private final RangeSpecFunction rangeSpecFunction;
@@ -94,7 +94,7 @@ public final class ReadAsSeekableChannel extends ReadProjectionConfig<SeekableBy
    */
   @BetaApi
   boolean getCrc32cValidationEnabled() {
-    return Hasher.enabled().equals(hasher);
+    return !Hasher.noop().equals(hasher);
   }
 
   /**
@@ -108,7 +108,7 @@ public final class ReadAsSeekableChannel extends ReadProjectionConfig<SeekableBy
    */
   @BetaApi
   ReadAsSeekableChannel withCrc32cValidationEnabled(boolean enabled) {
-    if (enabled && Hasher.enabled().equals(hasher)) {
+    if (enabled && !Hasher.noop().equals(hasher)) {
       return this;
     } else if (!enabled && Hasher.noop().equals(hasher)) {
       return this;

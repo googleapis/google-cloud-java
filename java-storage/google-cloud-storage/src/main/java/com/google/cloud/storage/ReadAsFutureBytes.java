@@ -41,7 +41,7 @@ public final class ReadAsFutureBytes
     extends BaseConfig<ApiFuture<byte[]>, AccumulatingRead<byte[]>> {
 
   static final ReadAsFutureBytes INSTANCE =
-      new ReadAsFutureBytes(RangeSpec.all(), Hasher.enabled());
+      new ReadAsFutureBytes(RangeSpec.all(), Hasher.defaultHasher());
 
   private final RangeSpec range;
   private final Hasher hasher;
@@ -92,7 +92,7 @@ public final class ReadAsFutureBytes
    */
   @BetaApi
   boolean getCrc32cValidationEnabled() {
-    return Hasher.enabled().equals(hasher);
+    return !Hasher.noop().equals(hasher);
   }
 
   /**
@@ -106,7 +106,7 @@ public final class ReadAsFutureBytes
    */
   @BetaApi
   ReadAsFutureBytes withCrc32cValidationEnabled(boolean enabled) {
-    if (enabled && Hasher.enabled().equals(hasher)) {
+    if (enabled && !Hasher.noop().equals(hasher)) {
       return this;
     } else if (!enabled && Hasher.noop().equals(hasher)) {
       return this;
