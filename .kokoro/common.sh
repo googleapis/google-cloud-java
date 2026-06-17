@@ -406,6 +406,8 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
       -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
@@ -473,6 +475,8 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
       -T 1C
   fi
 }

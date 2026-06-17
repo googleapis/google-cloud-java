@@ -42,9 +42,11 @@ jobs:
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
-    - name: Install java-shared-dependencies
+    - name: Install java-shared-dependencies and common dependencies
       run: |
-        mvn install -pl sdk-platform-java/java-shared-dependencies,sdk-platform-java/java-shared-dependencies/first-party-dependencies,sdk-platform-java/java-shared-dependencies/third-party-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
     - name: Pre-build dependencies
       run: |
         LIB_DIR="${{matrix.repo}}"
@@ -65,9 +67,11 @@ jobs:
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
-    - name: Install java-shared-dependencies
+    - name: Install java-shared-dependencies and common dependencies
       run: |
-        mvn install -pl sdk-platform-java/java-shared-dependencies,sdk-platform-java/java-shared-dependencies/first-party-dependencies,sdk-platform-java/java-shared-dependencies/third-party-dependencies -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
     - name: Pre-build dependencies
       run: mvn install -pl java-storage/google-cloud-storage -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - run: .kokoro/client-library-check.sh java-storage flatten-plugin

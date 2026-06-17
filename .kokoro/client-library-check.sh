@@ -77,6 +77,7 @@ then
   exit 1
 fi
 REPO=$1
+LIBRARY_NAME="google-cloud-${REPO#java-}"
 # build.sh uses this environment variable
 export JOB_TYPE=$2
 
@@ -144,7 +145,7 @@ flatten-plugin)
     echo "Before running ../.kokoro/build.sh"
     ../.kokoro/build.sh
     echo "After running ../.kokoro/build.sh"
-    pushd google-cloud-*
+    pushd ${LIBRARY_NAME}
     mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
         | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
     echo "Diff from the expected file (${EXPECTED_DEPENDENCIES_LIST}):"
