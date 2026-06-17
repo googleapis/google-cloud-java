@@ -158,9 +158,28 @@ flatten-plugin)
     popd
     ;;
 *)
-    # This reads the JOB_TYPE environmental variable
-    ../.kokoro/build.sh
-    RETURN_CODE=$?
+    # For clirr and test, run directly in the subdirectory to avoid building monorepo dependencies (like gax) from source.
+    # This is necessary because some monorepo dependencies (like gax) use GraalVM 25+ which cannot be compiled under Java 8.
+    if [ "${JOB_TYPE}" == "clirr" ]; then
+      mvn -B -ntp \
+        -Dfmt.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        clirr:check
+      RETURN_CODE=$?
+    elif [ "${JOB_TYPE}" == "test" ]; then
+      mvn test \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        ${SUREFIRE_JVM_OPT}
+      RETURN_CODE=$?
+    else
+      # For other job types (like javadoc, javadoc-with-doclet), they were previously no-ops in build.sh, so we keep them as no-ops.
+      RETURN_CODE=0
+    fi
     ;;
 esac
 
