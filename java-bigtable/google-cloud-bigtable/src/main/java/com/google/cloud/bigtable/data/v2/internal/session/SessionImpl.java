@@ -388,6 +388,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
       // volatile and written here without an atomicity guarantee — that is intentional; it is
       // only a scheduling hint (see field comment).
       this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
+      // Arm the heartbeat check only while a vRPC is in flight. handleVRpcResponse /
+      // handleVRpcErrorResponse cancel it on completion; updateState cancels on shutdown.
+      scheduleHeartbeatCheck();
       return Status.OK;
     }
   }
@@ -495,7 +498,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
       }
       localPeerInfo = stream.getPeerInfo();
       updateState(SessionState.READY);
-      scheduleHeartbeatCheck();
     }
     tracer.onOpen(localPeerInfo);
     sessionListener.onReady(openSession);
@@ -566,6 +568,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
       // TODO: handle multiplexing
       currentRpc = null;
       needsClose = (state == SessionState.CLOSING);
+      // No active vRPC means no useful heartbeat deadline; drop the in-flight tick.
+      cancelHeartbeatTimeout();
     }
 
     if (localCancel != null) {
@@ -644,6 +648,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
       localRpc = currentRpc;
       currentRpc = null;
       needsClose = (state == SessionState.CLOSING);
+      // No active vRPC means no useful heartbeat deadline; drop the in-flight tick.
+      cancelHeartbeatTimeout();
     }
 
     if (localCancel != null) {
