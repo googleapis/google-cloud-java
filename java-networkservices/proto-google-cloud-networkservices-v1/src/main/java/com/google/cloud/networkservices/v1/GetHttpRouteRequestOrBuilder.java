@@ -31,7 +31,7 @@ public interface GetHttpRouteRequestOrBuilder
    *
    * <pre>
    * Required. A name of the HttpRoute to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/httpRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;httpRoutes/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface GetHttpRouteRequestOrBuilder
    *
    * <pre>
    * Required. A name of the HttpRoute to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/httpRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;httpRoutes/&#42;`.
    * </pre>
    *
    * <code>

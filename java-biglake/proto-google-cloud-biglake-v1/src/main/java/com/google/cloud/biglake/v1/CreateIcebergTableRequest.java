@@ -81,7 +81,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The parent resource where this table will be created.
-   * Format: projects/{project_id}/namespaces/{namespace}
+   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
    * </pre>
    *
    * <code>
@@ -108,7 +108,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The parent resource where this table will be created.
-   * Format: projects/{project_id}/namespaces/{namespace}
+   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
    * </pre>
    *
    * <code>
@@ -137,9 +137,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-   * `application/json`.
+   * Required.
    * </pre>
    *
    * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,9 +153,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-   * `application/json`.
+   * Required.
    * </pre>
    *
    * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -173,9 +169,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-   * `application/json`.
+   * Required.
    * </pre>
    *
    * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -547,7 +541,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/namespaces/{namespace}
+     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
      * </pre>
      *
      * <code>
@@ -573,7 +567,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/namespaces/{namespace}
+     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
      * </pre>
      *
      * <code>
@@ -599,7 +593,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/namespaces/{namespace}
+     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
      * </pre>
      *
      * <code>
@@ -624,7 +618,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/namespaces/{namespace}
+     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
      * </pre>
      *
      * <code>
@@ -645,7 +639,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/namespaces/{namespace}
+     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
      * </pre>
      *
      * <code>
@@ -677,9 +671,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -694,9 +686,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -715,9 +705,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,9 +728,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -762,9 +748,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -792,9 +776,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -814,9 +796,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -831,9 +811,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -850,9 +828,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The request body that should be in the format of Apache Iceberg's
-     * `#/components/schemas/CreateTableRequest`. Content type is expected to be
-     * `application/json`.
+     * Required.
      * </pre>
      *
      * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -41,6 +41,8 @@ import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.JobStatistics;
+import com.google.api.services.bigquery.model.ProjectList;
+import com.google.api.services.bigquery.model.ProjectReference;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
@@ -775,6 +777,50 @@ public class BigQueryImplTest {
     assertArrayEquals(
         datasetList.toArray(), Iterables.toArray(page.getValues(), DatasetInfo.class));
     verify(bigqueryRpcMock).listDatasetsSkipExceptionTranslation(PROJECT, DATASET_LIST_OPTIONS);
+  }
+
+  @Test
+  void testListProjects() {
+    bigquery = options.getService();
+    ProjectList.Projects p1 =
+        new ProjectList.Projects()
+            .setId("id1")
+            .setNumericId(BigInteger.valueOf(111L))
+            .setProjectReference(new ProjectReference().setProjectId("p-1"))
+            .setFriendlyName("fn1");
+    ProjectList.Projects p2 =
+        new ProjectList.Projects()
+            .setId("id2")
+            .setNumericId(BigInteger.valueOf(222L))
+            .setProjectReference(new ProjectReference().setProjectId("p-2"))
+            .setFriendlyName("fn2");
+    ImmutableList<ProjectList.Projects> projectsPb = ImmutableList.of(p1, p2);
+    Tuple<String, Iterable<ProjectList.Projects>> result = Tuple.of(CURSOR, projectsPb);
+
+    when(bigqueryRpcMock.listProjects(EMPTY_RPC_OPTIONS)).thenReturn(result);
+
+    Page<Project> page = bigquery.listProjects();
+    assertEquals(CURSOR, page.getNextPageToken());
+
+    Project expected1 = new Project("id1", "111", "p-1", "fn1");
+    Project expected2 = new Project("id2", "222", "p-2", "fn2");
+    assertArrayEquals(
+        new Project[] {expected1, expected2}, Iterables.toArray(page.getValues(), Project.class));
+    verify(bigqueryRpcMock).listProjects(EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  void testListEmptyProjects() {
+    bigquery = options.getService();
+    ImmutableList<ProjectList.Projects> projectsPb = ImmutableList.of();
+    Tuple<String, Iterable<ProjectList.Projects>> result = Tuple.of(null, projectsPb);
+
+    when(bigqueryRpcMock.listProjects(EMPTY_RPC_OPTIONS)).thenReturn(result);
+
+    Page<Project> page = bigquery.listProjects();
+    assertNull(page.getNextPageToken());
+    assertArrayEquals(new Project[0], Iterables.toArray(page.getValues(), Project.class));
+    verify(bigqueryRpcMock).listProjects(EMPTY_RPC_OPTIONS);
   }
 
   @Test

@@ -20,6 +20,7 @@ import static com.google.cloud.modelarmor.v1.ModelArmorClient.ListLocationsPaged
 import static com.google.cloud.modelarmor.v1.ModelArmorClient.ListTemplatesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -92,6 +93,17 @@ public abstract class ModelArmorStub implements BackgroundResource {
   public UnaryCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
       sanitizeModelResponseCallable() {
     throw new UnsupportedOperationException("Not implemented: sanitizeModelResponseCallable()");
+  }
+
+  public BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamSanitizeUserPromptCallable()");
+  }
+
+  public BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamSanitizeModelResponseCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -57,15 +57,18 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '>=1.20.2'
-    - name: Run librarian update
+    - name: Get librarian version
+      id: librarian
       run: |
         version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
-        go run "github.com/googleapis/librarian/cmd/librarian@${version}" update sources.googleapis
+        echo "version=${version}" >> $GITHUB_OUTPUT
+    - name: Run librarian update
+      run: |
+        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" update sources.googleapis
     - name: Get latest commit
       id: commit
       run: |
-        version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
-        new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${version}" config get sources.googleapis.commit)
+        new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
     # TODO(https://github.com/googleapis/librarian/issues/6220): Remove this step.
@@ -115,20 +118,23 @@ jobs:
     - name: Run librarian install
       if: steps.detect_librarian.outputs.has_changes == 'true'
       run: |
-        go run github.com/googleapis/librarian/cmd/librarian@latest install
-        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" install
+        echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
     - name: Generate Libraries
       if: steps.detect_librarian.outputs.has_changes == 'true'
       run: |
-        go run github.com/googleapis/librarian/cmd/librarian@latest generate --all
+        go run "github.com/googleapis/librarian/cmd/librarian@${{ steps.librarian.outputs.version }}" generate --all
     - name: Commit and Create PR
       if: steps.detect_librarian.outputs.has_changes == 'true'
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
-        PR_BODY: "Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
+        PR_BODY: |
+          Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}
+
+          💡 **Note:** Please merge or close this PR so that the daily update workflow can continue to run successfully the next day. Alternatively, you can manually trigger the workflow once this PR is merged or closed.
       run: |
         set -x
         
