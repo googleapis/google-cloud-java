@@ -24,6 +24,7 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.stub.ConversationalSearchServiceStub;
 import com.google.cloud.discoveryengine.v1beta.stub.ConversationalSearchServiceStubSettings;
@@ -198,6 +199,17 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> answerQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamAnswerQuery</td>
+ *      <td><p> Answer query method (streaming).
+ * <p>  It takes one [AnswerQueryRequest][google.cloud.discoveryengine.v1beta.AnswerQueryRequest] and returns multiple [AnswerQueryResponse][google.cloud.discoveryengine.v1beta.AnswerQueryResponse] messages in a stream.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamAnswerQueryCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1363,6 +1375,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setAsynchronousMode(true)
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
    *           .build();
    *   AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
    * }
@@ -1410,6 +1423,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .setAsynchronousMode(true)
    *           .setUserPseudoId("userPseudoId-1155274652")
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<AnswerQueryResponse> future =
    *       conversationalSearchServiceClient.answerQueryCallable().futureCall(request);
@@ -1420,6 +1434,61 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     return stub.answerQueryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answer query method (streaming).
+   *
+   * <p>It takes one [AnswerQueryRequest][google.cloud.discoveryengine.v1beta.AnswerQueryRequest]
+   * and returns multiple
+   * [AnswerQueryResponse][google.cloud.discoveryengine.v1beta.AnswerQueryResponse] messages in a
+   * stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder()
+   *           .setServingConfig(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .setQuery(Query.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+   *           .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+   *           .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
+   *           .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+   *           .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+   *           .setQueryUnderstandingSpec(
+   *               AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+   *           .setAsynchronousMode(true)
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
+   *           .build();
+   *   ServerStream<AnswerQueryResponse> stream =
+   *       conversationalSearchServiceClient.streamAnswerQueryCallable().call(request);
+   *   for (AnswerQueryResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    return stub.streamAnswerQueryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1646,6 +1715,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   Session response = conversationalSearchServiceClient.createSession(request);
    * }
@@ -1682,6 +1752,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   ApiFuture<Session> future =
    *       conversationalSearchServiceClient.createSessionCallable().futureCall(request);

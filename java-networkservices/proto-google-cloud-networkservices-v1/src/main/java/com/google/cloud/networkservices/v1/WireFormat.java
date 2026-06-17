@@ -55,6 +55,18 @@ public enum WireFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXT_PROC_GRPC = 1;</code>
    */
   EXT_PROC_GRPC(1),
+  /**
+   *
+   *
+   * <pre>
+   * The extension service uses Envoy's `ext_authz` gRPC API. The backend
+   * service for the extension must use HTTP2 or H2C as the protocol.
+   * `EXT_AUTHZ_GRPC` is only supported for regional `AuthzExtension` resources.
+   * </pre>
+   *
+   * <code>EXT_AUTHZ_GRPC = 3;</code>
+   */
+  EXT_AUTHZ_GRPC(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -94,6 +106,19 @@ public enum WireFormat implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int EXT_PROC_GRPC_VALUE = 1;
 
+  /**
+   *
+   *
+   * <pre>
+   * The extension service uses Envoy's `ext_authz` gRPC API. The backend
+   * service for the extension must use HTTP2 or H2C as the protocol.
+   * `EXT_AUTHZ_GRPC` is only supported for regional `AuthzExtension` resources.
+   * </pre>
+   *
+   * <code>EXT_AUTHZ_GRPC = 3;</code>
+   */
+  public static final int EXT_AUTHZ_GRPC_VALUE = 3;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -122,6 +147,8 @@ public enum WireFormat implements com.google.protobuf.ProtocolMessageEnum {
         return WIRE_FORMAT_UNSPECIFIED;
       case 1:
         return EXT_PROC_GRPC;
+      case 3:
+        return EXT_AUTHZ_GRPC;
       default:
         return null;
     }

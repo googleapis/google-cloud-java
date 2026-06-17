@@ -80,7 +80,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. A name of the EndpointPolicy to delete. Must be in the format
-   * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. A name of the EndpointPolicy to delete. Must be in the format
-   * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
    * </pre>
    *
    * <code>
@@ -451,7 +451,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. A name of the EndpointPolicy to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -477,7 +477,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. A name of the EndpointPolicy to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -503,7 +503,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. A name of the EndpointPolicy to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -528,7 +528,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. A name of the EndpointPolicy to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
      * </pre>
      *
      * <code>
@@ -549,7 +549,7 @@ public final class DeleteEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. A name of the EndpointPolicy to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
      * </pre>
      *
      * <code>
