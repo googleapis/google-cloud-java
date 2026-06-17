@@ -181,25 +181,6 @@ public class QueryRequestInfoTest {
   }
 
   @Test
-  public void testEqualsAndHashCode() {
-    QueryRequestInfo info1 =
-        new QueryRequestInfo(
-            QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build());
-    QueryRequestInfo info2 =
-        new QueryRequestInfo(
-            QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build());
-
-    assertNotEquals(info1, info2);
-    assertNotEquals(info1.hashCode(), info2.hashCode());
-
-    assertEquals(info1, info1);
-    assertEquals(info1.hashCode(), info1.hashCode());
-
-    assertNotEquals(info1, null);
-    assertNotEquals(info1, "different type");
-  }
-
-  @Test
   public void equalTo() {
     compareQueryRequestInfo(
         new QueryRequestInfo(

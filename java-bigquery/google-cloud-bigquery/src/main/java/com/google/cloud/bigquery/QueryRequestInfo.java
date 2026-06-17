@@ -21,10 +21,10 @@ import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 final class QueryRequestInfo {
@@ -170,7 +170,7 @@ final class QueryRequestInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(
+    return Objects.hash(
         connectionProperties,
         defaultDataset,
         dryRun,
@@ -198,21 +198,21 @@ final class QueryRequestInfo {
       return false;
     }
     QueryRequestInfo other = (QueryRequestInfo) obj;
-    return java.util.Objects.equals(connectionProperties, other.connectionProperties)
-        && java.util.Objects.equals(defaultDataset, other.defaultDataset)
-        && java.util.Objects.equals(dryRun, other.dryRun)
-        && java.util.Objects.equals(labels, other.labels)
-        && java.util.Objects.equals(maximumBytesBilled, other.maximumBytesBilled)
-        && java.util.Objects.equals(maxResults, other.maxResults)
-        && java.util.Objects.equals(query, other.query)
-        && java.util.Objects.equals(queryParameters, other.queryParameters)
-        && java.util.Objects.equals(requestId, other.requestId)
-        && java.util.Objects.equals(createSession, other.createSession)
-        && java.util.Objects.equals(useQueryCache, other.useQueryCache)
-        && java.util.Objects.equals(useLegacySql, other.useLegacySql)
-        && java.util.Objects.equals(jobCreationMode, other.jobCreationMode)
-        && java.util.Objects.equals(formatOptions, other.formatOptions)
-        && java.util.Objects.equals(reservation, other.reservation)
-        && java.util.Objects.equals(jobTimeoutMs, other.jobTimeoutMs);
+    return Objects.equals(connectionProperties, other.connectionProperties)
+        && Objects.equals(defaultDataset, other.defaultDataset)
+        && Objects.equals(dryRun, other.dryRun)
+        && Objects.equals(labels, other.labels)
+        && Objects.equals(maximumBytesBilled, other.maximumBytesBilled)
+        && Objects.equals(maxResults, other.maxResults)
+        && Objects.equals(query, other.query)
+        && Objects.equals(queryParameters, other.queryParameters)
+        && Objects.equals(requestId, other.requestId)
+        && Objects.equals(createSession, other.createSession)
+        && Objects.equals(useQueryCache, other.useQueryCache)
+        && Objects.equals(useLegacySql, other.useLegacySql)
+        && Objects.equals(jobCreationMode, other.jobCreationMode)
+        && Objects.equals(formatOptions, other.formatOptions)
+        && Objects.equals(reservation, other.reservation)
+        && Objects.equals(jobTimeoutMs, other.jobTimeoutMs);
   }
 }
