@@ -1260,7 +1260,6 @@ class ConnectionImpl implements Connection {
         && connectionSettings.getCreateDisposition() == null
         && connectionSettings.getDestinationEncryptionConfiguration() == null
         && connectionSettings.getDestinationTable() == null
-        && connectionSettings.getJobTimeoutMs() == null
         && connectionSettings.getMaximumBillingTier() == null
         && connectionSettings.getPriority() == null
         && connectionSettings.getRangePartitioning() == null
@@ -1361,6 +1360,9 @@ class ConnectionImpl implements Connection {
     content.setRequestId(requestId);
     // The new Connection interface only supports StandardSQL dialect
     content.setUseLegacySql(false);
+    if (connectionSettings.getJobTimeoutMs() != null) {
+      content.setJobTimeoutMs(connectionSettings.getJobTimeoutMs());
+    }
     return content;
   }
 

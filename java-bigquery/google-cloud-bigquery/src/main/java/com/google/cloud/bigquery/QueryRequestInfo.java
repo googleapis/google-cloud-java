@@ -45,6 +45,7 @@ final class QueryRequestInfo {
   private final JobCreationMode jobCreationMode;
   private final DataFormatOptions formatOptions;
   private final String reservation;
+  private final Long jobTimeoutMs;
 
   QueryRequestInfo(
       QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
@@ -64,22 +65,26 @@ final class QueryRequestInfo {
     this.jobCreationMode = config.getJobCreationMode();
     this.formatOptions = dataFormatOptions.toPb();
     this.reservation = config.getReservation();
+    this.jobTimeoutMs = config.getJobTimeoutMs();
   }
 
-  boolean isFastQuerySupported(JobId jobId) {
-    // Fast query path is not possible if job is specified in the JobID object
-    // Respect Job field value in JobId specified by user.
-    // Specifying it will force the query to take the slower path.
-    if (jobId != null) {
-      if (jobId.getJob() != null) {
-        return false;
-      }
-    }
+  /**
+   * Determines if the query can be executed via the "fast query" path (jobs.query API)
+   * instead of the "slow path" (jobs.insert API followed by jobs.getQueryResults).
+   *
+   * The fast query path is preferred because it completes in a single RPC, significantly
+   * reducing end-to-end latency for small queries.
+   *
+   * However, the jobs.query API does not support all configuration options available in
+   * jobs.insert (e.g., destination table, clustering, time partitioning). This method
+   * checks the QueryJobConfiguration for any unsupported options. If any are present,
+   * we must fall back to the jobs.insert path.
+   */
+  boolean isFastQuerySupported() {
     return config.getClustering() == null
         && config.getCreateDisposition() == null
         && config.getDestinationEncryptionConfiguration() == null
         && config.getDestinationTable() == null
-        && config.getJobTimeoutMs() == null
         && config.getMaximumBillingTier() == null
         && config.getPriority() == null
         && config.getRangePartitioning() == null
@@ -135,6 +140,9 @@ final class QueryRequestInfo {
     if (reservation != null) {
       request.setReservation(reservation);
     }
+    if (jobTimeoutMs != null) {
+      request.setJobTimeoutMs(jobTimeoutMs);
+    }
     return request;
   }
 
@@ -156,6 +164,7 @@ final class QueryRequestInfo {
         .add("jobCreationMode", jobCreationMode)
         .add("formatOptions", formatOptions.getUseInt64Timestamp())
         .add("reservation", reservation)
+        .add("jobTimeoutMs", jobTimeoutMs)
         .toString();
   }
 
@@ -176,7 +185,8 @@ final class QueryRequestInfo {
         useLegacySql,
         jobCreationMode,
         formatOptions,
-        reservation);
+        reservation,
+        jobTimeoutMs);
   }
 
   @Override
