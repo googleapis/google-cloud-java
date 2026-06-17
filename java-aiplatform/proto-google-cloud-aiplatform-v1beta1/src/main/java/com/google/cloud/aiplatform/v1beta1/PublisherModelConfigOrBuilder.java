@@ -66,4 +66,41 @@ public interface PublisherModelConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfigOrBuilder
       getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model provider (publisher) for which the customer has enabled
+   * data sharing. For publisher models that are configured to require data
+   * sharing, a prediction request is only allowed when the model's publisher
+   * matches this provider. Otherwise, the request is rejected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModelConfig.ModelProvider data_sharing_enabled_provider = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataSharingEnabledProvider.
+   */
+  int getDataSharingEnabledProviderValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model provider (publisher) for which the customer has enabled
+   * data sharing. For publisher models that are configured to require data
+   * sharing, a prediction request is only allowed when the model's publisher
+   * matches this provider. Otherwise, the request is rejected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModelConfig.ModelProvider data_sharing_enabled_provider = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataSharingEnabledProvider.
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModelConfig.ModelProvider
+      getDataSharingEnabledProvider();
 }

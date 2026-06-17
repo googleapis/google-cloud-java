@@ -85,6 +85,10 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_SafetySetting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_SafetySetting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_RelatedQuestionsSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_RelatedQuestionsSpec_fieldAccessorTable;
@@ -104,6 +108,10 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_PromptSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_PromptSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_MultimodalSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_MultimodalSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -157,6 +165,26 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_ModelSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_ModelSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_DocumentMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_DocumentMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_UserLabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_UserLabelsEntry_fieldAccessorTable;
@@ -207,24 +235,25 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + "pi/annotations.proto\032\027google/api/client."
           + "proto\032\037google/api/field_behavior.proto\032\031"
           + "google/api/resource.proto\0320google/cloud/discoveryengine/v1beta/answer.proto\0326goo"
-          + "gle/cloud/discoveryengine/v1beta/conversation.proto\0328google/cloud/discoveryengin"
-          + "e/v1beta/search_service.proto\0321google/cl"
-          + "oud/discoveryengine/v1beta/session.proto\032\033google/protobuf/empty.proto\032"
+          + "gle/cloud/discoveryengine/v1beta/conversation.proto\0320google/cloud/discoveryengin"
+          + "e/v1beta/safety.proto\0328google/cloud/discoveryengine/v1beta/search_service.proto\032"
+          + "1google/cloud/discoveryengine/v1beta/ses"
+          + "sion.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\"\261\005\n"
           + "\033ConverseConversationRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
           + "+discoveryengine.googleapis.com/Conversation\022B\n"
-          + "\005query\030\002"
-          + " \001(\0132..google.cloud.discoveryengine.v1beta.TextInputB\003\340A\002\022I\n"
+          + "\005query\030\002 \001(\0132..google.clo"
+          + "ud.discoveryengine.v1beta.TextInputB\003\340A\002\022I\n"
           + "\016serving_config\030\003 \001(\tB1\372A.\n"
           + ",discoveryengine.googleapis.com/ServingConfig\022G\n"
           + "\014conversation\030\005"
           + " \001(\01321.google.cloud.discoveryengine.v1beta.Conversation\022\023\n"
           + "\013safe_search\030\006 \001(\010\022e\n"
-          + "\013user_labels\030\007 \003(\0132P.google.cloud.disc"
-          + "overyengine.v1beta.ConverseConversationRequest.UserLabelsEntry\022f\n"
-          + "\014summary_spec\030\010 \001(\0132P.google.cloud.discoveryengine.v1be"
-          + "ta.SearchRequest.ContentSearchSpec.SummarySpec\022\016\n"
+          + "\013user_labels\030\007 \003(\0132P.google."
+          + "cloud.discoveryengine.v1beta.ConverseConversationRequest.UserLabelsEntry\022f\n"
+          + "\014summary_spec\030\010 \001(\0132P.google.cloud.discoverye"
+          + "ngine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec\022\016\n"
           + "\006filter\030\t \001(\t\022P\n\n"
           + "boost_spec\030\n"
           + " \001(\0132<.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec\0321\n"
@@ -233,19 +262,19 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + "\005value\030\002 \001(\t:\0028\001\"\227\002\n"
           + "\034ConverseConversationResponse\0229\n"
           + "\005reply\030\001 \001(\0132*.google.cloud.discoveryengine.v1beta.Reply\022G\n"
-          + "\014conversation\030\002 \001(\01321.google.c"
-          + "loud.discoveryengine.v1beta.Conversation\022\031\n"
+          + "\014conversation\030\002 \001(\0132"
+          + "1.google.cloud.discoveryengine.v1beta.Conversation\022\031\n"
           + "\021related_questions\030\006 \003(\t\022X\n"
-          + "\016search_results\030\003 \003(\0132@.google.cloud.discoveryengi"
-          + "ne.v1beta.SearchResponse.SearchResult\"\253\001\n"
+          + "\016search_results\030\003 \003(\0132@.google.cloud.dis"
+          + "coveryengine.v1beta.SearchResponse.SearchResult\"\253\001\n"
           + "\031CreateConversationRequest\022@\n"
           + "\006parent\030\001 \001(\tB0\340A\002\372A*\n"
           + "(discoveryengine.googleapis.com/DataStore\022L\n"
-          + "\014conversation\030\002 \001(\01321.go"
-          + "ogle.cloud.discoveryengine.v1beta.ConversationB\003\340A\002\"\232\001\n"
+          + "\014conversation\030\002"
+          + " \001(\01321.google.cloud.discoveryengine.v1beta.ConversationB\003\340A\002\"\232\001\n"
           + "\031UpdateConversationRequest\022L\n"
-          + "\014conversation\030\001 \001(\01321.google.cloud.d"
-          + "iscoveryengine.v1beta.ConversationB\003\340A\002\022/\n"
+          + "\014conversation\030\001 \001(\01321.goog"
+          + "le.cloud.discoveryengine.v1beta.ConversationB\003\340A\002\022/\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"^\n"
           + "\031DeleteConversationRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
@@ -261,9 +290,9 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + "\006filter\030\004 \001(\t\022\020\n"
           + "\010order_by\030\005 \001(\t\"~\n"
           + "\031ListConversationsResponse\022H\n\r"
-          + "conversations\030\001"
-          + " \003(\01321.google.cloud.discoveryengine.v1beta.Conversation\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\305&\n"
+          + "conversations\030\001 \003(\01321.google.clo"
+          + "ud.discoveryengine.v1beta.Conversation\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\2715\n"
           + "\022AnswerQueryRequest\022L\n"
           + "\016serving_config\030\001 \001(\tB4\340A\002\372A.\n"
           + ",discoveryengine.googleapis.com/ServingConfig\022>\n"
@@ -271,94 +300,120 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + " \001(\0132*.google.cloud.discoveryengine.v1beta.QueryB\003\340A\002\022<\n"
           + "\007session\030\003 \001(\tB+\372A(\n"
           + "&discoveryengine.googleapis.com/Session\022W\n"
-          + "\013safety_spec\030\004 \001(\0132B.google.cloud.dis"
-          + "coveryengine.v1beta.AnswerQueryRequest.SafetySpec\022l\n"
-          + "\026related_questions_spec\030\005 \001(\0132L.google.cloud.discoveryengine.v1beta."
-          + "AnswerQueryRequest.RelatedQuestionsSpec\022b\n"
-          + "\016grounding_spec\030\006 \001(\0132E.google.cloud.d"
-          + "iscoveryengine.v1beta.AnswerQueryRequest.GroundingSpecB\003\340A\001\022l\n"
-          + "\026answer_generation_spec\030\007 \001(\0132L.google.cloud.discoveryengi"
-          + "ne.v1beta.AnswerQueryRequest.AnswerGenerationSpec\022W\n"
-          + "\013search_spec\030\010 \001(\0132B.google."
-          + "cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec\022p\n"
-          + "\030query_understanding_spec\030\t \001(\0132N.google.cloud.discoveryeng"
-          + "ine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec\022\035\n"
+          + "\013safety_spec\030\004 \001(\0132B.google"
+          + ".cloud.discoveryengine.v1beta.AnswerQueryRequest.SafetySpec\022l\n"
+          + "\026related_questions_spec\030\005 \001(\0132L.google.cloud.discoveryengi"
+          + "ne.v1beta.AnswerQueryRequest.RelatedQuestionsSpec\022b\n"
+          + "\016grounding_spec\030\006 \001(\0132E.goog"
+          + "le.cloud.discoveryengine.v1beta.AnswerQueryRequest.GroundingSpecB\003\340A\001\022l\n"
+          + "\026answer_generation_spec\030\007 \001(\0132L.google.cloud.dis"
+          + "coveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec\022W\n"
+          + "\013search_spec\030\010 \001(\013"
+          + "2B.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec\022p\n"
+          + "\030query_understanding_spec\030\t \001(\0132N.google.cloud.di"
+          + "scoveryengine.v1beta.AnswerQueryRequest.QueryUnderstandingSpec\022\035\n"
           + "\021asynchronous_mode\030\n"
           + " \001(\010B\002\030\001\022\026\n"
           + "\016user_pseudo_id\030\014 \001(\t\022\\\n"
           + "\013user_labels\030\r"
-          + " \003(\0132G.google.cloud.discoveryengine."
-          + "v1beta.AnswerQueryRequest.UserLabelsEntry\032\034\n\n"
+          + " \003(\0132G.google.cloud.discov"
+          + "eryengine.v1beta.AnswerQueryRequest.UserLabelsEntry\022_\n\r"
+          + "end_user_spec\030\016 \001(\0132C.goo"
+          + "gle.cloud.discoveryengine.v1beta.AnswerQueryRequest.EndUserSpecB\003\340A\001\032\205\004\n\n"
           + "SafetySpec\022\016\n"
-          + "\006enable\030\001 \001(\010\032&\n"
+          + "\006enable\030\001 \001(\010\022n\n"
+          + "\017safety_settings\030\002 \003(\0132P.google.cloud.discoveryengine.v1be"
+          + "ta.AnswerQueryRequest.SafetySpec.SafetySettingB\003\340A\001\032\366\002\n\r"
+          + "SafetySetting\022H\n"
+          + "\010category\030\001"
+          + " \001(\01621.google.cloud.discoveryengine.v1beta.HarmCategoryB\003\340A\002\022{\n"
+          + "\tthreshold\030\002 \001(\0162c.google.cloud.discoveryengine.v1beta"
+          + ".AnswerQueryRequest.SafetySpec.SafetySetting.HarmBlockThresholdB\003\340A\002\"\235\001\n"
+          + "\022HarmBlockThreshold\022$\n"
+          + " HARM_BLOCK_THRESHOLD_UNSPECIFIED\020\000\022\027\n"
+          + "\023BLOCK_LOW_AND_ABOVE\020\001\022\032\n"
+          + "\026BLOCK_MEDIUM_AND_ABOVE\020\002\022\023\n"
+          + "\017BLOCK_ONLY_HIGH\020\003\022\016\n\n"
+          + "BLOCK_NONE\020\004\022\007\n"
+          + "\003OFF\020\005\032&\n"
           + "\024RelatedQuestionsSpec\022\016\n"
           + "\006enable\030\001 \001(\010\032\222\002\n\r"
           + "GroundingSpec\022\'\n"
           + "\032include_grounding_supports\030\002 \001(\010B\003\340A\001\022r\n"
-          + "\017filtering_level\030\003 \001(\0162T.google.cloud.discoveryengine.v1beta.Answer"
-          + "QueryRequest.GroundingSpec.FilteringLevelB\003\340A\001\"d\n"
+          + "\017filtering_level\030\003 \001(\0162T.google.cloud.discoveryengine.v1beta.AnswerQue"
+          + "ryRequest.GroundingSpec.FilteringLevelB\003\340A\001\"d\n"
           + "\016FilteringLevel\022\037\n"
           + "\033FILTERING_LEVEL_UNSPECIFIED\020\000\022\027\n"
           + "\023FILTERING_LEVEL_LOW\020\001\022\030\n"
-          + "\024FILTERING_LEVEL_HIGH\020\002\032\253\004\n"
+          + "\024FILTERING_LEVEL_HIGH\020\002\032\271\007\n"
           + "\024AnswerGenerationSpec\022j\n\n"
-          + "model_spec\030\001 \001(\0132V.google.cloud.discoveryengine.v1beta.AnswerQu"
-          + "eryRequest.AnswerGenerationSpec.ModelSpec\022l\n"
-          + "\013prompt_spec\030\002 \001(\0132W.google.cloud.di"
-          + "scoveryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.PromptSpec\022\031\n"
+          + "model_spec\030\001 \001(\0132V.google.cloud.discoveryengine.v1beta.AnswerQuery"
+          + "Request.AnswerGenerationSpec.ModelSpec\022l\n"
+          + "\013prompt_spec\030\002 \001(\0132W.google.cloud.disco"
+          + "veryengine.v1beta.AnswerQueryRequest.AnswerGenerationSpec.PromptSpec\022\031\n"
           + "\021include_citations\030\003 \001(\010\022\034\n"
           + "\024answer_language_code\030\004 \001(\t\022 \n"
           + "\030ignore_adversarial_query\030\005 \001(\010\022\'\n"
           + "\037ignore_non_answer_seeking_query\030\006 \001(\010\022(\n"
           + "\033ignore_low_relevant_content\030\007 \001(\010H\000\210\001\001\022\'\n"
-          + "\032ignore_jail_breaking_query\030\010 \001(\010B\003\340A\001\032\"\n"
+          + "\032ignore_jail_breaking_query\030\010 \001(\010B\003\340A\001\022y\n"
+          + "\017multimodal_spec\030\t \001(\0132[.google.cl"
+          + "oud.discoveryengine.v1beta.AnswerQueryRe"
+          + "quest.AnswerGenerationSpec.MultimodalSpecB\003\340A\001\032\"\n"
           + "\tModelSpec\022\025\n\r"
           + "model_version\030\001 \001(\t\032\036\n\n"
           + "PromptSpec\022\020\n"
-          + "\010preamble\030\001 \001(\tB\036\n"
+          + "\010preamble\030\001 \001(\t\032\220\002\n"
+          + "\016MultimodalSpec\022\202\001\n"
+          + "\014image_source\030\003 \001(\0162g.google.cloud.discoveryengine.v1beta.Answe"
+          + "rQueryRequest.AnswerGenerationSpec.MultimodalSpec.ImageSourceB\003\340A\001\"y\n"
+          + "\013ImageSource\022\034\n"
+          + "\030IMAGE_SOURCE_UNSPECIFIED\020\000\022\031\n"
+          + "\025ALL_AVAILABLE_SOURCES\020\001\022\025\n"
+          + "\021CORPUS_IMAGE_ONLY\020\002\022\032\n"
+          + "\026FIGURE_GENERATION_ONLY\020\003B\036\n"
           + "\034_ignore_low_relevant_content\032\234\022\n\n"
           + "SearchSpec\022h\n\r"
-          + "search_params\030\001 \001(\0132O.google.cloud."
-          + "discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParamsH\000\022q\n"
-          + "\022search_result_list\030\002 \001(\0132S.google.cloud.discovery"
-          + "engine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultListH\000\032\200\004\n"
+          + "search_params\030\001 \001(\0132O.google.cloud.disco"
+          + "veryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchParamsH\000\022q\n"
+          + "\022search_result_list\030\002 \001(\0132S.google.cloud.discoveryengin"
+          + "e.v1beta.AnswerQueryRequest.SearchSpec.SearchResultListH\000\032\200\004\n"
           + "\014SearchParams\022\032\n"
           + "\022max_return_results\030\001 \001(\005\022\016\n"
           + "\006filter\030\002 \001(\t\022P\n\n"
-          + "boost_spec\030\003 \001(\0132<.google.cloud.d"
-          + "iscoveryengine.v1beta.SearchRequest.BoostSpec\022\020\n"
+          + "boost_spec\030\003 \001(\0132<.google.cloud.discov"
+          + "eryengine.v1beta.SearchRequest.BoostSpec\022\020\n"
           + "\010order_by\030\004 \001(\t\022q\n"
-          + "\022search_result_mode\030\005 \001(\0162U.google.cloud.discoveryengi"
-          + "ne.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode\022Z\n"
-          + "\020data_store_specs\030\007"
-          + " \003(\0132@.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec\022\220\001\n"
-          + ")natural_language_query_understanding_spec\030\010 \001"
-          + "(\0132X.google.cloud.discoveryengine.v1beta"
-          + ".SearchRequest.NaturalLanguageQueryUnderstandingSpecB\003\340A\001\032\244\014\n"
+          + "\022search_result_mode\030\005 \001(\0162U.google.cloud.discoveryengine.v1"
+          + "beta.SearchRequest.ContentSearchSpec.SearchResultMode\022Z\n"
+          + "\020data_store_specs\030\007 \003(\0132"
+          + "@.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec\022\220\001\n"
+          + ")natural_language_query_understanding_spec\030\010 \001(\0132X."
+          + "google.cloud.discoveryengine.v1beta.Sear"
+          + "chRequest.NaturalLanguageQueryUnderstandingSpecB\003\340A\001\032\244\014\n"
           + "\020SearchResultList\022x\n"
-          + "\016search_results\030\001 \003(\0132`.google.cloud.di"
-          + "scoveryengine.v1beta.AnswerQueryRequest."
-          + "SearchSpec.SearchResultList.SearchResult\032\225\013\n"
+          + "\016search_results\030\001 \003(\0132`.google.cloud.discove"
+          + "ryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult\032\225\013\n"
           + "\014SearchResult\022\237\001\n"
-          + "\032unstructured_document_info\030\001 \001(\0132y.google.cloud.discoverye"
-          + "ngine.v1beta.AnswerQueryRequest.SearchSp"
-          + "ec.SearchResultList.SearchResult.UnstructuredDocumentInfoH\000\022\200\001\n\n"
-          + "chunk_info\030\002 \001(\0132j.google.cloud.discoveryengine.v1beta.A"
-          + "nswerQueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfoH\000\032\262\006\n"
+          + "\032unstructured_document_info\030\001 \001(\0132y.google.cloud.discoveryengine"
+          + ".v1beta.AnswerQueryRequest.SearchSpec.Se"
+          + "archResultList.SearchResult.UnstructuredDocumentInfoH\000\022\200\001\n\n"
+          + "chunk_info\030\002 \001(\0132j.google.cloud.discoveryengine.v1beta.Answer"
+          + "QueryRequest.SearchSpec.SearchResultList.SearchResult.ChunkInfoH\000\032\262\006\n"
           + "\030UnstructuredDocumentInfo\022>\n"
           + "\010document\030\001 \001(\tB,\372A)\n"
           + "\'discoveryengine.googleapis.com/Document\022\013\n"
           + "\003uri\030\002 \001(\t\022\r\n"
           + "\005title\030\003 \001(\t\022\245\001\n"
-          + "\021document_contexts\030\004 \003(\0132\211\001.google.cloud.disc"
-          + "overyengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchResult.U"
-          + "nstructuredDocumentInfo.DocumentContext\022\251\001\n"
-          + "\023extractive_segments\030\005 \003(\0132\213\001.google."
-          + "cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.Sear"
-          + "chResult.UnstructuredDocumentInfo.ExtractiveSegment\022\253\001\n"
-          + "\022extractive_answers\030\006 \003(\0132\212\001.google.cloud.discoveryengine.v1beta."
-          + "AnswerQueryRequest.SearchSpec.SearchResu"
-          + "ltList.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswerB\002\030\001\032;\n"
+          + "\021document_contexts\030\004 \003(\0132\211\001.google.cloud.discovery"
+          + "engine.v1beta.AnswerQueryRequest.SearchS"
+          + "pec.SearchResultList.SearchResult.UnstructuredDocumentInfo.DocumentContext\022\251\001\n"
+          + "\023extractive_segments\030\005 \003(\0132\213\001.google.cloud"
+          + ".discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultList.SearchRes"
+          + "ult.UnstructuredDocumentInfo.ExtractiveSegment\022\253\001\n"
+          + "\022extractive_answers\030\006 \003(\0132\212\001.g"
+          + "oogle.cloud.discoveryengine.v1beta.AnswerQueryRequest.SearchSpec.SearchResultLis"
+          + "t.SearchResult.UnstructuredDocumentInfo.ExtractiveAnswerB\002\030\001\032;\n"
           + "\017DocumentContext\022\027\n"
           + "\017page_identifier\030\001 \001(\t\022\017\n"
           + "\007content\030\002 \001(\t\032=\n"
@@ -372,33 +427,59 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + "\005chunk\030\001 \001(\tB)\372A&\n"
           + "$discoveryengine.googleapis.com/Chunk\022\017\n"
           + "\007content\030\002 \001(\t\022\226\001\n"
-          + "\021document_metadata\030\004 \001(\0132{.google.cloud.discoveryengine."
-          + "v1beta.AnswerQueryRequest.SearchSpec.Sea"
-          + "rchResultList.SearchResult.ChunkInfo.DocumentMetadata\032.\n"
+          + "\021document_metadata\030\004 \001(\0132{.google.cloud.discoveryengine.v1bet"
+          + "a.AnswerQueryRequest.SearchSpec.SearchRe"
+          + "sultList.SearchResult.ChunkInfo.DocumentMetadata\032.\n"
           + "\020DocumentMetadata\022\013\n"
           + "\003uri\030\001 \001(\t\022\r\n"
           + "\005title\030\002 \001(\tB\t\n"
           + "\007contentB\007\n"
-          + "\005input\032\216\005\n"
+          + "\005input\032\302\010\n"
           + "\026QueryUnderstandingSpec\022\211\001\n"
-          + "\031query_classification_spec\030\001 \001(\0132f.google.cloud."
-          + "discoveryengine.v1beta.AnswerQueryReques"
-          + "t.QueryUnderstandingSpec.QueryClassificationSpec\022\177\n"
-          + "\024query_rephraser_spec\030\002 \001(\0132a.google.cloud.discoveryengine.v1beta.Ans"
-          + "werQueryRequest.QueryUnderstandingSpec.QueryRephraserSpec\032\243\002\n"
+          + "\031query_classification_spec\030\001 \001(\0132f.google.cloud.disco"
+          + "veryengine.v1beta.AnswerQueryRequest.Que"
+          + "ryUnderstandingSpec.QueryClassificationSpec\022\177\n"
+          + "\024query_rephraser_spec\030\002 \001(\0132a.goog"
+          + "le.cloud.discoveryengine.v1beta.AnswerQu"
+          + "eryRequest.QueryUnderstandingSpec.QueryRephraserSpec\022%\n"
+          + "\030disable_spell_correction\030\003 \001(\010B\003\340A\001\032\312\002\n"
           + "\027QueryClassificationSpec\022z\n"
-          + "\005types\030\001 \003(\0162k.google.cloud.disc"
-          + "overyengine.v1beta.AnswerQueryRequest.Qu"
-          + "eryUnderstandingSpec.QueryClassificationSpec.Type\"\213\001\n"
+          + "\005types\030\001 \003(\0162k.google.cloud.discoverye"
+          + "ngine.v1beta.AnswerQueryRequest.QueryUnd"
+          + "erstandingSpec.QueryClassificationSpec.Type\"\262\001\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\025\n"
           + "\021ADVERSARIAL_QUERY\020\001\022\034\n"
           + "\030NON_ANSWER_SEEKING_QUERY\020\002\022\027\n"
           + "\023JAIL_BREAKING_QUERY\020\003\022\037\n"
-          + "\033NON_ANSWER_SEEKING_QUERY_V2\020\004\032A\n"
+          + "\033NON_ANSWER_SEEKING_QUERY_V2\020\004\022%\n"
+          + "!USER_DEFINED_CLASSIFICATION_QUERY\020\005\032\246\003\n"
           + "\022QueryRephraserSpec\022\017\n"
           + "\007disable\030\001 \001(\010\022\032\n"
-          + "\022max_rephrase_steps\030\002 \001(\005\0321\n"
+          + "\022max_rephrase_steps\030\002 \001(\005\022\204\001\n\n"
+          + "model_spec\030\003 \001(\0132k.google.cloud.discoveryengine.v1beta.AnswerQu"
+          + "eryRequest.QueryUnderstandingSpec.QueryRephraserSpec.ModelSpecB\003\340A\001\032\333\001\n"
+          + "\tModelSpec\022\216\001\n\n"
+          + "model_type\030\001 \001(\0162u.google.cloud.discoveryengine.v1beta.AnswerQueryRequest."
+          + "QueryUnderstandingSpec.QueryRephraserSpec.ModelSpec.ModelTypeB\003\340A\001\"=\n"
+          + "\tModelType\022\032\n"
+          + "\026MODEL_TYPE_UNSPECIFIED\020\000\022\t\n"
+          + "\005SMALL\020\001\022\t\n"
+          + "\005LARGE\020\002\032\344\003\n"
+          + "\013EndUserSpec\022s\n"
+          + "\021end_user_metadata\030\001 \003(\0132S.google.cloud.discoveryeng"
+          + "ine.v1beta.AnswerQueryRequest.EndUserSpec.EndUserMetaDataB\003\340A\001\032\337\002\n"
+          + "\017EndUserMetaData\022s\n\n"
+          + "chunk_info\030\001 \001(\0132].google.cloud.discoveryengine.v1beta.AnswerQueryRequest."
+          + "EndUserSpec.EndUserMetaData.ChunkInfoH\000\032\313\001\n"
+          + "\tChunkInfo\022\017\n"
+          + "\007content\030\001 \001(\t\022\211\001\n"
+          + "\021document_metadata\030\002 \001(\0132n.google.cloud.discov"
+          + "eryengine.v1beta.AnswerQueryRequest.EndU"
+          + "serSpec.EndUserMetaData.ChunkInfo.DocumentMetadata\032!\n"
+          + "\020DocumentMetadata\022\r\n"
+          + "\005title\030\001 \001(\tB\t\n"
+          + "\007content\0321\n"
           + "\017UserLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\255\001\n"
@@ -408,15 +489,16 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + "\022answer_query_token\030\003 \001(\t\"O\n"
           + "\020GetAnswerRequest\022;\n"
           + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
-          + "%discoveryengine.googleapis.com/Answer\"\234\001\n"
+          + "%discoveryengine.googleapis.com/Answer\"\265\001\n"
           + "\024CreateSessionRequest\022@\n"
           + "\006parent\030\001 \001(\tB0\340A\002\372A*\n"
           + "(discoveryengine.googleapis.com/DataStore\022B\n"
-          + "\007session\030\002 \001(\0132,.goo"
-          + "gle.cloud.discoveryengine.v1beta.SessionB\003\340A\002\"\213\001\n"
+          + "\007session\030\002 \001(\0132,.googl"
+          + "e.cloud.discoveryengine.v1beta.SessionB\003\340A\002\022\027\n\n"
+          + "session_id\030\003 \001(\tB\003\340A\001\"\213\001\n"
           + "\024UpdateSessionRequest\022B\n"
-          + "\007session\030\001"
-          + " \001(\0132,.google.cloud.discoveryengine.v1beta.SessionB\003\340A\002\022/\n"
+          + "\007session\030\001 \001(\0132,.google."
+          + "cloud.discoveryengine.v1beta.SessionB\003\340A\002\022/\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"T\n"
           + "\024DeleteSessionRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
@@ -434,101 +516,118 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
           + "\010order_by\030\005 \001(\t\"o\n"
           + "\024ListSessionsResponse\022>\n"
           + "\010sessions\030\001 \003(\0132,.google.cloud.discoveryengine.v1beta.Session\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\327)\n"
+          + "\017next_page_token\030\002 \001(\t2\244.\n"
           + "\033ConversationalSearchService\022\277\003\n"
-          + "\024ConverseConversation\022@.google.cloud.discoveryengine.v1"
-          + "beta.ConverseConversationRequest\032A.googl"
-          + "e.cloud.discoveryengine.v1beta.ConverseConversationResponse\"\241\002\332A\n"
-          + "name,query\202\323\344\223\002\215\002\"K/v1beta/{name=projects/*/locations/*"
-          + "/dataStores/*/conversations/*}:converse:\001*Z^\"Y/v1beta/{name=projects/*/locations"
-          + "/*/collections/*/dataStores/*/conversations/*}:converse:\001*Z[\"V/v1beta/{name=proj"
-          + "ects/*/locations/*/collections/*/engines/*/conversations/*}:converse:\001*\022\272\003\n"
-          + "\022CreateConversation\022>.google.cloud.discoverye"
-          + "ngine.v1beta.CreateConversationRequest\0321.google.cloud.discoveryengine.v1beta.Con"
-          + "versation\"\260\002\332A\023parent,conversation\202\323\344\223\002\223"
-          + "\002\"B/v1beta/{parent=projects/*/locations/"
-          + "*/dataStores/*}/conversations:\014conversationZ`\"P/v1beta/{parent=projects/*/locati"
-          + "ons/*/collections/*/dataStores/*}/conversations:\014conversationZ]\"M/v1beta/{parent"
-          + "=projects/*/locations/*/collections/*/engines/*}/conversations:\014conversation\022\346\002\n"
-          + "\022DeleteConversation\022>.google.cloud.discoveryengine.v1beta.DeleteConversationRequ"
-          + "est\032\026.google.protobuf.Empty\"\367\001\332A\004name\202\323\344"
-          + "\223\002\351\001*B/v1beta/{name=projects/*/locations"
-          + "/*/dataStores/*/conversations/*}ZR*P/v1beta/{name=projects/*/locations/*/collect"
-          + "ions/*/dataStores/*/conversations/*}ZO*M/v1beta/{name=projects/*/locations/*/col"
-          + "lections/*/engines/*/conversations/*}\022\346\003\n"
-          + "\022UpdateConversation\022>.google.cloud.discoveryengine.v1beta.UpdateConversationReq"
-          + "uest\0321.google.cloud.discoveryengine.v1be"
-          + "ta.Conversation\"\334\002\332A\030conversation,update"
-          + "_mask\202\323\344\223\002\272\0022O/v1beta/{conversation.name"
-          + "=projects/*/locations/*/dataStores/*/conversations/*}:\014conversationZm2]/v1beta/{"
-          + "conversation.name=projects/*/locations/*/collections/*/dataStores/*/conversation"
-          + "s/*}:\014conversationZj2Z/v1beta/{conversation.name=projects/*/locations/*/collecti"
-          + "ons/*/engines/*/conversations/*}:\014conversation\022\373\002\n"
-          + "\017GetConversation\022;.google.cloud.discoveryengine.v1beta.GetConversation"
-          + "Request\0321.google.cloud.discoveryengine.v"
-          + "1beta.Conversation\"\367\001\332A\004name\202\323\344\223\002\351\001\022B/v1"
-          + "beta/{name=projects/*/locations/*/dataStores/*/conversations/*}ZR\022P/v1beta/{name"
-          + "=projects/*/locations/*/collections/*/dataStores/*/conversations/*}ZO\022M/v1beta/{"
-          + "name=projects/*/locations/*/collections/*/engines/*/conversations/*}\022\216\003\n"
-          + "\021ListConversations\022=.google.cloud.discoveryengin"
-          + "e.v1beta.ListConversationsRequest\032>.google.cloud.discoveryengine.v1beta.ListConv"
-          + "ersationsResponse\"\371\001\332A\006parent\202\323\344\223\002\351\001\022B/v"
-          + "1beta/{parent=projects/*/locations/*/dataStores/*}/conversationsZR\022P/v1beta/{par"
-          + "ent=projects/*/locations/*/collections/*/dataStores/*}/conversationsZO\022M/v1beta/"
-          + "{parent=projects/*/locations/*/collections/*/engines/*}/conversations\022\262\003\n"
-          + "\013AnswerQuery\0227.google.cloud.discoveryengine.v1b"
-          + "eta.AnswerQueryRequest\0328.google.cloud.discoveryengine.v1beta.AnswerQueryResponse"
-          + "\"\257\002\202\323\344\223\002\250\002\"T/v1beta/{serving_config=proj"
-          + "ects/*/locations/*/dataStores/*/servingConfigs/*}:answer:\001*Zg\"b/v1beta/{serving_"
-          + "config=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:answe"
-          + "r:\001*Zd\"_/v1beta/{serving_config=projects"
-          + "/*/locations/*/collections/*/engines/*/servingConfigs/*}:answer:\001*\022\370\002\n"
-          + "\tGetAnswer\0225.google.cloud.discoveryengine.v1beta.G"
-          + "etAnswerRequest\032+.google.cloud.discovery"
-          + "engine.v1beta.Answer\"\206\002\332A\004name\202\323\344\223\002\370\001\022G/"
-          + "v1beta/{name=projects/*/locations/*/dataStores/*/sessions/*/answers/*}ZW\022U/v1bet"
-          + "a/{name=projects/*/locations/*/collections/*/dataStores/*/sessions/*/answers/*}Z"
-          + "T\022R/v1beta/{name=projects/*/locations/*/"
-          + "collections/*/engines/*/sessions/*/answers/*}\022\210\003\n\r"
-          + "CreateSession\0229.google.cloud.discoveryengine.v1beta.CreateSessionReque"
-          + "st\032,.google.cloud.discoveryengine.v1beta"
-          + ".Session\"\215\002\332A\016parent,session\202\323\344\223\002\365\001\"=/v1"
-          + "beta/{parent=projects/*/locations/*/dataStores/*}/sessions:\007sessionZV\"K/v1beta/{"
-          + "parent=projects/*/locations/*/collections/*/dataStores/*}/sessions:\007sessionZS\"H/"
-          + "v1beta/{parent=projects/*/locations/*/co"
-          + "llections/*/engines/*}/sessions:\007session\022\315\002\n\r"
-          + "DeleteSession\0229.google.cloud.discoveryengine.v1beta.DeleteSessionRequest\032\026."
-          + "google.protobuf.Empty\"\350\001\332A\004name\202\323\344\223\002\332\001*="
-          + "/v1beta/{name=projects/*/locations/*/dataStores/*/sessions/*}ZM*K/v1beta/{name=p"
-          + "rojects/*/locations/*/collections/*/dataStores/*/sessions/*}ZJ*H/v1beta/{name=pr"
-          + "ojects/*/locations/*/collections/*/engines/*/sessions/*}\022\245\003\n\r"
-          + "UpdateSession\0229.google.cloud.discoveryengine.v1beta.UpdateS"
-          + "essionRequest\032,.google.cloud.discoveryen"
-          + "gine.v1beta.Session\"\252\002\332A\023session,update_"
-          + "mask\202\323\344\223\002\215\0022E/v1beta/{session.name=proje"
-          + "cts/*/locations/*/dataStores/*/sessions/*}:\007sessionZ^2S/v1beta/{session.name=pro"
-          + "jects/*/locations/*/collections/*/dataStores/*/sessions/*}:\007sessionZ[2P/v1beta/{"
-          + "session.name=projects/*/locations/*/coll"
-          + "ections/*/engines/*/sessions/*}:\007session\022\335\002\n\n"
-          + "GetSession\0226.google.cloud.discoveryengine.v1beta.GetSessionRequest\032,.google"
-          + ".cloud.discoveryengine.v1beta.Session\"\350\001"
-          + "\332A\004name\202\323\344\223\002\332\001\022=/v1beta/{name=projects/*"
-          + "/locations/*/dataStores/*/sessions/*}ZM\022K/v1beta/{name=projects/*/locations/*/co"
-          + "llections/*/dataStores/*/sessions/*}ZJ\022H"
-          + "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/sessions/*}\022\360\002\n"
-          + "\014ListSessions\0228.google.cloud.discoveryengine"
-          + ".v1beta.ListSessionsRequest\0329.google.cloud.discoveryengine.v1beta.ListSessionsRe"
-          + "sponse\"\352\001\332A\006parent\202\323\344\223\002\332\001\022=/v1beta/{pare"
-          + "nt=projects/*/locations/*/dataStores/*}/sessionsZM\022K/v1beta/{parent=projects/*/l"
-          + "ocations/*/collections/*/dataStores/*}/sessionsZJ\022H/v1beta/{parent=projects/*/lo"
-          + "cations/*/collections/*/engines/*}/sessi"
-          + "ons\032R\312A\036discoveryengine.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-platformB\247\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB ConversationalSearchService"
-          + "ProtoP\001ZQcloud.google.com/go/discoveryengine/apiv1beta/discoveryenginepb;discove"
-          + "ryenginepb\242\002\017DISCOVERYENGINE\252\002#Google.Cl"
-          + "oud.DiscoveryEngine.V1Beta\312\002#Google\\Clou"
-          + "d\\DiscoveryEngine\\V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "\024ConverseConversation\022@.google.cloud.discoveryengine.v1beta.ConverseConv"
+          + "ersationRequest\032A.google.cloud.discovery"
+          + "engine.v1beta.ConverseConversationResponse\"\241\002\332A\n"
+          + "name,query\202\323\344\223\002\215\002\"K/v1beta/{name"
+          + "=projects/*/locations/*/dataStores/*/conversations/*}:converse:\001*Z^\"Y/v1beta/{na"
+          + "me=projects/*/locations/*/collections/*/dataStores/*/conversations/*}:converse:\001"
+          + "*Z[\"V/v1beta/{name=projects/*/locations/"
+          + "*/collections/*/engines/*/conversations/*}:converse:\001*\022\272\003\n"
+          + "\022CreateConversation\022>.google.cloud.discoveryengine.v1beta.Crea"
+          + "teConversationRequest\0321.google.cloud.dis"
+          + "coveryengine.v1beta.Conversation\"\260\002\332A\023pa"
+          + "rent,conversation\202\323\344\223\002\223\002\"B/v1beta/{paren"
+          + "t=projects/*/locations/*/dataStores/*}/conversations:\014conversationZ`\"P/v1beta/{p"
+          + "arent=projects/*/locations/*/collections/*/dataStores/*}/conversations:\014conversa"
+          + "tionZ]\"M/v1beta/{parent=projects/*/locat"
+          + "ions/*/collections/*/engines/*}/conversations:\014conversation\022\346\002\n"
+          + "\022DeleteConversation\022>.google.cloud.discoveryengine.v1beta"
+          + ".DeleteConversationRequest\032\026.google.prot"
+          + "obuf.Empty\"\367\001\332A\004name\202\323\344\223\002\351\001*B/v1beta/{na"
+          + "me=projects/*/locations/*/dataStores/*/conversations/*}ZR*P/v1beta/{name=project"
+          + "s/*/locations/*/collections/*/dataStores/*/conversations/*}ZO*M/v1beta/{name=pro"
+          + "jects/*/locations/*/collections/*/engines/*/conversations/*}\022\346\003\n"
+          + "\022UpdateConversation\022>.google.cloud.discoveryengine.v1bet"
+          + "a.UpdateConversationRequest\0321.google.clo"
+          + "ud.discoveryengine.v1beta.Conversation\"\334"
+          + "\002\332A\030conversation,update_mask\202\323\344\223\002\272\0022O/v1"
+          + "beta/{conversation.name=projects/*/locations/*/dataStores/*/conversations/*}:\014co"
+          + "nversationZm2]/v1beta/{conversation.name=projects/*/locations/*/collections/*/da"
+          + "taStores/*/conversations/*}:\014conversationZj2Z/v1beta/{conversation.name=projects"
+          + "/*/locations/*/collections/*/engines/*/conversations/*}:\014conversation\022\373\002\n"
+          + "\017GetConversation\022;.google.cloud.discoveryengine"
+          + ".v1beta.GetConversationRequest\0321.google.cloud.discoveryengine.v1beta.Conversatio"
+          + "n\"\367\001\332A\004name\202\323\344\223\002\351\001\022B/v1beta/{name=projec"
+          + "ts/*/locations/*/dataStores/*/conversations/*}ZR\022P/v1beta/{name=projects/*/locat"
+          + "ions/*/collections/*/dataStores/*/conversations/*}ZO\022M/v1beta/{name=projects/*/l"
+          + "ocations/*/collections/*/engines/*/conversations/*}\022\216\003\n"
+          + "\021ListConversations\022=.google.cloud.discoveryengine.v1beta.ListConv"
+          + "ersationsRequest\032>.google.cloud.discoveryengine.v1beta.ListConversationsResponse"
+          + "\"\371\001\332A\006parent\202\323\344\223\002\351\001\022B/v1beta/{parent=pro"
+          + "jects/*/locations/*/dataStores/*}/conversationsZR\022P/v1beta/{parent=projects/*/lo"
+          + "cations/*/collections/*/dataStores/*}/conversationsZO\022M/v1beta/{parent=projects/"
+          + "*/locations/*/collections/*/engines/*}/conversations\022\262\003\n"
+          + "\013AnswerQuery\0227.google.cloud.discoveryengine.v1beta.AnswerQueryRe"
+          + "quest\0328.google.cloud.discoveryengine.v1b"
+          + "eta.AnswerQueryResponse\"\257\002\202\323\344\223\002\250\002\"T/v1be"
+          + "ta/{serving_config=projects/*/locations/*/dataStores/*/servingConfigs/*}:answer:"
+          + "\001*Zg\"b/v1beta/{serving_config=projects/*/locations/*/collections/*/dataStores/*/"
+          + "servingConfigs/*}:answer:\001*Zd\"_/v1beta/{serving_config=projects/*/locations/*/co"
+          + "llections/*/engines/*/servingConfigs/*}:answer:\001*\022\314\003\n"
+          + "\021StreamAnswerQuery\0227.google.cloud.discoveryengine.v1beta.AnswerQuer"
+          + "yRequest\0328.google.cloud.discoveryengine."
+          + "v1beta.AnswerQueryResponse\"\301\002\202\323\344\223\002\272\002\"Z/v"
+          + "1beta/{serving_config=projects/*/locations/*/dataStores/*/servingConfigs/*}:stre"
+          + "amAnswer:\001*Zm\"h/v1beta/{serving_config=projects/*/locations/*/collections/*/data"
+          + "Stores/*/servingConfigs/*}:streamAnswer:\001*Zj\"e/v1beta/{serving_config=projects/*"
+          + "/locations/*/collections/*/engines/*/servingConfigs/*}:streamAnswer:\001*0\001\022\370\002\n"
+          + "\tGetAnswer\0225.google.cloud.discoveryengine.v1"
+          + "beta.GetAnswerRequest\032+.google.cloud.dis"
+          + "coveryengine.v1beta.Answer\"\206\002\332A\004name\202\323\344\223"
+          + "\002\370\001\022G/v1beta/{name=projects/*/locations/"
+          + "*/dataStores/*/sessions/*/answers/*}ZW\022U/v1beta/{name=projects/*/locations/*/col"
+          + "lections/*/dataStores/*/sessions/*/answers/*}ZT\022R/v1beta/{name=projects/*/locati"
+          + "ons/*/collections/*/engines/*/sessions/*/answers/*}\022\210\003\n\r"
+          + "CreateSession\0229.google.cloud.discoveryengine.v1beta.CreateSessio"
+          + "nRequest\032,.google.cloud.discoveryengine."
+          + "v1beta.Session\"\215\002\332A\016parent,session\202\323\344\223\002\365"
+          + "\001\"=/v1beta/{parent=projects/*/locations/"
+          + "*/dataStores/*}/sessions:\007sessionZV\"K/v1beta/{parent=projects/*/locations/*/coll"
+          + "ections/*/dataStores/*}/sessions:\007sessionZS\"H/v1beta/{parent=projects/*/location"
+          + "s/*/collections/*/engines/*}/sessions:\007session\022\315\002\n\r"
+          + "DeleteSession\0229.google.cloud.discoveryengine.v1beta.DeleteSessionRequ"
+          + "est\032\026.google.protobuf.Empty\"\350\001\332A\004name\202\323\344"
+          + "\223\002\332\001*=/v1beta/{name=projects/*/locations"
+          + "/*/dataStores/*/sessions/*}ZM*K/v1beta/{name=projects/*/locations/*/collections/"
+          + "*/dataStores/*/sessions/*}ZJ*H/v1beta/{n"
+          + "ame=projects/*/locations/*/collections/*/engines/*/sessions/*}\022\245\003\n\r"
+          + "UpdateSession\0229.google.cloud.discoveryengine.v1beta.U"
+          + "pdateSessionRequest\032,.google.cloud.disco"
+          + "veryengine.v1beta.Session\"\252\002\332A\023session,u"
+          + "pdate_mask\202\323\344\223\002\215\0022E/v1beta/{session.name"
+          + "=projects/*/locations/*/dataStores/*/sessions/*}:\007sessionZ^2S/v1beta/{session.na"
+          + "me=projects/*/locations/*/collections/*/dataStores/*/sessions/*}:\007sessionZ[2P/v1"
+          + "beta/{session.name=projects/*/locations/"
+          + "*/collections/*/engines/*/sessions/*}:\007session\022\335\002\n\n"
+          + "GetSession\0226.google.cloud.discoveryengine.v1beta.GetSessionRequest\032,."
+          + "google.cloud.discoveryengine.v1beta.Sess"
+          + "ion\"\350\001\332A\004name\202\323\344\223\002\332\001\022=/v1beta/{name=proj"
+          + "ects/*/locations/*/dataStores/*/sessions/*}ZM\022K/v1beta/{name=projects/*/location"
+          + "s/*/collections/*/dataStores/*/sessions/*}ZJ\022H/v1beta/{name=projects/*/locations"
+          + "/*/collections/*/engines/*/sessions/*}\022\360\002\n"
+          + "\014ListSessions\0228.google.cloud.discovery"
+          + "engine.v1beta.ListSessionsRequest\0329.google.cloud.discoveryengine.v1beta.ListSess"
+          + "ionsResponse\"\352\001\332A\006parent\202\323\344\223\002\332\001\022=/v1beta"
+          + "/{parent=projects/*/locations/*/dataStores/*}/sessionsZM\022K/v1beta/{parent=projec"
+          + "ts/*/locations/*/collections/*/dataStores/*}/sessionsZJ\022H/v1beta/{parent=project"
+          + "s/*/locations/*/collections/*/engines/*}"
+          + "/sessions\032\317\001\312A\036discoveryengine.googleapi",
+      "s.com\322A\252\001https://www.googleapis.com/auth"
+          + "/cloud-platform,https://www.googleapis.c"
+          + "om/auth/discoveryengine.readwrite,https:"
+          + "//www.googleapis.com/auth/discoveryengin"
+          + "e.serving.readwriteB\247\002\n\'com.google.cloud"
+          + ".discoveryengine.v1betaB ConversationalS"
+          + "earchServiceProtoP\001ZQcloud.google.com/go"
+          + "/discoveryengine/apiv1beta/discoveryengi"
+          + "nepb;discoveryenginepb\242\002\017DISCOVERYENGINE"
+          + "\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002"
+          + "#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&G"
+          + "oogle::Cloud::DiscoveryEngine::V1betab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -540,6 +639,7 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.AnswerProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.ConversationProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.SafetyProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.SearchServiceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.SessionProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -644,6 +744,7 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
               "AsynchronousMode",
               "UserPseudoId",
               "UserLabels",
+              "EndUserSpec",
             });
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor
@@ -652,7 +753,16 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_descriptor,
             new java.lang.String[] {
-              "Enable",
+              "Enable", "SafetySettings",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_SafetySetting_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_SafetySetting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SafetySpec_SafetySetting_descriptor,
+            new java.lang.String[] {
+              "Category", "Threshold",
             });
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_RelatedQuestionsSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor
@@ -687,6 +797,7 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
               "IgnoreNonAnswerSeekingQuery",
               "IgnoreLowRelevantContent",
               "IgnoreJailBreakingQuery",
+              "MultimodalSpec",
             });
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_ModelSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_descriptor
@@ -705,6 +816,15 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
             internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_PromptSpec_descriptor,
             new java.lang.String[] {
               "Preamble",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_MultimodalSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_MultimodalSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_AnswerGenerationSpec_MultimodalSpec_descriptor,
+            new java.lang.String[] {
+              "ImageSource",
             });
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_SearchSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor
@@ -814,7 +934,7 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_descriptor,
             new java.lang.String[] {
-              "QueryClassificationSpec", "QueryRephraserSpec",
+              "QueryClassificationSpec", "QueryRephraserSpec", "DisableSpellCorrection",
             });
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryClassificationSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_descriptor
@@ -832,11 +952,56 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_descriptor,
             new java.lang.String[] {
-              "Disable", "MaxRephraseSteps",
+              "Disable", "MaxRephraseSteps", "ModelSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_ModelSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_ModelSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_QueryUnderstandingSpec_QueryRephraserSpec_ModelSpec_descriptor,
+            new java.lang.String[] {
+              "ModelType",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor
+            .getNestedType(6);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_descriptor,
+            new java.lang.String[] {
+              "EndUserMetadata",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_descriptor,
+            new java.lang.String[] {
+              "ChunkInfo", "Content",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_descriptor,
+            new java.lang.String[] {
+              "Content", "DocumentMetadata",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_DocumentMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_DocumentMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_EndUserSpec_EndUserMetaData_ChunkInfo_DocumentMetadata_descriptor,
+            new java.lang.String[] {
+              "Title",
             });
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_UserLabelsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_descriptor
-            .getNestedType(6);
+            .getNestedType(7);
     internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_UserLabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_AnswerQueryRequest_UserLabelsEntry_descriptor,
@@ -865,7 +1030,7 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_CreateSessionRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Session",
+              "Parent", "Session", "SessionId",
             });
     internal_static_google_cloud_discoveryengine_v1beta_UpdateSessionRequest_descriptor =
         getDescriptor().getMessageType(12);
@@ -914,6 +1079,7 @@ public final class ConversationalSearchServiceProto extends com.google.protobuf.
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.AnswerProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.ConversationProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.SafetyProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.SearchServiceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.SessionProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

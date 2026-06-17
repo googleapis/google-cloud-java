@@ -42,6 +42,7 @@ public class AsyncCreateHttpRoute {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setHttpRouteId("httpRouteId-2054835300")
               .setHttpRoute(HttpRoute.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future =
           networkServicesClient.createHttpRouteCallable().futureCall(request);

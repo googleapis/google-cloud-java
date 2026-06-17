@@ -45,10 +45,6 @@ public final class GoldengateConnectionTypeProto extends com.google.protobuf.Gen
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_GoldengateConnectionType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_oracledatabase_v1_GetGoldengateConnectionTypeRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_cloud_oracledatabase_v1_GetGoldengateConnectionTypeRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesRequest_fieldAccessorTable;
@@ -109,13 +105,10 @@ public final class GoldengateConnectionTypeProto extends com.google.protobuf.Gen
           + "\007ICEBERG\020\035:\321\001\352A\315\001\n"
           + "6oracledatabase.googleapis.com/GoldengateConnectionType\022^projects"
           + "/{project}/locations/{location}/goldengateConnectionTypes/{goldengate_connection"
-          + "_type}*\031goldengateConnectionTypes2\030goldengateConnectionType\"r\n"
-          + "\"GetGoldengateConnectionTypeRequest\022L\n"
-          + "\004name\030\001 \001(\tB>\340A\002\372A8\n"
-          + "6oracledatabase.googleapis.com/GoldengateConnectionType\"\274\001\n"
+          + "_type}*\031goldengateConnectionTypes2\030goldengateConnectionType\"\274\001\n"
           + "$ListGoldengateConnectionTypesRequest\022N\n"
-          + "\006parent\030\001 \001(\tB>\340A\002\372A8"
-          + "\0226oracledatabase.googleapis.com/GoldengateConnectionType\022\026\n"
+          + "\006parent\030\001 \001(\tB>\340A"
+          + "\002\372A8\0226oracledatabase.googleapis.com/GoldengateConnectionType\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\271\001\n"
@@ -124,11 +117,11 @@ public final class GoldengateConnectionTypeProto extends com.google.protobuf.Gen
           + " \003(\01328.google.cloud.oracledatabase.v1.GoldengateConnectionType\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006B\367\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\035Golde"
-          + "ngateConnectionTypeProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatab"
-          + "asepb;oracledatabasepb\252\002\036Google.Cloud.Or"
-          + "acleDatabase.V1\312\002\036Google\\Cloud\\OracleDat"
-          + "abase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\035GoldengateConnectionTypeProtoP\001ZJcloud.go"
+          + "ogle.com/go/oracledatabase/apiv1/oracled"
+          + "atabasepb;oracledatabasepb\252\002\036Google.Clou"
+          + "d.OracleDatabase.V1\312\002\036Google\\Cloud\\Oracl"
+          + "eDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -145,16 +138,8 @@ public final class GoldengateConnectionTypeProto extends com.google.protobuf.Gen
             new java.lang.String[] {
               "Name", "ConnectionType", "TechnologyTypes",
             });
-    internal_static_google_cloud_oracledatabase_v1_GetGoldengateConnectionTypeRequest_descriptor =
-        getDescriptor().getMessageType(1);
-    internal_static_google_cloud_oracledatabase_v1_GetGoldengateConnectionTypeRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_cloud_oracledatabase_v1_GetGoldengateConnectionTypeRequest_descriptor,
-            new java.lang.String[] {
-              "Name",
-            });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesRequest_descriptor,
@@ -162,7 +147,7 @@ public final class GoldengateConnectionTypeProto extends com.google.protobuf.Gen
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesResponse_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateConnectionTypesResponse_descriptor,

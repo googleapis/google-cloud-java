@@ -72,7 +72,7 @@ public final class DestinationProto extends com.google.protobuf.GeneratedFile {
           + "amanager.v1.ProductB\002\030\001\022\027\n\naccount_id\030\002 "
           + "\001(\tB\003\340A\002\022P\n\014account_type\030\003 \001(\01625.google."
           + "ads.datamanager.v1.ProductAccount.Accoun"
-          + "tTypeB\003\340A\001\"\341\001\n\013AccountType\022\034\n\030ACCOUNT_TY"
+          + "tTypeB\003\340A\002\"\341\001\n\013AccountType\022\034\n\030ACCOUNT_TY"
           + "PE_UNSPECIFIED\020\000\022\016\n\nGOOGLE_ADS\020\001\022\031\n\025DISP"
           + "LAY_VIDEO_PARTNER\020\002\022\034\n\030DISPLAY_VIDEO_ADV"
           + "ERTISER\020\003\022\020\n\014DATA_PARTNER\020\004\022\035\n\031GOOGLE_AN"

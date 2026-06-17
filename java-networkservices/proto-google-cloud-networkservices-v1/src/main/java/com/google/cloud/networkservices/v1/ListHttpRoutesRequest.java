@@ -54,6 +54,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
   private ListHttpRoutesRequest() {
     parent_ = "";
     pageToken_ = "";
+    filter_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,7 +82,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The project and location from which the HttpRoutes should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -108,7 +109,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The project and location from which the HttpRoutes should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -227,6 +228,59 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
     return returnPartialSuccess_;
   }
 
+  public static final int FILTER_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter expression to restrict the list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter expression to restrict the list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -253,6 +307,9 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
     if (returnPartialSuccess_ != false) {
       output.writeBool(4, returnPartialSuccess_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -274,6 +331,9 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
     if (returnPartialSuccess_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, returnPartialSuccess_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, filter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -294,6 +354,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -313,6 +374,8 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -458,6 +521,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
       pageSize_ = 0;
       pageToken_ = "";
       returnPartialSuccess_ = false;
+      filter_ = "";
       return this;
     }
 
@@ -506,6 +570,9 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.returnPartialSuccess_ = returnPartialSuccess_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filter_ = filter_;
+      }
     }
 
     @java.lang.Override
@@ -536,6 +603,11 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.getReturnPartialSuccess() != false) {
         setReturnPartialSuccess(other.getReturnPartialSuccess());
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -587,6 +659,12 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 42:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -613,7 +691,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The project and location from which the HttpRoutes should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -639,7 +717,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The project and location from which the HttpRoutes should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -665,7 +743,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The project and location from which the HttpRoutes should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -690,7 +768,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The project and location from which the HttpRoutes should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -711,7 +789,7 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The project and location from which the HttpRoutes should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -967,6 +1045,117 @@ public final class ListHttpRoutesRequest extends com.google.protobuf.GeneratedMe
     public Builder clearReturnPartialSuccess() {
       bitField0_ = (bitField0_ & ~0x00000008);
       returnPartialSuccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter expression to restrict the list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter expression to restrict the list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter expression to restrict the list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter expression to restrict the list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter expression to restrict the list.
+     * </pre>
+     *
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
