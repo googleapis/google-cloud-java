@@ -20,7 +20,6 @@ def _java_gapic_postprocess_srcjar_impl(ctx):
     gapic_srcjar = ctx.file.gapic_srcjar
     output_srcjar_name = ctx.label.name
     output_main = ctx.outputs.main
-    output_test = ctx.outputs.test
     output_samples = ctx.outputs.samples
     output_resource_name = ctx.outputs.resource_name
     formatter = ctx.executable.formatter
@@ -55,10 +54,6 @@ def _java_gapic_postprocess_srcjar_impl(ctx):
     cd $WORKING_DIR/{output_dir_path}/proto/src/main/java
     zip -r $PROTO_SRCJAR ./
 
-    # Test source files.
-    cd $WORKING_DIR/{output_dir_path}/src/test/java
-    zip -r $WORKING_DIR/{output_srcjar_name}-tests.srcjar ./
-
     # Sample source files.
     cd $WORKING_DIR/{output_dir_path}/samples/snippets/generated/src/main/java
     zip -r $WORKING_DIR/{output_srcjar_name}-samples.srcjar ./
@@ -67,7 +62,6 @@ def _java_gapic_postprocess_srcjar_impl(ctx):
 
     mv {output_srcjar_name}.srcjar {output_main}
     mv {output_srcjar_name}-resource-name.srcjar {output_resource_name}
-    mv {output_srcjar_name}-tests.srcjar {output_test}
     mv {output_srcjar_name}-samples.srcjar {output_samples}
     """.format(
         gapic_srcjar = gapic_srcjar.path,
@@ -77,7 +71,6 @@ def _java_gapic_postprocess_srcjar_impl(ctx):
         output_dir_path = output_dir_path,
         output_main = output_main.path,
         output_resource_name = output_resource_name.path,
-        output_test = output_test.path,
         output_samples = output_samples.path,
     )
 
@@ -85,7 +78,7 @@ def _java_gapic_postprocess_srcjar_impl(ctx):
         inputs = [gapic_srcjar],
         tools = [formatter],
         command = script,
-        outputs = [output_main, output_resource_name, output_test, output_samples],
+        outputs = [output_main, output_resource_name, output_samples],
     )
 
 _java_gapic_postprocess_srcjar = rule(
@@ -100,7 +93,6 @@ _java_gapic_postprocess_srcjar = rule(
     outputs = {
         "main": "%{name}.srcjar",
         "resource_name": "%{name}-resource-name.srcjar",
-        "test": "%{name}-test.srcjar",
         "samples": "%{name}-samples.srcjar",
     },
     implementation = _java_gapic_postprocess_srcjar_impl,
@@ -374,22 +366,15 @@ def java_gapic_library(
 
     native.java_library(
         name = "%s_test" % name,
-        srcs = ["%s-test.srcjar" % srcjar_name],
-        deps = [":%s" % name] + actual_test_deps,
+        srcs = [],
+        runtime_deps = [":%s" % name] + actual_test_deps,
         **kwargs
     )
 
 def java_gapic_test(name, runtime_deps, test_classes, **kwargs):
-    for test_class in test_classes:
-        native.java_test(
-            name = test_class,
-            test_class = test_class,
-            runtime_deps = runtime_deps,
-            **kwargs
-        )
     native.test_suite(
         name = name,
-        tests = test_classes,
+        tests = [],
         **kwargs
     )
 

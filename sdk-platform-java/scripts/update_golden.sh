@@ -22,7 +22,9 @@ find . -name 'reflect-config.json' -delete
 mkdir -p ./src
 cp -r ${UNPACK_DIR}/src/main/resources/* ./src
 cp -r ${UNPACK_DIR}/src/main/java/* ./src
-cp -r ${UNPACK_DIR}/src/test/java/* ./src
+if [ -d ${UNPACK_DIR}/src/test/java ]; then
+  cp -r ${UNPACK_DIR}/src/test/java/* ./src
+fi
 [ -d ${UNPACK_DIR}/proto ] && cp -r ${UNPACK_DIR}/proto/src/main/java/* ./src
 
 mkdir -p ./samples/snippets/generated

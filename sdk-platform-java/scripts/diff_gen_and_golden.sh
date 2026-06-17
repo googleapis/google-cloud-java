@@ -14,7 +14,9 @@ cp -r samples/snippets/generated/**/* ../samples/snippets/generated
 
 cp -r src/main/resources/* ../src
 cp -r src/main/java/* ../src
-cp -r src/test/java/* ../src
+if [ -d src/test/java ]; then
+  cp -r src/test/java/* ../src
+fi
 [ -d proto ] && cp -r proto/src/main/java/* ../src
 cd ..
 
