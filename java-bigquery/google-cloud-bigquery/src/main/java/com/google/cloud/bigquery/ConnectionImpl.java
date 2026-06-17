@@ -245,7 +245,8 @@ class ConnectionImpl implements Connection {
       labelMap = labels[0];
     }
     try {
-      // use jobs.query if possible
+      // The fast query path (jobs.query API) is preferred to reduce latency by avoiding
+      // the slow fallback path (jobs.insert API). We will opt to use it if possible.
       if (isFastQuerySupported()) {
         logger.log(Level.INFO, "\n Using Fast Query Path");
         final String projectId = bigQueryOptions.getProjectId();

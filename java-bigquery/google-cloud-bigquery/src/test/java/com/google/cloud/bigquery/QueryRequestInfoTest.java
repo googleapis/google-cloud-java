@@ -167,9 +167,9 @@ public class QueryRequestInfoTest {
 
   @Test
   public void testIsFastQuerySupported() {
-    assertEquals(false, REQUEST_INFO.isFastQuerySupported());
-    assertEquals(true, REQUEST_INFO_SUPPORTED.isFastQuerySupported());
-    assertEquals(true, REQUEST_INFO_WITH_TIMEOUT.isFastQuerySupported());
+    assertFalse(REQUEST_INFO.isFastQuerySupported());
+    assertTrue(REQUEST_INFO_SUPPORTED.isFastQuerySupported());
+    assertTrue(REQUEST_INFO_WITH_TIMEOUT.isFastQuerySupported());
   }
 
   @Test
