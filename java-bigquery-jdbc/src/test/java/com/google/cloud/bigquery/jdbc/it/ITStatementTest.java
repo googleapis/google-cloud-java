@@ -446,7 +446,12 @@ public class ITStatementTest {
       assertNotNull(dataset);
       assertEquals(location, dataset.getLocation());
     } finally {
-      bigQuery.delete(DatasetId.of(tempDatasetName), BigQuery.DatasetDeleteOption.deleteContents());
+      try {
+        bigQuery.delete(
+            DatasetId.of(tempDatasetName), BigQuery.DatasetDeleteOption.deleteContents());
+      } catch (Exception e) {
+        // Ignore cleanup exceptions to avoid masking the primary test failure
+      }
     }
   }
 }
