@@ -89,25 +89,21 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public ResultSet executeQuery() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
     return super.executeQuery(this.currentQuery);
   }
 
   @Override
   public long executeLargeUpdate() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
     return super.executeLargeUpdate(this.currentQuery);
   }
 
   @Override
   public int executeUpdate() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
     return super.executeUpdate(this.currentQuery);
   }
 
   @Override
   public boolean execute() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
     return super.execute(this.currentQuery);
   }
 
