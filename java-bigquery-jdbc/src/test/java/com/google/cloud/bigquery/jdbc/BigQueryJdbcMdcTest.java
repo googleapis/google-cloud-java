@@ -320,9 +320,9 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
       assertTrue(metadataExec2 instanceof ThreadPoolExecutor);
 
       assertEquals(0, ((ThreadPoolExecutor) exec1).getCorePoolSize());
-      assertEquals(100, ((ThreadPoolExecutor) exec1).getMaximumPoolSize());
+      assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) exec1).getMaximumPoolSize());
       assertEquals(0, ((ThreadPoolExecutor) exec2).getCorePoolSize());
-      assertEquals(100, ((ThreadPoolExecutor) exec2).getMaximumPoolSize());
+      assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) exec2).getMaximumPoolSize());
       assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getCorePoolSize());
       assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getMaximumPoolSize());
       assertTrue(((ThreadPoolExecutor) metadataExec1).allowsCoreThreadTimeOut());
