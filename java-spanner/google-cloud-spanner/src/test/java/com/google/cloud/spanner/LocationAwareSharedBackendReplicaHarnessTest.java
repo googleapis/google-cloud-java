@@ -121,16 +121,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
-      int secondReplicaIndex = 1 - firstReplicaIndex;
+      waitForReplicaRoutedRead(client, harness);
       harness.clearRequests();
 
-      harness
-          .replicas
-          .get(firstReplicaIndex)
-          .putMethodErrors(
-              SharedBackendReplicaHarness.METHOD_STREAMING_READ,
-              resourceExhausted("busy-routed-replica"));
+      harness.backend.setStreamingReadExecutionTime(
+          SimulatedExecutionTime.ofStreamException(resourceExhausted("busy-routed-replica"), 0L));
 
       try (ResultSet resultSet =
           client
@@ -143,45 +138,15 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
         assertTrue(resultSet.next());
       }
 
+      String diagnostics = routingDiagnostics(harness);
+      List<ReplicaRequestAttempt> attempts = streamingReadAttempts(harness);
       assertEquals(
-          1,
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          1,
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          0,
-          harness
-              .defaultReplica
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      ReadRequest replicaARequest =
-          (ReadRequest)
-              harness
-                  .replicas
-                  .get(firstReplicaIndex)
-                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-                  .get(0);
-      assertTrue(replicaARequest.getResumeToken().isEmpty());
-      assertRetriedOnSameLogicalRequest(
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .get(0),
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .get(0));
+          "Expected original request and retry request on replica endpoints.\n" + diagnostics,
+          2,
+          attempts.size());
+      assertDefaultReplicaUnused(harness, diagnostics);
+      assertAllResumeTokensEmpty(attempts, diagnostics);
+      assertRetriedOnDifferentReplicasInEitherOrder(attempts.get(0), attempts.get(1), diagnostics);
     }
   }
 
@@ -192,16 +157,12 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
-      int secondReplicaIndex = 1 - firstReplicaIndex;
+      waitForReplicaRoutedRead(client, harness);
       harness.clearRequests();
 
-      harness
-          .replicas
-          .get(firstReplicaIndex)
-          .putMethodErrors(
-              SharedBackendReplicaHarness.METHOD_STREAMING_READ,
-              resourceExhaustedWithRetryInfo("busy-routed-replica"));
+      harness.backend.setStreamingReadExecutionTime(
+          SimulatedExecutionTime.ofStreamException(
+              resourceExhaustedWithRetryInfo("busy-routed-replica"), 0L));
 
       try (ResultSet firstRead =
           client
@@ -225,49 +186,23 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
         assertTrue(secondRead.next());
       }
 
+      String diagnostics = routingDiagnostics(harness);
+      List<ReplicaRequestAttempt> attempts = streamingReadAttempts(harness);
       assertEquals(
-          1,
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          2,
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          0,
-          harness
-              .defaultReplica
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      List<AbstractMessage> replicaBRequests =
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
-      for (AbstractMessage request : replicaBRequests) {
-        assertTrue(((ReadRequest) request).getResumeToken().isEmpty());
-      }
-      List<String> replicaBRequestIds =
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+          "Expected failed original request, retry request, and next request.\n" + diagnostics,
+          3,
+          attempts.size());
+      assertDefaultReplicaUnused(harness, diagnostics);
+      assertAllResumeTokensEmpty(attempts, diagnostics);
+
+      int originalReplicaIndex = findSingleReplicaWithRequestCount(harness, 1, diagnostics);
+      int routedReplicaIndex = findSingleReplicaWithRequestCount(harness, 2, diagnostics);
+      ReplicaRequestAttempt originalAttempt =
+          attemptsForReplica(attempts, originalReplicaIndex).get(0);
+      List<ReplicaRequestAttempt> routedAttempts = attemptsForReplica(attempts, routedReplicaIndex);
       assertRetriedOnSameLogicalRequest(
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .get(0),
-          replicaBRequestIds.get(0));
-      assertNotEquals(
-          XGoogSpannerRequestId.of(replicaBRequestIds.get(0)).getLogicalRequestKey(),
-          XGoogSpannerRequestId.of(replicaBRequestIds.get(1)).getLogicalRequestKey());
+          originalAttempt.requestId, routedAttempts.get(0).requestId, diagnostics);
+      assertDifferentLogicalRequests(routedAttempts.get(0), routedAttempts.get(1), diagnostics);
     }
   }
 
@@ -278,15 +213,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
-      int secondReplicaIndex = 1 - firstReplicaIndex;
+      waitForReplicaRoutedRead(client, harness);
       harness.clearRequests();
 
-      harness
-          .replicas
-          .get(firstReplicaIndex)
-          .putMethodErrors(
-              SharedBackendReplicaHarness.METHOD_STREAMING_READ, unavailable("isolated-replica"));
+      harness.backend.setStreamingReadExecutionTime(
+          SimulatedExecutionTime.ofStreamException(unavailable("isolated-replica"), 0L));
 
       try (ResultSet resultSet =
           client
@@ -299,45 +230,15 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
         assertTrue(resultSet.next());
       }
 
+      String diagnostics = routingDiagnostics(harness);
+      List<ReplicaRequestAttempt> attempts = streamingReadAttempts(harness);
       assertEquals(
-          1,
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          1,
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          0,
-          harness
-              .defaultReplica
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      ReadRequest replicaARequest =
-          (ReadRequest)
-              harness
-                  .replicas
-                  .get(firstReplicaIndex)
-                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-                  .get(0);
-      assertTrue(replicaARequest.getResumeToken().isEmpty());
-      assertRetriedOnSameLogicalRequest(
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .get(0),
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .get(0));
+          "Expected original request and retry request on replica endpoints.\n" + diagnostics,
+          2,
+          attempts.size());
+      assertDefaultReplicaUnused(harness, diagnostics);
+      assertAllResumeTokensEmpty(attempts, diagnostics);
+      assertRetriedOnDifferentReplicasInEitherOrder(attempts.get(0), attempts.get(1), diagnostics);
     }
   }
 
@@ -349,15 +250,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
-      int secondReplicaIndex = 1 - firstReplicaIndex;
+      waitForReplicaRoutedRead(client, harness);
       harness.clearRequests();
 
-      harness
-          .replicas
-          .get(firstReplicaIndex)
-          .putMethodErrors(
-              SharedBackendReplicaHarness.METHOD_STREAMING_READ, unavailable("isolated-replica"));
+      harness.backend.setStreamingReadExecutionTime(
+          SimulatedExecutionTime.ofStreamException(unavailable("isolated-replica"), 0L));
 
       try (ResultSet firstRead =
           client
@@ -381,49 +278,23 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
         assertTrue(secondRead.next());
       }
 
+      String diagnostics = routingDiagnostics(harness);
+      List<ReplicaRequestAttempt> attempts = streamingReadAttempts(harness);
       assertEquals(
-          1,
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          2,
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      assertEquals(
-          0,
-          harness
-              .defaultReplica
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .size());
-      List<AbstractMessage> replicaBRequests =
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
-      for (AbstractMessage request : replicaBRequests) {
-        assertTrue(((ReadRequest) request).getResumeToken().isEmpty());
-      }
-      List<String> replicaBRequestIds =
-          harness
-              .replicas
-              .get(secondReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+          "Expected failed original request, retry request, and next request.\n" + diagnostics,
+          3,
+          attempts.size());
+      assertDefaultReplicaUnused(harness, diagnostics);
+      assertAllResumeTokensEmpty(attempts, diagnostics);
+
+      int originalReplicaIndex = findSingleReplicaWithRequestCount(harness, 1, diagnostics);
+      int routedReplicaIndex = findSingleReplicaWithRequestCount(harness, 2, diagnostics);
+      ReplicaRequestAttempt originalAttempt =
+          attemptsForReplica(attempts, originalReplicaIndex).get(0);
+      List<ReplicaRequestAttempt> routedAttempts = attemptsForReplica(attempts, routedReplicaIndex);
       assertRetriedOnSameLogicalRequest(
-          harness
-              .replicas
-              .get(firstReplicaIndex)
-              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
-              .get(0),
-          replicaBRequestIds.get(0));
-      assertNotEquals(
-          XGoogSpannerRequestId.of(replicaBRequestIds.get(0)).getLogicalRequestKey(),
-          XGoogSpannerRequestId.of(replicaBRequestIds.get(1)).getLogicalRequestKey());
+          originalAttempt.requestId, routedAttempts.get(0).requestId, diagnostics);
+      assertDifferentLogicalRequests(routedAttempts.get(0), routedAttempts.get(1), diagnostics);
     }
   }
 
@@ -779,15 +650,109 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           replica.getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
       List<String> requestIds =
           replica.getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+      assertEquals(
+          "StreamingRead requests and request ids should be recorded in pairs.\n"
+              + routingDiagnostics(harness),
+          requests.size(),
+          requestIds.size());
       for (int requestIndex = 0; requestIndex < requests.size(); requestIndex++) {
         attempts.add(
             new ReplicaRequestAttempt(
                 replicaIndex,
                 (ReadRequest) requests.get(requestIndex),
-                requestIndex < requestIds.size() ? requestIds.get(requestIndex) : null));
+                requestIds.get(requestIndex)));
       }
     }
     return attempts;
+  }
+
+  private static void assertDefaultReplicaUnused(
+      SharedBackendReplicaHarness harness, String diagnostics) {
+    assertEquals(
+        "Expected default endpoint to receive no StreamingRead requests.\n" + diagnostics,
+        0,
+        harness
+            .defaultReplica
+            .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+            .size());
+  }
+
+  private static void assertAllResumeTokensEmpty(
+      List<ReplicaRequestAttempt> attempts, String diagnostics) {
+    for (ReplicaRequestAttempt attempt : attempts) {
+      assertTrue(
+          "Expected all retry/retry-info requests to restart without resume token.\n" + diagnostics,
+          attempt.request.getResumeToken().isEmpty());
+    }
+  }
+
+  private static int findSingleReplicaWithRequestCount(
+      SharedBackendReplicaHarness harness, int expectedCount, String diagnostics) {
+    int match = -1;
+    for (int replicaIndex = 0; replicaIndex < harness.replicas.size(); replicaIndex++) {
+      int requestCount =
+          harness
+              .replicas
+              .get(replicaIndex)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size();
+      if (requestCount == expectedCount) {
+        if (match >= 0) {
+          fail(
+              "Expected exactly one replica with "
+                  + expectedCount
+                  + " StreamingRead requests, but found multiple.\n"
+                  + diagnostics);
+        }
+        match = replicaIndex;
+      }
+    }
+    if (match < 0) {
+      fail(
+          "Expected exactly one replica with "
+              + expectedCount
+              + " StreamingRead requests, but found none.\n"
+              + diagnostics);
+    }
+    return match;
+  }
+
+  private static List<ReplicaRequestAttempt> attemptsForReplica(
+      List<ReplicaRequestAttempt> attempts, int replicaIndex) {
+    List<ReplicaRequestAttempt> result = new ArrayList<>();
+    for (ReplicaRequestAttempt attempt : attempts) {
+      if (attempt.replicaIndex == replicaIndex) {
+        result.add(attempt);
+      }
+    }
+    return result;
+  }
+
+  private static void assertRetriedOnDifferentReplicasInEitherOrder(
+      ReplicaRequestAttempt firstAttempt, ReplicaRequestAttempt secondAttempt, String diagnostics) {
+    assertNotEquals(
+        "Retry should reroute to different replica.\n" + diagnostics,
+        firstAttempt.replicaIndex,
+        secondAttempt.replicaIndex);
+    assertRetriedOnSameLogicalRequestInEitherOrder(
+        firstAttempt.requestId, secondAttempt.requestId, diagnostics);
+  }
+
+  private static void assertDifferentLogicalRequests(
+      ReplicaRequestAttempt firstAttempt, ReplicaRequestAttempt secondAttempt, String diagnostics) {
+    if (firstAttempt.requestId == null || secondAttempt.requestId == null) {
+      fail(
+          "Missing x-goog-spanner-request-id header. firstRequestId="
+              + firstAttempt.requestId
+              + ", secondRequestId="
+              + secondAttempt.requestId
+              + "\n"
+              + diagnostics);
+    }
+    assertNotEquals(
+        "Expected separate reads to use distinct logical request ids.\n" + diagnostics,
+        XGoogSpannerRequestId.of(firstAttempt.requestId).getLogicalRequestKey(),
+        XGoogSpannerRequestId.of(secondAttempt.requestId).getLogicalRequestKey());
   }
 
   private static ReplicaRequestAttempt findSingleAttemptWithResumeToken(
@@ -841,6 +806,8 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
         .append(replicaIndex >= 0 ? "[" + replicaIndex + "]" : "")
         .append(" requestCount=")
         .append(requests.size())
+        .append(" requestIdCount=")
+        .append(requestIds.size())
         .append('\n');
     for (int requestIndex = 0; requestIndex < requests.size(); requestIndex++) {
       ReadRequest request = (ReadRequest) requests.get(requestIndex);
@@ -876,6 +843,29 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
 
   private static StatusRuntimeException unavailable(String description) {
     return Status.UNAVAILABLE.withDescription(description).asRuntimeException();
+  }
+
+  private static void assertRetriedOnSameLogicalRequestInEitherOrder(
+      String firstRequestId, String secondRequestId, String diagnostics) {
+    if (firstRequestId == null || secondRequestId == null) {
+      fail(
+          "Missing x-goog-spanner-request-id header. firstRequestId="
+              + firstRequestId
+              + ", secondRequestId="
+              + secondRequestId
+              + "\n"
+              + diagnostics);
+    }
+    XGoogSpannerRequestId first = XGoogSpannerRequestId.of(firstRequestId);
+    XGoogSpannerRequestId second = XGoogSpannerRequestId.of(secondRequestId);
+    assertEquals(
+        "Retry should use same logical request.\n" + diagnostics,
+        first.getLogicalRequestKey(),
+        second.getLogicalRequestKey());
+    assertEquals(
+        "Retry attempts should be consecutive.\n" + diagnostics,
+        1,
+        Math.abs(first.getAttempt() - second.getAttempt()));
   }
 
   private static void assertRetriedOnSameLogicalRequest(
