@@ -115,7 +115,6 @@ jobs:
         - java-pubsub
         - java-pubsublite
         - java-logging
-        - java-logging-logback
         - java-firestore
         - java-datastore
         - java-bigquerystorage
