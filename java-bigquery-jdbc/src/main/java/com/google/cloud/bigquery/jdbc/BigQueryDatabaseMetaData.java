@@ -5301,20 +5301,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
         @Override
         public Object get() throws InterruptedException, CancellationException {
-          if (isCancelled()) {
-            throw new CancellationException();
+          try {
+            return get(365, TimeUnit.DAYS);
+          } catch (TimeoutException e) {
+            throw new RuntimeException(e);
           }
-          while (thread.getState() != Thread.State.TERMINATED) {
-            if (isCancelled()) {
-              throw new CancellationException();
-            }
-            if (thread.getState() == Thread.State.NEW) {
-              Thread.sleep(50);
-            } else {
-              thread.join(50);
-            }
-          }
-          return null;
         }
 
         @Override
