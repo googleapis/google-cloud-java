@@ -3432,7 +3432,312 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
     public interface LayoutParsingConfigOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DocumentProcessingConfig.ParsingConfig.LayoutParsingConfig)
-        com.google.protobuf.MessageOrBuilder {}
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the LLM based annotation is added to the table
+       * during parsing.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableTableAnnotation.
+       */
+      boolean getEnableTableAnnotation();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the LLM based annotation is added to the image
+       * during parsing.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageAnnotation.
+       */
+      boolean getEnableImageAnnotation();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the pdf layout will be refined using an LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableLlmLayoutParsing.
+       */
+      boolean getEnableLlmLayoutParsing();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the structuredContentTypes.
+       */
+      java.util.List<java.lang.String> getStructuredContentTypesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of structuredContentTypes.
+       */
+      int getStructuredContentTypesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The structuredContentTypes at the given index.
+       */
+      java.lang.String getStructuredContentTypes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the structuredContentTypes at the given index.
+       */
+      com.google.protobuf.ByteString getStructuredContentTypesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludeHtmlElements.
+       */
+      java.util.List<java.lang.String> getExcludeHtmlElementsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludeHtmlElements.
+       */
+      int getExcludeHtmlElementsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeHtmlElements at the given index.
+       */
+      java.lang.String getExcludeHtmlElements(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeHtmlElements at the given index.
+       */
+      com.google.protobuf.ByteString getExcludeHtmlElementsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludeHtmlClasses.
+       */
+      java.util.List<java.lang.String> getExcludeHtmlClassesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludeHtmlClasses.
+       */
+      int getExcludeHtmlClassesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeHtmlClasses at the given index.
+       */
+      java.lang.String getExcludeHtmlClasses(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeHtmlClasses at the given index.
+       */
+      com.google.protobuf.ByteString getExcludeHtmlClassesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludeHtmlIds.
+       */
+      java.util.List<java.lang.String> getExcludeHtmlIdsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludeHtmlIds.
+       */
+      int getExcludeHtmlIdsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeHtmlIds at the given index.
+       */
+      java.lang.String getExcludeHtmlIds(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeHtmlIds at the given index.
+       */
+      com.google.protobuf.ByteString getExcludeHtmlIdsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the processed document will be made available for
+       * the GetProcessedDocument API.
+       * </pre>
+       *
+       * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableGetProcessedDocument.
+       */
+      boolean getEnableGetProcessedDocument();
+    }
 
     /**
      *
@@ -3465,7 +3770,12 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         super(builder);
       }
 
-      private LayoutParsingConfig() {}
+      private LayoutParsingConfig() {
+        structuredContentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludeHtmlElements_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludeHtmlClasses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        excludeHtmlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfigProto
@@ -3484,6 +3794,390 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                     .LayoutParsingConfig.Builder.class);
       }
 
+      public static final int ENABLE_TABLE_ANNOTATION_FIELD_NUMBER = 1;
+      private boolean enableTableAnnotation_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the LLM based annotation is added to the table
+       * during parsing.
+       * </pre>
+       *
+       * <code>bool enable_table_annotation = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableTableAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableTableAnnotation() {
+        return enableTableAnnotation_;
+      }
+
+      public static final int ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER = 2;
+      private boolean enableImageAnnotation_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the LLM based annotation is added to the image
+       * during parsing.
+       * </pre>
+       *
+       * <code>bool enable_image_annotation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageAnnotation.
+       */
+      @java.lang.Override
+      public boolean getEnableImageAnnotation() {
+        return enableImageAnnotation_;
+      }
+
+      public static final int ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER = 5;
+      private boolean enableLlmLayoutParsing_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the pdf layout will be refined using an LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableLlmLayoutParsing.
+       */
+      @java.lang.Override
+      public boolean getEnableLlmLayoutParsing() {
+        return enableLlmLayoutParsing_;
+      }
+
+      public static final int STRUCTURED_CONTENT_TYPES_FIELD_NUMBER = 9;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList structuredContentTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the structuredContentTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getStructuredContentTypesList() {
+        return structuredContentTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of structuredContentTypes.
+       */
+      public int getStructuredContentTypesCount() {
+        return structuredContentTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The structuredContentTypes at the given index.
+       */
+      public java.lang.String getStructuredContentTypes(int index) {
+        return structuredContentTypes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Contains the required structure types to extract from the
+       * document. Supported values:
+       *
+       * * `shareholder-structure`
+       * </pre>
+       *
+       * <code>
+       * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the structuredContentTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getStructuredContentTypesBytes(int index) {
+        return structuredContentTypes_.getByteString(index);
+      }
+
+      public static final int EXCLUDE_HTML_ELEMENTS_FIELD_NUMBER = 10;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList excludeHtmlElements_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludeHtmlElements.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeHtmlElementsList() {
+        return excludeHtmlElements_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludeHtmlElements.
+       */
+      public int getExcludeHtmlElementsCount() {
+        return excludeHtmlElements_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeHtmlElements at the given index.
+       */
+      public java.lang.String getExcludeHtmlElements(int index) {
+        return excludeHtmlElements_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML elements to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeHtmlElements at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeHtmlElementsBytes(int index) {
+        return excludeHtmlElements_.getByteString(index);
+      }
+
+      public static final int EXCLUDE_HTML_CLASSES_FIELD_NUMBER = 11;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList excludeHtmlClasses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludeHtmlClasses.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeHtmlClassesList() {
+        return excludeHtmlClasses_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludeHtmlClasses.
+       */
+      public int getExcludeHtmlClassesCount() {
+        return excludeHtmlClasses_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeHtmlClasses at the given index.
+       */
+      public java.lang.String getExcludeHtmlClasses(int index) {
+        return excludeHtmlClasses_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML classes to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeHtmlClasses at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeHtmlClassesBytes(int index) {
+        return excludeHtmlClasses_.getByteString(index);
+      }
+
+      public static final int EXCLUDE_HTML_IDS_FIELD_NUMBER = 12;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList excludeHtmlIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludeHtmlIds.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeHtmlIdsList() {
+        return excludeHtmlIds_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludeHtmlIds.
+       */
+      public int getExcludeHtmlIdsCount() {
+        return excludeHtmlIds_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeHtmlIds at the given index.
+       */
+      public java.lang.String getExcludeHtmlIds(int index) {
+        return excludeHtmlIds_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of HTML ids to exclude from the parsed content.
+       * </pre>
+       *
+       * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeHtmlIds at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeHtmlIdsBytes(int index) {
+        return excludeHtmlIds_.getByteString(index);
+      }
+
+      public static final int ENABLE_GET_PROCESSED_DOCUMENT_FIELD_NUMBER = 14;
+      private boolean enableGetProcessedDocument_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the processed document will be made available for
+       * the GetProcessedDocument API.
+       * </pre>
+       *
+       * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableGetProcessedDocument.
+       */
+      @java.lang.Override
+      public boolean getEnableGetProcessedDocument() {
+        return enableGetProcessedDocument_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3498,6 +4192,33 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (enableTableAnnotation_ != false) {
+          output.writeBool(1, enableTableAnnotation_);
+        }
+        if (enableImageAnnotation_ != false) {
+          output.writeBool(2, enableImageAnnotation_);
+        }
+        if (enableLlmLayoutParsing_ != false) {
+          output.writeBool(5, enableLlmLayoutParsing_);
+        }
+        for (int i = 0; i < structuredContentTypes_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(
+              output, 9, structuredContentTypes_.getRaw(i));
+        }
+        for (int i = 0; i < excludeHtmlElements_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(
+              output, 10, excludeHtmlElements_.getRaw(i));
+        }
+        for (int i = 0; i < excludeHtmlClasses_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(
+              output, 11, excludeHtmlClasses_.getRaw(i));
+        }
+        for (int i = 0; i < excludeHtmlIds_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 12, excludeHtmlIds_.getRaw(i));
+        }
+        if (enableGetProcessedDocument_ != false) {
+          output.writeBool(14, enableGetProcessedDocument_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -3507,6 +4228,52 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         if (size != -1) return size;
 
         size = 0;
+        if (enableTableAnnotation_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableTableAnnotation_);
+        }
+        if (enableImageAnnotation_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableImageAnnotation_);
+        }
+        if (enableLlmLayoutParsing_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableLlmLayoutParsing_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < structuredContentTypes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(structuredContentTypes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getStructuredContentTypesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < excludeHtmlElements_.size(); i++) {
+            dataSize += computeStringSizeNoTag(excludeHtmlElements_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getExcludeHtmlElementsList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < excludeHtmlClasses_.size(); i++) {
+            dataSize += computeStringSizeNoTag(excludeHtmlClasses_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getExcludeHtmlClassesList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < excludeHtmlIds_.size(); i++) {
+            dataSize += computeStringSizeNoTag(excludeHtmlIds_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getExcludeHtmlIdsList().size();
+        }
+        if (enableGetProcessedDocument_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  14, enableGetProcessedDocument_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -3530,6 +4297,15 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                         .LayoutParsingConfig)
                     obj;
 
+        if (getEnableTableAnnotation() != other.getEnableTableAnnotation()) return false;
+        if (getEnableImageAnnotation() != other.getEnableImageAnnotation()) return false;
+        if (getEnableLlmLayoutParsing() != other.getEnableLlmLayoutParsing()) return false;
+        if (!getStructuredContentTypesList().equals(other.getStructuredContentTypesList()))
+          return false;
+        if (!getExcludeHtmlElementsList().equals(other.getExcludeHtmlElementsList())) return false;
+        if (!getExcludeHtmlClassesList().equals(other.getExcludeHtmlClassesList())) return false;
+        if (!getExcludeHtmlIdsList().equals(other.getExcludeHtmlIdsList())) return false;
+        if (getEnableGetProcessedDocument() != other.getEnableGetProcessedDocument()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -3541,6 +4317,31 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ENABLE_TABLE_ANNOTATION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableAnnotation());
+        hash = (37 * hash) + ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageAnnotation());
+        hash = (37 * hash) + ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLlmLayoutParsing());
+        if (getStructuredContentTypesCount() > 0) {
+          hash = (37 * hash) + STRUCTURED_CONTENT_TYPES_FIELD_NUMBER;
+          hash = (53 * hash) + getStructuredContentTypesList().hashCode();
+        }
+        if (getExcludeHtmlElementsCount() > 0) {
+          hash = (37 * hash) + EXCLUDE_HTML_ELEMENTS_FIELD_NUMBER;
+          hash = (53 * hash) + getExcludeHtmlElementsList().hashCode();
+        }
+        if (getExcludeHtmlClassesCount() > 0) {
+          hash = (37 * hash) + EXCLUDE_HTML_CLASSES_FIELD_NUMBER;
+          hash = (53 * hash) + getExcludeHtmlClassesList().hashCode();
+        }
+        if (getExcludeHtmlIdsCount() > 0) {
+          hash = (37 * hash) + EXCLUDE_HTML_IDS_FIELD_NUMBER;
+          hash = (53 * hash) + getExcludeHtmlIdsList().hashCode();
+        }
+        hash = (37 * hash) + ENABLE_GET_PROCESSED_DOCUMENT_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableGetProcessedDocument());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -3710,6 +4511,15 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
+          enableTableAnnotation_ = false;
+          enableImageAnnotation_ = false;
+          enableLlmLayoutParsing_ = false;
+          structuredContentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          excludeHtmlElements_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          excludeHtmlClasses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          excludeHtmlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          enableGetProcessedDocument_ = false;
           return this;
         }
 
@@ -3749,8 +4559,46 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
               result =
                   new com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig.ParsingConfig
                       .LayoutParsingConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig.ParsingConfig
+                    .LayoutParsingConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.enableTableAnnotation_ = enableTableAnnotation_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.enableImageAnnotation_ = enableImageAnnotation_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.enableLlmLayoutParsing_ = enableLlmLayoutParsing_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            structuredContentTypes_.makeImmutable();
+            result.structuredContentTypes_ = structuredContentTypes_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            excludeHtmlElements_.makeImmutable();
+            result.excludeHtmlElements_ = excludeHtmlElements_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            excludeHtmlClasses_.makeImmutable();
+            result.excludeHtmlClasses_ = excludeHtmlClasses_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            excludeHtmlIds_.makeImmutable();
+            result.excludeHtmlIds_ = excludeHtmlIds_;
+          }
+          if (((from_bitField0_ & 0x00000080) != 0)) {
+            result.enableGetProcessedDocument_ = enableGetProcessedDocument_;
+          }
         }
 
         @java.lang.Override
@@ -3776,6 +4624,58 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (other
               == com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig.ParsingConfig
                   .LayoutParsingConfig.getDefaultInstance()) return this;
+          if (other.getEnableTableAnnotation() != false) {
+            setEnableTableAnnotation(other.getEnableTableAnnotation());
+          }
+          if (other.getEnableImageAnnotation() != false) {
+            setEnableImageAnnotation(other.getEnableImageAnnotation());
+          }
+          if (other.getEnableLlmLayoutParsing() != false) {
+            setEnableLlmLayoutParsing(other.getEnableLlmLayoutParsing());
+          }
+          if (!other.structuredContentTypes_.isEmpty()) {
+            if (structuredContentTypes_.isEmpty()) {
+              structuredContentTypes_ = other.structuredContentTypes_;
+              bitField0_ |= 0x00000008;
+            } else {
+              ensureStructuredContentTypesIsMutable();
+              structuredContentTypes_.addAll(other.structuredContentTypes_);
+            }
+            onChanged();
+          }
+          if (!other.excludeHtmlElements_.isEmpty()) {
+            if (excludeHtmlElements_.isEmpty()) {
+              excludeHtmlElements_ = other.excludeHtmlElements_;
+              bitField0_ |= 0x00000010;
+            } else {
+              ensureExcludeHtmlElementsIsMutable();
+              excludeHtmlElements_.addAll(other.excludeHtmlElements_);
+            }
+            onChanged();
+          }
+          if (!other.excludeHtmlClasses_.isEmpty()) {
+            if (excludeHtmlClasses_.isEmpty()) {
+              excludeHtmlClasses_ = other.excludeHtmlClasses_;
+              bitField0_ |= 0x00000020;
+            } else {
+              ensureExcludeHtmlClassesIsMutable();
+              excludeHtmlClasses_.addAll(other.excludeHtmlClasses_);
+            }
+            onChanged();
+          }
+          if (!other.excludeHtmlIds_.isEmpty()) {
+            if (excludeHtmlIds_.isEmpty()) {
+              excludeHtmlIds_ = other.excludeHtmlIds_;
+              bitField0_ |= 0x00000040;
+            } else {
+              ensureExcludeHtmlIdsIsMutable();
+              excludeHtmlIds_.addAll(other.excludeHtmlIds_);
+            }
+            onChanged();
+          }
+          if (other.getEnableGetProcessedDocument() != false) {
+            setEnableGetProcessedDocument(other.getEnableGetProcessedDocument());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -3802,6 +4702,58 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                 case 0:
                   done = true;
                   break;
+                case 8:
+                  {
+                    enableTableAnnotation_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    enableImageAnnotation_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 40:
+                  {
+                    enableLlmLayoutParsing_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 40
+                case 74:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureStructuredContentTypesIsMutable();
+                    structuredContentTypes_.add(s);
+                    break;
+                  } // case 74
+                case 82:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureExcludeHtmlElementsIsMutable();
+                    excludeHtmlElements_.add(s);
+                    break;
+                  } // case 82
+                case 90:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureExcludeHtmlClassesIsMutable();
+                    excludeHtmlClasses_.add(s);
+                    break;
+                  } // case 90
+                case 98:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureExcludeHtmlIdsIsMutable();
+                    excludeHtmlIds_.add(s);
+                    break;
+                  } // case 98
+                case 112:
+                  {
+                    enableGetProcessedDocument_ = input.readBool();
+                    bitField0_ |= 0x00000080;
+                    break;
+                  } // case 112
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3816,6 +4768,1071 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           } finally {
             onChanged();
           } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean enableTableAnnotation_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the LLM based annotation is added to the table
+         * during parsing.
+         * </pre>
+         *
+         * <code>bool enable_table_annotation = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The enableTableAnnotation.
+         */
+        @java.lang.Override
+        public boolean getEnableTableAnnotation() {
+          return enableTableAnnotation_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the LLM based annotation is added to the table
+         * during parsing.
+         * </pre>
+         *
+         * <code>bool enable_table_annotation = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The enableTableAnnotation to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableTableAnnotation(boolean value) {
+
+          enableTableAnnotation_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the LLM based annotation is added to the table
+         * during parsing.
+         * </pre>
+         *
+         * <code>bool enable_table_annotation = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableTableAnnotation() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          enableTableAnnotation_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean enableImageAnnotation_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the LLM based annotation is added to the image
+         * during parsing.
+         * </pre>
+         *
+         * <code>bool enable_image_annotation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The enableImageAnnotation.
+         */
+        @java.lang.Override
+        public boolean getEnableImageAnnotation() {
+          return enableImageAnnotation_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the LLM based annotation is added to the image
+         * during parsing.
+         * </pre>
+         *
+         * <code>bool enable_image_annotation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The enableImageAnnotation to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableImageAnnotation(boolean value) {
+
+          enableImageAnnotation_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the LLM based annotation is added to the image
+         * during parsing.
+         * </pre>
+         *
+         * <code>bool enable_image_annotation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableImageAnnotation() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          enableImageAnnotation_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean enableLlmLayoutParsing_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the pdf layout will be refined using an LLM.
+         * </pre>
+         *
+         * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enableLlmLayoutParsing.
+         */
+        @java.lang.Override
+        public boolean getEnableLlmLayoutParsing() {
+          return enableLlmLayoutParsing_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the pdf layout will be refined using an LLM.
+         * </pre>
+         *
+         * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enableLlmLayoutParsing to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableLlmLayoutParsing(boolean value) {
+
+          enableLlmLayoutParsing_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the pdf layout will be refined using an LLM.
+         * </pre>
+         *
+         * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableLlmLayoutParsing() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          enableLlmLayoutParsing_ = false;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList structuredContentTypes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureStructuredContentTypesIsMutable() {
+          if (!structuredContentTypes_.isModifiable()) {
+            structuredContentTypes_ =
+                new com.google.protobuf.LazyStringArrayList(structuredContentTypes_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the structuredContentTypes.
+         */
+        public com.google.protobuf.ProtocolStringList getStructuredContentTypesList() {
+          structuredContentTypes_.makeImmutable();
+          return structuredContentTypes_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of structuredContentTypes.
+         */
+        public int getStructuredContentTypesCount() {
+          return structuredContentTypes_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The structuredContentTypes at the given index.
+         */
+        public java.lang.String getStructuredContentTypes(int index) {
+          return structuredContentTypes_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the structuredContentTypes at the given index.
+         */
+        public com.google.protobuf.ByteString getStructuredContentTypesBytes(int index) {
+          return structuredContentTypes_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The structuredContentTypes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStructuredContentTypes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStructuredContentTypesIsMutable();
+          structuredContentTypes_.set(index, value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The structuredContentTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addStructuredContentTypes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStructuredContentTypesIsMutable();
+          structuredContentTypes_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The structuredContentTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllStructuredContentTypes(java.lang.Iterable<java.lang.String> values) {
+          ensureStructuredContentTypesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, structuredContentTypes_);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearStructuredContentTypes() {
+          structuredContentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Contains the required structure types to extract from the
+         * document. Supported values:
+         *
+         * * `shareholder-structure`
+         * </pre>
+         *
+         * <code>
+         * repeated string structured_content_types = 9 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the structuredContentTypes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addStructuredContentTypesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureStructuredContentTypesIsMutable();
+          structuredContentTypes_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList excludeHtmlElements_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureExcludeHtmlElementsIsMutable() {
+          if (!excludeHtmlElements_.isModifiable()) {
+            excludeHtmlElements_ =
+                new com.google.protobuf.LazyStringArrayList(excludeHtmlElements_);
+          }
+          bitField0_ |= 0x00000010;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the excludeHtmlElements.
+         */
+        public com.google.protobuf.ProtocolStringList getExcludeHtmlElementsList() {
+          excludeHtmlElements_.makeImmutable();
+          return excludeHtmlElements_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of excludeHtmlElements.
+         */
+        public int getExcludeHtmlElementsCount() {
+          return excludeHtmlElements_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The excludeHtmlElements at the given index.
+         */
+        public java.lang.String getExcludeHtmlElements(int index) {
+          return excludeHtmlElements_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the excludeHtmlElements at the given index.
+         */
+        public com.google.protobuf.ByteString getExcludeHtmlElementsBytes(int index) {
+          return excludeHtmlElements_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The excludeHtmlElements to set.
+         * @return This builder for chaining.
+         */
+        public Builder setExcludeHtmlElements(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeHtmlElementsIsMutable();
+          excludeHtmlElements_.set(index, value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The excludeHtmlElements to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeHtmlElements(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeHtmlElementsIsMutable();
+          excludeHtmlElements_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The excludeHtmlElements to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllExcludeHtmlElements(java.lang.Iterable<java.lang.String> values) {
+          ensureExcludeHtmlElementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeHtmlElements_);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearExcludeHtmlElements() {
+          excludeHtmlElements_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML elements to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_elements = 10 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the excludeHtmlElements to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeHtmlElementsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureExcludeHtmlElementsIsMutable();
+          excludeHtmlElements_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList excludeHtmlClasses_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureExcludeHtmlClassesIsMutable() {
+          if (!excludeHtmlClasses_.isModifiable()) {
+            excludeHtmlClasses_ = new com.google.protobuf.LazyStringArrayList(excludeHtmlClasses_);
+          }
+          bitField0_ |= 0x00000020;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the excludeHtmlClasses.
+         */
+        public com.google.protobuf.ProtocolStringList getExcludeHtmlClassesList() {
+          excludeHtmlClasses_.makeImmutable();
+          return excludeHtmlClasses_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of excludeHtmlClasses.
+         */
+        public int getExcludeHtmlClassesCount() {
+          return excludeHtmlClasses_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The excludeHtmlClasses at the given index.
+         */
+        public java.lang.String getExcludeHtmlClasses(int index) {
+          return excludeHtmlClasses_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the excludeHtmlClasses at the given index.
+         */
+        public com.google.protobuf.ByteString getExcludeHtmlClassesBytes(int index) {
+          return excludeHtmlClasses_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The excludeHtmlClasses to set.
+         * @return This builder for chaining.
+         */
+        public Builder setExcludeHtmlClasses(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeHtmlClassesIsMutable();
+          excludeHtmlClasses_.set(index, value);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The excludeHtmlClasses to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeHtmlClasses(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeHtmlClassesIsMutable();
+          excludeHtmlClasses_.add(value);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The excludeHtmlClasses to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllExcludeHtmlClasses(java.lang.Iterable<java.lang.String> values) {
+          ensureExcludeHtmlClassesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeHtmlClasses_);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearExcludeHtmlClasses() {
+          excludeHtmlClasses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML classes to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>
+         * repeated string exclude_html_classes = 11 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the excludeHtmlClasses to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeHtmlClassesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureExcludeHtmlClassesIsMutable();
+          excludeHtmlClasses_.add(value);
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList excludeHtmlIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureExcludeHtmlIdsIsMutable() {
+          if (!excludeHtmlIds_.isModifiable()) {
+            excludeHtmlIds_ = new com.google.protobuf.LazyStringArrayList(excludeHtmlIds_);
+          }
+          bitField0_ |= 0x00000040;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the excludeHtmlIds.
+         */
+        public com.google.protobuf.ProtocolStringList getExcludeHtmlIdsList() {
+          excludeHtmlIds_.makeImmutable();
+          return excludeHtmlIds_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of excludeHtmlIds.
+         */
+        public int getExcludeHtmlIdsCount() {
+          return excludeHtmlIds_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The excludeHtmlIds at the given index.
+         */
+        public java.lang.String getExcludeHtmlIds(int index) {
+          return excludeHtmlIds_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the excludeHtmlIds at the given index.
+         */
+        public com.google.protobuf.ByteString getExcludeHtmlIdsBytes(int index) {
+          return excludeHtmlIds_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The excludeHtmlIds to set.
+         * @return This builder for chaining.
+         */
+        public Builder setExcludeHtmlIds(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeHtmlIdsIsMutable();
+          excludeHtmlIds_.set(index, value);
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The excludeHtmlIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeHtmlIds(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExcludeHtmlIdsIsMutable();
+          excludeHtmlIds_.add(value);
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The excludeHtmlIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllExcludeHtmlIds(java.lang.Iterable<java.lang.String> values) {
+          ensureExcludeHtmlIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeHtmlIds_);
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearExcludeHtmlIds() {
+          excludeHtmlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of HTML ids to exclude from the parsed content.
+         * </pre>
+         *
+         * <code>repeated string exclude_html_ids = 12 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the excludeHtmlIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addExcludeHtmlIdsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureExcludeHtmlIdsIsMutable();
+          excludeHtmlIds_.add(value);
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        private boolean enableGetProcessedDocument_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the processed document will be made available for
+         * the GetProcessedDocument API.
+         * </pre>
+         *
+         * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enableGetProcessedDocument.
+         */
+        @java.lang.Override
+        public boolean getEnableGetProcessedDocument() {
+          return enableGetProcessedDocument_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the processed document will be made available for
+         * the GetProcessedDocument API.
+         * </pre>
+         *
+         * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enableGetProcessedDocument to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableGetProcessedDocument(boolean value) {
+
+          enableGetProcessedDocument_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the processed document will be made available for
+         * the GetProcessedDocument API.
+         * </pre>
+         *
+         * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableGetProcessedDocument() {
+          bitField0_ = (bitField0_ & ~0x00000080);
+          enableGetProcessedDocument_ = false;
+          onChanged();
           return this;
         }
 

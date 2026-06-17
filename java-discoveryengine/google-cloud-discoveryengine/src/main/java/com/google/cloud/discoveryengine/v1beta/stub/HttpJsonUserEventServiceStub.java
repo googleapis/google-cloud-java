@@ -220,7 +220,8 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:import")
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:import",
+                          "/v1beta/{parent=projects/*/locations/*}/userEvents:import")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -352,6 +353,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -378,6 +384,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -452,6 +463,11 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

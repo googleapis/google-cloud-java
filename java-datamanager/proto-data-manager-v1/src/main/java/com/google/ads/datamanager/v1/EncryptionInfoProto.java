@@ -52,6 +52,10 @@ public final class EncryptionInfoProto extends com.google.protobuf.GeneratedFile
       internal_static_google_ads_datamanager_v1_AwsWrappedKeyInfo_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_AwsWrappedKeyInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_CoordinatorKeyInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_CoordinatorKeyInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -63,16 +67,18 @@ public final class EncryptionInfoProto extends com.google.protobuf.GeneratedFile
     java.lang.String[] descriptorData = {
       "\n"
           + "/google/ads/datamanager/v1/encryption_i"
-          + "nfo.proto\022\031google.ads.datamanager.v1\032\037google/api/field_behavior.proto\"\273\001\n"
+          + "nfo.proto\022\031google.ads.datamanager.v1\032\037google/api/field_behavior.proto\"\212\002\n"
           + "\016EncryptionInfo\022L\n"
           + "\024gcp_wrapped_key_info\030\001 \001(\0132,"
           + ".google.ads.datamanager.v1.GcpWrappedKeyInfoH\000\022L\n"
           + "\024aws_wrapped_key_info\030\002 \001(\0132,.g"
-          + "oogle.ads.datamanager.v1.AwsWrappedKeyInfoH\000B\r\n"
+          + "oogle.ads.datamanager.v1.AwsWrappedKeyInfoH\000\022M\n"
+          + "\024coordinator_key_info\030\003 \001(\0132-.goo"
+          + "gle.ads.datamanager.v1.CoordinatorKeyInfoH\000B\r\n"
           + "\013wrapped_key\"\352\001\n"
           + "\021GcpWrappedKeyInfo\022K\n"
-          + "\010key_type\030\001 \001(\01624.google.ads.dataman"
-          + "ager.v1.GcpWrappedKeyInfo.KeyTypeB\003\340A\002\022\031\n"
+          + "\010key_type\030\001"
+          + " \001(\01624.google.ads.datamanager.v1.GcpWrappedKeyInfo.KeyTypeB\003\340A\002\022\031\n"
           + "\014wip_provider\030\002 \001(\tB\003\340A\002\022\024\n"
           + "\007kek_uri\030\003 \001(\tB\003\340A\002\022\032\n\r"
           + "encrypted_dek\030\004 \001(\tB\003\340A\002\";\n"
@@ -87,12 +93,14 @@ public final class EncryptionInfoProto extends com.google.protobuf.GeneratedFile
           + "encrypted_dek\030\004 \001(\tB\003\340A\002\";\n"
           + "\007KeyType\022\030\n"
           + "\024KEY_TYPE_UNSPECIFIED\020\000\022\026\n"
-          + "\022XCHACHA20_POLY1305\020\001B\320\001\n"
-          + "\035com.google.ads.datamanager.v1B\023EncryptionInfoProtoP\001ZAcloud.google"
-          + ".com/go/datamanager/apiv1/datamanagerpb;"
-          + "datamanagerpb\252\002\031Google.Ads.DataManager.V"
-          + "1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::"
-          + "Ads::DataManager::V1b\006proto3"
+          + "\022XCHACHA20_POLY1305\020\001\")\n"
+          + "\022CoordinatorKeyInfo\022\023\n"
+          + "\006key_id\030\001 \001(\tB\003\340A\002B\320\001\n"
+          + "\035com.google.ads.datamanager.v1B\023EncryptionInfoProtoP\001ZAcloud.goog"
+          + "le.com/go/datamanager/apiv1/datamanagerp"
+          + "b;datamanagerpb\252\002\031Google.Ads.DataManager"
+          + ".V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google"
+          + "::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,7 +114,7 @@ public final class EncryptionInfoProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_EncryptionInfo_descriptor,
             new java.lang.String[] {
-              "GcpWrappedKeyInfo", "AwsWrappedKeyInfo", "WrappedKey",
+              "GcpWrappedKeyInfo", "AwsWrappedKeyInfo", "CoordinatorKeyInfo", "WrappedKey",
             });
     internal_static_google_ads_datamanager_v1_GcpWrappedKeyInfo_descriptor =
         getDescriptor().getMessageType(1);
@@ -123,6 +131,14 @@ public final class EncryptionInfoProto extends com.google.protobuf.GeneratedFile
             internal_static_google_ads_datamanager_v1_AwsWrappedKeyInfo_descriptor,
             new java.lang.String[] {
               "KeyType", "RoleArn", "KekUri", "EncryptedDek",
+            });
+    internal_static_google_ads_datamanager_v1_CoordinatorKeyInfo_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_datamanager_v1_CoordinatorKeyInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_CoordinatorKeyInfo_descriptor,
+            new java.lang.String[] {
+              "KeyId",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

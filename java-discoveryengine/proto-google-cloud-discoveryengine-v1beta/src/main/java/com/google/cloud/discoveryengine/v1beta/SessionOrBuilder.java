@@ -198,6 +198,64 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the labels.
+   */
+  java.util.List<java.lang.String> getLabelsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of labels.
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labels at the given index.
+   */
+  java.lang.String getLabels(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labels at the given index.
+   */
+  com.google.protobuf.ByteString getLabelsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time the session started.
    * </pre>
    *
@@ -287,4 +345,40 @@ public interface SessionOrBuilder
    * @return The isPinned.
    */
   boolean getIsPinned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Full resource name of an in-progress AsyncAssist operation for
+   * this session, e.g.
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+   * Set when the operation starts and cleared when it finishes.
+   * </pre>
+   *
+   * <code>
+   * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pendingAsyncAssistOperationId.
+   */
+  java.lang.String getPendingAsyncAssistOperationId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Full resource name of an in-progress AsyncAssist operation for
+   * this session, e.g.
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+   * Set when the operation starts and cleared when it finishes.
+   * </pre>
+   *
+   * <code>
+   * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for pendingAsyncAssistOperationId.
+   */
+  com.google.protobuf.ByteString getPendingAsyncAssistOperationIdBytes();
 }

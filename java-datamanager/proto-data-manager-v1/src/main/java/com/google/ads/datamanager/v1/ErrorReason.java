@@ -431,6 +431,8 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Events data contains no user identifiers or ad identifiers.
+   * For Floodlight Event ingestion this error indicates requests contains no ad
+   * identifiers.
    * </pre>
    *
    * <code>NO_IDENTIFIERS_PROVIDED = 39;</code>
@@ -1732,6 +1734,8 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Events data contains no user identifiers or ad identifiers.
+   * For Floodlight Event ingestion this error indicates requests contains no ad
+   * identifiers.
    * </pre>
    *
    * <code>NO_IDENTIFIERS_PROVIDED = 39;</code>

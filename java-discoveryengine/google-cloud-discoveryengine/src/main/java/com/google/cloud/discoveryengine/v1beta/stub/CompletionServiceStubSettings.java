@@ -56,6 +56,8 @@ import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRespons
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionRequest;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -150,7 +152,13 @@ import javax.annotation.Generated;
 public class CompletionServiceStubSettings extends StubSettings<CompletionServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud_search.query")
+          .add("https://www.googleapis.com/auth/discoveryengine.assist.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse>
       completeQuerySettings;
@@ -184,6 +192,8 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           PurgeCompletionSuggestionsResponse,
           PurgeCompletionSuggestionsMetadata>
       purgeCompletionSuggestionsOperationSettings;
+  private final UnaryCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionSettings;
 
   /** Returns the object with the settings used for calls to completeQuery. */
   public UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse> completeQuerySettings() {
@@ -254,6 +264,12 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           PurgeCompletionSuggestionsMetadata>
       purgeCompletionSuggestionsOperationSettings() {
     return purgeCompletionSuggestionsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeSuggestion. */
+  public UnaryCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionSettings() {
+    return removeSuggestionSettings;
   }
 
   public CompletionServiceStub createStub() throws IOException {
@@ -385,6 +401,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
         settingsBuilder.purgeCompletionSuggestionsSettings().build();
     purgeCompletionSuggestionsOperationSettings =
         settingsBuilder.purgeCompletionSuggestionsOperationSettings().build();
+    removeSuggestionSettings = settingsBuilder.removeSuggestionSettings().build();
   }
 
   @Override
@@ -432,6 +449,8 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
             PurgeCompletionSuggestionsResponse,
             PurgeCompletionSuggestionsMetadata>
         purgeCompletionSuggestionsOperationSettings;
+    private final UnaryCallSettings.Builder<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -480,6 +499,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       importCompletionSuggestionsOperationSettings = OperationCallSettings.newBuilder();
       purgeCompletionSuggestionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       purgeCompletionSuggestionsOperationSettings = OperationCallSettings.newBuilder();
+      removeSuggestionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -488,7 +508,8 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
               importSuggestionDenyListEntriesSettings,
               purgeSuggestionDenyListEntriesSettings,
               importCompletionSuggestionsSettings,
-              purgeCompletionSuggestionsSettings);
+              purgeCompletionSuggestionsSettings,
+              removeSuggestionSettings);
       initDefaults(this);
     }
 
@@ -512,6 +533,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       purgeCompletionSuggestionsSettings = settings.purgeCompletionSuggestionsSettings.toBuilder();
       purgeCompletionSuggestionsOperationSettings =
           settings.purgeCompletionSuggestionsOperationSettings.toBuilder();
+      removeSuggestionSettings = settings.removeSuggestionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -520,7 +542,8 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
               importSuggestionDenyListEntriesSettings,
               purgeSuggestionDenyListEntriesSettings,
               importCompletionSuggestionsSettings,
-              purgeCompletionSuggestionsSettings);
+              purgeCompletionSuggestionsSettings,
+              removeSuggestionSettings);
     }
 
     private static Builder createDefault() {
@@ -575,6 +598,11 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
 
       builder
           .purgeCompletionSuggestionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .removeSuggestionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -774,6 +802,12 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
             PurgeCompletionSuggestionsMetadata>
         purgeCompletionSuggestionsOperationSettings() {
       return purgeCompletionSuggestionsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeSuggestion. */
+    public UnaryCallSettings.Builder<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionSettings() {
+      return removeSuggestionSettings;
     }
 
     @Override
