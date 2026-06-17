@@ -1691,6 +1691,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setSchema(schema)
           .setTotalRows(data.y())
           .setPageNoSchema(data.x())
+          .setRowsInPage((long) Iterables.size(data.x().getValues()))
           .build();
     } finally {
       if (tableDataList != null) {
@@ -2022,6 +2023,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+          .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
           .build();
     }
     // only 1 page of result
@@ -2041,6 +2043,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
         .setQueryId(results.getQueryId())
         .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+        .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
         .build();
   }
 
