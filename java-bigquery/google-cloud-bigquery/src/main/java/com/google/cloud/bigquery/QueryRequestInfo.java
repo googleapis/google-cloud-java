@@ -191,9 +191,28 @@ final class QueryRequestInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || obj != null
-            && obj.getClass().equals(QueryRequestInfo.class)
-            && java.util.Objects.equals(toPb(), ((QueryRequestInfo) obj).toPb());
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(QueryRequestInfo.class)) {
+      return false;
+    }
+    QueryRequestInfo other = (QueryRequestInfo) obj;
+    return java.util.Objects.equals(connectionProperties, other.connectionProperties)
+        && java.util.Objects.equals(defaultDataset, other.defaultDataset)
+        && java.util.Objects.equals(dryRun, other.dryRun)
+        && java.util.Objects.equals(labels, other.labels)
+        && java.util.Objects.equals(maximumBytesBilled, other.maximumBytesBilled)
+        && java.util.Objects.equals(maxResults, other.maxResults)
+        && java.util.Objects.equals(query, other.query)
+        && java.util.Objects.equals(queryParameters, other.queryParameters)
+        && java.util.Objects.equals(requestId, other.requestId)
+        && java.util.Objects.equals(createSession, other.createSession)
+        && java.util.Objects.equals(useQueryCache, other.useQueryCache)
+        && java.util.Objects.equals(useLegacySql, other.useLegacySql)
+        && java.util.Objects.equals(jobCreationMode, other.jobCreationMode)
+        && java.util.Objects.equals(formatOptions, other.formatOptions)
+        && java.util.Objects.equals(reservation, other.reservation)
+        && java.util.Objects.equals(jobTimeoutMs, other.jobTimeoutMs);
   }
 }
