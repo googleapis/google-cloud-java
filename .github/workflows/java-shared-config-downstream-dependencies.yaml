@@ -51,7 +51,19 @@ jobs:
       run: |
         LIB_DIR="${{matrix.repo}}"
         LIB_NAME="google-cloud-${LIB_DIR#java-}"
-        mvn install -pl ${LIB_DIR}/${LIB_NAME} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+        TARGET_PATH="${LIB_DIR}/${LIB_NAME}"
+        # Check if target matches standard structure (e.g. java-bigquery/google-cloud-bigquery)
+        if [ ! -d "${TARGET_PATH}" ]; then
+          # Fallback 1: Look for any google-cloud-* directory, excluding samples, retrofit, or BOMs (e.g. java-storage-nio/google-cloud-nio)
+          ALT_PATH=$(find "${LIB_DIR}" -maxdepth 1 -type d -name "google-cloud-*" ! -name "*-bom" ! -name "*-parent" ! -name "*-deps-bom" ! -name "*-examples" ! -name "*samples" ! -name "*-retrofit" | head -n 1)
+          if [ -n "${ALT_PATH}" ]; then
+            TARGET_PATH="${ALT_PATH}"
+          else
+            # Fallback 2: Assume single-module project where pom.xml is in the root directory (e.g. java-logging-logback)
+            TARGET_PATH="${LIB_DIR}"
+          fi
+        fi
+        mvn install -pl ${TARGET_PATH} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - run: .kokoro/client-library-check.sh ${{matrix.repo}} dependencies
 
   flatten-plugin-check:
