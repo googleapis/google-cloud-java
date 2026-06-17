@@ -811,7 +811,8 @@ class ConnectionImpl implements Connection {
             Level.WARNING,
             "\n"
                 + Thread.currentThread().getName()
-                + " Could not flag End of Stream, both the buffer types are null. This might happen when the connection is close without executing a query");
+                + " Could not flag End of Stream, both the buffer types are null. This might happen"
+                + " when the connection is close without executing a query");
       }
     } catch (InterruptedException e) {
       logger.log(

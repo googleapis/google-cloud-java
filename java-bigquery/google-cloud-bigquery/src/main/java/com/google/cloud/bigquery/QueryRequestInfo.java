@@ -69,16 +69,16 @@ final class QueryRequestInfo {
   }
 
   /**
-   * Determines if the query can be executed via the "fast query" path (jobs.query API)
-   * instead of the "slow path" (jobs.insert API followed by jobs.getQueryResults).
+   * Determines if the query can be executed via the "fast query" path (jobs.query API) instead of
+   * the "slow path" (jobs.insert API followed by jobs.getQueryResults).
    *
-   * The fast query path is preferred because it completes in a single RPC, significantly
+   * <p>The fast query path is preferred because it completes in a single RPC, significantly
    * reducing end-to-end latency for small queries.
    *
-   * However, the jobs.query API does not support all configuration options available in
-   * jobs.insert (e.g., destination table, clustering, time partitioning). This method
-   * checks the QueryJobConfiguration for any unsupported options. If any are present,
-   * we must fall back to the jobs.insert path.
+   * <p>However, the jobs.query API does not support all configuration options available in
+   * jobs.insert (e.g., destination table, clustering, time partitioning). This method checks the
+   * QueryJobConfiguration for any unsupported options. If any are present, we must fall back to the
+   * jobs.insert path.
    */
   boolean isFastQuerySupported() {
     return config.getClustering() == null
