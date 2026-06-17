@@ -74,6 +74,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -562,5 +563,139 @@ public class SessionImplTest {
 
     session.close(CloseSessionRequest.getDefaultInstance());
     sessionListener.popUntil(Status.class);
+  }
+
+  // Regression test: a READY session with no in-flight vRPC must not have the heartbeat tick
+  // armed on the wheel. Without this, every idle session burns periodic wheel wake-ups, and a
+  // server heartbeat resetting nextHeartbeat to a near-future deadline can force-close a healthy
+  // idle session if subsequent heartbeats are briefly delayed.
+  @Test
+  void testHeartbeatNotScheduledWithoutVRpc() throws Exception {
+    CountingBigtableTimer counting = new CountingBigtableTimer(timer);
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), counting);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    // After session is READY with no vRPC, no Timeout should ever have been scheduled. Wait a
+    // bit so that any background tick (none expected) would have shown up.
+    Thread.sleep(50);
+    assertWithMessage("no heartbeat timer should be armed before any vRPC starts")
+        .that(counting.scheduleCount.get())
+        .isEqualTo(0);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test closed session")
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // Verifies the lifecycle: timer is armed exactly when a vRPC starts and cancelled when it
+  // completes. Paired with testHeartbeatNotScheduledWithoutVRpc, this locks in "scheduled iff
+  // active vRPC".
+  @Test
+  void testHeartbeatScheduledOnlyDuringVRpc() throws Exception {
+    CountingBigtableTimer counting = new CountingBigtableTimer(timer);
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), counting);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    OpenSessionRequest openSessionRequest =
+        OpenSessionRequest.newBuilder()
+            .setPayload(
+                OpenFakeSessionRequest.newBuilder()
+                    .putVrpcActions(
+                        0,
+                        ActionList.newBuilder()
+                            .addActions(
+                                Action.newBuilder()
+                                    .setResponse(VirtualRpcResponse.getDefaultInstance())
+                                    .build())
+                            .build())
+                    .build()
+                    .toByteString())
+            .build();
+    session.start(openSessionRequest, new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    assertThat(counting.scheduleCount.get()).isEqualTo(0);
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        f);
+    assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
+
+    int schedulesAfterRpc = counting.scheduleCount.get();
+    int cancelsAfterRpc = counting.cancelCount.get();
+    assertWithMessage("startRpc must arm at least one heartbeat tick")
+        .that(schedulesAfterRpc)
+        .isAtLeast(1);
+    assertWithMessage("vRPC completion must cancel the heartbeat tick")
+        .that(cancelsAfterRpc)
+        .isAtLeast(1);
+
+    // After completion no further schedules should happen — wait past one HEARTBEAT_CHECK_INTERVAL
+    // to give a stray tick a chance to re-arm itself if the cancel were ineffective.
+    Thread.sleep(SessionImpl.HEARTBEAT_CHECK_INTERVAL.toMillis() + 50);
+    assertWithMessage("no further heartbeat schedules after vRPC completes")
+        .that(counting.scheduleCount.get())
+        .isEqualTo(schedulesAfterRpc);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test closed session")
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // Wraps a real BigtableTimer and counts newTimeout / cancel calls. Used to assert that the
+  // heartbeat tick is only armed while a vRPC is in flight.
+  private static final class CountingBigtableTimer implements BigtableTimer {
+    private final BigtableTimer delegate;
+    final AtomicInteger scheduleCount = new AtomicInteger();
+    final AtomicInteger cancelCount = new AtomicInteger();
+
+    CountingBigtableTimer(BigtableTimer delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public Timeout newTimeout(Runnable task, long delay, TimeUnit unit) {
+      scheduleCount.incrementAndGet();
+      Timeout inner = delegate.newTimeout(task, delay, unit);
+      return new Timeout() {
+        @Override
+        public boolean cancel() {
+          cancelCount.incrementAndGet();
+          return inner.cancel();
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return inner.isCancelled();
+        }
+      };
+    }
+
+    @Override
+    public void stop() {
+      delegate.stop();
+    }
   }
 }
