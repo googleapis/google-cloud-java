@@ -351,24 +351,46 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private static Page<Project> listProjects(
       final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
-    Tuple<String, Iterable<ProjectList.Projects>> result =
-        serviceOptions.getBigQueryRpcV2().listProjects(optionsMap);
-    String nextPageToken = result.x();
-    Iterable<Project> projects =
-        Iterables.transform(
-            result.y() != null ? result.y() : ImmutableList.<ProjectList.Projects>of(),
-            projectPb ->
-                new Project(
-                    projectPb.getId(),
-                    projectPb.getNumericId() != null
-                        ? String.valueOf(projectPb.getNumericId())
-                        : null,
-                    projectPb.getProjectReference() != null
-                        ? projectPb.getProjectReference().getProjectId()
-                        : null,
-                    projectPb.getFriendlyName()));
-    return new PageImpl<>(
-        new ProjectPageFetcher(serviceOptions, nextPageToken, optionsMap), nextPageToken, projects);
+    try {
+      Tuple<String, Iterable<ProjectList.Projects>> result =
+          BigQueryRetryHelper.runWithRetries(
+              new Callable<Tuple<String, Iterable<ProjectList.Projects>>>() {
+                @Override
+                public Tuple<String, Iterable<ProjectList.Projects>> call() {
+                  return serviceOptions.getBigQueryRpcV2().listProjects(optionsMap);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              serviceOptions.getResultRetryAlgorithm(),
+              serviceOptions.getClock(),
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
+      String nextPageToken = result.x();
+      Iterable<Project> projects =
+          Iterables.transform(
+              result.y() != null ? result.y() : ImmutableList.<ProjectList.Projects>of(),
+              new Function<ProjectList.Projects, Project>() {
+                @Override
+                public Project apply(ProjectList.Projects projectPb) {
+                  return new Project(
+                      projectPb.getId(),
+                      projectPb.getNumericId() != null
+                          ? String.valueOf(projectPb.getNumericId())
+                          : null,
+                      projectPb.getProjectReference() != null
+                          ? projectPb.getProjectReference().getProjectId()
+                          : null,
+                      projectPb.getFriendlyName());
+                }
+              });
+      return new PageImpl<>(
+          new ProjectPageFetcher(serviceOptions, nextPageToken, optionsMap),
+          nextPageToken,
+          projects);
+    } catch (BigQueryRetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
   }
 
   @Override

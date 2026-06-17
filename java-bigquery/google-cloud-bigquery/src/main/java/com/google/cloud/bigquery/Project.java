@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import com.google.api.core.BetaApi;
 import java.io.Serializable;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 /**
  * Google BigQuery Project information. A project is the top-level container for Google Cloud
@@ -54,16 +55,19 @@ public class Project implements Serializable {
   }
 
   /** Returns the unique numeric project number. */
+  @Nullable
   public String getNumericId() {
     return numericId;
   }
 
   /** Returns the unique alphanumeric project ID. */
+  @Nullable
   public String getProjectId() {
     return projectId;
   }
 
   /** Returns the user-defined display name of the project. */
+  @Nullable
   public String getFriendlyName() {
     return friendlyName;
   }
