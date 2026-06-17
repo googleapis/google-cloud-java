@@ -20,6 +20,7 @@
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
     <module>java-advisorynotifications</module>
+    <module>java-agentregistry</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
     <module>java-alloydb-connectors</module>
