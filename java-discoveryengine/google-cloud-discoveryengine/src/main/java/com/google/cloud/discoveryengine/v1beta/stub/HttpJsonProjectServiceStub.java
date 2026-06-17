@@ -204,6 +204,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -230,6 +235,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -304,6 +314,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

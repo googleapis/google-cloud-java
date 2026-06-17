@@ -49,6 +49,8 @@ import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRespons
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionRequest;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
@@ -345,6 +347,48 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionMethodDescriptor =
+          ApiMethodDescriptor.<RemoveSuggestionRequest, RemoveSuggestionResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.CompletionService/RemoveSuggestion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RemoveSuggestionRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{completionConfig=projects/*/locations/*/collections/*/engines/*/completionConfig}:removeSuggestion",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveSuggestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "completionConfig", request.getCompletionConfig());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveSuggestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearCompletionConfig().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RemoveSuggestionResponse>newBuilder()
+                      .setDefaultInstance(RemoveSuggestionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
   private final UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
       advancedCompleteQueryCallable;
@@ -376,6 +420,8 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
           PurgeCompletionSuggestionsResponse,
           PurgeCompletionSuggestionsMetadata>
       purgeCompletionSuggestionsOperationCallable;
+  private final UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -474,6 +520,11 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -500,6 +551,11 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -574,6 +630,11 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -666,6 +727,20 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionTransportSettings =
+            HttpJsonCallSettings.<RemoveSuggestionRequest, RemoveSuggestionResponse>newBuilder()
+                .setMethodDescriptor(removeSuggestionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "completion_config", String.valueOf(request.getCompletionConfig()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getCompletionConfig())
+                .build();
 
     this.completeQueryCallable =
         callableFactory.createUnaryCallable(
@@ -719,6 +794,9 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
             settings.purgeCompletionSuggestionsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.removeSuggestionCallable =
+        callableFactory.createUnaryCallable(
+            removeSuggestionTransportSettings, settings.removeSuggestionSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -733,6 +811,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
     methodDescriptors.add(purgeSuggestionDenyListEntriesMethodDescriptor);
     methodDescriptors.add(importCompletionSuggestionsMethodDescriptor);
     methodDescriptors.add(purgeCompletionSuggestionsMethodDescriptor);
+    methodDescriptors.add(removeSuggestionMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -809,6 +888,12 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
           PurgeCompletionSuggestionsMetadata>
       purgeCompletionSuggestionsOperationCallable() {
     return purgeCompletionSuggestionsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable() {
+    return removeSuggestionCallable;
   }
 
   @Override
