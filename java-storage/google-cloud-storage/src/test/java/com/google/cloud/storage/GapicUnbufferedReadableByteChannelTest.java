@@ -220,7 +220,6 @@ public final class GapicUnbufferedReadableByteChannelTest {
     }
   }
 
-
   public void validateCumulativeChecksum_skippedForRangedRead() throws IOException {
     ChecksummedTestContent testContent =
         ChecksummedTestContent.of(DataGenerator.base64Characters().genBytes(10));
