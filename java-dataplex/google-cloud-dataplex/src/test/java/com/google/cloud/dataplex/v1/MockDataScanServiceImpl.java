@@ -227,6 +227,28 @@ public class MockDataScanServiceImpl extends DataScanServiceImplBase {
   }
 
   @Override
+  public void cancelDataScanJob(
+      CancelDataScanJobRequest request,
+      StreamObserver<CancelDataScanJobResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CancelDataScanJobResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CancelDataScanJobResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelDataScanJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CancelDataScanJobResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void generateDataQualityRules(
       GenerateDataQualityRulesRequest request,
       StreamObserver<GenerateDataQualityRulesResponse> responseObserver) {

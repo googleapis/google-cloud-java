@@ -68,6 +68,7 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
             com.google.devicesandservices.health.v4.TotalCaloriesRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int KCAL_SUM_FIELD_NUMBER = 1;
   private double kcalSum_ = 0D;
 
@@ -78,7 +79,23 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
    * Sum of the total calories in kilocalories.
    * </pre>
    *
-   * <code>double kcal_sum = 1;</code>
+   * <code>optional double kcal_sum = 1;</code>
+   *
+   * @return Whether the kcalSum field is set.
+   */
+  @java.lang.Override
+  public boolean hasKcalSum() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the total calories in kilocalories.
+   * </pre>
+   *
+   * <code>optional double kcal_sum = 1;</code>
    *
    * @return The kcalSum.
    */
@@ -101,7 +118,7 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (java.lang.Double.doubleToRawLongBits(kcalSum_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(1, kcalSum_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Double.doubleToRawLongBits(kcalSum_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, kcalSum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,8 +149,11 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
     com.google.devicesandservices.health.v4.TotalCaloriesRollupValue other =
         (com.google.devicesandservices.health.v4.TotalCaloriesRollupValue) obj;
 
-    if (java.lang.Double.doubleToLongBits(getKcalSum())
-        != java.lang.Double.doubleToLongBits(other.getKcalSum())) return false;
+    if (hasKcalSum() != other.hasKcalSum()) return false;
+    if (hasKcalSum()) {
+      if (java.lang.Double.doubleToLongBits(getKcalSum())
+          != java.lang.Double.doubleToLongBits(other.getKcalSum())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -145,11 +165,13 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KCAL_SUM_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getKcalSum()));
+    if (hasKcalSum()) {
+      hash = (37 * hash) + KCAL_SUM_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getKcalSum()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -330,9 +352,12 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.devicesandservices.health.v4.TotalCaloriesRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.kcalSum_ = kcalSum_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -350,7 +375,7 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
       if (other
           == com.google.devicesandservices.health.v4.TotalCaloriesRollupValue.getDefaultInstance())
         return this;
-      if (java.lang.Double.doubleToRawLongBits(other.getKcalSum()) != 0) {
+      if (other.hasKcalSum()) {
         setKcalSum(other.getKcalSum());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -413,7 +438,23 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
      * Sum of the total calories in kilocalories.
      * </pre>
      *
-     * <code>double kcal_sum = 1;</code>
+     * <code>optional double kcal_sum = 1;</code>
+     *
+     * @return Whether the kcalSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasKcalSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sum of the total calories in kilocalories.
+     * </pre>
+     *
+     * <code>optional double kcal_sum = 1;</code>
      *
      * @return The kcalSum.
      */
@@ -429,7 +470,7 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
      * Sum of the total calories in kilocalories.
      * </pre>
      *
-     * <code>double kcal_sum = 1;</code>
+     * <code>optional double kcal_sum = 1;</code>
      *
      * @param value The kcalSum to set.
      * @return This builder for chaining.
@@ -449,7 +490,7 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
      * Sum of the total calories in kilocalories.
      * </pre>
      *
-     * <code>double kcal_sum = 1;</code>
+     * <code>optional double kcal_sum = 1;</code>
      *
      * @return This builder for chaining.
      */

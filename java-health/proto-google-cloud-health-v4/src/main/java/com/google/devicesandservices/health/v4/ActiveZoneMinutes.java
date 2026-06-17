@@ -384,7 +384,25 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
    * 2 for high intensity zones (cardio, peak).
    * </pre>
    *
-   * <code>int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the activeZoneMinutes field is set.
+   */
+  @java.lang.Override
+  public boolean hasActiveZoneMinutes() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of Active Zone Minutes earned in the given time interval.
+   * Note: active_zone_minutes equals to 1 for low intensity (fat burn) zones or
+   * 2 for high intensity zones (cardio, peak).
+   * </pre>
+   *
+   * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The activeZoneMinutes.
    */
@@ -416,7 +434,7 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(2, heartRateZone_);
     }
-    if (activeZoneMinutes_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(3, activeZoneMinutes_);
     }
     getUnknownFields().writeTo(output);
@@ -437,7 +455,7 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, heartRateZone_);
     }
-    if (activeZoneMinutes_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, activeZoneMinutes_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -461,7 +479,10 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
       if (!getInterval().equals(other.getInterval())) return false;
     }
     if (heartRateZone_ != other.heartRateZone_) return false;
-    if (getActiveZoneMinutes() != other.getActiveZoneMinutes()) return false;
+    if (hasActiveZoneMinutes() != other.hasActiveZoneMinutes()) return false;
+    if (hasActiveZoneMinutes()) {
+      if (getActiveZoneMinutes() != other.getActiveZoneMinutes()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -479,8 +500,10 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + HEART_RATE_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + heartRateZone_;
-    hash = (37 * hash) + ACTIVE_ZONE_MINUTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveZoneMinutes());
+    if (hasActiveZoneMinutes()) {
+      hash = (37 * hash) + ACTIVE_ZONE_MINUTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveZoneMinutes());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -684,6 +707,7 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.activeZoneMinutes_ = activeZoneMinutes_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -707,7 +731,7 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
       if (other.heartRateZone_ != 0) {
         setHeartRateZoneValue(other.getHeartRateZoneValue());
       }
-      if (other.getActiveZoneMinutes() != 0L) {
+      if (other.hasActiveZoneMinutes()) {
         setActiveZoneMinutes(other.getActiveZoneMinutes());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1119,7 +1143,27 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
      * 2 for high intensity zones (cardio, peak).
      * </pre>
      *
-     * <code>int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the activeZoneMinutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasActiveZoneMinutes() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Number of Active Zone Minutes earned in the given time interval.
+     * Note: active_zone_minutes equals to 1 for low intensity (fat burn) zones or
+     * 2 for high intensity zones (cardio, peak).
+     * </pre>
+     *
+     * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The activeZoneMinutes.
      */
@@ -1137,7 +1181,8 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
      * 2 for high intensity zones (cardio, peak).
      * </pre>
      *
-     * <code>int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The activeZoneMinutes to set.
      * @return This builder for chaining.
@@ -1159,7 +1204,8 @@ public final class ActiveZoneMinutes extends com.google.protobuf.GeneratedMessag
      * 2 for high intensity zones (cardio, peak).
      * </pre>
      *
-     * <code>int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

@@ -54,6 +54,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
   private LookupContextRequest() {
     name_ = "";
     resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    context_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -148,12 +149,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The entry names to lookup context for. The request should have
-   * max 10 of those.
+   * Required. The entry names to look up the context for. The maximum number of
+   * resources for a request is limited to 10.
    *
    * ## Examples:
    *
-   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+   * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
    * </pre>
    *
    * <code>
@@ -170,12 +171,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The entry names to lookup context for. The request should have
-   * max 10 of those.
+   * Required. The entry names to look up the context for. The maximum number of
+   * resources for a request is limited to 10.
    *
    * ## Examples:
    *
-   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+   * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
    * </pre>
    *
    * <code>
@@ -192,12 +193,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The entry names to lookup context for. The request should have
-   * max 10 of those.
+   * Required. The entry names to look up the context for. The maximum number of
+   * resources for a request is limited to 10.
    *
    * ## Examples:
    *
-   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+   * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
    * </pre>
    *
    * <code>
@@ -215,12 +216,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The entry names to lookup context for. The request should have
-   * max 10 of those.
+   * Required. The entry names to look up the context for. The maximum number of
+   * resources for a request is limited to 10.
    *
    * ## Examples:
    *
-   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+   * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
    * </pre>
    *
    * <code>
@@ -232,6 +233,61 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    */
   public com.google.protobuf.ByteString getResourcesBytes(int index) {
     return resources_.getByteString(index);
+  }
+
+  public static final int CONTEXT_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object context_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The text representing contextual information for which metadata
+   * context is being requested.
+   * </pre>
+   *
+   * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The context.
+   */
+  @java.lang.Override
+  public java.lang.String getContext() {
+    java.lang.Object ref = context_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      context_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The text representing contextual information for which metadata
+   * context is being requested.
+   * </pre>
+   *
+   * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for context.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getContextBytes() {
+    java.lang.Object ref = context_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      context_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int OPTIONS_FIELD_NUMBER = 4;
@@ -266,6 +322,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Allows to configure the context.
+   *
+   * Supported options:
+   *
+   * - `format` - The format of the context (one of `yaml`,
+   * `xml`, `json`, default is `yaml`).
+   * - `context_budget` - If provided, the output will be intelligently
+   * truncated on a best-effort basis to contain approximately the desired
+   * amount of characters. There is no guarantee to achieve the specific amount.
    * </pre>
    *
    * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -290,6 +354,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Allows to configure the context.
+   *
+   * Supported options:
+   *
+   * - `format` - The format of the context (one of `yaml`,
+   * `xml`, `json`, default is `yaml`).
+   * - `context_budget` - If provided, the output will be intelligently
+   * truncated on a best-effort basis to contain approximately the desired
+   * amount of characters. There is no guarantee to achieve the specific amount.
    * </pre>
    *
    * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -304,6 +376,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Allows to configure the context.
+   *
+   * Supported options:
+   *
+   * - `format` - The format of the context (one of `yaml`,
+   * `xml`, `json`, default is `yaml`).
+   * - `context_budget` - If provided, the output will be intelligently
+   * truncated on a best-effort basis to contain approximately the desired
+   * amount of characters. There is no guarantee to achieve the specific amount.
    * </pre>
    *
    * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -325,6 +405,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Allows to configure the context.
+   *
+   * Supported options:
+   *
+   * - `format` - The format of the context (one of `yaml`,
+   * `xml`, `json`, default is `yaml`).
+   * - `context_budget` - If provided, the output will be intelligently
+   * truncated on a best-effort basis to contain approximately the desired
+   * amount of characters. There is no guarantee to achieve the specific amount.
    * </pre>
    *
    * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -361,6 +449,9 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < resources_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, resources_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(context_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, context_);
+    }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetOptions(), OptionsDefaultEntryHolder.defaultEntry, 4);
     getUnknownFields().writeTo(output);
@@ -382,6 +473,9 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
       }
       size += dataSize;
       size += 1 * getResourcesList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(context_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, context_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetOptions().getMap().entrySet()) {
@@ -411,6 +505,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
 
     if (!getName().equals(other.getName())) return false;
     if (!getResourcesList().equals(other.getResourcesList())) return false;
+    if (!getContext().equals(other.getContext())) return false;
     if (!internalGetOptions().equals(other.internalGetOptions())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -429,6 +524,8 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getResourcesList().hashCode();
     }
+    hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getContext().hashCode();
     if (!internalGetOptions().getMap().isEmpty()) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetOptions().hashCode();
@@ -597,6 +694,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       name_ = "";
       resources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      context_ = "";
       internalGetMutableOptions().clear();
       return this;
     }
@@ -642,6 +740,9 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
         result.resources_ = resources_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.context_ = context_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.options_ = internalGetOptions();
         result.options_.makeImmutable();
       }
@@ -675,8 +776,13 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
         }
         onChanged();
       }
+      if (!other.getContext().isEmpty()) {
+        context_ = other.context_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       internalGetMutableOptions().mergeFrom(other.internalGetOptions());
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -716,6 +822,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
                 resources_.add(s);
                 break;
               } // case 18
+            case 26:
+              {
+                context_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             case 34:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> options__ =
@@ -725,7 +837,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
                 internalGetMutableOptions()
                     .getMutableMap()
                     .put(options__.getKey(), options__.getValue());
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -877,12 +989,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -900,12 +1012,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -922,12 +1034,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -945,12 +1057,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -968,12 +1080,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -999,12 +1111,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -1029,12 +1141,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -1056,12 +1168,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -1082,12 +1194,12 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The entry names to lookup context for. The request should have
-     * max 10 of those.
+     * Required. The entry names to look up the context for. The maximum number of
+     * resources for a request is limited to 10.
      *
      * ## Examples:
      *
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}
+     * `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`
      * </pre>
      *
      * <code>
@@ -1109,6 +1221,122 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private java.lang.Object context_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The text representing contextual information for which metadata
+     * context is being requested.
+     * </pre>
+     *
+     * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The context.
+     */
+    public java.lang.String getContext() {
+      java.lang.Object ref = context_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        context_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The text representing contextual information for which metadata
+     * context is being requested.
+     * </pre>
+     *
+     * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for context.
+     */
+    public com.google.protobuf.ByteString getContextBytes() {
+      java.lang.Object ref = context_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        context_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The text representing contextual information for which metadata
+     * context is being requested.
+     * </pre>
+     *
+     * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The context to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContext(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      context_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The text representing contextual information for which metadata
+     * context is being requested.
+     * </pre>
+     *
+     * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContext() {
+      context_ = getDefaultInstance().getContext();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The text representing contextual information for which metadata
+     * context is being requested.
+     * </pre>
+     *
+     * <code>string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for context to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      context_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> options_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetOptions() {
@@ -1126,7 +1354,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
       if (!options_.isMutable()) {
         options_ = options_.copy();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return options_;
     }
@@ -1140,6 +1368,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1164,6 +1400,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1178,6 +1422,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1199,6 +1451,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1216,7 +1476,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearOptions() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableOptions().getMutableMap().clear();
       return this;
     }
@@ -1226,6 +1486,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1241,7 +1509,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableOptions() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return internalGetMutableOptions().getMutableMap();
     }
 
@@ -1250,6 +1518,14 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1262,7 +1538,7 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException("map value");
       }
       internalGetMutableOptions().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1271,13 +1547,21 @@ public final class LookupContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Allows to configure the context.
+     *
+     * Supported options:
+     *
+     * - `format` - The format of the context (one of `yaml`,
+     * `xml`, `json`, default is `yaml`).
+     * - `context_budget` - If provided, the output will be intelligently
+     * truncated on a best-effort basis to contain approximately the desired
+     * amount of characters. There is no guarantee to achieve the specific amount.
      * </pre>
      *
      * <code>map&lt;string, string&gt; options = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllOptions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableOptions().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
 

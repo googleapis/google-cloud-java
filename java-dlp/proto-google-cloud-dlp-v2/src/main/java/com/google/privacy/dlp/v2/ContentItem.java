@@ -81,6 +81,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     VALUE(3),
     TABLE(4),
     BYTE_ITEM(5),
+    CONVERSATION(7),
+    BATCH_CONTENT_ITEM(8),
     DATAITEM_NOT_SET(0);
     private final int value;
 
@@ -106,6 +108,10 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
           return TABLE;
         case 5:
           return BYTE_ITEM;
+        case 7:
+          return CONVERSATION;
+        case 8:
+          return BATCH_CONTENT_ITEM;
         case 0:
           return DATAITEM_NOT_SET;
         default:
@@ -309,6 +315,120 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance();
   }
 
+  public static final int CONVERSATION_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a conversation (either complete or a slice).
+   * It is assumed that all included messages are contiguous and ordered in
+   * chronological order.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+   *
+   * @return Whether the conversation field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversation() {
+    return dataItemCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a conversation (either complete or a slice).
+   * It is assumed that all included messages are contiguous and ordered in
+   * chronological order.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+   *
+   * @return The conversation.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Conversation getConversation() {
+    if (dataItemCase_ == 7) {
+      return (com.google.privacy.dlp.v2.Conversation) dataItem_;
+    }
+    return com.google.privacy.dlp.v2.Conversation.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a conversation (either complete or a slice).
+   * It is assumed that all included messages are contiguous and ordered in
+   * chronological order.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ConversationOrBuilder getConversationOrBuilder() {
+    if (dataItemCase_ == 7) {
+      return (com.google.privacy.dlp.v2.Conversation) dataItem_;
+    }
+    return com.google.privacy.dlp.v2.Conversation.getDefaultInstance();
+  }
+
+  public static final int BATCH_CONTENT_ITEM_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a batch of items to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+   *
+   * @return Whether the batchContentItem field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchContentItem() {
+    return dataItemCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a batch of items to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+   *
+   * @return The batchContentItem.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.BatchContentItem getBatchContentItem() {
+    if (dataItemCase_ == 8) {
+      return (com.google.privacy.dlp.v2.BatchContentItem) dataItem_;
+    }
+    return com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a batch of items to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.BatchContentItemOrBuilder getBatchContentItemOrBuilder() {
+    if (dataItemCase_ == 8) {
+      return (com.google.privacy.dlp.v2.BatchContentItem) dataItem_;
+    }
+    return com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance();
+  }
+
   public static final int CONTENT_METADATA_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.ContentMetadata contentMetadata_;
 
@@ -388,6 +508,12 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getContentMetadata());
     }
+    if (dataItemCase_ == 7) {
+      output.writeMessage(7, (com.google.privacy.dlp.v2.Conversation) dataItem_);
+    }
+    if (dataItemCase_ == 8) {
+      output.writeMessage(8, (com.google.privacy.dlp.v2.BatchContentItem) dataItem_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -412,6 +538,16 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getContentMetadata());
+    }
+    if (dataItemCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.privacy.dlp.v2.Conversation) dataItem_);
+    }
+    if (dataItemCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.privacy.dlp.v2.BatchContentItem) dataItem_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -443,6 +579,12 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       case 5:
         if (!getByteItem().equals(other.getByteItem())) return false;
         break;
+      case 7:
+        if (!getConversation().equals(other.getConversation())) return false;
+        break;
+      case 8:
+        if (!getBatchContentItem().equals(other.getBatchContentItem())) return false;
+        break;
       case 0:
       default:
     }
@@ -473,6 +615,14 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       case 5:
         hash = (37 * hash) + BYTE_ITEM_FIELD_NUMBER;
         hash = (53 * hash) + getByteItem().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + CONVERSATION_FIELD_NUMBER;
+        hash = (53 * hash) + getConversation().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + BATCH_CONTENT_ITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchContentItem().hashCode();
         break;
       case 0:
       default:
@@ -631,6 +781,12 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       if (byteItemBuilder_ != null) {
         byteItemBuilder_.clear();
       }
+      if (conversationBuilder_ != null) {
+        conversationBuilder_.clear();
+      }
+      if (batchContentItemBuilder_ != null) {
+        batchContentItemBuilder_.clear();
+      }
       contentMetadata_ = null;
       if (contentMetadataBuilder_ != null) {
         contentMetadataBuilder_.dispose();
@@ -676,7 +832,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.privacy.dlp.v2.ContentItem result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.contentMetadata_ =
             contentMetadataBuilder_ == null ? contentMetadata_ : contentMetadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
@@ -692,6 +848,12 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       }
       if (dataItemCase_ == 5 && byteItemBuilder_ != null) {
         result.dataItem_ = byteItemBuilder_.build();
+      }
+      if (dataItemCase_ == 7 && conversationBuilder_ != null) {
+        result.dataItem_ = conversationBuilder_.build();
+      }
+      if (dataItemCase_ == 8 && batchContentItemBuilder_ != null) {
+        result.dataItem_ = batchContentItemBuilder_.build();
       }
     }
 
@@ -726,6 +888,16 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
         case BYTE_ITEM:
           {
             mergeByteItem(other.getByteItem());
+            break;
+          }
+        case CONVERSATION:
+          {
+            mergeConversation(other.getConversation());
+            break;
+          }
+        case BATCH_CONTENT_ITEM:
+          {
+            mergeBatchContentItem(other.getBatchContentItem());
             break;
           }
         case DATAITEM_NOT_SET:
@@ -783,9 +955,23 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetContentMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetConversationFieldBuilder().getBuilder(), extensionRegistry);
+                dataItemCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetBatchContentItemFieldBuilder().getBuilder(), extensionRegistry);
+                dataItemCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1408,6 +1594,459 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       return byteItemBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.Conversation,
+            com.google.privacy.dlp.v2.Conversation.Builder,
+            com.google.privacy.dlp.v2.ConversationOrBuilder>
+        conversationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     *
+     * @return Whether the conversation field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversation() {
+      return dataItemCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     *
+     * @return The conversation.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Conversation getConversation() {
+      if (conversationBuilder_ == null) {
+        if (dataItemCase_ == 7) {
+          return (com.google.privacy.dlp.v2.Conversation) dataItem_;
+        }
+        return com.google.privacy.dlp.v2.Conversation.getDefaultInstance();
+      } else {
+        if (dataItemCase_ == 7) {
+          return conversationBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.Conversation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    public Builder setConversation(com.google.privacy.dlp.v2.Conversation value) {
+      if (conversationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataItem_ = value;
+        onChanged();
+      } else {
+        conversationBuilder_.setMessage(value);
+      }
+      dataItemCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    public Builder setConversation(com.google.privacy.dlp.v2.Conversation.Builder builderForValue) {
+      if (conversationBuilder_ == null) {
+        dataItem_ = builderForValue.build();
+        onChanged();
+      } else {
+        conversationBuilder_.setMessage(builderForValue.build());
+      }
+      dataItemCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    public Builder mergeConversation(com.google.privacy.dlp.v2.Conversation value) {
+      if (conversationBuilder_ == null) {
+        if (dataItemCase_ == 7
+            && dataItem_ != com.google.privacy.dlp.v2.Conversation.getDefaultInstance()) {
+          dataItem_ =
+              com.google.privacy.dlp.v2.Conversation.newBuilder(
+                      (com.google.privacy.dlp.v2.Conversation) dataItem_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataItem_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataItemCase_ == 7) {
+          conversationBuilder_.mergeFrom(value);
+        } else {
+          conversationBuilder_.setMessage(value);
+        }
+      }
+      dataItemCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    public Builder clearConversation() {
+      if (conversationBuilder_ == null) {
+        if (dataItemCase_ == 7) {
+          dataItemCase_ = 0;
+          dataItem_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataItemCase_ == 7) {
+          dataItemCase_ = 0;
+          dataItem_ = null;
+        }
+        conversationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    public com.google.privacy.dlp.v2.Conversation.Builder getConversationBuilder() {
+      return internalGetConversationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ConversationOrBuilder getConversationOrBuilder() {
+      if ((dataItemCase_ == 7) && (conversationBuilder_ != null)) {
+        return conversationBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataItemCase_ == 7) {
+          return (com.google.privacy.dlp.v2.Conversation) dataItem_;
+        }
+        return com.google.privacy.dlp.v2.Conversation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a conversation (either complete or a slice).
+     * It is assumed that all included messages are contiguous and ordered in
+     * chronological order.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.Conversation,
+            com.google.privacy.dlp.v2.Conversation.Builder,
+            com.google.privacy.dlp.v2.ConversationOrBuilder>
+        internalGetConversationFieldBuilder() {
+      if (conversationBuilder_ == null) {
+        if (!(dataItemCase_ == 7)) {
+          dataItem_ = com.google.privacy.dlp.v2.Conversation.getDefaultInstance();
+        }
+        conversationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.Conversation,
+                com.google.privacy.dlp.v2.Conversation.Builder,
+                com.google.privacy.dlp.v2.ConversationOrBuilder>(
+                (com.google.privacy.dlp.v2.Conversation) dataItem_,
+                getParentForChildren(),
+                isClean());
+        dataItem_ = null;
+      }
+      dataItemCase_ = 7;
+      onChanged();
+      return conversationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.BatchContentItem,
+            com.google.privacy.dlp.v2.BatchContentItem.Builder,
+            com.google.privacy.dlp.v2.BatchContentItemOrBuilder>
+        batchContentItemBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     *
+     * @return Whether the batchContentItem field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchContentItem() {
+      return dataItemCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     *
+     * @return The batchContentItem.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.BatchContentItem getBatchContentItem() {
+      if (batchContentItemBuilder_ == null) {
+        if (dataItemCase_ == 8) {
+          return (com.google.privacy.dlp.v2.BatchContentItem) dataItem_;
+        }
+        return com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance();
+      } else {
+        if (dataItemCase_ == 8) {
+          return batchContentItemBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    public Builder setBatchContentItem(com.google.privacy.dlp.v2.BatchContentItem value) {
+      if (batchContentItemBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataItem_ = value;
+        onChanged();
+      } else {
+        batchContentItemBuilder_.setMessage(value);
+      }
+      dataItemCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    public Builder setBatchContentItem(
+        com.google.privacy.dlp.v2.BatchContentItem.Builder builderForValue) {
+      if (batchContentItemBuilder_ == null) {
+        dataItem_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchContentItemBuilder_.setMessage(builderForValue.build());
+      }
+      dataItemCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    public Builder mergeBatchContentItem(com.google.privacy.dlp.v2.BatchContentItem value) {
+      if (batchContentItemBuilder_ == null) {
+        if (dataItemCase_ == 8
+            && dataItem_ != com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance()) {
+          dataItem_ =
+              com.google.privacy.dlp.v2.BatchContentItem.newBuilder(
+                      (com.google.privacy.dlp.v2.BatchContentItem) dataItem_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataItem_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataItemCase_ == 8) {
+          batchContentItemBuilder_.mergeFrom(value);
+        } else {
+          batchContentItemBuilder_.setMessage(value);
+        }
+      }
+      dataItemCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    public Builder clearBatchContentItem() {
+      if (batchContentItemBuilder_ == null) {
+        if (dataItemCase_ == 8) {
+          dataItemCase_ = 0;
+          dataItem_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataItemCase_ == 8) {
+          dataItemCase_ = 0;
+          dataItem_ = null;
+        }
+        batchContentItemBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    public com.google.privacy.dlp.v2.BatchContentItem.Builder getBatchContentItemBuilder() {
+      return internalGetBatchContentItemFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.BatchContentItemOrBuilder getBatchContentItemOrBuilder() {
+      if ((dataItemCase_ == 8) && (batchContentItemBuilder_ != null)) {
+        return batchContentItemBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataItemCase_ == 8) {
+          return (com.google.privacy.dlp.v2.BatchContentItem) dataItem_;
+        }
+        return com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a batch of items to inspect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.BatchContentItem,
+            com.google.privacy.dlp.v2.BatchContentItem.Builder,
+            com.google.privacy.dlp.v2.BatchContentItemOrBuilder>
+        internalGetBatchContentItemFieldBuilder() {
+      if (batchContentItemBuilder_ == null) {
+        if (!(dataItemCase_ == 8)) {
+          dataItem_ = com.google.privacy.dlp.v2.BatchContentItem.getDefaultInstance();
+        }
+        batchContentItemBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.BatchContentItem,
+                com.google.privacy.dlp.v2.BatchContentItem.Builder,
+                com.google.privacy.dlp.v2.BatchContentItemOrBuilder>(
+                (com.google.privacy.dlp.v2.BatchContentItem) dataItem_,
+                getParentForChildren(),
+                isClean());
+        dataItem_ = null;
+      }
+      dataItemCase_ = 8;
+      onChanged();
+      return batchContentItemBuilder_;
+    }
+
     private com.google.privacy.dlp.v2.ContentMetadata contentMetadata_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.privacy.dlp.v2.ContentMetadata,
@@ -1427,7 +2066,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      * @return Whether the contentMetadata field is set.
      */
     public boolean hasContentMetadata() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1469,7 +2108,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       } else {
         contentMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1490,7 +2129,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       } else {
         contentMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1506,7 +2145,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeContentMetadata(com.google.privacy.dlp.v2.ContentMetadata value) {
       if (contentMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && contentMetadata_ != null
             && contentMetadata_ != com.google.privacy.dlp.v2.ContentMetadata.getDefaultInstance()) {
           getContentMetadataBuilder().mergeFrom(value);
@@ -1517,7 +2156,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
         contentMetadataBuilder_.mergeFrom(value);
       }
       if (contentMetadata_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1533,7 +2172,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
      */
     public Builder clearContentMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       contentMetadata_ = null;
       if (contentMetadataBuilder_ != null) {
         contentMetadataBuilder_.dispose();
@@ -1553,7 +2192,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
      */
     public com.google.privacy.dlp.v2.ContentMetadata.Builder getContentMetadataBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetContentMetadataFieldBuilder().getBuilder();
     }

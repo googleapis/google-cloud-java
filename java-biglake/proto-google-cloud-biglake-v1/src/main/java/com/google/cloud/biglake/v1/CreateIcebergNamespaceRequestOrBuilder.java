@@ -31,7 +31,7 @@ public interface CreateIcebergNamespaceRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource where this namespace will be created.
-   * Format: projects/{project_id}/restcatalog/v1/catalogs/{catalog_id}
+   * Format: projects/{project_id}/catalogs/{catalog_id}
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface CreateIcebergNamespaceRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource where this namespace will be created.
-   * Format: projects/{project_id}/restcatalog/v1/catalogs/{catalog_id}
+   * Format: projects/{project_id}/catalogs/{catalog_id}
    * </pre>
    *
    * <code>

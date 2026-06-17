@@ -16,6 +16,8 @@
 
 package com.google.devicesandservices.health.v4;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -25,11 +27,15 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.common.collect.Lists;
 import com.google.devicesandservices.health.v4.stub.HttpJsonHealthProfileServiceStub;
 import com.google.protobuf.Duration;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.type.Date;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -253,6 +259,7 @@ public class HealthProfileServiceClientHttpJsonTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -301,6 +308,7 @@ public class HealthProfileServiceClientHttpJsonTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -349,6 +357,7 @@ public class HealthProfileServiceClientHttpJsonTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -359,6 +368,7 @@ public class HealthProfileServiceClientHttpJsonTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -395,6 +405,7 @@ public class HealthProfileServiceClientHttpJsonTest {
               .setLanguageLocale("languageLocale-445142062")
               .setUtcOffset(Duration.newBuilder().build())
               .setTimeZone("timeZone-2077180903")
+              .setFoodLanguageCode("foodLanguageCode2108624099")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSettings(settings, updateMask);
@@ -490,6 +501,300 @@ public class HealthProfileServiceClientHttpJsonTest {
     try {
       String name = "users/user-3819/identity";
       client.getIdentity(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIrnProfileTest() throws Exception {
+    IrnProfile expectedResponse =
+        IrnProfile.newBuilder()
+            .setName(IrnProfileName.of("[USER]").toString())
+            .setOnboardingStatus(true)
+            .setEnrollmentStatus(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    IrnProfileName name = IrnProfileName.of("[USER]");
+
+    IrnProfile actualResponse = client.getIrnProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIrnProfileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IrnProfileName name = IrnProfileName.of("[USER]");
+      client.getIrnProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIrnProfileTest2() throws Exception {
+    IrnProfile expectedResponse =
+        IrnProfile.newBuilder()
+            .setName(IrnProfileName.of("[USER]").toString())
+            .setOnboardingStatus(true)
+            .setEnrollmentStatus(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-9035/irnProfile";
+
+    IrnProfile actualResponse = client.getIrnProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIrnProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-9035/irnProfile";
+      client.getIrnProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPairedDeviceTest() throws Exception {
+    PairedDevice expectedResponse =
+        PairedDevice.newBuilder()
+            .setName(PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]").toString())
+            .setBatteryStatus("batteryStatus-1213535137")
+            .setBatteryLevel(-877252910)
+            .setLastSyncTime(Timestamp.newBuilder().build())
+            .setDeviceVersion("deviceVersion-766907998")
+            .setMacAddress("macAddress2081933221")
+            .addAllFeatures(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PairedDeviceName name = PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]");
+
+    PairedDevice actualResponse = client.getPairedDevice(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPairedDeviceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PairedDeviceName name = PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]");
+      client.getPairedDevice(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPairedDeviceTest2() throws Exception {
+    PairedDevice expectedResponse =
+        PairedDevice.newBuilder()
+            .setName(PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]").toString())
+            .setBatteryStatus("batteryStatus-1213535137")
+            .setBatteryLevel(-877252910)
+            .setLastSyncTime(Timestamp.newBuilder().build())
+            .setDeviceVersion("deviceVersion-766907998")
+            .setMacAddress("macAddress2081933221")
+            .addAllFeatures(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "users/user-5848/pairedDevices/pairedDevice-5848";
+
+    PairedDevice actualResponse = client.getPairedDevice(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPairedDeviceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "users/user-5848/pairedDevices/pairedDevice-5848";
+      client.getPairedDevice(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPairedDevicesTest() throws Exception {
+    PairedDevice responsesElement = PairedDevice.newBuilder().build();
+    ListPairedDevicesResponse expectedResponse =
+        ListPairedDevicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPairedDevices(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+
+    ListPairedDevicesPagedResponse pagedListResponse = client.listPairedDevices(parent);
+
+    List<PairedDevice> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPairedDevicesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPairedDevicesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      client.listPairedDevices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPairedDevicesTest2() throws Exception {
+    PairedDevice responsesElement = PairedDevice.newBuilder().build();
+    ListPairedDevicesResponse expectedResponse =
+        ListPairedDevicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPairedDevices(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "users/user-1015";
+
+    ListPairedDevicesPagedResponse pagedListResponse = client.listPairedDevices(parent);
+
+    List<PairedDevice> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPairedDevicesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPairedDevicesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "users/user-1015";
+      client.listPairedDevices(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

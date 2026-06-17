@@ -9928,7 +9928,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5315
+   *     google/container/v1/cluster_service.proto;l=5361
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -9959,7 +9959,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5315
+   *     google/container/v1/cluster_service.proto;l=5361
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -13159,7 +13159,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5315
+     *     google/container/v1/cluster_service.proto;l=5361
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -13189,7 +13189,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5315
+     *     google/container/v1/cluster_service.proto;l=5361
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -13219,7 +13219,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5315
+     *     google/container/v1/cluster_service.proto;l=5361
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -13248,7 +13248,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5315
+     *     google/container/v1/cluster_service.proto;l=5361
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13273,7 +13273,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5315
+     *     google/container/v1/cluster_service.proto;l=5361
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

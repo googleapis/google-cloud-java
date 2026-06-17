@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-solar</artifactId>
-  <version>0.52.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+  <version>0.53.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
   <packaging>jar</packaging>
   <name>Google Solar API</name>
   <description>Solar API The Solar API allows users to read details about the solar potential of over 60 million buildings. This includes measurements of the building's roof (e.g., size and tilt/azimuth), energy production for a range of sizes of solar installations, and financial costs and benefits.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-solar-parent</artifactId>
-    <version>0.52.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
+    <version>0.53.0-SNAPSHOT</version><!-- {x-version-update:google-maps-solar:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-solar</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>proto-google-maps-solar-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>grpc-google-maps-solar-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

@@ -84,6 +84,59 @@ public final class FirewallActivationGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest,
+          com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+      getListProjectFirewallEndpointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProjectFirewallEndpoints",
+      requestType = com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest.class,
+      responseType = com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest,
+          com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+      getListProjectFirewallEndpointsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest,
+            com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+        getListProjectFirewallEndpointsMethod;
+    if ((getListProjectFirewallEndpointsMethod =
+            FirewallActivationGrpc.getListProjectFirewallEndpointsMethod)
+        == null) {
+      synchronized (FirewallActivationGrpc.class) {
+        if ((getListProjectFirewallEndpointsMethod =
+                FirewallActivationGrpc.getListProjectFirewallEndpointsMethod)
+            == null) {
+          FirewallActivationGrpc.getListProjectFirewallEndpointsMethod =
+              getListProjectFirewallEndpointsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest,
+                          com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListProjectFirewallEndpoints"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirewallActivationMethodDescriptorSupplier(
+                              "ListProjectFirewallEndpoints"))
+                      .build();
+        }
+      }
+    }
+    return getListProjectFirewallEndpointsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest,
           com.google.cloud.networksecurity.v1.FirewallEndpoint>
       getGetFirewallEndpointMethod;
@@ -131,6 +184,59 @@ public final class FirewallActivationGrpc {
       }
     }
     return getGetFirewallEndpointMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest,
+          com.google.cloud.networksecurity.v1.FirewallEndpoint>
+      getGetProjectFirewallEndpointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProjectFirewallEndpoint",
+      requestType = com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest.class,
+      responseType = com.google.cloud.networksecurity.v1.FirewallEndpoint.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest,
+          com.google.cloud.networksecurity.v1.FirewallEndpoint>
+      getGetProjectFirewallEndpointMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest,
+            com.google.cloud.networksecurity.v1.FirewallEndpoint>
+        getGetProjectFirewallEndpointMethod;
+    if ((getGetProjectFirewallEndpointMethod =
+            FirewallActivationGrpc.getGetProjectFirewallEndpointMethod)
+        == null) {
+      synchronized (FirewallActivationGrpc.class) {
+        if ((getGetProjectFirewallEndpointMethod =
+                FirewallActivationGrpc.getGetProjectFirewallEndpointMethod)
+            == null) {
+          FirewallActivationGrpc.getGetProjectFirewallEndpointMethod =
+              getGetProjectFirewallEndpointMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest,
+                          com.google.cloud.networksecurity.v1.FirewallEndpoint>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetProjectFirewallEndpoint"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.FirewallEndpoint
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirewallActivationMethodDescriptorSupplier(
+                              "GetProjectFirewallEndpoint"))
+                      .build();
+        }
+      }
+    }
+    return getGetProjectFirewallEndpointMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -184,6 +290,58 @@ public final class FirewallActivationGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest,
+          com.google.longrunning.Operation>
+      getCreateProjectFirewallEndpointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateProjectFirewallEndpoint",
+      requestType = com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest,
+          com.google.longrunning.Operation>
+      getCreateProjectFirewallEndpointMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest,
+            com.google.longrunning.Operation>
+        getCreateProjectFirewallEndpointMethod;
+    if ((getCreateProjectFirewallEndpointMethod =
+            FirewallActivationGrpc.getCreateProjectFirewallEndpointMethod)
+        == null) {
+      synchronized (FirewallActivationGrpc.class) {
+        if ((getCreateProjectFirewallEndpointMethod =
+                FirewallActivationGrpc.getCreateProjectFirewallEndpointMethod)
+            == null) {
+          FirewallActivationGrpc.getCreateProjectFirewallEndpointMethod =
+              getCreateProjectFirewallEndpointMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateProjectFirewallEndpoint"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirewallActivationMethodDescriptorSupplier(
+                              "CreateProjectFirewallEndpoint"))
+                      .build();
+        }
+      }
+    }
+    return getCreateProjectFirewallEndpointMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
           com.google.longrunning.Operation>
       getDeleteFirewallEndpointMethod;
@@ -234,6 +392,58 @@ public final class FirewallActivationGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
+          com.google.longrunning.Operation>
+      getDeleteProjectFirewallEndpointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteProjectFirewallEndpoint",
+      requestType = com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
+          com.google.longrunning.Operation>
+      getDeleteProjectFirewallEndpointMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
+            com.google.longrunning.Operation>
+        getDeleteProjectFirewallEndpointMethod;
+    if ((getDeleteProjectFirewallEndpointMethod =
+            FirewallActivationGrpc.getDeleteProjectFirewallEndpointMethod)
+        == null) {
+      synchronized (FirewallActivationGrpc.class) {
+        if ((getDeleteProjectFirewallEndpointMethod =
+                FirewallActivationGrpc.getDeleteProjectFirewallEndpointMethod)
+            == null) {
+          FirewallActivationGrpc.getDeleteProjectFirewallEndpointMethod =
+              getDeleteProjectFirewallEndpointMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteProjectFirewallEndpoint"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirewallActivationMethodDescriptorSupplier(
+                              "DeleteProjectFirewallEndpoint"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteProjectFirewallEndpointMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
           com.google.longrunning.Operation>
       getUpdateFirewallEndpointMethod;
@@ -281,6 +491,58 @@ public final class FirewallActivationGrpc {
       }
     }
     return getUpdateFirewallEndpointMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
+          com.google.longrunning.Operation>
+      getUpdateProjectFirewallEndpointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateProjectFirewallEndpoint",
+      requestType = com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
+          com.google.longrunning.Operation>
+      getUpdateProjectFirewallEndpointMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
+            com.google.longrunning.Operation>
+        getUpdateProjectFirewallEndpointMethod;
+    if ((getUpdateProjectFirewallEndpointMethod =
+            FirewallActivationGrpc.getUpdateProjectFirewallEndpointMethod)
+        == null) {
+      synchronized (FirewallActivationGrpc.class) {
+        if ((getUpdateProjectFirewallEndpointMethod =
+                FirewallActivationGrpc.getUpdateProjectFirewallEndpointMethod)
+            == null) {
+          FirewallActivationGrpc.getUpdateProjectFirewallEndpointMethod =
+              getUpdateProjectFirewallEndpointMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateProjectFirewallEndpoint"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirewallActivationMethodDescriptorSupplier(
+                              "UpdateProjectFirewallEndpoint"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateProjectFirewallEndpointMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -637,6 +899,22 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Lists FirewallEndpoints in a given project and location.
+     * </pre>
+     */
+    default void listProjectFirewallEndpoints(
+        com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListProjectFirewallEndpointsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single org Endpoint.
      * </pre>
      */
@@ -646,6 +924,21 @@ public final class FirewallActivationGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetFirewallEndpointMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single project Endpoint.
+     * </pre>
+     */
+    default void getProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.FirewallEndpoint>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetProjectFirewallEndpointMethod(), responseObserver);
     }
 
     /**
@@ -666,6 +959,20 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Creates a new FirewallEndpoint in a given project and location.
+     * </pre>
+     */
+    default void createProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateProjectFirewallEndpointMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single org Endpoint.
      * </pre>
      */
@@ -680,6 +987,20 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Deletes a single project Endpoint.
+     * </pre>
+     */
+    default void deleteProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteProjectFirewallEndpointMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Update a single org Endpoint.
      * </pre>
      */
@@ -688,6 +1009,20 @@ public final class FirewallActivationGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateFirewallEndpointMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single project Endpoint.
+     * </pre>
+     */
+    default void updateProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateProjectFirewallEndpointMethod(), responseObserver);
     }
 
     /**
@@ -821,6 +1156,24 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Lists FirewallEndpoints in a given project and location.
+     * </pre>
+     */
+    public void listProjectFirewallEndpoints(
+        com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListProjectFirewallEndpointsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single org Endpoint.
      * </pre>
      */
@@ -830,6 +1183,23 @@ public final class FirewallActivationGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetFirewallEndpointMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single project Endpoint.
+     * </pre>
+     */
+    public void getProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.FirewallEndpoint>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProjectFirewallEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -854,6 +1224,22 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Creates a new FirewallEndpoint in a given project and location.
+     * </pre>
+     */
+    public void createProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateProjectFirewallEndpointMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single org Endpoint.
      * </pre>
      */
@@ -870,6 +1256,22 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Deletes a single project Endpoint.
+     * </pre>
+     */
+    public void deleteProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteProjectFirewallEndpointMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Update a single org Endpoint.
      * </pre>
      */
@@ -878,6 +1280,22 @@ public final class FirewallActivationGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateFirewallEndpointMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single project Endpoint.
+     * </pre>
+     */
+    public void updateProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateProjectFirewallEndpointMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1004,6 +1422,21 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Lists FirewallEndpoints in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse
+        listProjectFirewallEndpoints(
+            com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListProjectFirewallEndpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single org Endpoint.
      * </pre>
      */
@@ -1012,6 +1445,20 @@ public final class FirewallActivationGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single project Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1.FirewallEndpoint getProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetProjectFirewallEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1032,6 +1479,20 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Creates a new FirewallEndpoint in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateProjectFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single org Endpoint.
      * </pre>
      */
@@ -1046,6 +1507,20 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Deletes a single project Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteProjectFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Update a single org Endpoint.
      * </pre>
      */
@@ -1054,6 +1529,20 @@ public final class FirewallActivationGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single project Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateProjectFirewallEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1166,6 +1655,20 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Lists FirewallEndpoints in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse
+        listProjectFirewallEndpoints(
+            com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProjectFirewallEndpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single org Endpoint.
      * </pre>
      */
@@ -1173,6 +1676,19 @@ public final class FirewallActivationGrpc {
         com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single project Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.networksecurity.v1.FirewallEndpoint getProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProjectFirewallEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1192,6 +1708,19 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Creates a new FirewallEndpoint in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProjectFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single org Endpoint.
      * </pre>
      */
@@ -1205,6 +1734,19 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Deletes a single project Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProjectFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Update a single org Endpoint.
      * </pre>
      */
@@ -1212,6 +1754,19 @@ public final class FirewallActivationGrpc {
         com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateFirewallEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single project Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateProjectFirewallEndpoint(
+        com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProjectFirewallEndpointMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1320,6 +1875,21 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Lists FirewallEndpoints in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>
+        listProjectFirewallEndpoints(
+            com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListProjectFirewallEndpointsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single org Endpoint.
      * </pre>
      */
@@ -1329,6 +1899,21 @@ public final class FirewallActivationGrpc {
             com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetFirewallEndpointMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single project Endpoint.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networksecurity.v1.FirewallEndpoint>
+        getProjectFirewallEndpoint(
+            com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProjectFirewallEndpointMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1349,6 +1934,21 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Creates a new FirewallEndpoint in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createProjectFirewallEndpoint(
+            com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateProjectFirewallEndpointMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single org Endpoint.
      * </pre>
      */
@@ -1363,6 +1963,21 @@ public final class FirewallActivationGrpc {
      *
      *
      * <pre>
+     * Deletes a single project Endpoint.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteProjectFirewallEndpoint(
+            com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteProjectFirewallEndpointMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Update a single org Endpoint.
      * </pre>
      */
@@ -1371,6 +1986,21 @@ public final class FirewallActivationGrpc {
             com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateFirewallEndpointMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single project Endpoint.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateProjectFirewallEndpoint(
+            com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateProjectFirewallEndpointMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -1452,15 +2082,20 @@ public final class FirewallActivationGrpc {
   }
 
   private static final int METHODID_LIST_FIREWALL_ENDPOINTS = 0;
-  private static final int METHODID_GET_FIREWALL_ENDPOINT = 1;
-  private static final int METHODID_CREATE_FIREWALL_ENDPOINT = 2;
-  private static final int METHODID_DELETE_FIREWALL_ENDPOINT = 3;
-  private static final int METHODID_UPDATE_FIREWALL_ENDPOINT = 4;
-  private static final int METHODID_LIST_FIREWALL_ENDPOINT_ASSOCIATIONS = 5;
-  private static final int METHODID_GET_FIREWALL_ENDPOINT_ASSOCIATION = 6;
-  private static final int METHODID_CREATE_FIREWALL_ENDPOINT_ASSOCIATION = 7;
-  private static final int METHODID_DELETE_FIREWALL_ENDPOINT_ASSOCIATION = 8;
-  private static final int METHODID_UPDATE_FIREWALL_ENDPOINT_ASSOCIATION = 9;
+  private static final int METHODID_LIST_PROJECT_FIREWALL_ENDPOINTS = 1;
+  private static final int METHODID_GET_FIREWALL_ENDPOINT = 2;
+  private static final int METHODID_GET_PROJECT_FIREWALL_ENDPOINT = 3;
+  private static final int METHODID_CREATE_FIREWALL_ENDPOINT = 4;
+  private static final int METHODID_CREATE_PROJECT_FIREWALL_ENDPOINT = 5;
+  private static final int METHODID_DELETE_FIREWALL_ENDPOINT = 6;
+  private static final int METHODID_DELETE_PROJECT_FIREWALL_ENDPOINT = 7;
+  private static final int METHODID_UPDATE_FIREWALL_ENDPOINT = 8;
+  private static final int METHODID_UPDATE_PROJECT_FIREWALL_ENDPOINT = 9;
+  private static final int METHODID_LIST_FIREWALL_ENDPOINT_ASSOCIATIONS = 10;
+  private static final int METHODID_GET_FIREWALL_ENDPOINT_ASSOCIATION = 11;
+  private static final int METHODID_CREATE_FIREWALL_ENDPOINT_ASSOCIATION = 12;
+  private static final int METHODID_DELETE_FIREWALL_ENDPOINT_ASSOCIATION = 13;
+  private static final int METHODID_UPDATE_FIREWALL_ENDPOINT_ASSOCIATION = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1486,8 +2121,21 @@ public final class FirewallActivationGrpc {
                       com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_PROJECT_FIREWALL_ENDPOINTS:
+          serviceImpl.listProjectFirewallEndpoints(
+              (com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_FIREWALL_ENDPOINT:
           serviceImpl.getFirewallEndpoint(
+              (com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.FirewallEndpoint>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PROJECT_FIREWALL_ENDPOINT:
+          serviceImpl.getProjectFirewallEndpoint(
               (com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.FirewallEndpoint>)
                   responseObserver);
@@ -1497,13 +2145,28 @@ public final class FirewallActivationGrpc {
               (com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_PROJECT_FIREWALL_ENDPOINT:
+          serviceImpl.createProjectFirewallEndpoint(
+              (com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_FIREWALL_ENDPOINT:
           serviceImpl.deleteFirewallEndpoint(
               (com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_DELETE_PROJECT_FIREWALL_ENDPOINT:
+          serviceImpl.deleteProjectFirewallEndpoint(
+              (com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_UPDATE_FIREWALL_ENDPOINT:
           serviceImpl.updateFirewallEndpoint(
+              (com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_PROJECT_FIREWALL_ENDPOINT:
+          serviceImpl.updateProjectFirewallEndpoint(
               (com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
@@ -1565,6 +2228,13 @@ public final class FirewallActivationGrpc {
                     com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>(
                     service, METHODID_LIST_FIREWALL_ENDPOINTS)))
         .addMethod(
+            getListProjectFirewallEndpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.ListFirewallEndpointsRequest,
+                    com.google.cloud.networksecurity.v1.ListFirewallEndpointsResponse>(
+                    service, METHODID_LIST_PROJECT_FIREWALL_ENDPOINTS)))
+        .addMethod(
             getGetFirewallEndpointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1572,11 +2242,25 @@ public final class FirewallActivationGrpc {
                     com.google.cloud.networksecurity.v1.FirewallEndpoint>(
                     service, METHODID_GET_FIREWALL_ENDPOINT)))
         .addMethod(
+            getGetProjectFirewallEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.GetFirewallEndpointRequest,
+                    com.google.cloud.networksecurity.v1.FirewallEndpoint>(
+                    service, METHODID_GET_PROJECT_FIREWALL_ENDPOINT)))
+        .addMethod(
             getCreateFirewallEndpointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_FIREWALL_ENDPOINT)))
+        .addMethod(
+            getCreateProjectFirewallEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.CreateFirewallEndpointRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_PROJECT_FIREWALL_ENDPOINT)))
         .addMethod(
             getDeleteFirewallEndpointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1584,11 +2268,25 @@ public final class FirewallActivationGrpc {
                     com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_FIREWALL_ENDPOINT)))
         .addMethod(
+            getDeleteProjectFirewallEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.DeleteFirewallEndpointRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_PROJECT_FIREWALL_ENDPOINT)))
+        .addMethod(
             getUpdateFirewallEndpointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_FIREWALL_ENDPOINT)))
+        .addMethod(
+            getUpdateProjectFirewallEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.UpdateFirewallEndpointRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_PROJECT_FIREWALL_ENDPOINT)))
         .addMethod(
             getListFirewallEndpointAssociationsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1676,10 +2374,15 @@ public final class FirewallActivationGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new FirewallActivationFileDescriptorSupplier())
                       .addMethod(getListFirewallEndpointsMethod())
+                      .addMethod(getListProjectFirewallEndpointsMethod())
                       .addMethod(getGetFirewallEndpointMethod())
+                      .addMethod(getGetProjectFirewallEndpointMethod())
                       .addMethod(getCreateFirewallEndpointMethod())
+                      .addMethod(getCreateProjectFirewallEndpointMethod())
                       .addMethod(getDeleteFirewallEndpointMethod())
+                      .addMethod(getDeleteProjectFirewallEndpointMethod())
                       .addMethod(getUpdateFirewallEndpointMethod())
+                      .addMethod(getUpdateProjectFirewallEndpointMethod())
                       .addMethod(getListFirewallEndpointAssociationsMethod())
                       .addMethod(getGetFirewallEndpointAssociationMethod())
                       .addMethod(getCreateFirewallEndpointAssociationMethod())

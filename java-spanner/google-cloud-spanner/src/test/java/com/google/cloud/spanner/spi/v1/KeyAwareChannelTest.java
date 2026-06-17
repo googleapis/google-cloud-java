@@ -1104,37 +1104,6 @@ public class KeyAwareChannelTest {
   }
 
   @Test
-  public void readOnlyTransactionCleanupOnClose() throws Exception {
-    TestHarness harness = createHarness();
-    ByteString transactionId = ByteString.copyFromUtf8("ro-tx-3");
-
-    // Begin a read-only transaction.
-    ClientCall<BeginTransactionRequest, Transaction> beginCall =
-        harness.channel.newCall(SpannerGrpc.getBeginTransactionMethod(), CallOptions.DEFAULT);
-    beginCall.start(new CapturingListener<Transaction>(), new Metadata());
-    beginCall.sendMessage(
-        BeginTransactionRequest.newBuilder()
-            .setSession(SESSION)
-            .setOptions(
-                TransactionOptions.newBuilder()
-                    .setReadOnly(
-                        TransactionOptions.ReadOnly.newBuilder()
-                            .setReturnReadTimestamp(true)
-                            .build()))
-            .build());
-
-    @SuppressWarnings("unchecked")
-    RecordingClientCall<BeginTransactionRequest, Transaction> beginDelegate =
-        (RecordingClientCall<BeginTransactionRequest, Transaction>)
-            harness.defaultManagedChannel.latestCall();
-    beginDelegate.emitOnMessage(Transaction.newBuilder().setId(transactionId).build());
-    beginDelegate.emitOnClose(Status.OK, new Metadata());
-
-    // Clear transaction affinity (simulates MultiUseReadOnlyTransaction.close()).
-    harness.channel.clearTransactionAffinity(transactionId);
-  }
-
-  @Test
   public void abandonedReadWriteTransactionAffinityExpiresAfterInactivity() throws Exception {
     FakeTicker ticker = new FakeTicker();
     TestHarness harness = createHarness(ticker);

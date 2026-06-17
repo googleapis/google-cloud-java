@@ -32,6 +32,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.opentelemetry.detection.AttributeKeys;
 import com.google.cloud.opentelemetry.detection.DetectedPlatform;
 import com.google.cloud.opentelemetry.detection.GCPPlatformDetector;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
@@ -75,10 +76,13 @@ final class BuiltInMetricsProvider {
   private static final String default_location = "global";
 
   private OpenTelemetry openTelemetry;
+  private String projectId;
+  private boolean mismatchedProjectIdLogged;
+  private Thread shutdownHook;
 
   private BuiltInMetricsProvider() {}
 
-  OpenTelemetry getOrCreateOpenTelemetry(
+  synchronized OpenTelemetry getOrCreateOpenTelemetry(
       String projectId,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
@@ -88,12 +92,13 @@ final class BuiltInMetricsProvider {
         SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
         BuiltInMetricsView.registerBuiltinMetrics(
             SpannerCloudMonitoringExporter.create(
-                projectId, credentials, monitoringHost, universeDomain),
+                this::getProjectId, credentials, monitoringHost, universeDomain),
             sdkMeterProviderBuilder);
         sdkMeterProviderBuilder.setResource(Resource.create(createResourceAttributes(projectId)));
         SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
         this.openTelemetry = OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-        Runtime.getRuntime().addShutdownHook(new Thread(sdkMeterProvider::close));
+        this.shutdownHook = new Thread(sdkMeterProvider::close);
+        Runtime.getRuntime().addShutdownHook(this.shutdownHook);
       }
       return this.openTelemetry;
     } catch (IOException ex) {
@@ -104,6 +109,47 @@ final class BuiltInMetricsProvider {
           ex);
       return null;
     }
+  }
+
+  synchronized void setProjectIdIfAbsent(String projectId) {
+    if (this.projectId == null) {
+      this.projectId = projectId;
+    } else if (!this.projectId.equals(projectId) && !mismatchedProjectIdLogged) {
+      mismatchedProjectIdLogged = true;
+      logger.log(
+          Level.WARNING,
+          "Built-in metrics fallback project is already initialized to project {0}. Non-Spanner"
+              + " metrics without project information will be exported using that project instead"
+              + " of project {1}.",
+          new Object[] {this.projectId, projectId});
+    }
+  }
+
+  @Nullable
+  synchronized OpenTelemetry getOpenTelemetry() {
+    return this.openTelemetry;
+  }
+
+  synchronized String getProjectId() {
+    return this.projectId;
+  }
+
+  @VisibleForTesting
+  synchronized void reset() {
+    if (this.openTelemetry instanceof OpenTelemetrySdk) {
+      ((OpenTelemetrySdk) this.openTelemetry).getSdkMeterProvider().close();
+    }
+    if (this.shutdownHook != null) {
+      try {
+        Runtime.getRuntime().removeShutdownHook(this.shutdownHook);
+      } catch (IllegalStateException ignored) {
+        // The JVM is already shutting down.
+      }
+    }
+    this.openTelemetry = null;
+    this.projectId = null;
+    this.mismatchedProjectIdLogged = false;
+    this.shutdownHook = null;
   }
 
   // TODO: Remove when

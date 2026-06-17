@@ -114,6 +114,7 @@ public class DataProductServiceClientHttpJsonTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -179,6 +180,7 @@ public class DataProductServiceClientHttpJsonTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -334,6 +336,7 @@ public class DataProductServiceClientHttpJsonTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -389,6 +392,7 @@ public class DataProductServiceClientHttpJsonTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -544,6 +548,7 @@ public class DataProductServiceClientHttpJsonTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -567,6 +572,7 @@ public class DataProductServiceClientHttpJsonTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -610,11 +616,106 @@ public class DataProductServiceClientHttpJsonTest {
               .addAllOwnerEmails(new ArrayList<String>())
               .setAssetCount(1582344960)
               .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+              .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataProductAsync(dataProduct, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void requestDataProductAccessTest() throws Exception {
+    RequestDataProductAccessResponse expectedResponse =
+        RequestDataProductAccessResponse.newBuilder()
+            .setChangeRequestName("changeRequestName-1775998998")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataProductName parent = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]");
+    ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+
+    RequestDataProductAccessResponse actualResponse =
+        client.requestDataProductAccess(parent, changeRequest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void requestDataProductAccessExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataProductName parent = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]");
+      ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+      client.requestDataProductAccess(parent, changeRequest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void requestDataProductAccessTest2() throws Exception {
+    RequestDataProductAccessResponse expectedResponse =
+        RequestDataProductAccessResponse.newBuilder()
+            .setChangeRequestName("changeRequestName-1775998998")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9903/locations/location-9903/dataProducts/dataProduct-9903";
+    ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+
+    RequestDataProductAccessResponse actualResponse =
+        client.requestDataProductAccess(parent, changeRequest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void requestDataProductAccessExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9903/locations/location-9903/dataProducts/dataProduct-9903";
+      ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+      client.requestDataProductAccess(parent, changeRequest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

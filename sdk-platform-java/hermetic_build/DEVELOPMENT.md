@@ -88,8 +88,8 @@ as per [POSIX env var definition](https://pubs.opengroup.org/onlinepubs/96999197
    ```shell
    unzip /path/to/zipfile -d "${HOME}/.library_generation/"
    ```
-#### Put the GRPC plugin in its well-known location
-1. Download GRPC plugin from [Maven Central](https://central.sonatype.com/artifact/io.grpc/protoc-gen-grpc-java/versions).
+#### Put the gRPC plugin in its well-known location
+1. Download gRPC plugin from [Maven Central](https://central.sonatype.com/artifact/io.grpc/protoc-gen-grpc-java/versions).
 2. Move the folder into its well-know location.
 
    ```shell

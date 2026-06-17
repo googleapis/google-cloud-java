@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>2.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Bigtable</name>
   <url>https://github.com/googleapis/java-bigtable</url>
@@ -12,11 +12,11 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable-parent</artifactId>
-    <version>2.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <properties>
     <!-- The version that will be embedded in the published jar via maven-resources-plugin -->
-    <java-bigtable.version>2.78.1-SNAPSHOT</java-bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <java-bigtable.version>2.80.0-SNAPSHOT</java-bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
 
     <site.installationModule>google-cloud-bigtable</site.installationModule>
 
@@ -54,14 +54,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-        <version>2.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-bom</artifactId>
-        <version>2.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -84,10 +84,18 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigtable-v2</artifactId>
@@ -96,6 +104,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
@@ -278,11 +287,7 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-      <scope>test</scope>
-    </dependency>
+
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-emulator</artifactId>
@@ -440,6 +445,7 @@
                   <arg>-XDcompilePolicy=simple</arg>
                   <arg>--should-stop=ifError=FLOW</arg>
                   <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:MissingSummary:OFF -Xep:InlineMeSuggester:OFF -Xep:AutoValueImmutableFields:OFF -Xep:ObjectEqualsForPrimitives:OFF -Xep:JavaDurationGetSecondsToToSeconds:OFF</arg>
+                  <arg>${errorprone.javac.args}</arg>
 
                   <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                   <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -456,7 +462,7 @@
                   <path>
                     <groupId>com.google.errorprone</groupId>
                     <artifactId>error_prone_core</artifactId>
-                    <version>${error-prone.version}</version>
+                    <version>${errorprone.version}</version>
                   </path>
                 </annotationProcessorPaths>
               </configuration>

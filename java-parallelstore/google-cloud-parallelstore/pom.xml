@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-parallelstore</artifactId>
-  <version>0.56.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
+  <version>0.57.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
   <packaging>jar</packaging>
   <name>Google Parallelstore API</name>
   <description>Parallelstore API Parallelstore is based on Intel DAOS and delivers up to 6.3x greater read throughput performance compared to competitive Lustre scratch offerings. </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-parallelstore-parent</artifactId>
-    <version>0.56.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
+    <version>0.57.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-parallelstore</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-parallelstore-v1</artifactId>
@@ -49,6 +50,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-parallelstore-v1beta</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -70,11 +72,18 @@
       <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-parallelstore-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-parallelstore-v1beta</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
@@ -96,11 +105,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-parallelstore-v1beta</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

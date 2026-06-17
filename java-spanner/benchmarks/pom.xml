@@ -24,7 +24,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-spanner-parent</artifactId>
-    <version>6.118.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
+    <version>6.119.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
   </parent>
 
   <properties>
@@ -34,7 +34,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <junixsocket.version>2.10.1</junixsocket.version>
-    <opentelemetry.version>1.59.0</opentelemetry.version>
     <google.cloud.monitoring.version>3.85.0</google.cloud.monitoring.version>
   </properties>
 
@@ -60,27 +59,23 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>3.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+      <version>3.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk</artifactId>
-      <version>${opentelemetry.version}</version>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-metrics</artifactId>
-      <version>${opentelemetry.version}</version>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-trace</artifactId>
-      <version>${opentelemetry.version}</version>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
-      <version>${opentelemetry.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.re2j</groupId>

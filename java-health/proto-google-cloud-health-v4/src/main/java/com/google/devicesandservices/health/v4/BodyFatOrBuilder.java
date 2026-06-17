@@ -76,7 +76,20 @@ public interface BodyFatOrBuilder
    * Required. Body fat percentage, in range [0, 100].
    * </pre>
    *
-   * <code>double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the percentage field is set.
+   */
+  boolean hasPercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Body fat percentage, in range [0, 100].
+   * </pre>
+   *
+   * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The percentage.
    */

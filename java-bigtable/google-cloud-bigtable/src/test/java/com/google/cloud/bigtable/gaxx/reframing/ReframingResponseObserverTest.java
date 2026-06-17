@@ -185,7 +185,7 @@ public class ReframingResponseObserverTest {
     // First downstream request makes the upstream over produce
     outerObserver.getController().request(1);
     Truth.assertThat(outerObserver.popNextResponse()).isEqualTo("a");
-    Truth.assertThat(outerObserver.popNextResponse()).isEqualTo(null);
+    Truth.assertThat(outerObserver.popNextResponse()).isNull();
     Truth.assertThat(outerObserver.isDone()).isFalse();
 
     // Next downstream request should fetch from buffer

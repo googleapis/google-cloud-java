@@ -94,7 +94,7 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
           + "ogle.cloud.saasplatform.saasservicemgmt.v1beta1\032\037google/api/field_behavior.proto"
           + "\032\033google/api/field_info.proto\032\031google/ap"
           + "i/resource.proto\032>google/cloud/saasplatf"
-          + "orm/saasservicemgmt/v1beta1/common.proto\032\037google/protobuf/timestamp.proto\"\321\r\n"
+          + "orm/saasservicemgmt/v1beta1/common.proto\032\037google/protobuf/timestamp.proto\"\257\016\n"
           + "\007Rollout\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022B\n"
           + "\007release\030\003 \001(\tB1\340A\001\340A\005\372A(\n"
@@ -115,20 +115,22 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
           + "&saasservicemgmt.googleapis.com/Rollout\022+\n"
           + "\036rollout_orchestration_strategy\030\023 \001(\tB\003\340A\001\022\030\n"
           + "\013unit_filter\030\025 \001(\tB\003\340A\001\022K\n"
-          + "\014rollout_kind\030\026 \001(\tB5\340A\001\340A\005\372A,\n"
+          + "\014rollout_kind\030\026 \001(\tB5\340A\002\340A\005\372A,\n"
           + "*saasservicemgmt.googleapis.com/RolloutKind\022V\n"
           + "\005stats\030\030 \001(\0132?.google.cloud.saa"
           + "splatform.saasservicemgmt.v1beta1.RolloutStatsB\006\340A\003\340A\001\022W\n"
           + "\007control\030\031 \001(\0132A.google"
-          + ".cloud.saasplatform.saasservicemgmt.v1beta1.RolloutControlB\003\340A\001\022\\\n"
-          + "\006labels\030\241Q \003(\013"
-          + "2F.google.cloud.saasplatform.saasservicemgmt.v1beta1.Rollout.LabelsEntryB\003\340A\001\022f\n"
-          + "\013annotations\030\242Q \003(\0132K.google.cloud.saasp"
-          + "latform.saasservicemgmt.v1beta1.Rollout.AnnotationsEntryB\003\340A\001\022\031\n"
+          + ".cloud.saasplatform.saasservicemgmt.v1beta1.RolloutControlB\003\340A\001\022%\n"
+          + "\025effective_unit_filter\030\032 \001(\tB\006\340A\001\340A\003\022\\\n"
+          + "\006labels\030\241Q \003(\0132"
+          + "F.google.cloud.saasplatform.saasservicemgmt.v1beta1.Rollout.LabelsEntryB\003\340A\001\022f\n"
+          + "\013annotations\030\242Q \003(\0132K.google.cloud.saaspl"
+          + "atform.saasservicemgmt.v1beta1.Rollout.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
-          + "\013update_time\030\300P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + "\013update_time\030\300P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
+          + "\013delete_time\030\301P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
@@ -146,23 +148,23 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
           + "\030ROLLOUT_STATE_CANCELLING\020\007\022\032\n"
           + "\026ROLLOUT_STATE_RESUMING\020\010\022\031\n"
           + "\025ROLLOUT_STATE_PAUSING\020\t:}\352Az\n"
-          + "&saasservicemgmt.googleapis.com/Rollout\022=projects/{project}/"
-          + "locations/{location}/rollouts/{rollout_id}*\010rollouts2\007rollout\"\225\t\n"
+          + "&saasservicemgmt.googleapis.com/Rollout\022=proje"
+          + "cts/{project}/locations/{location}/rollouts/{rollout_id}*\010rollouts2\007rollout\"\225"
+          + "\t\n"
           + "\013RolloutKind\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022E\n"
           + "\tunit_kind\030\002 \001(\tB2\340A\002\340A\005\372A)\n"
           + "\'saasservicemgmt.googleapis.com/UnitKind\022+\n"
           + "\036rollout_orchestration_strategy\030\003 \001(\tB\003\340A\001\022\030\n"
           + "\013unit_filter\030\005 \001(\tB\003\340A\001\022}\n"
-          + "\031update_unit_kind_strategy\030\006 \001(\0162U.goog"
-          + "le.cloud.saasplatform.saasservicemgmt.v1"
-          + "beta1.RolloutKind.UpdateUnitKindStrategyB\003\340A\001\022^\n"
-          + "\014error_budget\030\007 \001(\0132>.google.clo"
-          + "ud.saasplatform.saasservicemgmt.v1beta1.ErrorBudgetB\003\340A\001H\000\210\001\001\022`\n"
-          + "\006labels\030\241Q \003(\0132J.google.cloud.saasplatform.saasservicemg"
-          + "mt.v1beta1.RolloutKind.LabelsEntryB\003\340A\001\022j\n"
-          + "\013annotations\030\242Q \003(\0132O.google.cloud.saa"
-          + "splatform.saasservicemgmt.v1beta1.RolloutKind.AnnotationsEntryB\003\340A\001\022\031\n"
+          + "\031update_unit_kind_strategy\030\006 \001(\0162U.google.cloud.saasplatform.saas"
+          + "servicemgmt.v1beta1.RolloutKind.UpdateUnitKindStrategyB\003\340A\001\022^\n"
+          + "\014error_budget\030\007 \001("
+          + "\0132>.google.cloud.saasplatform.saasservicemgmt.v1beta1.ErrorBudgetB\003\340A\001H\000\210\001\001\022`\n"
+          + "\006labels\030\241Q \003(\0132J.google.cloud.saasplatform"
+          + ".saasservicemgmt.v1beta1.RolloutKind.LabelsEntryB\003\340A\001\022j\n"
+          + "\013annotations\030\242Q \003(\0132O.google.cloud.saasplatform.saasservicemgmt."
+          + "v1beta1.RolloutKind.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
@@ -171,26 +173,32 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
           + "\005value\030\002 \001(\t:\0028\001\"\220\001\n"
           + "\026UpdateUnitKindStrategy\022)\n"
           + "%UPDATE_UNIT_KIND_STRATEGY_UNSPECIFIED\020\000\022&\n"
           + "\"UPDATE_UNIT_KIND_STRATEGY_ON_START\020\001\022#\n"
           + "\037UPDATE_UNIT_KIND_STRATEGY_NEVER\020\002:\223\001\352A\217\001\n"
-          + "*saasservicemgmt.googleapis.com/RolloutKind\022Fprojects/{project}/locations/{locatio"
-          + "n}/rolloutKinds/{rollout_kind_id}*\014rolloutKinds2\013rolloutKindB\017\n\r"
-          + "_error_budget\"J\n"
-          + "\013ErrorBudget\022\032\n\r"
-          + "allowed_count\030\001 \001(\005B\003\340A\001\022\037\n"
-          + "\022allowed_percentage\030\002 \001(\005B\003\340A\001\"n\n"
-          + "\014RolloutStats\022^\n"
-          + "\023operations_by_state\030\002 \003(\0132<"
-          + ".google.cloud.saasplatform.saasservicemgmt.v1beta1.AggregateB\003\340A\003\"\255\002\n"
+          + "*saasservicemgmt.googleapis.com/RolloutKind\022Fprojects/{project}/loca"
+          + "tions/{location}/rolloutKinds/{rollout_kind_id}*\014rolloutKinds2\013rolloutKindB\017\n\r"
+          + "_error_budget\"}\n"
+          + "\013ErrorBudget\022\037\n\r"
+          + "allowed_count\030\001 \001(\005B\003\340A\001H\000\210\001\001\022$\n"
+          + "\022allowed_percentage\030\002 \001(\005B\003\340A\001H\001\210\001\001B\020\n"
+          + "\016_allowed_countB\025\n"
+          + "\023_allowed_percentage\"\304\001\n"
+          + "\014RolloutStats\022d\n"
+          + "\023operations_by_state\030\002 \003(\0132<.google.cloud."
+          + "saasplatform.saasservicemgmt.v1beta1.AggregateB\t\340A\003\340A\001\340A\006\022/\n"
+          + "\032estimated_total_unit_count\030\003"
+          + " \001(\003B\006\340A\003\340A\001H\000\210\001\001B\035\n"
+          + "\033_estimated_total_unit_count\"\255\002\n"
           + "\016RolloutControl\022s\n\n"
-          + "run_params\030\002 \001(\0132X.google.cloud.saasplatform.saasservicemgmt.v1beta1.Rol"
-          + "loutControl.RunRolloutActionParamsB\003\340A\001H\000\022U\n"
-          + "\006action\030\001 \001(\0162@.google.cloud.saaspla"
-          + "tform.saasservicemgmt.v1beta1.RolloutActionB\003\340A\002\032>\n"
+          + "run_params\030\002 \001(\0132X.google.cloud.saasplat"
+          + "form.saasservicemgmt.v1beta1.RolloutControl.RunRolloutActionParamsB\003\340A\001H\000\022U\n"
+          + "\006action\030\001 \001(\0162@.google.cloud.saasplatform.sa"
+          + "asservicemgmt.v1beta1.RolloutActionB\003\340A\002\032>\n"
           + "\026RunRolloutActionParams\022$\n"
           + "\027retry_failed_operations\030\001 \001(\010B\003\340A\002B\017\n\r"
           + "action_params*|\n\r"
@@ -199,12 +207,12 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
           + "\022ROLLOUT_ACTION_RUN\020\001\022\030\n"
           + "\024ROLLOUT_ACTION_PAUSE\020\002\022\031\n"
           + "\025ROLLOUT_ACTION_CANCEL\020\003B\326\002\n"
-          + "5com.google.cloud.saasplatform.saasservicemgmt.v1beta1B\032SaasR"
-          + "olloutsResourcesProtoP\001Z_cloud.google.com/go/saasplatform/saasservicemgmt/apiv1b"
-          + "eta1/saasservicemgmtpb;saasservicemgmtpb\252\0021Google.Cloud.SaasPlatform.SaasService"
-          + "Mgmt.V1Beta1\312\0021Google\\Cloud\\SaasPlatform"
-          + "\\SaasServiceMgmt\\V1beta1\352\0025Google::Cloud"
-          + "::SaasPlatform::SaasServiceMgmt::V1beta1b\006proto3"
+          + "5com.google.cloud.saasplatform.saasservicemgmt.v1beta1B\032SaasRolloutsR"
+          + "esourcesProtoP\001Z_cloud.google.com/go/saasplatform/saasservicemgmt/apiv1beta1/saa"
+          + "sservicemgmtpb;saasservicemgmtpb\252\0021Google.Cloud.SaasPlatform.SaasServiceMgmt.V1B"
+          + "eta1\312\0021Google\\Cloud\\SaasPlatform\\SaasSer"
+          + "viceMgmt\\V1beta1\352\0025Google::Cloud::SaasPl"
+          + "atform::SaasServiceMgmt::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -236,12 +244,14 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
               "RolloutKind",
               "Stats",
               "Control",
+              "EffectiveUnitFilter",
               "Labels",
               "Annotations",
               "Uid",
               "Etag",
               "CreateTime",
               "UpdateTime",
+              "DeleteTime",
             });
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Rollout_LabelsEntry_descriptor =
         internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Rollout_descriptor
@@ -312,7 +322,7 @@ public final class SaasRolloutsResourcesProto extends com.google.protobuf.Genera
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_RolloutStats_descriptor,
             new java.lang.String[] {
-              "OperationsByState",
+              "OperationsByState", "EstimatedTotalUnitCount",
             });
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_RolloutControl_descriptor =
         getDescriptor().getMessageType(4);

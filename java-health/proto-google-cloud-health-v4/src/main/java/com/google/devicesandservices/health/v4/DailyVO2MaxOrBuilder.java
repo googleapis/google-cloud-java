@@ -71,7 +71,21 @@ public interface DailyVO2MaxOrBuilder
    * body weight / min.
    * </pre>
    *
-   * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the vo2Max field is set.
+   */
+  boolean hasVo2Max();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Daily VO2 max value measured as in ml consumed oxygen / kg of
+   * body weight / min.
+   * </pre>
+   *
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The vo2Max.
    */
@@ -130,7 +144,20 @@ public interface DailyVO2MaxOrBuilder
    * Optional. The covariance of the VO2 max value.
    * </pre>
    *
-   * <code>double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the vo2MaxCovariance field is set.
+   */
+  boolean hasVo2MaxCovariance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The covariance of the VO2 max value.
+   * </pre>
+   *
+   * <code>optional double vo2_max_covariance = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The vo2MaxCovariance.
    */

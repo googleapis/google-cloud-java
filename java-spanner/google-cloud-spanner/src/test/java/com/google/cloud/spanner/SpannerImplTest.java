@@ -21,6 +21,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.NanoClock;
@@ -113,6 +114,7 @@ public class SpannerImplTest {
     DatabaseClient databaseClient1 = impl.getDatabaseClient(db);
 
     assertThat(databaseClient1).isSameInstanceAs(databaseClient);
+    verify(spannerOptions).initializeBuiltInMetrics(db);
   }
 
   @Test

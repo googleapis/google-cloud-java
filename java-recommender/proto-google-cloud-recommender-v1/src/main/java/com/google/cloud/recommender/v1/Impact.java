@@ -53,6 +53,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
 
   private Impact() {
     category_ = 0;
+    service_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -646,6 +647,59 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.recommender.v1.ReliabilityProjection.getDefaultInstance();
   }
 
+  public static final int SERVICE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object service_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The service that this impact is associated with.
+   * </pre>
+   *
+   * <code>string service = 3;</code>
+   *
+   * @return The service.
+   */
+  @java.lang.Override
+  public java.lang.String getService() {
+    java.lang.Object ref = service_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      service_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The service that this impact is associated with.
+   * </pre>
+   *
+   * <code>string service = 3;</code>
+   *
+   * @return The bytes for service.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceBytes() {
+    java.lang.Object ref = service_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      service_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -663,6 +717,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
     if (category_
         != com.google.cloud.recommender.v1.Impact.Category.CATEGORY_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, category_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(service_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, service_);
     }
     if (projectionCase_ == 100) {
       output.writeMessage(100, (com.google.cloud.recommender.v1.CostProjection) projection_);
@@ -689,6 +746,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
     if (category_
         != com.google.cloud.recommender.v1.Impact.Category.CATEGORY_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, category_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(service_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, service_);
     }
     if (projectionCase_ == 100) {
       size +=
@@ -726,6 +786,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
     com.google.cloud.recommender.v1.Impact other = (com.google.cloud.recommender.v1.Impact) obj;
 
     if (category_ != other.category_) return false;
+    if (!getService().equals(other.getService())) return false;
     if (!getProjectionCase().equals(other.getProjectionCase())) return false;
     switch (projectionCase_) {
       case 100:
@@ -757,6 +818,8 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
     hash = (53 * hash) + category_;
+    hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+    hash = (53 * hash) + getService().hashCode();
     switch (projectionCase_) {
       case 100:
         hash = (37 * hash) + COST_PROJECTION_FIELD_NUMBER;
@@ -930,6 +993,7 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
       if (reliabilityProjectionBuilder_ != null) {
         reliabilityProjectionBuilder_.clear();
       }
+      service_ = "";
       projectionCase_ = 0;
       projection_ = null;
       return this;
@@ -972,6 +1036,9 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.category_ = category_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.service_ = service_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.recommender.v1.Impact result) {
@@ -1005,6 +1072,11 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.recommender.v1.Impact.getDefaultInstance()) return this;
       if (other.category_ != 0) {
         setCategoryValue(other.getCategoryValue());
+      }
+      if (!other.getService().isEmpty()) {
+        service_ = other.service_;
+        bitField0_ |= 0x00000020;
+        onChanged();
       }
       switch (other.getProjectionCase()) {
         case COST_PROJECTION:
@@ -1064,6 +1136,12 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 26:
+              {
+                service_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 26
             case 802:
               {
                 input.readMessage(
@@ -2115,6 +2193,117 @@ public final class Impact extends com.google.protobuf.GeneratedMessage
       projectionCase_ = 103;
       onChanged();
       return reliabilityProjectionBuilder_;
+    }
+
+    private java.lang.Object service_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The service that this impact is associated with.
+     * </pre>
+     *
+     * <code>string service = 3;</code>
+     *
+     * @return The service.
+     */
+    public java.lang.String getService() {
+      java.lang.Object ref = service_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        service_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service that this impact is associated with.
+     * </pre>
+     *
+     * <code>string service = 3;</code>
+     *
+     * @return The bytes for service.
+     */
+    public com.google.protobuf.ByteString getServiceBytes() {
+      java.lang.Object ref = service_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        service_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service that this impact is associated with.
+     * </pre>
+     *
+     * <code>string service = 3;</code>
+     *
+     * @param value The service to set.
+     * @return This builder for chaining.
+     */
+    public Builder setService(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      service_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service that this impact is associated with.
+     * </pre>
+     *
+     * <code>string service = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearService() {
+      service_ = getDefaultInstance().getService();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service that this impact is associated with.
+     * </pre>
+     *
+     * <code>string service = 3;</code>
+     *
+     * @param value The bytes for service to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      service_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.recommender.v1.Impact)

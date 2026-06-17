@@ -318,7 +318,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * visible to queries by the time your topic receives the Pub/Sub
      * notification.
      * * The best practice is to use the same table for an entire organization
-     * so that you can take advantage of the [provided Looker
+     * so that you can take advantage of the [provided Data Studio
      * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
      * If you use VPC Service Controls to define security perimeters, then
      * you must use a separate table for each boundary.
@@ -356,7 +356,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * visible to queries by the time your topic receives the Pub/Sub
      * notification.
      * * The best practice is to use the same table for an entire organization
-     * so that you can take advantage of the [provided Looker
+     * so that you can take advantage of the [provided Data Studio
      * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
      * If you use VPC Service Controls to define security perimeters, then
      * you must use a separate table for each boundary.
@@ -394,7 +394,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * visible to queries by the time your topic receives the Pub/Sub
      * notification.
      * * The best practice is to use the same table for an entire organization
-     * so that you can take advantage of the [provided Looker
+     * so that you can take advantage of the [provided Data Studio
      * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
      * If you use VPC Service Controls to define security perimeters, then
      * you must use a separate table for each boundary.
@@ -538,7 +538,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * visible to queries by the time your topic receives the Pub/Sub
      * notification.
      * * The best practice is to use the same table for an entire organization
-     * so that you can take advantage of the [provided Looker
+     * so that you can take advantage of the [provided Data Studio
      * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
      * If you use VPC Service Controls to define security perimeters, then
      * you must use a separate table for each boundary.
@@ -579,7 +579,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * visible to queries by the time your topic receives the Pub/Sub
      * notification.
      * * The best practice is to use the same table for an entire organization
-     * so that you can take advantage of the [provided Looker
+     * so that you can take advantage of the [provided Data Studio
      * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
      * If you use VPC Service Controls to define security perimeters, then
      * you must use a separate table for each boundary.
@@ -622,7 +622,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * visible to queries by the time your topic receives the Pub/Sub
      * notification.
      * * The best practice is to use the same table for an entire organization
-     * so that you can take advantage of the [provided Looker
+     * so that you can take advantage of the [provided Data Studio
      * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
      * If you use VPC Service Controls to define security perimeters, then
      * you must use a separate table for each boundary.
@@ -1111,7 +1111,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1151,7 +1151,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1197,7 +1197,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1245,7 +1245,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1291,7 +1291,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1344,7 +1344,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1389,7 +1389,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1429,7 +1429,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.
@@ -1473,7 +1473,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * visible to queries by the time your topic receives the Pub/Sub
        * notification.
        * * The best practice is to use the same table for an entire organization
-       * so that you can take advantage of the [provided Looker
+       * so that you can take advantage of the [provided Data Studio
        * reports](https://cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles#use_a_premade_report).
        * If you use VPC Service Controls to define security perimeters, then
        * you must use a separate table for each boundary.

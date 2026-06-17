@@ -198,6 +198,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     private boolean aborted;
 
     private final Options options;
+    private volatile String cachedTransactionTag;
 
     /** Default to -1 to indicate not available. */
     @GuardedBy("lock")
@@ -779,6 +780,15 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     String getTransactionTag() {
       if (this.options.hasTag()) {
         return this.options.tag();
+      }
+      if (session.getSpanner().getOptions().isAutoTaggingEnabled()) {
+        if (this.cachedTransactionTag == null) {
+          this.cachedTransactionTag = AutoTagHelper.getAutoTag(session.getSpanner().getOptions());
+          if (this.cachedTransactionTag == null) {
+            this.cachedTransactionTag = "";
+          }
+        }
+        return this.cachedTransactionTag;
       }
       return null;
     }

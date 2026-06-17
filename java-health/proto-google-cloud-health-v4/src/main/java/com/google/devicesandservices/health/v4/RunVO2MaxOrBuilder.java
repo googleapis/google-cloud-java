@@ -76,7 +76,20 @@ public interface RunVO2MaxOrBuilder
    * Required. Run VO2 max value in ml/kg/min.
    * </pre>
    *
-   * <code>double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the runVo2Max field is set.
+   */
+  boolean hasRunVo2Max();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Run VO2 max value in ml/kg/min.
+   * </pre>
+   *
+   * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The runVo2Max.
    */

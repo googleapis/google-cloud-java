@@ -910,21 +910,21 @@
     <method>java.lang.Object runTransaction(com.google.cloud.spanner.connection.Connection$TransactionCallable)</method>
   </difference>
 
-  <!-- Added experimental host option -->
+  <!-- Added Spanner Omni option -->
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/spanner/SpannerOptions$SpannerEnvironment</className>
-    <method>com.google.auth.oauth2.GoogleCredentials getDefaultExperimentalHostCredentials()</method>
+    <method>com.google.auth.oauth2.GoogleCredentials getDefaultSpannerOmniCredentials()</method>
   </difference>
   <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/spanner/SpannerOptions$SpannerEnvironment</className>
-    <method>com.google.auth.oauth2.GoogleCredentials getDefaultExternalHostCredentials()</method>
+    <method>com.google.auth.oauth2.GoogleCredentials getDefaultSpannerOmniCredentials()</method>
   </difference>
   <difference>
     <differenceType>7002</differenceType>
     <className>com/google/cloud/spanner/SpannerOptions</className>
-    <method>com.google.auth.oauth2.GoogleCredentials getDefaultExternalHostCredentialsFromSysEnv()</method>
+    <method>com.google.auth.oauth2.GoogleCredentials getDefaultSpannerOmniCredentialsFromSysEnv()</method>
   </difference>
 
   <!-- Default sequence kind -->

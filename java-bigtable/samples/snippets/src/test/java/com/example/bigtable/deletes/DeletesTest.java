@@ -17,15 +17,16 @@
 package com.example.bigtable.deletes;
 
 import com.example.bigtable.MobileTimeSeriesBaseTest;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.Table;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.TableId;
-import com.google.common.truth.Correspondence;
 import com.google.common.truth.Truth;
 import java.io.IOException;
 import java.util.List;
@@ -41,9 +42,21 @@ import org.junit.runners.MethodSorters;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DeletesTest extends MobileTimeSeriesBaseTest {
-  private static final Correspondence<ColumnFamily, String> COLUMN_FAMILY_ID_CORRESPONDENCE =
-      Correspondence.transforming(ColumnFamily::getId, "ColumnFamily id");
   public static BigtableDataClient bigtableDataClient;
+  private static BigtableTableAdminClientV2 adminClient;
+
+  private static boolean exists(String tableId) {
+    try {
+      adminClient.getTable(
+          GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(Table.View.NAME_ONLY)
+              .build());
+      return true;
+    } catch (NotFoundException e) {
+      return false;
+    }
+  }
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -52,11 +65,30 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
     writeStatsData();
     writePlanData();
     bigtableDataClient = BigtableDataClient.create(projectId, instanceId);
+    adminClient = BigtableTableAdminClientV2.create();
   }
 
   @AfterClass
-  public static void afterClass() throws IOException {
-    cleanupTable();
+  public static void afterClass() {
+    try {
+      cleanupTable();
+    } catch (Exception e) {
+      System.err.println("Failed to cleanup table: " + e.getMessage());
+    }
+    try {
+      if (bigtableDataClient != null) {
+        bigtableDataClient.close();
+      }
+    } catch (Exception e) {
+      System.err.println("Failed to close bigtableDataClient: " + e.getMessage());
+    }
+    try {
+      if (adminClient != null) {
+        adminClient.close();
+      }
+    } catch (Exception e) {
+      System.err.println("Failed to close adminClient: " + e.getMessage());
+    }
   }
 
   @Test
@@ -166,32 +198,28 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
 
   @Test
   public void test7_testDeleteColumnFamily() throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies())
-          .comparingElementsUsing(COLUMN_FAMILY_ID_CORRESPONDENCE)
-          .contains(COLUMN_FAMILY_NAME_STATS);
+    GetTableRequest request =
+        GetTableRequest.newBuilder()
+            .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+            .build();
+    Truth.assertThat(adminClient.getTable(request).getColumnFamiliesMap().keySet())
+        .contains(COLUMN_FAMILY_NAME_STATS);
 
-      DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
-      deleteColumnFamilyExample.deleteColumnFamily(
-          projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
+    DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
+    deleteColumnFamilyExample.deleteColumnFamily(
+        projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
 
-      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies())
-          .comparingElementsUsing(COLUMN_FAMILY_ID_CORRESPONDENCE)
-          .doesNotContain(COLUMN_FAMILY_NAME_STATS);
-    }
+    Truth.assertThat(adminClient.getTable(request).getColumnFamiliesMap().keySet())
+        .doesNotContain(COLUMN_FAMILY_NAME_STATS);
   }
 
   @Test
   public void test8_testDeleteTable() throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      Truth.assertThat(tableAdminClient.exists(TABLE_ID)).isTrue();
+    Truth.assertThat(exists(TABLE_ID)).isTrue();
 
-      DeleteTableExample deleteTableExample = new DeleteTableExample();
-      deleteTableExample.deleteTable(projectId, instanceId, TABLE_ID);
+    DeleteTableExample deleteTableExample = new DeleteTableExample();
+    deleteTableExample.deleteTable(projectId, instanceId, TABLE_ID);
 
-      Truth.assertThat(tableAdminClient.exists(TABLE_ID)).isFalse();
-    }
+    Truth.assertThat(exists(TABLE_ID)).isFalse();
   }
 }

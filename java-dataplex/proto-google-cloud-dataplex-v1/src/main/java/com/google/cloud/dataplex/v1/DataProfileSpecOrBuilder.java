@@ -238,4 +238,34 @@ public interface DataProfileSpecOrBuilder
    * @return The catalogPublishingEnabled.
    */
   boolean getCatalogPublishingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for the profile scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  int getModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for the profile scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  com.google.cloud.dataplex.v1.DataProfileSpec.Mode getMode();
 }

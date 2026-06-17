@@ -197,6 +197,17 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      * <code>SQL_ASSERTION = 9;</code>
      */
     SQL_ASSERTION(9),
+    /**
+     *
+     *
+     * <pre>
+     * See
+     * [DataQualityRule.TemplateReference][google.cloud.dataplex.v1.DataQualityRule.TemplateReference].
+     * </pre>
+     *
+     * <code>TEMPLATE_REFERENCE = 10;</code>
+     */
+    TEMPLATE_REFERENCE(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -329,6 +340,18 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
      */
     public static final int SQL_ASSERTION_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * See
+     * [DataQualityRule.TemplateReference][google.cloud.dataplex.v1.DataQualityRule.TemplateReference].
+     * </pre>
+     *
+     * <code>TEMPLATE_REFERENCE = 10;</code>
+     */
+    public static final int TEMPLATE_REFERENCE_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -373,6 +396,8 @@ public final class DataQualityScanRuleResult extends com.google.protobuf.Generat
           return UNIQUENESS_EXPECTATION;
         case 9:
           return SQL_ASSERTION;
+        case 10:
+          return TEMPLATE_REFERENCE;
         default:
           return null;
       }

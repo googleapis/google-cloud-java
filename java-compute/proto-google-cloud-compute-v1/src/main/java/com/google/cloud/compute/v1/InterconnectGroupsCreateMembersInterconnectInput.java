@@ -24,7 +24,6 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * LINT.IfChange
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupsCreateMembersInterconnectInput}
@@ -1853,7 +1852,6 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * LINT.IfChange
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupsCreateMembersInterconnectInput}

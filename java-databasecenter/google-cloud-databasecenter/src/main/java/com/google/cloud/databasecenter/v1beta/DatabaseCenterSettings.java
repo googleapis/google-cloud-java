@@ -17,6 +17,7 @@
 package com.google.cloud.databasecenter.v1beta;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateQueryStatsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
@@ -119,6 +120,13 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).aggregateIssueStatsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregateQueryStats. */
+  public PagedCallSettings<
+          AggregateQueryStatsRequest, AggregateQueryStatsResponse, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).aggregateQueryStatsSettings();
   }
 
   /** Returns the object with the settings used for calls to queryIssues. */
@@ -266,6 +274,15 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
     public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
         aggregateIssueStatsSettings() {
       return getStubSettingsBuilder().aggregateIssueStatsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateQueryStats. */
+    public PagedCallSettings.Builder<
+            AggregateQueryStatsRequest,
+            AggregateQueryStatsResponse,
+            AggregateQueryStatsPagedResponse>
+        aggregateQueryStatsSettings() {
+      return getStubSettingsBuilder().aggregateQueryStatsSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryIssues. */

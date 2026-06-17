@@ -84,7 +84,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -100,7 +100,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -124,7 +124,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -229,8 +229,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is always
-   * compute#instanceGroupManagerList for a list of managed instance groups.
+   * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+   * list of managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -246,8 +246,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is always
-   * compute#instanceGroupManagerList for a list of managed instance groups.
+   * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+   * list of managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -271,8 +271,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is always
-   * compute#instanceGroupManagerList for a list of managed instance groups.
+   * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+   * list of managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -301,7 +301,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] This token allows you to get the next page of results for
+   * Output only. This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -321,7 +321,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] This token allows you to get the next page of results for
+   * Output only. This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -349,7 +349,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] This token allows you to get the next page of results for
+   * Output only. This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -382,7 +382,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource.
+   * Output only. Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -398,7 +398,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource.
+   * Output only. Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -422,7 +422,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource.
+   * Output only. Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -449,7 +449,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Informational warning message.
+   * Output only. Informational warning message.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -465,7 +465,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Informational warning message.
+   * Output only. Informational warning message.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -481,7 +481,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. [Output Only] Informational warning message.
+   * Output only. Informational warning message.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1020,7 +1020,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1035,7 +1035,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1058,7 +1058,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1081,7 +1081,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1103,7 +1103,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1121,7 +1121,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1513,8 +1513,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is always
-     * compute#instanceGroupManagerList for a list of managed instance groups.
+     * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+     * list of managed instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1529,8 +1529,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is always
-     * compute#instanceGroupManagerList for a list of managed instance groups.
+     * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+     * list of managed instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1553,8 +1553,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is always
-     * compute#instanceGroupManagerList for a list of managed instance groups.
+     * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+     * list of managed instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1577,8 +1577,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is always
-     * compute#instanceGroupManagerList for a list of managed instance groups.
+     * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+     * list of managed instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1600,8 +1600,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is always
-     * compute#instanceGroupManagerList for a list of managed instance groups.
+     * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+     * list of managed instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1619,8 +1619,8 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is always
-     * compute#instanceGroupManagerList for a list of managed instance groups.
+     * Output only. The resource type, which is always compute#instanceGroupManagerList for a
+     * list of managed instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1645,7 +1645,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] This token allows you to get the next page of results for
+     * Output only. This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1664,7 +1664,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] This token allows you to get the next page of results for
+     * Output only. This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1691,7 +1691,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] This token allows you to get the next page of results for
+     * Output only. This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1718,7 +1718,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] This token allows you to get the next page of results for
+     * Output only. This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1744,7 +1744,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] This token allows you to get the next page of results for
+     * Output only. This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1766,7 +1766,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] This token allows you to get the next page of results for
+     * Output only. This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1795,7 +1795,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource.
+     * Output only. Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1810,7 +1810,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource.
+     * Output only. Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1833,7 +1833,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource.
+     * Output only. Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1856,7 +1856,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource.
+     * Output only. Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1878,7 +1878,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource.
+     * Output only. Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1896,7 +1896,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource.
+     * Output only. Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1926,7 +1926,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1941,7 +1941,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1962,7 +1962,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1985,7 +1985,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -2005,7 +2005,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -2033,7 +2033,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -2053,7 +2053,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -2068,7 +2068,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -2087,7 +2087,7 @@ public final class InstanceGroupManagerList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. [Output Only] Informational warning message.
+     * Output only. Informational warning message.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
