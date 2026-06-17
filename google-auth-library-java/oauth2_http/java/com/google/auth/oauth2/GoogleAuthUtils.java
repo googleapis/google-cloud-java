@@ -32,6 +32,8 @@
 package com.google.auth.oauth2;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UncheckedIOException;
 
 /**
  * This public class provides shared utilities for common OAuth2 utils or ADC. It also exposes
@@ -70,7 +72,14 @@ public class GoogleAuthUtils {
     if (envPath != null) {
       cloudConfigPath = new File(envPath);
     } else if (provider.getOsName().indexOf("windows") >= 0) {
-      File appDataPath = new File(provider.getEnv("APPDATA"));
+      String appDataEnv = provider.getEnv("APPDATA");
+      if (appDataEnv == null || appDataEnv.trim().isEmpty()) {
+        throw new UncheckedIOException(
+            new FileNotFoundException(
+                "APPDATA environment variable is not set or empty; cannot locate the well-known"
+                    + " credentials file on Windows."));
+      }
+      File appDataPath = new File(appDataEnv);
       cloudConfigPath = new File(appDataPath, provider.CLOUDSDK_CONFIG_DIRECTORY);
     } else {
       File configPath = new File(provider.getProperty("user.home", ""), ".config");
