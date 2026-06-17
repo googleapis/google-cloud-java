@@ -34,6 +34,8 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValueList;
@@ -706,5 +708,47 @@ public class BigQueryStatementTest {
   public void testSetAndGetFetchSize() throws SQLException {
     bigQueryStatement.setFetchSize(100);
     assertEquals(100, bigQueryStatement.getFetchSize());
+  }
+
+  @Test
+  public void testTemporaryDatasetCreationRespectsConnectionLocation()
+      throws SQLException, InterruptedException {
+    // 1. Setup mock connection with location and destination dataset
+    doReturn("europe-west3").when(bigQueryConnection).getLocation();
+    doReturn("temp_dataset").when(bigQueryConnection).getDestinationDataset();
+
+    // Re-instantiate bigQueryStatement so it regenerates querySettings with these mocked connection
+    // values
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    BigQueryStatement statementSpy = Mockito.spy(statement);
+
+    // 2. Mock bigQuery.getDataset to return null (triggering creation)
+    doReturn(null).when(bigquery).getDataset(eq(DatasetId.of("temp_dataset")));
+
+    // 2b. Mock bigQuery.create for dry run during getStatementType
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+
+    // 3. Mock bigquery.queryWithTimeout(...) to return tableResult (so execution doesn't fail on
+    // query execution)
+    TableResult result = mock(TableResult.class);
+    doReturn(result)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(JobId.class), any());
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(statementSpy)
+        .processJsonResultSet(eq(result), any());
+
+    // 4. Capture DatasetInfo passed to bigQuery.create()
+    ArgumentCaptor<DatasetInfo> datasetInfoCaptor = ArgumentCaptor.forClass(DatasetInfo.class);
+
+    // 5. Execute query
+    statementSpy.executeQuery("SELECT 1");
+
+    // 6. Verify dataset was created with correct location
+    verify(bigquery).create(datasetInfoCaptor.capture());
+    DatasetInfo createdDatasetInfo = datasetInfoCaptor.getValue();
+    assertEquals("temp_dataset", createdDatasetInfo.getDatasetId().getDataset());
+    assertEquals("europe-west3", createdDatasetInfo.getLocation());
   }
 }

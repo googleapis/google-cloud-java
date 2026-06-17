@@ -1375,11 +1375,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     Dataset dataset = bigQuery.getDataset(DatasetId.of(datasetName));
     if (dataset == null) {
       LOG.info("Creating a hidden dataset: %s ", datasetName);
-      DatasetInfo datasetInfo =
+      DatasetInfo.Builder datasetInfoBuilder =
           DatasetInfo.newBuilder(datasetName)
-              .setDefaultTableLifetime(this.querySettings.getDestinationDatasetExpirationTime())
-              .build();
-      bigQuery.create(datasetInfo);
+              .setDefaultTableLifetime(this.querySettings.getDestinationDatasetExpirationTime());
+      if (this.connection != null
+          && this.connection.getLocation() != null
+          && !this.connection.getLocation().isEmpty()) {
+        datasetInfoBuilder.setLocation(this.connection.getLocation());
+      }
+      bigQuery.create(datasetInfoBuilder.build());
     }
   }
 
