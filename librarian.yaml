@@ -1840,6 +1840,7 @@ libraries:
     skip_generate: true
   - name: grafeas
     version: 2.95.0-SNAPSHOT
+    alternate_headers: license-header.txt
     apis:
       - path: grafeas/v1
         java:
