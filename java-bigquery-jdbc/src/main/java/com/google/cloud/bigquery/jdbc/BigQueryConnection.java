@@ -16,28 +16,24 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.api.services.bigquery.Bigquery;
-import com.google.api.services.bigquery.model.ProjectList;
-import com.google.api.services.bigquery.model.ProjectList.Projects;
 import com.google.auth.Credentials;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.ProjectListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -86,9 +82,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
-  private static final String BIGQUERY_SERVICE_NAME = "bigquery";
-  private static final String PROJECT_LIST_FIELDS =
-      "projects/projectReference/projectId,nextPageToken";
   private static final Set<String> SAFE_TO_LOG_PROPERTIES =
       ImmutableSortedSet.orderedBy(String.CASE_INSENSITIVE_ORDER)
           .add(
@@ -1330,42 +1323,17 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     try {
-      BigQueryOptions options = (BigQueryOptions) getBigQuery().getOptions();
-      HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
-      HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-      HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
-      Bigquery lowLevelBq =
-          new Bigquery.Builder(transport, GsonFactory.getDefaultInstance(), initializer)
-              .setRootUrl(options.getResolvedApiaryHost(BIGQUERY_SERVICE_NAME))
-              .setApplicationName(
-                  options.getApplicationName() != null
-                      ? options.getApplicationName()
-                      : DEFAULT_JDBC_TOKEN_VALUE)
-              .build();
-
+      BigQuery bigQuery = getBigQuery();
       List<String> projects = new ArrayList<>();
-      String pageToken = null;
-      do {
-        ProjectList projectList =
-            lowLevelBq
-                .projects()
-                .list()
-                .setPageToken(pageToken)
-                .setMaxResults(getMaxResults())
-                .setFields(PROJECT_LIST_FIELDS)
-                .execute();
-        if (projectList.getProjects() != null) {
-          for (Projects p : projectList.getProjects()) {
-            projects.add(p.getProjectReference().getProjectId());
-          }
-        }
-        pageToken = projectList.getNextPageToken();
-      } while (pageToken != null);
-
+      Page<Project> projectPage =
+          bigQuery.listProjects(ProjectListOption.pageSize(getMaxResults()));
+      for (Project project : projectPage.iterateAll()) {
+        projects.add(project.getProjectId());
+      }
       this.discoveredProjectsCache = ImmutableList.copyOf(projects);
-    } catch (GoogleJsonResponseException e) {
-      LOG.warning(e, "Failed to list all accessible projects due to Google API error.");
-      int statusCode = e.getStatusCode();
+    } catch (BigQueryException e) {
+      LOG.warning(e, "Failed to list all accessible projects due to BigQuery error.");
+      int statusCode = e.getCode();
       // Only cache empty list for non-transient auth/permission errors (400, 401, 403)
       if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
         this.discoveredProjectsCache = ImmutableList.of();

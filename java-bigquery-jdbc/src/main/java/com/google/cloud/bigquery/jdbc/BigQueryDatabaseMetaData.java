@@ -3652,61 +3652,60 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             return;
           }
 
-          ExecutorService apiExecutor = null;
-          final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
           try {
-            apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
             for (String currentProjectToScan : projectsToScanList) {
-              checkInterrupted(apiFutures);
-              Callable<List<Dataset>> apiCallable =
-                  () ->
-                      findMatchingBigQueryObjects(
-                          "Dataset",
-                          () ->
-                              bigquery.listDatasets(
-                                  currentProjectToScan,
-                                  BigQuery.DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                          (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
-                          (ds) -> ds.getDatasetId().getDataset(),
-                          schemaPattern,
-                          schemaRegex,
-                          LOG);
-              apiFutures.add(apiExecutor.submit(apiCallable));
-            }
-            apiExecutor.shutdown();
+              if (Thread.currentThread().isInterrupted()) {
+                LOG.warning(
+                    "Schema fetcher interrupted during project iteration for project: "
+                        + currentProjectToScan);
+                break;
+              }
+              LOG.info("Fetching schemas for project: " + currentProjectToScan);
+              List<Dataset> datasetsInProject =
+                  findMatchingBigQueryObjects(
+                      "Dataset",
+                      () ->
+                          bigquery.listDatasets(
+                              currentProjectToScan,
+                              BigQuery.DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                      (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
+                      (ds) -> ds.getDatasetId().getDataset(),
+                      schemaPattern,
+                      schemaRegex,
+                      LOG);
 
-            for (Future<List<Dataset>> apiFuture : apiFutures) {
-              checkInterrupted(apiFutures);
-              try {
-                List<Dataset> datasetsInProject = apiFuture.get();
-                if (datasetsInProject != null) {
-                  for (Dataset dataset : datasetsInProject) {
-                    processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
-                  }
+              if (datasetsInProject.isEmpty() || Thread.currentThread().isInterrupted()) {
+                LOG.info(
+                    "Fetcher thread found no matching datasets in project: "
+                        + currentProjectToScan);
+                continue;
+              }
+
+              LOG.fine("Processing found datasets for project: " + currentProjectToScan);
+              for (Dataset dataset : datasetsInProject) {
+                if (Thread.currentThread().isInterrupted()) {
+                  LOG.warning(
+                      "Schema fetcher interrupted during dataset iteration for project: "
+                          + currentProjectToScan);
+                  break;
                 }
-              } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                checkInterrupted(apiFutures);
-              } catch (ExecutionException e) {
-                LOG.warning(e, "Error executing findMatchingDatasets task.");
-              } catch (CancellationException e) {
-                LOG.warning("A findMatchingDatasets task was cancelled.");
+                processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
               }
             }
 
-            checkInterrupted(apiFutures);
-            Comparator<FieldValueList> comparator =
-                defineGetSchemasComparator(localResultSchemaFields);
-            sortResults(collectedResults, comparator, "getSchemas", LOG);
-            populateQueue(collectedResults, queue, localResultSchemaFields);
+            if (!Thread.currentThread().isInterrupted()) {
+              Comparator<FieldValueList> comparator =
+                  defineGetSchemasComparator(localResultSchemaFields);
+              sortResults(collectedResults, comparator, "getSchemas", LOG);
+            }
 
-          } catch (CancellationException e) {
-            LOG.warning("Schema fetcher task was cancelled/interrupted.");
+            if (!Thread.currentThread().isInterrupted()) {
+              populateQueue(collectedResults, queue, localResultSchemaFields);
+            }
+
           } catch (Throwable t) {
             LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
-            apiFutures.forEach(f -> f.cancel(true));
           } finally {
-            shutdownExecutor(apiExecutor);
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Schema fetcher thread finished.");
           }
@@ -5145,13 +5144,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.warning("Interrupted while sending end signal to queue.");
     } catch (Exception e) {
       LOG.severe("Exception while sending end signal to queue: " + e.getMessage());
-    }
-  }
-
-  private void checkInterrupted(List<? extends Future<?>> futures) {
-    if (Thread.currentThread().isInterrupted()) {
-      futures.forEach(f -> f.cancel(true));
-      throw new CancellationException("Fetcher thread was interrupted.");
     }
   }
 
