@@ -43,6 +43,7 @@ public class BigQueryJdbcCustomLogger extends Logger {
     }
 
     LogRecord record = new BigQueryJdbcLogRecord(level, msgSupplier.get());
+    record.setLoggerName(this.getName());
     record.setThrown(thrown);
     log(record);
   }

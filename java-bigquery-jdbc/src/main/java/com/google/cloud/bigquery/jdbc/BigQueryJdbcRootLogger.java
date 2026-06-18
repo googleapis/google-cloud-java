@@ -36,9 +36,10 @@ class BigQueryJdbcRootLogger {
    * Note: Each connection will have its own file handler with the level and logPath specified in
    * the connection properties. But the logs will be driver logs and not connection specific.
    */
-  private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery");
+  private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery.jdbc");
 
-  private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.storage");
+  private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.jdbc.storage");
+
   private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
 
   private static Handler fileHandler = null;
