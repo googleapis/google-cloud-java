@@ -241,6 +241,29 @@
  *   Rule response = ruleServiceClient.createRule(parent, rule);
  * }
  * }</pre>
+ *
+ * <p>======================= RuleExecutionErrorServiceClient =======================
+ *
+ * <p>Service Description: RuleExecutionErrorService contains endpoints related to rule execution
+ * errors.
+ *
+ * <p>Sample for RuleExecutionErrorServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RuleExecutionErrorServiceClient ruleExecutionErrorServiceClient =
+ *     RuleExecutionErrorServiceClient.create()) {
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   for (RuleExecutionError element :
+ *       ruleExecutionErrorServiceClient.listRuleExecutionErrors(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.chronicle.v1;
