@@ -56,22 +56,6 @@ public final class HttpStorageRpcHasherHelper {
   }
 
   /**
-   * Validates a raw byte array against GCS's expected base64-encoded value in response headers.
-   *
-   * @throws IOException if the checksums do not match.
-   */
-  public void validate(HttpResponse response, byte[] content) throws IOException {
-    if (isTranscoded(response) || !isFullObjectResponse(response)) {
-      return;
-    }
-    Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(response);
-    String expectedCrc32cBase64 = hashes.get("crc32c");
-    if (expectedCrc32cBase64 != null) {
-      validateCrc32c(expectedCrc32cBase64, content);
-    }
-  }
-
-  /**
    * Validates the downloaded output stream against GCS's expected base64-encoded value in response
    * headers.
    *
@@ -93,16 +77,9 @@ public final class HttpStorageRpcHasherHelper {
     }
   }
 
-  public static boolean isRangeZeroOrNull(String rangeHeader) {
-    if (rangeHeader == null) {
-      return true;
-    }
-    String trimmed = rangeHeader.trim();
-    if (trimmed.startsWith("bytes=")) {
-      String range = trimmed.substring(6).trim();
-      return range.startsWith("0-");
-    }
-    return false;
+  /** Determines if client-side validation should be performed on the downloaded object. */
+  public boolean shouldValidate(HttpResponse response) {
+    return !isTranscoded(response) && isFullObjectResponse(response);
   }
 
   private static boolean isFullObjectResponse(HttpResponse response) {

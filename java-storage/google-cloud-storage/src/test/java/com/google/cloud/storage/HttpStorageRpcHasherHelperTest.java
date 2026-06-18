@@ -17,15 +17,24 @@
 package com.google.cloud.storage;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.common.hash.Hashing;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Test;
 
 public class HttpStorageRpcHasherHelperTest {
@@ -90,5 +99,74 @@ public class HttpStorageRpcHasherHelperTest {
                 HttpStorageRpcHasherHelper.INSTANCE.validateCrc32c(
                     CONTENT_CRC32C_BASE64, wrongBytes));
     assertTrue(ex.getMessage().contains("Mismatch checksum value"));
+  }
+
+  private static HttpResponse createHttpResponse(
+      int statusCode, Map<String, String> headers, boolean returnRawInputStream)
+      throws IOException {
+    MockLowLevelHttpResponse lowLevelResponse = new MockLowLevelHttpResponse();
+    lowLevelResponse.setStatusCode(statusCode);
+    if (headers != null) {
+      for (Map.Entry<String, String> entry : headers.entrySet()) {
+        lowLevelResponse.addHeader(entry.getKey(), entry.getValue());
+      }
+    }
+    HttpTransport transport =
+        new MockHttpTransport.Builder().setLowLevelHttpResponse(lowLevelResponse).build();
+    HttpRequest request =
+        transport.createRequestFactory().buildGetRequest(new GenericUrl("http://example.com"));
+    request.setResponseReturnRawInputStream(returnRawInputStream);
+    return request.execute();
+  }
+
+  @Test
+  public void testShouldValidate_successStatus200() throws IOException {
+    HttpResponse response = createHttpResponse(200, null, true);
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_successStatus206_fullContentRange() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("Content-Range", "bytes 0-499/500");
+    HttpResponse response = createHttpResponse(206, headers, true);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_successStatus206_partialContentRange() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("Content-Range", "bytes 100-499/500");
+    HttpResponse response = createHttpResponse(206, headers, true);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_transcoded_storedEncoding() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "gzip");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_transcoded_storedLength() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-length", "123");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_decompressedByClient() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("Content-Encoding", "gzip");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
   }
 }

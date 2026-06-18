@@ -863,9 +863,11 @@ public class HttpStorageRpc implements StorageRpc {
       }
       HttpResponse response = getRequest.executeMedia();
       ByteArrayOutputStream out = new ByteArrayOutputStream();
-      response.download(out);
+      boolean shouldValidate = HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response);
+      OutputStream activeStream = HttpStorageRpcHasherHelper.INSTANCE.wrap(out, shouldValidate);
+      response.download(activeStream);
       byte[] content = out.toByteArray();
-      HttpStorageRpcHasherHelper.INSTANCE.validate(response, content);
+      HttpStorageRpcHasherHelper.INSTANCE.validate(response, activeStream);
       return content;
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
@@ -924,14 +926,10 @@ public class HttpStorageRpc implements StorageRpc {
       MediaHttpDownloader mediaHttpDownloader = req.getMediaHttpDownloader();
       mediaHttpDownloader.setDirectDownloadEnabled(true);
 
-      // Check if this is a full object download (no Range header set or Range header starting at 0)
-      boolean isFullObjectDownload =
-          HttpStorageRpcHasherHelper.isRangeZeroOrNull(req.getRequestHeaders().getRange());
-
-      OutputStream activeStream =
-          HttpStorageRpcHasherHelper.INSTANCE.wrap(outputStream, isFullObjectDownload);
-
       HttpResponse response = req.executeMedia();
+      boolean shouldValidate = HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response);
+      OutputStream activeStream =
+          HttpStorageRpcHasherHelper.INSTANCE.wrap(outputStream, shouldValidate);
       response.download(activeStream);
       // Validate checksum
       HttpStorageRpcHasherHelper.INSTANCE.validate(response, activeStream);
