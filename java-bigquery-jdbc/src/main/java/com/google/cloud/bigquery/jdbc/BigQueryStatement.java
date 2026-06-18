@@ -1378,10 +1378,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       DatasetInfo.Builder datasetInfoBuilder =
           DatasetInfo.newBuilder(datasetName)
               .setDefaultTableLifetime(this.querySettings.getDestinationDatasetExpirationTime());
-      if (this.connection != null
-          && this.connection.getLocation() != null
-          && !this.connection.getLocation().isEmpty()) {
-        datasetInfoBuilder.setLocation(this.connection.getLocation());
+      String location = this.connection.getLocation();
+      if (location != null && !location.isEmpty()) {
+        datasetInfoBuilder.setLocation(location);
       }
       bigQuery.create(datasetInfoBuilder.build());
     }
