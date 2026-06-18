@@ -49,9 +49,11 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -124,13 +126,12 @@ class ITCompositeTracer {
                   .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_ADDRESS);
 
-      Thread.sleep(100);
       // Verify metric name and one basic attribute server.address
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(10))
+          .pollInterval(Duration.ofMillis(100))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> actualMetrics = metricReader.collectAllMetrics();
-      for (int i = 0; i < 10 && actualMetrics.isEmpty(); i++) {
-        Thread.sleep(1000L);
-        actualMetrics = metricReader.collectAllMetrics();
-      }
 
       assertThat(actualMetrics).isNotEmpty();
       MetricData metricData =

@@ -63,6 +63,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.Collection;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -106,7 +107,10 @@ class ITOtelGoldenMetrics {
       // This is implemented by adding a TraceFinisher to ApiFuture as a callback in
       // TracedUnaryCallable,
       // which could be executed in a different thread.
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -192,7 +196,10 @@ class ITOtelGoldenMetrics {
           UnavailableException.class,
           () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -224,7 +231,10 @@ class ITOtelGoldenMetrics {
 
       client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -366,7 +376,10 @@ class ITOtelGoldenMetrics {
           UnavailableException.class,
           () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -415,7 +428,10 @@ class ITOtelGoldenMetrics {
           Exception.class,
           () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -458,7 +474,10 @@ class ITOtelGoldenMetrics {
           Exception.class,
           () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).isNotEmpty();
 
@@ -538,7 +557,10 @@ class ITOtelGoldenMetrics {
 
       assertThat(attemptCount.get()).isEqualTo(3);
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).hasSize(1);
 
@@ -709,7 +731,10 @@ class ITOtelGoldenMetrics {
 
       assertThat(requestCount.get()).isEqualTo(3);
 
-      Thread.sleep(100);
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .pollInterval(Duration.ofMillis(10))
+          .until(() -> !metricReader.collectAllMetrics().isEmpty());
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).hasSize(1);
 
