@@ -261,6 +261,9 @@
             },
             "UpdateReferenceList": {
               "methods": ["updateReferenceList", "updateReferenceList", "updateReferenceListCallable"]
+            },
+            "VerifyReferenceList": {
+              "methods": ["verifyReferenceList", "verifyReferenceListCallable"]
             }
           }
         }
@@ -306,6 +309,21 @@
             },
             "UpdateRuleDeployment": {
               "methods": ["updateRuleDeployment", "updateRuleDeployment", "updateRuleDeploymentCallable"]
+            },
+            "VerifyRuleText": {
+              "methods": ["verifyRuleText", "verifyRuleText", "verifyRuleText", "verifyRuleTextCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RuleExecutionErrorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RuleExecutionErrorServiceClient",
+          "rpcs": {
+            "ListRuleExecutionErrors": {
+              "methods": ["listRuleExecutionErrors", "listRuleExecutionErrors", "listRuleExecutionErrors", "listRuleExecutionErrorsPagedCallable", "listRuleExecutionErrorsCallable"]
             }
           }
         }
