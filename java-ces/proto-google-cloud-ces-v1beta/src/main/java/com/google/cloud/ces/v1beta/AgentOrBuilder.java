@@ -1266,5 +1266,67 @@ public interface AgentOrBuilder
    */
   com.google.cloud.ces.v1beta.TransferRuleOrBuilder getTransferRulesOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the validationErrors.
+   */
+  java.util.List<java.lang.String> getValidationErrorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of validationErrors.
+   */
+  int getValidationErrorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The validationErrors at the given index.
+   */
+  java.lang.String getValidationErrors(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or errors in the agent that may affect agent
+   * quality.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validationErrors at the given index.
+   */
+  com.google.protobuf.ByteString getValidationErrorsBytes(int index);
+
   com.google.cloud.ces.v1beta.Agent.AgentTypeCase getAgentTypeCase();
 }

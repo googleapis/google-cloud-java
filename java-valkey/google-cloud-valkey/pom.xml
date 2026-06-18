@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-valkey</artifactId>
-  <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
+  <version>0.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
   <packaging>jar</packaging>
   <name>Google Memorystore API</name>
   <description>Memorystore API Memorystore for Valkey is a fully managed Valkey Cluster service for Google Cloud.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-valkey-parent</artifactId>
-    <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
+    <version>0.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-valkey</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-valkey-v1</artifactId>
@@ -49,6 +50,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-valkey-v1beta</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -80,6 +82,7 @@
       <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-valkey-v1</artifactId>
@@ -90,6 +93,7 @@
       <artifactId>grpc-google-cloud-valkey-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>

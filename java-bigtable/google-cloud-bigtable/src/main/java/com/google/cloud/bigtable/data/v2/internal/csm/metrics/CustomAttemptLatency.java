@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm.metrics;
 
 import com.google.bigtable.v2.ClusterInformation;
 import com.google.bigtable.v2.PeerInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
@@ -33,7 +34,7 @@ import javax.annotation.Nullable;
  * exported as a custom metric.
  */
 public class CustomAttemptLatency extends MetricWrapper<CustomSchema> {
-  private static final String NAME = "bigtable.custom.attempt_latencies";
+  private static final String NAME = MetricsImpl.CUSTOM_METRIC_PREFIX + ".attempt_latencies";
 
   public CustomAttemptLatency() {
     super(CustomSchema.INSTANCE, NAME);

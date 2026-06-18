@@ -110,7 +110,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
    * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2481
+   *     See google/container/v1/cluster_service.proto;l=2503
    * @return The enableLegacyLustrePort.
    */
   @java.lang.Override
@@ -571,7 +571,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2503
      * @return The enableLegacyLustrePort.
      */
     @java.lang.Override
@@ -600,7 +600,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2503
      * @param value The enableLegacyLustrePort to set.
      * @return This builder for chaining.
      */
@@ -633,7 +633,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2481
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2503
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

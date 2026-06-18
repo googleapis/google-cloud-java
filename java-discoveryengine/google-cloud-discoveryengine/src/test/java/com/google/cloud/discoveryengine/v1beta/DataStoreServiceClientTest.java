@@ -102,14 +102,25 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setNaturalLanguageQueryUnderstandingConfig(
                 NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
             .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -170,14 +181,25 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setNaturalLanguageQueryUnderstandingConfig(
                 NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
             .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -238,14 +260,25 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setNaturalLanguageQueryUnderstandingConfig(
                 NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
             .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -294,14 +327,25 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setNaturalLanguageQueryUnderstandingConfig(
                 NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
             .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -522,14 +566,25 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setAdvancedSiteSearchConfig(AdvancedSiteSearchConfig.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
             .setNaturalLanguageQueryUnderstandingConfig(
                 NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setCmekConfig(CmekConfig.newBuilder().build())
             .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setAclEnabled(true)
             .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
             .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
+            .setIdentityMappingStore(
+                IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
+                    .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 

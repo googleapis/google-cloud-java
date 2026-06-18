@@ -42,6 +42,14 @@ for library in s.get_staging_dirs():
     if os.path.exists('owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java'):
         os.remove('owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java')
     s.replace(f'{library}/**/BaseBigtable*AdminClient.java', 'public static final BaseBigtable(.*)AdminClient create\\(', 'protected static BaseBigtable\\1AdminClient create(')
+
+    # Remove the 'final' modifier from the close() method in the Base Admin clients
+    # This allows our handwritten wrappers to override close() and clean up custom executors.
+    s.replace(
+        f"{library}/**/BaseBigtable*AdminClient.java",
+        r"public final void close\(\) \{",
+        r"public void close() {"
+    )
     s.move(library)
 s.remove_staging_dirs()
 java.common_templates(

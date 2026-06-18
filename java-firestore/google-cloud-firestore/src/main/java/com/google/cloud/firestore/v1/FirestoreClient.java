@@ -1149,7 +1149,10 @@ public class FirestoreClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
    *   ExecutePipelineRequest request =
-   *       ExecutePipelineRequest.newBuilder().setDatabase("database1789464955").build();
+   *       ExecutePipelineRequest.newBuilder()
+   *           .setDatabase("database1789464955")
+   *           .setAutoCommitTransaction(true)
+   *           .build();
    *   ServerStream<ExecutePipelineResponse> stream =
    *       firestoreClient.executePipelineCallable().call(request);
    *   for (ExecutePipelineResponse response : stream) {
@@ -1404,6 +1407,8 @@ public class FirestoreClient implements BackgroundResource {
    * @param parent Required. The parent document. In the format:
    *     `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example:
    *     `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
+   *     <p>Use `projects/{project_id}/databases/{database_id}/documents` to list top-level
+   *     collections.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCollectionIdsPagedResponse listCollectionIds(String parent) {

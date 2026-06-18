@@ -54,6 +54,7 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
   private PartnerLink() {
     name_ = "";
     partnerLinkId_ = "";
+    featureSet_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -300,6 +301,186 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
         : partnerAccount_;
   }
 
+  public static final int FEATURE_SET_FIELD_NUMBER = 5;
+  private int featureSet_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The set of features supported for the partner link.
+   * If not specified, the system behavior defaults to
+   * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for featureSet.
+   */
+  @java.lang.Override
+  public int getFeatureSetValue() {
+    return featureSet_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The set of features supported for the partner link.
+   * If not specified, the system behavior defaults to
+   * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The featureSet.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.FeatureSet getFeatureSet() {
+    com.google.ads.datamanager.v1.FeatureSet result =
+        com.google.ads.datamanager.v1.FeatureSet.forNumber(featureSet_);
+    return result == null ? com.google.ads.datamanager.v1.FeatureSet.UNRECOGNIZED : result;
+  }
+
+  public static final int PARTNER_CUSTOMER_ACCOUNT_FIELD_NUMBER = 6;
+  private com.google.ads.datamanager.v1.PartnerCustomerAccount partnerCustomerAccount_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer account in the partner system.
+   * This is required for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+   * feature set.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the partnerCustomerAccount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartnerCustomerAccount() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer account in the partner system.
+   * This is required for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+   * feature set.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The partnerCustomerAccount.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.PartnerCustomerAccount getPartnerCustomerAccount() {
+    return partnerCustomerAccount_ == null
+        ? com.google.ads.datamanager.v1.PartnerCustomerAccount.getDefaultInstance()
+        : partnerCustomerAccount_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer account in the partner system.
+   * This is required for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+   * feature set.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.PartnerCustomerAccountOrBuilder
+      getPartnerCustomerAccountOrBuilder() {
+    return partnerCustomerAccount_ == null
+        ? com.google.ads.datamanager.v1.PartnerCustomerAccount.getDefaultInstance()
+        : partnerCustomerAccount_;
+  }
+
+  public static final int PARTNER_LINK_METADATA_FIELD_NUMBER = 7;
+  private com.google.ads.datamanager.v1.PartnerLinkMetadata partnerLinkMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata associated with the partner link.
+   * This is optional and only accepted for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the partnerLinkMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartnerLinkMetadata() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata associated with the partner link.
+   * This is optional and only accepted for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The partnerLinkMetadata.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.PartnerLinkMetadata getPartnerLinkMetadata() {
+    return partnerLinkMetadata_ == null
+        ? com.google.ads.datamanager.v1.PartnerLinkMetadata.getDefaultInstance()
+        : partnerLinkMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata associated with the partner link.
+   * This is optional and only accepted for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.PartnerLinkMetadataOrBuilder
+      getPartnerLinkMetadataOrBuilder() {
+    return partnerLinkMetadata_ == null
+        ? com.google.ads.datamanager.v1.PartnerLinkMetadata.getDefaultInstance()
+        : partnerLinkMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -326,6 +507,16 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getPartnerAccount());
     }
+    if (featureSet_
+        != com.google.ads.datamanager.v1.FeatureSet.FEATURE_SET_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, featureSet_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(6, getPartnerCustomerAccount());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getPartnerLinkMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -346,6 +537,17 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPartnerAccount());
+    }
+    if (featureSet_
+        != com.google.ads.datamanager.v1.FeatureSet.FEATURE_SET_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, featureSet_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPartnerCustomerAccount());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPartnerLinkMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -373,6 +575,15 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
     if (hasPartnerAccount()) {
       if (!getPartnerAccount().equals(other.getPartnerAccount())) return false;
     }
+    if (featureSet_ != other.featureSet_) return false;
+    if (hasPartnerCustomerAccount() != other.hasPartnerCustomerAccount()) return false;
+    if (hasPartnerCustomerAccount()) {
+      if (!getPartnerCustomerAccount().equals(other.getPartnerCustomerAccount())) return false;
+    }
+    if (hasPartnerLinkMetadata() != other.hasPartnerLinkMetadata()) return false;
+    if (hasPartnerLinkMetadata()) {
+      if (!getPartnerLinkMetadata().equals(other.getPartnerLinkMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -395,6 +606,16 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
     if (hasPartnerAccount()) {
       hash = (37 * hash) + PARTNER_ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getPartnerAccount().hashCode();
+    }
+    hash = (37 * hash) + FEATURE_SET_FIELD_NUMBER;
+    hash = (53 * hash) + featureSet_;
+    if (hasPartnerCustomerAccount()) {
+      hash = (37 * hash) + PARTNER_CUSTOMER_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPartnerCustomerAccount().hashCode();
+    }
+    if (hasPartnerLinkMetadata()) {
+      hash = (37 * hash) + PARTNER_LINK_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getPartnerLinkMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -539,6 +760,8 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetOwningAccountFieldBuilder();
         internalGetPartnerAccountFieldBuilder();
+        internalGetPartnerCustomerAccountFieldBuilder();
+        internalGetPartnerLinkMetadataFieldBuilder();
       }
     }
 
@@ -557,6 +780,17 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
       if (partnerAccountBuilder_ != null) {
         partnerAccountBuilder_.dispose();
         partnerAccountBuilder_ = null;
+      }
+      featureSet_ = 0;
+      partnerCustomerAccount_ = null;
+      if (partnerCustomerAccountBuilder_ != null) {
+        partnerCustomerAccountBuilder_.dispose();
+        partnerCustomerAccountBuilder_ = null;
+      }
+      partnerLinkMetadata_ = null;
+      if (partnerLinkMetadataBuilder_ != null) {
+        partnerLinkMetadataBuilder_.dispose();
+        partnerLinkMetadataBuilder_ = null;
       }
       return this;
     }
@@ -611,6 +845,23 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
             partnerAccountBuilder_ == null ? partnerAccount_ : partnerAccountBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.featureSet_ = featureSet_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.partnerCustomerAccount_ =
+            partnerCustomerAccountBuilder_ == null
+                ? partnerCustomerAccount_
+                : partnerCustomerAccountBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.partnerLinkMetadata_ =
+            partnerLinkMetadataBuilder_ == null
+                ? partnerLinkMetadata_
+                : partnerLinkMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -641,6 +892,15 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPartnerAccount()) {
         mergePartnerAccount(other.getPartnerAccount());
+      }
+      if (other.featureSet_ != 0) {
+        setFeatureSetValue(other.getFeatureSetValue());
+      }
+      if (other.hasPartnerCustomerAccount()) {
+        mergePartnerCustomerAccount(other.getPartnerCustomerAccount());
+      }
+      if (other.hasPartnerLinkMetadata()) {
+        mergePartnerLinkMetadata(other.getPartnerLinkMetadata());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -694,6 +954,27 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                featureSet_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    internalGetPartnerCustomerAccountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetPartnerLinkMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1371,6 +1652,601 @@ public final class PartnerLink extends com.google.protobuf.GeneratedMessage
         partnerAccount_ = null;
       }
       return partnerAccountBuilder_;
+    }
+
+    private int featureSet_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The set of features supported for the partner link.
+     * If not specified, the system behavior defaults to
+     * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for featureSet.
+     */
+    @java.lang.Override
+    public int getFeatureSetValue() {
+      return featureSet_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The set of features supported for the partner link.
+     * If not specified, the system behavior defaults to
+     * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for featureSet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeatureSetValue(int value) {
+      featureSet_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The set of features supported for the partner link.
+     * If not specified, the system behavior defaults to
+     * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The featureSet.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.FeatureSet getFeatureSet() {
+      com.google.ads.datamanager.v1.FeatureSet result =
+          com.google.ads.datamanager.v1.FeatureSet.forNumber(featureSet_);
+      return result == null ? com.google.ads.datamanager.v1.FeatureSet.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The set of features supported for the partner link.
+     * If not specified, the system behavior defaults to
+     * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The featureSet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeatureSet(com.google.ads.datamanager.v1.FeatureSet value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      featureSet_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The set of features supported for the partner link.
+     * If not specified, the system behavior defaults to
+     * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFeatureSet() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      featureSet_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.datamanager.v1.PartnerCustomerAccount partnerCustomerAccount_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.PartnerCustomerAccount,
+            com.google.ads.datamanager.v1.PartnerCustomerAccount.Builder,
+            com.google.ads.datamanager.v1.PartnerCustomerAccountOrBuilder>
+        partnerCustomerAccountBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the partnerCustomerAccount field is set.
+     */
+    public boolean hasPartnerCustomerAccount() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The partnerCustomerAccount.
+     */
+    public com.google.ads.datamanager.v1.PartnerCustomerAccount getPartnerCustomerAccount() {
+      if (partnerCustomerAccountBuilder_ == null) {
+        return partnerCustomerAccount_ == null
+            ? com.google.ads.datamanager.v1.PartnerCustomerAccount.getDefaultInstance()
+            : partnerCustomerAccount_;
+      } else {
+        return partnerCustomerAccountBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPartnerCustomerAccount(
+        com.google.ads.datamanager.v1.PartnerCustomerAccount value) {
+      if (partnerCustomerAccountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partnerCustomerAccount_ = value;
+      } else {
+        partnerCustomerAccountBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPartnerCustomerAccount(
+        com.google.ads.datamanager.v1.PartnerCustomerAccount.Builder builderForValue) {
+      if (partnerCustomerAccountBuilder_ == null) {
+        partnerCustomerAccount_ = builderForValue.build();
+      } else {
+        partnerCustomerAccountBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePartnerCustomerAccount(
+        com.google.ads.datamanager.v1.PartnerCustomerAccount value) {
+      if (partnerCustomerAccountBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && partnerCustomerAccount_ != null
+            && partnerCustomerAccount_
+                != com.google.ads.datamanager.v1.PartnerCustomerAccount.getDefaultInstance()) {
+          getPartnerCustomerAccountBuilder().mergeFrom(value);
+        } else {
+          partnerCustomerAccount_ = value;
+        }
+      } else {
+        partnerCustomerAccountBuilder_.mergeFrom(value);
+      }
+      if (partnerCustomerAccount_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPartnerCustomerAccount() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      partnerCustomerAccount_ = null;
+      if (partnerCustomerAccountBuilder_ != null) {
+        partnerCustomerAccountBuilder_.dispose();
+        partnerCustomerAccountBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.PartnerCustomerAccount.Builder
+        getPartnerCustomerAccountBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetPartnerCustomerAccountFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.PartnerCustomerAccountOrBuilder
+        getPartnerCustomerAccountOrBuilder() {
+      if (partnerCustomerAccountBuilder_ != null) {
+        return partnerCustomerAccountBuilder_.getMessageOrBuilder();
+      } else {
+        return partnerCustomerAccount_ == null
+            ? com.google.ads.datamanager.v1.PartnerCustomerAccount.getDefaultInstance()
+            : partnerCustomerAccount_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The customer account in the partner system.
+     * This is required for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+     * feature set.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.PartnerCustomerAccount,
+            com.google.ads.datamanager.v1.PartnerCustomerAccount.Builder,
+            com.google.ads.datamanager.v1.PartnerCustomerAccountOrBuilder>
+        internalGetPartnerCustomerAccountFieldBuilder() {
+      if (partnerCustomerAccountBuilder_ == null) {
+        partnerCustomerAccountBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.PartnerCustomerAccount,
+                com.google.ads.datamanager.v1.PartnerCustomerAccount.Builder,
+                com.google.ads.datamanager.v1.PartnerCustomerAccountOrBuilder>(
+                getPartnerCustomerAccount(), getParentForChildren(), isClean());
+        partnerCustomerAccount_ = null;
+      }
+      return partnerCustomerAccountBuilder_;
+    }
+
+    private com.google.ads.datamanager.v1.PartnerLinkMetadata partnerLinkMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.PartnerLinkMetadata,
+            com.google.ads.datamanager.v1.PartnerLinkMetadata.Builder,
+            com.google.ads.datamanager.v1.PartnerLinkMetadataOrBuilder>
+        partnerLinkMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the partnerLinkMetadata field is set.
+     */
+    public boolean hasPartnerLinkMetadata() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The partnerLinkMetadata.
+     */
+    public com.google.ads.datamanager.v1.PartnerLinkMetadata getPartnerLinkMetadata() {
+      if (partnerLinkMetadataBuilder_ == null) {
+        return partnerLinkMetadata_ == null
+            ? com.google.ads.datamanager.v1.PartnerLinkMetadata.getDefaultInstance()
+            : partnerLinkMetadata_;
+      } else {
+        return partnerLinkMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPartnerLinkMetadata(com.google.ads.datamanager.v1.PartnerLinkMetadata value) {
+      if (partnerLinkMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partnerLinkMetadata_ = value;
+      } else {
+        partnerLinkMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPartnerLinkMetadata(
+        com.google.ads.datamanager.v1.PartnerLinkMetadata.Builder builderForValue) {
+      if (partnerLinkMetadataBuilder_ == null) {
+        partnerLinkMetadata_ = builderForValue.build();
+      } else {
+        partnerLinkMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePartnerLinkMetadata(
+        com.google.ads.datamanager.v1.PartnerLinkMetadata value) {
+      if (partnerLinkMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && partnerLinkMetadata_ != null
+            && partnerLinkMetadata_
+                != com.google.ads.datamanager.v1.PartnerLinkMetadata.getDefaultInstance()) {
+          getPartnerLinkMetadataBuilder().mergeFrom(value);
+        } else {
+          partnerLinkMetadata_ = value;
+        }
+      } else {
+        partnerLinkMetadataBuilder_.mergeFrom(value);
+      }
+      if (partnerLinkMetadata_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPartnerLinkMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      partnerLinkMetadata_ = null;
+      if (partnerLinkMetadataBuilder_ != null) {
+        partnerLinkMetadataBuilder_.dispose();
+        partnerLinkMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.PartnerLinkMetadata.Builder
+        getPartnerLinkMetadataBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetPartnerLinkMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.PartnerLinkMetadataOrBuilder
+        getPartnerLinkMetadataOrBuilder() {
+      if (partnerLinkMetadataBuilder_ != null) {
+        return partnerLinkMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return partnerLinkMetadata_ == null
+            ? com.google.ads.datamanager.v1.PartnerLinkMetadata.getDefaultInstance()
+            : partnerLinkMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata associated with the partner link.
+     * This is optional and only accepted for partner links with the
+     * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.PartnerLinkMetadata,
+            com.google.ads.datamanager.v1.PartnerLinkMetadata.Builder,
+            com.google.ads.datamanager.v1.PartnerLinkMetadataOrBuilder>
+        internalGetPartnerLinkMetadataFieldBuilder() {
+      if (partnerLinkMetadataBuilder_ == null) {
+        partnerLinkMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.PartnerLinkMetadata,
+                com.google.ads.datamanager.v1.PartnerLinkMetadata.Builder,
+                com.google.ads.datamanager.v1.PartnerLinkMetadataOrBuilder>(
+                getPartnerLinkMetadata(), getParentForChildren(), isClean());
+        partnerLinkMetadata_ = null;
+      }
+      return partnerLinkMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.PartnerLink)

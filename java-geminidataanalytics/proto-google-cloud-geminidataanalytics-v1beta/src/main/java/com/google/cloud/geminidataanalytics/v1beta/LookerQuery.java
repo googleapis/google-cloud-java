@@ -60,6 +60,8 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     filters_ = java.util.Collections.emptyList();
     sorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     limit_ = "";
+    queryId_ = "";
+    clientId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -112,10 +114,27 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The value for the field to filter on.
+     * Optional. The value for the field to filter on.
+     * Optional so we can preserve the default value as an empty
+     * string, important to get a valid and working Looker Explore url.
      * </pre>
      *
-     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value for the field to filter on.
+     * Optional so we can preserve the default value as an empty
+     * string, important to get a valid and working Looker Explore url.
+     * </pre>
+     *
+     * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -125,10 +144,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The value for the field to filter on.
+     * Optional. The value for the field to filter on.
+     * Optional so we can preserve the default value as an empty
+     * string, important to get a valid and working Looker Explore url.
      * </pre>
      *
-     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -185,6 +206,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
               com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Filter.Builder.class);
     }
 
+    private int bitField0_;
     public static final int FIELD_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -247,10 +269,30 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The value for the field to filter on.
+     * Optional. The value for the field to filter on.
+     * Optional so we can preserve the default value as an empty
+     * string, important to get a valid and working Looker Explore url.
      * </pre>
      *
-     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value for the field to filter on.
+     * Optional so we can preserve the default value as an empty
+     * string, important to get a valid and working Looker Explore url.
+     * </pre>
+     *
+     * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -271,10 +313,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The value for the field to filter on.
+     * Optional. The value for the field to filter on.
+     * Optional so we can preserve the default value as an empty
+     * string, important to get a valid and working Looker Explore url.
      * </pre>
      *
-     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -308,7 +352,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(field_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, field_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
       }
       getUnknownFields().writeTo(output);
@@ -323,7 +367,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(field_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, field_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -343,7 +387,10 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Filter) obj;
 
       if (!getField().equals(other.getField())) return false;
-      if (!getValue().equals(other.getValue())) return false;
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (!getValue().equals(other.getValue())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -357,8 +404,10 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + FIELD_FIELD_NUMBER;
       hash = (53 * hash) + getField().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -543,9 +592,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.field_ = field_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.value_ = value_;
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -568,7 +620,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getValue().isEmpty()) {
+        if (other.hasValue()) {
           value_ = other.value_;
           bitField0_ |= 0x00000002;
           onChanged();
@@ -747,10 +799,29 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The value for the field to filter on.
+       * Optional. The value for the field to filter on.
+       * Optional so we can preserve the default value as an empty
+       * string, important to get a valid and working Looker Explore url.
        * </pre>
        *
-       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the value field is set.
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value for the field to filter on.
+       * Optional so we can preserve the default value as an empty
+       * string, important to get a valid and working Looker Explore url.
+       * </pre>
+       *
+       * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The value.
        */
@@ -770,10 +841,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The value for the field to filter on.
+       * Optional. The value for the field to filter on.
+       * Optional so we can preserve the default value as an empty
+       * string, important to get a valid and working Looker Explore url.
        * </pre>
        *
-       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for value.
        */
@@ -793,10 +866,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The value for the field to filter on.
+       * Optional. The value for the field to filter on.
+       * Optional so we can preserve the default value as an empty
+       * string, important to get a valid and working Looker Explore url.
        * </pre>
        *
-       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The value to set.
        * @return This builder for chaining.
@@ -815,10 +890,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The value for the field to filter on.
+       * Optional. The value for the field to filter on.
+       * Optional so we can preserve the default value as an empty
+       * string, important to get a valid and working Looker Explore url.
        * </pre>
        *
-       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -833,10 +910,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The value for the field to filter on.
+       * Optional. The value for the field to filter on.
+       * Optional so we can preserve the default value as an empty
+       * string, important to get a valid and working Looker Explore url.
        * </pre>
        *
-       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for value to set.
        * @return This builder for chaining.
@@ -1308,6 +1387,156 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int QUERY_ID_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary identifier for the query resource in Looker, used for
+   * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+   * resource.
+   * </pre>
+   *
+   * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the queryId field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueryId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary identifier for the query resource in Looker, used for
+   * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+   * resource.
+   * </pre>
+   *
+   * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The queryId.
+   */
+  @java.lang.Override
+  public java.lang.String getQueryId() {
+    java.lang.Object ref = queryId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      queryId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary identifier for the query resource in Looker, used for
+   * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+   * resource.
+   * </pre>
+   *
+   * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for queryId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQueryIdBytes() {
+    java.lang.Object ref = queryId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      queryId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_ID_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The short alphanumeric identifier for the query, used for share
+   * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+   * in the Looker API `Query` resource.
+   * </pre>
+   *
+   * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the clientId field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The short alphanumeric identifier for the query, used for share
+   * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+   * in the Looker API `Query` resource.
+   * </pre>
+   *
+   * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clientId.
+   */
+  @java.lang.Override
+  public java.lang.String getClientId() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The short alphanumeric identifier for the query, used for share
+   * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+   * in the Looker API `Query` resource.
+   * </pre>
+   *
+   * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clientId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientIdBytes() {
+    java.lang.Object ref = clientId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clientId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1339,6 +1568,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, limit_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, queryId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, clientId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1377,6 +1612,12 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, limit_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, queryId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, clientId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1401,6 +1642,14 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (hasLimit() != other.hasLimit()) return false;
     if (hasLimit()) {
       if (!getLimit().equals(other.getLimit())) return false;
+    }
+    if (hasQueryId() != other.hasQueryId()) return false;
+    if (hasQueryId()) {
+      if (!getQueryId().equals(other.getQueryId())) return false;
+    }
+    if (hasClientId() != other.hasClientId()) return false;
+    if (hasClientId()) {
+      if (!getClientId().equals(other.getClientId())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1432,6 +1681,14 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (hasLimit()) {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit().hashCode();
+    }
+    if (hasQueryId()) {
+      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryId().hashCode();
+    }
+    if (hasClientId()) {
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1588,6 +1845,8 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000008);
       sorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       limit_ = "";
+      queryId_ = "";
+      clientId_ = "";
       return this;
     }
 
@@ -1656,6 +1915,14 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.limit_ = limit_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.queryId_ = queryId_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.clientId_ = clientId_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1735,6 +2002,16 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasQueryId()) {
+        queryId_ = other.queryId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasClientId()) {
+        clientId_ = other.clientId_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1807,6 +2084,18 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 82:
+              {
+                queryId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
+            case 90:
+              {
+                clientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2956,6 +3245,282 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       limit_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object queryId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary identifier for the query resource in Looker, used for
+     * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+     * resource.
+     * </pre>
+     *
+     * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the queryId field is set.
+     */
+    public boolean hasQueryId() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary identifier for the query resource in Looker, used for
+     * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+     * resource.
+     * </pre>
+     *
+     * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The queryId.
+     */
+    public java.lang.String getQueryId() {
+      java.lang.Object ref = queryId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queryId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary identifier for the query resource in Looker, used for
+     * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+     * resource.
+     * </pre>
+     *
+     * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for queryId.
+     */
+    public com.google.protobuf.ByteString getQueryIdBytes() {
+      java.lang.Object ref = queryId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary identifier for the query resource in Looker, used for
+     * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+     * resource.
+     * </pre>
+     *
+     * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The queryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      queryId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary identifier for the query resource in Looker, used for
+     * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+     * resource.
+     * </pre>
+     *
+     * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQueryId() {
+      queryId_ = getDefaultInstance().getQueryId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary identifier for the query resource in Looker, used for
+     * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+     * resource.
+     * </pre>
+     *
+     * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for queryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      queryId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The short alphanumeric identifier for the query, used for share
+     * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+     * in the Looker API `Query` resource.
+     * </pre>
+     *
+     * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the clientId field is set.
+     */
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The short alphanumeric identifier for the query, used for share
+     * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+     * in the Looker API `Query` resource.
+     * </pre>
+     *
+     * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clientId.
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The short alphanumeric identifier for the query, used for share
+     * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+     * in the Looker API `Query` resource.
+     * </pre>
+     *
+     * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clientId.
+     */
+    public com.google.protobuf.ByteString getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The short alphanumeric identifier for the query, used for share
+     * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+     * in the Looker API `Query` resource.
+     * </pre>
+     *
+     * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      clientId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The short alphanumeric identifier for the query, used for share
+     * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+     * in the Looker API `Query` resource.
+     * </pre>
+     *
+     * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientId() {
+      clientId_ = getDefaultInstance().getClientId();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The short alphanumeric identifier for the query, used for share
+     * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+     * in the Looker API `Query` resource.
+     * </pre>
+     *
+     * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for clientId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      clientId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

@@ -91,7 +91,10 @@ public interface IcebergCatalogOrBuilder
    *
    * <pre>
    * Output only. The service account used for credential vending, output only.
-   * Might be empty if Credential vending was never enabled for the catalog.
+   * Might be empty if Credential vending was never enabled for the catalog. For
+   * federated catalogs, the service account will be always provisioned and will
+   * be used to access the remote Iceberg REST Catalog using access to Secret
+   * Manager secret or identity federation.
    * </pre>
    *
    * <code>
@@ -107,7 +110,10 @@ public interface IcebergCatalogOrBuilder
    *
    * <pre>
    * Output only. The service account used for credential vending, output only.
-   * Might be empty if Credential vending was never enabled for the catalog.
+   * Might be empty if Credential vending was never enabled for the catalog. For
+   * federated catalogs, the service account will be always provisioned and will
+   * be used to access the remote Iceberg REST Catalog using access to Secret
+   * Manager secret or identity federation.
    * </pre>
    *
    * <code>
@@ -117,6 +123,38 @@ public interface IcebergCatalogOrBuilder
    * @return The bytes for biglakeServiceAccount.
    */
   com.google.protobuf.ByteString getBiglakeServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique ID of the service account. This is used for
+   * federation scenarios.
+   * </pre>
+   *
+   * <code>
+   * string biglake_service_account_unique_id = 14 [json_name = "biglake-service-account-id", (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The biglakeServiceAccountUniqueId.
+   */
+  java.lang.String getBiglakeServiceAccountUniqueId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unique ID of the service account. This is used for
+   * federation scenarios.
+   * </pre>
+   *
+   * <code>
+   * string biglake_service_account_unique_id = 14 [json_name = "biglake-service-account-id", (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for biglakeServiceAccountUniqueId.
+   */
+  com.google.protobuf.ByteString getBiglakeServiceAccountUniqueIdBytes();
 
   /**
    *
@@ -152,8 +190,16 @@ public interface IcebergCatalogOrBuilder
    *
    *
    * <pre>
-   * Optional. The default location for the catalog. For the Google Cloud
-   * Storage Bucket catalog this is output only.
+   * Optional. The default storage location for the catalog, e.g.,
+   * `gs://my-bucket`. For Google Cloud Storage bucket catalogs, this is output
+   * only.
+   *
+   * For BigLake catalogs, this field must be provided and point to a
+   * Google Cloud Storage bucket or a path within that bucket. This path serves
+   * as the base directory for constructing the full path to a table's data and
+   * metadata directories when a location is not specified at the namespace or
+   * table level. The full path is formed by appending the namespace and table
+   * identifiers to the default location.
    * </pre>
    *
    * <code>
@@ -168,8 +214,16 @@ public interface IcebergCatalogOrBuilder
    *
    *
    * <pre>
-   * Optional. The default location for the catalog. For the Google Cloud
-   * Storage Bucket catalog this is output only.
+   * Optional. The default storage location for the catalog, e.g.,
+   * `gs://my-bucket`. For Google Cloud Storage bucket catalogs, this is output
+   * only.
+   *
+   * For BigLake catalogs, this field must be provided and point to a
+   * Google Cloud Storage bucket or a path within that bucket. This path serves
+   * as the base directory for constructing the full path to a table's data and
+   * metadata directories when a location is not specified at the namespace or
+   * table level. The full path is formed by appending the namespace and table
+   * identifiers to the default location.
    * </pre>
    *
    * <code>
@@ -184,71 +238,83 @@ public interface IcebergCatalogOrBuilder
    *
    *
    * <pre>
-   * Output only. The GCP region(s) where the catalog metadata is stored.
-   * This will contain one value for all locations, except for the catalogs that
-   * are configured to use custom dual region buckets.
+   * Output only. The GCP region(s) of the default location's bucket, e.g.
+   * `us-central1`, `nam4` or `us`. This will contain one value for all
+   * locations, except for the catalogs that are configured to use custom dual
+   * region buckets, in which case it will contain the two regions of the
+   * bucket. The region(s) of this field should be in the jurisdiction of or
+   * nearby the primary location of the catalog.
    * </pre>
    *
    * <code>
-   * repeated string catalog_regions = 6 [json_name = "catalog-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated string storage_regions = 10 [json_name = "storage-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return A list containing the catalogRegions.
+   * @return A list containing the storageRegions.
    */
-  java.util.List<java.lang.String> getCatalogRegionsList();
+  java.util.List<java.lang.String> getStorageRegionsList();
 
   /**
    *
    *
    * <pre>
-   * Output only. The GCP region(s) where the catalog metadata is stored.
-   * This will contain one value for all locations, except for the catalogs that
-   * are configured to use custom dual region buckets.
+   * Output only. The GCP region(s) of the default location's bucket, e.g.
+   * `us-central1`, `nam4` or `us`. This will contain one value for all
+   * locations, except for the catalogs that are configured to use custom dual
+   * region buckets, in which case it will contain the two regions of the
+   * bucket. The region(s) of this field should be in the jurisdiction of or
+   * nearby the primary location of the catalog.
    * </pre>
    *
    * <code>
-   * repeated string catalog_regions = 6 [json_name = "catalog-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated string storage_regions = 10 [json_name = "storage-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The count of catalogRegions.
+   * @return The count of storageRegions.
    */
-  int getCatalogRegionsCount();
+  int getStorageRegionsCount();
 
   /**
    *
    *
    * <pre>
-   * Output only. The GCP region(s) where the catalog metadata is stored.
-   * This will contain one value for all locations, except for the catalogs that
-   * are configured to use custom dual region buckets.
+   * Output only. The GCP region(s) of the default location's bucket, e.g.
+   * `us-central1`, `nam4` or `us`. This will contain one value for all
+   * locations, except for the catalogs that are configured to use custom dual
+   * region buckets, in which case it will contain the two regions of the
+   * bucket. The region(s) of this field should be in the jurisdiction of or
+   * nearby the primary location of the catalog.
    * </pre>
    *
    * <code>
-   * repeated string catalog_regions = 6 [json_name = "catalog-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated string storage_regions = 10 [json_name = "storage-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
-   * @return The catalogRegions at the given index.
+   * @return The storageRegions at the given index.
    */
-  java.lang.String getCatalogRegions(int index);
+  java.lang.String getStorageRegions(int index);
 
   /**
    *
    *
    * <pre>
-   * Output only. The GCP region(s) where the catalog metadata is stored.
-   * This will contain one value for all locations, except for the catalogs that
-   * are configured to use custom dual region buckets.
+   * Output only. The GCP region(s) of the default location's bucket, e.g.
+   * `us-central1`, `nam4` or `us`. This will contain one value for all
+   * locations, except for the catalogs that are configured to use custom dual
+   * region buckets, in which case it will contain the two regions of the
+   * bucket. The region(s) of this field should be in the jurisdiction of or
+   * nearby the primary location of the catalog.
    * </pre>
    *
    * <code>
-   * repeated string catalog_regions = 6 [json_name = "catalog-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated string storage_regions = 10 [json_name = "storage-regions", (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the catalogRegions at the given index.
+   * @return The bytes of the storageRegions at the given index.
    */
-  com.google.protobuf.ByteString getCatalogRegionsBytes(int index);
+  com.google.protobuf.ByteString getStorageRegionsBytes(int index);
 
   /**
    *
@@ -335,4 +401,211 @@ public interface IcebergCatalogOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The replicas for the catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.biglake.v1.IcebergCatalog.Replica replicas = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.biglake.v1.IcebergCatalog.Replica> getReplicasList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The replicas for the catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.biglake.v1.IcebergCatalog.Replica replicas = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.biglake.v1.IcebergCatalog.Replica getReplicas(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The replicas for the catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.biglake.v1.IcebergCatalog.Replica replicas = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getReplicasCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The replicas for the catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.biglake.v1.IcebergCatalog.Replica replicas = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.biglake.v1.IcebergCatalog.ReplicaOrBuilder>
+      getReplicasOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The replicas for the catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.biglake.v1.IcebergCatalog.Replica replicas = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.biglake.v1.IcebergCatalog.ReplicaOrBuilder getReplicasOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A user-provided description of the catalog. The description must
+   * be a UTF-8 string with a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>string description = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A user-provided description of the catalog. The description must
+   * be a UTF-8 string with a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>string description = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricted locations configuration. This field is currently only
+   * used for BigLake catalogs.
+   *
+   * If this field is unset, or if
+   * `restricted_locations_config.restricted_locations` is empty, all
+   * accessible locations are allowed. If
+   * `restricted_locations_config.restricted_locations` is not empty, only
+   * locations in `default_location` and
+   * `restricted_locations_config.restricted_locations` are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.biglake.v1.IcebergCatalog.RestrictedLocationsConfig restricted_locations_config = 15 [json_name = "restricted-locations-config", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the restrictedLocationsConfig field is set.
+   */
+  boolean hasRestrictedLocationsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricted locations configuration. This field is currently only
+   * used for BigLake catalogs.
+   *
+   * If this field is unset, or if
+   * `restricted_locations_config.restricted_locations` is empty, all
+   * accessible locations are allowed. If
+   * `restricted_locations_config.restricted_locations` is not empty, only
+   * locations in `default_location` and
+   * `restricted_locations_config.restricted_locations` are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.biglake.v1.IcebergCatalog.RestrictedLocationsConfig restricted_locations_config = 15 [json_name = "restricted-locations-config", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The restrictedLocationsConfig.
+   */
+  com.google.cloud.biglake.v1.IcebergCatalog.RestrictedLocationsConfig
+      getRestrictedLocationsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricted locations configuration. This field is currently only
+   * used for BigLake catalogs.
+   *
+   * If this field is unset, or if
+   * `restricted_locations_config.restricted_locations` is empty, all
+   * accessible locations are allowed. If
+   * `restricted_locations_config.restricted_locations` is not empty, only
+   * locations in `default_location` and
+   * `restricted_locations_config.restricted_locations` are allowed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.biglake.v1.IcebergCatalog.RestrictedLocationsConfig restricted_locations_config = 15 [json_name = "restricted-locations-config", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.biglake.v1.IcebergCatalog.RestrictedLocationsConfigOrBuilder
+      getRestrictedLocationsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for federated catalogs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions federated_catalog_options = 13 [json_name = "federated-catalog-options", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the federatedCatalogOptions field is set.
+   */
+  boolean hasFederatedCatalogOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for federated catalogs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions federated_catalog_options = 13 [json_name = "federated-catalog-options", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The federatedCatalogOptions.
+   */
+  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions getFederatedCatalogOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for federated catalogs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions federated_catalog_options = 13 [json_name = "federated-catalog-options", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptionsOrBuilder
+      getFederatedCatalogOptionsOrBuilder();
 }

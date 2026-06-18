@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-enterpriseknowledgegraph</artifactId>
-  <version>0.89.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-enterpriseknowledgegraph:current} -->
+  <version>0.90.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-enterpriseknowledgegraph:current} -->
   <packaging>jar</packaging>
   <name>Google Enterprise Knowledge Graph</name>
   <description>Enterprise Knowledge Graph Enterprise Knowledge Graph organizes siloed information into organizational knowledge, which involves consolidating, standardizing, and reconciling data in an efficient and useful way.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-enterpriseknowledgegraph-parent</artifactId>
-    <version>0.89.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-enterpriseknowledgegraph:current} -->
+    <version>0.90.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-enterpriseknowledgegraph:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-enterpriseknowledgegraph</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-enterpriseknowledgegraph-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-enterpriseknowledgegraph-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

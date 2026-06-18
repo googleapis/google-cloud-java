@@ -150,10 +150,10 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -166,7 +166,7 @@ public interface CompleteQueryRequestOrBuilder
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string user_pseudo_id = 4;</code>
+   * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The userPseudoId.
    */
@@ -176,10 +176,10 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -192,7 +192,7 @@ public interface CompleteQueryRequestOrBuilder
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string user_pseudo_id = 4;</code>
+   * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for userPseudoId.
    */

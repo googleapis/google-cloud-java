@@ -38,7 +38,9 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
+import com.google.common.hash.HashingInputStream;
 import com.google.common.io.BaseEncoding;
+import com.google.common.primitives.Ints;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import java.io.IOException;
@@ -61,6 +63,7 @@ import javax.annotation.concurrent.Immutable;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+@SuppressWarnings("UnstableApiUsage")
 class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChannel {
 
   private final ApiaryReadRequest apiaryReadRequest;
@@ -68,6 +71,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
   private final SettableApiFuture<StorageObject> result;
   private final ResultRetryAlgorithm<?> resultRetryAlgorithm;
   private final Retrier retrier;
+  private final Hasher hasher;
 
   private long position;
   private ScatteringByteChannel sbc;
@@ -77,16 +81,21 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
   // returned X-Goog-Generation header value
   private Long xGoogGeneration;
 
+  private HashingInputStream hashingInputStream;
+  private String expectedCrc32cBase64;
+
   ApiaryUnbufferedReadableByteChannel(
       ApiaryReadRequest apiaryReadRequest,
       Storage storage,
       SettableApiFuture<StorageObject> result,
       Retrier retrier,
-      ResultRetryAlgorithm<?> resultRetryAlgorithm) {
+      ResultRetryAlgorithm<?> resultRetryAlgorithm,
+      Hasher hasher) {
     this.apiaryReadRequest = apiaryReadRequest;
     this.storage = storage;
     this.result = result;
     this.retrier = retrier;
+    this.hasher = hasher;
     this.resultRetryAlgorithm =
         new BasicResultRetryAlgorithm<Object>() {
           @Override
@@ -126,6 +135,16 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
         long read = sbc.read(dsts, offset, length);
         if (read == -1) {
           returnEOF = true;
+          if (hashingInputStream != null && expectedCrc32cBase64 != null) {
+            int calculatedCrc32c = hashingInputStream.hash().asInt();
+            byte[] decoded = BaseEncoding.base64().decode(expectedCrc32cBase64);
+            int expectedVal = Ints.fromByteArray(decoded);
+
+            Crc32cValue<?> expected = Crc32cValue.of(expectedVal, 0);
+            Crc32cValue.Crc32cLengthKnown actual = Crc32cValue.of(calculatedCrc32c, 0);
+
+            hasher.validate(expected, actual);
+          }
         } else {
           totalRead += read;
         }
@@ -180,6 +199,10 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
       HttpResponse media = get.executeMedia();
       InputStream content = media.getContent();
+
+      Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(media);
+      this.expectedCrc32cBase64 = hashes.get("crc32c");
+
       if (xGoogGeneration == null) {
         HttpHeaders responseHeaders = media.getHeaders();
 
@@ -212,6 +235,14 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
             result.set(clone);
           }
         }
+      }
+
+      boolean isHasherEnabled = !(hasher instanceof Hasher.NoOpHasher);
+      boolean shouldValidate =
+          isHasherEnabled && HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(media);
+      if (shouldValidate && expectedCrc32cBase64 != null) {
+        this.hashingInputStream = new HashingInputStream(Hashing.crc32c(), content);
+        content = this.hashingInputStream;
       }
 
       ReadableByteChannel rbc = Channels.newChannel(content);

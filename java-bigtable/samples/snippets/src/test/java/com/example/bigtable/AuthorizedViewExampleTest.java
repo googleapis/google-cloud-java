@@ -23,18 +23,20 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
-import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.FamilySubsets;
-import com.google.cloud.bigtable.admin.v2.models.SubsetView;
+import com.google.bigtable.admin.v2.AuthorizedView;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListTablesRequest;
+import com.google.bigtable.admin.v2.Table;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +58,7 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
   private String tableId;
   private String authorizedViewId;
   private static BigtableDataClient dataClient;
-  private static BigtableTableAdminClient adminClient;
+  private static BigtableTableAdminClientV2 adminClient;
   private AuthorizedViewExample authorizedViewExample;
 
   @BeforeClass
@@ -65,12 +67,20 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
     dataClient = BigtableDataClient.create(settings);
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create();
+  }
+
+  private static boolean exists(String tableId) {
+    try {
+      adminClient.getTable(
+          GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(Table.View.NAME_ONLY)
+              .build());
+      return true;
+    } catch (NotFoundException e) {
+      return false;
+    }
   }
 
   @AfterClass
@@ -81,26 +91,48 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
   }
 
   @Before
-  public void setup() throws IOException {
+  public void setup() throws Exception {
     tableId = generateResourceId(TABLE_PREFIX);
     authorizedViewId = generateResourceId(AUTHORIZED_VIEW_PREFIX);
     authorizedViewExample =
         new AuthorizedViewExample(projectId, instanceId, tableId, authorizedViewId);
-    adminClient.createTable(CreateTableRequest.of(tableId).addFamily(COLUMN_FAMILY));
-    adminClient.createAuthorizedView(
-        CreateAuthorizedViewRequest.of(tableId, authorizedViewId)
-            .setAuthorizedViewType(
-                SubsetView.create()
-                    .addRowPrefix("")
-                    .setFamilySubsets(
-                        COLUMN_FAMILY, FamilySubsets.create().addQualifierPrefix(""))));
+    CreateTableRequest createTableRequest =
+        CreateTableRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId)
+            .setTableId(tableId)
+            .setTable(
+                Table.newBuilder()
+                    .putColumnFamilies(COLUMN_FAMILY, ColumnFamily.getDefaultInstance())
+                    .build())
+            .build();
+    adminClient.createTable(createTableRequest);
+
+    AuthorizedView.SubsetView subsetView =
+        AuthorizedView.SubsetView.newBuilder()
+            .addRowPrefixes(ByteString.EMPTY)
+            .putFamilySubsets(
+                COLUMN_FAMILY,
+                AuthorizedView.FamilySubsets.newBuilder()
+                    .addQualifierPrefixes(ByteString.EMPTY)
+                    .build())
+            .build();
+    AuthorizedView authorizedViewObj =
+        AuthorizedView.newBuilder().setSubsetView(subsetView).build();
+    CreateAuthorizedViewRequest createAuthorizedViewRequest =
+        CreateAuthorizedViewRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+            .setAuthorizedViewId(authorizedViewId)
+            .setAuthorizedView(authorizedViewObj)
+            .build();
+    adminClient.createAuthorizedViewAsync(createAuthorizedViewRequest).get();
   }
 
   @After
   public void after() {
-    if (adminClient.exists(tableId)) {
+    if (exists(tableId)) {
       // Deleting a table also deletes all the authorized views inside it.
-      adminClient.deleteTable(tableId);
+      adminClient.deleteTable(
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId);
     }
     authorizedViewExample.close();
   }
@@ -117,20 +149,47 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
     AuthorizedViewExample testAuthorizedViewExample =
         new AuthorizedViewExample(projectId, instanceId, tableId, testAuthorizedViewId);
     testAuthorizedViewExample.createAuthorizedView();
-    AuthorizedView authorizedView = adminClient.getAuthorizedView(tableId, testAuthorizedViewId);
-    assertEquals(authorizedView.getId(), testAuthorizedViewId);
+    AuthorizedView authorizedView =
+        adminClient.getAuthorizedView(
+            "projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/tables/"
+                + tableId
+                + "/authorizedViews/"
+                + testAuthorizedViewId);
+    String id = authorizedView.getName().substring(authorizedView.getName().lastIndexOf("/") + 1);
+    assertEquals(id, testAuthorizedViewId);
 
     // Updates the authorized view.
     testAuthorizedViewExample.updateAuthorizedView();
     AuthorizedView updatedAuthorizedView =
-        adminClient.getAuthorizedView(tableId, testAuthorizedViewId);
+        adminClient.getAuthorizedView(
+            "projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/tables/"
+                + tableId
+                + "/authorizedViews/"
+                + testAuthorizedViewId);
     assertNotEquals(authorizedView, updatedAuthorizedView);
 
     // Deletes the authorized view.
     testAuthorizedViewExample.deleteAuthorizedView();
     assertThrows(
         NotFoundException.class,
-        () -> adminClient.getAuthorizedView(tableId, testAuthorizedViewId));
+        () ->
+            adminClient.getAuthorizedView(
+                "projects/"
+                    + projectId
+                    + "/instances/"
+                    + instanceId
+                    + "/tables/"
+                    + tableId
+                    + "/authorizedViews/"
+                    + testAuthorizedViewId));
 
     testAuthorizedViewExample.close();
   }
@@ -139,7 +198,8 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
   public void testGetAuthorizedView() {
     AuthorizedView authorizedView = authorizedViewExample.getAuthorizedView();
     assertNotNull(authorizedView);
-    assertEquals(authorizedView.getId(), authorizedViewId);
+    String id = authorizedView.getName().substring(authorizedView.getName().lastIndexOf("/") + 1);
+    assertEquals(id, authorizedViewId);
   }
 
   @Test
@@ -193,7 +253,12 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
 
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9a-f]+)-([0-9a-f]+)");
-    for (String tableId : adminClient.listTables()) {
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId)
+            .build();
+    for (Table table : adminClient.listTables(request).iterateAll()) {
+      String tableId = table.getName().substring(table.getName().lastIndexOf("/") + 1);
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {
         continue;
@@ -204,7 +269,7 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
         continue;
       }
       System.out.println("\nGarbage collecting orphaned table: " + tableId);
-      adminClient.deleteTable(tableId);
+      adminClient.deleteTable(table.getName());
     }
   }
 }

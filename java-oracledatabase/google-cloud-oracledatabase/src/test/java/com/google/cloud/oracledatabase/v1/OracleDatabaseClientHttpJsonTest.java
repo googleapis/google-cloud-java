@@ -34,6 +34,13 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitl
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentEnvironmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
@@ -1815,6 +1822,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -1879,6 +1887,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -1943,6 +1952,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2017,6 +2027,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2091,6 +2102,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2121,6 +2133,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2172,6 +2185,7 @@ public class OracleDatabaseClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setEntitlementId("entitlementId-1302274264")
               .setAdminPassword("adminPassword-95067382")
+              .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
               .setProperties(AutonomousDatabaseProperties.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setNetwork("network1843485230")
@@ -2298,6 +2312,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2370,6 +2385,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2862,6 +2878,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2931,6 +2948,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3000,6 +3018,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3069,6 +3088,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3138,6 +3158,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3207,6 +3228,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3276,6 +3298,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3350,6 +3373,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3422,6 +3446,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3496,6 +3521,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3568,6 +3594,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3642,6 +3669,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3714,6 +3742,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3788,6 +3817,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -6010,7 +6040,9 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDbName("dbName-1339126743")
             .setDbUniqueName("dbUniqueName-1793979110")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setTdeWalletPassword("tdeWalletPassword727082249")
+            .setTdeWalletPasswordSecretVersion("tdeWalletPasswordSecretVersion-1515290241")
             .setCharacterSet("characterSet-1443214215")
             .setNcharacterSet("ncharacterSet642193383")
             .setOciUrl("ociUrl-1022489574")
@@ -6019,6 +6051,8 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDatabaseId("databaseId1688905718")
             .setDbHomeName("dbHomeName364867240")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setPluggableDatabaseId("pluggableDatabaseId1787516361")
+            .setPluggableDatabaseName("pluggableDatabaseName-183545927")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -6066,7 +6100,9 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDbName("dbName-1339126743")
             .setDbUniqueName("dbUniqueName-1793979110")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setTdeWalletPassword("tdeWalletPassword727082249")
+            .setTdeWalletPasswordSecretVersion("tdeWalletPasswordSecretVersion-1515290241")
             .setCharacterSet("characterSet-1443214215")
             .setNcharacterSet("ncharacterSet642193383")
             .setOciUrl("ociUrl-1022489574")
@@ -6075,6 +6111,8 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDatabaseId("databaseId1688905718")
             .setDbHomeName("dbHomeName364867240")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setPluggableDatabaseId("pluggableDatabaseId1787516361")
+            .setPluggableDatabaseName("pluggableDatabaseName-183545927")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -6745,6 +6783,1592 @@ public class OracleDatabaseClientHttpJsonTest {
   }
 
   @Test
+  public void listGoldengateDeploymentsTest() throws Exception {
+    GoldengateDeployment responsesElement = GoldengateDeployment.newBuilder().build();
+    ListGoldengateDeploymentsResponse expectedResponse =
+        ListGoldengateDeploymentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeployments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentsPagedResponse pagedListResponse =
+        client.listGoldengateDeployments(parent);
+
+    List<GoldengateDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateDeploymentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeployments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentsTest2() throws Exception {
+    GoldengateDeployment responsesElement = GoldengateDeployment.newBuilder().build();
+    ListGoldengateDeploymentsResponse expectedResponse =
+        ListGoldengateDeploymentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeployments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateDeploymentsPagedResponse pagedListResponse =
+        client.listGoldengateDeployments(parent);
+
+    List<GoldengateDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateDeploymentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateDeployments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    GoldengateDeployment actualResponse = client.getGoldengateDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoldengateDeploymentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.getGoldengateDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+
+    GoldengateDeployment actualResponse = client.getGoldengateDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoldengateDeploymentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+      client.getGoldengateDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+    String goldengateDeploymentId = "goldengateDeploymentId489140788";
+
+    GoldengateDeployment actualResponse =
+        client
+            .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoldengateDeploymentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+      String goldengateDeploymentId = "goldengateDeploymentId489140788";
+      client
+          .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+    String goldengateDeploymentId = "goldengateDeploymentId489140788";
+
+    GoldengateDeployment actualResponse =
+        client
+            .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoldengateDeploymentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+      String goldengateDeploymentId = "goldengateDeploymentId489140788";
+      client
+          .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    client.deleteGoldengateDeploymentAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.deleteGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+
+    client.deleteGoldengateDeploymentAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+      client.deleteGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    GoldengateDeployment actualResponse = client.stopGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopGoldengateDeploymentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.stopGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+
+    GoldengateDeployment actualResponse = client.stopGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopGoldengateDeploymentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+      client.stopGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    GoldengateDeployment actualResponse = client.startGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startGoldengateDeploymentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.startGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+
+    GoldengateDeployment actualResponse = client.startGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startGoldengateDeploymentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3104/locations/location-3104/goldengateDeployments/goldengateDeployment-3104";
+      client.startGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionsTest() throws Exception {
+    GoldengateConnection responsesElement = GoldengateConnection.newBuilder().build();
+    ListGoldengateConnectionsResponse expectedResponse =
+        ListGoldengateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateConnectionsPagedResponse pagedListResponse =
+        client.listGoldengateConnections(parent);
+
+    List<GoldengateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateConnectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateConnectionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionsTest2() throws Exception {
+    GoldengateConnection responsesElement = GoldengateConnection.newBuilder().build();
+    ListGoldengateConnectionsResponse expectedResponse =
+        ListGoldengateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateConnectionsPagedResponse pagedListResponse =
+        client.listGoldengateConnections(parent);
+
+    List<GoldengateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateConnectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateConnectionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionTest() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoldengateConnectionName name =
+        GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+
+    GoldengateConnection actualResponse = client.getGoldengateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoldengateConnectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateConnectionName name =
+          GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+      client.getGoldengateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionTest2() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8007/locations/location-8007/goldengateConnections/goldengateConnection-8007";
+
+    GoldengateConnection actualResponse = client.getGoldengateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoldengateConnectionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8007/locations/location-8007/goldengateConnections/goldengateConnection-8007";
+      client.getGoldengateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionTest() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+    String goldengateConnectionId = "goldengateConnectionId-1745824755";
+
+    GoldengateConnection actualResponse =
+        client
+            .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoldengateConnectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+      String goldengateConnectionId = "goldengateConnectionId-1745824755";
+      client
+          .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionTest2() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+    String goldengateConnectionId = "goldengateConnectionId-1745824755";
+
+    GoldengateConnection actualResponse =
+        client
+            .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoldengateConnectionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+      String goldengateConnectionId = "goldengateConnectionId-1745824755";
+      client
+          .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoldengateConnectionName name =
+        GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+
+    client.deleteGoldengateConnectionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoldengateConnectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateConnectionName name =
+          GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+      client.deleteGoldengateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8007/locations/location-8007/goldengateConnections/goldengateConnection-8007";
+
+    client.deleteGoldengateConnectionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoldengateConnectionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8007/locations/location-8007/goldengateConnections/goldengateConnection-8007";
+      client.deleteGoldengateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsTest() throws Exception {
+    GoldengateDeploymentVersion responsesElement = GoldengateDeploymentVersion.newBuilder().build();
+    ListGoldengateDeploymentVersionsResponse expectedResponse =
+        ListGoldengateDeploymentVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentVersionsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentVersions(parent);
+
+    List<GoldengateDeploymentVersion> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeploymentVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsTest2() throws Exception {
+    GoldengateDeploymentVersion responsesElement = GoldengateDeploymentVersion.newBuilder().build();
+    ListGoldengateDeploymentVersionsResponse expectedResponse =
+        ListGoldengateDeploymentVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateDeploymentVersionsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentVersions(parent);
+
+    List<GoldengateDeploymentVersion> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateDeploymentVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesTest() throws Exception {
+    GoldengateDeploymentType responsesElement = GoldengateDeploymentType.newBuilder().build();
+    ListGoldengateDeploymentTypesResponse expectedResponse =
+        ListGoldengateDeploymentTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentTypesPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentTypes(parent);
+
+    List<GoldengateDeploymentType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeploymentTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesTest2() throws Exception {
+    GoldengateDeploymentType responsesElement = GoldengateDeploymentType.newBuilder().build();
+    ListGoldengateDeploymentTypesResponse expectedResponse =
+        ListGoldengateDeploymentTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateDeploymentTypesPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentTypes(parent);
+
+    List<GoldengateDeploymentType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateDeploymentTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsTest() throws Exception {
+    GoldengateDeploymentEnvironment responsesElement =
+        GoldengateDeploymentEnvironment.newBuilder().build();
+    ListGoldengateDeploymentEnvironmentsResponse expectedResponse =
+        ListGoldengateDeploymentEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentEnvironmentsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentEnvironments(parent);
+
+    List<GoldengateDeploymentEnvironment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentEnvironmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeploymentEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsTest2() throws Exception {
+    GoldengateDeploymentEnvironment responsesElement =
+        GoldengateDeploymentEnvironment.newBuilder().build();
+    ListGoldengateDeploymentEnvironmentsResponse expectedResponse =
+        ListGoldengateDeploymentEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateDeploymentEnvironmentsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentEnvironments(parent);
+
+    List<GoldengateDeploymentEnvironment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentEnvironmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateDeploymentEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesTest() throws Exception {
+    GoldengateConnectionType responsesElement = GoldengateConnectionType.newBuilder().build();
+    ListGoldengateConnectionTypesResponse expectedResponse =
+        ListGoldengateConnectionTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateConnectionTypesPagedResponse pagedListResponse =
+        client.listGoldengateConnectionTypes(parent);
+
+    List<GoldengateConnectionType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateConnectionTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesTest2() throws Exception {
+    GoldengateConnectionType responsesElement = GoldengateConnectionType.newBuilder().build();
+    ListGoldengateConnectionTypesResponse expectedResponse =
+        ListGoldengateConnectionTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateConnectionTypesPagedResponse pagedListResponse =
+        client.listGoldengateConnectionTypes(parent);
+
+    List<GoldengateConnectionType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateConnectionTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listDbVersionsTest() throws Exception {
     DbVersion responsesElement = DbVersion.newBuilder().build();
     ListDbVersionsResponse expectedResponse =
@@ -6940,6 +8564,558 @@ public class OracleDatabaseClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listDatabaseCharacterSets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsTest() throws Exception {
+    GoldengateConnectionAssignment responsesElement =
+        GoldengateConnectionAssignment.newBuilder().build();
+    ListGoldengateConnectionAssignmentsResponse expectedResponse =
+        ListGoldengateConnectionAssignmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionAssignments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateConnectionAssignmentsPagedResponse pagedListResponse =
+        client.listGoldengateConnectionAssignments(parent);
+
+    List<GoldengateConnectionAssignment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionAssignmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateConnectionAssignments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsTest2() throws Exception {
+    GoldengateConnectionAssignment responsesElement =
+        GoldengateConnectionAssignment.newBuilder().build();
+    ListGoldengateConnectionAssignmentsResponse expectedResponse =
+        ListGoldengateConnectionAssignmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionAssignments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoldengateConnectionAssignmentsPagedResponse pagedListResponse =
+        client.listGoldengateConnectionAssignments(parent);
+
+    List<GoldengateConnectionAssignment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionAssignmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoldengateConnectionAssignments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentTest() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoldengateConnectionAssignmentName name =
+        GoldengateConnectionAssignmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+
+    GoldengateConnectionAssignment actualResponse = client.getGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateConnectionAssignmentName name =
+          GoldengateConnectionAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+      client.getGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentTest2() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9222/locations/location-9222/goldengateConnectionAssignments/goldengateConnectionAssignment-9222";
+
+    GoldengateConnectionAssignment actualResponse = client.getGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9222/locations/location-9222/goldengateConnectionAssignments/goldengateConnectionAssignment-9222";
+      client.getGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentTest() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoldengateConnectionAssignment goldengateConnectionAssignment =
+        GoldengateConnectionAssignment.newBuilder().build();
+    String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+
+    GoldengateConnectionAssignment actualResponse =
+        client
+            .createGoldengateConnectionAssignmentAsync(
+                parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoldengateConnectionAssignment goldengateConnectionAssignment =
+          GoldengateConnectionAssignment.newBuilder().build();
+      String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+      client
+          .createGoldengateConnectionAssignmentAsync(
+              parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentTest2() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    GoldengateConnectionAssignment goldengateConnectionAssignment =
+        GoldengateConnectionAssignment.newBuilder().build();
+    String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+
+    GoldengateConnectionAssignment actualResponse =
+        client
+            .createGoldengateConnectionAssignmentAsync(
+                parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      GoldengateConnectionAssignment goldengateConnectionAssignment =
+          GoldengateConnectionAssignment.newBuilder().build();
+      String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+      client
+          .createGoldengateConnectionAssignmentAsync(
+              parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoldengateConnectionAssignmentName name =
+        GoldengateConnectionAssignmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+
+    client.deleteGoldengateConnectionAssignmentAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateConnectionAssignmentName name =
+          GoldengateConnectionAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+      client.deleteGoldengateConnectionAssignmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9222/locations/location-9222/goldengateConnectionAssignments/goldengateConnectionAssignment-9222";
+
+    client.deleteGoldengateConnectionAssignmentAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9222/locations/location-9222/goldengateConnectionAssignments/goldengateConnectionAssignment-9222";
+      client.deleteGoldengateConnectionAssignmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentTest() throws Exception {
+    TestGoldengateConnectionAssignmentResponse expectedResponse =
+        TestGoldengateConnectionAssignmentResponse.newBuilder()
+            .setError(TestConnectionAssignmentError.newBuilder().build())
+            .addAllErrors(new ArrayList<TestConnectionAssignmentError>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoldengateConnectionAssignmentName name =
+        GoldengateConnectionAssignmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+
+    TestGoldengateConnectionAssignmentResponse actualResponse =
+        client.testGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoldengateConnectionAssignmentName name =
+          GoldengateConnectionAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+      client.testGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentTest2() throws Exception {
+    TestGoldengateConnectionAssignmentResponse expectedResponse =
+        TestGoldengateConnectionAssignmentResponse.newBuilder()
+            .setError(TestConnectionAssignmentError.newBuilder().build())
+            .addAllErrors(new ArrayList<TestConnectionAssignmentError>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9222/locations/location-9222/goldengateConnectionAssignments/goldengateConnectionAssignment-9222";
+
+    TestGoldengateConnectionAssignmentResponse actualResponse =
+        client.testGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9222/locations/location-9222/goldengateConnectionAssignments/goldengateConnectionAssignment-9222";
+      client.testGoldengateConnectionAssignment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

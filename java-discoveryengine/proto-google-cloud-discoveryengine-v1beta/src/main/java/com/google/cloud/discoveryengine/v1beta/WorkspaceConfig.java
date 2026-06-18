@@ -163,6 +163,16 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      * <code>GOOGLE_KEEP = 7;</code>
      */
     GOOGLE_KEEP(7),
+    /**
+     *
+     *
+     * <pre>
+     * Workspace Data Store contains People data
+     * </pre>
+     *
+     * <code>GOOGLE_PEOPLE = 8;</code>
+     */
+    GOOGLE_PEOPLE(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -264,6 +274,17 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      */
     public static final int GOOGLE_KEEP_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * Workspace Data Store contains People data
+     * </pre>
+     *
+     * <code>GOOGLE_PEOPLE = 8;</code>
+     */
+    public static final int GOOGLE_PEOPLE_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -304,6 +325,8 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
           return GOOGLE_GROUPS;
         case 7:
           return GOOGLE_KEEP;
+        case 8:
+          return GOOGLE_PEOPLE;
         default:
           return null;
       }
@@ -407,10 +430,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Obfuscated Dasher customer ID.
+   * Output only. Obfuscated Dasher customer ID. Derived by the server from
+   * the project's GCP organization at data store creation time; any value
+   * supplied in the request payload is ignored.
    * </pre>
    *
-   * <code>string dasher_customer_id = 2;</code>
+   * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The dasherCustomerId.
    */
@@ -431,10 +456,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Obfuscated Dasher customer ID.
+   * Output only. Obfuscated Dasher customer ID. Derived by the server from
+   * the project's GCP organization at data store creation time; any value
+   * supplied in the request payload is ignored.
    * </pre>
    *
-   * <code>string dasher_customer_id = 2;</code>
+   * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for dasherCustomerId.
    */
@@ -1053,10 +1080,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Obfuscated Dasher customer ID.
+     * Output only. Obfuscated Dasher customer ID. Derived by the server from
+     * the project's GCP organization at data store creation time; any value
+     * supplied in the request payload is ignored.
      * </pre>
      *
-     * <code>string dasher_customer_id = 2;</code>
+     * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The dasherCustomerId.
      */
@@ -1076,10 +1105,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Obfuscated Dasher customer ID.
+     * Output only. Obfuscated Dasher customer ID. Derived by the server from
+     * the project's GCP organization at data store creation time; any value
+     * supplied in the request payload is ignored.
      * </pre>
      *
-     * <code>string dasher_customer_id = 2;</code>
+     * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for dasherCustomerId.
      */
@@ -1099,10 +1130,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Obfuscated Dasher customer ID.
+     * Output only. Obfuscated Dasher customer ID. Derived by the server from
+     * the project's GCP organization at data store creation time; any value
+     * supplied in the request payload is ignored.
      * </pre>
      *
-     * <code>string dasher_customer_id = 2;</code>
+     * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The dasherCustomerId to set.
      * @return This builder for chaining.
@@ -1121,10 +1154,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Obfuscated Dasher customer ID.
+     * Output only. Obfuscated Dasher customer ID. Derived by the server from
+     * the project's GCP organization at data store creation time; any value
+     * supplied in the request payload is ignored.
      * </pre>
      *
-     * <code>string dasher_customer_id = 2;</code>
+     * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1139,10 +1174,12 @@ public final class WorkspaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Obfuscated Dasher customer ID.
+     * Output only. Obfuscated Dasher customer ID. Derived by the server from
+     * the project's GCP organization at data store creation time; any value
+     * supplied in the request payload is ignored.
      * </pre>
      *
-     * <code>string dasher_customer_id = 2;</code>
+     * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for dasherCustomerId to set.
      * @return This builder for chaining.

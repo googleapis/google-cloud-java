@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-cloudquotas-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudquotas:current} -->
+  <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudquotas:current} -->
   <name>Google Cloud Quotas API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.87.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,40 +26,44 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-cloudquotas</artifactId>
-        <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudquotas:current} -->
+        <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudquotas:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-cloudquotas-v1beta</artifactId>
-        <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudquotas-v1beta:current} -->
+        <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudquotas-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-cloudquotas-v1beta</artifactId>
-        <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudquotas-v1beta:current} -->
+        <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudquotas-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-cloudquotas-v1</artifactId>
-        <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudquotas-v1:current} -->
+        <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudquotas-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-cloudquotas-v1</artifactId>
-        <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudquotas-v1:current} -->
+        <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudquotas-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-cloudquotas</module>
     <module>grpc-google-cloud-cloudquotas-v1</module>
     <module>grpc-google-cloud-cloudquotas-v1beta</module>
     <module>proto-google-cloud-cloudquotas-v1</module>
     <module>proto-google-cloud-cloudquotas-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-cloudquotas-bom</module>
   </modules>
 

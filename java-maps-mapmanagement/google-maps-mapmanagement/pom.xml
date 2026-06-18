@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-mapmanagement</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapmanagement:current} -->
+  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapmanagement:current} -->
   <packaging>jar</packaging>
   <name>Google Map Management API</name>
   <description>Map Management API The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-mapmanagement-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapmanagement:current} -->
+    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapmanagement:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-mapmanagement</site.installationModule>
@@ -41,10 +41,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>proto-google-maps-mapmanagement-v2beta</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,11 +89,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>grpc-google-maps-mapmanagement-v2beta</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

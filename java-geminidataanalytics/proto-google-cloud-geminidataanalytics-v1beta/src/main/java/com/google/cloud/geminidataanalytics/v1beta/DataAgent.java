@@ -55,6 +55,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     name_ = "";
     displayName_ = "";
     description_ = "";
+    kmsKey_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -724,6 +725,90 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+   * as the DataAgent. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsKey() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+   * as the DataAgent. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+   * as the DataAgent. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -760,6 +845,9 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(13, getPurgeTime());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, kmsKey_);
     }
     if (typeCase_ == 101) {
       output.writeMessage(
@@ -805,6 +893,9 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getPurgeTime());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, kmsKey_);
+    }
     if (typeCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -845,6 +936,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     if (hasPurgeTime() != other.hasPurgeTime()) return false;
     if (hasPurgeTime()) {
       if (!getPurgeTime().equals(other.getPurgeTime())) return false;
+    }
+    if (hasKmsKey() != other.hasKmsKey()) return false;
+    if (hasKmsKey()) {
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
     }
     if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
@@ -890,6 +985,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     if (hasPurgeTime()) {
       hash = (37 * hash) + PURGE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getPurgeTime().hashCode();
+    }
+    if (hasKmsKey()) {
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
     }
     switch (typeCase_) {
       case 101:
@@ -1101,6 +1200,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         purgeTimeBuilder_.dispose();
         purgeTimeBuilder_ = null;
       }
+      kmsKey_ = "";
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1170,6 +1270,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         result.purgeTime_ = purgeTimeBuilder_ == null ? purgeTime_ : purgeTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.kmsKey_ = kmsKey_;
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1222,6 +1326,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPurgeTime()) {
         mergePurgeTime(other.getPurgeTime());
+      }
+      if (other.hasKmsKey()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000200;
+        onChanged();
       }
       switch (other.getTypeCase()) {
         case DATA_ANALYTICS_AGENT:
@@ -1318,6 +1427,12 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 106
+            case 114:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 114
             case 810:
               {
                 input.readMessage(
@@ -3077,6 +3192,162 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         purgeTime_ = null;
       }
       return purgeTimeBuilder_;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+     * as the DataAgent. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the kmsKey field is set.
+     */
+    public boolean hasKmsKey() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+     * as the DataAgent. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+     * as the DataAgent. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+     * as the DataAgent. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+     * as the DataAgent. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+     * as the DataAgent. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.DataAgent)
