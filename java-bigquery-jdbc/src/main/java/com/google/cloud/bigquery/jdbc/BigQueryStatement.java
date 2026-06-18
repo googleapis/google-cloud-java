@@ -76,8 +76,9 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
 
@@ -90,10 +91,6 @@ import java.util.logging.Level;
  */
 public class BigQueryStatement extends BigQueryNoOpsStatement {
 
-  // TODO (obada): Update this after benchmarking
-  private static final int MAX_PROCESS_QUERY_THREADS_CNT = 50;
-  protected static ExecutorService queryTaskExecutor =
-      Executors.newFixedThreadPool(MAX_PROCESS_QUERY_THREADS_CNT);
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   public static final int DEFAULT_BUFFER_SIZE = BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS * 2;
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
@@ -813,6 +810,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     JobId currentJobId = results.getJobId();
     TableId destinationTable = getDestinationTable(currentJobId);
     Schema schema = results.getSchema();
+    Future<?> populateBufferWorker = null;
     try {
       String parent = String.format("projects/%s", destinationTable.getProject());
       String srcTable =
@@ -836,9 +834,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       ReadSession readSession = getReadSession(builder.build());
       this.arrowBatchWrapperBlockingQueue = new LinkedBlockingDeque<>(getBufferSize());
       // deserialize and populate the buffer async, so that the client isn't blocked
-      Thread populateBufferWorker =
+      populateBufferWorker =
           populateArrowBufferedQueue(
-              readSession, this.arrowBatchWrapperBlockingQueue, this.bigQueryReadClient);
+              readSession, this.arrowBatchWrapperBlockingQueue, getBigQueryReadClient());
 
       BigQueryArrowResultSet arrowResultSet =
           BigQueryArrowResultSet.of(
@@ -857,18 +855,38 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       arrowResultSet.setQueryId(results.getQueryId());
       return arrowResultSet;
 
-    } catch (Exception ex) {
+    } catch (Exception | OutOfMemoryError ex) {
+      if (populateBufferWorker != null) {
+        populateBufferWorker.cancel(true);
+      }
+      if (ex instanceof OutOfMemoryError || ex instanceof RejectedExecutionException) {
+        throw new BigQueryJdbcException(
+            "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
+            ex);
+      }
+      if (ex instanceof RuntimeException) {
+        throw (ex instanceof BigQueryJdbcRuntimeException)
+            ? (BigQueryJdbcRuntimeException) ex
+            : new BigQueryJdbcRuntimeException(ex);
+      }
+      if (ex instanceof SQLException) {
+        throw (ex instanceof BigQueryJdbcException)
+            ? (BigQueryJdbcException) ex
+            : new BigQueryJdbcException(ex);
+      }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
   }
 
   /** Asynchronously reads results and populates an arrow record queue */
   @InternalApi
-  Thread populateArrowBufferedQueue(
+  Future<?> populateArrowBufferedQueue(
       ReadSession readSession,
       BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
       BigQueryReadClient bqReadClient) {
     LOG.finer("++enter++");
+
+    ExecutorService executor = connection.getExecutorService();
 
     Runnable arrowStreamProcessor =
         () -> {
@@ -890,7 +908,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                 com.google.api.gax.rpc.ServerStream<ReadRowsResponse> stream =
                     bqReadClient.readRowsCallable().call(readRowsRequest);
                 for (ReadRowsResponse response : stream) {
-                  if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+                  if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
                     break;
                   }
 
@@ -952,9 +970,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           }
         };
 
-    Thread populateBufferWorker = JDBC_THREAD_FACTORY.newThread(arrowStreamProcessor);
-    populateBufferWorker.start();
-    return populateBufferWorker;
+    return executor.submit(arrowStreamProcessor);
   }
 
   /** Executes SQL query using either fast query path or read API */
@@ -1040,8 +1056,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
-  BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) {
-    List<Thread> threadList = new ArrayList<Thread>();
+  BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) throws SQLException {
+    List<Future<?>> taskList = new ArrayList<>();
 
     Schema schema = results.getSchema();
     long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
@@ -1050,34 +1066,60 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         new LinkedBlockingDeque<>(getPageCacheSize(getBufferSize(), schema));
 
     JobId jobId = results.getJobId();
-    if (jobId != null) {
-      // Thread to make rpc calls to fetch data from the server
-      Thread nextPageWorker =
-          runNextPageTaskAsync(
-              results,
-              results.getNextPageToken(),
-              jobId,
-              rpcResponseQueue,
-              this.bigQueryFieldValueListWrapperBlockingQueue);
-      threadList.add(nextPageWorker);
-    } else {
-      try {
-        populateFirstPage(results, rpcResponseQueue);
-        rpcResponseQueue.put(Tuple.of(null, false));
-      } catch (InterruptedException e) {
-        LOG.warning(
-            "%s Interrupted @ processJsonQueryResponseResults: %s",
-            Thread.currentThread().getName(), e.getMessage());
+    try {
+      if (jobId != null) {
+        // Task to make rpc calls to fetch data from the server
+        Future<?> nextPageWorker =
+            runNextPageTaskAsync(
+                results,
+                results.getNextPageToken(),
+                jobId,
+                rpcResponseQueue,
+                this.bigQueryFieldValueListWrapperBlockingQueue);
+        taskList.add(nextPageWorker);
+      } else {
+        try {
+          populateFirstPage(results, rpcResponseQueue);
+          rpcResponseQueue.put(Tuple.of(null, false));
+        } catch (InterruptedException e) {
+          LOG.warning(
+              "%s Interrupted @ processJsonQueryResponseResults: %s",
+              Thread.currentThread().getName(), e.getMessage());
+          Thread.currentThread().interrupt();
+          throw new BigQueryJdbcException("Query execution was interrupted.", e);
+        }
       }
+
+      // Task to parse data received from the server to client library objects
+      Future<?> populateBufferWorker =
+          parseAndPopulateRpcDataAsync(
+              schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
+      taskList.add(populateBufferWorker);
+    } catch (Exception | OutOfMemoryError e) {
+      for (Future<?> task : taskList) {
+        if (task != null) {
+          task.cancel(true);
+        }
+      }
+      if (e instanceof RejectedExecutionException || e instanceof OutOfMemoryError) {
+        throw new BigQueryJdbcException(
+            "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
+            e);
+      }
+      if (e instanceof RuntimeException) {
+        throw (e instanceof BigQueryJdbcRuntimeException)
+            ? (BigQueryJdbcRuntimeException) e
+            : new BigQueryJdbcRuntimeException(e);
+      }
+      if (e instanceof SQLException) {
+        throw (e instanceof BigQueryJdbcException)
+            ? (BigQueryJdbcException) e
+            : new BigQueryJdbcException(e);
+      }
+      throw new BigQueryJdbcException(e.getMessage(), e);
     }
 
-    // Thread to parse data received from the server to client library objects
-    Thread populateBufferWorker =
-        parseAndPopulateRpcDataAsync(
-            schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
-    threadList.add(populateBufferWorker);
-
-    Thread[] jsonWorkers = threadList.toArray(new Thread[0]);
+    Future<?>[] jsonWorkers = taskList.toArray(new Future<?>[0]);
 
     BigQueryJsonResultSet jsonResultSet =
         BigQueryJsonResultSet.of(
@@ -1120,7 +1162,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @VisibleForTesting
-  Thread runNextPageTaskAsync(
+  Future<?> runNextPageTaskAsync(
       TableResult result,
       String firstPageToken,
       JobId jobId,
@@ -1130,6 +1172,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // parse and put the first page in the pageCache before the other pages are parsed from the RPC
     // calls
     populateFirstPage(result, rpcResponseQueue);
+
+    ExecutorService executor = connection.getExecutorService();
 
     // This thread makes the RPC calls and paginates
     Runnable nextPageTask =
@@ -1144,7 +1188,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           try {
             while (currentPageToken != null) {
               // do not process further pages and shutdown
-              if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+              if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
                 LOG.warning(
                     "%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
                 break;
@@ -1179,9 +1223,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           // have finished processing the records and even that will be interrupted
         };
 
-    Thread nextPageWorker = JDBC_THREAD_FACTORY.newThread(nextPageTask);
-    nextPageWorker.start();
-    return nextPageWorker;
+    return executor.submit(nextPageTask);
   }
 
   /**
@@ -1189,11 +1231,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * bigQueryFieldValueListWrapperBlockingQueue with FieldValueList
    */
   @VisibleForTesting
-  Thread parseAndPopulateRpcDataAsync(
+  Future<?> parseAndPopulateRpcDataAsync(
       Schema schema,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue) {
     LOG.finer("++enter++");
+
+    ExecutorService executor = connection.getExecutorService();
 
     Runnable populateBufferRunnable =
         () -> { // producer thread populating the buffer
@@ -1219,7 +1263,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               }
 
               if (Thread.currentThread().isInterrupted()
-                  || queryTaskExecutor.isShutdown()
+                  || executor.isShutdown()
                   || fieldValueLists == null) {
                 // do not process further pages and shutdown (outerloop)
                 break;
@@ -1229,7 +1273,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               long results = 0;
               for (FieldValueList fieldValueList : fieldValueLists) {
 
-                if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
+                if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
                   // do not process further pages and shutdown (inner loop)
                   break;
                 }
@@ -1264,9 +1308,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           }
         };
 
-    Thread populateBufferWorker = JDBC_THREAD_FACTORY.newThread(populateBufferRunnable);
-    populateBufferWorker.start();
-    return populateBufferWorker;
+    return executor.submit(populateBufferRunnable);
   }
 
   /**

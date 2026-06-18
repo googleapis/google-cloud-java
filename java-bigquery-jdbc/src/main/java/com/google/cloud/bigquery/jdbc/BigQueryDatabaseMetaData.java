@@ -945,7 +945,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(procedureFetcher, "getProcedures-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedures");
@@ -1207,7 +1207,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(procedureColumnFetcher, "getProcedureColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedureColumns for catalog: " + catalog);
@@ -1878,7 +1878,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(tableFetcher, "getTables-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getTables");
@@ -2018,7 +2018,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(catalogRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, new Thread[0]);
+    return BigQueryJsonResultSet.of(
+        catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -2050,7 +2051,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     signalEndOfData(queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
-        tableTypesSchema, tableTypeRows.size(), queue, null, new Thread[0]);
+        tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
   }
 
   static Schema defineGetTableTypesSchema() {
@@ -2204,7 +2205,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(columnFetcher, "getColumns-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getColumns");
@@ -2719,7 +2720,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(typeInfoRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
     return BigQueryJsonResultSet.of(
-        typeInfoSchema, typeInfoRows.size(), queue, null, new Thread[0]);
+        typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetTypeInfoSchema() {
@@ -3714,7 +3715,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(schemaFetcher, "getSchemas-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getSchemas");
@@ -3833,7 +3834,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       signalEndOfData(queue, resultSchemaFields);
     }
     return BigQueryJsonResultSet.of(
-        resultSchema, collectedResults.size(), queue, null, new Thread[0]);
+        resultSchema, collectedResults.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetClientInfoPropertiesSchema() {
@@ -4008,7 +4009,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(functionFetcher, "getFunctions-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctions");
@@ -4262,7 +4263,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(functionColumnFetcher, "getFunctionColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctionColumns for catalog: " + catalog);
