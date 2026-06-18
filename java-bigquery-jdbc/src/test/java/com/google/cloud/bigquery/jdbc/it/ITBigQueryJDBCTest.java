@@ -2338,39 +2338,34 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     bigQueryStatement.execute(createTransactionTable);
 
-    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
-    connection.setAutoCommit(false);
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      connection.setAutoCommit(false);
+      try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
+           PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+        ps1.setInt(1, 1);
+        ps1.setString(2, "DwightShrute");
+        ps1.setInt(3, 10);
+        assertEquals(1, ps1.executeUpdate());
 
-    PreparedStatement ps1 = connection.prepareStatement(insertQuery);
-    PreparedStatement ps2 = connection.prepareStatement(insertQuery);
-    try {
-      ps1.setInt(1, 1);
-      ps1.setString(2, "DwightShrute");
-      ps1.setInt(3, 10);
-      assertEquals(1, ps1.executeUpdate());
+        ps2.setInt(1, 2);
+        ps2.setString(2, "MichaelScott");
+        ps2.setInt(3, 20);
+        assertEquals(1, ps2.executeUpdate());
 
-      ps2.setInt(1, 2);
-      ps2.setString(2, "MichaelScott");
-      ps2.setInt(3, 20);
-      assertEquals(1, ps2.executeUpdate());
+        ps1.close();
+        connection.commit();
 
-      ps1.close();
-      connection.commit();
-
-      ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-      int rowCount = 0;
-      while (resultSet.next()) {
-        rowCount++;
-        assertEquals(rowCount, resultSet.getInt(1));
-      }
-      assertEquals(2, rowCount);
-    } finally {
-      try {
-        ps2.close();
+        try (ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery)) {
+          int rowCount = 0;
+          while (resultSet.next()) {
+            rowCount++;
+            assertEquals(rowCount, resultSet.getInt(1));
+          }
+          assertEquals(2, rowCount);
+        }
       } finally {
         bigQueryStatement.execute(
             String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
-        connection.close();
       }
     }
   }
@@ -2390,35 +2385,30 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     bigQueryStatement.execute(createTransactionTable);
 
-    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
-    connection.setAutoCommit(false);
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      connection.setAutoCommit(false);
+      try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
+           PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
 
-    PreparedStatement ps1 = connection.prepareStatement(insertQuery);
-    PreparedStatement ps2 = connection.prepareStatement(insertQuery);
-    try {
+        ps2.setInt(1, 1);
+        ps2.setString(2, "MichaelScott");
+        ps2.setInt(3, 20);
+        assertEquals(1, ps2.executeUpdate());
 
-      ps2.setInt(1, 1);
-      ps2.setString(2, "MichaelScott");
-      ps2.setInt(3, 20);
-      assertEquals(1, ps2.executeUpdate());
+        ps1.close();
+        connection.commit();
 
-      ps1.close();
-      connection.commit();
-
-      ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-      assertTrue(resultSet.next());
-      assertEquals(1, resultSet.getInt(1));
-      assertEquals("MichaelScott", resultSet.getString(2));
-      assertEquals(20, resultSet.getInt(3));
-      assertFalse(resultSet.next());
-    } finally {
-      try {
-        ps2.close();
-      } finally {
-        bigQueryStatement.execute(
-            String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
-        connection.close();
+        try (ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery)) {
+          assertTrue(resultSet.next());
+          assertEquals(1, resultSet.getInt(1));
+          assertEquals("MichaelScott", resultSet.getString(2));
+          assertEquals(20, resultSet.getInt(3));
+          assertFalse(resultSet.next());
+        }
       }
+    } finally {
+      bigQueryStatement.execute(
+          String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
     }
   }
 
