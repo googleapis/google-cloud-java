@@ -2169,11 +2169,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               .startSpan();
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
-      // If all parameters passed in configuration are supported by the query() method on the
-      // backend, put on fast path
+      // The fast query path (jobs.query API) is preferred to reduce latency by avoiding
+      // the slow fallback path (jobs.insert API). We will opt to use it if the configuration
+      // and JobId allow (i.e. if all parameters passed in configuration are supported).
       QueryRequestInfo requestInfo =
           new QueryRequestInfo(configuration, getOptions().getDataFormatOptions());
-      if (requestInfo.isFastQuerySupported(jobId)) {
+      // Fast query path is not possible if job is specified in the JobID object.
+      // Respect Job field value in JobId specified by user.
+      // Specifying it will force the query to take the slower path.
+      if (requestInfo.isFastQuerySupported() && (jobId == null || jobId.getJob() == null)) {
         // Be careful when setting the projectID in JobId, if a projectID is specified in the JobId,
         // the job created by the query method will use that project. This may cause the query to
         // fail with "Access denied" if the project do not have enough permissions to run the job.

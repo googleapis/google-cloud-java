@@ -240,6 +240,12 @@ public class BigQueryImplTest {
           .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
           .setUseQueryCache(false)
           .build();
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_WITH_TIMEOUT =
+      QueryJobConfiguration.newBuilder("SQL")
+          .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
+          .setUseQueryCache(false)
+          .setJobTimeoutMs(1000L)
+          .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_FOR_DMLQUERY =
       QueryJobConfiguration.newBuilder("DML")
           .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
@@ -537,7 +543,8 @@ public class BigQueryImplTest {
   private HttpBigQueryRpc bigqueryRpcMock;
   private BigQuery bigquery;
   private static final String RATE_LIMIT_ERROR_MSG =
-      "Job exceeded rate limits: Your table exceeded quota for table update operations. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
+      "Job exceeded rate limits: Your table exceeded quota for table update operations. For more"
+          + " information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
 
   @Captor private ArgumentCaptor<Map<BigQueryRpc.Option, Object>> capturedOptions;
   @Captor private ArgumentCaptor<com.google.api.services.bigquery.model.Job> jobCapture;
@@ -2395,6 +2402,49 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testFastQueryRequestCompletedWithTimeout() throws InterruptedException, IOException {
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(null)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_WITH_TIMEOUT);
+    assertNull(result.getNextPage());
+    assertNull(result.getNextPageToken());
+    assertFalse(result.hasNextPage());
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals(QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.getQuery(), requestPb.getQuery());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.getDefaultDataset().getDataset(),
+        requestPb.getDefaultDataset().getDatasetId());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.useQueryCache(), requestPb.getUseQueryCache());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.getJobTimeoutMs(), requestPb.getJobTimeoutMs());
+    assertNull(requestPb.getLocation());
+
+    verify(bigqueryRpcMock)
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
   void testQueryRequestRequiredJobCreationCompleted() throws InterruptedException, IOException {
     JobId queryJob = JobId.of(PROJECT, JOB);
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
@@ -3072,7 +3122,8 @@ public class BigQueryImplTest {
   @Test
   void testRateLimitRegEx() throws Exception {
     String msg2 =
-        "Job eceeded rate limits: Your table exceeded quota for table update operations. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
+        "Job eceeded rate limits: Your table exceeded quota for table update operations. For more"
+            + " information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
     String msg3 = "exceeded rate exceeded quota for table update";
     String msg4 = "exceeded rate limits";
     assertTrue(
