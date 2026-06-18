@@ -87,6 +87,9 @@
                 <ignoredUnusedDeclaredDependency>io.opentelemetry.contrib:opentelemetry-gcp-auth-extension</ignoredUnusedDeclaredDependency>
                 <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-exporter-otlp</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
+            <ignoredDependencies>
+                <ignoredDependency>io.opentelemetry:opentelemetry-sdk-logs</ignoredDependency>
+            </ignoredDependencies>
         </configuration>
       </plugin>
       <plugin>
