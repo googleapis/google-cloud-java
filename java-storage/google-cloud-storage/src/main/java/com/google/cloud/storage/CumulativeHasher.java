@@ -91,6 +91,17 @@ final class CumulativeHasher implements Hasher {
   }
 
   @Override
+  public void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual)
+      throws ChecksumMismatchException {
+    if (actual != null) {
+      if (expected != null && !actual.eqValue(expected)) {
+        throw new ChecksumMismatchException(expected, actual);
+      }
+      accumulate(actual);
+    }
+  }
+
+  @Override
   public <C extends Crc32cValue<?>> C nullSafeConcat(C r1, Crc32cLengthKnown r2) {
     return delegate.nullSafeConcat(r1, r2);
   }
