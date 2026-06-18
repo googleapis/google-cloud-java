@@ -1,8 +1,3 @@
----
-name: java-bigtable-development
-description: Mandatory guidelines and actions for developing code within the java-bigtable directory. This skill ensures code quality, proper formatting, and testing conventions.
----
-
 # Java Bigtable Development Guidelines
 
 When developing or modifying code within the `java-bigtable` directory, you must strictly follow these rules and perform these actions:
