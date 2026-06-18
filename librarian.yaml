@@ -1856,6 +1856,7 @@ libraries:
       name_pretty_override: Grafeas
       product_documentation_override: https://grafeas.io
       skip_pom_updates: true
+      alternate_headers: license-header.txt
   - name: gsuite-addons
     version: 2.94.0-SNAPSHOT
     apis:
