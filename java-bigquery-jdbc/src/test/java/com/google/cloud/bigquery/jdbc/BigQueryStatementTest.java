@@ -717,7 +717,7 @@ public class BigQueryStatementTest {
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
 
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
-    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(eq(result), any());
 
     Job dryRunJob = getJobMock(null, jobConfiguration, StatementType.SELECT);
     doReturn(dryRunJob).when(bigquery).create(any(JobInfo.class));
@@ -757,7 +757,7 @@ public class BigQueryStatementTest {
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
 
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
-    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(eq(result), any());
 
     Job dryRunJob = getJobMock(null, jobConfiguration, StatementType.SELECT);
     doReturn(dryRunJob).when(bigquery).create(any(JobInfo.class));
@@ -774,6 +774,9 @@ public class BigQueryStatementTest {
     assertThat(capturedConfig.getDestinationTable())
         .isEqualTo(TableId.of("test_dataset", "test_table"));
     assertThat(capturedConfig.allowLargeResults()).isTrue();
+  }
+
+  @Test
   public void testSetFetchSizeNegativeThrows() {
     org.junit.jupiter.api.Assertions.assertThrows(
         SQLException.class, () -> bigQueryStatement.setFetchSize(-1));
