@@ -31,7 +31,7 @@ public interface GetTlsRouteRequestOrBuilder
    *
    * <pre>
    * Required. A name of the TlsRoute to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/tlsRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface GetTlsRouteRequestOrBuilder
    *
    * <pre>
    * Required. A name of the TlsRoute to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/tlsRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/&#42;`.
    * </pre>
    *
    * <code>

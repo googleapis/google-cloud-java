@@ -59,6 +59,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
     rules_ = java.util.Collections.emptyList();
     meshes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     gateways_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    targetProxies_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5057,7 +5058,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the TlsRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -5082,7 +5083,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the TlsRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -5425,7 +5426,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5448,7 +5449,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5471,7 +5472,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5495,7 +5496,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5525,7 +5526,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5546,7 +5547,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5567,7 +5568,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5589,7 +5590,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5601,6 +5602,102 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
    */
   public com.google.protobuf.ByteString getGatewaysBytes(int index) {
     return gateways_.getByteString(index);
+  }
+
+  public static final int TARGET_PROXIES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList targetProxies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the targetProxies.
+   */
+  public com.google.protobuf.ProtocolStringList getTargetProxiesList() {
+    return targetProxies_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of targetProxies.
+   */
+  public int getTargetProxiesCount() {
+    return targetProxies_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetProxies at the given index.
+   */
+  public java.lang.String getTargetProxies(int index) {
+    return targetProxies_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetProxies at the given index.
+   */
+  public com.google.protobuf.ByteString getTargetProxiesBytes(int index) {
+    return targetProxies_.getByteString(index);
   }
 
   public static final int LABELS_FIELD_NUMBER = 11;
@@ -5750,6 +5847,9 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 11);
+    for (int i = 0; i < targetProxies_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, targetProxies_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5803,6 +5903,14 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, labels__);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < targetProxies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(targetProxies_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTargetProxiesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5833,6 +5941,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
     if (!getRulesList().equals(other.getRulesList())) return false;
     if (!getMeshesList().equals(other.getMeshesList())) return false;
     if (!getGatewaysList().equals(other.getGatewaysList())) return false;
+    if (!getTargetProxiesList().equals(other.getTargetProxiesList())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5870,6 +5979,10 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
     if (getGatewaysCount() > 0) {
       hash = (37 * hash) + GATEWAYS_FIELD_NUMBER;
       hash = (53 * hash) + getGatewaysList().hashCode();
+    }
+    if (getTargetProxiesCount() > 0) {
+      hash = (37 * hash) + TARGET_PROXIES_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetProxiesList().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -6071,6 +6184,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000020);
       meshes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       gateways_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetProxies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableLabels().clear();
       return this;
     }
@@ -6148,6 +6262,10 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
         result.gateways_ = gateways_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        targetProxies_.makeImmutable();
+        result.targetProxies_ = targetProxies_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
@@ -6234,8 +6352,18 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (!other.targetProxies_.isEmpty()) {
+        if (targetProxies_.isEmpty()) {
+          targetProxies_ = other.targetProxies_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureTargetProxiesIsMutable();
+          targetProxies_.addAll(other.targetProxies_);
+        }
+        onChanged();
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6331,9 +6459,16 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTargetProxiesIsMutable();
+                targetProxies_.add(s);
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6360,7 +6495,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TlsRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6384,7 +6519,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TlsRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6408,7 +6543,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TlsRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6431,7 +6566,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TlsRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6450,7 +6585,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TlsRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -7585,7 +7720,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7609,7 +7744,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7632,7 +7767,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7656,7 +7791,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7680,7 +7815,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7712,7 +7847,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7743,7 +7878,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7771,7 +7906,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7798,7 +7933,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7840,7 +7975,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7862,7 +7997,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7883,7 +8018,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7905,7 +8040,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7927,7 +8062,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7957,7 +8092,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7986,7 +8121,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -8012,7 +8147,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -8037,7 +8172,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -8059,6 +8194,252 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList targetProxies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTargetProxiesIsMutable() {
+      if (!targetProxies_.isModifiable()) {
+        targetProxies_ = new com.google.protobuf.LazyStringArrayList(targetProxies_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the targetProxies.
+     */
+    public com.google.protobuf.ProtocolStringList getTargetProxiesList() {
+      targetProxies_.makeImmutable();
+      return targetProxies_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of targetProxies.
+     */
+    public int getTargetProxiesCount() {
+      return targetProxies_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The targetProxies at the given index.
+     */
+    public java.lang.String getTargetProxies(int index) {
+      return targetProxies_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the targetProxies at the given index.
+     */
+    public com.google.protobuf.ByteString getTargetProxiesBytes(int index) {
+      return targetProxies_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The targetProxies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetProxies(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetProxiesIsMutable();
+      targetProxies_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The targetProxies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetProxies(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetProxiesIsMutable();
+      targetProxies_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The targetProxies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTargetProxies(java.lang.Iterable<java.lang.String> values) {
+      ensureTargetProxiesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetProxies_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetProxies() {
+      targetProxies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+     * attached to, as one of the routing rules to route the requests served by
+     * the TargetTcpProxy.
+     *
+     * Each TargetTcpProxy reference should match the pattern:
+     * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+     * </pre>
+     *
+     * <code>
+     * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the targetProxies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetProxiesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTargetProxiesIsMutable();
+      targetProxies_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -8076,7 +8457,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return labels_;
     }
@@ -8166,7 +8547,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -8191,7 +8572,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -8212,7 +8593,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -8227,7 +8608,7 @@ public final class TlsRoute extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 

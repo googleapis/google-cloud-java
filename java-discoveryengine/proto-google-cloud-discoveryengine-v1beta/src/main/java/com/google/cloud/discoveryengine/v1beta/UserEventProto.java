@@ -89,11 +89,12 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
           + "4google/cloud/discoveryengine/v1beta/user_event.proto\022#google.cloud.discoveryen"
           + "gine.v1beta\032\037google/api/field_behavior.p"
           + "roto\032\031google/api/resource.proto\0320google/"
-          + "cloud/discoveryengine/v1beta/common.prot"
-          + "o\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\247"
-          + "\t\n"
+          + "cloud/discoveryengine/v1beta/common.proto\0322google/cloud/discoveryengine/v1beta/f"
+          + "eedback.proto\032\036google/protobuf/duration."
+          + "proto\032\037google/protobuf/timestamp.proto\"\245\n\n"
           + "\tUserEvent\022\027\n\n"
-          + "event_type\030\001 \001(\tB\003\340A\002\022\033\n"
+          + "event_type\030\001 \001(\tB\003\340A\002\022\034\n"
+          + "\017conversion_type\030\025 \001(\tB\003\340A\001\022\033\n"
           + "\016user_pseudo_id\030\002 \001(\tB\003\340A\002\022:\n"
           + "\006engine\030\023 \001(\tB*\372A\'\n"
           + "%discoveryengine.googleapis.com/Engine\022A\n\n"
@@ -104,8 +105,8 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
           + "\023direct_user_request\030\005 \001(\010\022\022\n\n"
           + "session_id\030\006 \001(\t\022@\n"
           + "\tpage_info\030\007 \001(\0132-.google.cloud.discoveryengine.v1beta.PageInfo\022\031\n"
-          + "\021attribution_token\030\010 \001(\t\022\016\n"
-          + "\006filter\030\t \001(\t\022D\n"
+          + "\021attribution_token\030\010 \001(\t\022\023\n"
+          + "\006filter\030\t \001(\tB\003\340A\001\022D\n"
           + "\tdocuments\030\n"
           + " \003(\01321.google.cloud.discoveryengine.v1beta.DocumentInfo\022=\n"
           + "\005panel\030\013 \001(\0132..google.cloud.discoveryengine.v1beta.PanelInfo\022D\n"
@@ -113,19 +114,22 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132/.google.cloud.discoveryengine.v1beta.SearchInfo\022L\n"
           + "\017completion_info\030\r"
           + " \001(\01323.google.cloud.discoveryengine.v1beta.CompletionInfo\022N\n"
-          + "\020transaction_info\030\016 \001(\013"
-          + "24.google.cloud.discoveryengine.v1beta.TransactionInfo\022\017\n"
+          + "\020transaction_info\030\016"
+          + " \001(\01324.google.cloud.discoveryengine.v1beta.TransactionInfo\022\017\n"
           + "\007tag_ids\030\017 \003(\t\022\025\n\r"
           + "promotion_ids\030\020 \003(\t\022R\n\n"
-          + "attributes\030\021 \003(\0132>.goo"
-          + "gle.cloud.discoveryengine.v1beta.UserEvent.AttributesEntry\022B\n\n"
+          + "attributes\030\021 \003("
+          + "\0132>.google.cloud.discoveryengine.v1beta.UserEvent.AttributesEntry\022B\n\n"
           + "media_info\030\022 \001(\0132..google.cloud.discoveryengine.v1beta.MediaInfo\022C\n"
-          + "\006panels\030\026"
-          + " \003(\0132..google.cloud.discoveryengine.v1beta.PanelInfoB\003\340A\001\032g\n"
+          + "\006panels\030\026 \003(\0132..google.c"
+          + "loud.discoveryengine.v1beta.PanelInfoB\003\340A\001\022D\n"
+          + "\010feedback\030\027"
+          + " \001(\0132-.google.cloud.discoveryengine.v1beta.FeedbackB\003\340A\001\022\023\n"
+          + "\006entity\030\031 \001(\tB\003\340A\001\032g\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022C\n"
-          + "\005value\030\002 \001"
-          + "(\01324.google.cloud.discoveryengine.v1beta.CustomAttribute:\0028\001\"Y\n"
+          + "\005value\030\002 \001(\01324.google.cloud.disc"
+          + "overyengine.v1beta.CustomAttribute:\0028\001\"Y\n"
           + "\010PageInfo\022\023\n"
           + "\013pageview_id\030\001 \001(\t\022\025\n\r"
           + "page_category\030\002 \001(\t\022\013\n"
@@ -149,7 +153,7 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
           + "\006_valueB\006\n"
           + "\004_taxB\007\n"
           + "\005_costB\021\n"
-          + "\017_discount_value\"\320\001\n"
+          + "\017_discount_value\"\211\002\n"
           + "\014DocumentInfo\022\014\n"
           + "\002id\030\001 \001(\tH\000\022<\n"
           + "\004name\030\002 \001(\tB,\372A)\n"
@@ -157,9 +161,11 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
           + "\003uri\030\006 \001(\tH\000\022\025\n"
           + "\010quantity\030\003 \001(\005H\001\210\001\001\022\025\n\r"
           + "promotion_ids\030\004 \003(\t\022\023\n"
-          + "\006joined\030\005 \001(\010B\003\340A\003B\025\n"
+          + "\006joined\030\005 \001(\010B\003\340A\003\022\"\n"
+          + "\020conversion_value\030\007 \001(\002B\003\340A\001H\002\210\001\001B\025\n"
           + "\023document_descriptorB\013\n"
-          + "\t_quantity\"\337\001\n"
+          + "\t_quantityB\023\n"
+          + "\021_conversion_value\"\337\001\n"
           + "\tPanelInfo\022\025\n"
           + "\010panel_id\030\002 \001(\tB\003\340A\002\022\024\n"
           + "\014display_name\030\003 \001(\t\022\033\n"
@@ -173,11 +179,12 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
           + "\027media_progress_duration\030\001 \001(\0132\031.google.protobuf.Duration\022&\n"
           + "\031media_progress_percentage\030\002 \001(\002H\000\210\001\001B\034\n"
           + "\032_media_progress_percentageB\225\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB\016UserEventProtoP\001ZQ"
-          + "cloud.google.com/go/discoveryengine/apiv1beta/discoveryenginepb;discoveryenginep"
-          + "b\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Disco"
-          + "veryEngine.V1Beta\312\002#Google\\Cloud\\Discove"
-          + "ryEngine\\V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "\'com.google.cloud.discoveryengine.v1betaB\016UserEventProtoP\001ZQcloud"
+          + ".google.com/go/discoveryengine/apiv1beta"
+          + "/discoveryenginepb;discoveryenginepb\242\002\017D"
+          + "ISCOVERYENGINE\252\002#Google.Cloud.DiscoveryE"
+          + "ngine.V1Beta\312\002#Google\\Cloud\\DiscoveryEng"
+          + "ine\\V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -186,6 +193,7 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.CommonProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.FeedbackProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -196,6 +204,7 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_discoveryengine_v1beta_UserEvent_descriptor,
             new java.lang.String[] {
               "EventType",
+              "ConversionType",
               "UserPseudoId",
               "Engine",
               "DataStore",
@@ -216,6 +225,8 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
               "Attributes",
               "MediaInfo",
               "Panels",
+              "Feedback",
+              "Entity",
             });
     internal_static_google_cloud_discoveryengine_v1beta_UserEvent_AttributesEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_UserEvent_descriptor.getNestedType(0);
@@ -263,7 +274,14 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_DocumentInfo_descriptor,
             new java.lang.String[] {
-              "Id", "Name", "Uri", "Quantity", "PromotionIds", "Joined", "DocumentDescriptor",
+              "Id",
+              "Name",
+              "Uri",
+              "Quantity",
+              "PromotionIds",
+              "Joined",
+              "ConversionValue",
+              "DocumentDescriptor",
             });
     internal_static_google_cloud_discoveryengine_v1beta_PanelInfo_descriptor =
         getDescriptor().getMessageType(6);
@@ -285,6 +303,7 @@ public final class UserEventProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.CommonProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.FeedbackProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

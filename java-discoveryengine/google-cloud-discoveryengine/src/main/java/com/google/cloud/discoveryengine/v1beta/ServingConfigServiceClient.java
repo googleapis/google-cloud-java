@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.stub.ServingConfigServiceStub;
 import com.google.cloud.discoveryengine.v1beta.stub.ServingConfigServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -50,10 +51,12 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ServingConfigServiceClient servingConfigServiceClient =
  *     ServingConfigServiceClient.create()) {
+ *   DataStoreName parent =
+ *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
  *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
- *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   String servingConfigId = "servingConfigId-831052759";
  *   ServingConfig response =
- *       servingConfigServiceClient.updateServingConfig(servingConfig, updateMask);
+ *       servingConfigServiceClient.createServingConfig(parent, servingConfig, servingConfigId);
  * }
  * }</pre>
  *
@@ -67,6 +70,48 @@ import javax.annotation.Generated;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateServingConfig</td>
+ *      <td><p> Creates a ServingConfig.
+ * <p>  Note: The Google Cloud console works only with the default serving config. Additional ServingConfigs can be created and managed only via the API.
+ * <p>  A maximum of 100 [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]s are allowed in an [Engine][google.cloud.discoveryengine.v1beta.Engine], otherwise a RESOURCE_EXHAUSTED error is returned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createServingConfig(CreateServingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createServingConfig(DataStoreName parent, ServingConfig servingConfig, String servingConfigId)
+ *           <li><p> createServingConfig(EngineName parent, ServingConfig servingConfig, String servingConfigId)
+ *           <li><p> createServingConfig(String parent, ServingConfig servingConfig, String servingConfigId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createServingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteServingConfig</td>
+ *      <td><p> Deletes a ServingConfig.
+ * <p>  Returns a NOT_FOUND error if the ServingConfig does not exist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteServingConfig(DeleteServingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteServingConfig(ServingConfigName name)
+ *           <li><p> deleteServingConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteServingConfigCallable()
+ *      </ul>
+ *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> UpdateServingConfig</td>
@@ -235,6 +280,376 @@ public class ServingConfigServiceClient implements BackgroundResource {
 
   public ServingConfigServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ServingConfig.
+   *
+   * <p>Note: The Google Cloud console works only with the default serving config. Additional
+   * ServingConfigs can be created and managed only via the API.
+   *
+   * <p>A maximum of 100 [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]s are
+   * allowed in an [Engine][google.cloud.discoveryengine.v1beta.Engine], otherwise a
+   * RESOURCE_EXHAUSTED error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   DataStoreName parent =
+   *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+   *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+   *   String servingConfigId = "servingConfigId-831052759";
+   *   ServingConfig response =
+   *       servingConfigServiceClient.createServingConfig(parent, servingConfig, servingConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of parent. Format:
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * @param servingConfig Required. The ServingConfig to create.
+   * @param servingConfigId Required. The ID to use for the ServingConfig, which will become the
+   *     final component of the ServingConfig's resource name.
+   *     <p>This value should be 4-63 characters, and valid characters are
+   *     /[a-zA-Z0-9][a-zA-Z0-9_-]+/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServingConfig createServingConfig(
+      DataStoreName parent, ServingConfig servingConfig, String servingConfigId) {
+    CreateServingConfigRequest request =
+        CreateServingConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setServingConfig(servingConfig)
+            .setServingConfigId(servingConfigId)
+            .build();
+    return createServingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ServingConfig.
+   *
+   * <p>Note: The Google Cloud console works only with the default serving config. Additional
+   * ServingConfigs can be created and managed only via the API.
+   *
+   * <p>A maximum of 100 [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]s are
+   * allowed in an [Engine][google.cloud.discoveryengine.v1beta.Engine], otherwise a
+   * RESOURCE_EXHAUSTED error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+   *   String servingConfigId = "servingConfigId-831052759";
+   *   ServingConfig response =
+   *       servingConfigServiceClient.createServingConfig(parent, servingConfig, servingConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of parent. Format:
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * @param servingConfig Required. The ServingConfig to create.
+   * @param servingConfigId Required. The ID to use for the ServingConfig, which will become the
+   *     final component of the ServingConfig's resource name.
+   *     <p>This value should be 4-63 characters, and valid characters are
+   *     /[a-zA-Z0-9][a-zA-Z0-9_-]+/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServingConfig createServingConfig(
+      EngineName parent, ServingConfig servingConfig, String servingConfigId) {
+    CreateServingConfigRequest request =
+        CreateServingConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setServingConfig(servingConfig)
+            .setServingConfigId(servingConfigId)
+            .build();
+    return createServingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ServingConfig.
+   *
+   * <p>Note: The Google Cloud console works only with the default serving config. Additional
+   * ServingConfigs can be created and managed only via the API.
+   *
+   * <p>A maximum of 100 [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]s are
+   * allowed in an [Engine][google.cloud.discoveryengine.v1beta.Engine], otherwise a
+   * RESOURCE_EXHAUSTED error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   String parent =
+   *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *           .toString();
+   *   ServingConfig servingConfig = ServingConfig.newBuilder().build();
+   *   String servingConfigId = "servingConfigId-831052759";
+   *   ServingConfig response =
+   *       servingConfigServiceClient.createServingConfig(parent, servingConfig, servingConfigId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of parent. Format:
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * @param servingConfig Required. The ServingConfig to create.
+   * @param servingConfigId Required. The ID to use for the ServingConfig, which will become the
+   *     final component of the ServingConfig's resource name.
+   *     <p>This value should be 4-63 characters, and valid characters are
+   *     /[a-zA-Z0-9][a-zA-Z0-9_-]+/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServingConfig createServingConfig(
+      String parent, ServingConfig servingConfig, String servingConfigId) {
+    CreateServingConfigRequest request =
+        CreateServingConfigRequest.newBuilder()
+            .setParent(parent)
+            .setServingConfig(servingConfig)
+            .setServingConfigId(servingConfigId)
+            .build();
+    return createServingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ServingConfig.
+   *
+   * <p>Note: The Google Cloud console works only with the default serving config. Additional
+   * ServingConfigs can be created and managed only via the API.
+   *
+   * <p>A maximum of 100 [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]s are
+   * allowed in an [Engine][google.cloud.discoveryengine.v1beta.Engine], otherwise a
+   * RESOURCE_EXHAUSTED error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   CreateServingConfigRequest request =
+   *       CreateServingConfigRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setServingConfig(ServingConfig.newBuilder().build())
+   *           .setServingConfigId("servingConfigId-831052759")
+   *           .build();
+   *   ServingConfig response = servingConfigServiceClient.createServingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ServingConfig createServingConfig(CreateServingConfigRequest request) {
+    return createServingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ServingConfig.
+   *
+   * <p>Note: The Google Cloud console works only with the default serving config. Additional
+   * ServingConfigs can be created and managed only via the API.
+   *
+   * <p>A maximum of 100 [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig]s are
+   * allowed in an [Engine][google.cloud.discoveryengine.v1beta.Engine], otherwise a
+   * RESOURCE_EXHAUSTED error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   CreateServingConfigRequest request =
+   *       CreateServingConfigRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setServingConfig(ServingConfig.newBuilder().build())
+   *           .setServingConfigId("servingConfigId-831052759")
+   *           .build();
+   *   ApiFuture<ServingConfig> future =
+   *       servingConfigServiceClient.createServingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ServingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateServingConfigRequest, ServingConfig>
+      createServingConfigCallable() {
+    return stub.createServingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ServingConfig.
+   *
+   * <p>Returns a NOT_FOUND error if the ServingConfig does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   ServingConfigName name =
+   *       ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]");
+   *   servingConfigServiceClient.deleteServingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ServingConfig to delete. Format:
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteServingConfig(ServingConfigName name) {
+    DeleteServingConfigRequest request =
+        DeleteServingConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteServingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ServingConfig.
+   *
+   * <p>Returns a NOT_FOUND error if the ServingConfig does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   String name =
+   *       ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *           .toString();
+   *   servingConfigServiceClient.deleteServingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ServingConfig to delete. Format:
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteServingConfig(String name) {
+    DeleteServingConfigRequest request =
+        DeleteServingConfigRequest.newBuilder().setName(name).build();
+    deleteServingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ServingConfig.
+   *
+   * <p>Returns a NOT_FOUND error if the ServingConfig does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   DeleteServingConfigRequest request =
+   *       DeleteServingConfigRequest.newBuilder()
+   *           .setName(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   servingConfigServiceClient.deleteServingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteServingConfig(DeleteServingConfigRequest request) {
+    deleteServingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ServingConfig.
+   *
+   * <p>Returns a NOT_FOUND error if the ServingConfig does not exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   DeleteServingConfigRequest request =
+   *       DeleteServingConfigRequest.newBuilder()
+   *           .setName(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       servingConfigServiceClient.deleteServingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    return stub.deleteServingConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * This public class provides shared utilities for common OAuth2 utils or ADC. It also exposes
@@ -45,7 +46,7 @@ public class GoogleAuthUtils {
    * @return the path to the well-known Application Default Credentials file location
    */
   public static final String getWellKnownCredentialsPath() {
-    return getWellKnownCredentialsFile(DefaultCredentialsProvider.DEFAULT).getAbsolutePath();
+    return getWellKnownCredentialsPath(DefaultCredentialsProvider.DEFAULT);
   }
 
   /**
@@ -54,7 +55,11 @@ public class GoogleAuthUtils {
    * @return the path to the well-known Application Default Credentials file location
    */
   static final String getWellKnownCredentialsPath(DefaultCredentialsProvider provider) {
-    return getWellKnownCredentialsFile(provider).getAbsolutePath();
+    try {
+      return getWellKnownCredentialsFile(provider).getAbsolutePath();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -64,13 +69,18 @@ public class GoogleAuthUtils {
    *     purposes)
    * @return the well-known Application Default Credentials file
    */
-  static final File getWellKnownCredentialsFile(DefaultCredentialsProvider provider) {
+  static final File getWellKnownCredentialsFile(DefaultCredentialsProvider provider)
+      throws IOException {
     File cloudConfigPath;
     String envPath = provider.getEnv("CLOUDSDK_CONFIG");
     if (envPath != null) {
       cloudConfigPath = new File(envPath);
     } else if (provider.getOsName().indexOf("windows") >= 0) {
-      File appDataPath = new File(provider.getEnv("APPDATA"));
+      String appData = provider.getEnv("APPDATA");
+      if (appData == null) {
+        throw new IOException(DefaultCredentialsProvider.CLOUDSDK_MISSING_CREDENTIALS);
+      }
+      File appDataPath = new File(appData);
       cloudConfigPath = new File(appDataPath, provider.CLOUDSDK_CONFIG_DIRECTORY);
     } else {
       File configPath = new File(provider.getProperty("user.home", ""), ".config");
