@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-servicedirectory/samples/snippets/generated"
 - "/java-servicedirectory/grpc-google-.*/src"
 - "/java-servicedirectory/proto-google-.*/src"
-- "/java-servicedirectory/google-.*/src"
+- "/java-servicedirectory/google-.*/src/main"
+- "/java-servicedirectory/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-servicedirectory/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-servicedirectory/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-servicedirectory/$1/proto-google-cloud-servicedirectory-$1/src"
 - source: "/google/cloud/servicedirectory/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-servicedirectory/$1/grpc-google-cloud-servicedirectory-$1/src"
-- source: "/google/cloud/servicedirectory/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-servicedirectory/$1/google-cloud-servicedirectory/src"
+- source: "/google/cloud/servicedirectory/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-servicedirectory/$1/google-cloud-servicedirectory/src/main"
 - source: "/google/cloud/servicedirectory/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-servicedirectory/$1/samples/snippets/generated"
 

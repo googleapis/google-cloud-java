@@ -17,11 +17,14 @@ deep-remove-regex:
 - "/java-datacatalog/samples/snippets/generated"
 - "/java-datacatalog/grpc-google-.*/src"
 - "/java-datacatalog/proto-google-.*/src"
-- "/java-datacatalog/google-.*/src"
+- "/java-datacatalog/google-.*/src/main"
+- "/java-datacatalog/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-datacatalog/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-datacatalog/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-datacatalog/src/test/java/com/google/cloud/datacatalog/v1beta1/it/ITSystemTest.java"
+- "/.*google-cloud-datacatalog/src/test/java/com/google/[^/]+/datacatalog/v1beta1/it/ITSystemTest.java"
 - "/.*proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java"
 
 deep-copy-regex:
@@ -29,8 +32,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datacatalog/$1/proto-google-cloud-datacatalog-$1/src"
 - source: "/google/cloud/datacatalog/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-datacatalog/$1/grpc-google-cloud-datacatalog-$1/src"
-- source: "/google/cloud/datacatalog/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-datacatalog/$1/google-cloud-datacatalog/src"
+- source: "/google/cloud/datacatalog/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-datacatalog/$1/google-cloud-datacatalog/src/main"
 - source: "/google/cloud/datacatalog/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datacatalog/$1/samples/snippets/generated"
 

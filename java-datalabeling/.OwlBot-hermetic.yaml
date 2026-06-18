@@ -17,12 +17,15 @@ deep-remove-regex:
 - "/java-datalabeling/samples/snippets/generated"
 - "/java-datalabeling/grpc-google-.*/src"
 - "/java-datalabeling/proto-google-.*/src"
-- "/java-datalabeling/google-.*/src"
+- "/java-datalabeling/google-.*/src/main"
+- "/java-datalabeling/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-datalabeling/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-datalabeling/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java"
-- "/.*google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java"
+- "/.*google-cloud-datalabeling/src/test/java/com/google/[^/]+/datalabeling/v1beta1/it/ITSystemTest.java"
+- "/.*google-cloud-datalabeling/src/test/java/com/google/[^/]+/datalabeling/it/ITSystemTest.java"
 
 
 deep-copy-regex:
@@ -30,8 +33,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datalabeling/$1/proto-google-cloud-datalabeling-$1/src"
 - source: "/google/cloud/datalabeling/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-datalabeling/$1/grpc-google-cloud-datalabeling-$1/src"
-- source: "/google/cloud/datalabeling/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-datalabeling/$1/google-cloud-datalabeling/src"
+- source: "/google/cloud/datalabeling/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-datalabeling/$1/google-cloud-datalabeling/src/main"
 - source: "/google/cloud/datalabeling/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datalabeling/$1/samples/snippets/generated"
 

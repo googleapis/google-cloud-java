@@ -14,7 +14,7 @@
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-billing/src/test/java/com/google/cloud/billing/v1/CloudBillingClientHttpJsonTest.java"
+- "/.*google-cloud-billing/src/test/java/com/google/[^/]+/billing/v1/CloudBillingClientHttpJsonTest.java"
 
 deep-remove-regex:
 - "/.*samples/snippets/generated"

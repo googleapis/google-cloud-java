@@ -16,20 +16,23 @@
 deep-remove-regex:
 - "/java-dialogflow-cx/grpc-google-.*/src"
 - "/java-dialogflow-cx/proto-google-.*/src"
-- "/java-dialogflow-cx/google-.*/src"
+- "/java-dialogflow-cx/google-.*/src/main"
+- "/java-dialogflow-cx/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-dialogflow-cx/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-dialogflow-cx/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-dialogflow-cx/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"
+- "/.*google-cloud-dialogflow-cx/src/test/java/com/google/[^/]+/dialogflow/cx/v.*/it/ITSystemTest.java"
 
 deep-copy-regex:
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-dialogflow-cx/$1/proto-google-cloud-dialogflow-cx-$1/src"
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-dialogflow-cx/$1/grpc-google-cloud-dialogflow-cx-$1/src"
-- source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-dialogflow-cx/$1/google-cloud-dialogflow-cx/src"
+- source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-dialogflow-cx/$1/google-cloud-dialogflow-cx/src/main"
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dialogflow-cx/$1/samples/snippets/generated"
 

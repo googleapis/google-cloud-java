@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-eventarc-publishing/grpc-google-.*/src"
 - "/java-eventarc-publishing/proto-google-.*/src"
-- "/java-eventarc-publishing/google-.*/src"
+- "/java-eventarc-publishing/google-.*/src/main"
+- "/java-eventarc-publishing/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-eventarc-publishing/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-eventarc-publishing/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-eventarc-publishing/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-eventarc-publishing/$1/proto-google-cloud-eventarc-publishing-$1/src"
 - source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-eventarc-publishing/$1/grpc-google-cloud-eventarc-publishing-$1/src"
-- source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-eventarc-publishing/$1/google-cloud-eventarc-publishing/src"
+- source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-eventarc-publishing/$1/google-cloud-eventarc-publishing/src/main"
 - source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-eventarc-publishing/$1/samples/snippets/generated"
 

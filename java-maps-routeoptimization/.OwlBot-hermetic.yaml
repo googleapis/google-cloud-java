@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-maps-routeoptimization/grpc-google-.*/src"
 - "/java-maps-routeoptimization/proto-google-.*/src"
-- "/java-maps-routeoptimization/google-.*/src"
+- "/java-maps-routeoptimization/google-.*/src/main"
+- "/java-maps-routeoptimization/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-maps-routeoptimization/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-maps-routeoptimization/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-maps-routeoptimization/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/maps/routeoptimization/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maps-routeoptimization/$1/proto-google-maps-routeoptimization-$1/src"
 - source: "/google/maps/routeoptimization/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-routeoptimization/$1/grpc-google-maps-routeoptimization-$1/src"
-- source: "/google/maps/routeoptimization/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-maps-routeoptimization/$1/google-maps-routeoptimization/src"
+- source: "/google/maps/routeoptimization/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-maps-routeoptimization/$1/google-maps-routeoptimization/src/main"
 - source: "/google/maps/routeoptimization/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-routeoptimization/$1/samples/snippets/generated"
 

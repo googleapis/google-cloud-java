@@ -17,19 +17,20 @@ deep-remove-regex:
 - "/java-vmmigration/samples/snippets/generated"
 - "/java-vmmigration/grpc-google-.*/src"
 - "/java-vmmigration/proto-google-.*/src"
-- "/java-vmmigration/google-.*/src"
+- "/java-vmmigration/google-.*/src/main"
+- "/java-vmmigration/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-vmmigration/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-vmmigration/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/vmmigration/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-vmmigration/$1/proto-google-cloud-vmmigration-$1/src"
 - source: "/google/cloud/vmmigration/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-vmmigration/$1/grpc-google-cloud-vmmigration-$1/src"
-- source: "/google/cloud/vmmigration/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-vmmigration/$1/google-cloud-vmmigration/src"
+- source: "/google/cloud/vmmigration/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-vmmigration/$1/google-cloud-vmmigration/src/main"
 - source: "/google/cloud/vmmigration/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vmmigration/$1/samples/snippets/generated"
 

@@ -16,20 +16,23 @@
 deep-remove-regex:
 - "/java-accessapproval/grpc-google-.*/src"
 - "/java-accessapproval/proto-google-.*/src"
-- "/java-accessapproval/google-.*/src"
+- "/java-accessapproval/google-.*/src/main"
+- "/java-accessapproval/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-accessapproval/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-accessapproval/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-accessapproval/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
+- "/.*google-cloud-accessapproval/src/test/java/com/google/[^/]+/accessapproval/v1/it"
 
 deep-copy-regex:
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-accessapproval/$1/proto-google-cloud-accessapproval-$1/src"
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-accessapproval/$1/grpc-google-cloud-accessapproval-$1/src"
-- source: "/google/cloud/accessapproval/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-accessapproval/$1/google-cloud-accessapproval/src"
+- source: "/google/cloud/accessapproval/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-accessapproval/$1/google-cloud-accessapproval/src/main"
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-accessapproval/$1/samples/snippets/generated"
 

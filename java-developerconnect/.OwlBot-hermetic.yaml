@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-developerconnect/grpc-google-.*/src"
 - "/java-developerconnect/proto-google-.*/src"
-- "/java-developerconnect/google-.*/src"
+- "/java-developerconnect/google-.*/src/main"
+- "/java-developerconnect/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-developerconnect/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-developerconnect/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-developerconnect/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/developerconnect/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-developerconnect/$1/proto-google-cloud-developerconnect-$1/src"
 - source: "/google/cloud/developerconnect/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-developerconnect/$1/grpc-google-cloud-developerconnect-$1/src"
-- source: "/google/cloud/developerconnect/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-developerconnect/$1/google-cloud-developerconnect/src"
+- source: "/google/cloud/developerconnect/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-developerconnect/$1/google-cloud-developerconnect/src/main"
 - source: "/google/cloud/developerconnect/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-developerconnect/$1/samples/snippets/generated"
 

@@ -17,12 +17,14 @@ deep-remove-regex:
 - "/java-tasks/samples/snippets/generated"
 - "/java-tasks/grpc-google-.*/src"
 - "/java-tasks/proto-google-.*/src"
-- "/java-tasks/google-.*/src"
+- "/java-tasks/google-.*/src/main"
+- "/java-tasks/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-tasks/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-tasks/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/.*google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java"
+- "/.*google-cloud-tasks/src/test/java/com/google/[^/]+/tasks/v2beta3/CloudTasksSmokeTest.java"
 - "/.*proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
 - "/.*proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
 - "/.*proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"
@@ -32,8 +34,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-tasks/$1/proto-google-cloud-tasks-$1/src"
 - source: "/google/cloud/tasks/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-tasks/$1/grpc-google-cloud-tasks-$1/src"
-- source: "/google/cloud/tasks/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-tasks/$1/google-cloud-tasks/src"
+- source: "/google/cloud/tasks/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-tasks/$1/google-cloud-tasks/src/main"
 - source: "/google/cloud/tasks/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-tasks/$1/samples/snippets/generated"
 

@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-maps-solar/grpc-google-.*/src"
 - "/java-maps-solar/proto-google-.*/src"
-- "/java-maps-solar/google-.*/src"
+- "/java-maps-solar/google-.*/src/main"
+- "/java-maps-solar/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-maps-solar/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-maps-solar/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-maps-solar/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/maps/solar/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maps-solar/$1/proto-google-maps-solar-$1/src"
 - source: "/google/maps/solar/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-solar/$1/grpc-google-maps-solar-$1/src"
-- source: "/google/maps/solar/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-maps-solar/$1/google-maps-solar/src"
+- source: "/google/maps/solar/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-maps-solar/$1/google-maps-solar/src/main"
 - source: "/google/maps/solar/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-solar/$1/samples/snippets/generated"
 

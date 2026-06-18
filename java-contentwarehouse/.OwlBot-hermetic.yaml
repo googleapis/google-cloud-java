@@ -16,19 +16,20 @@
 deep-remove-regex:
 - "/java-contentwarehouse/grpc-google-.*/src"
 - "/java-contentwarehouse/proto-google-.*/src"
-- "/java-contentwarehouse/google-.*/src"
+- "/java-contentwarehouse/google-.*/src/main"
+- "/java-contentwarehouse/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-contentwarehouse/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-contentwarehouse/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-contentwarehouse/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/contentwarehouse/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-contentwarehouse/$1/proto-google-cloud-contentwarehouse-$1/src"
 - source: "/google/cloud/contentwarehouse/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-contentwarehouse/$1/grpc-google-cloud-contentwarehouse-$1/src"
-- source: "/google/cloud/contentwarehouse/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-contentwarehouse/$1/google-cloud-contentwarehouse/src"
+- source: "/google/cloud/contentwarehouse/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-contentwarehouse/$1/google-cloud-contentwarehouse/src/main"
 - source: "/google/cloud/contentwarehouse/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-contentwarehouse/$1/samples/snippets/generated"

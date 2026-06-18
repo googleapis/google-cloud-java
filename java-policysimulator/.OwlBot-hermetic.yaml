@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-policysimulator/grpc-google-.*/src"
 - "/java-policysimulator/proto-google-.*/src"
-- "/java-policysimulator/google-.*/src"
+- "/java-policysimulator/google-.*/src/main"
+- "/java-policysimulator/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-policysimulator/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-policysimulator/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-policysimulator/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/policysimulator/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-policysimulator/$1/proto-google-cloud-policysimulator-$1/src"
 - source: "/google/cloud/policysimulator/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-policysimulator/$1/grpc-google-cloud-policysimulator-$1/src"
-- source: "/google/cloud/policysimulator/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-policysimulator/$1/google-cloud-policysimulator/src"
+- source: "/google/cloud/policysimulator/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-policysimulator/$1/google-cloud-policysimulator/src/main"
 - source: "/google/cloud/policysimulator/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-policysimulator/$1/samples/snippets/generated"
 

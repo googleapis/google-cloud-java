@@ -21,7 +21,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*admin.*/src/main/java/.*/stub/Version.java"
-- "/.*admin.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*admin.*/src/test/java/com/google/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/proto-google-.*/src"

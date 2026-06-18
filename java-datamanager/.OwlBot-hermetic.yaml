@@ -21,7 +21,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*data-manager.*/src/main/java/.*/stub/Version.java"
-- "/.*data-manager.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*data-manager.*/src/test/java/com/google/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/ads/datamanager/(v.*)/.*-java/proto-google-.*/src"

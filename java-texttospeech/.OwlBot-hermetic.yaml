@@ -17,13 +17,15 @@ deep-remove-regex:
 - "/java-texttospeech/samples/snippets/generated"
 - "/java-texttospeech/grpc-google-.*/src"
 - "/java-texttospeech/proto-google-.*/src"
-- "/java-texttospeech/google-.*/src"
+- "/java-texttospeech/google-.*/src/main"
+- "/java-texttospeech/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-texttospeech/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-texttospeech/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/.*google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1/TextToSpeechSmokeTest.java"
-- "/.*google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1beta1/TextToSpeechSmokeTest.java"
+- "/.*google-cloud-texttospeech/src/test/java/com/google/[^/]+/texttospeech/v1/TextToSpeechSmokeTest.java"
+- "/.*google-cloud-texttospeech/src/test/java/com/google/[^/]+/texttospeech/v1beta1/TextToSpeechSmokeTest.java"
 
 
 deep-copy-regex:
@@ -31,8 +33,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-texttospeech/$1/proto-google-cloud-texttospeech-$1/src"
 - source: "/google/cloud/texttospeech/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-texttospeech/$1/grpc-google-cloud-texttospeech-$1/src"
-- source: "/google/cloud/texttospeech/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-texttospeech/$1/google-cloud-texttospeech/src"
+- source: "/google/cloud/texttospeech/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-texttospeech/$1/google-cloud-texttospeech/src/main"
 - source: "/google/cloud/texttospeech/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-texttospeech/$1/samples/snippets/generated"
 

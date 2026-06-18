@@ -16,7 +16,10 @@
 deep-remove-regex:
 - "/java-bigquerydatatransfer/grpc-google-.*/src"
 - "/java-bigquerydatatransfer/proto-google-.*/src"
-- "/java-bigquerydatatransfer/google-.*/src"
+- "/java-bigquerydatatransfer/google-.*/src/main"
+- "/java-bigquerydatatransfer/google-.*/src/test/java/com/google/[^/]+/.*/v.*/.*ClientTest.java"
+- "/java-bigquerydatatransfer/google-.*/src/test/java/com/google/[^/]+/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-bigquerydatatransfer/google-.*/src/test/java/com/google/[^/]+/.*/v.*/Mock.*.java"
 - "/java-bigquerydatatransfer/samples/snippets/generated"
 
 deep-preserve-regex:
@@ -28,8 +31,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/proto-google-cloud-bigquerydatatransfer-$1/src"
 - source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/grpc-google-cloud-bigquerydatatransfer-$1/src"
-- source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/google-cloud-bigquerydatatransfer/src"
+- source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/google-cloud-bigquerydatatransfer/src/main"
 - source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/samples/snippets/generated"
 
