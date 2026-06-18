@@ -30,7 +30,9 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableResult;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -454,6 +456,12 @@ public class ITStatementTest {
       for (Table table : tables.iterateAll()) {
         if (table.getTableId().getTable().startsWith("temp_table_")) {
           tableFound = true;
+          TableResult tableData = bigQuery.listTableData(table.getTableId());
+          assertNotNull(tableData);
+          assertEquals(1, tableData.getTotalRows());
+          for (FieldValueList row : tableData.iterateAll()) {
+            assertEquals(1, row.get(0).getLongValue());
+          }
           break;
         }
       }
