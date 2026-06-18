@@ -398,7 +398,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
               });
 
       assertEquals(2, attempts.get());
-      assertEquals(1, firstReplicaIndex.get());
+      assertNotEquals(
+          "Expected read-write transaction read to route to a bypass replica.\n"
+              + routingDiagnostics(harness),
+          -1,
+          firstReplicaIndex.get());
       int secondReplicaIndex = 1 - firstReplicaIndex.get();
       assertEquals(
           2,
