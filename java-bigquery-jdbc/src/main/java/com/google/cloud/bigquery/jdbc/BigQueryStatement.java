@@ -1419,11 +1419,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     Dataset dataset = bigQuery.getDataset(DatasetId.of(datasetName));
     if (dataset == null) {
       LOG.info("Creating a hidden dataset: %s ", datasetName);
-      DatasetInfo datasetInfo =
+      DatasetInfo.Builder datasetInfoBuilder =
           DatasetInfo.newBuilder(datasetName)
-              .setDefaultTableLifetime(this.querySettings.getDestinationDatasetExpirationTime())
-              .build();
-      bigQuery.create(datasetInfo);
+              .setDefaultTableLifetime(this.querySettings.getDestinationDatasetExpirationTime());
+      String location = this.connection.getLocation();
+      if (location != null && !location.isEmpty()) {
+        datasetInfoBuilder.setLocation(location);
+      }
+      bigQuery.create(datasetInfoBuilder.build());
     }
   }
 
