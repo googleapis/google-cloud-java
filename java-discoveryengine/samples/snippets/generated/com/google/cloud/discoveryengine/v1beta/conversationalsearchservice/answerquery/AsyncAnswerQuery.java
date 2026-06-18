@@ -61,6 +61,7 @@ public class AsyncAnswerQuery {
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
               .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
               .build();
       ApiFuture<AnswerQueryResponse> future =
           conversationalSearchServiceClient.answerQueryCallable().futureCall(request);

@@ -106,12 +106,14 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setQuery("query107944136")
+            .addAllPageCategories(new ArrayList<String>())
             .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
             .setOneBoxPageSize(1988477988)
             .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+            .setNumResultsPerDataStore(397658288)
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
@@ -132,12 +134,19 @@ public class SearchServiceClientTest {
             .setNaturalLanguageQueryUnderstandingSpec(
                 SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+            .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+            .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+            .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+            .setEntity("entity-1298275357")
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -155,12 +164,15 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getServingConfig(), actualRequest.getServingConfig());
     Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getImageQuery(), actualRequest.getImageQuery());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
     Assert.assertEquals(request.getOneBoxPageSize(), actualRequest.getOneBoxPageSize());
     Assert.assertEquals(request.getDataStoreSpecsList(), actualRequest.getDataStoreSpecsList());
+    Assert.assertEquals(
+        request.getNumResultsPerDataStore(), actualRequest.getNumResultsPerDataStore());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
@@ -184,10 +196,17 @@ public class SearchServiceClientTest {
         request.getNaturalLanguageQueryUnderstandingSpec(),
         actualRequest.getNaturalLanguageQueryUnderstandingSpec());
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
+    Assert.assertEquals(request.getDisplaySpec(), actualRequest.getDisplaySpec());
+    Assert.assertEquals(request.getCrowdingSpecsList(), actualRequest.getCrowdingSpecsList());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
+    Assert.assertEquals(request.getRelevanceFilterSpec(), actualRequest.getRelevanceFilterSpec());
     Assert.assertEquals(request.getPersonalizationSpec(), actualRequest.getPersonalizationSpec());
+    Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
+    Assert.assertEquals(request.getSearchAddonSpec(), actualRequest.getSearchAddonSpec());
+    Assert.assertEquals(request.getCustomRankingParams(), actualRequest.getCustomRankingParams());
+    Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -211,12 +230,14 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .addAllPageCategories(new ArrayList<String>())
               .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
               .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+              .setNumResultsPerDataStore(397658288)
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -237,12 +258,19 @@ public class SearchServiceClientTest {
               .setNaturalLanguageQueryUnderstandingSpec(
                   SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+              .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+              .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       client.search(request);
       Assert.fail("No exception raised");
@@ -272,12 +300,14 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setQuery("query107944136")
+            .addAllPageCategories(new ArrayList<String>())
             .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
             .setOneBoxPageSize(1988477988)
             .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+            .setNumResultsPerDataStore(397658288)
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
@@ -298,12 +328,19 @@ public class SearchServiceClientTest {
             .setNaturalLanguageQueryUnderstandingSpec(
                 SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+            .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+            .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+            .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+            .setEntity("entity-1298275357")
             .build();
 
     SearchLitePagedResponse pagedListResponse = client.searchLite(request);
@@ -321,12 +358,15 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getServingConfig(), actualRequest.getServingConfig());
     Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getImageQuery(), actualRequest.getImageQuery());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
     Assert.assertEquals(request.getOneBoxPageSize(), actualRequest.getOneBoxPageSize());
     Assert.assertEquals(request.getDataStoreSpecsList(), actualRequest.getDataStoreSpecsList());
+    Assert.assertEquals(
+        request.getNumResultsPerDataStore(), actualRequest.getNumResultsPerDataStore());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
@@ -350,10 +390,17 @@ public class SearchServiceClientTest {
         request.getNaturalLanguageQueryUnderstandingSpec(),
         actualRequest.getNaturalLanguageQueryUnderstandingSpec());
     Assert.assertEquals(request.getSearchAsYouTypeSpec(), actualRequest.getSearchAsYouTypeSpec());
+    Assert.assertEquals(request.getDisplaySpec(), actualRequest.getDisplaySpec());
+    Assert.assertEquals(request.getCrowdingSpecsList(), actualRequest.getCrowdingSpecsList());
     Assert.assertEquals(request.getSession(), actualRequest.getSession());
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
+    Assert.assertEquals(request.getRelevanceFilterSpec(), actualRequest.getRelevanceFilterSpec());
     Assert.assertEquals(request.getPersonalizationSpec(), actualRequest.getPersonalizationSpec());
+    Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
+    Assert.assertEquals(request.getSearchAddonSpec(), actualRequest.getSearchAddonSpec());
+    Assert.assertEquals(request.getCustomRankingParams(), actualRequest.getCustomRankingParams());
+    Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -377,12 +424,14 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .addAllPageCategories(new ArrayList<String>())
               .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
               .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+              .setNumResultsPerDataStore(397658288)
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -403,12 +452,19 @@ public class SearchServiceClientTest {
               .setNaturalLanguageQueryUnderstandingSpec(
                   SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+              .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+              .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       client.searchLite(request);
       Assert.fail("No exception raised");

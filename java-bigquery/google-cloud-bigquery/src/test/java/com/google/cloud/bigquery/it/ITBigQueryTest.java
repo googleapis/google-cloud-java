@@ -7371,10 +7371,9 @@ class ITBigQueryTest {
         (tableResult.getJobId() != null) ^ (tableResult.getQueryId() != null),
         "Exactly one of jobId or queryId should be non-null");
 
-    // Job creation takes over, no query id is created.
     bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED);
     tableResult = executeSimpleQuery(bigQuery);
-    assertNull(tableResult.getQueryId());
+    assertNotNull(tableResult.getQueryId());
     assertNotNull(tableResult.getJobId());
 
     bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_MODE_UNSPECIFIED);
@@ -7438,9 +7437,8 @@ class ITBigQueryTest {
             .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
             .build();
     result = bigQuery.query(configWithJob);
-    result = job.getQueryResults();
     assertNotNull(result.getJobId());
-    assertNull(result.getQueryId());
+    assertNotNull(result.getQueryId());
   }
 
   @Test
@@ -7536,14 +7534,14 @@ class ITBigQueryTest {
     // Allow 2 seconds of timeout value to account for random delays
     assertTrue(millis < 1_000_000 * 2);
 
-    // Stateful query returns Job
-    // Test scenario 3 to ensure job is created if JobCreationMode is set.
+    // Test scenario 3 to ensure TableResult is returned with JobId if JobCreationMode is REQUIRED
     config =
         QueryJobConfiguration.newBuilder(query)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
             .build();
     result = bigQuery.queryWithTimeout(config, null, null);
-    assertTrue(result instanceof Job);
+    assertTrue(result instanceof TableResult);
+    assertNotNull(((TableResult) result).getJobId());
 
     // Stateful query returns Job
     // Test scenario 4 to ensure job is created if Query is long running.

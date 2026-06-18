@@ -80,7 +80,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. A name of the TcpRoute to delete. Must be in the format
-   * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. A name of the TcpRoute to delete. Must be in the format
-   * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
    * </pre>
    *
    * <code>
@@ -447,7 +447,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A name of the TcpRoute to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
      * </pre>
      *
      * <code>
@@ -473,7 +473,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A name of the TcpRoute to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
      * </pre>
      *
      * <code>
@@ -499,7 +499,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A name of the TcpRoute to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
      * </pre>
      *
      * <code>
@@ -524,7 +524,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A name of the TcpRoute to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
      * </pre>
      *
      * <code>
@@ -545,7 +545,7 @@ public final class DeleteTcpRouteRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. A name of the TcpRoute to delete. Must be in the format
-     * `projects/&#42;&#47;locations/global/tcpRoutes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/&#42;`.
      * </pre>
      *
      * <code>

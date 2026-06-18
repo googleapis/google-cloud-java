@@ -49,6 +49,8 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
 
     public abstract TableResult.Builder setJobCreationReason(JobCreationReason jobCreationReason);
 
+    abstract TableResult.Builder setRowsInPage(Long rowsInPage);
+
     /** Creates a @code TableResult} object. */
     public abstract TableResult build();
   }
@@ -81,6 +83,10 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   @Nullable
   public abstract JobCreationReason getJobCreationReason();
 
+  /** Returns the number of rows in the current page of results. */
+  @Nullable
+  public abstract Long getRowsInPage();
+
   @Override
   public boolean hasNextPage() {
     return getPageNoSchema().hasNextPage();
@@ -94,12 +100,15 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   @Override
   public TableResult getNextPage() {
     if (getPageNoSchema().hasNextPage()) {
+      Page<FieldValueList> nextPageNoSchema = getPageNoSchema().getNextPage();
+      long nextRows = (long) Iterables.size(nextPageNoSchema.getValues());
       return TableResult.newBuilder()
           .setSchema(getSchema())
           .setTotalRows(getTotalRows())
-          .setPageNoSchema(getPageNoSchema().getNextPage())
+          .setPageNoSchema(nextPageNoSchema)
           .setQueryId(getQueryId())
           .setJobCreationReason(getJobCreationReason())
+          .setRowsInPage(nextRows)
           .build();
     }
     return null;
@@ -137,12 +146,14 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         .add("totalRows", getTotalRows())
         .add("cursor", getNextPageToken())
         .add("queryId", getQueryId())
+        .add("rowsInPage", getRowsInPage())
         .toString();
   }
 
   @Override
   public final int hashCode() {
-    return Objects.hash(getPageNoSchema(), getSchema(), getTotalRows(), getQueryId());
+    return Objects.hash(
+        getPageNoSchema(), getSchema(), getTotalRows(), getQueryId(), getRowsInPage());
   }
 
   @Override
@@ -158,6 +169,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         && Iterators.elementsEqual(getValues().iterator(), response.getValues().iterator())
         && Objects.equals(getSchema(), response.getSchema())
         && getTotalRows() == response.getTotalRows()
-        && getQueryId() == response.getQueryId();
+        && Objects.equals(getQueryId(), response.getQueryId())
+        && Objects.equals(getRowsInPage(), response.getRowsInPage());
   }
 }

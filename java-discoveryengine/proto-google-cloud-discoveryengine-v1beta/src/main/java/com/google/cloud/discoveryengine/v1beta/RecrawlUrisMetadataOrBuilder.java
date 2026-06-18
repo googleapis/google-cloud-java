@@ -178,6 +178,73 @@ public interface RecrawlUrisMetadataOrBuilder
    *
    *
    * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @return A list containing the noindexUris.
+   */
+  java.util.List<java.lang.String> getNoindexUris11List();
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @return The count of noindexUris.
+   */
+  int getNoindexUris11Count();
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The noindexUris at the given index.
+   */
+  java.lang.String getNoindexUris11(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the noindexUris at the given index.
+   */
+  com.google.protobuf.ByteString getNoindexUris11Bytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of URIs that have no index meta tag.
+   * </pre>
+   *
+   * <code>int32 noindex_uris_count = 12;</code>
+   *
+   * @return The noindexUrisCount.
+   */
+  int getNoindexUrisCount12();
+
+  /**
+   *
+   *
+   * <pre>
    * Unique URIs in the request that don't match any TargetSite in the
    * DataStore, only match TargetSites that haven't been fully indexed, or match
    * a TargetSite with type EXCLUDE. Sample limited to 1000.

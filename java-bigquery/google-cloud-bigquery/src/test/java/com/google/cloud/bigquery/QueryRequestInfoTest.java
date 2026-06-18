@@ -165,11 +165,20 @@ public class QueryRequestInfoTest {
       new QueryRequestInfo(
           QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.newBuilder().build());
 
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED =
+      QUERY_JOB_CONFIGURATION_SUPPORTED.toBuilder()
+          .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+          .build();
+  QueryRequestInfo REQUEST_INFO_REQUIRED_SUPPORTED =
+      new QueryRequestInfo(
+          QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build());
+
   @Test
   public void testIsFastQuerySupported() {
     assertFalse(REQUEST_INFO.isFastQuerySupported());
     assertTrue(REQUEST_INFO_SUPPORTED.isFastQuerySupported());
     assertTrue(REQUEST_INFO_WITH_TIMEOUT.isFastQuerySupported());
+    assertTrue(REQUEST_INFO_REQUIRED_SUPPORTED.isFastQuerySupported());
   }
 
   @Test
@@ -193,6 +202,10 @@ public class QueryRequestInfoTest {
         new QueryRequestInfo(
             QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.newBuilder().build()),
         REQUEST_INFO_WITH_TIMEOUT);
+    compareQueryRequestInfo(
+        new QueryRequestInfo(
+            QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build()),
+        REQUEST_INFO_REQUIRED_SUPPORTED);
   }
 
   @Test

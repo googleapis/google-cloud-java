@@ -54,6 +54,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
 
   private UserEvent() {
     eventType_ = "";
+    conversionType_ = "";
     userPseudoId_ = "";
     engine_ = "";
     dataStore_ = "";
@@ -64,6 +65,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     tagIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     panels_ = java.util.Collections.emptyList();
+    entity_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -112,7 +114,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -123,6 +124,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    * * `media-play`: Start/resume watching a video, playing a song, etc.
    * * `media-complete`: Finished or stopped midway through a video, song, etc.
+   *
+   * Custom conversion value:
+   *
+   * * `conversion`: Customer defined conversion event.
    * </pre>
    *
    * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,7 +160,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -166,6 +170,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    * * `media-play`: Start/resume watching a video, playing a song, etc.
    * * `media-complete`: Finished or stopped midway through a video, song, etc.
+   *
+   * Custom conversion value:
+   *
+   * * `conversion`: Customer defined conversion event.
    * </pre>
    *
    * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -179,6 +187,79 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       eventType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONVERSION_TYPE_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object conversionType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Conversion type.
+   *
+   * Required if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is `conversion`. This is a customer-defined conversion name in lowercase
+   * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+   *
+   * Do not set the field if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is not `conversion`. This mixes the custom conversion event with predefined
+   * events like `search`, `view-item` etc.
+   * </pre>
+   *
+   * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionType.
+   */
+  @java.lang.Override
+  public java.lang.String getConversionType() {
+    java.lang.Object ref = conversionType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      conversionType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Conversion type.
+   *
+   * Required if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is `conversion`. This is a customer-defined conversion name in lowercase
+   * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+   *
+   * Do not set the field if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is not `conversion`. This mixes the custom conversion event with predefined
+   * events like `search`, `view-item` etc.
+   * </pre>
+   *
+   * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for conversionType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConversionTypeBytes() {
+    java.lang.Object ref = conversionType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      conversionType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -776,8 +857,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -795,7 +877,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -816,8 +898,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -835,7 +918,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -1767,6 +1850,126 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     return panels_.get(index);
   }
 
+  public static final int FEEDBACK_FIELD_NUMBER = 23;
+  private com.google.cloud.discoveryengine.v1beta.Feedback feedback_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the feedback field is set.
+   */
+  @java.lang.Override
+  public boolean hasFeedback() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The feedback.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Feedback getFeedback() {
+    return feedback_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Feedback.getDefaultInstance()
+        : feedback_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.FeedbackOrBuilder getFeedbackOrBuilder() {
+    return feedback_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Feedback.getDefaultInstance()
+        : feedback_;
+  }
+
+  public static final int ENTITY_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The entity.
+   */
+  @java.lang.Override
+  public java.lang.String getEntity() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      entity_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for entity.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEntityBytes() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      entity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1840,8 +2043,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataStore_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 20, dataStore_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(conversionType_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 21, conversionType_);
+    }
     for (int i = 0; i < panels_.size(); i++) {
       output.writeMessage(22, panels_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(23, getFeedback());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entity_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 25, entity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1932,8 +2144,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataStore_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(20, dataStore_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(conversionType_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(21, conversionType_);
+    }
     for (int i = 0; i < panels_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, panels_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getFeedback());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entity_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(25, entity_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1952,6 +2173,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.discoveryengine.v1beta.UserEvent) obj;
 
     if (!getEventType().equals(other.getEventType())) return false;
+    if (!getConversionType().equals(other.getConversionType())) return false;
     if (!getUserPseudoId().equals(other.getUserPseudoId())) return false;
     if (!getEngine().equals(other.getEngine())) return false;
     if (!getDataStore().equals(other.getDataStore())) return false;
@@ -1996,6 +2218,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (!getMediaInfo().equals(other.getMediaInfo())) return false;
     }
     if (!getPanelsList().equals(other.getPanelsList())) return false;
+    if (hasFeedback() != other.hasFeedback()) return false;
+    if (hasFeedback()) {
+      if (!getFeedback().equals(other.getFeedback())) return false;
+    }
+    if (!getEntity().equals(other.getEntity())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2009,6 +2236,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getEventType().hashCode();
+    hash = (37 * hash) + CONVERSION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getConversionType().hashCode();
     hash = (37 * hash) + USER_PSEUDO_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserPseudoId().hashCode();
     hash = (37 * hash) + ENGINE_FIELD_NUMBER;
@@ -2075,6 +2304,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PANELS_FIELD_NUMBER;
       hash = (53 * hash) + getPanelsList().hashCode();
     }
+    if (hasFeedback()) {
+      hash = (37 * hash) + FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getFeedback().hashCode();
+    }
+    hash = (37 * hash) + ENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getEntity().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2249,6 +2484,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         internalGetTransactionInfoFieldBuilder();
         internalGetMediaInfoFieldBuilder();
         internalGetPanelsFieldBuilder();
+        internalGetFeedbackFieldBuilder();
       }
     }
 
@@ -2257,6 +2493,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       eventType_ = "";
+      conversionType_ = "";
       userPseudoId_ = "";
       engine_ = "";
       dataStore_ = "";
@@ -2285,7 +2522,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         documents_ = null;
         documentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       panel_ = null;
       if (panelBuilder_ != null) {
         panelBuilder_.dispose();
@@ -2320,7 +2557,13 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         panels_ = null;
         panelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
+      feedback_ = null;
+      if (feedbackBuilder_ != null) {
+        feedbackBuilder_.dispose();
+        feedbackBuilder_ = null;
+      }
+      entity_ = "";
       return this;
     }
 
@@ -2359,18 +2602,18 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.discoveryengine.v1beta.UserEvent result) {
       if (documentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           documents_ = java.util.Collections.unmodifiableList(documents_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.documents_ = documents_;
       } else {
         result.documents_ = documentsBuilder_.build();
       }
       if (panelsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           panels_ = java.util.Collections.unmodifiableList(panels_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.panels_ = panels_;
       } else {
@@ -2384,72 +2627,82 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         result.eventType_ = eventType_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.userPseudoId_ = userPseudoId_;
+        result.conversionType_ = conversionType_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.engine_ = engine_;
+        result.userPseudoId_ = userPseudoId_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.engine_ = engine_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.dataStore_ = dataStore_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.eventTime_ = eventTimeBuilder_ == null ? eventTime_ : eventTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.userInfo_ = userInfoBuilder_ == null ? userInfo_ : userInfoBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.directUserRequest_ = directUserRequest_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.sessionId_ = sessionId_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.pageInfo_ = pageInfoBuilder_ == null ? pageInfo_ : pageInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.attributionToken_ = attributionToken_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.filter_ = filter_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.panel_ = panelBuilder_ == null ? panel_ : panelBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.searchInfo_ = searchInfoBuilder_ == null ? searchInfo_ : searchInfoBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.completionInfo_ =
             completionInfoBuilder_ == null ? completionInfo_ : completionInfoBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.transactionInfo_ =
             transactionInfoBuilder_ == null ? transactionInfo_ : transactionInfoBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         tagIds_.makeImmutable();
         result.tagIds_ = tagIds_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         promotionIds_.makeImmutable();
         result.promotionIds_ = promotionIds_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.attributes_ =
             internalGetAttributes().build(AttributesDefaultEntryHolder.defaultEntry);
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.mediaInfo_ = mediaInfoBuilder_ == null ? mediaInfo_ : mediaInfoBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.feedback_ = feedbackBuilder_ == null ? feedback_ : feedbackBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.entity_ = entity_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2472,19 +2725,24 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getConversionType().isEmpty()) {
+        conversionType_ = other.conversionType_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getEngine().isEmpty()) {
         engine_ = other.engine_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDataStore().isEmpty()) {
         dataStore_ = other.dataStore_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasEventTime()) {
@@ -2498,7 +2756,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getSessionId().isEmpty()) {
         sessionId_ = other.sessionId_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasPageInfo()) {
@@ -2506,19 +2764,19 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getAttributionToken().isEmpty()) {
         attributionToken_ = other.attributionToken_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (documentsBuilder_ == null) {
         if (!other.documents_.isEmpty()) {
           if (documents_.isEmpty()) {
             documents_ = other.documents_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureDocumentsIsMutable();
             documents_.addAll(other.documents_);
@@ -2531,7 +2789,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
             documentsBuilder_.dispose();
             documentsBuilder_ = null;
             documents_ = other.documents_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             documentsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetDocumentsFieldBuilder()
@@ -2556,7 +2814,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (!other.tagIds_.isEmpty()) {
         if (tagIds_.isEmpty()) {
           tagIds_ = other.tagIds_;
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00020000;
         } else {
           ensureTagIdsIsMutable();
           tagIds_.addAll(other.tagIds_);
@@ -2566,7 +2824,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -2574,7 +2832,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       if (other.hasMediaInfo()) {
         mergeMediaInfo(other.getMediaInfo());
       }
@@ -2582,7 +2840,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         if (!other.panels_.isEmpty()) {
           if (panels_.isEmpty()) {
             panels_ = other.panels_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensurePanelsIsMutable();
             panels_.addAll(other.panels_);
@@ -2595,7 +2853,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
             panelsBuilder_.dispose();
             panelsBuilder_ = null;
             panels_ = other.panels_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             panelsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetPanelsFieldBuilder()
@@ -2604,6 +2862,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
             panelsBuilder_.addAllMessages(other.panels_);
           }
         }
+      }
+      if (other.hasFeedback()) {
+        mergeFeedback(other.getFeedback());
+      }
+      if (!other.getEntity().isEmpty()) {
+        entity_ = other.entity_;
+        bitField0_ |= 0x00800000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2640,52 +2906,52 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetEventTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetUserInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 40:
               {
                 directUserRequest_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 40
             case 50:
               {
                 sessionId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetPageInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 66:
               {
                 attributionToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 66
             case 74:
               {
                 filter_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 74
             case 82:
@@ -2705,28 +2971,28 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
             case 90:
               {
                 input.readMessage(internalGetPanelFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetSearchInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     internalGetCompletionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     internalGetTransactionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 114
             case 122:
@@ -2754,28 +3020,34 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAttributes()
                     .ensureBuilderMap()
                     .put(attributes__.getKey(), attributes__.getValue());
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(
                     internalGetMediaInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 146
             case 154:
               {
                 engine_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 154
             case 162:
               {
                 dataStore_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 162
+            case 170:
+              {
+                conversionType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 170
             case 178:
               {
                 com.google.cloud.discoveryengine.v1beta.PanelInfo m =
@@ -2790,6 +3062,19 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    internalGetFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
+            case 202:
+              {
+                entity_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2824,7 +3109,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2835,6 +3119,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      * * `media-play`: Start/resume watching a video, playing a song, etc.
      * * `media-complete`: Finished or stopped midway through a video, song, etc.
+     *
+     * Custom conversion value:
+     *
+     * * `conversion`: Customer defined conversion event.
      * </pre>
      *
      * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2866,7 +3154,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2877,6 +3164,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      * * `media-play`: Start/resume watching a video, playing a song, etc.
      * * `media-complete`: Finished or stopped midway through a video, song, etc.
+     *
+     * Custom conversion value:
+     *
+     * * `conversion`: Customer defined conversion event.
      * </pre>
      *
      * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2908,7 +3199,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2919,6 +3209,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      * * `media-play`: Start/resume watching a video, playing a song, etc.
      * * `media-complete`: Finished or stopped midway through a video, song, etc.
+     *
+     * Custom conversion value:
+     *
+     * * `conversion`: Customer defined conversion event.
      * </pre>
      *
      * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2949,7 +3243,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2960,6 +3253,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      * * `media-play`: Start/resume watching a video, playing a song, etc.
      * * `media-complete`: Finished or stopped midway through a video, song, etc.
+     *
+     * Custom conversion value:
+     *
+     * * `conversion`: Customer defined conversion event.
      * </pre>
      *
      * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2986,7 +3283,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2997,6 +3293,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      * * `media-play`: Start/resume watching a video, playing a song, etc.
      * * `media-complete`: Finished or stopped midway through a video, song, etc.
+     *
+     * Custom conversion value:
+     *
+     * * `conversion`: Customer defined conversion event.
      * </pre>
      *
      * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3011,6 +3311,167 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       eventType_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object conversionType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Conversion type.
+     *
+     * Required if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is `conversion`. This is a customer-defined conversion name in lowercase
+     * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+     *
+     * Do not set the field if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is not `conversion`. This mixes the custom conversion event with predefined
+     * events like `search`, `view-item` etc.
+     * </pre>
+     *
+     * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The conversionType.
+     */
+    public java.lang.String getConversionType() {
+      java.lang.Object ref = conversionType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        conversionType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Conversion type.
+     *
+     * Required if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is `conversion`. This is a customer-defined conversion name in lowercase
+     * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+     *
+     * Do not set the field if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is not `conversion`. This mixes the custom conversion event with predefined
+     * events like `search`, `view-item` etc.
+     * </pre>
+     *
+     * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for conversionType.
+     */
+    public com.google.protobuf.ByteString getConversionTypeBytes() {
+      java.lang.Object ref = conversionType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        conversionType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Conversion type.
+     *
+     * Required if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is `conversion`. This is a customer-defined conversion name in lowercase
+     * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+     *
+     * Do not set the field if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is not `conversion`. This mixes the custom conversion event with predefined
+     * events like `search`, `view-item` etc.
+     * </pre>
+     *
+     * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The conversionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversionType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      conversionType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Conversion type.
+     *
+     * Required if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is `conversion`. This is a customer-defined conversion name in lowercase
+     * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+     *
+     * Do not set the field if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is not `conversion`. This mixes the custom conversion event with predefined
+     * events like `search`, `view-item` etc.
+     * </pre>
+     *
+     * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConversionType() {
+      conversionType_ = getDefaultInstance().getConversionType();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Conversion type.
+     *
+     * Required if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is `conversion`. This is a customer-defined conversion name in lowercase
+     * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+     *
+     * Do not set the field if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+     * is not `conversion`. This mixes the custom conversion event with predefined
+     * events like `search`, `view-item` etc.
+     * </pre>
+     *
+     * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for conversionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversionTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      conversionType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3128,7 +3589,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3162,7 +3623,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3201,7 +3662,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3289,7 +3750,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       engine_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3313,7 +3774,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEngine() {
       engine_ = getDefaultInstance().getEngine();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3342,7 +3803,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       engine_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3439,7 +3900,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       dataStore_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3466,7 +3927,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDataStore() {
       dataStore_ = getDefaultInstance().getDataStore();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3498,7 +3959,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       dataStore_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3524,7 +3985,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the eventTime field is set.
      */
     public boolean hasEventTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3568,7 +4029,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         eventTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3590,7 +4051,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         eventTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3608,7 +4069,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEventTime(com.google.protobuf.Timestamp value) {
       if (eventTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && eventTime_ != null
             && eventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEventTimeBuilder().mergeFrom(value);
@@ -3619,7 +4080,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         eventTimeBuilder_.mergeFrom(value);
       }
       if (eventTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3637,7 +4098,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp event_time = 3;</code>
      */
     public Builder clearEventTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       eventTime_ = null;
       if (eventTimeBuilder_ != null) {
         eventTimeBuilder_.dispose();
@@ -3659,7 +4120,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp event_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEventTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetEventTimeFieldBuilder().getBuilder();
     }
@@ -3730,7 +4191,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the userInfo field is set.
      */
     public boolean hasUserInfo() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -3772,7 +4233,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         userInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3793,7 +4254,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         userInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3809,7 +4270,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUserInfo(com.google.cloud.discoveryengine.v1beta.UserInfo value) {
       if (userInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && userInfo_ != null
             && userInfo_ != com.google.cloud.discoveryengine.v1beta.UserInfo.getDefaultInstance()) {
           getUserInfoBuilder().mergeFrom(value);
@@ -3820,7 +4281,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         userInfoBuilder_.mergeFrom(value);
       }
       if (userInfo_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -3836,7 +4297,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 4;</code>
      */
     public Builder clearUserInfo() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       userInfo_ = null;
       if (userInfoBuilder_ != null) {
         userInfoBuilder_.dispose();
@@ -3856,7 +4317,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 4;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.UserInfo.Builder getUserInfoBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetUserInfoFieldBuilder().getBuilder();
     }
@@ -3959,7 +4420,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder setDirectUserRequest(boolean value) {
 
       directUserRequest_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3986,7 +4447,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDirectUserRequest() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       directUserRequest_ = false;
       onChanged();
       return this;
@@ -4084,7 +4545,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       sessionId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4111,7 +4572,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSessionId() {
       sessionId_ = getDefaultInstance().getSessionId();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4143,7 +4604,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       sessionId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4168,7 +4629,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the pageInfo field is set.
      */
     public boolean hasPageInfo() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -4212,7 +4673,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         pageInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4234,7 +4695,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         pageInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4251,7 +4712,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePageInfo(com.google.cloud.discoveryengine.v1beta.PageInfo value) {
       if (pageInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && pageInfo_ != null
             && pageInfo_ != com.google.cloud.discoveryengine.v1beta.PageInfo.getDefaultInstance()) {
           getPageInfoBuilder().mergeFrom(value);
@@ -4262,7 +4723,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         pageInfoBuilder_.mergeFrom(value);
       }
       if (pageInfo_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -4279,7 +4740,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.PageInfo page_info = 7;</code>
      */
     public Builder clearPageInfo() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       pageInfo_ = null;
       if (pageInfoBuilder_ != null) {
         pageInfoBuilder_.dispose();
@@ -4300,7 +4761,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.PageInfo page_info = 7;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.PageInfo.Builder getPageInfoBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetPageInfoFieldBuilder().getBuilder();
     }
@@ -4483,7 +4944,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       attributionToken_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4523,7 +4984,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAttributionToken() {
       attributionToken_ = getDefaultInstance().getAttributionToken();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4568,7 +5029,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       attributionToken_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4579,8 +5040,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -4598,7 +5060,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -4618,8 +5080,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -4637,7 +5100,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -4657,8 +5120,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -4676,7 +5140,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -4686,7 +5150,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       filter_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4695,8 +5159,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -4714,13 +5179,13 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
       filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4729,8 +5194,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -4748,7 +5214,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -4759,7 +5225,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       filter_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4768,11 +5234,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureDocumentsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         documents_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1beta.DocumentInfo>(
                 documents_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -5187,7 +5653,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder clearDocuments() {
       if (documentsBuilder_ == null) {
         documents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         documentsBuilder_.clear();
@@ -5439,7 +5905,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.discoveryengine.v1beta.DocumentInfo,
                 com.google.cloud.discoveryengine.v1beta.DocumentInfo.Builder,
                 com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>(
-                documents_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                documents_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         documents_ = null;
       }
       return documentsBuilder_;
@@ -5464,7 +5930,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the panel field is set.
      */
     public boolean hasPanel() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5506,7 +5972,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         panelBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5527,7 +5993,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         panelBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5543,7 +6009,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePanel(com.google.cloud.discoveryengine.v1beta.PanelInfo value) {
       if (panelBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && panel_ != null
             && panel_ != com.google.cloud.discoveryengine.v1beta.PanelInfo.getDefaultInstance()) {
           getPanelBuilder().mergeFrom(value);
@@ -5554,7 +6020,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         panelBuilder_.mergeFrom(value);
       }
       if (panel_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5570,7 +6036,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.PanelInfo panel = 11;</code>
      */
     public Builder clearPanel() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       panel_ = null;
       if (panelBuilder_ != null) {
         panelBuilder_.dispose();
@@ -5590,7 +6056,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.PanelInfo panel = 11;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder getPanelBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetPanelFieldBuilder().getBuilder();
     }
@@ -5662,7 +6128,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the searchInfo field is set.
      */
     public boolean hasSearchInfo() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5710,7 +6176,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         searchInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5734,7 +6200,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         searchInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5753,7 +6219,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSearchInfo(com.google.cloud.discoveryengine.v1beta.SearchInfo value) {
       if (searchInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && searchInfo_ != null
             && searchInfo_
                 != com.google.cloud.discoveryengine.v1beta.SearchInfo.getDefaultInstance()) {
@@ -5765,7 +6231,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         searchInfoBuilder_.mergeFrom(value);
       }
       if (searchInfo_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5784,7 +6250,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.SearchInfo search_info = 12;</code>
      */
     public Builder clearSearchInfo() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       searchInfo_ = null;
       if (searchInfoBuilder_ != null) {
         searchInfoBuilder_.dispose();
@@ -5807,7 +6273,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.SearchInfo search_info = 12;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.SearchInfo.Builder getSearchInfoBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetSearchInfoFieldBuilder().getBuilder();
     }
@@ -5886,7 +6352,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the completionInfo field is set.
      */
     public boolean hasCompletionInfo() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5936,7 +6402,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         completionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5961,7 +6427,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         completionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5982,7 +6448,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder mergeCompletionInfo(
         com.google.cloud.discoveryengine.v1beta.CompletionInfo value) {
       if (completionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && completionInfo_ != null
             && completionInfo_
                 != com.google.cloud.discoveryengine.v1beta.CompletionInfo.getDefaultInstance()) {
@@ -5994,7 +6460,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         completionInfoBuilder_.mergeFrom(value);
       }
       if (completionInfo_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6014,7 +6480,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.CompletionInfo completion_info = 13;</code>
      */
     public Builder clearCompletionInfo() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       completionInfo_ = null;
       if (completionInfoBuilder_ != null) {
         completionInfoBuilder_.dispose();
@@ -6039,7 +6505,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.CompletionInfo.Builder
         getCompletionInfoBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetCompletionInfoFieldBuilder().getBuilder();
     }
@@ -6117,7 +6583,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the transactionInfo field is set.
      */
     public boolean hasTransactionInfo() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6160,7 +6626,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         transactionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6181,7 +6647,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         transactionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6198,7 +6664,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder mergeTransactionInfo(
         com.google.cloud.discoveryengine.v1beta.TransactionInfo value) {
       if (transactionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && transactionInfo_ != null
             && transactionInfo_
                 != com.google.cloud.discoveryengine.v1beta.TransactionInfo.getDefaultInstance()) {
@@ -6210,7 +6676,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         transactionInfoBuilder_.mergeFrom(value);
       }
       if (transactionInfo_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6226,7 +6692,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.TransactionInfo transaction_info = 14;</code>
      */
     public Builder clearTransactionInfo() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       transactionInfo_ = null;
       if (transactionInfoBuilder_ != null) {
         transactionInfoBuilder_.dispose();
@@ -6247,7 +6713,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.TransactionInfo.Builder
         getTransactionInfoBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetTransactionInfoFieldBuilder().getBuilder();
     }
@@ -6305,7 +6771,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (!tagIds_.isModifiable()) {
         tagIds_ = new com.google.protobuf.LazyStringArrayList(tagIds_);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
     }
 
     /**
@@ -6400,7 +6866,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       ensureTagIdsIsMutable();
       tagIds_.set(index, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6425,7 +6891,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       ensureTagIdsIsMutable();
       tagIds_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6447,7 +6913,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder addAllTagIds(java.lang.Iterable<java.lang.String> values) {
       ensureTagIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagIds_);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6467,7 +6933,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTagIds() {
       tagIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       ;
       onChanged();
       return this;
@@ -6494,7 +6960,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTagIdsIsMutable();
       tagIds_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6506,7 +6972,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (!promotionIds_.isModifiable()) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
     }
 
     /**
@@ -6596,7 +7062,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.set(index, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6620,7 +7086,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6641,7 +7107,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder addAllPromotionIds(java.lang.Iterable<java.lang.String> values) {
       ensurePromotionIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotionIds_);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6660,7 +7126,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPromotionIds() {
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -6686,7 +7152,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6744,7 +7210,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (attributes_ == null) {
         attributes_ = new com.google.protobuf.MapFieldBuilder<>(attributesConverter);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return attributes_;
     }
@@ -6950,7 +7416,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAttributes() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       internalGetMutableAttributes().clear();
       return this;
     }
@@ -7003,7 +7469,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.CustomAttribute>
         getMutableAttributes() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return internalGetMutableAttributes().ensureMessageMap();
     }
 
@@ -7052,7 +7518,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAttributes().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -7103,7 +7569,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         }
       }
       internalGetMutableAttributes().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -7179,7 +7645,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the mediaInfo field is set.
      */
     public boolean hasMediaInfo() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -7221,7 +7687,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         mediaInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7242,7 +7708,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       } else {
         mediaInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7258,7 +7724,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMediaInfo(com.google.cloud.discoveryengine.v1beta.MediaInfo value) {
       if (mediaInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && mediaInfo_ != null
             && mediaInfo_
                 != com.google.cloud.discoveryengine.v1beta.MediaInfo.getDefaultInstance()) {
@@ -7270,7 +7736,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         mediaInfoBuilder_.mergeFrom(value);
       }
       if (mediaInfo_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -7286,7 +7752,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.MediaInfo media_info = 18;</code>
      */
     public Builder clearMediaInfo() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       mediaInfo_ = null;
       if (mediaInfoBuilder_ != null) {
         mediaInfoBuilder_.dispose();
@@ -7306,7 +7772,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.MediaInfo media_info = 18;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.MediaInfo.Builder getMediaInfoBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetMediaInfoFieldBuilder().getBuilder();
     }
@@ -7360,10 +7826,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePanelsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         panels_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1beta.PanelInfo>(panels_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -7622,7 +8088,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     public Builder clearPanels() {
       if (panelsBuilder_ == null) {
         panels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         panelsBuilder_.clear();
@@ -7774,10 +8240,354 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.discoveryengine.v1beta.PanelInfo,
                 com.google.cloud.discoveryengine.v1beta.PanelInfo.Builder,
                 com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder>(
-                panels_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
+                panels_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
         panels_ = null;
       }
       return panelsBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.Feedback feedback_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Feedback,
+            com.google.cloud.discoveryengine.v1beta.Feedback.Builder,
+            com.google.cloud.discoveryengine.v1beta.FeedbackOrBuilder>
+        feedbackBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the feedback field is set.
+     */
+    public boolean hasFeedback() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The feedback.
+     */
+    public com.google.cloud.discoveryengine.v1beta.Feedback getFeedback() {
+      if (feedbackBuilder_ == null) {
+        return feedback_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Feedback.getDefaultInstance()
+            : feedback_;
+      } else {
+        return feedbackBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFeedback(com.google.cloud.discoveryengine.v1beta.Feedback value) {
+      if (feedbackBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        feedback_ = value;
+      } else {
+        feedbackBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFeedback(
+        com.google.cloud.discoveryengine.v1beta.Feedback.Builder builderForValue) {
+      if (feedbackBuilder_ == null) {
+        feedback_ = builderForValue.build();
+      } else {
+        feedbackBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFeedback(com.google.cloud.discoveryengine.v1beta.Feedback value) {
+      if (feedbackBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && feedback_ != null
+            && feedback_ != com.google.cloud.discoveryengine.v1beta.Feedback.getDefaultInstance()) {
+          getFeedbackBuilder().mergeFrom(value);
+        } else {
+          feedback_ = value;
+        }
+      } else {
+        feedbackBuilder_.mergeFrom(value);
+      }
+      if (feedback_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFeedback() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      feedback_ = null;
+      if (feedbackBuilder_ != null) {
+        feedbackBuilder_.dispose();
+        feedbackBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Feedback.Builder getFeedbackBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return internalGetFeedbackFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.FeedbackOrBuilder getFeedbackOrBuilder() {
+      if (feedbackBuilder_ != null) {
+        return feedbackBuilder_.getMessageOrBuilder();
+      } else {
+        return feedback_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Feedback.getDefaultInstance()
+            : feedback_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Feedback,
+            com.google.cloud.discoveryengine.v1beta.Feedback.Builder,
+            com.google.cloud.discoveryengine.v1beta.FeedbackOrBuilder>
+        internalGetFeedbackFieldBuilder() {
+      if (feedbackBuilder_ == null) {
+        feedbackBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Feedback,
+                com.google.cloud.discoveryengine.v1beta.Feedback.Builder,
+                com.google.cloud.discoveryengine.v1beta.FeedbackOrBuilder>(
+                getFeedback(), getParentForChildren(), isClean());
+        feedback_ = null;
+      }
+      return feedbackBuilder_;
+    }
+
+    private java.lang.Object entity_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The entity.
+     */
+    public java.lang.String getEntity() {
+      java.lang.Object ref = entity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        entity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for entity.
+     */
+    public com.google.protobuf.ByteString getEntityBytes() {
+      java.lang.Object ref = entity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        entity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entity_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEntity() {
+      entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entity_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.UserEvent)
