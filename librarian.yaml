@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.20.0
+version: v0.21.1-0.20260617000028-820646f3db93
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: f7b17174725f43b5cb11b0b8c6bbad20a3dc5bd1
-    sha256: e21b1ea623f68161e9c0c464ca9e9df53da80d7133244531aa97d1cfeb411ccc
+    commit: 7af3f2c7b8927cffb548fd2cf09b04c6371437ee
+    sha256: fb354b89774f4599bb3559d190fe54e51da76c6339c062900355c874b9defac5
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -388,6 +388,22 @@ libraries:
       product_documentation_override: https://cloud.google.com/automl/docs/
       rest_documentation: https://cloud.google.com/automl/docs/reference/rest
       rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
+  - name: backstory
+    version: 0.2.0-SNAPSHOT
+    apis:
+      - path: backstory
+        java:
+          proto_artifact_id_override: proto-google-cloud-backstory
+          generate_gapic: false
+          generate_grpc: false
+          generate_resource_names: false
+    java:
+      api_id_override: backstory.googleapis.com
+      api_description_override: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
+      library_type_override: GAPIC_AUTO
+      name_pretty_override: Malachite Common Protos
+      product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
   - name: backupdr
     version: 0.53.0-SNAPSHOT
     apis:
@@ -510,6 +526,7 @@ libraries:
       - path: google/cloud/bigquery/biglake/v1alpha1
     java:
       api_description_override: The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.
+      released_version: 0.81.1
       name_pretty_override: BigLake
       product_documentation_override: https://cloud.google.com/biglake
   - name: bigquery-data-exchange
@@ -1564,7 +1581,6 @@ libraries:
       name_pretty_override: Error Reporting
       product_documentation_override: https://cloud.google.com/error-reporting
       billing_not_required: true
-      released_version: 0.215.0-beta-SNAPSHOT
   - name: essential-contacts
     version: 2.94.0-SNAPSHOT
     apis:
@@ -1674,6 +1690,7 @@ libraries:
         - google-cloud-firestore
         - google-cloud-firestore-bom
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5337669
+      released_version: 3.43.1
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Firestore
       product_documentation_override: https://cloud.google.com/firestore
@@ -1839,6 +1856,7 @@ libraries:
       name_pretty_override: Grafeas
       product_documentation_override: https://grafeas.io
       skip_pom_updates: true
+      alternate_headers: license-header.txt
   - name: gsuite-addons
     version: 2.94.0-SNAPSHOT
     apis:

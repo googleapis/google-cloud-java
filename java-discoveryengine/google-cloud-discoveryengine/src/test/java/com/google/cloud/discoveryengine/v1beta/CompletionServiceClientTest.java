@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -176,6 +177,9 @@ public class CompletionServiceClientTest {
             .setIncludeTailSuggestions(true)
             .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
             .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+            .addAllSuggestionTypeSpecs(
+                new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+            .addAllExperimentIds(new ArrayList<String>())
             .build();
 
     AdvancedCompleteQueryResponse actualResponse = client.advancedCompleteQuery(request);
@@ -195,6 +199,9 @@ public class CompletionServiceClientTest {
         request.getIncludeTailSuggestions(), actualRequest.getIncludeTailSuggestions());
     Assert.assertEquals(request.getBoostSpec(), actualRequest.getBoostSpec());
     Assert.assertEquals(request.getSuggestionTypesList(), actualRequest.getSuggestionTypesList());
+    Assert.assertEquals(
+        request.getSuggestionTypeSpecsList(), actualRequest.getSuggestionTypeSpecsList());
+    Assert.assertEquals(request.getExperimentIdsList(), actualRequest.getExperimentIdsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -220,6 +227,9 @@ public class CompletionServiceClientTest {
               .setIncludeTailSuggestions(true)
               .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
               .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .addAllSuggestionTypeSpecs(
+                  new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+              .addAllExperimentIds(new ArrayList<String>())
               .build();
       client.advancedCompleteQuery(request);
       Assert.fail("No exception raised");
@@ -478,6 +488,67 @@ public class CompletionServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void removeSuggestionTest() throws Exception {
+    RemoveSuggestionResponse expectedResponse = RemoveSuggestionResponse.newBuilder().build();
+    mockCompletionService.addResponse(expectedResponse);
+
+    RemoveSuggestionRequest request =
+        RemoveSuggestionRequest.newBuilder()
+            .setCompletionConfig(
+                CompletionConfigName.ofProjectLocationCollectionEngineName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+                    .toString())
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setRemoveTime(Timestamp.newBuilder().build())
+            .build();
+
+    RemoveSuggestionResponse actualResponse = client.removeSuggestion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompletionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveSuggestionRequest actualRequest = ((RemoveSuggestionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        request.getSearchHistorySuggestion(), actualRequest.getSearchHistorySuggestion());
+    Assert.assertEquals(
+        request.getRemoveAllSearchHistorySuggestions(),
+        actualRequest.getRemoveAllSearchHistorySuggestions());
+    Assert.assertEquals(request.getCompletionConfig(), actualRequest.getCompletionConfig());
+    Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
+    Assert.assertEquals(request.getUserInfo(), actualRequest.getUserInfo());
+    Assert.assertEquals(request.getRemoveTime(), actualRequest.getRemoveTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeSuggestionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompletionService.addException(exception);
+
+    try {
+      RemoveSuggestionRequest request =
+          RemoveSuggestionRequest.newBuilder()
+              .setCompletionConfig(
+                  CompletionConfigName.ofProjectLocationCollectionEngineName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+                      .toString())
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setRemoveTime(Timestamp.newBuilder().build())
+              .build();
+      client.removeSuggestion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

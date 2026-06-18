@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListAgentGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
@@ -51,6 +52,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AgentGateway;
+import com.google.cloud.networkservices.v1.CreateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
@@ -62,6 +65,7 @@ import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
+import com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -76,6 +80,7 @@ import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
+import com.google.cloud.networkservices.v1.GetAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
@@ -91,6 +96,8 @@ import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
 import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysRequest;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
@@ -124,6 +131,7 @@ import com.google.cloud.networkservices.v1.ServiceBinding;
 import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
+import com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
@@ -175,6 +183,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
           .add(Empty.getDescriptor())
           .add(Gateway.getDescriptor())
           .add(ServiceLbPolicy.getDescriptor())
+          .add(AgentGateway.getDescriptor())
           .add(GrpcRoute.getDescriptor())
           .build();
 
@@ -1132,6 +1141,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListHttpRoutesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
@@ -1206,6 +1216,7 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "httpRouteId", request.getHttpRouteId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -2419,6 +2430,204 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysMethodDescriptor =
+          ApiMethodDescriptor.<ListAgentGatewaysRequest, ListAgentGatewaysResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListAgentGateways")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAgentGatewaysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/agentGateways",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAgentGatewaysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAgentGatewaysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "returnPartialSuccess", request.getReturnPartialSuccess());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAgentGatewaysResponse>newBuilder()
+                      .setDefaultInstance(ListAgentGatewaysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAgentGatewayRequest, AgentGateway>
+      getAgentGatewayMethodDescriptor =
+          ApiMethodDescriptor.<GetAgentGatewayRequest, AgentGateway>newBuilder()
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetAgentGateway")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAgentGatewayRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/agentGateways/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AgentGateway>newBuilder()
+                      .setDefaultInstance(AgentGateway.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAgentGatewayRequest, Operation>
+      createAgentGatewayMethodDescriptor =
+          ApiMethodDescriptor.<CreateAgentGatewayRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateAgentGateway")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAgentGatewayRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/agentGateways",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "agentGatewayId", request.getAgentGatewayId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("agentGateway", request.getAgentGateway(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAgentGatewayRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAgentGatewayRequest, Operation>
+      updateAgentGatewayMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAgentGatewayRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateAgentGateway")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAgentGatewayRequest>newBuilder()
+                      .setPath(
+                          "/v1/{agentGateway.name=projects/*/locations/*/agentGateways/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "agentGateway.name", request.getAgentGateway().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("agentGateway", request.getAgentGateway(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAgentGatewayRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAgentGatewayRequest, Operation>
+      deleteAgentGatewayMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAgentGatewayRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteAgentGateway")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAgentGatewayRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/agentGateways/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAgentGatewayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAgentGatewayRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2779,6 +2988,20 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
       listMeshRouteViewsCallable;
   private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
       listMeshRouteViewsPagedCallable;
+  private final UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysCallable;
+  private final UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysPagedCallable;
+  private final UnaryCallable<GetAgentGatewayRequest, AgentGateway> getAgentGatewayCallable;
+  private final UnaryCallable<CreateAgentGatewayRequest, Operation> createAgentGatewayCallable;
+  private final OperationCallable<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationCallable;
+  private final UnaryCallable<UpdateAgentGatewayRequest, Operation> updateAgentGatewayCallable;
+  private final OperationCallable<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationCallable;
+  private final UnaryCallable<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayCallable;
+  private final OperationCallable<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -3583,6 +3806,67 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+        listAgentGatewaysTransportSettings =
+            HttpJsonCallSettings.<ListAgentGatewaysRequest, ListAgentGatewaysResponse>newBuilder()
+                .setMethodDescriptor(listAgentGatewaysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetAgentGatewayRequest, AgentGateway> getAgentGatewayTransportSettings =
+        HttpJsonCallSettings.<GetAgentGatewayRequest, AgentGateway>newBuilder()
+            .setMethodDescriptor(getAgentGatewayMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateAgentGatewayRequest, Operation> createAgentGatewayTransportSettings =
+        HttpJsonCallSettings.<CreateAgentGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAgentGatewayMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateAgentGatewayRequest, Operation> updateAgentGatewayTransportSettings =
+        HttpJsonCallSettings.<UpdateAgentGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAgentGatewayMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "agent_gateway.name", String.valueOf(request.getAgentGateway().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayTransportSettings =
+        HttpJsonCallSettings.<DeleteAgentGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAgentGatewayMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -4105,6 +4389,52 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
             listMeshRouteViewsTransportSettings,
             settings.listMeshRouteViewsSettings(),
             clientContext);
+    this.listAgentGatewaysCallable =
+        callableFactory.createUnaryCallable(
+            listAgentGatewaysTransportSettings,
+            settings.listAgentGatewaysSettings(),
+            clientContext);
+    this.listAgentGatewaysPagedCallable =
+        callableFactory.createPagedCallable(
+            listAgentGatewaysTransportSettings,
+            settings.listAgentGatewaysSettings(),
+            clientContext);
+    this.getAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            getAgentGatewayTransportSettings, settings.getAgentGatewaySettings(), clientContext);
+    this.createAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            createAgentGatewayTransportSettings,
+            settings.createAgentGatewaySettings(),
+            clientContext);
+    this.createAgentGatewayOperationCallable =
+        callableFactory.createOperationCallable(
+            createAgentGatewayTransportSettings,
+            settings.createAgentGatewayOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            updateAgentGatewayTransportSettings,
+            settings.updateAgentGatewaySettings(),
+            clientContext);
+    this.updateAgentGatewayOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAgentGatewayTransportSettings,
+            settings.updateAgentGatewayOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            deleteAgentGatewayTransportSettings,
+            settings.deleteAgentGatewaySettings(),
+            clientContext);
+    this.deleteAgentGatewayOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAgentGatewayTransportSettings,
+            settings.deleteAgentGatewayOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -4191,6 +4521,11 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
     methodDescriptors.add(getMeshRouteViewMethodDescriptor);
     methodDescriptors.add(listGatewayRouteViewsMethodDescriptor);
     methodDescriptors.add(listMeshRouteViewsMethodDescriptor);
+    methodDescriptors.add(listAgentGatewaysMethodDescriptor);
+    methodDescriptors.add(getAgentGatewayMethodDescriptor);
+    methodDescriptors.add(createAgentGatewayMethodDescriptor);
+    methodDescriptors.add(updateAgentGatewayMethodDescriptor);
+    methodDescriptors.add(deleteAgentGatewayMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -4768,6 +5103,56 @@ public class HttpJsonNetworkServicesStub extends NetworkServicesStub {
   public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
       listMeshRouteViewsPagedCallable() {
     return listMeshRouteViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysCallable() {
+    return listAgentGatewaysCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysPagedCallable() {
+    return listAgentGatewaysPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAgentGatewayRequest, AgentGateway> getAgentGatewayCallable() {
+    return getAgentGatewayCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAgentGatewayRequest, Operation> createAgentGatewayCallable() {
+    return createAgentGatewayCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationCallable() {
+    return createAgentGatewayOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAgentGatewayRequest, Operation> updateAgentGatewayCallable() {
+    return updateAgentGatewayCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationCallable() {
+    return updateAgentGatewayOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayCallable() {
+    return deleteAgentGatewayCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationCallable() {
+    return deleteAgentGatewayOperationCallable;
   }
 
   @Override

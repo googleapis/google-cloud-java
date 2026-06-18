@@ -2766,6 +2766,241 @@ public final class NetworkServicesGrpc {
     return getListMeshRouteViewsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListAgentGatewaysRequest,
+          com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+      getListAgentGatewaysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAgentGateways",
+      requestType = com.google.cloud.networkservices.v1.ListAgentGatewaysRequest.class,
+      responseType = com.google.cloud.networkservices.v1.ListAgentGatewaysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.ListAgentGatewaysRequest,
+          com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+      getListAgentGatewaysMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.ListAgentGatewaysRequest,
+            com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+        getListAgentGatewaysMethod;
+    if ((getListAgentGatewaysMethod = NetworkServicesGrpc.getListAgentGatewaysMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getListAgentGatewaysMethod = NetworkServicesGrpc.getListAgentGatewaysMethod) == null) {
+          NetworkServicesGrpc.getListAgentGatewaysMethod =
+              getListAgentGatewaysMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.ListAgentGatewaysRequest,
+                          com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAgentGateways"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListAgentGatewaysRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.ListAgentGatewaysResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("ListAgentGateways"))
+                      .build();
+        }
+      }
+    }
+    return getListAgentGatewaysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetAgentGatewayRequest,
+          com.google.cloud.networkservices.v1.AgentGateway>
+      getGetAgentGatewayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAgentGateway",
+      requestType = com.google.cloud.networkservices.v1.GetAgentGatewayRequest.class,
+      responseType = com.google.cloud.networkservices.v1.AgentGateway.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.GetAgentGatewayRequest,
+          com.google.cloud.networkservices.v1.AgentGateway>
+      getGetAgentGatewayMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.GetAgentGatewayRequest,
+            com.google.cloud.networkservices.v1.AgentGateway>
+        getGetAgentGatewayMethod;
+    if ((getGetAgentGatewayMethod = NetworkServicesGrpc.getGetAgentGatewayMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getGetAgentGatewayMethod = NetworkServicesGrpc.getGetAgentGatewayMethod) == null) {
+          NetworkServicesGrpc.getGetAgentGatewayMethod =
+              getGetAgentGatewayMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.GetAgentGatewayRequest,
+                          com.google.cloud.networkservices.v1.AgentGateway>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAgentGateway"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.GetAgentGatewayRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.AgentGateway
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("GetAgentGateway"))
+                      .build();
+        }
+      }
+    }
+    return getGetAgentGatewayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateAgentGatewayRequest,
+          com.google.longrunning.Operation>
+      getCreateAgentGatewayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAgentGateway",
+      requestType = com.google.cloud.networkservices.v1.CreateAgentGatewayRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.CreateAgentGatewayRequest,
+          com.google.longrunning.Operation>
+      getCreateAgentGatewayMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.CreateAgentGatewayRequest,
+            com.google.longrunning.Operation>
+        getCreateAgentGatewayMethod;
+    if ((getCreateAgentGatewayMethod = NetworkServicesGrpc.getCreateAgentGatewayMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getCreateAgentGatewayMethod = NetworkServicesGrpc.getCreateAgentGatewayMethod)
+            == null) {
+          NetworkServicesGrpc.getCreateAgentGatewayMethod =
+              getCreateAgentGatewayMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.CreateAgentGatewayRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAgentGateway"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.CreateAgentGatewayRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("CreateAgentGateway"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAgentGatewayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest,
+          com.google.longrunning.Operation>
+      getUpdateAgentGatewayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAgentGateway",
+      requestType = com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest,
+          com.google.longrunning.Operation>
+      getUpdateAgentGatewayMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest,
+            com.google.longrunning.Operation>
+        getUpdateAgentGatewayMethod;
+    if ((getUpdateAgentGatewayMethod = NetworkServicesGrpc.getUpdateAgentGatewayMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getUpdateAgentGatewayMethod = NetworkServicesGrpc.getUpdateAgentGatewayMethod)
+            == null) {
+          NetworkServicesGrpc.getUpdateAgentGatewayMethod =
+              getUpdateAgentGatewayMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAgentGateway"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("UpdateAgentGateway"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAgentGatewayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest,
+          com.google.longrunning.Operation>
+      getDeleteAgentGatewayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAgentGateway",
+      requestType = com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest,
+          com.google.longrunning.Operation>
+      getDeleteAgentGatewayMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest,
+            com.google.longrunning.Operation>
+        getDeleteAgentGatewayMethod;
+    if ((getDeleteAgentGatewayMethod = NetworkServicesGrpc.getDeleteAgentGatewayMethod) == null) {
+      synchronized (NetworkServicesGrpc.class) {
+        if ((getDeleteAgentGatewayMethod = NetworkServicesGrpc.getDeleteAgentGatewayMethod)
+            == null) {
+          NetworkServicesGrpc.getDeleteAgentGatewayMethod =
+              getDeleteAgentGatewayMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAgentGateway"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetworkServicesMethodDescriptorSupplier("DeleteAgentGateway"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAgentGatewayMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NetworkServicesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NetworkServicesStub> factory =
@@ -3665,6 +3900,78 @@ public final class NetworkServicesGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListMeshRouteViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AgentGateways in a given project and location.
+     * </pre>
+     */
+    default void listAgentGateways(
+        com.google.cloud.networkservices.v1.ListAgentGatewaysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAgentGatewaysMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AgentGateway.
+     * </pre>
+     */
+    default void getAgentGateway(
+        com.google.cloud.networkservices.v1.GetAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.AgentGateway>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAgentGatewayMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AgentGateway in a given project and location.
+     * </pre>
+     */
+    default void createAgentGateway(
+        com.google.cloud.networkservices.v1.CreateAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAgentGatewayMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AgentGateway.
+     * </pre>
+     */
+    default void updateAgentGateway(
+        com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAgentGatewayMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AgentGateway.
+     * </pre>
+     */
+    default void deleteAgentGateway(
+        com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAgentGatewayMethod(), responseObserver);
     }
   }
 
@@ -4649,6 +4956,88 @@ public final class NetworkServicesGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AgentGateways in a given project and location.
+     * </pre>
+     */
+    public void listAgentGateways(
+        com.google.cloud.networkservices.v1.ListAgentGatewaysRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAgentGatewaysMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AgentGateway.
+     * </pre>
+     */
+    public void getAgentGateway(
+        com.google.cloud.networkservices.v1.GetAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.AgentGateway>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAgentGatewayMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AgentGateway in a given project and location.
+     * </pre>
+     */
+    public void createAgentGateway(
+        com.google.cloud.networkservices.v1.CreateAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAgentGatewayMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AgentGateway.
+     * </pre>
+     */
+    public void updateAgentGateway(
+        com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAgentGatewayMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AgentGateway.
+     * </pre>
+     */
+    public void deleteAgentGateway(
+        com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAgentGatewayMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -5486,6 +5875,76 @@ public final class NetworkServicesGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMeshRouteViewsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AgentGateways in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListAgentGatewaysResponse listAgentGateways(
+        com.google.cloud.networkservices.v1.ListAgentGatewaysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAgentGatewaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AgentGateway.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.AgentGateway getAgentGateway(
+        com.google.cloud.networkservices.v1.GetAgentGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAgentGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AgentGateway in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAgentGateway(
+        com.google.cloud.networkservices.v1.CreateAgentGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAgentGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AgentGateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAgentGateway(
+        com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAgentGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AgentGateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAgentGateway(
+        com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAgentGatewayMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -6264,6 +6723,71 @@ public final class NetworkServicesGrpc {
         com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListMeshRouteViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AgentGateways in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.ListAgentGatewaysResponse listAgentGateways(
+        com.google.cloud.networkservices.v1.ListAgentGatewaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAgentGatewaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AgentGateway.
+     * </pre>
+     */
+    public com.google.cloud.networkservices.v1.AgentGateway getAgentGateway(
+        com.google.cloud.networkservices.v1.GetAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AgentGateway in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAgentGateway(
+        com.google.cloud.networkservices.v1.CreateAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAgentGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AgentGateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAgentGateway(
+        com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAgentGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AgentGateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAgentGateway(
+        com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAgentGatewayMethod(), getCallOptions(), request);
     }
   }
 
@@ -7087,6 +7611,73 @@ public final class NetworkServicesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListMeshRouteViewsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AgentGateways in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>
+        listAgentGateways(com.google.cloud.networkservices.v1.ListAgentGatewaysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAgentGatewaysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AgentGateway.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkservices.v1.AgentGateway>
+        getAgentGateway(com.google.cloud.networkservices.v1.GetAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAgentGatewayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AgentGateway in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAgentGateway(com.google.cloud.networkservices.v1.CreateAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAgentGatewayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AgentGateway.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAgentGateway(com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAgentGatewayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AgentGateway.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAgentGateway(com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAgentGatewayMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ENDPOINT_POLICIES = 0;
@@ -7147,6 +7738,11 @@ public final class NetworkServicesGrpc {
   private static final int METHODID_GET_MESH_ROUTE_VIEW = 55;
   private static final int METHODID_LIST_GATEWAY_ROUTE_VIEWS = 56;
   private static final int METHODID_LIST_MESH_ROUTE_VIEWS = 57;
+  private static final int METHODID_LIST_AGENT_GATEWAYS = 58;
+  private static final int METHODID_GET_AGENT_GATEWAY = 59;
+  private static final int METHODID_CREATE_AGENT_GATEWAY = 60;
+  private static final int METHODID_UPDATE_AGENT_GATEWAY = 61;
+  private static final int METHODID_DELETE_AGENT_GATEWAY = 62;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -7492,6 +8088,34 @@ public final class NetworkServicesGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>)
                   responseObserver);
+          break;
+        case METHODID_LIST_AGENT_GATEWAYS:
+          serviceImpl.listAgentGateways(
+              (com.google.cloud.networkservices.v1.ListAgentGatewaysRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AGENT_GATEWAY:
+          serviceImpl.getAgentGateway(
+              (com.google.cloud.networkservices.v1.GetAgentGatewayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.networkservices.v1.AgentGateway>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_AGENT_GATEWAY:
+          serviceImpl.createAgentGateway(
+              (com.google.cloud.networkservices.v1.CreateAgentGatewayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_AGENT_GATEWAY:
+          serviceImpl.updateAgentGateway(
+              (com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AGENT_GATEWAY:
+          serviceImpl.deleteAgentGateway(
+              (com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -7883,6 +8507,38 @@ public final class NetworkServicesGrpc {
                     com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest,
                     com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse>(
                     service, METHODID_LIST_MESH_ROUTE_VIEWS)))
+        .addMethod(
+            getListAgentGatewaysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.ListAgentGatewaysRequest,
+                    com.google.cloud.networkservices.v1.ListAgentGatewaysResponse>(
+                    service, METHODID_LIST_AGENT_GATEWAYS)))
+        .addMethod(
+            getGetAgentGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.GetAgentGatewayRequest,
+                    com.google.cloud.networkservices.v1.AgentGateway>(
+                    service, METHODID_GET_AGENT_GATEWAY)))
+        .addMethod(
+            getCreateAgentGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.CreateAgentGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AGENT_GATEWAY)))
+        .addMethod(
+            getUpdateAgentGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AGENT_GATEWAY)))
+        .addMethod(
+            getDeleteAgentGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AGENT_GATEWAY)))
         .build();
   }
 
@@ -7992,6 +8648,11 @@ public final class NetworkServicesGrpc {
                       .addMethod(getGetMeshRouteViewMethod())
                       .addMethod(getListGatewayRouteViewsMethod())
                       .addMethod(getListMeshRouteViewsMethod())
+                      .addMethod(getListAgentGatewaysMethod())
+                      .addMethod(getGetAgentGatewayMethod())
+                      .addMethod(getCreateAgentGatewayMethod())
+                      .addMethod(getUpdateAgentGatewayMethod())
+                      .addMethod(getDeleteAgentGatewayMethod())
                       .build();
         }
       }
