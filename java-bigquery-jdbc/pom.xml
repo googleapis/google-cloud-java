@@ -179,8 +179,8 @@
                           version mismatches, but this is a necessary trade-off for the OpenTelemetry 
                           integration to function correctly across different applications.
                         -->
-                        <exclude>io.opentelemetry.api.*</exclude>
-                        <exclude>io.opentelemetry.context.*</exclude>
+                        <exclude>io.opentelemetry.api.**</exclude>
+                        <exclude>io.opentelemetry.context.**</exclude>
                       </excludes>
                     </relocation>
                     <relocation>
@@ -383,6 +383,10 @@
       <artifactId>opentelemetry-sdk-extension-autoconfigure-spi</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-logs</artifactId>
+    </dependency>
+    <dependency>
       <groupId>io.opentelemetry.contrib</groupId>
       <artifactId>opentelemetry-gcp-auth-extension</artifactId>
       <version>1.56.0-alpha</version>
@@ -440,11 +444,6 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.opentelemetry</groupId>
-      <artifactId>opentelemetry-sdk-logs</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
