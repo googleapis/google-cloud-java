@@ -46,7 +46,7 @@ import javax.annotation.concurrent.Immutable;
 @BetaApi
 @Immutable
 public final class ReadAsChannel extends BaseConfig<ScatteringByteChannel, StreamingRead> {
-  static final ReadAsChannel INSTANCE = new ReadAsChannel(RangeSpec.all(), Hasher.defaultHasher());
+  static final ReadAsChannel INSTANCE = new ReadAsChannel(RangeSpec.all(), Hasher.readHasher());
 
   private final RangeSpec range;
   private final Hasher hasher;

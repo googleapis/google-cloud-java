@@ -47,7 +47,7 @@ public final class ReadAsSeekableChannel extends ReadProjectionConfig<SeekableBy
 
   static final ReadAsSeekableChannel INSTANCE =
       new ReadAsSeekableChannel(
-          Hasher.defaultHasher(), LinearExponentialRangeSpecFunction.INSTANCE);
+          Hasher.readHasher(), LinearExponentialRangeSpecFunction.INSTANCE);
 
   private final Hasher hasher;
   private final RangeSpecFunction rangeSpecFunction;

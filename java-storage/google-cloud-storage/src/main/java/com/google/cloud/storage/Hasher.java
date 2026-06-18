@@ -57,6 +57,27 @@ interface Hasher {
     }
   }
 
+  final class ReadInstanceHolder {
+    private static final Logger LOGGER = Logger.getLogger(Hasher.class.getName());
+    private static final String PROPERTY_NAME = "com.google.cloud.storage.Hasher.read";
+    private static final String PROPERTY_VALUE =
+        System.getProperty(PROPERTY_NAME, DefaultInstanceHolder.PROPERTY_VALUE);
+    static final Hasher READ_HASHER;
+
+    static {
+      LOGGER.fine(String.format(Locale.US, "-D%s=%s", PROPERTY_NAME, PROPERTY_VALUE));
+      if ("disabled".equalsIgnoreCase(PROPERTY_VALUE)) {
+        READ_HASHER = noop();
+      } else {
+        READ_HASHER = enabled();
+      }
+    }
+  }
+
+  static Hasher readHasher() {
+    return ReadInstanceHolder.READ_HASHER;
+  }
+
   @Nullable
   default Crc32cLengthKnown hash(Supplier<ByteBuffer> b) {
     return hash(b.get());
