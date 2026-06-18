@@ -39,6 +39,10 @@ public class SessionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_COLLECTION_ENGINE_SESSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}");
+  private static final PathTemplate
+      PROJECT_LOCATION_COLLECTION_ENGINE_COLLABORATIVE_PROJECT_SESSION =
+          PathTemplate.createWithoutUrlEncoding(
+              "projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/collaborativeProjects/{collaborative_project}/sessions/{session}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -48,6 +52,7 @@ public class SessionName implements ResourceName {
   private final String session;
   private final String collection;
   private final String engine;
+  private final String collaborativeProject;
 
   @Deprecated
   protected SessionName() {
@@ -57,6 +62,7 @@ public class SessionName implements ResourceName {
     session = null;
     collection = null;
     engine = null;
+    collaborativeProject = null;
   }
 
   private SessionName(Builder builder) {
@@ -66,6 +72,7 @@ public class SessionName implements ResourceName {
     session = Preconditions.checkNotNull(builder.getSession());
     collection = null;
     engine = null;
+    collaborativeProject = null;
     pathTemplate = PROJECT_LOCATION_DATA_STORE_SESSION;
   }
 
@@ -76,6 +83,7 @@ public class SessionName implements ResourceName {
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     session = Preconditions.checkNotNull(builder.getSession());
     engine = null;
+    collaborativeProject = null;
     pathTemplate = PROJECT_LOCATION_COLLECTION_DATA_STORE_SESSION;
   }
 
@@ -86,7 +94,19 @@ public class SessionName implements ResourceName {
     engine = Preconditions.checkNotNull(builder.getEngine());
     session = Preconditions.checkNotNull(builder.getSession());
     dataStore = null;
+    collaborativeProject = null;
     pathTemplate = PROJECT_LOCATION_COLLECTION_ENGINE_SESSION;
+  }
+
+  private SessionName(ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    collection = Preconditions.checkNotNull(builder.getCollection());
+    engine = Preconditions.checkNotNull(builder.getEngine());
+    collaborativeProject = Preconditions.checkNotNull(builder.getCollaborativeProject());
+    session = Preconditions.checkNotNull(builder.getSession());
+    dataStore = null;
+    pathTemplate = PROJECT_LOCATION_COLLECTION_ENGINE_COLLABORATIVE_PROJECT_SESSION;
   }
 
   public String getProject() {
@@ -113,6 +133,10 @@ public class SessionName implements ResourceName {
     return engine;
   }
 
+  public String getCollaborativeProject() {
+    return collaborativeProject;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -129,6 +153,11 @@ public class SessionName implements ResourceName {
   public static ProjectLocationCollectionEngineSessionBuilder
       newProjectLocationCollectionEngineSessionBuilder() {
     return new ProjectLocationCollectionEngineSessionBuilder();
+  }
+
+  public static ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder
+      newProjectLocationCollectionEngineCollaborativeProjectSessionBuilder() {
+    return new ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder();
   }
 
   public Builder toBuilder() {
@@ -172,6 +201,23 @@ public class SessionName implements ResourceName {
         .setLocation(location)
         .setCollection(collection)
         .setEngine(engine)
+        .setSession(session)
+        .build();
+  }
+
+  public static SessionName ofProjectLocationCollectionEngineCollaborativeProjectSessionName(
+      String project,
+      String location,
+      String collection,
+      String engine,
+      String collaborativeProject,
+      String session) {
+    return newProjectLocationCollectionEngineCollaborativeProjectSessionBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setEngine(engine)
+        .setCollaborativeProject(collaborativeProject)
         .setSession(session)
         .build();
   }
@@ -221,6 +267,24 @@ public class SessionName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationCollectionEngineCollaborativeProjectSessionName(
+      String project,
+      String location,
+      String collection,
+      String engine,
+      String collaborativeProject,
+      String session) {
+    return newProjectLocationCollectionEngineCollaborativeProjectSessionBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setEngine(engine)
+        .setCollaborativeProject(collaborativeProject)
+        .setSession(session)
+        .build()
+        .toString();
+  }
+
   public static SessionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -250,6 +314,17 @@ public class SessionName implements ResourceName {
           matchMap.get("collection"),
           matchMap.get("engine"),
           matchMap.get("session"));
+    } else if (PROJECT_LOCATION_COLLECTION_ENGINE_COLLABORATIVE_PROJECT_SESSION.matches(
+        formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_COLLECTION_ENGINE_COLLABORATIVE_PROJECT_SESSION.match(formattedString);
+      return ofProjectLocationCollectionEngineCollaborativeProjectSessionName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("collection"),
+          matchMap.get("engine"),
+          matchMap.get("collaborative_project"),
+          matchMap.get("session"));
     }
     throw new ValidationException("SessionName.parse: formattedString not in valid format");
   }
@@ -277,7 +352,9 @@ public class SessionName implements ResourceName {
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_DATA_STORE_SESSION.matches(formattedString)
         || PROJECT_LOCATION_COLLECTION_DATA_STORE_SESSION.matches(formattedString)
-        || PROJECT_LOCATION_COLLECTION_ENGINE_SESSION.matches(formattedString);
+        || PROJECT_LOCATION_COLLECTION_ENGINE_SESSION.matches(formattedString)
+        || PROJECT_LOCATION_COLLECTION_ENGINE_COLLABORATIVE_PROJECT_SESSION.matches(
+            formattedString);
   }
 
   @Override
@@ -303,6 +380,9 @@ public class SessionName implements ResourceName {
           }
           if (engine != null) {
             fieldMapBuilder.put("engine", engine);
+          }
+          if (collaborativeProject != null) {
+            fieldMapBuilder.put("collaborative_project", collaborativeProject);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -332,7 +412,8 @@ public class SessionName implements ResourceName {
           && Objects.equals(this.dataStore, that.dataStore)
           && Objects.equals(this.session, that.session)
           && Objects.equals(this.collection, that.collection)
-          && Objects.equals(this.engine, that.engine);
+          && Objects.equals(this.engine, that.engine)
+          && Objects.equals(this.collaborativeProject, that.collaborativeProject);
     }
     return false;
   }
@@ -354,6 +435,8 @@ public class SessionName implements ResourceName {
     h ^= Objects.hashCode(collection);
     h *= 1000003;
     h ^= Objects.hashCode(engine);
+    h *= 1000003;
+    h ^= Objects.hashCode(collaborativeProject);
     return h;
   }
 
@@ -537,6 +620,85 @@ public class SessionName implements ResourceName {
     }
 
     public ProjectLocationCollectionEngineSessionBuilder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    public SessionName build() {
+      return new SessionName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/collaborativeProjects/{collaborative_project}/sessions/{session}.
+   */
+  public static class ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder {
+    private String project;
+    private String location;
+    private String collection;
+    private String engine;
+    private String collaborativeProject;
+    private String session;
+
+    protected ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCollection() {
+      return collection;
+    }
+
+    public String getEngine() {
+      return engine;
+    }
+
+    public String getCollaborativeProject() {
+      return collaborativeProject;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder setProject(
+        String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder setLocation(
+        String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder setCollection(
+        String collection) {
+      this.collection = collection;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder setEngine(
+        String engine) {
+      this.engine = engine;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder
+        setCollaborativeProject(String collaborativeProject) {
+      this.collaborativeProject = collaborativeProject;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineCollaborativeProjectSessionBuilder setSession(
+        String session) {
       this.session = session;
       return this;
     }

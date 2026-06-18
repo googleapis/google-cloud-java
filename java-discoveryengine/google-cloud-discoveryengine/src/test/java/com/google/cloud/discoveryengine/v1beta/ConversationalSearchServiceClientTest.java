@@ -24,8 +24,11 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
@@ -38,6 +41,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -614,6 +618,7 @@ public class ConversationalSearchServiceClientTest {
             .setAsynchronousMode(true)
             .setUserPseudoId("userPseudoId-1155274652")
             .putAllUserLabels(new HashMap<String, String>())
+            .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
             .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
@@ -636,6 +641,7 @@ public class ConversationalSearchServiceClientTest {
     Assert.assertEquals(request.getAsynchronousMode(), actualRequest.getAsynchronousMode());
     Assert.assertEquals(request.getUserPseudoId(), actualRequest.getUserPseudoId());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
+    Assert.assertEquals(request.getEndUserSpec(), actualRequest.getEndUserSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -669,11 +675,100 @@ public class ConversationalSearchServiceClientTest {
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
               .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
               .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamAnswerQueryTest() throws Exception {
+    AnswerQueryResponse expectedResponse =
+        AnswerQueryResponse.newBuilder()
+            .setAnswer(Answer.newBuilder().build())
+            .setSession(Session.newBuilder().build())
+            .setAnswerQueryToken("answerQueryToken758314095")
+            .build();
+    mockConversationalSearchService.addResponse(expectedResponse);
+    AnswerQueryRequest request =
+        AnswerQueryRequest.newBuilder()
+            .setServingConfig(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setQuery(Query.newBuilder().build())
+            .setSession(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+            .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+            .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
+            .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+            .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+            .setQueryUnderstandingSpec(
+                AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+            .setAsynchronousMode(true)
+            .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
+            .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
+            .build();
+
+    MockStreamObserver<AnswerQueryResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse> callable =
+        client.streamAnswerQueryCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<AnswerQueryResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamAnswerQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversationalSearchService.addException(exception);
+    AnswerQueryRequest request =
+        AnswerQueryRequest.newBuilder()
+            .setServingConfig(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setQuery(Query.newBuilder().build())
+            .setSession(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+            .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+            .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
+            .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+            .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+            .setQueryUnderstandingSpec(
+                AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+            .setAsynchronousMode(true)
+            .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
+            .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
+            .build();
+
+    MockStreamObserver<AnswerQueryResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse> callable =
+        client.streamAnswerQueryCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<AnswerQueryResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -686,14 +781,18 @@ public class ConversationalSearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
                     .toString())
             .setAnswerText("answerText959441419")
+            .setGroundingScore(1981101646)
             .addAllCitations(new ArrayList<Answer.Citation>())
+            .addAllGroundingSupports(new ArrayList<Answer.GroundingSupport>())
             .addAllReferences(new ArrayList<Answer.Reference>())
+            .addAllBlobAttachments(new ArrayList<Answer.BlobAttachment>())
             .addAllRelatedQuestions(new ArrayList<String>())
             .addAllSteps(new ArrayList<Answer.Step>())
             .setQueryUnderstandingInfo(Answer.QueryUnderstandingInfo.newBuilder().build())
             .addAllAnswerSkippedReasons(new ArrayList<Answer.AnswerSkippedReason>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCompleteTime(Timestamp.newBuilder().build())
+            .addAllSafetyRatings(new ArrayList<SafetyRating>())
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -740,14 +839,18 @@ public class ConversationalSearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
                     .toString())
             .setAnswerText("answerText959441419")
+            .setGroundingScore(1981101646)
             .addAllCitations(new ArrayList<Answer.Citation>())
+            .addAllGroundingSupports(new ArrayList<Answer.GroundingSupport>())
             .addAllReferences(new ArrayList<Answer.Reference>())
+            .addAllBlobAttachments(new ArrayList<Answer.BlobAttachment>())
             .addAllRelatedQuestions(new ArrayList<String>())
             .addAllSteps(new ArrayList<Answer.Step>())
             .setQueryUnderstandingInfo(Answer.QueryUnderstandingInfo.newBuilder().build())
             .addAllAnswerSkippedReasons(new ArrayList<Answer.AnswerSkippedReason>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCompleteTime(Timestamp.newBuilder().build())
+            .addAllSafetyRatings(new ArrayList<SafetyRating>())
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -792,9 +895,11 @@ public class ConversationalSearchServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -844,9 +949,11 @@ public class ConversationalSearchServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -966,9 +1073,11 @@ public class ConversationalSearchServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1016,9 +1125,11 @@ public class ConversationalSearchServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1067,9 +1178,11 @@ public class ConversationalSearchServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 

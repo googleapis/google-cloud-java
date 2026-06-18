@@ -72,7 +72,7 @@ public interface ListEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of
+   * Optional. Maximum number of
    * [Evaluation][google.cloud.discoveryengine.v1beta.Evaluation]s to return. If
    * unspecified, defaults to 100. The maximum allowed value is 1000. Values
    * above 1000 will be coerced to 1000.
@@ -80,7 +80,7 @@ public interface ListEvaluationsRequestOrBuilder
    * If this field is negative, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -90,7 +90,7 @@ public interface ListEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token
+   * Optional. A page token
    * [ListEvaluationsResponse.next_page_token][google.cloud.discoveryengine.v1beta.ListEvaluationsResponse.next_page_token],
    * received from a previous
    * [EvaluationService.ListEvaluations][google.cloud.discoveryengine.v1beta.EvaluationService.ListEvaluations]
@@ -102,7 +102,7 @@ public interface ListEvaluationsRequestOrBuilder
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -112,7 +112,7 @@ public interface ListEvaluationsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token
+   * Optional. A page token
    * [ListEvaluationsResponse.next_page_token][google.cloud.discoveryengine.v1beta.ListEvaluationsResponse.next_page_token],
    * received from a previous
    * [EvaluationService.ListEvaluations][google.cloud.discoveryengine.v1beta.EvaluationService.ListEvaluations]
@@ -124,7 +124,7 @@ public interface ListEvaluationsRequestOrBuilder
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

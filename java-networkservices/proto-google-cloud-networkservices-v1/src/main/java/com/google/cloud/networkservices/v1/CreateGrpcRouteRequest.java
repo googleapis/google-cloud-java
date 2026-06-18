@@ -82,7 +82,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource of the GrpcRoute. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -109,7 +109,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource of the GrpcRoute. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -629,7 +629,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource of the GrpcRoute. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -655,7 +655,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource of the GrpcRoute. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -681,7 +681,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource of the GrpcRoute. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -706,7 +706,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource of the GrpcRoute. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -727,7 +727,7 @@ public final class CreateGrpcRouteRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource of the GrpcRoute. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>

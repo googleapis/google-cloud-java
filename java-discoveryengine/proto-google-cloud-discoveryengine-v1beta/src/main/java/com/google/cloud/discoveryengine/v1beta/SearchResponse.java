@@ -60,9 +60,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     redirectUri_ = "";
     nextPageToken_ = "";
     correctedQuery_ = "";
+    suggestedQuery_ = "";
     appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     geoSearchDebugInfo_ = java.util.Collections.emptyList();
     oneBoxResults_ = java.util.Collections.emptyList();
+    searchLinkPromotions_ = java.util.Collections.emptyList();
+    semanticState_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,6 +81,177 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.discoveryengine.v1beta.SearchResponse.class,
             com.google.cloud.discoveryengine.v1beta.SearchResponse.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Semantic state of the search response.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState}
+   */
+  public enum SemanticState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. Should not be used.
+     * </pre>
+     *
+     * <code>SEMANTIC_STATE_UNSPECIFIED = 0;</code>
+     */
+    SEMANTIC_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Semantic search was disabled for this search response.
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    DISABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Semantic search was enabled for this search response.
+     * </pre>
+     *
+     * <code>ENABLED = 2;</code>
+     */
+    ENABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SemanticState");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. Should not be used.
+     * </pre>
+     *
+     * <code>SEMANTIC_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SEMANTIC_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Semantic search was disabled for this search response.
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    public static final int DISABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Semantic search was enabled for this search response.
+     * </pre>
+     *
+     * <code>ENABLED = 2;</code>
+     */
+    public static final int ENABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SemanticState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SemanticState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SEMANTIC_STATE_UNSPECIFIED;
+        case 1:
+          return DISABLED;
+        case 2:
+          return ENABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SemanticState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SemanticState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SemanticState>() {
+          public SemanticState findValueByNumber(int number) {
+            return SemanticState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchResponse.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final SemanticState[] VALUES = values();
+
+    public static SemanticState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SemanticState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState)
   }
 
   public interface SearchResultOrBuilder
@@ -203,10 +377,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     int getModelScoresCount();
@@ -215,10 +390,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     boolean containsModelScores(java.lang.String key);
@@ -232,10 +408,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
@@ -245,10 +422,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     /* nullable */
@@ -261,10 +439,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     com.google.cloud.discoveryengine.v1beta.DoubleList getModelScoresOrThrow(java.lang.String key);
@@ -273,7 +452,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A set of ranking signals associated with the result.
+     * Optional. A set of ranking signals associated with the result.
      * </pre>
      *
      * <code>
@@ -288,7 +467,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A set of ranking signals associated with the result.
+     * Optional. A set of ranking signals associated with the result.
      * </pre>
      *
      * <code>
@@ -304,7 +483,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A set of ranking signals associated with the result.
+     * Optional. A set of ranking signals associated with the result.
      * </pre>
      *
      * <code>
@@ -385,7 +564,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Keyword matching adjustment.
+       * Optional. Keyword matching adjustment.
        * </pre>
        *
        * <code>
@@ -400,7 +579,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Keyword matching adjustment.
+       * Optional. Keyword matching adjustment.
        * </pre>
        *
        * <code>
@@ -415,7 +594,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic relevance adjustment.
+       * Optional. Semantic relevance adjustment.
        * </pre>
        *
        * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -428,7 +607,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic relevance adjustment.
+       * Optional. Semantic relevance adjustment.
        * </pre>
        *
        * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -441,7 +620,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic similarity adjustment.
+       * Optional. Semantic similarity adjustment.
        * </pre>
        *
        * <code>
@@ -456,7 +635,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic similarity adjustment.
+       * Optional. Semantic similarity adjustment.
        * </pre>
        *
        * <code>
@@ -471,7 +650,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Predicted conversion rate adjustment as a rank.
+       * Optional. Predicted conversion rate adjustment as a rank.
        * </pre>
        *
        * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -484,7 +663,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Predicted conversion rate adjustment as a rank.
+       * Optional. Predicted conversion rate adjustment as a rank.
        * </pre>
        *
        * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -497,7 +676,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Topicality adjustment as a rank.
+       * Optional. Topicality adjustment as a rank.
        * </pre>
        *
        * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -510,7 +689,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Topicality adjustment as a rank.
+       * Optional. Topicality adjustment as a rank.
        * </pre>
        *
        * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -523,7 +702,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Age of the document in hours.
+       * Optional. Age of the document in hours.
        * </pre>
        *
        * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -536,7 +715,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Age of the document in hours.
+       * Optional. Age of the document in hours.
        * </pre>
        *
        * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -549,7 +728,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Combined custom boosts for a doc.
+       * Optional. Combined custom boosts for a doc.
        * </pre>
        *
        * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -562,7 +741,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Combined custom boosts for a doc.
+       * Optional. Combined custom boosts for a doc.
        * </pre>
        *
        * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -575,7 +754,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The default rank of the result.
+       * Optional. The default rank of the result.
        * </pre>
        *
        * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -588,7 +767,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -604,7 +783,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -618,7 +797,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -631,7 +810,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -648,7 +827,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -658,6 +837,58 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
               .CustomSignalOrBuilder
           getCustomSignalsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the precomputedExpressionValues.
+       */
+      java.util.List<java.lang.Float> getPrecomputedExpressionValuesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of precomputedExpressionValues.
+       */
+      int getPrecomputedExpressionValuesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The precomputedExpressionValues at the given index.
+       */
+      float getPrecomputedExpressionValues(int index);
     }
 
     /**
@@ -693,6 +924,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
       private RankSignals() {
         customSignals_ = java.util.Collections.emptyList();
+        precomputedExpressionValues_ = emptyFloatList();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -721,7 +953,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Name of the signal.
+         * Optional. Name of the signal.
          * </pre>
          *
          * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -734,7 +966,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Name of the signal.
+         * Optional. Name of the signal.
          * </pre>
          *
          * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -747,7 +979,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Float value representing the ranking signal (e.g. 1.25 for BM25).
+         * Optional. Float value representing the ranking signal (e.g. 1.25 for
+         * BM25).
          * </pre>
          *
          * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -818,7 +1051,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Name of the signal.
+         * Optional. Name of the signal.
          * </pre>
          *
          * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -842,7 +1075,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Name of the signal.
+         * Optional. Name of the signal.
          * </pre>
          *
          * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -869,7 +1102,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Float value representing the ranking signal (e.g. 1.25 for BM25).
+         * Optional. Float value representing the ranking signal (e.g. 1.25 for
+         * BM25).
          * </pre>
          *
          * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1284,7 +1518,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Name of the signal.
+           * Optional. Name of the signal.
            * </pre>
            *
            * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1307,7 +1541,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Name of the signal.
+           * Optional. Name of the signal.
            * </pre>
            *
            * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1330,7 +1564,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Name of the signal.
+           * Optional. Name of the signal.
            * </pre>
            *
            * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1352,7 +1586,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Name of the signal.
+           * Optional. Name of the signal.
            * </pre>
            *
            * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1370,7 +1604,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Name of the signal.
+           * Optional. Name of the signal.
            * </pre>
            *
            * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1395,7 +1629,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Float value representing the ranking signal (e.g. 1.25 for BM25).
+           * Optional. Float value representing the ranking signal (e.g. 1.25 for
+           * BM25).
            * </pre>
            *
            * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1411,7 +1646,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Float value representing the ranking signal (e.g. 1.25 for BM25).
+           * Optional. Float value representing the ranking signal (e.g. 1.25 for
+           * BM25).
            * </pre>
            *
            * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1431,7 +1667,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
            *
            *
            * <pre>
-           * Float value representing the ranking signal (e.g. 1.25 for BM25).
+           * Optional. Float value representing the ranking signal (e.g. 1.25 for
+           * BM25).
            * </pre>
            *
            * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1513,7 +1750,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Keyword matching adjustment.
+       * Optional. Keyword matching adjustment.
        * </pre>
        *
        * <code>
@@ -1531,7 +1768,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Keyword matching adjustment.
+       * Optional. Keyword matching adjustment.
        * </pre>
        *
        * <code>
@@ -1552,7 +1789,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic relevance adjustment.
+       * Optional. Semantic relevance adjustment.
        * </pre>
        *
        * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1568,7 +1805,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic relevance adjustment.
+       * Optional. Semantic relevance adjustment.
        * </pre>
        *
        * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1587,7 +1824,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic similarity adjustment.
+       * Optional. Semantic similarity adjustment.
        * </pre>
        *
        * <code>
@@ -1605,7 +1842,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Semantic similarity adjustment.
+       * Optional. Semantic similarity adjustment.
        * </pre>
        *
        * <code>
@@ -1626,7 +1863,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Predicted conversion rate adjustment as a rank.
+       * Optional. Predicted conversion rate adjustment as a rank.
        * </pre>
        *
        * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1642,7 +1879,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Predicted conversion rate adjustment as a rank.
+       * Optional. Predicted conversion rate adjustment as a rank.
        * </pre>
        *
        * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1661,7 +1898,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Topicality adjustment as a rank.
+       * Optional. Topicality adjustment as a rank.
        * </pre>
        *
        * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1677,7 +1914,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Topicality adjustment as a rank.
+       * Optional. Topicality adjustment as a rank.
        * </pre>
        *
        * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1696,7 +1933,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Age of the document in hours.
+       * Optional. Age of the document in hours.
        * </pre>
        *
        * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1712,7 +1949,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Age of the document in hours.
+       * Optional. Age of the document in hours.
        * </pre>
        *
        * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1731,7 +1968,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Combined custom boosts for a doc.
+       * Optional. Combined custom boosts for a doc.
        * </pre>
        *
        * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1747,7 +1984,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Combined custom boosts for a doc.
+       * Optional. Combined custom boosts for a doc.
        * </pre>
        *
        * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1766,7 +2003,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The default rank of the result.
+       * Optional. The default rank of the result.
        * </pre>
        *
        * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1790,7 +2027,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -1809,7 +2046,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -1829,7 +2066,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -1845,7 +2082,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -1863,7 +2100,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of custom clearbox signals.
+       * Optional. A list of custom clearbox signals.
        * </pre>
        *
        * <code>
@@ -1876,6 +2113,73 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           getCustomSignalsOrBuilder(int index) {
         return customSignals_.get(index);
       }
+
+      public static final int PRECOMPUTED_EXPRESSION_VALUES_FIELD_NUMBER = 34;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.FloatList precomputedExpressionValues_ =
+          emptyFloatList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the precomputedExpressionValues.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Float> getPrecomputedExpressionValuesList() {
+        return precomputedExpressionValues_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of precomputedExpressionValues.
+       */
+      public int getPrecomputedExpressionValuesCount() {
+        return precomputedExpressionValues_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The precomputedExpressionValues at the given index.
+       */
+      public float getPrecomputedExpressionValues(int index) {
+        return precomputedExpressionValues_.getFloat(index);
+      }
+
+      private int precomputedExpressionValuesMemoizedSerializedSize = -1;
 
       private byte memoizedIsInitialized = -1;
 
@@ -1891,6 +2195,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeFloat(1, keywordSimilarityScore_);
         }
@@ -1917,6 +2222,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         }
         for (int i = 0; i < customSignals_.size(); i++) {
           output.writeMessage(33, customSignals_.get(i));
+        }
+        if (getPrecomputedExpressionValuesList().size() > 0) {
+          output.writeUInt32NoTag(274);
+          output.writeUInt32NoTag(precomputedExpressionValuesMemoizedSerializedSize);
+        }
+        for (int i = 0; i < precomputedExpressionValues_.size(); i++) {
+          output.writeFloatNoTag(precomputedExpressionValues_.getFloat(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -1956,6 +2268,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         for (int i = 0; i < customSignals_.size(); i++) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(33, customSignals_.get(i));
+        }
+        {
+          int dataSize = 0;
+          dataSize = 4 * getPrecomputedExpressionValuesList().size();
+          size += dataSize;
+          if (!getPrecomputedExpressionValuesList().isEmpty()) {
+            size += 2;
+            size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+          }
+          precomputedExpressionValuesMemoizedSerializedSize = dataSize;
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2013,6 +2335,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (java.lang.Float.floatToIntBits(getDefaultRank())
             != java.lang.Float.floatToIntBits(other.getDefaultRank())) return false;
         if (!getCustomSignalsList().equals(other.getCustomSignalsList())) return false;
+        if (!getPrecomputedExpressionValuesList()
+            .equals(other.getPrecomputedExpressionValuesList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -2057,6 +2381,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (getCustomSignalsCount() > 0) {
           hash = (37 * hash) + CUSTOM_SIGNALS_FIELD_NUMBER;
           hash = (53 * hash) + getCustomSignalsList().hashCode();
+        }
+        if (getPrecomputedExpressionValuesCount() > 0) {
+          hash = (37 * hash) + PRECOMPUTED_EXPRESSION_VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getPrecomputedExpressionValuesList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -2229,6 +2557,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             customSignalsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000100);
+          precomputedExpressionValues_ = emptyFloatList();
           return this;
         }
 
@@ -2320,6 +2649,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           if (((from_bitField0_ & 0x00000080) != 0)) {
             result.defaultRank_ = defaultRank_;
           }
+          if (((from_bitField0_ & 0x00000200) != 0)) {
+            precomputedExpressionValues_.makeImmutable();
+            result.precomputedExpressionValues_ = precomputedExpressionValues_;
+          }
           result.bitField0_ |= to_bitField0_;
         }
 
@@ -2392,6 +2725,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 customSignalsBuilder_.addAllMessages(other.customSignals_);
               }
             }
+          }
+          if (!other.precomputedExpressionValues_.isEmpty()) {
+            if (precomputedExpressionValues_.isEmpty()) {
+              precomputedExpressionValues_ = other.precomputedExpressionValues_;
+              precomputedExpressionValues_.makeImmutable();
+              bitField0_ |= 0x00000200;
+            } else {
+              ensurePrecomputedExpressionValuesIsMutable();
+              precomputedExpressionValues_.addAll(other.precomputedExpressionValues_);
+            }
+            onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -2484,6 +2828,25 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                     }
                     break;
                   } // case 266
+                case 277:
+                  {
+                    float v = input.readFloat();
+                    ensurePrecomputedExpressionValuesIsMutable();
+                    precomputedExpressionValues_.addFloat(v);
+                    break;
+                  } // case 277
+                case 274:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    int alloc = length > 4096 ? 4096 : length;
+                    ensurePrecomputedExpressionValuesIsMutable(alloc / 4);
+                    while (input.getBytesUntilLimit() > 0) {
+                      precomputedExpressionValues_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 274
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2509,7 +2872,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Keyword matching adjustment.
+         * Optional. Keyword matching adjustment.
          * </pre>
          *
          * <code>
@@ -2527,7 +2890,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Keyword matching adjustment.
+         * Optional. Keyword matching adjustment.
          * </pre>
          *
          * <code>
@@ -2545,7 +2908,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Keyword matching adjustment.
+         * Optional. Keyword matching adjustment.
          * </pre>
          *
          * <code>
@@ -2567,7 +2930,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Keyword matching adjustment.
+         * Optional. Keyword matching adjustment.
          * </pre>
          *
          * <code>
@@ -2589,7 +2952,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic relevance adjustment.
+         * Optional. Semantic relevance adjustment.
          * </pre>
          *
          * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2606,7 +2969,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic relevance adjustment.
+         * Optional. Semantic relevance adjustment.
          * </pre>
          *
          * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2623,7 +2986,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic relevance adjustment.
+         * Optional. Semantic relevance adjustment.
          * </pre>
          *
          * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2644,7 +3007,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic relevance adjustment.
+         * Optional. Semantic relevance adjustment.
          * </pre>
          *
          * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -2665,7 +3028,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic similarity adjustment.
+         * Optional. Semantic similarity adjustment.
          * </pre>
          *
          * <code>
@@ -2683,7 +3046,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic similarity adjustment.
+         * Optional. Semantic similarity adjustment.
          * </pre>
          *
          * <code>
@@ -2701,7 +3064,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic similarity adjustment.
+         * Optional. Semantic similarity adjustment.
          * </pre>
          *
          * <code>
@@ -2723,7 +3086,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Semantic similarity adjustment.
+         * Optional. Semantic similarity adjustment.
          * </pre>
          *
          * <code>
@@ -2745,7 +3108,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Predicted conversion rate adjustment as a rank.
+         * Optional. Predicted conversion rate adjustment as a rank.
          * </pre>
          *
          * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2761,7 +3124,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Predicted conversion rate adjustment as a rank.
+         * Optional. Predicted conversion rate adjustment as a rank.
          * </pre>
          *
          * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2777,7 +3140,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Predicted conversion rate adjustment as a rank.
+         * Optional. Predicted conversion rate adjustment as a rank.
          * </pre>
          *
          * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2797,7 +3160,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Predicted conversion rate adjustment as a rank.
+         * Optional. Predicted conversion rate adjustment as a rank.
          * </pre>
          *
          * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2817,7 +3180,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Topicality adjustment as a rank.
+         * Optional. Topicality adjustment as a rank.
          * </pre>
          *
          * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2834,7 +3197,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Topicality adjustment as a rank.
+         * Optional. Topicality adjustment as a rank.
          * </pre>
          *
          * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2851,7 +3214,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Topicality adjustment as a rank.
+         * Optional. Topicality adjustment as a rank.
          * </pre>
          *
          * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2872,7 +3235,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Topicality adjustment as a rank.
+         * Optional. Topicality adjustment as a rank.
          * </pre>
          *
          * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2893,7 +3256,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Age of the document in hours.
+         * Optional. Age of the document in hours.
          * </pre>
          *
          * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2909,7 +3272,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Age of the document in hours.
+         * Optional. Age of the document in hours.
          * </pre>
          *
          * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2925,7 +3288,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Age of the document in hours.
+         * Optional. Age of the document in hours.
          * </pre>
          *
          * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2945,7 +3308,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Age of the document in hours.
+         * Optional. Age of the document in hours.
          * </pre>
          *
          * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2965,7 +3328,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Combined custom boosts for a doc.
+         * Optional. Combined custom boosts for a doc.
          * </pre>
          *
          * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2982,7 +3345,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Combined custom boosts for a doc.
+         * Optional. Combined custom boosts for a doc.
          * </pre>
          *
          * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2999,7 +3362,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Combined custom boosts for a doc.
+         * Optional. Combined custom boosts for a doc.
          * </pre>
          *
          * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -3020,7 +3383,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Combined custom boosts for a doc.
+         * Optional. Combined custom boosts for a doc.
          * </pre>
          *
          * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -3041,7 +3404,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The default rank of the result.
+         * Optional. The default rank of the result.
          * </pre>
          *
          * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3057,7 +3420,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The default rank of the result.
+         * Optional. The default rank of the result.
          * </pre>
          *
          * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3077,7 +3440,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * The default rank of the result.
+         * Optional. The default rank of the result.
          * </pre>
          *
          * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3119,7 +3482,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3141,7 +3504,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3160,7 +3523,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3181,7 +3544,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3210,7 +3573,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3236,7 +3599,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3264,7 +3627,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3293,7 +3656,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3318,7 +3681,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3344,7 +3707,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3371,7 +3734,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3393,7 +3756,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3415,7 +3778,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3432,7 +3795,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3453,7 +3816,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3476,7 +3839,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3496,7 +3859,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3517,7 +3880,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A list of custom clearbox signals.
+         * Optional. A list of custom clearbox signals.
          * </pre>
          *
          * <code>
@@ -3555,6 +3918,181 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             customSignals_ = null;
           }
           return customSignalsBuilder_;
+        }
+
+        private com.google.protobuf.Internal.FloatList precomputedExpressionValues_ =
+            emptyFloatList();
+
+        private void ensurePrecomputedExpressionValuesIsMutable() {
+          if (!precomputedExpressionValues_.isModifiable()) {
+            precomputedExpressionValues_ = makeMutableCopy(precomputedExpressionValues_);
+          }
+          bitField0_ |= 0x00000200;
+        }
+
+        private void ensurePrecomputedExpressionValuesIsMutable(int capacity) {
+          if (!precomputedExpressionValues_.isModifiable()) {
+            precomputedExpressionValues_ = makeMutableCopy(precomputedExpressionValues_, capacity);
+          }
+          bitField0_ |= 0x00000200;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the precomputedExpressionValues.
+         */
+        public java.util.List<java.lang.Float> getPrecomputedExpressionValuesList() {
+          precomputedExpressionValues_.makeImmutable();
+          return precomputedExpressionValues_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of precomputedExpressionValues.
+         */
+        public int getPrecomputedExpressionValuesCount() {
+          return precomputedExpressionValues_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The precomputedExpressionValues at the given index.
+         */
+        public float getPrecomputedExpressionValues(int index) {
+          return precomputedExpressionValues_.getFloat(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The precomputedExpressionValues to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrecomputedExpressionValues(int index, float value) {
+
+          ensurePrecomputedExpressionValuesIsMutable();
+          precomputedExpressionValues_.setFloat(index, value);
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The precomputedExpressionValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPrecomputedExpressionValues(float value) {
+
+          ensurePrecomputedExpressionValuesIsMutable();
+          precomputedExpressionValues_.addFloat(value);
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The precomputedExpressionValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllPrecomputedExpressionValues(
+            java.lang.Iterable<? extends java.lang.Float> values) {
+          ensurePrecomputedExpressionValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, precomputedExpressionValues_);
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPrecomputedExpressionValues() {
+          precomputedExpressionValues_ = emptyFloatList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+          return this;
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
@@ -3828,10 +4366,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3854,10 +4393,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3870,10 +4410,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3894,10 +4435,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Google provided available scores.
+     * Output only. Google provided available scores.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -3922,7 +4464,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A set of ranking signals associated with the result.
+     * Optional. A set of ranking signals associated with the result.
      * </pre>
      *
      * <code>
@@ -3940,7 +4482,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A set of ranking signals associated with the result.
+     * Optional. A set of ranking signals associated with the result.
      * </pre>
      *
      * <code>
@@ -3962,7 +4504,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A set of ranking signals associated with the result.
+     * Optional. A set of ranking signals associated with the result.
      * </pre>
      *
      * <code>
@@ -5080,10 +5622,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       @java.lang.Override
@@ -5106,10 +5649,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       @java.lang.Override
@@ -5122,10 +5666,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       @java.lang.Override
@@ -5146,10 +5691,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       @java.lang.Override
@@ -5176,10 +5722,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder removeModelScores(java.lang.String key) {
@@ -5202,10 +5749,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder putModelScores(
@@ -5225,10 +5773,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder putAllModelScores(
@@ -5250,10 +5799,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google provided available scores.
+       * Output only. Google provided available scores.
        * </pre>
        *
-       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * <code>
+       * map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.discoveryengine.v1beta.DoubleList.Builder
@@ -5286,7 +5836,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5303,7 +5853,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5328,7 +5878,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5354,7 +5904,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5378,7 +5928,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5411,7 +5961,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5433,7 +5983,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5451,7 +6001,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -5475,7 +6025,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A set of ranking signals associated with the result.
+       * Optional. A set of ranking signals associated with the result.
        * </pre>
        *
        * <code>
@@ -11011,6 +11561,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED_V2 = 9;</code>
        */
       NON_SUMMARY_SEEKING_QUERY_IGNORED_V2(9),
+      /**
+       *
+       *
+       * <pre>
+       * The time out case.
+       *
+       * Google skips the summary if the time out.
+       * </pre>
+       *
+       * <code>TIME_OUT = 10;</code>
+       */
+      TIME_OUT(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -11168,6 +11730,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        */
       public static final int NON_SUMMARY_SEEKING_QUERY_IGNORED_V2_VALUE = 9;
 
+      /**
+       *
+       *
+       * <pre>
+       * The time out case.
+       *
+       * Google skips the summary if the time out.
+       * </pre>
+       *
+       * <code>TIME_OUT = 10;</code>
+       */
+      public static final int TIME_OUT_VALUE = 10;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -11212,6 +11787,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             return CUSTOMER_POLICY_VIOLATION;
           case 9:
             return NON_SUMMARY_SEEKING_QUERY_IGNORED_V2;
+          case 10:
+            return TIME_OUT;
           default:
             return null;
         }
@@ -15639,6 +16216,52 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
          * @return The bytes for pageIdentifier.
          */
         com.google.protobuf.ByteString getPageIdentifierBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Stores indexes of blobattachments linked to this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return A list containing the blobAttachmentIndexes.
+         */
+        java.util.List<java.lang.Long> getBlobAttachmentIndexesList();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Stores indexes of blobattachments linked to this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The count of blobAttachmentIndexes.
+         */
+        int getBlobAttachmentIndexesCount();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Stores indexes of blobattachments linked to this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The blobAttachmentIndexes at the given index.
+         */
+        long getBlobAttachmentIndexes(int index);
       }
 
       /**
@@ -15675,6 +16298,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         private ChunkContent() {
           content_ = "";
           pageIdentifier_ = "";
+          blobAttachmentIndexes_ = emptyLongList();
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15800,6 +16424,66 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           }
         }
 
+        public static final int BLOB_ATTACHMENT_INDEXES_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
+        private com.google.protobuf.Internal.LongList blobAttachmentIndexes_ = emptyLongList();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Stores indexes of blobattachments linked to this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return A list containing the blobAttachmentIndexes.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Long> getBlobAttachmentIndexesList() {
+          return blobAttachmentIndexes_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Stores indexes of blobattachments linked to this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The count of blobAttachmentIndexes.
+         */
+        public int getBlobAttachmentIndexesCount() {
+          return blobAttachmentIndexes_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Stores indexes of blobattachments linked to this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The blobAttachmentIndexes at the given index.
+         */
+        public long getBlobAttachmentIndexes(int index) {
+          return blobAttachmentIndexes_.getLong(index);
+        }
+
+        private int blobAttachmentIndexesMemoizedSerializedSize = -1;
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -15815,11 +16499,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
+          getSerializedSize();
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(content_)) {
             com.google.protobuf.GeneratedMessage.writeString(output, 1, content_);
           }
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageIdentifier_)) {
             com.google.protobuf.GeneratedMessage.writeString(output, 2, pageIdentifier_);
+          }
+          if (getBlobAttachmentIndexesList().size() > 0) {
+            output.writeUInt32NoTag(34);
+            output.writeUInt32NoTag(blobAttachmentIndexesMemoizedSerializedSize);
+          }
+          for (int i = 0; i < blobAttachmentIndexes_.size(); i++) {
+            output.writeInt64NoTag(blobAttachmentIndexes_.getLong(i));
           }
           getUnknownFields().writeTo(output);
         }
@@ -15835,6 +16527,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           }
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageIdentifier_)) {
             size += com.google.protobuf.GeneratedMessage.computeStringSize(2, pageIdentifier_);
+          }
+          {
+            int dataSize = 0;
+            for (int i = 0; i < blobAttachmentIndexes_.size(); i++) {
+              dataSize +=
+                  com.google.protobuf.CodedOutputStream.computeInt64SizeNoTag(
+                      blobAttachmentIndexes_.getLong(i));
+            }
+            size += dataSize;
+            if (!getBlobAttachmentIndexesList().isEmpty()) {
+              size += 1;
+              size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+            }
+            blobAttachmentIndexesMemoizedSerializedSize = dataSize;
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -15860,6 +16566,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
           if (!getContent().equals(other.getContent())) return false;
           if (!getPageIdentifier().equals(other.getPageIdentifier())) return false;
+          if (!getBlobAttachmentIndexesList().equals(other.getBlobAttachmentIndexesList()))
+            return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -15875,6 +16583,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           hash = (53 * hash) + getContent().hashCode();
           hash = (37 * hash) + PAGE_IDENTIFIER_FIELD_NUMBER;
           hash = (53 * hash) + getPageIdentifier().hashCode();
+          if (getBlobAttachmentIndexesCount() > 0) {
+            hash = (37 * hash) + BLOB_ATTACHMENT_INDEXES_FIELD_NUMBER;
+            hash = (53 * hash) + getBlobAttachmentIndexesList().hashCode();
+          }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -16047,6 +16759,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             bitField0_ = 0;
             content_ = "";
             pageIdentifier_ = "";
+            blobAttachmentIndexes_ = emptyLongList();
             return this;
           }
 
@@ -16101,6 +16814,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             if (((from_bitField0_ & 0x00000002) != 0)) {
               result.pageIdentifier_ = pageIdentifier_;
             }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              blobAttachmentIndexes_.makeImmutable();
+              result.blobAttachmentIndexes_ = blobAttachmentIndexes_;
+            }
           }
 
           @java.lang.Override
@@ -16133,6 +16850,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             if (!other.getPageIdentifier().isEmpty()) {
               pageIdentifier_ = other.pageIdentifier_;
               bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (!other.blobAttachmentIndexes_.isEmpty()) {
+              if (blobAttachmentIndexes_.isEmpty()) {
+                blobAttachmentIndexes_ = other.blobAttachmentIndexes_;
+                blobAttachmentIndexes_.makeImmutable();
+                bitField0_ |= 0x00000004;
+              } else {
+                ensureBlobAttachmentIndexesIsMutable();
+                blobAttachmentIndexes_.addAll(other.blobAttachmentIndexes_);
+              }
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -16173,6 +16901,24 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                       bitField0_ |= 0x00000002;
                       break;
                     } // case 18
+                  case 32:
+                    {
+                      long v = input.readInt64();
+                      ensureBlobAttachmentIndexesIsMutable();
+                      blobAttachmentIndexes_.addLong(v);
+                      break;
+                    } // case 32
+                  case 34:
+                    {
+                      int length = input.readRawVarint32();
+                      int limit = input.pushLimit(length);
+                      ensureBlobAttachmentIndexesIsMutable();
+                      while (input.getBytesUntilLimit() > 0) {
+                        blobAttachmentIndexes_.addLong(input.readInt64());
+                      }
+                      input.popLimit(limit);
+                      break;
+                    } // case 34
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16410,6 +17156,158 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             checkByteStringIsUtf8(value);
             pageIdentifier_ = value;
             bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private com.google.protobuf.Internal.LongList blobAttachmentIndexes_ = emptyLongList();
+
+          private void ensureBlobAttachmentIndexesIsMutable() {
+            if (!blobAttachmentIndexes_.isModifiable()) {
+              blobAttachmentIndexes_ = makeMutableCopy(blobAttachmentIndexes_);
+            }
+            bitField0_ |= 0x00000004;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @return A list containing the blobAttachmentIndexes.
+           */
+          public java.util.List<java.lang.Long> getBlobAttachmentIndexesList() {
+            blobAttachmentIndexes_.makeImmutable();
+            return blobAttachmentIndexes_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @return The count of blobAttachmentIndexes.
+           */
+          public int getBlobAttachmentIndexesCount() {
+            return blobAttachmentIndexes_.size();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @param index The index of the element to return.
+           * @return The blobAttachmentIndexes at the given index.
+           */
+          public long getBlobAttachmentIndexes(int index) {
+            return blobAttachmentIndexes_.getLong(index);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @param index The index to set the value at.
+           * @param value The blobAttachmentIndexes to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBlobAttachmentIndexes(int index, long value) {
+
+            ensureBlobAttachmentIndexesIsMutable();
+            blobAttachmentIndexes_.setLong(index, value);
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @param value The blobAttachmentIndexes to add.
+           * @return This builder for chaining.
+           */
+          public Builder addBlobAttachmentIndexes(long value) {
+
+            ensureBlobAttachmentIndexesIsMutable();
+            blobAttachmentIndexes_.addLong(value);
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @param values The blobAttachmentIndexes to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllBlobAttachmentIndexes(
+              java.lang.Iterable<? extends java.lang.Long> values) {
+            ensureBlobAttachmentIndexesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blobAttachmentIndexes_);
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Stores indexes of blobattachments linked to this chunk.
+           * </pre>
+           *
+           * <code>
+           * repeated int64 blob_attachment_indexes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearBlobAttachmentIndexes() {
+            blobAttachmentIndexes_ = emptyLongList();
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -18079,6 +18977,2010 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public interface BlobAttachmentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The blob data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the data field is set.
+       */
+      boolean hasData();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The blob data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The data.
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob getData();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The blob data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.BlobOrBuilder
+          getDataOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The attribution type of the blob.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for attributionType.
+       */
+      int getAttributionTypeValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The attribution type of the blob.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The attributionType.
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType
+          getAttributionType();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stores binarydata attached to text answer, e.g. image, video, audio, etc.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment}
+     */
+    public static final class BlobAttachment extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)
+        BlobAttachmentOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "BlobAttachment");
+      }
+
+      // Use BlobAttachment.newBuilder() to construct.
+      private BlobAttachment(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BlobAttachment() {
+        attributionType_ = 0;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Defines the attribution type of the blob.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType}
+       */
+      public enum AttributionType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified attribution type.
+         * </pre>
+         *
+         * <code>ATTRIBUTION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        ATTRIBUTION_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The attachment data is from the corpus.
+         * </pre>
+         *
+         * <code>CORPUS = 1;</code>
+         */
+        CORPUS(1),
+        /**
+         *
+         *
+         * <pre>
+         * The attachment data is generated by the model through code
+         * generation.
+         * </pre>
+         *
+         * <code>GENERATED = 2;</code>
+         */
+        GENERATED(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "AttributionType");
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified attribution type.
+         * </pre>
+         *
+         * <code>ATTRIBUTION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int ATTRIBUTION_TYPE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The attachment data is from the corpus.
+         * </pre>
+         *
+         * <code>CORPUS = 1;</code>
+         */
+        public static final int CORPUS_VALUE = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * The attachment data is generated by the model through code
+         * generation.
+         * </pre>
+         *
+         * <code>GENERATED = 2;</code>
+         */
+        public static final int GENERATED_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static AttributionType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static AttributionType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return ATTRIBUTION_TYPE_UNSPECIFIED;
+            case 1:
+              return CORPUS;
+            case 2:
+              return GENERATED;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<AttributionType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<AttributionType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<AttributionType>() {
+                  public AttributionType findValueByNumber(int number) {
+                    return AttributionType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final AttributionType[] VALUES = values();
+
+        public static AttributionType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private AttributionType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType)
+      }
+
+      public interface BlobOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The media type (MIME type) of the generated data.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The mimeType.
+         */
+        java.lang.String getMimeType();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The media type (MIME type) of the generated data.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        com.google.protobuf.ByteString getMimeTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Raw bytes.
+         * </pre>
+         *
+         * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The data.
+         */
+        com.google.protobuf.ByteString getData();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Stores type and data of the blob.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob}
+       */
+      public static final class Blob extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)
+          BlobOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "Blob");
+        }
+
+        // Use Blob.newBuilder() to construct.
+        private Blob(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Blob() {
+          mimeType_ = "";
+          data_ = com.google.protobuf.ByteString.EMPTY;
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                      .Builder.class);
+        }
+
+        public static final int MIME_TYPE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object mimeType_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The media type (MIME type) of the generated data.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The mimeType.
+         */
+        @java.lang.Override
+        public java.lang.String getMimeType() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mimeType_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The media type (MIME type) of the generated data.
+         * </pre>
+         *
+         * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getMimeTypeBytes() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            mimeType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int DATA_FIELD_NUMBER = 2;
+        private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Raw bytes.
+         * </pre>
+         *
+         * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The data.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getData() {
+          return data_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, mimeType_);
+          }
+          if (!data_.isEmpty()) {
+            output.writeBytes(2, data_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, mimeType_);
+          }
+          if (!data_.isEmpty()) {
+            size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, data_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob other =
+              (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)
+                  obj;
+
+          if (!getMimeType().equals(other.getMimeType())) return false;
+          if (!getData().equals(other.getData())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getMimeType().hashCode();
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Stores type and data of the blob.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .BlobOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .Blob.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .Blob.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            mimeType_ = "";
+            data_ = com.google.protobuf.ByteString.EMPTY;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                        .BlobAttachment.Blob(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.mimeType_ = mimeType_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.data_ = data_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .Blob) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                          .Blob)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .Blob.getDefaultInstance()) return this;
+            if (!other.getMimeType().isEmpty()) {
+              mimeType_ = other.mimeType_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getData().isEmpty()) {
+              setData(other.getData());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      mimeType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      data_ = input.readBytes();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object mimeType_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The media type (MIME type) of the generated data.
+           * </pre>
+           *
+           * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The mimeType.
+           */
+          public java.lang.String getMimeType() {
+            java.lang.Object ref = mimeType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              mimeType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The media type (MIME type) of the generated data.
+           * </pre>
+           *
+           * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The bytes for mimeType.
+           */
+          public com.google.protobuf.ByteString getMimeTypeBytes() {
+            java.lang.Object ref = mimeType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              mimeType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The media type (MIME type) of the generated data.
+           * </pre>
+           *
+           * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The mimeType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mimeType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The media type (MIME type) of the generated data.
+           * </pre>
+           *
+           * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearMimeType() {
+            mimeType_ = getDefaultInstance().getMimeType();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The media type (MIME type) of the generated data.
+           * </pre>
+           *
+           * <code>string mime_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The bytes for mimeType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            mimeType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Raw bytes.
+           * </pre>
+           *
+           * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The data.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getData() {
+            return data_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Raw bytes.
+           * </pre>
+           *
+           * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The data to set.
+           * @return This builder for chaining.
+           */
+          public Builder setData(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            data_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. Raw bytes.
+           * </pre>
+           *
+           * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearData() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            data_ = getDefaultInstance().getData();
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                .BlobAttachment.Blob
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                  .Blob();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .Blob
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Blob> PARSER =
+            new com.google.protobuf.AbstractParser<Blob>() {
+              @java.lang.Override
+              public Blob parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Blob> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Blob> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int DATA_FIELD_NUMBER = 1;
+      private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+          data_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The blob data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The blob data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+          getData() {
+        return data_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                .getDefaultInstance()
+            : data_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The blob data.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+              .BlobOrBuilder
+          getDataOrBuilder() {
+        return data_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                .getDefaultInstance()
+            : data_;
+      }
+
+      public static final int ATTRIBUTION_TYPE_FIELD_NUMBER = 2;
+      private int attributionType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The attribution type of the blob.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for attributionType.
+       */
+      @java.lang.Override
+      public int getAttributionTypeValue() {
+        return attributionType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The attribution type of the blob.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The attributionType.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+              .AttributionType
+          getAttributionType() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .AttributionType
+            result =
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .AttributionType.forNumber(attributionType_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .AttributionType.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getData());
+        }
+        if (attributionType_
+            != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .AttributionType.ATTRIBUTION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, attributionType_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getData());
+        }
+        if (attributionType_
+            != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .AttributionType.ATTRIBUTION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, attributionType_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment other =
+            (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment) obj;
+
+        if (hasData() != other.hasData()) return false;
+        if (hasData()) {
+          if (!getData().equals(other.getData())) return false;
+        }
+        if (attributionType_ != other.attributionType_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasData()) {
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+        }
+        hash = (37 * hash) + ATTRIBUTION_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + attributionType_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Stores binarydata attached to text answer, e.g. image, video, audio, etc.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachmentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetDataFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          data_ = null;
+          if (dataBuilder_ != null) {
+            dataBuilder_.dispose();
+            dataBuilder_ = null;
+          }
+          attributionType_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment result =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.data_ = dataBuilder_ == null ? data_ : dataBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.attributionType_ = attributionType_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                  .getDefaultInstance()) return this;
+          if (other.hasData()) {
+            mergeData(other.getData());
+          }
+          if (other.attributionType_ != 0) {
+            setAttributionTypeValue(other.getAttributionTypeValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetDataFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    attributionType_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+            data_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .BlobOrBuilder>
+            dataBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the data field is set.
+         */
+        public boolean hasData() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The data.
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+            getData() {
+          if (dataBuilder_ == null) {
+            return data_ == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                    .getDefaultInstance()
+                : data_;
+          } else {
+            return dataBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setData(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                value) {
+          if (dataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            data_ = value;
+          } else {
+            dataBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setData(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                    .Builder
+                builderForValue) {
+          if (dataBuilder_ == null) {
+            data_ = builderForValue.build();
+          } else {
+            dataBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeData(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                value) {
+          if (dataBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && data_ != null
+                && data_
+                    != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .Blob.getDefaultInstance()) {
+              getDataBuilder().mergeFrom(value);
+            } else {
+              data_ = value;
+            }
+          } else {
+            dataBuilder_.mergeFrom(value);
+          }
+          if (data_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearData() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          data_ = null;
+          if (dataBuilder_ != null) {
+            dataBuilder_.dispose();
+            dataBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                .Builder
+            getDataBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return internalGetDataFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .BlobOrBuilder
+            getDataOrBuilder() {
+          if (dataBuilder_ != null) {
+            return dataBuilder_.getMessageOrBuilder();
+          } else {
+            return data_ == null
+                ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                    .getDefaultInstance()
+                : data_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The blob data.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob data = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Blob
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .BlobOrBuilder>
+            internalGetDataFieldBuilder() {
+          if (dataBuilder_ == null) {
+            dataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .Blob,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .Blob.Builder,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .BlobOrBuilder>(getData(), getParentForChildren(), isClean());
+            data_ = null;
+          }
+          return dataBuilder_;
+        }
+
+        private int attributionType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The attribution type of the blob.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for attributionType.
+         */
+        @java.lang.Override
+        public int getAttributionTypeValue() {
+          return attributionType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The attribution type of the blob.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for attributionType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAttributionTypeValue(int value) {
+          attributionType_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The attribution type of the blob.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The attributionType.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                .AttributionType
+            getAttributionType() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                  .AttributionType
+              result =
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                      .AttributionType.forNumber(attributionType_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                  .AttributionType.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The attribution type of the blob.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The attributionType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAttributionType(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .AttributionType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          attributionType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The attribution type of the blob.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.AttributionType attribution_type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAttributionType() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          attributionType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+              .BlobAttachment
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BlobAttachment> PARSER =
+          new com.google.protobuf.AbstractParser<BlobAttachment>() {
+            @java.lang.Override
+            public BlobAttachment parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BlobAttachment> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BlobAttachment> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public interface SummaryWithMetadataOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummaryWithMetadata)
@@ -18225,6 +21127,78 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        */
       com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.ReferenceOrBuilder
           getReferencesOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment>
+          getBlobAttachmentsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          getBlobAttachments(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      int getBlobAttachmentsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                      .BlobAttachmentOrBuilder>
+          getBlobAttachmentsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachmentOrBuilder
+          getBlobAttachmentsOrBuilder(int index);
     }
 
     /**
@@ -18261,6 +21235,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       private SummaryWithMetadata() {
         summary_ = "";
         references_ = java.util.Collections.emptyList();
+        blobAttachments_ = java.util.Collections.emptyList();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18493,6 +21468,101 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         return references_.get(index);
       }
 
+      public static final int BLOB_ATTACHMENTS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment>
+          blobAttachments_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment>
+          getBlobAttachmentsList() {
+        return blobAttachments_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                      .BlobAttachmentOrBuilder>
+          getBlobAttachmentsOrBuilderList() {
+        return blobAttachments_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public int getBlobAttachmentsCount() {
+        return blobAttachments_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+          getBlobAttachments(int index) {
+        return blobAttachments_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Store multimodal data for answer enhancement.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachmentOrBuilder
+          getBlobAttachmentsOrBuilder(int index) {
+        return blobAttachments_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -18516,6 +21586,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         for (int i = 0; i < references_.size(); i++) {
           output.writeMessage(3, references_.get(i));
         }
+        for (int i = 0; i < blobAttachments_.size(); i++) {
+          output.writeMessage(4, blobAttachments_.get(i));
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -18534,6 +21607,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         }
         for (int i = 0; i < references_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, references_.get(i));
+        }
+        for (int i = 0; i < blobAttachments_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(4, blobAttachments_.get(i));
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -18560,6 +21637,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           if (!getCitationMetadata().equals(other.getCitationMetadata())) return false;
         }
         if (!getReferencesList().equals(other.getReferencesList())) return false;
+        if (!getBlobAttachmentsList().equals(other.getBlobAttachmentsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -18580,6 +21658,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (getReferencesCount() > 0) {
           hash = (37 * hash) + REFERENCES_FIELD_NUMBER;
           hash = (53 * hash) + getReferencesList().hashCode();
+        }
+        if (getBlobAttachmentsCount() > 0) {
+          hash = (37 * hash) + BLOB_ATTACHMENTS_FIELD_NUMBER;
+          hash = (53 * hash) + getBlobAttachmentsList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -18753,6 +21835,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
             internalGetCitationMetadataFieldBuilder();
             internalGetReferencesFieldBuilder();
+            internalGetBlobAttachmentsFieldBuilder();
           }
         }
 
@@ -18773,6 +21856,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             referencesBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000004);
+          if (blobAttachmentsBuilder_ == null) {
+            blobAttachments_ = java.util.Collections.emptyList();
+          } else {
+            blobAttachments_ = null;
+            blobAttachmentsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -18826,6 +21916,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             result.references_ = references_;
           } else {
             result.references_ = referencesBuilder_.build();
+          }
+          if (blobAttachmentsBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              blobAttachments_ = java.util.Collections.unmodifiableList(blobAttachments_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.blobAttachments_ = blobAttachments_;
+          } else {
+            result.blobAttachments_ = blobAttachmentsBuilder_.build();
           }
         }
 
@@ -18902,6 +22001,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
               }
             }
           }
+          if (blobAttachmentsBuilder_ == null) {
+            if (!other.blobAttachments_.isEmpty()) {
+              if (blobAttachments_.isEmpty()) {
+                blobAttachments_ = other.blobAttachments_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureBlobAttachmentsIsMutable();
+                blobAttachments_.addAll(other.blobAttachments_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.blobAttachments_.isEmpty()) {
+              if (blobAttachmentsBuilder_.isEmpty()) {
+                blobAttachmentsBuilder_.dispose();
+                blobAttachmentsBuilder_ = null;
+                blobAttachments_ = other.blobAttachments_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                blobAttachmentsBuilder_ =
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                        ? internalGetBlobAttachmentsFieldBuilder()
+                        : null;
+              } else {
+                blobAttachmentsBuilder_.addAllMessages(other.blobAttachments_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -18956,6 +22082,22 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                     }
                     break;
                   } // case 26
+                case 34:
+                  {
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        m =
+                            input.readMessage(
+                                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                                    .BlobAttachment.parser(),
+                                extensionRegistry);
+                    if (blobAttachmentsBuilder_ == null) {
+                      ensureBlobAttachmentsIsMutable();
+                      blobAttachments_.add(m);
+                    } else {
+                      blobAttachmentsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19757,6 +22899,454 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             references_ = null;
           }
           return referencesBuilder_;
+        }
+
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment>
+            blobAttachments_ = java.util.Collections.emptyList();
+
+        private void ensureBlobAttachmentsIsMutable() {
+          if (!((bitField0_ & 0x00000008) != 0)) {
+            blobAttachments_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment>(
+                    blobAttachments_);
+            bitField0_ |= 0x00000008;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                    .BlobAttachmentOrBuilder>
+            blobAttachmentsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment>
+            getBlobAttachmentsList() {
+          if (blobAttachmentsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(blobAttachments_);
+          } else {
+            return blobAttachmentsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public int getBlobAttachmentsCount() {
+          if (blobAttachmentsBuilder_ == null) {
+            return blobAttachments_.size();
+          } else {
+            return blobAttachmentsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+            getBlobAttachments(int index) {
+          if (blobAttachmentsBuilder_ == null) {
+            return blobAttachments_.get(index);
+          } else {
+            return blobAttachmentsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setBlobAttachments(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment value) {
+          if (blobAttachmentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.set(index, value);
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setBlobAttachments(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Builder
+                builderForValue) {
+          if (blobAttachmentsBuilder_ == null) {
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder addBlobAttachments(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment value) {
+          if (blobAttachmentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.add(value);
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder addBlobAttachments(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment value) {
+          if (blobAttachmentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.add(index, value);
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder addBlobAttachments(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Builder
+                builderForValue) {
+          if (blobAttachmentsBuilder_ == null) {
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.add(builderForValue.build());
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder addBlobAttachments(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Builder
+                builderForValue) {
+          if (blobAttachmentsBuilder_ == null) {
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder addAllBlobAttachments(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                            .BlobAttachment>
+                values) {
+          if (blobAttachmentsBuilder_ == null) {
+            ensureBlobAttachmentsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blobAttachments_);
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearBlobAttachments() {
+          if (blobAttachmentsBuilder_ == null) {
+            blobAttachments_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder removeBlobAttachments(int index) {
+          if (blobAttachmentsBuilder_ == null) {
+            ensureBlobAttachmentsIsMutable();
+            blobAttachments_.remove(index);
+            onChanged();
+          } else {
+            blobAttachmentsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Builder
+            getBlobAttachmentsBuilder(int index) {
+          return internalGetBlobAttachmentsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                .BlobAttachmentOrBuilder
+            getBlobAttachmentsOrBuilder(int index) {
+          if (blobAttachmentsBuilder_ == null) {
+            return blobAttachments_.get(index);
+          } else {
+            return blobAttachmentsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                        .BlobAttachmentOrBuilder>
+            getBlobAttachmentsOrBuilderList() {
+          if (blobAttachmentsBuilder_ != null) {
+            return blobAttachmentsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(blobAttachments_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Builder
+            addBlobAttachmentsBuilder() {
+          return internalGetBlobAttachmentsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                      .getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.Builder
+            addBlobAttachmentsBuilder(int index) {
+          return internalGetBlobAttachmentsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                      .getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Store multimodal data for answer enhancement.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment blob_attachments = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .Builder>
+            getBlobAttachmentsBuilderList() {
+          return internalGetBlobAttachmentsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                    .BlobAttachmentOrBuilder>
+            internalGetBlobAttachmentsFieldBuilder() {
+          if (blobAttachmentsBuilder_ == null) {
+            blobAttachmentsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment
+                        .Builder,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                        .BlobAttachmentOrBuilder>(
+                    blobAttachments_,
+                    ((bitField0_ & 0x00000008) != 0),
+                    getParentForChildren(),
+                    isClean());
+            blobAttachments_ = null;
+          }
+          return blobAttachmentsBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummaryWithMetadata)
@@ -23080,6 +26670,60 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @return A list containing the classifiedIntents.
+     */
+    java.util.List<java.lang.String> getClassifiedIntentsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @return The count of classifiedIntents.
+     */
+    int getClassifiedIntentsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The classifiedIntents at the given index.
+     */
+    java.lang.String getClassifiedIntents(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the classifiedIntents at the given index.
+     */
+    com.google.protobuf.ByteString getClassifiedIntentsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
      * The filters that were extracted from the input query represented in a
      * structured form.
      * </pre>
@@ -23164,6 +26808,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     private NaturalLanguageQueryUnderstandingInfo() {
       extractedFilters_ = "";
       rewrittenQuery_ = "";
+      classifiedIntents_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -33663,6 +37308,74 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int CLASSIFIED_INTENTS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList classifiedIntents_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @return A list containing the classifiedIntents.
+     */
+    public com.google.protobuf.ProtocolStringList getClassifiedIntentsList() {
+      return classifiedIntents_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @return The count of classifiedIntents.
+     */
+    public int getClassifiedIntentsCount() {
+      return classifiedIntents_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The classifiedIntents at the given index.
+     */
+    public java.lang.String getClassifiedIntents(int index) {
+      return classifiedIntents_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The classified intents from the input query.
+     * </pre>
+     *
+     * <code>repeated string classified_intents = 5;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the classifiedIntents at the given index.
+     */
+    public com.google.protobuf.ByteString getClassifiedIntentsBytes(int index) {
+      return classifiedIntents_.getByteString(index);
+    }
+
     public static final int STRUCTURED_EXTRACTED_FILTER_FIELD_NUMBER = 3;
     private com.google.cloud.discoveryengine.v1beta.SearchResponse
             .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
@@ -33756,6 +37469,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getStructuredExtractedFilter());
       }
+      for (int i = 0; i < classifiedIntents_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, classifiedIntents_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -33775,6 +37491,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, getStructuredExtractedFilter());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < classifiedIntents_.size(); i++) {
+          dataSize += computeStringSizeNoTag(classifiedIntents_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getClassifiedIntentsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -33800,6 +37524,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
       if (!getExtractedFilters().equals(other.getExtractedFilters())) return false;
       if (!getRewrittenQuery().equals(other.getRewrittenQuery())) return false;
+      if (!getClassifiedIntentsList().equals(other.getClassifiedIntentsList())) return false;
       if (hasStructuredExtractedFilter() != other.hasStructuredExtractedFilter()) return false;
       if (hasStructuredExtractedFilter()) {
         if (!getStructuredExtractedFilter().equals(other.getStructuredExtractedFilter()))
@@ -33820,6 +37545,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getExtractedFilters().hashCode();
       hash = (37 * hash) + REWRITTEN_QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getRewrittenQuery().hashCode();
+      if (getClassifiedIntentsCount() > 0) {
+        hash = (37 * hash) + CLASSIFIED_INTENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getClassifiedIntentsList().hashCode();
+      }
       if (hasStructuredExtractedFilter()) {
         hash = (37 * hash) + STRUCTURED_EXTRACTED_FILTER_FIELD_NUMBER;
         hash = (53 * hash) + getStructuredExtractedFilter().hashCode();
@@ -34001,6 +37730,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         extractedFilters_ = "";
         rewrittenQuery_ = "";
+        classifiedIntents_ = com.google.protobuf.LazyStringArrayList.emptyList();
         structuredExtractedFilter_ = null;
         if (structuredExtractedFilterBuilder_ != null) {
           structuredExtractedFilterBuilder_.dispose();
@@ -34061,8 +37791,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.rewrittenQuery_ = rewrittenQuery_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          classifiedIntents_.makeImmutable();
+          result.classifiedIntents_ = classifiedIntents_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.structuredExtractedFilter_ =
               structuredExtractedFilterBuilder_ == null
                   ? structuredExtractedFilter_
@@ -34103,6 +37837,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (!other.getRewrittenQuery().isEmpty()) {
           rewrittenQuery_ = other.rewrittenQuery_;
           bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.classifiedIntents_.isEmpty()) {
+          if (classifiedIntents_.isEmpty()) {
+            classifiedIntents_ = other.classifiedIntents_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureClassifiedIntentsIsMutable();
+            classifiedIntents_.addAll(other.classifiedIntents_);
+          }
           onChanged();
         }
         if (other.hasStructuredExtractedFilter()) {
@@ -34151,9 +37895,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                   input.readMessage(
                       internalGetStructuredExtractedFilterFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureClassifiedIntentsIsMutable();
+                  classifiedIntents_.add(s);
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -34395,6 +38146,189 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private com.google.protobuf.LazyStringArrayList classifiedIntents_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureClassifiedIntentsIsMutable() {
+        if (!classifiedIntents_.isModifiable()) {
+          classifiedIntents_ = new com.google.protobuf.LazyStringArrayList(classifiedIntents_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @return A list containing the classifiedIntents.
+       */
+      public com.google.protobuf.ProtocolStringList getClassifiedIntentsList() {
+        classifiedIntents_.makeImmutable();
+        return classifiedIntents_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @return The count of classifiedIntents.
+       */
+      public int getClassifiedIntentsCount() {
+        return classifiedIntents_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The classifiedIntents at the given index.
+       */
+      public java.lang.String getClassifiedIntents(int index) {
+        return classifiedIntents_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the classifiedIntents at the given index.
+       */
+      public com.google.protobuf.ByteString getClassifiedIntentsBytes(int index) {
+        return classifiedIntents_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The classifiedIntents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClassifiedIntents(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClassifiedIntentsIsMutable();
+        classifiedIntents_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @param value The classifiedIntents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClassifiedIntents(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClassifiedIntentsIsMutable();
+        classifiedIntents_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @param values The classifiedIntents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllClassifiedIntents(java.lang.Iterable<java.lang.String> values) {
+        ensureClassifiedIntentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, classifiedIntents_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClassifiedIntents() {
+        classifiedIntents_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The classified intents from the input query.
+       * </pre>
+       *
+       * <code>repeated string classified_intents = 5;</code>
+       *
+       * @param value The bytes of the classifiedIntents to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClassifiedIntentsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureClassifiedIntentsIsMutable();
+        classifiedIntents_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       private com.google.cloud.discoveryengine.v1beta.SearchResponse
               .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
           structuredExtractedFilter_;
@@ -34422,7 +38356,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        * @return Whether the structuredExtractedFilter field is set.
        */
       public boolean hasStructuredExtractedFilter() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
 
       /**
@@ -34477,7 +38411,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         } else {
           structuredExtractedFilterBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -34503,7 +38437,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         } else {
           structuredExtractedFilterBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -34525,7 +38459,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                   .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter
               value) {
         if (structuredExtractedFilterBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && structuredExtractedFilter_ != null
               && structuredExtractedFilter_
                   != com.google.cloud.discoveryengine.v1beta.SearchResponse
@@ -34539,7 +38473,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           structuredExtractedFilterBuilder_.mergeFrom(value);
         }
         if (structuredExtractedFilter_ != null) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
@@ -34558,7 +38492,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearStructuredExtractedFilter() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         structuredExtractedFilter_ = null;
         if (structuredExtractedFilterBuilder_ != null) {
           structuredExtractedFilterBuilder_.dispose();
@@ -34583,7 +38517,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.discoveryengine.v1beta.SearchResponse
               .NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter.Builder
           getStructuredExtractedFilterBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return internalGetStructuredExtractedFilterFieldBuilder().getBuilder();
       }
@@ -37616,6 +41550,67 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SUGGESTED_QUERY_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object suggestedQuery_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Corrected query with low confidence, AKA did you mean query.
+   * Compared with corrected_query, this field is set when SpellCorrector
+   * returned a response, but FPR(full page replacement) is not triggered
+   * because the corrction is of low confidence(eg, reversed because there are
+   * matches of the original query in document corpus).
+   * </pre>
+   *
+   * <code>string suggested_query = 24;</code>
+   *
+   * @return The suggestedQuery.
+   */
+  @java.lang.Override
+  public java.lang.String getSuggestedQuery() {
+    java.lang.Object ref = suggestedQuery_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      suggestedQuery_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Corrected query with low confidence, AKA did you mean query.
+   * Compared with corrected_query, this field is set when SpellCorrector
+   * returned a response, but FPR(full page replacement) is not triggered
+   * because the corrction is of low confidence(eg, reversed because there are
+   * matches of the original query in document corpus).
+   * </pre>
+   *
+   * <code>string suggested_query = 24;</code>
+   *
+   * @return The bytes for suggestedQuery.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSuggestedQueryBytes() {
+    java.lang.Object ref = suggestedQuery_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      suggestedQuery_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SUMMARY_FIELD_NUMBER = 9;
   private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary_;
 
@@ -37882,11 +41877,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Natural language query understanding information for the returned results.
+   * Output only. Natural language query understanding information for the
+   * returned results.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
@@ -37900,11 +41896,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Natural language query understanding information for the returned results.
+   * Output only. Natural language query understanding information for the
+   * returned results.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The naturalLanguageQueryUnderstandingInfo.
@@ -37923,11 +41920,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Natural language query understanding information for the returned results.
+   * Output only. Natural language query understanding information for the
+   * returned results.
    * </pre>
    *
    * <code>
-   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -38102,6 +42100,141 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     return oneBoxResults_.get(index);
   }
 
+  public static final int SEARCH_LINK_PROMOTIONS_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>
+      searchLinkPromotions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>
+      getSearchLinkPromotionsList() {
+    return searchLinkPromotions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder>
+      getSearchLinkPromotionsOrBuilderList() {
+    return searchLinkPromotions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public int getSearchLinkPromotionsCount() {
+    return searchLinkPromotions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion getSearchLinkPromotions(
+      int index) {
+    return searchLinkPromotions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotions for site search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder
+      getSearchLinkPromotionsOrBuilder(int index) {
+    return searchLinkPromotions_.get(index);
+  }
+
+  public static final int SEMANTIC_STATE_FIELD_NUMBER = 36;
+  private int semanticState_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the semantic state of the search response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for semanticState.
+   */
+  @java.lang.Override
+  public int getSemanticStateValue() {
+    return semanticState_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the semantic state of the search response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The semanticState.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState getSemanticState() {
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState result =
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState.forNumber(
+            semanticState_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -38160,6 +42293,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < oneBoxResults_.size(); i++) {
       output.writeMessage(20, oneBoxResults_.get(i));
+    }
+    for (int i = 0; i < searchLinkPromotions_.size(); i++) {
+      output.writeMessage(23, searchLinkPromotions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(suggestedQuery_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 24, suggestedQuery_);
+    }
+    if (semanticState_
+        != com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState
+            .SEMANTIC_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(36, semanticState_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -38223,6 +42368,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < oneBoxResults_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, oneBoxResults_.get(i));
     }
+    for (int i = 0; i < searchLinkPromotions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, searchLinkPromotions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(suggestedQuery_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(24, suggestedQuery_);
+    }
+    if (semanticState_
+        != com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState
+            .SEMANTIC_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(36, semanticState_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -38250,6 +42409,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     if (!getRedirectUri().equals(other.getRedirectUri())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!getCorrectedQuery().equals(other.getCorrectedQuery())) return false;
+    if (!getSuggestedQuery().equals(other.getSuggestedQuery())) return false;
     if (hasSummary() != other.hasSummary()) return false;
     if (hasSummary()) {
       if (!getSummary().equals(other.getSummary())) return false;
@@ -38271,6 +42431,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (!getSessionInfo().equals(other.getSessionInfo())) return false;
     }
     if (!getOneBoxResultsList().equals(other.getOneBoxResultsList())) return false;
+    if (!getSearchLinkPromotionsList().equals(other.getSearchLinkPromotionsList())) return false;
+    if (semanticState_ != other.semanticState_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -38304,6 +42466,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (37 * hash) + CORRECTED_QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getCorrectedQuery().hashCode();
+    hash = (37 * hash) + SUGGESTED_QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getSuggestedQuery().hashCode();
     if (hasSummary()) {
       hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getSummary().hashCode();
@@ -38332,6 +42496,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ONE_BOX_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getOneBoxResultsList().hashCode();
     }
+    if (getSearchLinkPromotionsCount() > 0) {
+      hash = (37 * hash) + SEARCH_LINK_PROMOTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchLinkPromotionsList().hashCode();
+    }
+    hash = (37 * hash) + SEMANTIC_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + semanticState_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -38485,6 +42655,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         internalGetNaturalLanguageQueryUnderstandingInfoFieldBuilder();
         internalGetSessionInfoFieldBuilder();
         internalGetOneBoxResultsFieldBuilder();
+        internalGetSearchLinkPromotionsFieldBuilder();
       }
     }
 
@@ -38516,6 +42687,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       redirectUri_ = "";
       nextPageToken_ = "";
       correctedQuery_ = "";
+      suggestedQuery_ = "";
       summary_ = null;
       if (summaryBuilder_ != null) {
         summaryBuilder_.dispose();
@@ -38528,7 +42700,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         geoSearchDebugInfo_ = null;
         geoSearchDebugInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       queryExpansionInfo_ = null;
       if (queryExpansionInfoBuilder_ != null) {
         queryExpansionInfoBuilder_.dispose();
@@ -38550,7 +42722,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         oneBoxResults_ = null;
         oneBoxResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
+      if (searchLinkPromotionsBuilder_ == null) {
+        searchLinkPromotions_ = java.util.Collections.emptyList();
+      } else {
+        searchLinkPromotions_ = null;
+        searchLinkPromotionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
+      semanticState_ = 0;
       return this;
     }
 
@@ -38607,22 +42787,31 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         result.facets_ = facetsBuilder_.build();
       }
       if (geoSearchDebugInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           geoSearchDebugInfo_ = java.util.Collections.unmodifiableList(geoSearchDebugInfo_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.geoSearchDebugInfo_ = geoSearchDebugInfo_;
       } else {
         result.geoSearchDebugInfo_ = geoSearchDebugInfoBuilder_.build();
       }
       if (oneBoxResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           oneBoxResults_ = java.util.Collections.unmodifiableList(oneBoxResults_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.oneBoxResults_ = oneBoxResults_;
       } else {
         result.oneBoxResults_ = oneBoxResultsBuilder_.build();
+      }
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          searchLinkPromotions_ = java.util.Collections.unmodifiableList(searchLinkPromotions_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.searchLinkPromotions_ = searchLinkPromotions_;
+      } else {
+        result.searchLinkPromotions_ = searchLinkPromotionsBuilder_.build();
       }
     }
 
@@ -38652,31 +42841,37 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         result.correctedQuery_ = correctedQuery_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.suggestedQuery_ = suggestedQuery_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.summary_ = summaryBuilder_ == null ? summary_ : summaryBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         appliedControls_.makeImmutable();
         result.appliedControls_ = appliedControls_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.queryExpansionInfo_ =
             queryExpansionInfoBuilder_ == null
                 ? queryExpansionInfo_
                 : queryExpansionInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.naturalLanguageQueryUnderstandingInfo_ =
             naturalLanguageQueryUnderstandingInfoBuilder_ == null
                 ? naturalLanguageQueryUnderstandingInfo_
                 : naturalLanguageQueryUnderstandingInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.sessionInfo_ =
             sessionInfoBuilder_ == null ? sessionInfo_ : sessionInfoBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.semanticState_ = semanticState_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -38774,13 +42969,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.getSuggestedQuery().isEmpty()) {
+        suggestedQuery_ = other.suggestedQuery_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (other.hasSummary()) {
         mergeSummary(other.getSummary());
       }
       if (!other.appliedControls_.isEmpty()) {
         if (appliedControls_.isEmpty()) {
           appliedControls_ = other.appliedControls_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
         } else {
           ensureAppliedControlsIsMutable();
           appliedControls_.addAll(other.appliedControls_);
@@ -38791,7 +42991,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (!other.geoSearchDebugInfo_.isEmpty()) {
           if (geoSearchDebugInfo_.isEmpty()) {
             geoSearchDebugInfo_ = other.geoSearchDebugInfo_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureGeoSearchDebugInfoIsMutable();
             geoSearchDebugInfo_.addAll(other.geoSearchDebugInfo_);
@@ -38804,7 +43004,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             geoSearchDebugInfoBuilder_.dispose();
             geoSearchDebugInfoBuilder_ = null;
             geoSearchDebugInfo_ = other.geoSearchDebugInfo_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             geoSearchDebugInfoBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetGeoSearchDebugInfoFieldBuilder()
@@ -38828,7 +43028,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (!other.oneBoxResults_.isEmpty()) {
           if (oneBoxResults_.isEmpty()) {
             oneBoxResults_ = other.oneBoxResults_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureOneBoxResultsIsMutable();
             oneBoxResults_.addAll(other.oneBoxResults_);
@@ -38841,7 +43041,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             oneBoxResultsBuilder_.dispose();
             oneBoxResultsBuilder_ = null;
             oneBoxResults_ = other.oneBoxResults_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             oneBoxResultsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetOneBoxResultsFieldBuilder()
@@ -38850,6 +43050,36 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             oneBoxResultsBuilder_.addAllMessages(other.oneBoxResults_);
           }
         }
+      }
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (!other.searchLinkPromotions_.isEmpty()) {
+          if (searchLinkPromotions_.isEmpty()) {
+            searchLinkPromotions_ = other.searchLinkPromotions_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureSearchLinkPromotionsIsMutable();
+            searchLinkPromotions_.addAll(other.searchLinkPromotions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.searchLinkPromotions_.isEmpty()) {
+          if (searchLinkPromotionsBuilder_.isEmpty()) {
+            searchLinkPromotionsBuilder_.dispose();
+            searchLinkPromotionsBuilder_ = null;
+            searchLinkPromotions_ = other.searchLinkPromotions_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            searchLinkPromotionsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetSearchLinkPromotionsFieldBuilder()
+                    : null;
+          } else {
+            searchLinkPromotionsBuilder_.addAllMessages(other.searchLinkPromotions_);
+          }
+        }
+      }
+      if (other.semanticState_ != 0) {
+        setSemanticStateValue(other.getSemanticStateValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -38940,7 +43170,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             case 74:
               {
                 input.readMessage(internalGetSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
@@ -38960,7 +43190,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetQueryExpansionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             case 122:
@@ -38968,7 +43198,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetNaturalLanguageQueryUnderstandingInfoFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 130:
@@ -38990,7 +43220,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetSessionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 154
             case 162:
@@ -39008,6 +43238,32 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 162
+            case 186:
+              {
+                com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion m =
+                    input.readMessage(
+                        com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.parser(),
+                        extensionRegistry);
+                if (searchLinkPromotionsBuilder_ == null) {
+                  ensureSearchLinkPromotionsIsMutable();
+                  searchLinkPromotions_.add(m);
+                } else {
+                  searchLinkPromotionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 186
+            case 194:
+              {
+                suggestedQuery_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 194
+            case 288:
+              {
+                semanticState_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 288
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -40628,6 +44884,137 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object suggestedQuery_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Corrected query with low confidence, AKA did you mean query.
+     * Compared with corrected_query, this field is set when SpellCorrector
+     * returned a response, but FPR(full page replacement) is not triggered
+     * because the corrction is of low confidence(eg, reversed because there are
+     * matches of the original query in document corpus).
+     * </pre>
+     *
+     * <code>string suggested_query = 24;</code>
+     *
+     * @return The suggestedQuery.
+     */
+    public java.lang.String getSuggestedQuery() {
+      java.lang.Object ref = suggestedQuery_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suggestedQuery_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Corrected query with low confidence, AKA did you mean query.
+     * Compared with corrected_query, this field is set when SpellCorrector
+     * returned a response, but FPR(full page replacement) is not triggered
+     * because the corrction is of low confidence(eg, reversed because there are
+     * matches of the original query in document corpus).
+     * </pre>
+     *
+     * <code>string suggested_query = 24;</code>
+     *
+     * @return The bytes for suggestedQuery.
+     */
+    public com.google.protobuf.ByteString getSuggestedQueryBytes() {
+      java.lang.Object ref = suggestedQuery_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        suggestedQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Corrected query with low confidence, AKA did you mean query.
+     * Compared with corrected_query, this field is set when SpellCorrector
+     * returned a response, but FPR(full page replacement) is not triggered
+     * because the corrction is of low confidence(eg, reversed because there are
+     * matches of the original query in document corpus).
+     * </pre>
+     *
+     * <code>string suggested_query = 24;</code>
+     *
+     * @param value The suggestedQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuggestedQuery(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      suggestedQuery_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Corrected query with low confidence, AKA did you mean query.
+     * Compared with corrected_query, this field is set when SpellCorrector
+     * returned a response, but FPR(full page replacement) is not triggered
+     * because the corrction is of low confidence(eg, reversed because there are
+     * matches of the original query in document corpus).
+     * </pre>
+     *
+     * <code>string suggested_query = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuggestedQuery() {
+      suggestedQuery_ = getDefaultInstance().getSuggestedQuery();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Corrected query with low confidence, AKA did you mean query.
+     * Compared with corrected_query, this field is set when SpellCorrector
+     * returned a response, but FPR(full page replacement) is not triggered
+     * because the corrction is of low confidence(eg, reversed because there are
+     * matches of the original query in document corpus).
+     * </pre>
+     *
+     * <code>string suggested_query = 24;</code>
+     *
+     * @param value The bytes for suggestedQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuggestedQueryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      suggestedQuery_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary,
@@ -40650,7 +45037,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the summary field is set.
      */
     public boolean hasSummary() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -40699,7 +45086,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         summaryBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -40723,7 +45110,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         summaryBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -40743,7 +45130,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder mergeSummary(
         com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary value) {
       if (summaryBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && summary_ != null
             && summary_
                 != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
@@ -40756,7 +45143,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         summaryBuilder_.mergeFrom(value);
       }
       if (summary_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -40775,7 +45162,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 9;</code>
      */
     public Builder clearSummary() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       summary_ = null;
       if (summaryBuilder_ != null) {
         summaryBuilder_.dispose();
@@ -40799,7 +45186,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder
         getSummaryBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetSummaryFieldBuilder().getBuilder();
     }
@@ -40863,7 +45250,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (!appliedControls_.isModifiable()) {
         appliedControls_ = new com.google.protobuf.LazyStringArrayList(appliedControls_);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
     }
 
     /**
@@ -40948,7 +45335,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       }
       ensureAppliedControlsIsMutable();
       appliedControls_.set(index, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -40971,7 +45358,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       }
       ensureAppliedControlsIsMutable();
       appliedControls_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -40991,7 +45378,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder addAllAppliedControls(java.lang.Iterable<java.lang.String> values) {
       ensureAppliedControlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedControls_);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -41009,7 +45396,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAppliedControls() {
       appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -41034,7 +45421,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureAppliedControlsIsMutable();
       appliedControls_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -41044,12 +45431,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         geoSearchDebugInfo_ = java.util.Collections.emptyList();
 
     private void ensureGeoSearchDebugInfoIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         geoSearchDebugInfo_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo>(
                 geoSearchDebugInfo_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -41245,7 +45632,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder clearGeoSearchDebugInfo() {
       if (geoSearchDebugInfoBuilder_ == null) {
         geoSearchDebugInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         geoSearchDebugInfoBuilder_.clear();
@@ -41359,7 +45746,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo.Builder,
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfoOrBuilder>(
                 geoSearchDebugInfo_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         geoSearchDebugInfo_ = null;
@@ -41389,7 +45776,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the queryExpansionInfo field is set.
      */
     public boolean hasQueryExpansionInfo() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -41438,7 +45825,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         queryExpansionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -41462,7 +45849,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         queryExpansionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -41481,7 +45868,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder mergeQueryExpansionInfo(
         com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo value) {
       if (queryExpansionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && queryExpansionInfo_ != null
             && queryExpansionInfo_
                 != com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
@@ -41494,7 +45881,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         queryExpansionInfoBuilder_.mergeFrom(value);
       }
       if (queryExpansionInfo_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -41512,7 +45899,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearQueryExpansionInfo() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       queryExpansionInfo_ = null;
       if (queryExpansionInfoBuilder_ != null) {
         queryExpansionInfoBuilder_.dispose();
@@ -41535,7 +45922,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder
         getQueryExpansionInfoBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetQueryExpansionInfoFieldBuilder().getBuilder();
     }
@@ -41607,28 +45994,30 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
      */
     public boolean hasNaturalLanguageQueryUnderstandingInfo() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The naturalLanguageQueryUnderstandingInfo.
@@ -41650,11 +46039,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setNaturalLanguageQueryUnderstandingInfo(
@@ -41668,7 +46058,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         naturalLanguageQueryUnderstandingInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -41677,11 +46067,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setNaturalLanguageQueryUnderstandingInfo(
@@ -41693,7 +46084,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         naturalLanguageQueryUnderstandingInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -41702,18 +46093,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeNaturalLanguageQueryUnderstandingInfo(
         com.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo
             value) {
       if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && naturalLanguageQueryUnderstandingInfo_ != null
             && naturalLanguageQueryUnderstandingInfo_
                 != com.google.cloud.discoveryengine.v1beta.SearchResponse
@@ -41726,7 +46118,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         naturalLanguageQueryUnderstandingInfoBuilder_.mergeFrom(value);
       }
       if (naturalLanguageQueryUnderstandingInfo_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -41736,15 +46128,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearNaturalLanguageQueryUnderstandingInfo() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       naturalLanguageQueryUnderstandingInfo_ = null;
       if (naturalLanguageQueryUnderstandingInfoBuilder_ != null) {
         naturalLanguageQueryUnderstandingInfoBuilder_.dispose();
@@ -41758,17 +46151,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.SearchResponse
             .NaturalLanguageQueryUnderstandingInfo.Builder
         getNaturalLanguageQueryUnderstandingInfoBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetNaturalLanguageQueryUnderstandingInfoFieldBuilder().getBuilder();
     }
@@ -41777,11 +46171,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.discoveryengine.v1beta.SearchResponse
@@ -41801,11 +46196,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Natural language query understanding information for the returned results.
+     * Output only. Natural language query understanding information for the
+     * returned results.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15;
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo natural_language_query_understanding_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -41855,7 +46251,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the sessionInfo field is set.
      */
     public boolean hasSessionInfo() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -41909,7 +46305,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         sessionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -41936,7 +46332,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         sessionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -41958,7 +46354,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder mergeSessionInfo(
         com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo value) {
       if (sessionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && sessionInfo_ != null
             && sessionInfo_
                 != com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo
@@ -41971,7 +46367,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         sessionInfoBuilder_.mergeFrom(value);
       }
       if (sessionInfo_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -41992,7 +46388,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSessionInfo() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       sessionInfo_ = null;
       if (sessionInfoBuilder_ != null) {
         sessionInfoBuilder_.dispose();
@@ -42018,7 +46414,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo.Builder
         getSessionInfoBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetSessionInfoFieldBuilder().getBuilder();
     }
@@ -42084,12 +46480,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         oneBoxResults_ = java.util.Collections.emptyList();
 
     private void ensureOneBoxResultsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         oneBoxResults_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult>(
                 oneBoxResults_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -42360,7 +46756,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder clearOneBoxResults() {
       if (oneBoxResultsBuilder_ == null) {
         oneBoxResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         oneBoxResultsBuilder_.clear();
@@ -42522,12 +46918,545 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult.Builder,
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.OneBoxResultOrBuilder>(
                 oneBoxResults_,
-                ((bitField0_ & 0x00004000) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         oneBoxResults_ = null;
       }
       return oneBoxResultsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>
+        searchLinkPromotions_ = java.util.Collections.emptyList();
+
+    private void ensureSearchLinkPromotionsIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        searchLinkPromotions_ =
+            new java.util.ArrayList<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>(
+                searchLinkPromotions_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion,
+            com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder>
+        searchLinkPromotionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>
+        getSearchLinkPromotionsList() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(searchLinkPromotions_);
+      } else {
+        return searchLinkPromotionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public int getSearchLinkPromotionsCount() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return searchLinkPromotions_.size();
+      } else {
+        return searchLinkPromotionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion getSearchLinkPromotions(
+        int index) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return searchLinkPromotions_.get(index);
+      } else {
+        return searchLinkPromotionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder setSearchLinkPromotions(
+        int index, com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion value) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.set(index, value);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder setSearchLinkPromotions(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder builderForValue) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion value) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(value);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        int index, com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion value) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(index, value);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder builderForValue) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addSearchLinkPromotions(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder builderForValue) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder addAllSearchLinkPromotions(
+        java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion>
+            values) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, searchLinkPromotions_);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder clearSearchLinkPromotions() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        searchLinkPromotions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public Builder removeSearchLinkPromotions(int index) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        ensureSearchLinkPromotionsIsMutable();
+        searchLinkPromotions_.remove(index);
+        onChanged();
+      } else {
+        searchLinkPromotionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder
+        getSearchLinkPromotionsBuilder(int index) {
+      return internalGetSearchLinkPromotionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder
+        getSearchLinkPromotionsOrBuilder(int index) {
+      if (searchLinkPromotionsBuilder_ == null) {
+        return searchLinkPromotions_.get(index);
+      } else {
+        return searchLinkPromotionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder>
+        getSearchLinkPromotionsOrBuilderList() {
+      if (searchLinkPromotionsBuilder_ != null) {
+        return searchLinkPromotionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(searchLinkPromotions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder
+        addSearchLinkPromotionsBuilder() {
+      return internalGetSearchLinkPromotionsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder
+        addSearchLinkPromotionsBuilder(int index) {
+      return internalGetSearchLinkPromotionsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotions for site search.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchLinkPromotion search_link_promotions = 23;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder>
+        getSearchLinkPromotionsBuilderList() {
+      return internalGetSearchLinkPromotionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion,
+            com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder>
+        internalGetSearchLinkPromotionsFieldBuilder() {
+      if (searchLinkPromotionsBuilder_ == null) {
+        searchLinkPromotionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion,
+                com.google.cloud.discoveryengine.v1beta.SearchLinkPromotion.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchLinkPromotionOrBuilder>(
+                searchLinkPromotions_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        searchLinkPromotions_ = null;
+      }
+      return searchLinkPromotionsBuilder_;
+    }
+
+    private int semanticState_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the semantic state of the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for semanticState.
+     */
+    @java.lang.Override
+    public int getSemanticStateValue() {
+      return semanticState_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the semantic state of the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for semanticState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSemanticStateValue(int value) {
+      semanticState_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the semantic state of the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The semanticState.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState getSemanticState() {
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState result =
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState.forNumber(
+              semanticState_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the semantic state of the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The semanticState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSemanticState(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      semanticState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the semantic state of the search response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SemanticState semantic_state = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSemanticState() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      semanticState_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse)

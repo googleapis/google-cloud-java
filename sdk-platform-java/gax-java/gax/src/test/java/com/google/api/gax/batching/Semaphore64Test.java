@@ -29,12 +29,14 @@
  */
 package com.google.api.gax.batching;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -68,8 +70,7 @@ class Semaphore64Test {
     Thread t = new Thread(() -> semaphore.acquire(1));
     t.start();
 
-    Thread.sleep(50);
-    assertTrue(t.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t.getState() == Thread.State.WAITING);
 
     semaphore.release(1);
     t.join();
@@ -95,8 +96,7 @@ class Semaphore64Test {
     Thread t = new Thread(() -> semaphore.acquire(1));
     t.start();
 
-    Thread.sleep(50);
-    assertTrue(t.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t.getState() == Thread.State.WAITING);
 
     semaphore.release(1);
     t.join();
@@ -124,8 +124,7 @@ class Semaphore64Test {
     Thread t1 = new Thread(() -> semaphore.acquire(1));
     t1.start();
     // wait for thread to start
-    Thread.sleep(100);
-    assertTrue(t1.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t1.getState() == Thread.State.WAITING);
     semaphore.release(6);
     t1.join();
 
@@ -133,8 +132,7 @@ class Semaphore64Test {
     Thread t2 = new Thread(() -> semaphore.acquirePartial(6));
     t2.start();
     // wait fo thread to start
-    Thread.sleep(100);
-    assertTrue(t2.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t2.getState() == Thread.State.WAITING);
     // limit should still be 5 and get limit should not block
     assertEquals(5, semaphore.getPermitLimit());
   }
@@ -158,8 +156,7 @@ class Semaphore64Test {
     Thread t = new Thread(() -> semaphore.acquire(1));
     t.start();
 
-    Thread.sleep(50);
-    assertTrue(t.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t.getState() == Thread.State.WAITING);
 
     semaphore.increasePermitLimit(1);
     t.join();
@@ -208,8 +205,7 @@ class Semaphore64Test {
     semaphore.release(10);
     Thread t = new Thread(() -> semaphore.acquire(11));
     t.start();
-    Thread.sleep(100);
-    assertTrue(t.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t.getState() == Thread.State.WAITING);
   }
 
   @Test
@@ -239,7 +235,6 @@ class Semaphore64Test {
     semaphore.release(10);
     Thread t = new Thread(() -> semaphore.acquire(11));
     t.start();
-    Thread.sleep(100);
-    assertTrue(t.isAlive());
+    await().atMost(Duration.ofSeconds(5)).until(() -> t.getState() == Thread.State.WAITING);
   }
 }

@@ -440,6 +440,38 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [DMS Private
+   * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string dms_private_connection = 22;</code>
+   *
+   * @return The dmsPrivateConnection.
+   */
+  java.lang.String getDmsPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [DMS Private
+   * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string dms_private_connection = 22;</code>
+   *
+   * @return The bytes for dmsPrivateConnection.
+   */
+  com.google.protobuf.ByteString getDmsPrivateConnectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
    * source endpoint.
    * </pre>

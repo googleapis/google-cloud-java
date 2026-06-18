@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.20.0
+version: v0.21.1-0.20260617000028-820646f3db93
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: f7b17174725f43b5cb11b0b8c6bbad20a3dc5bd1
-    sha256: e21b1ea623f68161e9c0c464ca9e9df53da80d7133244531aa97d1cfeb411ccc
+    commit: 7af3f2c7b8927cffb548fd2cf09b04c6371437ee
+    sha256: fb354b89774f4599bb3559d190fe54e51da76c6339c062900355c874b9defac5
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -1856,6 +1856,7 @@ libraries:
       name_pretty_override: Grafeas
       product_documentation_override: https://grafeas.io
       skip_pom_updates: true
+      alternate_headers: license-header.txt
   - name: gsuite-addons
     version: 2.94.0-SNAPSHOT
     apis:

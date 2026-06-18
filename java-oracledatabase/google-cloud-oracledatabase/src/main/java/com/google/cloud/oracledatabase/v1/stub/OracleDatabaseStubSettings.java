@@ -133,11 +133,7 @@ import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
@@ -564,31 +560,21 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       deleteGoldengateConnectionSettings;
   private final OperationCallSettings<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
       deleteGoldengateConnectionOperationSettings;
-  private final UnaryCallSettings<
-          GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionSettings;
   private final PagedCallSettings<
           ListGoldengateDeploymentVersionsRequest,
           ListGoldengateDeploymentVersionsResponse,
           ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsSettings;
-  private final UnaryCallSettings<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeSettings;
   private final PagedCallSettings<
           ListGoldengateDeploymentTypesRequest,
           ListGoldengateDeploymentTypesResponse,
           ListGoldengateDeploymentTypesPagedResponse>
       listGoldengateDeploymentTypesSettings;
-  private final UnaryCallSettings<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentSettings;
   private final PagedCallSettings<
           ListGoldengateDeploymentEnvironmentsRequest,
           ListGoldengateDeploymentEnvironmentsResponse,
           ListGoldengateDeploymentEnvironmentsPagedResponse>
       listGoldengateDeploymentEnvironmentsSettings;
-  private final UnaryCallSettings<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeSettings;
   private final PagedCallSettings<
           ListGoldengateConnectionTypesRequest,
           ListGoldengateConnectionTypesResponse,
@@ -3234,12 +3220,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return deleteGoldengateConnectionOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getGoldengateDeploymentVersion. */
-  public UnaryCallSettings<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionSettings() {
-    return getGoldengateDeploymentVersionSettings;
-  }
-
   /** Returns the object with the settings used for calls to listGoldengateDeploymentVersions. */
   public PagedCallSettings<
           ListGoldengateDeploymentVersionsRequest,
@@ -3247,12 +3227,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsSettings() {
     return listGoldengateDeploymentVersionsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getGoldengateDeploymentType. */
-  public UnaryCallSettings<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeSettings() {
-    return getGoldengateDeploymentTypeSettings;
   }
 
   /** Returns the object with the settings used for calls to listGoldengateDeploymentTypes. */
@@ -3264,13 +3238,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return listGoldengateDeploymentTypesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getGoldengateDeploymentEnvironment. */
-  public UnaryCallSettings<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentSettings() {
-    return getGoldengateDeploymentEnvironmentSettings;
-  }
-
   /**
    * Returns the object with the settings used for calls to listGoldengateDeploymentEnvironments.
    */
@@ -3280,12 +3247,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           ListGoldengateDeploymentEnvironmentsPagedResponse>
       listGoldengateDeploymentEnvironmentsSettings() {
     return listGoldengateDeploymentEnvironmentsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getGoldengateConnectionType. */
-  public UnaryCallSettings<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeSettings() {
-    return getGoldengateConnectionTypeSettings;
   }
 
   /** Returns the object with the settings used for calls to listGoldengateConnectionTypes. */
@@ -3633,20 +3594,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.deleteGoldengateConnectionSettings().build();
     deleteGoldengateConnectionOperationSettings =
         settingsBuilder.deleteGoldengateConnectionOperationSettings().build();
-    getGoldengateDeploymentVersionSettings =
-        settingsBuilder.getGoldengateDeploymentVersionSettings().build();
     listGoldengateDeploymentVersionsSettings =
         settingsBuilder.listGoldengateDeploymentVersionsSettings().build();
-    getGoldengateDeploymentTypeSettings =
-        settingsBuilder.getGoldengateDeploymentTypeSettings().build();
     listGoldengateDeploymentTypesSettings =
         settingsBuilder.listGoldengateDeploymentTypesSettings().build();
-    getGoldengateDeploymentEnvironmentSettings =
-        settingsBuilder.getGoldengateDeploymentEnvironmentSettings().build();
     listGoldengateDeploymentEnvironmentsSettings =
         settingsBuilder.listGoldengateDeploymentEnvironmentsSettings().build();
-    getGoldengateConnectionTypeSettings =
-        settingsBuilder.getGoldengateConnectionTypeSettings().build();
     listGoldengateConnectionTypesSettings =
         settingsBuilder.listGoldengateConnectionTypesSettings().build();
     listDbVersionsSettings = settingsBuilder.listDbVersionsSettings().build();
@@ -3947,33 +3900,21 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
         deleteGoldengateConnectionOperationSettings;
-    private final UnaryCallSettings.Builder<
-            GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-        getGoldengateDeploymentVersionSettings;
     private final PagedCallSettings.Builder<
             ListGoldengateDeploymentVersionsRequest,
             ListGoldengateDeploymentVersionsResponse,
             ListGoldengateDeploymentVersionsPagedResponse>
         listGoldengateDeploymentVersionsSettings;
-    private final UnaryCallSettings.Builder<
-            GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-        getGoldengateDeploymentTypeSettings;
     private final PagedCallSettings.Builder<
             ListGoldengateDeploymentTypesRequest,
             ListGoldengateDeploymentTypesResponse,
             ListGoldengateDeploymentTypesPagedResponse>
         listGoldengateDeploymentTypesSettings;
-    private final UnaryCallSettings.Builder<
-            GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-        getGoldengateDeploymentEnvironmentSettings;
     private final PagedCallSettings.Builder<
             ListGoldengateDeploymentEnvironmentsRequest,
             ListGoldengateDeploymentEnvironmentsResponse,
             ListGoldengateDeploymentEnvironmentsPagedResponse>
         listGoldengateDeploymentEnvironmentsSettings;
-    private final UnaryCallSettings.Builder<
-            GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-        getGoldengateConnectionTypeSettings;
     private final PagedCallSettings.Builder<
             ListGoldengateConnectionTypesRequest,
             ListGoldengateConnectionTypesResponse,
@@ -4174,16 +4115,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createGoldengateConnectionOperationSettings = OperationCallSettings.newBuilder();
       deleteGoldengateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGoldengateConnectionOperationSettings = OperationCallSettings.newBuilder();
-      getGoldengateDeploymentVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listGoldengateDeploymentVersionsSettings =
           PagedCallSettings.newBuilder(LIST_GOLDENGATE_DEPLOYMENT_VERSIONS_PAGE_STR_FACT);
-      getGoldengateDeploymentTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listGoldengateDeploymentTypesSettings =
           PagedCallSettings.newBuilder(LIST_GOLDENGATE_DEPLOYMENT_TYPES_PAGE_STR_FACT);
-      getGoldengateDeploymentEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listGoldengateDeploymentEnvironmentsSettings =
           PagedCallSettings.newBuilder(LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS_PAGE_STR_FACT);
-      getGoldengateConnectionTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listGoldengateConnectionTypesSettings =
           PagedCallSettings.newBuilder(LIST_GOLDENGATE_CONNECTION_TYPES_PAGE_STR_FACT);
       listDbVersionsSettings = PagedCallSettings.newBuilder(LIST_DB_VERSIONS_PAGE_STR_FACT);
@@ -4270,13 +4207,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               getGoldengateConnectionSettings,
               createGoldengateConnectionSettings,
               deleteGoldengateConnectionSettings,
-              getGoldengateDeploymentVersionSettings,
               listGoldengateDeploymentVersionsSettings,
-              getGoldengateDeploymentTypeSettings,
               listGoldengateDeploymentTypesSettings,
-              getGoldengateDeploymentEnvironmentSettings,
               listGoldengateDeploymentEnvironmentsSettings,
-              getGoldengateConnectionTypeSettings,
               listGoldengateConnectionTypesSettings,
               listDbVersionsSettings,
               listDatabaseCharacterSetsSettings,
@@ -4428,20 +4361,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       deleteGoldengateConnectionSettings = settings.deleteGoldengateConnectionSettings.toBuilder();
       deleteGoldengateConnectionOperationSettings =
           settings.deleteGoldengateConnectionOperationSettings.toBuilder();
-      getGoldengateDeploymentVersionSettings =
-          settings.getGoldengateDeploymentVersionSettings.toBuilder();
       listGoldengateDeploymentVersionsSettings =
           settings.listGoldengateDeploymentVersionsSettings.toBuilder();
-      getGoldengateDeploymentTypeSettings =
-          settings.getGoldengateDeploymentTypeSettings.toBuilder();
       listGoldengateDeploymentTypesSettings =
           settings.listGoldengateDeploymentTypesSettings.toBuilder();
-      getGoldengateDeploymentEnvironmentSettings =
-          settings.getGoldengateDeploymentEnvironmentSettings.toBuilder();
       listGoldengateDeploymentEnvironmentsSettings =
           settings.listGoldengateDeploymentEnvironmentsSettings.toBuilder();
-      getGoldengateConnectionTypeSettings =
-          settings.getGoldengateConnectionTypeSettings.toBuilder();
       listGoldengateConnectionTypesSettings =
           settings.listGoldengateConnectionTypesSettings.toBuilder();
       listDbVersionsSettings = settings.listDbVersionsSettings.toBuilder();
@@ -4531,13 +4456,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               getGoldengateConnectionSettings,
               createGoldengateConnectionSettings,
               deleteGoldengateConnectionSettings,
-              getGoldengateDeploymentVersionSettings,
               listGoldengateDeploymentVersionsSettings,
-              getGoldengateDeploymentTypeSettings,
               listGoldengateDeploymentTypesSettings,
-              getGoldengateDeploymentEnvironmentSettings,
               listGoldengateDeploymentEnvironmentsSettings,
-              getGoldengateConnectionTypeSettings,
               listGoldengateConnectionTypesSettings,
               listDbVersionsSettings,
               listDatabaseCharacterSetsSettings,
@@ -4906,19 +4827,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
-          .getGoldengateDeploymentVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .listGoldengateDeploymentVersionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .getGoldengateDeploymentTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listGoldengateDeploymentTypesSettings()
@@ -4926,19 +4837,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .getGoldengateDeploymentEnvironmentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .listGoldengateDeploymentEnvironmentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .getGoldengateConnectionTypeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listGoldengateConnectionTypesSettings()
@@ -6468,13 +6369,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return deleteGoldengateConnectionOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getGoldengateDeploymentVersion. */
-    public UnaryCallSettings.Builder<
-            GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-        getGoldengateDeploymentVersionSettings() {
-      return getGoldengateDeploymentVersionSettings;
-    }
-
     /** Returns the builder for the settings used for calls to listGoldengateDeploymentVersions. */
     public PagedCallSettings.Builder<
             ListGoldengateDeploymentVersionsRequest,
@@ -6482,12 +6376,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListGoldengateDeploymentVersionsPagedResponse>
         listGoldengateDeploymentVersionsSettings() {
       return listGoldengateDeploymentVersionsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getGoldengateDeploymentType. */
-    public UnaryCallSettings.Builder<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-        getGoldengateDeploymentTypeSettings() {
-      return getGoldengateDeploymentTypeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listGoldengateDeploymentTypes. */
@@ -6500,15 +6388,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     }
 
     /**
-     * Returns the builder for the settings used for calls to getGoldengateDeploymentEnvironment.
-     */
-    public UnaryCallSettings.Builder<
-            GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-        getGoldengateDeploymentEnvironmentSettings() {
-      return getGoldengateDeploymentEnvironmentSettings;
-    }
-
-    /**
      * Returns the builder for the settings used for calls to listGoldengateDeploymentEnvironments.
      */
     public PagedCallSettings.Builder<
@@ -6517,12 +6396,6 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListGoldengateDeploymentEnvironmentsPagedResponse>
         listGoldengateDeploymentEnvironmentsSettings() {
       return listGoldengateDeploymentEnvironmentsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getGoldengateConnectionType. */
-    public UnaryCallSettings.Builder<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-        getGoldengateConnectionTypeSettings() {
-      return getGoldengateConnectionTypeSettings;
     }
 
     /** Returns the builder for the settings used for calls to listGoldengateConnectionTypes. */

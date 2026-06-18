@@ -110,6 +110,34 @@ public interface AnswerOrBuilder
    *
    *
    * <pre>
+   * A score in the range of [0, 1] describing how grounded the answer is by the
+   * reference chunks.
+   * </pre>
+   *
+   * <code>optional double grounding_score = 12;</code>
+   *
+   * @return Whether the groundingScore field is set.
+   */
+  boolean hasGroundingScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * A score in the range of [0, 1] describing how grounded the answer is by the
+   * reference chunks.
+   * </pre>
+   *
+   * <code>optional double grounding_score = 12;</code>
+   *
+   * @return The groundingScore.
+   */
+  double getGroundingScore();
+
+  /**
+   *
+   *
+   * <pre>
    * Citations.
    * </pre>
    *
@@ -161,6 +189,74 @@ public interface AnswerOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Answer.Citation citations = 4;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Answer.CitationOrBuilder getCitationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.Answer.GroundingSupport>
+      getGroundingSupportsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Answer.GroundingSupport getGroundingSupports(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getGroundingSupportsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Answer.GroundingSupportOrBuilder>
+      getGroundingSupportsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding supports.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.GroundingSupport grounding_supports = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Answer.GroundingSupportOrBuilder
+      getGroundingSupportsOrBuilder(int index);
 
   /**
    *
@@ -218,6 +314,74 @@ public interface AnswerOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.Answer.ReferenceOrBuilder getReferencesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of blob attachments in the answer.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.BlobAttachment blob_attachments = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.Answer.BlobAttachment>
+      getBlobAttachmentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of blob attachments in the answer.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.BlobAttachment blob_attachments = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Answer.BlobAttachment getBlobAttachments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of blob attachments in the answer.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.BlobAttachment blob_attachments = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getBlobAttachmentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of blob attachments in the answer.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.BlobAttachment blob_attachments = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Answer.BlobAttachmentOrBuilder>
+      getBlobAttachmentsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of blob attachments in the answer.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Answer.BlobAttachment blob_attachments = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Answer.BlobAttachmentOrBuilder
+      getBlobAttachmentsOrBuilder(int index);
 
   /**
    *
@@ -539,4 +703,71 @@ public interface AnswerOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCompleteTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.SafetyRating> getSafetyRatingsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SafetyRating getSafetyRatings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSafetyRatingsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1beta.SafetyRatingOrBuilder>
+      getSafetyRatingsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Safety ratings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SafetyRating safety_ratings = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SafetyRatingOrBuilder getSafetyRatingsOrBuilder(
+      int index);
 }

@@ -100,21 +100,13 @@ import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GoldengateConnection;
 import com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignment;
-import com.google.cloud.oracledatabase.v1.GoldengateConnectionType;
 import com.google.cloud.oracledatabase.v1.GoldengateDeployment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentType;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -1039,21 +1031,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .build();
 
   private static final MethodDescriptor<
-          GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeploymentVersion")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetGoldengateDeploymentVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateDeploymentVersion.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
       listGoldengateDeploymentVersionsMethodDescriptor =
           MethodDescriptor
@@ -1068,21 +1045,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListGoldengateDeploymentVersionsResponse.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
-          GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeploymentType")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetGoldengateDeploymentTypeRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateDeploymentType.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1103,23 +1065,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .build();
 
   private static final MethodDescriptor<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-                  newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeploymentEnvironment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      GetGoldengateDeploymentEnvironmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateDeploymentEnvironment.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
           ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
       listGoldengateDeploymentEnvironmentsMethodDescriptor =
           MethodDescriptor
@@ -1135,21 +1080,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListGoldengateDeploymentEnvironmentsResponse.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
-          GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateConnectionType")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetGoldengateConnectionTypeRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateConnectionType.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1543,16 +1473,12 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
       deleteGoldengateConnectionCallable;
   private final OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
       deleteGoldengateConnectionOperationCallable;
-  private final UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
       listGoldengateDeploymentVersionsCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsPagedCallable;
-  private final UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
       listGoldengateDeploymentTypesCallable;
@@ -1560,17 +1486,12 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesPagedResponse>
       listGoldengateDeploymentTypesPagedCallable;
   private final UnaryCallable<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable;
-  private final UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
       listGoldengateDeploymentEnvironmentsCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest,
           ListGoldengateDeploymentEnvironmentsPagedResponse>
       listGoldengateDeploymentEnvironmentsPagedCallable;
-  private final UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable;
   private final UnaryCallable<
           ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
       listGoldengateConnectionTypesCallable;
@@ -2455,19 +2376,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
-    GrpcCallSettings<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-        getGoldengateDeploymentVersionTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>newBuilder()
-                .setMethodDescriptor(getGoldengateDeploymentVersionMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
-                .build();
     GrpcCallSettings<
             ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
         listGoldengateDeploymentVersionsTransportSettings =
@@ -2483,19 +2391,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
-    GrpcCallSettings<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-        getGoldengateDeploymentTypeTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>newBuilder()
-                .setMethodDescriptor(getGoldengateDeploymentTypeMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
-                .build();
     GrpcCallSettings<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
         listGoldengateDeploymentTypesTransportSettings =
             GrpcCallSettings
@@ -2509,20 +2404,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
-                .build();
-    GrpcCallSettings<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-        getGoldengateDeploymentEnvironmentTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-                    newBuilder()
-                .setMethodDescriptor(getGoldengateDeploymentEnvironmentMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListGoldengateDeploymentEnvironmentsRequest,
@@ -2540,19 +2421,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
-                .build();
-    GrpcCallSettings<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-        getGoldengateConnectionTypeTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>newBuilder()
-                .setMethodDescriptor(getGoldengateConnectionTypeMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
         listGoldengateConnectionTypesTransportSettings =
@@ -3258,11 +3126,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteGoldengateConnectionOperationSettings(),
             clientContext,
             operationsStub);
-    this.getGoldengateDeploymentVersionCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateDeploymentVersionTransportSettings,
-            settings.getGoldengateDeploymentVersionSettings(),
-            clientContext);
     this.listGoldengateDeploymentVersionsCallable =
         callableFactory.createUnaryCallable(
             listGoldengateDeploymentVersionsTransportSettings,
@@ -3272,11 +3135,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listGoldengateDeploymentVersionsTransportSettings,
             settings.listGoldengateDeploymentVersionsSettings(),
-            clientContext);
-    this.getGoldengateDeploymentTypeCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateDeploymentTypeTransportSettings,
-            settings.getGoldengateDeploymentTypeSettings(),
             clientContext);
     this.listGoldengateDeploymentTypesCallable =
         callableFactory.createUnaryCallable(
@@ -3288,11 +3146,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             listGoldengateDeploymentTypesTransportSettings,
             settings.listGoldengateDeploymentTypesSettings(),
             clientContext);
-    this.getGoldengateDeploymentEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateDeploymentEnvironmentTransportSettings,
-            settings.getGoldengateDeploymentEnvironmentSettings(),
-            clientContext);
     this.listGoldengateDeploymentEnvironmentsCallable =
         callableFactory.createUnaryCallable(
             listGoldengateDeploymentEnvironmentsTransportSettings,
@@ -3302,11 +3155,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listGoldengateDeploymentEnvironmentsTransportSettings,
             settings.listGoldengateDeploymentEnvironmentsSettings(),
-            clientContext);
-    this.getGoldengateConnectionTypeCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateConnectionTypeTransportSettings,
-            settings.getGoldengateConnectionTypeSettings(),
             clientContext);
     this.listGoldengateConnectionTypesCallable =
         callableFactory.createUnaryCallable(
@@ -4099,12 +3947,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
-  public UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable() {
-    return getGoldengateDeploymentVersionCallable;
-  }
-
-  @Override
   public UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
       listGoldengateDeploymentVersionsCallable() {
@@ -4116,12 +3958,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsPagedCallable() {
     return listGoldengateDeploymentVersionsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable() {
-    return getGoldengateDeploymentTypeCallable;
   }
 
   @Override
@@ -4138,12 +3974,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
-  public UnaryCallable<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable() {
-    return getGoldengateDeploymentEnvironmentCallable;
-  }
-
-  @Override
   public UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
       listGoldengateDeploymentEnvironmentsCallable() {
@@ -4156,12 +3986,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListGoldengateDeploymentEnvironmentsPagedResponse>
       listGoldengateDeploymentEnvironmentsPagedCallable() {
     return listGoldengateDeploymentEnvironmentsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable() {
-    return getGoldengateConnectionTypeCallable;
   }
 
   @Override

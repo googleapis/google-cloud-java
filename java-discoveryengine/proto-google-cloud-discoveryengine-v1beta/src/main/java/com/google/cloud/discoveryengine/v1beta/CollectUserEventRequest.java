@@ -82,8 +82,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent DataStore resource name, such as
+   * Required. The parent resource name.
+   * If the collect user event action is applied in
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+   * format is:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+   * If the collect user event action is applied in
+   * [Location][google.cloud.location.Location] level, for example, the event
+   * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+   * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+   * format is: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -109,8 +117,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent DataStore resource name, such as
+   * Required. The parent resource name.
+   * If the collect user event action is applied in
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+   * format is:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+   * If the collect user event action is applied in
+   * [Location][google.cloud.location.Location] level, for example, the event
+   * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+   * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+   * format is: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -709,8 +725,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the collect user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+     * format is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the collect user event action is applied in
+     * [Location][google.cloud.location.Location] level, for example, the event
+     * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+     * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+     * format is: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -735,8 +759,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the collect user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+     * format is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the collect user event action is applied in
+     * [Location][google.cloud.location.Location] level, for example, the event
+     * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+     * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+     * format is: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -761,8 +793,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the collect user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+     * format is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the collect user event action is applied in
+     * [Location][google.cloud.location.Location] level, for example, the event
+     * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+     * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+     * format is: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -786,8 +826,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the collect user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+     * format is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the collect user event action is applied in
+     * [Location][google.cloud.location.Location] level, for example, the event
+     * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+     * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+     * format is: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -807,8 +855,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent DataStore resource name, such as
+     * Required. The parent resource name.
+     * If the collect user event action is applied in
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] level, the
+     * format is:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
+     * If the collect user event action is applied in
+     * [Location][google.cloud.location.Location] level, for example, the event
+     * with [Document][google.cloud.discoveryengine.v1beta.Document] across
+     * multiple [DataStore][google.cloud.discoveryengine.v1beta.DataStore], the
+     * format is: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
