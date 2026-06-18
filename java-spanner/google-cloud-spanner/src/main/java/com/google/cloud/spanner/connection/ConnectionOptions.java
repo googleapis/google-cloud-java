@@ -802,13 +802,16 @@ public class ConnectionOptions {
       this.credentials =
           new GoogleCredentials(
               new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
-    } else if ((isSpannerOmniPattern || isSpannerOmni())
-        && !Strings.isNullOrEmpty(username)
-        && !Strings.isNullOrEmpty(password)) {
-      SecretBytes secretBytes = SpannerOmniCredentials.convertToSecretBytes(password.toCharArray());
-      this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
-    } else if ((isSpannerOmniPattern || isSpannerOmni()) && defaultSpannerOmniCredentials != null) {
-      this.credentials = defaultSpannerOmniCredentials;
+    } else if (isSpannerOmniPattern || isSpannerOmni()) {
+      if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
+        SecretBytes secretBytes =
+            SpannerOmniCredentials.convertToSecretBytes(password.toCharArray());
+        this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
+      } else if (defaultSpannerOmniCredentials != null) {
+        this.credentials = defaultSpannerOmniCredentials;
+      } else {
+        this.credentials = NoCredentials.getInstance();
+      }
     } else if (getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) != null) {
       try {
         this.credentials = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getCredentials();
