@@ -72,6 +72,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -5263,5 +5264,81 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.severe(errorMessage, ex);
       throw ex;
     }
+  }
+
+  // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
+  // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
+  // directly.
+  static Future<?>[] wrapThread(final Thread thread) {
+    if (thread == null) {
+      return null;
+    }
+    return new Future<?>[] {
+      new Future<Object>() {
+        private volatile boolean cancelled = false;
+
+        @Override
+        public synchronized boolean cancel(boolean mayInterruptIfRunning) {
+          if (cancelled || thread.getState() == Thread.State.TERMINATED) {
+            return false;
+          }
+          cancelled = true;
+          if (mayInterruptIfRunning) {
+            thread.interrupt();
+          }
+          return true;
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return cancelled;
+        }
+
+        @Override
+        public boolean isDone() {
+          return cancelled || thread.getState() == Thread.State.TERMINATED;
+        }
+
+        @Override
+        public Object get() throws InterruptedException, CancellationException {
+          try {
+            return get(365, TimeUnit.DAYS);
+          } catch (TimeoutException e) {
+            throw new RuntimeException(e);
+          }
+        }
+
+        @Override
+        public Object get(long timeout, TimeUnit unit)
+            throws InterruptedException, CancellationException, TimeoutException {
+          if (isCancelled()) {
+            throw new CancellationException();
+          }
+          long remainingNanos = unit.toNanos(timeout);
+          long deadline = System.nanoTime() + remainingNanos;
+          while (thread.getState() != Thread.State.TERMINATED) {
+            if (isCancelled()) {
+              throw new CancellationException();
+            }
+            if (remainingNanos <= 0) {
+              throw new TimeoutException();
+            }
+            long remainingMillis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
+            if (remainingMillis == 0) {
+              remainingMillis = 1;
+            }
+
+            long delay = Math.min(remainingMillis, 50);
+            if (thread.getState() == Thread.State.NEW) {
+              Thread.sleep(delay);
+            } else {
+              thread.join(delay);
+            }
+            remainingNanos = deadline - System.nanoTime();
+          }
+          return null;
+        }
+      }
+    };
   }
 }
