@@ -129,11 +129,12 @@ public class BigQueryRetryHelper extends RetryHelper {
    * BigQueryBaseService#DEFAULT_BIGQUERY_EXCEPTION_HANDLER}. Custom user-defined retry algorithms
    * are returned unmodified to preserve custom retry policies.
    */
-  static <V> ResultRetryAlgorithm<V> maybeWrapForHttpRetry(ResultRetryAlgorithm<V> algorithm) {
+  @SuppressWarnings("unchecked")
+  static <V> ResultRetryAlgorithm<V> maybeWrapForHttpRetry(ResultRetryAlgorithm<?> algorithm) {
     if (algorithm == BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
-      return wrapDefaultAlgorithm(algorithm);
+      return wrapDefaultAlgorithm((ResultRetryAlgorithm<V>) algorithm);
     }
-    return algorithm;
+    return (ResultRetryAlgorithm<V>) algorithm;
   }
 
   /**
