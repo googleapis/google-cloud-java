@@ -98,6 +98,13 @@ libraries:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
+  - name: agentregistry
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/agentregistry/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: aiplatform
     version: 3.95.0-SNAPSHOT
     apis:
