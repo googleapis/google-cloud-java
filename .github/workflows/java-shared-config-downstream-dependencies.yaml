@@ -3,7 +3,7 @@ on:
     branches:
     - main
   pull_request:
-name: java-shared-config downstream
+name: java-shared-config downstream (dependencies)
 env:
   BUILD_SUBDIR: java-shared-config
 jobs:

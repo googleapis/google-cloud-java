@@ -7,7 +7,7 @@ on:
 # Keeping this file separate as the dependencies check would use more
 # repositories than needed this downstream check for GraalVM native image and
 # other Maven plugins.
-name: java-shared-config downstream
+name: java-shared-config downstream (maven-plugins)
 env:
   BUILD_SUBDIR: java-shared-config
 jobs:

@@ -55,6 +55,6 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-shared-config.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-shared-config&core=gav
-[contributing]: https://github.com/googleapis/java-shared-config/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-shared-config/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-shared-config/blob/main/LICENSE
+[contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md
+[license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
