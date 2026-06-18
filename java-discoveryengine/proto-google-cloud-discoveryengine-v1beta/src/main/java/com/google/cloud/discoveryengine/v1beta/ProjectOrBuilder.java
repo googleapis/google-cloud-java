@@ -227,4 +227,94 @@ public interface ProjectOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.Project.ServiceTerms getServiceTermsMapOrThrow(
       java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer provided configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Project.CustomerProvidedConfig customer_provided_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customerProvidedConfig field is set.
+   */
+  boolean hasCustomerProvidedConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer provided configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Project.CustomerProvidedConfig customer_provided_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerProvidedConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.Project.CustomerProvidedConfig
+      getCustomerProvidedConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer provided configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Project.CustomerProvidedConfig customer_provided_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Project.CustomerProvidedConfigOrBuilder
+      getCustomerProvidedConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the project's configurable billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Project.ConfigurableBillingStatus configurable_billing_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the configurableBillingStatus field is set.
+   */
+  boolean hasConfigurableBillingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the project's configurable billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Project.ConfigurableBillingStatus configurable_billing_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The configurableBillingStatus.
+   */
+  com.google.cloud.discoveryengine.v1beta.Project.ConfigurableBillingStatus
+      getConfigurableBillingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the project's configurable billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Project.ConfigurableBillingStatus configurable_billing_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Project.ConfigurableBillingStatusOrBuilder
+      getConfigurableBillingStatusOrBuilder();
 }

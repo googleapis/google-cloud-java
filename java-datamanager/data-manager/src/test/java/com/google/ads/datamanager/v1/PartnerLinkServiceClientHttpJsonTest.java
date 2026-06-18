@@ -84,6 +84,9 @@ public class PartnerLinkServiceClientHttpJsonTest {
             .setPartnerLinkId("partnerLinkId171029917")
             .setOwningAccount(ProductAccount.newBuilder().build())
             .setPartnerAccount(ProductAccount.newBuilder().build())
+            .setFeatureSet(FeatureSet.forNumber(0))
+            .setPartnerCustomerAccount(PartnerCustomerAccount.newBuilder().build())
+            .setPartnerLinkMetadata(PartnerLinkMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -133,6 +136,9 @@ public class PartnerLinkServiceClientHttpJsonTest {
             .setPartnerLinkId("partnerLinkId171029917")
             .setOwningAccount(ProductAccount.newBuilder().build())
             .setPartnerAccount(ProductAccount.newBuilder().build())
+            .setFeatureSet(FeatureSet.forNumber(0))
+            .setPartnerCustomerAccount(PartnerCustomerAccount.newBuilder().build())
+            .setPartnerLinkMetadata(PartnerLinkMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

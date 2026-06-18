@@ -40,6 +40,7 @@ public class SyncProvisionProject {
               .setName(ProjectName.of("[PROJECT]").toString())
               .setAcceptDataUseTerms(true)
               .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
+              .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
               .build();
       Project response = projectServiceClient.provisionProjectAsync(request).get();
     }

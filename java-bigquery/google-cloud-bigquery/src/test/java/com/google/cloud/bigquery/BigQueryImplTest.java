@@ -33,6 +33,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -48,6 +49,8 @@ import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.JobStatistics;
+import com.google.api.services.bigquery.model.ProjectList;
+import com.google.api.services.bigquery.model.ProjectReference;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
@@ -243,6 +246,12 @@ public class BigQueryImplTest {
       QueryJobConfiguration.newBuilder("SQL")
           .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
           .setUseQueryCache(false)
+          .build();
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_WITH_TIMEOUT =
+      QueryJobConfiguration.newBuilder("SQL")
+          .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
+          .setUseQueryCache(false)
+          .setJobTimeoutMs(1000L)
           .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_FOR_DMLQUERY =
       QueryJobConfiguration.newBuilder("DML")
@@ -541,7 +550,8 @@ public class BigQueryImplTest {
   private HttpBigQueryRpc bigqueryRpcMock;
   private BigQuery bigquery;
   private static final String RATE_LIMIT_ERROR_MSG =
-      "Job exceeded rate limits: Your table exceeded quota for table update operations. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
+      "Job exceeded rate limits: Your table exceeded quota for table update operations. For more"
+          + " information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
 
   @Captor private ArgumentCaptor<Map<BigQueryRpc.Option, Object>> capturedOptions;
   @Captor private ArgumentCaptor<com.google.api.services.bigquery.model.Job> jobCapture;
@@ -782,6 +792,50 @@ public class BigQueryImplTest {
     assertArrayEquals(
         datasetList.toArray(), Iterables.toArray(page.getValues(), DatasetInfo.class));
     verify(bigqueryRpcMock).listDatasetsSkipExceptionTranslation(PROJECT, DATASET_LIST_OPTIONS);
+  }
+
+  @Test
+  void testListProjects() {
+    bigquery = options.getService();
+    ProjectList.Projects p1 =
+        new ProjectList.Projects()
+            .setId("id1")
+            .setNumericId(BigInteger.valueOf(111L))
+            .setProjectReference(new ProjectReference().setProjectId("p-1"))
+            .setFriendlyName("fn1");
+    ProjectList.Projects p2 =
+        new ProjectList.Projects()
+            .setId("id2")
+            .setNumericId(BigInteger.valueOf(222L))
+            .setProjectReference(new ProjectReference().setProjectId("p-2"))
+            .setFriendlyName("fn2");
+    ImmutableList<ProjectList.Projects> projectsPb = ImmutableList.of(p1, p2);
+    Tuple<String, Iterable<ProjectList.Projects>> result = Tuple.of(CURSOR, projectsPb);
+
+    when(bigqueryRpcMock.listProjects(EMPTY_RPC_OPTIONS)).thenReturn(result);
+
+    Page<Project> page = bigquery.listProjects();
+    assertEquals(CURSOR, page.getNextPageToken());
+
+    Project expected1 = new Project("id1", "111", "p-1", "fn1");
+    Project expected2 = new Project("id2", "222", "p-2", "fn2");
+    assertArrayEquals(
+        new Project[] {expected1, expected2}, Iterables.toArray(page.getValues(), Project.class));
+    verify(bigqueryRpcMock).listProjects(EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  void testListEmptyProjects() {
+    bigquery = options.getService();
+    ImmutableList<ProjectList.Projects> projectsPb = ImmutableList.of();
+    Tuple<String, Iterable<ProjectList.Projects>> result = Tuple.of(null, projectsPb);
+
+    when(bigqueryRpcMock.listProjects(EMPTY_RPC_OPTIONS)).thenReturn(result);
+
+    Page<Project> page = bigquery.listProjects();
+    assertNull(page.getNextPageToken());
+    assertArrayEquals(new Project[0], Iterables.toArray(page.getValues(), Project.class));
+    verify(bigqueryRpcMock).listProjects(EMPTY_RPC_OPTIONS);
   }
 
   @Test
@@ -2432,6 +2486,99 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testFastQueryRequestCompletedWithTimeout() throws InterruptedException, IOException {
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(null)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_WITH_TIMEOUT);
+    assertNull(result.getNextPage());
+    assertNull(result.getNextPageToken());
+    assertFalse(result.hasNextPage());
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals(QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.getQuery(), requestPb.getQuery());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.getDefaultDataset().getDataset(),
+        requestPb.getDefaultDataset().getDatasetId());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.useQueryCache(), requestPb.getUseQueryCache());
+    assertEquals(
+        QUERY_JOB_CONFIGURATION_WITH_TIMEOUT.getJobTimeoutMs(), requestPb.getJobTimeoutMs());
+    assertNull(requestPb.getLocation());
+
+    verify(bigqueryRpcMock)
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
+  void testQueryRequestRequiredJobCreationCompleted() throws InterruptedException, IOException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(null)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L))
+            .setJobReference(queryJob.toPb());
+
+    QueryJobConfiguration config =
+        QUERY_JOB_CONFIGURATION_FOR_QUERY.toBuilder()
+            .setJobCreationMode(QueryJobConfiguration.JobCreationMode.JOB_CREATION_REQUIRED)
+            .build();
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult result = bigquery.query(config);
+    assertNull(result.getNextPage());
+    assertNull(result.getNextPageToken());
+    assertFalse(result.hasNextPage());
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(1);
+    assertThat(result.getJobId()).isEqualTo(queryJob);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals(config.getQuery(), requestPb.getQuery());
+    assertEquals(
+        config.getDefaultDataset().getDataset(), requestPb.getDefaultDataset().getDatasetId());
+    assertEquals(config.useQueryCache(), requestPb.getUseQueryCache());
+    assertNull(requestPb.getLocation());
+
+    verify(bigqueryRpcMock)
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+    verify(bigqueryRpcMock, never())
+        .createSkipExceptionTranslation(
+            any(com.google.api.services.bigquery.model.Job.class), any());
+  }
+
+  @Test
   void testFastQueryRequestCompletedWithLocation() throws InterruptedException, IOException {
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
         new com.google.api.services.bigquery.model.QueryResponse()
@@ -3059,7 +3206,8 @@ public class BigQueryImplTest {
   @Test
   void testRateLimitRegEx() throws Exception {
     String msg2 =
-        "Job eceeded rate limits: Your table exceeded quota for table update operations. For more information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
+        "Job eceeded rate limits: Your table exceeded quota for table update operations. For more"
+            + " information, see https://cloud.google.com/bigquery/docs/troubleshoot-quotas";
     String msg3 = "exceeded rate exceeded quota for table update";
     String msg4 = "exceeded rate limits";
     assertTrue(
