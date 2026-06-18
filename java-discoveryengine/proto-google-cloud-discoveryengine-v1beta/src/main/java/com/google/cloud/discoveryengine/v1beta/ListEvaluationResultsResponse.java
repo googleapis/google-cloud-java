@@ -1297,8 +1297,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The
-   * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+   * The evaluation results for the
+   * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
    * </pre>
    *
    * <code>
@@ -1316,8 +1316,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The
-   * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+   * The evaluation results for the
+   * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
    * </pre>
    *
    * <code>
@@ -1337,8 +1337,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The
-   * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+   * The evaluation results for the
+   * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
    * </pre>
    *
    * <code>
@@ -1354,8 +1354,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The
-   * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+   * The evaluation results for the
+   * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
    * </pre>
    *
    * <code>
@@ -1372,8 +1372,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The
-   * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+   * The evaluation results for the
+   * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
    * </pre>
    *
    * <code>
@@ -1870,8 +1870,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -1892,8 +1892,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -1912,8 +1912,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -1933,8 +1933,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -1962,8 +1962,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -1989,8 +1989,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2017,8 +2017,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2046,8 +2046,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2072,8 +2072,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2099,8 +2099,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2127,8 +2127,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2150,8 +2150,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2173,8 +2173,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2191,8 +2191,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2213,8 +2213,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2237,8 +2237,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2258,8 +2258,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>
@@ -2280,8 +2280,8 @@ public final class ListEvaluationResultsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The
-     * [EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]s.
+     * The evaluation results for the
+     * [SampleQuery][google.cloud.discoveryengine.v1beta.SampleQuery]s.
      * </pre>
      *
      * <code>

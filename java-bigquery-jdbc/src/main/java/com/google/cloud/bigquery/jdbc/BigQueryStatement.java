@@ -1044,7 +1044,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       return false;
     }
 
-    long pageSize = querySettings.getMaxResultPerPage();
+    Long rowsInPage = results.getRowsInPage();
+    long pageSize =
+        (rowsInPage != null && rowsInPage > 0) ? rowsInPage : querySettings.getMaxResultPerPage();
 
     // Prevent division by zero due to potential overflows/empty sets:
     if (pageSize <= 0) {

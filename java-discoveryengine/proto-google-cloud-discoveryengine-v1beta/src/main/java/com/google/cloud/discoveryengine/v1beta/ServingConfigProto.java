@@ -52,6 +52,14 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_cloud_discoveryengine_v1beta_ServingConfig_GenericConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_ServingConfig_GenericConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_UserDefinedClassifierSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_UserDefinedClassifierSpec_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -61,64 +69,77 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/cloud/discoveryengine/v1beta/se"
-          + "rving_config.proto\022#google.cloud.discove"
+      "\n"
+          + "8google/cloud/discoveryengine/v1beta/serving_config.proto\022#google.cloud.discove"
           + "ryengine.v1beta\032\037google/api/field_behavi"
           + "or.proto\032\031google/api/resource.proto\0320goo"
-          + "gle/cloud/discoveryengine/v1beta/common."
-          + "proto\0328google/cloud/discoveryengine/v1be"
-          + "ta/search_service.proto\032\037google/protobuf"
-          + "/timestamp.proto\"\245\r\n\rServingConfig\022V\n\014me"
-          + "dia_config\030\007 \001(\0132>.google.cloud.discover"
-          + "yengine.v1beta.ServingConfig.MediaConfig"
-          + "H\000\022Z\n\016generic_config\030\n \001(\0132@.google.clou"
-          + "d.discoveryengine.v1beta.ServingConfig.G"
-          + "enericConfigH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014dis"
-          + "play_name\030\002 \001(\tB\003\340A\002\022P\n\rsolution_type\030\003 "
-          + "\001(\01621.google.cloud.discoveryengine.v1bet"
-          + "a.SolutionTypeB\006\340A\002\340A\005\022\020\n\010model_id\030\004 \001(\t"
-          + "\022\027\n\017diversity_level\030\005 \001(\t\022N\n\020embedding_c"
-          + "onfig\030\024 \001(\01324.google.cloud.discoveryengi"
-          + "ne.v1beta.EmbeddingConfig\022\032\n\022ranking_exp"
-          + "ression\030\025 \001(\t\0224\n\013create_time\030\010 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
-          + "me\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022\032\n\022filter_control_ids\030\013 \003(\t\022\031\n\021boost_c"
-          + "ontrol_ids\030\014 \003(\t\022\034\n\024redirect_control_ids"
-          + "\030\016 \003(\t\022\034\n\024synonyms_control_ids\030\017 \003(\t\022#\n\033"
-          + "oneway_synonyms_control_ids\030\020 \003(\t\022\036\n\026dis"
-          + "sociate_control_ids\030\021 \003(\t\022\037\n\027replacement"
-          + "_control_ids\030\022 \003(\t\022\032\n\022ignore_control_ids"
-          + "\030\023 \003(\t\022d\n\024personalization_spec\030\031 \001(\0132F.g"
-          + "oogle.cloud.discoveryengine.v1beta.Searc"
-          + "hRequest.PersonalizationSpec\032\367\001\n\013MediaCo"
-          + "nfig\022.\n$content_watched_percentage_thres"
-          + "hold\030\002 \001(\002H\000\022+\n!content_watched_seconds_"
-          + "threshold\030\005 \001(\002H\000\022\033\n\023demotion_event_type"
-          + "\030\001 \001(\t\022-\n demote_content_watched_past_da"
-          + "ys\030% \001(\005B\003\340A\001\022%\n\035content_freshness_cutof"
-          + "f_days\030\004 \001(\005B\030\n\026demote_content_watched\032r"
-          + "\n\rGenericConfig\022a\n\023content_search_spec\030\001"
-          + " \001(\0132D.google.cloud.discoveryengine.v1be"
-          + "ta.SearchRequest.ContentSearchSpec:\200\003\352A\374"
-          + "\002\n,discoveryengine.googleapis.com/Servin"
-          + "gConfig\022_projects/{project}/locations/{l"
-          + "ocation}/dataStores/{data_store}/serving"
-          + "Configs/{serving_config}\022xprojects/{proj"
-          + "ect}/locations/{location}/collections/{c"
-          + "ollection}/dataStores/{data_store}/servi"
-          + "ngConfigs/{serving_config}\022qprojects/{pr"
-          + "oject}/locations/{location}/collections/"
-          + "{collection}/engines/{engine}/servingCon"
-          + "figs/{serving_config}B\021\n\017vertical_config"
-          + "B\231\002\n\'com.google.cloud.discoveryengine.v1"
-          + "betaB\022ServingConfigProtoP\001ZQcloud.google"
-          + ".com/go/discoveryengine/apiv1beta/discov"
-          + "eryenginepb;discoveryenginepb\242\002\017DISCOVER"
-          + "YENGINE\252\002#Google.Cloud.DiscoveryEngine.V"
-          + "1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1b"
-          + "eta\352\002&Google::Cloud::DiscoveryEngine::V1"
-          + "betab\006proto3"
+          + "gle/cloud/discoveryengine/v1beta/common.proto\0328google/cloud/discoveryengine/v1be"
+          + "ta/search_service.proto\032\037google/protobuf/timestamp.proto\"\242\016\n\r"
+          + "ServingConfig\022V\n"
+          + "\014media_config\030\007 \001(\0132>.google.cloud.discover"
+          + "yengine.v1beta.ServingConfig.MediaConfigH\000\022Z\n"
+          + "\016generic_config\030\n"
+          + " \001(\0132@.google.clou"
+          + "d.discoveryengine.v1beta.ServingConfig.GenericConfigH\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\005\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002\022P\n\r"
+          + "solution_type\030\003 "
+          + "\001(\01621.google.cloud.discoveryengine.v1beta.SolutionTypeB\006\340A\002\340A\005\022\020\n"
+          + "\010model_id\030\004 \001(\t\022\027\n"
+          + "\017diversity_level\030\005 \001(\t\022N\n"
+          + "\020embedding_config\030\024"
+          + " \001(\01324.google.cloud.discoveryengine.v1beta.EmbeddingConfig\022\032\n"
+          + "\022ranking_expression\030\025 \001(\t\0224\n"
+          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n"
+          + "\022filter_control_ids\030\013 \003(\t\022\031\n"
+          + "\021boost_control_ids\030\014 \003(\t\022\034\n"
+          + "\024redirect_control_ids\030\016 \003(\t\022\034\n"
+          + "\024synonyms_control_ids\030\017 \003(\t\022#\n"
+          + "\033oneway_synonyms_control_ids\030\020 \003(\t\022\036\n"
+          + "\026dissociate_control_ids\030\021 \003(\t\022\037\n"
+          + "\027replacement_control_ids\030\022 \003(\t\022\032\n"
+          + "\022ignore_control_ids\030\023 \003(\t\022\033\n"
+          + "\023promote_control_ids\030\032 \003(\t\022d\n"
+          + "\024personalization_spec\030\031 \001(\0132F.google.cloud"
+          + ".discoveryengine.v1beta.SearchRequest.PersonalizationSpec\022^\n"
+          + "\026answer_generation_spec\030\033"
+          + " \001(\01329.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecB\003\340A\001\032\367\001\n"
+          + "\013MediaConfig\022.\n"
+          + "$content_watched_percentage_threshold\030\002 \001(\002H\000\022+\n"
+          + "!content_watched_seconds_threshold\030\005 \001(\002H\000\022\033\n"
+          + "\023demotion_event_type\030\001 \001(\t\022-\n"
+          + " demote_content_watched_past_days\030% \001(\005B\003\340A\001\022%\n"
+          + "\035content_freshness_cutoff_days\030\004 \001(\005B\030\n"
+          + "\026demote_content_watched\032r\n\r"
+          + "GenericConfig\022a\n"
+          + "\023content_search_spec\030\001 \001(\0132D.google.cloud.discoveryengine"
+          + ".v1beta.SearchRequest.ContentSearchSpec:\200\003\352A\374\002\n"
+          + ",discoveryengine.googleapis.com/ServingConfig\022_projects/{project}/locatio"
+          + "ns/{location}/dataStores/{data_store}/servingConfigs/{serving_config}\022xprojects/"
+          + "{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/"
+          + "servingConfigs/{serving_config}\022qprojects/{project}/locations/{location}/collect"
+          + "ions/{collection}/engines/{engine}/servingConfigs/{serving_config}B\021\n"
+          + "\017vertical_config\"\376\002\n"
+          + "\024AnswerGenerationSpec\022~\n"
+          + "\034user_defined_classifier_spec\030\001 \001(\0132S.google.cl"
+          + "oud.discoveryengine.v1beta.AnswerGenerat"
+          + "ionSpec.UserDefinedClassifierSpecB\003\340A\001\032\345\001\n"
+          + "\031UserDefinedClassifierSpec\022+\n"
+          + "\036enable_user_defined_classifier\030\001 \001(\010B\003\340A\001\022\025\n"
+          + "\010preamble\030\002 \001(\tB\003\340A\001\022\025\n"
+          + "\010model_id\030\003 \001(\tB\003\340A\001\022\030\n"
+          + "\013task_marker\030\004 \001(\tB\003\340A\001\022\022\n"
+          + "\005top_p\030\005 \001(\001B\003\340A\001\022\022\n"
+          + "\005top_k\030\006 \001(\003B\003\340A\001\022\030\n"
+          + "\013temperature\030\007 \001(\001B\003\340A\001\022\021\n"
+          + "\004seed\030\010 \001(\005B\003\340A\001B\231\002\n"
+          + "\'com.google.cloud.discoveryengine.v1betaB\022Serv"
+          + "ingConfigProtoP\001ZQcloud.google.com/go/discoveryengine/apiv1beta/discoveryenginep"
+          + "b;discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#"
+          + "Google.Cloud.DiscoveryEngine.V1Beta\312\002#Go"
+          + "ogle\\Cloud\\DiscoveryEngine\\V1beta\352\002&Goog"
+          + "le::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -155,7 +176,9 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
               "DissociateControlIds",
               "ReplacementControlIds",
               "IgnoreControlIds",
+              "PromoteControlIds",
               "PersonalizationSpec",
+              "AnswerGenerationSpec",
               "VerticalConfig",
             });
     internal_static_google_cloud_discoveryengine_v1beta_ServingConfig_MediaConfig_descriptor =
@@ -180,6 +203,30 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
             internal_static_google_cloud_discoveryengine_v1beta_ServingConfig_GenericConfig_descriptor,
             new java.lang.String[] {
               "ContentSearchSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_descriptor,
+            new java.lang.String[] {
+              "UserDefinedClassifierSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_UserDefinedClassifierSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_UserDefinedClassifierSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_AnswerGenerationSpec_UserDefinedClassifierSpec_descriptor,
+            new java.lang.String[] {
+              "EnableUserDefinedClassifier",
+              "Preamble",
+              "ModelId",
+              "TaskMarker",
+              "TopP",
+              "TopK",
+              "Temperature",
+              "Seed",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

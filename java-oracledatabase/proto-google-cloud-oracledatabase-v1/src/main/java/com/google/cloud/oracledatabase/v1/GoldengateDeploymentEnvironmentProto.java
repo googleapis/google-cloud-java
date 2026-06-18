@@ -45,10 +45,6 @@ public final class GoldengateDeploymentEnvironmentProto extends com.google.proto
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_GoldengateDeploymentEnvironment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentEnvironmentRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentEnvironmentRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsRequest_fieldAccessorTable;
@@ -95,25 +91,22 @@ public final class GoldengateDeploymentEnvironmentProto extends com.google.proto
           + "=oracledatabase.googleapis.com/GoldengateDeployme"
           + "ntEnvironment\022lprojects/{project}/locations/{location}/goldengateDeploymentEnvir"
           + "onments/{goldengate_deployment_environment}*"
-          + " goldengateDeploymentEnvironments2\037goldengateDeploymentEnvironment\"\200\001\n"
-          + ")GetGoldengateDeploymentEnvironmentRequest\022S\n"
-          + "\004name\030\001 \001(\tBE\340A\002\372A?\n"
-          + "=oracledatabase.googleapis.com/GoldengateDeploymentEnvironment\"\265\001\n"
+          + " goldengateDeploymentEnvironments2\037goldengateDeploymentEnvironment\"\265\001\n"
           + "+ListGoldengateDeploymentEnvironmentsRequest\022U\n"
-          + "\006parent\030\001 \001(\tBE\340A\002\372A?\022=oracl"
-          + "edatabase.googleapis.com/GoldengateDeploymentEnvironment\022\026\n"
+          + "\006parent\030\001 \001(\tBE\340A\002\372A?\022=oracledatabase.g"
+          + "oogleapis.com/GoldengateDeploymentEnvironment\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\316\001\n"
           + ",ListGoldengateDeploymentEnvironmentsResponse\022k\n"
-          + "\"goldengate_deployment_environments\030\001 \003(\0132?"
-          + ".google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment\022\027\n"
+          + "\"goldengate_deployment_environments\030\001 \003(\0132?.google.clo"
+          + "ud.oracledatabase.v1.GoldengateDeploymentEnvironment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006B\376\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B$GoldengateDeploymentEnvironmentProtoP\001ZJcloud"
-          + ".google.com/go/oracledatabase/apiv1/orac"
-          + "ledatabasepb;oracledatabasepb\252\002\036Google.C"
-          + "loud.OracleDatabase.V1\312\002\036Google\\Cloud\\Or"
-          + "acleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B$GoldengateDeploy"
+          + "mentEnvironmentProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasep"
+          + "b;oracledatabasepb\252\002\036Google.Cloud.Oracle"
+          + "Database.V1\312\002\036Google\\Cloud\\OracleDatabas"
+          + "e\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -140,16 +133,8 @@ public final class GoldengateDeploymentEnvironmentProto extends com.google.proto
               "NetworkBandwidthGbpsPerCpuCore",
               "StorageUsageLimitGbPerCpuCore",
             });
-    internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentEnvironmentRequest_descriptor =
-        getDescriptor().getMessageType(1);
-    internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentEnvironmentRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentEnvironmentRequest_descriptor,
-            new java.lang.String[] {
-              "Name",
-            });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsRequest_descriptor,
@@ -157,7 +142,7 @@ public final class GoldengateDeploymentEnvironmentProto extends com.google.proto
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsResponse_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentEnvironmentsResponse_descriptor,

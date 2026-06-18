@@ -154,7 +154,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
    * more details.
    * </pre>
    *
-   * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The ipAddress.
    */
@@ -188,7 +190,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
    * more details.
    * </pre>
    *
-   * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for ipAddress.
    */
@@ -1367,7 +1371,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The ipAddress.
      */
@@ -1400,7 +1406,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for ipAddress.
      */
@@ -1433,7 +1441,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -1465,7 +1475,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1493,7 +1505,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.

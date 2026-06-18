@@ -365,6 +365,7 @@ public class SessionServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   Session response = sessionServiceClient.createSession(request);
    * }
@@ -400,6 +401,7 @@ public class SessionServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   ApiFuture<Session> future = sessionServiceClient.createSessionCallable().futureCall(request);
    *   // Do something.

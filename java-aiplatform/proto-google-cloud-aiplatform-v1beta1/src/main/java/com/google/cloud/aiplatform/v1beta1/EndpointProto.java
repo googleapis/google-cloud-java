@@ -224,10 +224,15 @@ public final class EndpointProto extends com.google.protobuf.GeneratedFile {
           + "\024bigquery_destination\030\003 \001(\01324.googl"
           + "e.cloud.aiplatform.v1beta1.BigQueryDestination\0224\n"
           + "\'request_response_logging_schema_version\030\004 \001(\tB\003\340A\003\022\033\n"
-          + "\023enable_otel_logging\030\006 \001(\010\"t\n"
+          + "\023enable_otel_logging\030\006 \001(\010\"\245\002\n"
           + "\024PublisherModelConfig\022\\\n"
-          + "\016logging_config\030\003 \001(\0132D.google.cloud.aiplatf"
-          + "orm.v1beta1.PredictRequestResponseLoggingConfig\"N\n"
+          + "\016logging_config\030\003 \001(\0132D.google.cloud.aiplat"
+          + "form.v1beta1.PredictRequestResponseLoggingConfig\022o\n"
+          + "\035data_sharing_enabled_provider\030\004 \001(\0162C.google.cloud.aiplatform.v1beta"
+          + "1.PublisherModelConfig.ModelProviderB\003\340A\001\">\n\r"
+          + "ModelProvider\022\036\n"
+          + "\032MODEL_PROVIDER_UNSPECIFIED\020\000\022\r\n"
+          + "\tANTHROPIC\020\001\"N\n"
           + "\026ClientConnectionConfig\0224\n"
           + "\021inference_timeout\030\001 \001(\0132\031.google.protobuf.Duration\"5\n"
           + "\026FasterDeploymentConfig\022\033\n"
@@ -242,15 +247,15 @@ public final class EndpointProto extends com.google.protobuf.GeneratedFile {
           + "\017max_unavailableB\013\n"
           + "\tmax_surge\"\232\001\n"
           + "\033GenAiAdvancedFeaturesConfig\022Z\n\n"
-          + "rag_config\030\001"
-          + " \001(\0132F.google.cloud.aiplatform.v1beta1.GenAiAdvancedFeaturesConfig.RagConfig\032\037\n"
+          + "rag_config\030\001 \001(\0132F.google.cloud.ai"
+          + "platform.v1beta1.GenAiAdvancedFeaturesConfig.RagConfig\032\037\n"
           + "\tRagConfig\022\022\n\n"
           + "enable_rag\030\001 \001(\010\"\243\003\n"
           + "\027SpeculativeDecodingSpec\022q\n"
-          + "\027draft_model_speculation\030\002 \001(\0132N.google.cloud.aiplatform.v1b"
-          + "eta1.SpeculativeDecodingSpec.DraftModelSpeculationH\000\022f\n"
-          + "\021ngram_speculation\030\003 \001(\0132"
-          + "I.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.NgramSpeculationH\000\022\037\n"
+          + "\027draft_model_speculation\030\002 \001(\0132N.google.cl"
+          + "oud.aiplatform.v1beta1.SpeculativeDecodingSpec.DraftModelSpeculationH\000\022f\n"
+          + "\021ngram_speculation\030\003 \001(\0132I.google.cloud.aiplatf"
+          + "orm.v1beta1.SpeculativeDecodingSpec.NgramSpeculationH\000\022\037\n"
           + "\027speculative_token_count\030\001 \001(\005\032U\n"
           + "\025DraftModelSpeculation\022<\n"
           + "\013draft_model\030\001 \001(\tB\'\340A\002\372A!\n"
@@ -259,10 +264,10 @@ public final class EndpointProto extends com.google.protobuf.GeneratedFile {
           + "ngram_size\030\001 \001(\005B\r\n"
           + "\013speculationB\344\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\r"
-          + "EndpointProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatfo"
-          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "EndpointProtoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -395,7 +400,7 @@ public final class EndpointProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PublisherModelConfig_descriptor,
             new java.lang.String[] {
-              "LoggingConfig",
+              "LoggingConfig", "DataSharingEnabledProvider",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ClientConnectionConfig_descriptor =
         getDescriptor().getMessageType(5);

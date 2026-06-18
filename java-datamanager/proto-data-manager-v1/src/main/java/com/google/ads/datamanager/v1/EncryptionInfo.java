@@ -79,6 +79,7 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GCP_WRAPPED_KEY_INFO(1),
     AWS_WRAPPED_KEY_INFO(2),
+    COORDINATOR_KEY_INFO(3),
     WRAPPEDKEY_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
           return GCP_WRAPPED_KEY_INFO;
         case 2:
           return AWS_WRAPPED_KEY_INFO;
+        case 3:
+          return COORDINATOR_KEY_INFO;
         case 0:
           return WRAPPEDKEY_NOT_SET;
         default:
@@ -226,6 +229,82 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
     return com.google.ads.datamanager.v1.AwsWrappedKeyInfo.getDefaultInstance();
   }
 
+  public static final int COORDINATOR_KEY_INFO_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Key information for the chosen coordinator key.
+   *
+   * This is not supported for the
+   * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+   * and
+   * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+   * methods.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+   *
+   * @return Whether the coordinatorKeyInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasCoordinatorKeyInfo() {
+    return wrappedKeyCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key information for the chosen coordinator key.
+   *
+   * This is not supported for the
+   * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+   * and
+   * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+   * methods.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+   *
+   * @return The coordinatorKeyInfo.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.CoordinatorKeyInfo getCoordinatorKeyInfo() {
+    if (wrappedKeyCase_ == 3) {
+      return (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_;
+    }
+    return com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key information for the chosen coordinator key.
+   *
+   * This is not supported for the
+   * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+   * and
+   * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+   * methods.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.CoordinatorKeyInfoOrBuilder
+      getCoordinatorKeyInfoOrBuilder() {
+    if (wrappedKeyCase_ == 3) {
+      return (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_;
+    }
+    return com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -246,6 +325,9 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
     if (wrappedKeyCase_ == 2) {
       output.writeMessage(2, (com.google.ads.datamanager.v1.AwsWrappedKeyInfo) wrappedKey_);
     }
+    if (wrappedKeyCase_ == 3) {
+      output.writeMessage(3, (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -264,6 +346,11 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.ads.datamanager.v1.AwsWrappedKeyInfo) wrappedKey_);
+    }
+    if (wrappedKeyCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -289,6 +376,9 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
       case 2:
         if (!getAwsWrappedKeyInfo().equals(other.getAwsWrappedKeyInfo())) return false;
         break;
+      case 3:
+        if (!getCoordinatorKeyInfo().equals(other.getCoordinatorKeyInfo())) return false;
+        break;
       case 0:
       default:
     }
@@ -311,6 +401,10 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + AWS_WRAPPED_KEY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAwsWrappedKeyInfo().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + COORDINATOR_KEY_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getCoordinatorKeyInfo().hashCode();
         break;
       case 0:
       default:
@@ -461,6 +555,9 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
       if (awsWrappedKeyInfoBuilder_ != null) {
         awsWrappedKeyInfoBuilder_.clear();
       }
+      if (coordinatorKeyInfoBuilder_ != null) {
+        coordinatorKeyInfoBuilder_.clear();
+      }
       wrappedKeyCase_ = 0;
       wrappedKey_ = null;
       return this;
@@ -511,6 +608,9 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
       if (wrappedKeyCase_ == 2 && awsWrappedKeyInfoBuilder_ != null) {
         result.wrappedKey_ = awsWrappedKeyInfoBuilder_.build();
       }
+      if (wrappedKeyCase_ == 3 && coordinatorKeyInfoBuilder_ != null) {
+        result.wrappedKey_ = coordinatorKeyInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,6 +634,11 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
         case AWS_WRAPPED_KEY_INFO:
           {
             mergeAwsWrappedKeyInfo(other.getAwsWrappedKeyInfo());
+            break;
+          }
+        case COORDINATOR_KEY_INFO:
+          {
+            mergeCoordinatorKeyInfo(other.getCoordinatorKeyInfo());
             break;
           }
         case WRAPPEDKEY_NOT_SET:
@@ -581,6 +686,13 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
                 wrappedKeyCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetCoordinatorKeyInfoFieldBuilder().getBuilder(), extensionRegistry);
+                wrappedKeyCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1052,6 +1164,289 @@ public final class EncryptionInfo extends com.google.protobuf.GeneratedMessage
       wrappedKeyCase_ = 2;
       onChanged();
       return awsWrappedKeyInfoBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.CoordinatorKeyInfo,
+            com.google.ads.datamanager.v1.CoordinatorKeyInfo.Builder,
+            com.google.ads.datamanager.v1.CoordinatorKeyInfoOrBuilder>
+        coordinatorKeyInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     *
+     * @return Whether the coordinatorKeyInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasCoordinatorKeyInfo() {
+      return wrappedKeyCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     *
+     * @return The coordinatorKeyInfo.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.CoordinatorKeyInfo getCoordinatorKeyInfo() {
+      if (coordinatorKeyInfoBuilder_ == null) {
+        if (wrappedKeyCase_ == 3) {
+          return (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_;
+        }
+        return com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance();
+      } else {
+        if (wrappedKeyCase_ == 3) {
+          return coordinatorKeyInfoBuilder_.getMessage();
+        }
+        return com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    public Builder setCoordinatorKeyInfo(com.google.ads.datamanager.v1.CoordinatorKeyInfo value) {
+      if (coordinatorKeyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wrappedKey_ = value;
+        onChanged();
+      } else {
+        coordinatorKeyInfoBuilder_.setMessage(value);
+      }
+      wrappedKeyCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    public Builder setCoordinatorKeyInfo(
+        com.google.ads.datamanager.v1.CoordinatorKeyInfo.Builder builderForValue) {
+      if (coordinatorKeyInfoBuilder_ == null) {
+        wrappedKey_ = builderForValue.build();
+        onChanged();
+      } else {
+        coordinatorKeyInfoBuilder_.setMessage(builderForValue.build());
+      }
+      wrappedKeyCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    public Builder mergeCoordinatorKeyInfo(com.google.ads.datamanager.v1.CoordinatorKeyInfo value) {
+      if (coordinatorKeyInfoBuilder_ == null) {
+        if (wrappedKeyCase_ == 3
+            && wrappedKey_
+                != com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance()) {
+          wrappedKey_ =
+              com.google.ads.datamanager.v1.CoordinatorKeyInfo.newBuilder(
+                      (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          wrappedKey_ = value;
+        }
+        onChanged();
+      } else {
+        if (wrappedKeyCase_ == 3) {
+          coordinatorKeyInfoBuilder_.mergeFrom(value);
+        } else {
+          coordinatorKeyInfoBuilder_.setMessage(value);
+        }
+      }
+      wrappedKeyCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    public Builder clearCoordinatorKeyInfo() {
+      if (coordinatorKeyInfoBuilder_ == null) {
+        if (wrappedKeyCase_ == 3) {
+          wrappedKeyCase_ = 0;
+          wrappedKey_ = null;
+          onChanged();
+        }
+      } else {
+        if (wrappedKeyCase_ == 3) {
+          wrappedKeyCase_ = 0;
+          wrappedKey_ = null;
+        }
+        coordinatorKeyInfoBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    public com.google.ads.datamanager.v1.CoordinatorKeyInfo.Builder getCoordinatorKeyInfoBuilder() {
+      return internalGetCoordinatorKeyInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.CoordinatorKeyInfoOrBuilder
+        getCoordinatorKeyInfoOrBuilder() {
+      if ((wrappedKeyCase_ == 3) && (coordinatorKeyInfoBuilder_ != null)) {
+        return coordinatorKeyInfoBuilder_.getMessageOrBuilder();
+      } else {
+        if (wrappedKeyCase_ == 3) {
+          return (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_;
+        }
+        return com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key information for the chosen coordinator key.
+     *
+     * This is not supported for the
+     * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+     * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+     * and
+     * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+     * methods.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.CoordinatorKeyInfo,
+            com.google.ads.datamanager.v1.CoordinatorKeyInfo.Builder,
+            com.google.ads.datamanager.v1.CoordinatorKeyInfoOrBuilder>
+        internalGetCoordinatorKeyInfoFieldBuilder() {
+      if (coordinatorKeyInfoBuilder_ == null) {
+        if (!(wrappedKeyCase_ == 3)) {
+          wrappedKey_ = com.google.ads.datamanager.v1.CoordinatorKeyInfo.getDefaultInstance();
+        }
+        coordinatorKeyInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.CoordinatorKeyInfo,
+                com.google.ads.datamanager.v1.CoordinatorKeyInfo.Builder,
+                com.google.ads.datamanager.v1.CoordinatorKeyInfoOrBuilder>(
+                (com.google.ads.datamanager.v1.CoordinatorKeyInfo) wrappedKey_,
+                getParentForChildren(),
+                isClean());
+        wrappedKey_ = null;
+      }
+      wrappedKeyCase_ = 3;
+      onChanged();
+      return coordinatorKeyInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.EncryptionInfo)
