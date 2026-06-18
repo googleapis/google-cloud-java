@@ -1291,4 +1291,110 @@ public class MockNetworkServicesImpl extends NetworkServicesImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listAgentGateways(
+      ListAgentGatewaysRequest request,
+      StreamObserver<ListAgentGatewaysResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAgentGatewaysResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAgentGatewaysResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAgentGateways, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAgentGatewaysResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAgentGateway(
+      GetAgentGatewayRequest request, StreamObserver<AgentGateway> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AgentGateway) {
+      requests.add(request);
+      responseObserver.onNext(((AgentGateway) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAgentGateway, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AgentGateway.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAgentGateway(
+      CreateAgentGatewayRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAgentGateway, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAgentGateway(
+      UpdateAgentGatewayRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAgentGateway, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAgentGateway(
+      DeleteAgentGatewayRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAgentGateway, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

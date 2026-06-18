@@ -49,6 +49,14 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Document_Content_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_fieldAccessorTable;
@@ -64,9 +72,10 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "2google/cloud/discoveryengine/v1beta/document.proto\022#google.cloud.discoveryengi"
           + "ne.v1beta\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032\034google/pr"
-          + "otobuf/struct.proto\032\037google/protobuf/tim"
-          + "estamp.proto\032\027google/rpc/status.proto\"\210\007\n"
+          + "to\032\031google/api/resource.proto\0320google/cl"
+          + "oud/discoveryengine/v1beta/common.proto\032"
+          + "\034google/protobuf/struct.proto\032\037google/pr"
+          + "otobuf/timestamp.proto\032\027google/rpc/status.proto\"\301\t\n"
           + "\010Document\022.\n"
           + "\013struct_data\030\004 \001(\0132\027.google.protobuf.StructH\000\022\023\n"
           + "\tjson_data\030\005 \001(\tH\000\022\021\n"
@@ -77,7 +86,9 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
           + " \001(\01325.google.cloud.discoveryengine.v1beta.Document.Content\022\032\n"
           + "\022parent_document_id\030\007 \001(\t\0229\n"
           + "\023derived_struct_data\030\006"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\003\0223\n\n"
+          + " \001(\0132\027.google.protobuf.StructB\003\340A\003\022G\n"
+          + "\010acl_info\030\013 \001("
+          + "\01325.google.cloud.discoveryengine.v1beta.Document.AclInfo\0223\n\n"
           + "index_time\030\r"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022T\n"
           + "\014index_status\030\017"
@@ -86,21 +97,28 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
           + "\traw_bytes\030\002 \001(\014H\000\022\r\n"
           + "\003uri\030\003 \001(\tH\000\022\021\n"
           + "\tmime_type\030\001 \001(\tB\t\n"
-          + "\007content\032h\n"
+          + "\007content\032\316\001\n"
+          + "\007AclInfo\022X\n"
+          + "\007readers\030\001 \003(\0132G.google.cloud.dis"
+          + "coveryengine.v1beta.Document.AclInfo.AccessRestriction\032i\n"
+          + "\021AccessRestriction\022B\n\n"
+          + "principals\030\001 \003(\0132..google.cloud.discoveryengine.v1beta.Principal\022\020\n"
+          + "\010idp_wide\030\002 \001(\010\032\206\001\n"
           + "\013IndexStatus\022.\n\n"
           + "index_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022)\n\r"
-          + "error_samples\030\002 \003(\0132\022.google.rpc.Status:\226\002\352A\222\002\n"
-          + "\'discoveryengine.googleapis.com/Document\022fprojects/{proje"
-          + "ct}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{do"
-          + "cument}\022\177projects/{project}/locations/{location}/collections/{collection}/dataSt"
-          + "ores/{data_store}/branches/{branch}/documents/{document}B\006\n"
+          + "error_samples\030\002 \003(\0132\022.google.rpc.Status\022\034\n"
+          + "\017pending_message\030\003 \001(\tB\003\340A\005:\226\002\352A\222\002\n"
+          + "\'discoveryengine.googleapis.com/Document\022fprojects/{pr"
+          + "oject}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/"
+          + "{document}\022\177projects/{project}/locations/{location}/collections/{collection}/dat"
+          + "aStores/{data_store}/branches/{branch}/documents/{document}B\006\n"
           + "\004dataB\224\002\n"
           + "\'com.google.cloud.discoveryengine.v1betaB\r"
-          + "DocumentProtoP\001ZQcloud.google.com/go/discoveryengi"
-          + "ne/apiv1beta/discoveryenginepb;discovery"
-          + "enginepb\242\002\017DISCOVERYENGINE\252\002#Google.Clou"
-          + "d.DiscoveryEngine.V1Beta\312\002#Google\\Cloud\\"
-          + "DiscoveryEngine\\V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "DocumentProtoP\001ZQcloud.google.com/go/discoverye"
+          + "ngine/apiv1beta/discoveryenginepb;discov"
+          + "eryenginepb\242\002\017DISCOVERYENGINE\252\002#Google.C"
+          + "loud.DiscoveryEngine.V1Beta\312\002#Google\\Clo"
+          + "ud\\DiscoveryEngine\\V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -108,6 +126,7 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.CommonProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -126,6 +145,7 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
               "Content",
               "ParentDocumentId",
               "DerivedStructData",
+              "AclInfo",
               "IndexTime",
               "IndexStatus",
               "Data",
@@ -138,17 +158,35 @@ public final class DocumentProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "RawBytes", "Uri", "MimeType", "Content",
             });
-    internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor =
+    internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor.getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor,
+            new java.lang.String[] {
+              "Readers",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_descriptor,
+            new java.lang.String[] {
+              "Principals", "IdpWide",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Document_descriptor.getNestedType(2);
     internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Document_IndexStatus_descriptor,
             new java.lang.String[] {
-              "IndexTime", "ErrorSamples",
+              "IndexTime", "ErrorSamples", "PendingMessage",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.CommonProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1beta.stub.ServingConfigServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -53,7 +54,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of updateServingConfig:
+ * of createServingConfig:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -64,10 +65,10 @@ import javax.annotation.Generated;
  * ServingConfigServiceSettings.Builder servingConfigServiceSettingsBuilder =
  *     ServingConfigServiceSettings.newBuilder();
  * servingConfigServiceSettingsBuilder
- *     .updateServingConfigSettings()
+ *     .createServingConfigSettings()
  *     .setRetrySettings(
  *         servingConfigServiceSettingsBuilder
- *             .updateServingConfigSettings()
+ *             .createServingConfigSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -90,6 +91,17 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ServingConfigServiceSettings extends ClientSettings<ServingConfigServiceSettings> {
+
+  /** Returns the object with the settings used for calls to createServingConfig. */
+  public UnaryCallSettings<CreateServingConfigRequest, ServingConfig>
+      createServingConfigSettings() {
+    return ((ServingConfigServiceStubSettings) getStubSettings()).createServingConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteServingConfig. */
+  public UnaryCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigSettings() {
+    return ((ServingConfigServiceStubSettings) getStubSettings()).deleteServingConfigSettings();
+  }
 
   /** Returns the object with the settings used for calls to updateServingConfig. */
   public UnaryCallSettings<UpdateServingConfigRequest, ServingConfig>
@@ -220,6 +232,18 @@ public class ServingConfigServiceSettings extends ClientSettings<ServingConfigSe
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to createServingConfig. */
+    public UnaryCallSettings.Builder<CreateServingConfigRequest, ServingConfig>
+        createServingConfigSettings() {
+      return getStubSettingsBuilder().createServingConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServingConfig. */
+    public UnaryCallSettings.Builder<DeleteServingConfigRequest, Empty>
+        deleteServingConfigSettings() {
+      return getStubSettingsBuilder().deleteServingConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateServingConfig. */

@@ -95,21 +95,13 @@ import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GoldengateConnection;
 import com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignment;
-import com.google.cloud.oracledatabase.v1.GoldengateConnectionType;
 import com.google.cloud.oracledatabase.v1.GoldengateDeployment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentType;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -844,12 +836,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: deleteGoldengateConnectionCallable()");
   }
 
-  public UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateDeploymentVersionCallable()");
-  }
-
   public UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsPagedCallable() {
@@ -862,12 +848,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listGoldengateDeploymentVersionsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listGoldengateDeploymentVersionsCallable()");
-  }
-
-  public UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateDeploymentTypeCallable()");
   }
 
   public UnaryCallable<
@@ -883,12 +863,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
         "Not implemented: listGoldengateDeploymentTypesCallable()");
   }
 
-  public UnaryCallable<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateDeploymentEnvironmentCallable()");
-  }
-
   public UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest,
           ListGoldengateDeploymentEnvironmentsPagedResponse>
@@ -902,12 +876,6 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listGoldengateDeploymentEnvironmentsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listGoldengateDeploymentEnvironmentsCallable()");
-  }
-
-  public UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getGoldengateConnectionTypeCallable()");
   }
 
   public UnaryCallable<

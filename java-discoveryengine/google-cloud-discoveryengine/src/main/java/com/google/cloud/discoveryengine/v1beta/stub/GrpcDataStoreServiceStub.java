@@ -179,7 +179,7 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
-            .setResourceNameExtractor(request -> request.getParent())
+            .setResourceNameExtractor(request -> request.getCmekConfigName())
             .build();
     GrpcCallSettings<GetDataStoreRequest, DataStore> getDataStoreTransportSettings =
         GrpcCallSettings.<GetDataStoreRequest, DataStore>newBuilder()

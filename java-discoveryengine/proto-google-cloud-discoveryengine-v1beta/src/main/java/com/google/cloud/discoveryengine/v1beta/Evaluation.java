@@ -375,11 +375,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The specification of the query set.
+     * Optional. The specification of the query set.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the querySetSpec field is set.
@@ -390,11 +390,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The specification of the query set.
+     * Optional. The specification of the query set.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The querySetSpec.
@@ -406,11 +406,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The specification of the query set.
+     * Optional. The specification of the query set.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpecOrBuilder
@@ -476,14 +476,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The full resource name of the
+       * Optional. The full resource name of the
        * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
        * used for the evaluation, in the format of
        * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
        * </pre>
        *
        * <code>
-       * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The sampleQuerySet.
@@ -494,14 +494,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The full resource name of the
+       * Optional. The full resource name of the
        * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
        * used for the evaluation, in the format of
        * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
        * </pre>
        *
        * <code>
-       * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for sampleQuerySet.
@@ -570,14 +570,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The full resource name of the
+       * Optional. The full resource name of the
        * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
        * used for the evaluation, in the format of
        * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
        * </pre>
        *
        * <code>
-       * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The sampleQuerySet.
@@ -599,14 +599,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The full resource name of the
+       * Optional. The full resource name of the
        * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
        * used for the evaluation, in the format of
        * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
        * </pre>
        *
        * <code>
-       * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for sampleQuerySet.
@@ -971,14 +971,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Required. The full resource name of the
+         * Optional. The full resource name of the
          * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
          * used for the evaluation, in the format of
          * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
          * </pre>
          *
          * <code>
-         * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
          * </code>
          *
          * @return The sampleQuerySet.
@@ -999,14 +999,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Required. The full resource name of the
+         * Optional. The full resource name of the
          * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
          * used for the evaluation, in the format of
          * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
          * </pre>
          *
          * <code>
-         * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
          * </code>
          *
          * @return The bytes for sampleQuerySet.
@@ -1027,14 +1027,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Required. The full resource name of the
+         * Optional. The full resource name of the
          * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
          * used for the evaluation, in the format of
          * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
          * </pre>
          *
          * <code>
-         * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
          * </code>
          *
          * @param value The sampleQuerySet to set.
@@ -1054,14 +1054,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Required. The full resource name of the
+         * Optional. The full resource name of the
          * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
          * used for the evaluation, in the format of
          * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
          * </pre>
          *
          * <code>
-         * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
          * </code>
          *
          * @return This builder for chaining.
@@ -1077,14 +1077,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Required. The full resource name of the
+         * Optional. The full resource name of the
          * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
          * used for the evaluation, in the format of
          * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
          * </pre>
          *
          * <code>
-         * string sample_query_set = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * string sample_query_set = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
          * </code>
          *
          * @param value The bytes for sampleQuerySet to set.
@@ -1308,11 +1308,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The specification of the query set.
+     * Optional. The specification of the query set.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the querySetSpec field is set.
@@ -1326,11 +1326,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The specification of the query set.
+     * Optional. The specification of the query set.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The querySetSpec.
@@ -1348,11 +1348,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The specification of the query set.
+     * Optional. The specification of the query set.
      * </pre>
      *
      * <code>
-     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -2129,11 +2129,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the querySetSpec field is set.
@@ -2146,11 +2146,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The querySetSpec.
@@ -2171,11 +2171,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setQuerySetSpec(
@@ -2197,11 +2197,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setQuerySetSpec(
@@ -2221,11 +2221,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder mergeQuerySetSpec(
@@ -2254,11 +2254,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearQuerySetSpec() {
@@ -2276,11 +2276,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec.Builder
@@ -2294,11 +2294,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpecOrBuilder
@@ -2317,11 +2317,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The specification of the query set.
+       * Optional. The specification of the query set.
        * </pre>
        *
        * <code>
-       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.discoveryengine.v1beta.Evaluation.EvaluationSpec.QuerySetSpec query_set_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilder<

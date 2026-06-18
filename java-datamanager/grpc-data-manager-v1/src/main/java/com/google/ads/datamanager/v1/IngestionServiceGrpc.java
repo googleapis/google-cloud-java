@@ -180,6 +180,53 @@ public final class IngestionServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.datamanager.v1.IngestAdEventsRequest,
+          com.google.ads.datamanager.v1.IngestAdEventsResponse>
+      getIngestAdEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "IngestAdEvents",
+      requestType = com.google.ads.datamanager.v1.IngestAdEventsRequest.class,
+      responseType = com.google.ads.datamanager.v1.IngestAdEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.datamanager.v1.IngestAdEventsRequest,
+          com.google.ads.datamanager.v1.IngestAdEventsResponse>
+      getIngestAdEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.datamanager.v1.IngestAdEventsRequest,
+            com.google.ads.datamanager.v1.IngestAdEventsResponse>
+        getIngestAdEventsMethod;
+    if ((getIngestAdEventsMethod = IngestionServiceGrpc.getIngestAdEventsMethod) == null) {
+      synchronized (IngestionServiceGrpc.class) {
+        if ((getIngestAdEventsMethod = IngestionServiceGrpc.getIngestAdEventsMethod) == null) {
+          IngestionServiceGrpc.getIngestAdEventsMethod =
+              getIngestAdEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.datamanager.v1.IngestAdEventsRequest,
+                          com.google.ads.datamanager.v1.IngestAdEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "IngestAdEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.datamanager.v1.IngestAdEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.datamanager.v1.IngestAdEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IngestionServiceMethodDescriptorSupplier("IngestAdEvents"))
+                      .build();
+        }
+      }
+    }
+    return getIngestAdEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.ads.datamanager.v1.RetrieveRequestStatusRequest,
           com.google.ads.datamanager.v1.RetrieveRequestStatusResponse>
       getRetrieveRequestStatusMethod;
@@ -347,6 +394,24 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Uploads a list of
+     * [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google
+     * Analytics.
+     * This feature is only available to accounts on an allowlist.
+     * </pre>
+     */
+    default void ingestAdEvents(
+        com.google.ads.datamanager.v1.IngestAdEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.datamanager.v1.IngestAdEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getIngestAdEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the status of a request given request id.
      * </pre>
      */
@@ -454,6 +519,26 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Uploads a list of
+     * [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google
+     * Analytics.
+     * This feature is only available to accounts on an allowlist.
+     * </pre>
+     */
+    public void ingestAdEvents(
+        com.google.ads.datamanager.v1.IngestAdEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.datamanager.v1.IngestAdEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getIngestAdEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the status of a request given request id.
      * </pre>
      */
@@ -539,6 +624,23 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Uploads a list of
+     * [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google
+     * Analytics.
+     * This feature is only available to accounts on an allowlist.
+     * </pre>
+     */
+    public com.google.ads.datamanager.v1.IngestAdEventsResponse ingestAdEvents(
+        com.google.ads.datamanager.v1.IngestAdEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getIngestAdEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the status of a request given request id.
      * </pre>
      */
@@ -612,6 +714,22 @@ public final class IngestionServiceGrpc {
         com.google.ads.datamanager.v1.IngestEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getIngestEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Uploads a list of
+     * [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google
+     * Analytics.
+     * This feature is only available to accounts on an allowlist.
+     * </pre>
+     */
+    public com.google.ads.datamanager.v1.IngestAdEventsResponse ingestAdEvents(
+        com.google.ads.datamanager.v1.IngestAdEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIngestAdEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -699,6 +817,23 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Uploads a list of
+     * [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google
+     * Analytics.
+     * This feature is only available to accounts on an allowlist.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.datamanager.v1.IngestAdEventsResponse>
+        ingestAdEvents(com.google.ads.datamanager.v1.IngestAdEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getIngestAdEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the status of a request given request id.
      * </pre>
      */
@@ -713,7 +848,8 @@ public final class IngestionServiceGrpc {
   private static final int METHODID_INGEST_AUDIENCE_MEMBERS = 0;
   private static final int METHODID_REMOVE_AUDIENCE_MEMBERS = 1;
   private static final int METHODID_INGEST_EVENTS = 2;
-  private static final int METHODID_RETRIEVE_REQUEST_STATUS = 3;
+  private static final int METHODID_INGEST_AD_EVENTS = 3;
+  private static final int METHODID_RETRIEVE_REQUEST_STATUS = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -750,6 +886,12 @@ public final class IngestionServiceGrpc {
           serviceImpl.ingestEvents(
               (com.google.ads.datamanager.v1.IngestEventsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.ads.datamanager.v1.IngestEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_INGEST_AD_EVENTS:
+          serviceImpl.ingestAdEvents(
+              (com.google.ads.datamanager.v1.IngestAdEventsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.ads.datamanager.v1.IngestAdEventsResponse>)
                   responseObserver);
           break;
         case METHODID_RETRIEVE_REQUEST_STATUS:
@@ -798,6 +940,13 @@ public final class IngestionServiceGrpc {
                     com.google.ads.datamanager.v1.IngestEventsRequest,
                     com.google.ads.datamanager.v1.IngestEventsResponse>(
                     service, METHODID_INGEST_EVENTS)))
+        .addMethod(
+            getIngestAdEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.datamanager.v1.IngestAdEventsRequest,
+                    com.google.ads.datamanager.v1.IngestAdEventsResponse>(
+                    service, METHODID_INGEST_AD_EVENTS)))
         .addMethod(
             getRetrieveRequestStatusMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -859,6 +1008,7 @@ public final class IngestionServiceGrpc {
                       .addMethod(getIngestAudienceMembersMethod())
                       .addMethod(getRemoveAudienceMembersMethod())
                       .addMethod(getIngestEventsMethod())
+                      .addMethod(getIngestAdEventsMethod())
                       .addMethod(getRetrieveRequestStatusMethod())
                       .build();
         }

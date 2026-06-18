@@ -464,13 +464,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The type of the account. For example, `GOOGLE_ADS`.
+   * Required. The type of the account. For example, `GOOGLE_ADS`.
    * Either `account_type` or the deprecated `product` is required.
    * If both are set, the values must match.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for accountType.
@@ -484,13 +484,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The type of the account. For example, `GOOGLE_ADS`.
+   * Required. The type of the account. For example, `GOOGLE_ADS`.
    * Either `account_type` or the deprecated `product` is required.
    * If both are set, the values must match.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The accountType.
@@ -1098,13 +1098,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The type of the account. For example, `GOOGLE_ADS`.
+     * Required. The type of the account. For example, `GOOGLE_ADS`.
      * Either `account_type` or the deprecated `product` is required.
      * If both are set, the values must match.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for accountType.
@@ -1118,13 +1118,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The type of the account. For example, `GOOGLE_ADS`.
+     * Required. The type of the account. For example, `GOOGLE_ADS`.
      * Either `account_type` or the deprecated `product` is required.
      * If both are set, the values must match.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for accountType to set.
@@ -1141,13 +1141,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The type of the account. For example, `GOOGLE_ADS`.
+     * Required. The type of the account. For example, `GOOGLE_ADS`.
      * Either `account_type` or the deprecated `product` is required.
      * If both are set, the values must match.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The accountType.
@@ -1165,13 +1165,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The type of the account. For example, `GOOGLE_ADS`.
+     * Required. The type of the account. For example, `GOOGLE_ADS`.
      * Either `account_type` or the deprecated `product` is required.
      * If both are set, the values must match.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The accountType to set.
@@ -1191,13 +1191,13 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The type of the account. For example, `GOOGLE_ADS`.
+     * Required. The type of the account. For example, `GOOGLE_ADS`.
      * Either `account_type` or the deprecated `product` is required.
      * If both are set, the values must match.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.ProductAccount.AccountType account_type = 3 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
