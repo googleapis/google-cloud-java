@@ -44,6 +44,8 @@ import com.google.cloud.chronicle.v1.Rule;
 import com.google.cloud.chronicle.v1.RuleDeployment;
 import com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest;
 import com.google.cloud.chronicle.v1.UpdateRuleRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -88,6 +90,10 @@ public abstract class RuleServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRuleCallable()");
+  }
+
+  public UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyRuleTextCallable()");
   }
 
   public UnaryCallable<ListRuleRevisionsRequest, ListRuleRevisionsPagedResponse>
