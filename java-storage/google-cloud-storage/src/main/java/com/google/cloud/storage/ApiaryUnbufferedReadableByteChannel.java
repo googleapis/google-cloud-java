@@ -199,6 +199,10 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
       HttpResponse media = get.executeMedia();
       InputStream content = media.getContent();
+
+      Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(media);
+      this.expectedCrc32cBase64 = hashes.get("crc32c");
+
       if (xGoogGeneration == null) {
         HttpHeaders responseHeaders = media.getHeaders();
 
@@ -230,15 +234,13 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
           if (!result.isDone()) {
             result.set(clone);
           }
-
-          Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(media);
-          this.expectedCrc32cBase64 = hashes.get("crc32c");
         }
       }
 
       boolean isHasherEnabled = !(hasher instanceof Hasher.NoOpHasher);
-      boolean isFullObjectDownload = (request.getByteRangeSpec().getHttpRangeHeader() == null);
-      if (isHasherEnabled && isFullObjectDownload && expectedCrc32cBase64 != null) {
+      boolean shouldValidate =
+          isHasherEnabled && HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(media);
+      if (shouldValidate && expectedCrc32cBase64 != null) {
         this.hashingInputStream = new HashingInputStream(Hashing.crc32c(), content);
         content = this.hashingInputStream;
       }

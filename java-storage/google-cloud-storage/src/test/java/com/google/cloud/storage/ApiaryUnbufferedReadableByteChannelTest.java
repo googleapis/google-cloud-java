@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
+import java.util.Map;
 import org.junit.Test;
 
 public class ApiaryUnbufferedReadableByteChannelTest {
@@ -43,6 +44,11 @@ public class ApiaryUnbufferedReadableByteChannelTest {
   private static final String WRONG_CRC32C_BASE64 = "AAAAAA==";
 
   private Storage createMockStorageClient(String googHashHeader) {
+    return createMockStorageClient(200, googHashHeader, null);
+  }
+
+  private Storage createMockStorageClient(
+      int statusCode, String googHashHeader, Map<String, String> extraHeaders) {
     HttpTransport transport =
         new HttpTransport() {
           @Override
@@ -53,12 +59,18 @@ public class ApiaryUnbufferedReadableByteChannelTest {
               public com.google.api.client.http.LowLevelHttpResponse execute() throws IOException {
                 MockLowLevelHttpResponse lowLevelResponse =
                     new MockLowLevelHttpResponse()
+                        .setStatusCode(statusCode)
                         .setContent(CONTENT_BYTES)
                         .setContentLength(CONTENT_BYTES.length)
                         .addHeader("Content-Length", String.valueOf(CONTENT_BYTES.length))
                         .addHeader("x-goog-generation", "12345");
                 if (googHashHeader != null) {
                   lowLevelResponse.addHeader("x-goog-hash", googHashHeader);
+                }
+                if (extraHeaders != null) {
+                  for (Map.Entry<String, String> entry : extraHeaders.entrySet()) {
+                    lowLevelResponse.addHeader(entry.getKey(), entry.getValue());
+                  }
                 }
                 return lowLevelResponse;
               }
@@ -131,6 +143,79 @@ public class ApiaryUnbufferedReadableByteChannelTest {
               });
 
       assertTrue(expected.getMessage().contains("Mismatch checksum value"));
+    }
+  }
+
+  @Test
+  public void testRead_suffixRangeFullObjectCrc32cValidation() throws IOException {
+    // Suffix range request resulting in content-range: bytes 0-12/13
+    Map<String, String> extraHeaders = ImmutableMap.of("Content-Range", "bytes 0-12/13");
+    Storage storageClient =
+        createMockStorageClient(206, "crc32c=" + CORRECT_CRC32C_BASE64, extraHeaders);
+
+    StorageObject from = new StorageObject().setBucket("bucket").setName("blob");
+    ApiaryReadRequest apiaryReadRequest =
+        new ApiaryReadRequest(from, ImmutableMap.of(), ByteRangeSpec.nullRange());
+
+    SettableApiFuture<StorageObject> resultFuture = SettableApiFuture.create();
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            apiaryReadRequest,
+            storageClient,
+            resultFuture,
+            RetrierWithAlg.attemptOnce(),
+            Retrying.neverRetry(),
+            Hasher.defaultHasher()); ) {
+
+      ByteArrayOutputStream out = new ByteArrayOutputStream();
+      try (WritableByteChannel w = Channels.newChannel(out)) {
+        ByteBuffer buf = ByteBuffer.allocate(4096);
+        while (channel.read(new ByteBuffer[] {buf}, 0, 1) != -1) {
+          buf.flip();
+          w.write(buf);
+          buf.clear();
+        }
+      }
+
+      assertArrayEquals(CONTENT_BYTES, out.toByteArray());
+    }
+  }
+
+  @Test
+  public void testRead_partialRangeNoCrc32cValidation() throws IOException {
+    // Partial range request resulting in content-range: bytes 1-12/13
+    Map<String, String> extraHeaders = ImmutableMap.of("Content-Range", "bytes 1-12/13");
+    // Even if checksum is wrong, it shouldn't throw ChecksumMismatchException because validation is
+    // skipped for partial downloads.
+    Storage storageClient =
+        createMockStorageClient(206, "crc32c=" + WRONG_CRC32C_BASE64, extraHeaders);
+
+    StorageObject from = new StorageObject().setBucket("bucket").setName("blob");
+    ApiaryReadRequest apiaryReadRequest =
+        new ApiaryReadRequest(from, ImmutableMap.of(), ByteRangeSpec.nullRange());
+
+    SettableApiFuture<StorageObject> resultFuture = SettableApiFuture.create();
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            apiaryReadRequest,
+            storageClient,
+            resultFuture,
+            RetrierWithAlg.attemptOnce(),
+            Retrying.neverRetry(),
+            Hasher.defaultHasher()); ) {
+
+      ByteArrayOutputStream out = new ByteArrayOutputStream();
+      try (WritableByteChannel w = Channels.newChannel(out)) {
+        ByteBuffer buf = ByteBuffer.allocate(4096);
+        while (channel.read(new ByteBuffer[] {buf}, 0, 1) != -1) {
+          buf.flip();
+          w.write(buf);
+          buf.clear();
+        }
+      }
+
+      // We read the entire response content successfully (no exception thrown)
+      assertArrayEquals(CONTENT_BYTES, out.toByteArray());
     }
   }
 }
