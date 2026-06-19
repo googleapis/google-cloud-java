@@ -56,6 +56,10 @@ import java.sql.Timestamp;
 import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -404,6 +408,50 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertNull(connection2.unwrap(BigQueryConnection.class).getLocation());
     connection.close();
     connection2.close();
+  }
+
+  @Test
+  public void testCancelLocation() throws Exception {
+    String connection_uri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+            + PROJECT_ID
+            + ";OAUTHTYPE=3;LOCATION=EU";
+
+    Driver driver = BigQueryDriver.getRegisteredDriver();
+    Connection connection = driver.connect(connection_uri, new Properties());
+    Statement statement = connection.createStatement();
+
+    // Query a dataset in the EU with a heavy query so that we can cancel it while it runs.
+    String query =
+        "SELECT COUNT(*) FROM `bigquery-public-data.covid19_italy_eu.data_by_province` a "
+            + "CROSS JOIN `bigquery-public-data.covid19_italy_eu.data_by_province` b "
+            + "CROSS JOIN `bigquery-public-data.covid19_italy_eu.data_by_province` c";
+
+    // Run the query in a separate thread so we can cancel it from the main thread
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    Future<SQLException> future = executor.submit(() -> {
+      try {
+        statement.executeQuery(query);
+        return null;
+      } catch (SQLException e) {
+        return e;
+      }
+    });
+
+    // Wait a short moment to let the query submit and start running
+    Thread.sleep(1500);
+
+    // Cancel the query execution
+    statement.cancel();
+
+    // Verify that the query threw a SQLException indicating it was cancelled
+    SQLException exception = future.get(15, TimeUnit.SECONDS);
+    assertNotNull(exception, "Expected SQLException to be thrown due to cancellation");
+    assertTrue(exception.getMessage().contains("cancelled") || exception.getMessage().contains("Job was cancelled") || exception.getMessage().contains("Query was cancelled"),
+        "Unexpected exception message: " + exception.getMessage());
+
+    connection.close();
+    executor.shutdown();
   }
 
   @Test
