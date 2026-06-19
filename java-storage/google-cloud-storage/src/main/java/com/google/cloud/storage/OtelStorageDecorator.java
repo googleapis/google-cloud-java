@@ -79,8 +79,7 @@ final class OtelStorageDecorator implements Storage {
 
   @VisibleForTesting
   static boolean acoEnabled =
-      Boolean.parseBoolean(
-          System.getProperty("com.google.cloud.storage.otel.bucketAttributes.enabled", "true"));
+      !Boolean.parseBoolean(System.getProperty("otel.bucketmetadata.disabled", "false"));
 
   private OtelStorageDecorator(Storage delegate, OpenTelemetry otel, Attributes baseAttributes) {
     this.delegate = delegate;
