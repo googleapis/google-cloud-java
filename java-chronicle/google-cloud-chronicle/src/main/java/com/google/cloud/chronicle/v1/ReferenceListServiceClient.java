@@ -141,6 +141,20 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> VerifyReferenceList</td>
+ *      <td><p> VerifyReferenceList validates list content and returns line errors, if any.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyReferenceList(VerifyReferenceListRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyReferenceListCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -798,6 +812,70 @@ public class ReferenceListServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateReferenceListRequest, ReferenceList>
       updateReferenceListCallable() {
     return stub.updateReferenceListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * VerifyReferenceList validates list content and returns line errors, if any.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReferenceListServiceClient referenceListServiceClient =
+   *     ReferenceListServiceClient.create()) {
+   *   VerifyReferenceListRequest request =
+   *       VerifyReferenceListRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setSyntaxType(ReferenceListSyntaxType.forNumber(0))
+   *           .addAllEntries(new ArrayList<ReferenceListEntry>())
+   *           .build();
+   *   VerifyReferenceListResponse response =
+   *       referenceListServiceClient.verifyReferenceList(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyReferenceListResponse verifyReferenceList(VerifyReferenceListRequest request) {
+    return verifyReferenceListCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * VerifyReferenceList validates list content and returns line errors, if any.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReferenceListServiceClient referenceListServiceClient =
+   *     ReferenceListServiceClient.create()) {
+   *   VerifyReferenceListRequest request =
+   *       VerifyReferenceListRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setSyntaxType(ReferenceListSyntaxType.forNumber(0))
+   *           .addAllEntries(new ArrayList<ReferenceListEntry>())
+   *           .build();
+   *   ApiFuture<VerifyReferenceListResponse> future =
+   *       referenceListServiceClient.verifyReferenceListCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyReferenceListResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListCallable() {
+    return stub.verifyReferenceListCallable();
   }
 
   @Override

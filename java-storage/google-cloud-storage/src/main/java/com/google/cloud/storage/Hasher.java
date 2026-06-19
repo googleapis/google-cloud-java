@@ -94,6 +94,8 @@ interface Hasher {
   void validateUnchecked(Crc32cValue<?> expected, ByteString byteString)
       throws UncheckedChecksumMismatchException;
 
+  void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual) throws ChecksumMismatchException;
+
   @Nullable <C extends Crc32cValue<?>> C nullSafeConcat(
       @Nullable C r1, @Nullable Crc32cLengthKnown r2);
 
@@ -142,6 +144,9 @@ interface Hasher {
 
     @Override
     public void validateUnchecked(Crc32cValue<?> expected, ByteString byteString) {}
+
+    @Override
+    public void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual) {}
 
     @Override
     public <C extends Crc32cValue<?>> @Nullable C nullSafeConcat(
@@ -207,6 +212,14 @@ interface Hasher {
       Crc32cLengthKnown actual = hash(byteString);
       if (!actual.eqValue(expected)) {
         throw new UncheckedChecksumMismatchException(expected, actual);
+      }
+    }
+
+    @Override
+    public void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual)
+        throws ChecksumMismatchException {
+      if (!actual.eqValue(expected)) {
+        throw new ChecksumMismatchException(expected, actual);
       }
     }
 

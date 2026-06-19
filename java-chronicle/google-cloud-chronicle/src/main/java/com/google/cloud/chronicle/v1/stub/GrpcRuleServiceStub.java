@@ -49,6 +49,8 @@ import com.google.cloud.chronicle.v1.Rule;
 import com.google.cloud.chronicle.v1.RuleDeployment;
 import com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest;
 import com.google.cloud.chronicle.v1.UpdateRuleRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -111,6 +113,18 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<VerifyRuleTextRequest, VerifyRuleTextResponse>
+      verifyRuleTextMethodDescriptor =
+          MethodDescriptor.<VerifyRuleTextRequest, VerifyRuleTextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.chronicle.v1.RuleService/VerifyRuleText")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(VerifyRuleTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(VerifyRuleTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
       listRuleRevisionsMethodDescriptor =
@@ -197,6 +211,7 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
   private final UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable;
   private final UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable;
   private final UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable;
+  private final UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextCallable;
   private final UnaryCallable<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
       listRuleRevisionsCallable;
   private final UnaryCallable<ListRuleRevisionsRequest, ListRuleRevisionsPagedResponse>
@@ -312,6 +327,18 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextTransportSettings =
+            GrpcCallSettings.<VerifyRuleTextRequest, VerifyRuleTextResponse>newBuilder()
+                .setMethodDescriptor(verifyRuleTextMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getInstance())
+                .build();
     GrpcCallSettings<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
         listRuleRevisionsTransportSettings =
             GrpcCallSettings.<ListRuleRevisionsRequest, ListRuleRevisionsResponse>newBuilder()
@@ -413,6 +440,9 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
     this.deleteRuleCallable =
         callableFactory.createUnaryCallable(
             deleteRuleTransportSettings, settings.deleteRuleSettings(), clientContext);
+    this.verifyRuleTextCallable =
+        callableFactory.createUnaryCallable(
+            verifyRuleTextTransportSettings, settings.verifyRuleTextSettings(), clientContext);
     this.listRuleRevisionsCallable =
         callableFactory.createUnaryCallable(
             listRuleRevisionsTransportSettings,
@@ -498,6 +528,11 @@ public class GrpcRuleServiceStub extends RuleServiceStub {
   @Override
   public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
     return deleteRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextCallable() {
+    return verifyRuleTextCallable;
   }
 
   @Override

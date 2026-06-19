@@ -26,10 +26,6 @@ package com.google.chat.v1;
  * <pre>
  * Information about a message that another message quotes.
  *
- * When you create a message, you can quote messages within the same
- * thread, or quote a root message to create a new root message.
- * However, you can't quote a message reply from a different thread.
- *
  * When you update a message, you can't add or replace the
  * `quotedMessageMetadata` field, but you can remove it.
  *
@@ -105,20 +101,32 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If quote_type is `REPLY`, you can do the following:
+     * When `quote_type` is `REPLY`, you can do the following:
      *
      * * If you're replying in a thread, you can quote another message in that
      * thread.
      *
      * * If you're creating a root message, you can quote another root message
      * in that space.
-     *
-     * You can't quote a message reply from a different thread.
      * </pre>
      *
      * <code>REPLY = 1;</code>
      */
     REPLY(1),
+    /**
+     *
+     *
+     * <pre>
+     * When `quote_type` is `FORWARD`, you can quote a:
+     *
+     * * Message from a different space.
+     *
+     * * Message reply from a different thread in the same space.
+     * </pre>
+     *
+     * <code>FORWARD = 2;</code>
+     */
+    FORWARD(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -147,20 +155,33 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If quote_type is `REPLY`, you can do the following:
+     * When `quote_type` is `REPLY`, you can do the following:
      *
      * * If you're replying in a thread, you can quote another message in that
      * thread.
      *
      * * If you're creating a root message, you can quote another root message
      * in that space.
-     *
-     * You can't quote a message reply from a different thread.
      * </pre>
      *
      * <code>REPLY = 1;</code>
      */
     public static final int REPLY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * When `quote_type` is `FORWARD`, you can quote a:
+     *
+     * * Message from a different space.
+     *
+     * * Message reply from a different thread in the same space.
+     * </pre>
+     *
+     * <code>FORWARD = 2;</code>
+     */
+    public static final int FORWARD_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -190,6 +211,8 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
           return QUOTE_TYPE_UNSPECIFIED;
         case 1:
           return REPLY;
+        case 2:
+          return FORWARD;
         default:
           return null;
       }
@@ -769,10 +792,6 @@ public final class QuotedMessageMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Information about a message that another message quotes.
-   *
-   * When you create a message, you can quote messages within the same
-   * thread, or quote a root message to create a new root message.
-   * However, you can't quote a message reply from a different thread.
    *
    * When you update a message, you can't add or replace the
    * `quotedMessageMetadata` field, but you can remove it.

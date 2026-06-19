@@ -58,6 +58,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-agentregistry-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentregistry:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform-bom</artifactId>
         <version>3.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
         <type>pom</type>
