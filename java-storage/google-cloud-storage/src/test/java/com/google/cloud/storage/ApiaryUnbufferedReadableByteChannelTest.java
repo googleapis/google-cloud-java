@@ -269,9 +269,10 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
           new ApiaryUnbufferedReadableByteChannel(
               apiaryReadRequest,
               storage,
-              SettableApiFuture.create(),
+              SettableApiFuture.<StorageObject>create(),
               Retrier.attemptOnce(),
-              Retrying.neverRetry())) {
+              Retrying.neverRetry(),
+              Hasher.defaultHasher())) {
         ByteBuffer dst = ByteBuffer.allocate(25);
         c.read(dst);
       }
