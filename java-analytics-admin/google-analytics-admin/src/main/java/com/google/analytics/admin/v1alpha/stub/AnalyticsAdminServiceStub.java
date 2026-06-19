@@ -271,6 +271,7 @@ import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
@@ -1219,6 +1220,12 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
       getReportingIdentitySettingsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getReportingIdentitySettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateReportingIdentitySettingsCallable()");
   }
 
   public UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
