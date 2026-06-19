@@ -577,6 +577,7 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
           String.valueOf(this.metadataFetchThreadCount));
     }
+
     if (this.sslTrustStorePath != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
