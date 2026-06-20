@@ -21,7 +21,6 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.omni.Authentication.PasswordAuthenticationHandshakeRequest;
 import com.google.cloud.spanner.omni.Authentication.PasswordAuthenticationProtocol;
 import com.google.cloud.spanner.omni.Login.*;
-import com.google.cloud.spanner.omni.opaque.OpaqueUtil;
 import com.google.common.base.Preconditions;
 import com.google.crypto.tink.InsecureSecretKeyAccess;
 import com.google.crypto.tink.util.SecretBytes;
@@ -108,6 +107,9 @@ public class LoginClient {
               "Unsupported authentication method: " + method);
         }
 
+        com.google.cloud.spanner.omni.Authentication.HashParameters hashParameters =
+            handshakeResponse.getHandshakeResponse().getHashParameters();
+
         // 2. Send Initial OPAQUE Request
         LoginRequest initialRequest =
             LoginRequest.newBuilder()
@@ -140,7 +142,8 @@ public class LoginClient {
                 clientNonce,
                 clientPublicKeyshare,
                 clientPrivateKeyshare,
-                initialOpaqueResponse);
+                initialOpaqueResponse,
+                hashParameters);
 
         LoginRequest finalRequest =
             LoginRequest.newBuilder()
@@ -191,7 +194,8 @@ public class LoginClient {
       byte[] clientNonce,
       byte[] clientPublicKeyshare,
       byte[] clientPrivateKeyshare,
-      InitialOpaqueLoginResponse initialOpaqueResponse)
+      InitialOpaqueLoginResponse initialOpaqueResponse,
+      com.google.cloud.spanner.omni.Authentication.HashParameters hashParameters)
       throws GeneralSecurityException, IOException {
     byte[] oprf = null;
     byte[] stretchedOprf = null;
@@ -212,7 +216,7 @@ public class LoginClient {
 
     try {
       oprf = OpaqueUtil.finalize(blind, initialOpaqueResponse.getEvaluatedMessage().toByteArray());
-      stretchedOprf = OpaqueUtil.stretch(oprf);
+      stretchedOprf = OpaqueUtil.stretch(oprf, hashParameters);
       byte[] oprfConcat = OpaqueUtil.concat(oprf, stretchedOprf);
       try {
         randomizedPassword = OpaqueUtil.extract(oprfConcat);

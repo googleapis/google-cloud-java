@@ -21,7 +21,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.spanner.omni.opaque.OpaqueUtil;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
@@ -335,8 +334,20 @@ public class OpaqueUtilTest {
           }
         };
 
+    com.google.cloud.spanner.omni.Authentication.HashParameters hashParams =
+        com.google.cloud.spanner.omni.Authentication.HashParameters.newBuilder()
+            .setArgon2IdParameters(
+                com.google.cloud.spanner.omni.Authentication.HashParameters.Argon2IdParameters
+                    .newBuilder()
+                    .setIterationCount(3)
+                    .setMemoryUsage(65536)
+                    .setParallelism(4)
+                    .setHashSize(32)
+                    .build())
+            .build();
+
     for (int i = 0; i < inputs.length; i++) {
-      byte[] stretched = OpaqueUtil.stretch(inputs[i]);
+      byte[] stretched = OpaqueUtil.stretch(inputs[i], hashParams);
       assertEquals(32, stretched.length);
       assertArrayEquals("Failed on index " + i, expectedOutputs[i], stretched);
     }

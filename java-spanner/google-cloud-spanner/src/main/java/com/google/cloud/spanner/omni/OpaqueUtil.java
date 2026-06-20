@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.spanner.omni.opaque;
+package com.google.cloud.spanner.omni;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -48,12 +48,8 @@ public class OpaqueUtil {
   private static final int NONCE_LENGTH = 16;
   private static final int MAC_TAG_LENGTH = 16;
   private static final int EXTRACT_OUTPUT_LENGTH = 32;
-  private static final int STRETCH_OUTPUT_LENGTH = 32;
 
   // Argon2ID parameters.
-  private static final int ARGON2_ITERATION_COUNT = 3;
-  private static final int ARGON2_MEMORY_LIMIT = 64 * 1024;
-  private static final int ARGON2_THREADS = 4;
   private static final int ARGON2_SALT_LENGTH = 32;
 
   private static final SecureRandom random = new SecureRandom();
@@ -249,22 +245,28 @@ public class OpaqueUtil {
     return Hkdf.computeHkdf(HMAC_SHA256, keyMaterial, new byte[0], info, size);
   }
 
-  public static byte[] stretch(byte[] input) throws GeneralSecurityException {
+  public static byte[] stretch(
+      byte[] input, com.google.cloud.spanner.omni.Authentication.HashParameters hashParameters)
+      throws GeneralSecurityException {
     // Stretches the OPRF evaluation using Argon2 (a memory-hard KDF).
     // This is computationally expensive by design to protect against offline dictionary attacks.
     byte[] salt = null;
     try {
       salt = expand(input, "Stretch".getBytes(UTF_8), ARGON2_SALT_LENGTH);
+
+      com.google.cloud.spanner.omni.Authentication.HashParameters.Argon2IdParameters argon2Params =
+          hashParameters.getArgon2IdParameters();
+
       Argon2Parameters params =
           new Argon2Parameters.Builder(Argon2Parameters.ARGON2_id)
               .withSalt(salt)
-              .withParallelism(ARGON2_THREADS)
-              .withMemoryAsKB(ARGON2_MEMORY_LIMIT)
-              .withIterations(ARGON2_ITERATION_COUNT)
+              .withParallelism(argon2Params.getParallelism())
+              .withMemoryAsKB(argon2Params.getMemoryUsage())
+              .withIterations(argon2Params.getIterationCount())
               .build();
       Argon2BytesGenerator generator = new Argon2BytesGenerator();
       generator.init(params);
-      byte[] result = new byte[STRETCH_OUTPUT_LENGTH];
+      byte[] result = new byte[argon2Params.getHashSize()];
       generator.generateBytes(input, result);
       return result;
     } finally {
