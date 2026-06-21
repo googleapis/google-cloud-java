@@ -1270,6 +1270,69 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
         Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
   }
 
+  @Test
+  void getRegionalAccessBoundaryUrl_workforce() throws IOException {
+    ExternalAccountAuthorizedUserCredentials credentials =
+        ExternalAccountAuthorizedUserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setTokenUrl(TOKEN_URL)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider")
+            .build();
+
+    String expectedUrl =
+        "https://iamcredentials.googleapis.com/v1/locations/global/workforcePools/my-pool/allowedLocations";
+    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
+  }
+
+  @Test
+  void getRegionalAccessBoundaryUrl_invalidAudience_throws() {
+    ExternalAccountAuthorizedUserCredentials credentials =
+        ExternalAccountAuthorizedUserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setTokenUrl(TOKEN_URL)
+            .setAudience("invalid-audience")
+            .build();
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              credentials.getRegionalAccessBoundaryUrl();
+            });
+
+    assertEquals(
+        "The provided audience is not in the correct format for a workforce pool. "
+            + "Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        exception.getMessage());
+  }
+
+  @Test
+  void getRegionalAccessBoundaryUrl_nullAudience_throws() {
+    ExternalAccountAuthorizedUserCredentials credentials =
+        ExternalAccountAuthorizedUserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setTokenUrl(TOKEN_URL)
+            .build();
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              credentials.getRegionalAccessBoundaryUrl();
+            });
+
+    assertEquals(
+        "The audience is null, which is not in the correct format for a workforce pool.",
+        exception.getMessage());
+  }
+
   private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
       throws InterruptedException {
     long deadline = System.currentTimeMillis() + 5000;

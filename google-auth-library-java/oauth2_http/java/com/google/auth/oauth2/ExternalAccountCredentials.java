@@ -639,14 +639,20 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials
           getServiceAccountEmail());
     }
 
-    Matcher workforceMatcher = WORKFORCE_AUDIENCE_PATTERN.matcher(getAudience());
+    String audience = getAudience();
+    if (audience == null) {
+      throw new IllegalStateException(
+          "The audience is null, which is not in a valid format for either a workload identity pool or a workforce pool.");
+    }
+
+    Matcher workforceMatcher = WORKFORCE_AUDIENCE_PATTERN.matcher(audience);
     if (workforceMatcher.matches()) {
       String poolId = workforceMatcher.group("pool");
       return String.format(
           OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
     }
 
-    Matcher workloadMatcher = WORKLOAD_AUDIENCE_PATTERN.matcher(getAudience());
+    Matcher workloadMatcher = WORKLOAD_AUDIENCE_PATTERN.matcher(audience);
     if (workloadMatcher.matches()) {
       String projectNumber = workloadMatcher.group("project");
       String poolId = workloadMatcher.group("pool");

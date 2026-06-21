@@ -237,7 +237,12 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials
   @InternalApi
   @Override
   public String getRegionalAccessBoundaryUrl() throws IOException {
-    Matcher matcher = WORKFORCE_AUDIENCE_PATTERN.matcher(getAudience());
+    String audience = getAudience();
+    if (audience == null) {
+      throw new IllegalStateException(
+          "The audience is null, which is not in the correct format for a workforce pool.");
+    }
+    Matcher matcher = WORKFORCE_AUDIENCE_PATTERN.matcher(audience);
     if (!matcher.matches()) {
       throw new IllegalStateException(
           "The provided audience is not in the correct format for a workforce pool. "

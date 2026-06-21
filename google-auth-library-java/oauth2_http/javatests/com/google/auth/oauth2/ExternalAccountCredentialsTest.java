@@ -1298,6 +1298,32 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  public void getRegionalAccessBoundaryUrl_nullAudience_throws() {
+    ExternalAccountCredentials credentials =
+        new TestExternalAccountCredentials(
+            TestExternalAccountCredentials.newBuilder()
+                .setAudience("any-audience-to-pass-constructor-check")
+                .setSubjectTokenType("subject_token_type")
+                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))) {
+          @Override
+          public String getAudience() {
+            return null;
+          }
+        };
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              credentials.getRegionalAccessBoundaryUrl();
+            });
+
+    assertEquals(
+        "The audience is null, which is not in a valid format for either a workload identity pool or a workforce pool.",
+        exception.getMessage());
+  }
+
+  @Test
   public void refresh_workload_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
 

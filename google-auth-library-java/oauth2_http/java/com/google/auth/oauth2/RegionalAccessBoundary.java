@@ -102,7 +102,7 @@ final class RegionalAccessBoundary implements Serializable {
     this.locations =
         locations == null
             ? Collections.<String>emptyList()
-            : Collections.unmodifiableList(locations);
+            : Collections.unmodifiableList(new java.util.ArrayList<>(locations));
     this.refreshTime = refreshTime;
     this.clock = clock != null ? clock : Clock.SYSTEM;
   }
