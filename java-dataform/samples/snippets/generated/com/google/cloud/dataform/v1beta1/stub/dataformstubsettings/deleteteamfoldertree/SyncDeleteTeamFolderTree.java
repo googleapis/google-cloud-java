@@ -16,20 +16,20 @@
 
 package com.google.cloud.dataform.v1beta1.stub.samples;
 
-// [START dataform_v1beta1_generated_DataformStubSettings_MoveFolder_sync]
+// [START dataform_v1beta1_generated_DataformStubSettings_DeleteTeamFolderTree_sync]
 import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.dataform.v1beta1.stub.DataformStubSettings;
 import java.time.Duration;
 
-public class SyncMoveFolder {
+public class SyncDeleteTeamFolderTree {
 
   public static void main(String[] args) throws Exception {
-    syncMoveFolder();
+    syncDeleteTeamFolderTree();
   }
 
-  public static void syncMoveFolder() throws Exception {
+  public static void syncDeleteTeamFolderTree() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -50,4 +50,4 @@ public class SyncMoveFolder {
         .build();
   }
 }
-// [END dataform_v1beta1_generated_DataformStubSettings_MoveFolder_sync]
+// [END dataform_v1beta1_generated_DataformStubSettings_DeleteTeamFolderTree_sync]
