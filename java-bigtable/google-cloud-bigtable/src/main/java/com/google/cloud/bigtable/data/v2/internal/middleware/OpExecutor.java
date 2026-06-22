@@ -73,8 +73,8 @@ public final class OpExecutor implements Executor {
   }
 
   /**
-   * Runs {@code r} synchronously on the caller thread if this executor is idle, otherwise queues
-   * it for later drain on the backing executor. Either way, FIFO ordering with other tasks is
+   * Runs {@code r} synchronously on the caller thread if this executor is idle, otherwise queues it
+   * for later drain on the backing executor. Either way, FIFO ordering with other tasks is
    * preserved.
    */
   public void runInline(Runnable r) {
@@ -104,7 +104,8 @@ public final class OpExecutor implements Executor {
     }
   }
 
-  // Schedule a drain on the backing executor. If the backing throws (e.g. RejectedExecutionException
+  // Schedule a drain on the backing executor. If the backing throws (e.g.
+  // RejectedExecutionException
   // during shutdown), reset drainScheduled before propagating so the next execute() can retry
   // instead of wedging the executor with no drainer.
   @GuardedBy("queue")

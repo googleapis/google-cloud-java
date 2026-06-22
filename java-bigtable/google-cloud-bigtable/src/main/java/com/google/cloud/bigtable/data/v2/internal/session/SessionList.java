@@ -170,8 +170,8 @@ class SessionList {
     }
 
     /**
-     * The session is returned to the pool after a vRPC that reached the wire completes. Updates
-     * the picker's per-AFE latency stats on success; non-OK results skip the latency update so a
+     * The session is returned to the pool after a vRPC that reached the wire completes. Updates the
+     * picker's per-AFE latency stats on success; non-OK results skip the latency update so a
      * fast-failing or cancelled-mid-flight AFE doesn't look the fastest.
      */
     void onVRpcFinish(Duration elapsed, VRpcResult result) {
@@ -183,10 +183,9 @@ class SessionList {
     }
 
     /**
-     * The session is returned to the pool after a pending vRPC was drained but cancelled before
-     * it could be attached to a real call (e.g. user cancelled or deadline expired between
-     * checkoutSession and drainTo). No latency is reported because the vRPC never reached the
-     * wire.
+     * The session is returned to the pool after a pending vRPC was drained but cancelled before it
+     * could be attached to a real call (e.g. user cancelled or deadline expired between
+     * checkoutSession and drainTo). No latency is reported because the vRPC never reached the wire.
      */
     void onPendingVRpcCancelled() {
       releaseToPool();

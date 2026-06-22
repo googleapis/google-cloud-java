@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
 
 /**
  * The single edge between the user and the VRpc middleware chain. Trampolines all inbound user
- * calls onto opExecutor and owns the gRPC {@link Context} cancellation listener so that every
- * layer below is single-threaded on opExecutor.
+ * calls onto opExecutor and owns the gRPC {@link Context} cancellation listener so that every layer
+ * below is single-threaded on opExecutor.
  *
  * <p>Precondition: {@link #cancel} must not be called before {@link #start}.
  */
