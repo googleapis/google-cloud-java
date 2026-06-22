@@ -84,19 +84,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     this.context = ctx;
     this.tracer = context.getTracer();
 
-    // tracer.onOperationStart runs BEFORE started=true so a tracer failure short-circuits to a
-    // direct listener.onClose without entering the state machine. If started=true were set first,
-    // a tracer throw would route through cancel→Done.onStart, which would then NPE in its own
-    // finally on tracer.onOperationFinish/recordApplicationBlockingLatencies, swallowing the
-    // original cause and surprising the caller with the secondary NPE.
-    try {
-      tracer.onOperationStart();
-    } catch (Throwable t) {
-      listener.onClose(
-          VRpcResult.createRejectedError(
-              Status.INTERNAL.withDescription("tracer.onOperationStart failed").withCause(t)));
-      return;
-    }
+    tracer.onOperationStart();
     started = true;
 
     try {
