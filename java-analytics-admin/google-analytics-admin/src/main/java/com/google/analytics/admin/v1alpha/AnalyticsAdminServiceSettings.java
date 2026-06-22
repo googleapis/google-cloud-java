@@ -1168,6 +1168,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .getReportingIdentitySettingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateReportingIdentitySettings. */
+  public UnaryCallSettings<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateReportingIdentitySettingsSettings();
+  }
+
   /** Returns the object with the settings used for calls to getUserProvidedDataSettings. */
   public UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
       getUserProvidedDataSettingsSettings() {
@@ -2337,6 +2344,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings() {
       return getStubSettingsBuilder().getReportingIdentitySettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReportingIdentitySettings. */
+    public UnaryCallSettings.Builder<
+            UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        updateReportingIdentitySettingsSettings() {
+      return getStubSettingsBuilder().updateReportingIdentitySettingsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getUserProvidedDataSettings. */
