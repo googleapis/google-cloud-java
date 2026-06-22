@@ -170,18 +170,35 @@ class SessionList {
     }
 
     /**
-     * The session is returned to the pool after use. This undoes what SessionList#checkoutSession
+     * The session is returned to the pool after a vRPC that reached the wire completes. Updates
+     * the picker's per-AFE latency stats on success; non-OK results skip the latency update so a
+     * fast-failing or cancelled-mid-flight AFE doesn't look the fastest.
      */
     void onVRpcFinish(Duration elapsed, VRpcResult result) {
-      // Guaranteed to be set - vrpc can only start after the session is ready
+      releaseToPool();
+      if (result.getStatus().isOk()) {
+        // Guaranteed to be set - vrpc can only start after the session is ready
+        this.afe.get().updateLatency(elapsed, result.getBackendLatency());
+      }
+    }
+
+    /**
+     * The session is returned to the pool after a pending vRPC was drained but cancelled before
+     * it could be attached to a real call (e.g. user cancelled or deadline expired between
+     * checkoutSession and drainTo). No latency is reported because the vRPC never reached the
+     * wire.
+     */
+    void onPendingVRpcCancelled() {
+      releaseToPool();
+    }
+
+    // Shared bookkeeping for both completion paths. Undoes what SessionList#checkoutSession did.
+    private void releaseToPool() {
+      // Guaranteed to be set - checkoutSession only runs after the session is ready
       AfeHandle afeHandle = this.afe.get();
 
       poolStats.inUseCount--;
       inUseSessions.remove(this);
-
-      if (result.getStatus().isOk()) {
-        afeHandle.updateLatency(elapsed, result.getBackendLatency());
-      }
 
       if (session.getState() == SessionState.READY) {
         poolStats.readyCount++;

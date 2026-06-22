@@ -461,7 +461,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   private synchronized void onVRpcComplete(
       SessionHandle handle, Duration elapsed, VRpcResult result) {
     handle.onVRpcFinish(elapsed, result);
+    afterRelease(handle);
+  }
 
+  // Called when a pending vRPC was drained but cancelled before it attached to a real call.
+  // Mirrors onVRpcComplete; the handle reports no latency because nothing ran on it.
+  private synchronized void onPendingVRpcCancelled(SessionHandle handle) {
+    handle.onPendingVRpcCancelled();
+    afterRelease(handle);
+  }
+
+  @GuardedBy("this")
+  private void afterRelease(SessionHandle handle) {
     // pool is shutting down, dont try to drain vrpcs
     if (poolState != PoolState.STARTED) {
       return;
@@ -741,8 +752,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
       ctx.getExecutor().execute(() -> {
         if (isCancelled) {
-          SessionPoolImpl.this.onVRpcComplete(
-              handle, Duration.ZERO, VRpcResult.createRejectedError(Status.CANCELLED));
+          SessionPoolImpl.this.onPendingVRpcCancelled(handle);
           return;
         }
         realCall = newRealCall(desc, handle);
