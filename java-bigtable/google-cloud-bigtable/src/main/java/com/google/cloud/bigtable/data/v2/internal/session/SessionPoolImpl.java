@@ -716,25 +716,29 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       synchronized (SessionPoolImpl.this) {
         pendingRpcs.remove(this); // eager removal; no-op if already drained
       }
-      ctx.getExecutor().execute(() -> {
-        if (isCancelled) return;
-        isCancelled = true;
-        if (realCall != null) {
-          if (!onlyCancelPendingCall) {
-            realCall.cancel(status.getDescription(), status.getCause());
-          }
-        } else {
-          listener.onClose(VRpcResult.createRejectedError(status));
-        }
-      });
+      ctx.getExecutor()
+          .execute(
+              () -> {
+                if (isCancelled) return;
+                isCancelled = true;
+                if (realCall != null) {
+                  if (!onlyCancelPendingCall) {
+                    realCall.cancel(status.getDescription(), status.getCause());
+                  }
+                } else {
+                  listener.onClose(VRpcResult.createRejectedError(status));
+                }
+              });
     }
 
     void cancelWithResult(VRpcResult result) {
-      ctx.getExecutor().execute(() -> {
-        if (isCancelled) return;
-        isCancelled = true;
-        listener.onClose(result);
-      });
+      ctx.getExecutor()
+          .execute(
+              () -> {
+                if (isCancelled) return;
+                isCancelled = true;
+                listener.onClose(result);
+              });
     }
 
     @Override
@@ -750,14 +754,16 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       if (deadlineMonitor != null) {
         deadlineMonitor.cancel();
       }
-      ctx.getExecutor().execute(() -> {
-        if (isCancelled) {
-          SessionPoolImpl.this.onPendingVRpcCancelled(handle);
-          return;
-        }
-        realCall = newRealCall(desc, handle);
-        realCall.start(req, ctx, listener);
-      });
+      ctx.getExecutor()
+          .execute(
+              () -> {
+                if (isCancelled) {
+                  SessionPoolImpl.this.onPendingVRpcCancelled(handle);
+                  return;
+                }
+                realCall = newRealCall(desc, handle);
+                realCall.start(req, ctx, listener);
+              });
     }
 
     private VRpcListener<RespT> getListener() {
@@ -908,5 +914,4 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
     }
   }
-
 }

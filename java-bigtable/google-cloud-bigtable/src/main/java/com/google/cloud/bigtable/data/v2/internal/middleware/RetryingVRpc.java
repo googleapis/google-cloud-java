@@ -122,7 +122,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   public void requestNext() {
     // Assert the op-executor affinity even though the body is dead today — when streaming lands
     // and this becomes real, the missing assertion would silently allow off-thread access.
-    // Guarded on context being set so a misuse before start() still throws UnsupportedOperationException
+    // Guarded on context being set so a misuse before start() still throws
+    // UnsupportedOperationException
     // rather than NPE on the assertion.
     if (context != null) {
       context.getExecutor().throwIfNotInThisExecutor();
