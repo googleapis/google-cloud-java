@@ -19,10 +19,8 @@ import static com.google.cloud.bigtable.data.v2.internal.test_helpers.VRpcResult
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.longThat;
-import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -55,7 +53,6 @@ import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionServic
 import com.google.cloud.bigtable.data.v2.internal.session.fake.PeerInfoInterceptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.base.Suppliers;
-import com.google.common.collect.Range;
 import com.google.common.truth.Correspondence;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
@@ -129,7 +126,9 @@ public class SessionPoolImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    testTimer = new NettyWheelTimer("test-timer", com.google.common.util.concurrent.MoreExecutors.directExecutor());
+    testTimer =
+        new NettyWheelTimer(
+            "test-timer", com.google.common.util.concurrent.MoreExecutors.directExecutor());
     fakeService = new FakeSessionService(executor);
     headerInterceptor = new HeaderInterceptor();
     server =
@@ -163,7 +162,7 @@ public class SessionPoolImplTest {
             CallOptions.DEFAULT,
             FakeDescriptor.FAKE_SESSION,
             "fake-pool",
-              testTimer);
+            testTimer);
   }
 
   @AfterEach
@@ -400,9 +399,7 @@ public class SessionPoolImplTest {
       int waitForReadyMs = 1000;
       verify(mockTimer, Mockito.timeout(waitForReadyMs))
           .newTimeout(
-              runnableCaptor.capture(),
-              longThat(isRetrySchedule::test),
-              eq(TimeUnit.MILLISECONDS));
+              runnableCaptor.capture(), longThat(isRetrySchedule::test), eq(TimeUnit.MILLISECONDS));
 
       // we should have received some open requests
       int requestsBefore = fakeService.getOpenRequestCount().get();
@@ -427,9 +424,7 @@ public class SessionPoolImplTest {
       // The retry task will try to open new sessions. This will fail and schedule another retry.
       verify(mockTimer, Mockito.timeout(5000).times(2))
           .newTimeout(
-              any(Runnable.class),
-              longThat(isRetrySchedule::test),
-              eq(TimeUnit.MILLISECONDS));
+              any(Runnable.class), longThat(isRetrySchedule::test), eq(TimeUnit.MILLISECONDS));
 
       // the retry will exhaust the budget again. we should see double the request compared to
       // before

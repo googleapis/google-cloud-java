@@ -25,12 +25,12 @@ import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
-import com.google.cloud.bigtable.data.v2.internal.middleware.VOperationImpl;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VOperationImpl;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
-import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.annotations.VisibleForTesting;
@@ -76,8 +76,7 @@ class TableBase implements AutoCloseable {
 
     sessionPool.start(openReq, new Metadata());
 
-    return new TableBase(
-        sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer);
+    return new TableBase(sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer);
   }
 
   @VisibleForTesting

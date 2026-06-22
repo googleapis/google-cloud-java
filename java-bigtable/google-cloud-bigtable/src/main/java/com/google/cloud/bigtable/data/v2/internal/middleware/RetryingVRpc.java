@@ -276,14 +276,15 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
         future =
             timer.newTimeout(
                 () ->
-                    context.getExecutor().execute(
-                        () ->
-                            grpcContext.wrap(
-                                    () ->
-                                        otelContext
-                                            .wrap(() -> onStateChange(new Idle()))
-                                            .run())
-                                .run()),
+                    context
+                        .getExecutor()
+                        .execute(
+                            () ->
+                                grpcContext
+                                    .wrap(
+                                        () ->
+                                            otelContext.wrap(() -> onStateChange(new Idle())).run())
+                                    .run()),
                 Durations.toMillis(retryDelay),
                 TimeUnit.MILLISECONDS);
       } catch (RejectedExecutionException e) {
