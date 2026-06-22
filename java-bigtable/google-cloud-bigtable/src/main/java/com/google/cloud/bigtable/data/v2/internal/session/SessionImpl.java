@@ -538,6 +538,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleSessionParamsResponse(SessionParametersResponse resp) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     if (state.phase >= SessionState.CLOSING.phase) {
       logger.fine(String.format("Stream was already %s when session params were received", state));
       return;
@@ -615,6 +616,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleSessionRefreshConfigResponse(SessionRefreshConfig config) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     Metadata grpcMetadata = new Metadata();
     config
         .getMetadataList()
@@ -679,6 +681,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleGoAwayResponse(GoAwayResponse goAwayResponse) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     if (state.phase >= SessionState.CLOSING.phase) {
       debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_go_away_ignored");
       logger.warning(
@@ -707,11 +710,13 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleUnknownResponseMessage(SessionResponse message) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_unknown_response");
     logger.warning(String.format("%s Unknown control message: %s", info.getLogName(), message));
   }
 
   private void dispatchStreamClosed(Status status, Metadata trailers) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     SessionState prevState = state;
 
     if (!status.isOk()) {
