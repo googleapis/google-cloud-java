@@ -664,10 +664,11 @@ final class BigQueryJdbcOAuthUtility {
 
       ExternalAccountCredentials credentials;
       if (credentialsPath != null) {
-        credentials =
-            (ExternalAccountCredentials)
-                ExternalAccountCredentials.fromStream(
-                    Files.newInputStream(Paths.get(credentialsPath)), httpTransportFactory);
+        try (InputStream stream = Files.newInputStream(Paths.get(credentialsPath))) {
+          credentials =
+              (ExternalAccountCredentials)
+                  ExternalAccountCredentials.fromStream(stream, httpTransportFactory);
+        }
       } else if (jsonObject != null) {
         credentials =
             (ExternalAccountCredentials)
