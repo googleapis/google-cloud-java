@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.data.v2.internal.middleware;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
+import javax.annotation.concurrent.GuardedBy;
 
 /**
  * Per-op serializing executor that tracks which thread is currently draining it, so callers can
@@ -46,10 +47,14 @@ public final class OpExecutor implements Executor {
   private final Executor backing;
   private final UncaughtExceptionHandler handler;
 
-  // Guards queue and drainScheduled. runningThread is volatile so throwIfNotInThisExecutor() can
-  // read it lock-free; writes happen inside the lock to piggy-back the memory barrier.
+  // queue is the lock. runningThread is volatile (not @GuardedBy): throwIfNotInThisExecutor()
+  // reads it lock-free; writes happen inside synchronized(queue) to piggy-back the memory barrier.
+  @GuardedBy("queue")
   private final ArrayDeque<Runnable> queue = new ArrayDeque<>();
+
+  @GuardedBy("queue")
   private boolean drainScheduled = false;
+
   private volatile Thread runningThread;
 
   public OpExecutor(Executor backing, UncaughtExceptionHandler handler) {
@@ -102,6 +107,7 @@ public final class OpExecutor implements Executor {
   // Schedule a drain on the backing executor. If the backing throws (e.g. RejectedExecutionException
   // during shutdown), reset drainScheduled before propagating so the next execute() can retry
   // instead of wedging the executor with no drainer.
+  @GuardedBy("queue")
   private void scheduleDrainLocked() {
     drainScheduled = true;
     try {
