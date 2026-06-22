@@ -31,6 +31,7 @@ import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Message;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
@@ -73,7 +74,7 @@ public class TableBaseTest {
             VRpcDescriptor.MUTATE_ROW,
             noopMetrics,
             mockTimer,
-            com.google.common.util.concurrent.MoreExecutors.directExecutor());
+            MoreExecutors.directExecutor());
     deadline = Deadline.after(1, TimeUnit.MINUTES);
     f = new UnaryResponseFuture<>();
   }

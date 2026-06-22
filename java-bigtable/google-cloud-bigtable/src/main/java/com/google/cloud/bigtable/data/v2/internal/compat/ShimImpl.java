@@ -47,6 +47,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
@@ -54,6 +55,8 @@ import io.grpc.stub.MetadataUtils;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Optional;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -160,9 +163,9 @@ public class ShimImpl implements Shim {
       featureFlags = featureFlags.toBuilder().setSessionsRequired(true).build();
     }
 
-    java.util.concurrent.ExecutorService userCallbackExecutor =
-        java.util.concurrent.Executors.newCachedThreadPool(
-            new com.google.common.util.concurrent.ThreadFactoryBuilder()
+    ExecutorService userCallbackExecutor =
+        Executors.newCachedThreadPool(
+            new ThreadFactoryBuilder()
                 .setNameFormat("bigtable-callback-shim-%d")
                 .setDaemon(true)
                 .build());

@@ -34,6 +34,7 @@ import io.grpc.CallOptions;
 import io.grpc.Deadline;
 import java.io.Closeable;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
 
 public class TableAsync implements AutoCloseable, Closeable {
   private final TableBase base;
@@ -48,7 +49,7 @@ public class TableAsync implements AutoCloseable, Closeable {
       Permission permission,
       Metrics metrics,
       BigtableTimer timer,
-      java.util.concurrent.Executor userCallbackExecutor) {
+      Executor userCallbackExecutor) {
 
     TableName tableName =
         TableName.builder()
