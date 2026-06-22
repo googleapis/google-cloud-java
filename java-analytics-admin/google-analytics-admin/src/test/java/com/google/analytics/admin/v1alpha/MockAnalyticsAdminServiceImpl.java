@@ -3440,6 +3440,29 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void updateReportingIdentitySettings(
+      UpdateReportingIdentitySettingsRequest request,
+      StreamObserver<ReportingIdentitySettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportingIdentitySettings) {
+      requests.add(request);
+      responseObserver.onNext(((ReportingIdentitySettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateReportingIdentitySettings,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportingIdentitySettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getUserProvidedDataSettings(
       GetUserProvidedDataSettingsRequest request,
       StreamObserver<UserProvidedDataSettings> responseObserver) {

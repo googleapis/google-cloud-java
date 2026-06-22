@@ -427,4 +427,55 @@ public class ReferenceListServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void verifyReferenceListTest() throws Exception {
+    VerifyReferenceListResponse expectedResponse =
+        VerifyReferenceListResponse.newBuilder()
+            .setSuccess(true)
+            .addAllErrors(new ArrayList<ReferenceListError>())
+            .build();
+    mockReferenceListService.addResponse(expectedResponse);
+
+    VerifyReferenceListRequest request =
+        VerifyReferenceListRequest.newBuilder()
+            .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setSyntaxType(ReferenceListSyntaxType.forNumber(0))
+            .addAllEntries(new ArrayList<ReferenceListEntry>())
+            .build();
+
+    VerifyReferenceListResponse actualResponse = client.verifyReferenceList(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReferenceListService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyReferenceListRequest actualRequest = ((VerifyReferenceListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getInstance(), actualRequest.getInstance());
+    Assert.assertEquals(request.getSyntaxType(), actualRequest.getSyntaxType());
+    Assert.assertEquals(request.getEntriesList(), actualRequest.getEntriesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyReferenceListExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReferenceListService.addException(exception);
+
+    try {
+      VerifyReferenceListRequest request =
+          VerifyReferenceListRequest.newBuilder()
+              .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setSyntaxType(ReferenceListSyntaxType.forNumber(0))
+              .addAllEntries(new ArrayList<ReferenceListEntry>())
+              .build();
+      client.verifyReferenceList(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

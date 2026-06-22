@@ -141,4 +141,18 @@ public interface PropertySummaryOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, then the user has a Google Analytics role that permits them to
+   * edit the property.
+   * </pre>
+   *
+   * <code>bool can_edit = 5;</code>
+   *
+   * @return The canEdit.
+   */
+  boolean getCanEdit();
 }

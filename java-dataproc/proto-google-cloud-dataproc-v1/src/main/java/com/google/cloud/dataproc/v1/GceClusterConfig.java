@@ -74,6 +74,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 5:
         return internalGetMetadata();
+      case 16:
+        return internalGetResourceManagerTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1199,7 +1201,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
    * </pre>
    *
    * <code>
@@ -1218,7 +1220,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
    * </pre>
    *
    * <code>
@@ -1239,7 +1241,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
    * </pre>
    *
    * <code>
@@ -1252,6 +1254,137 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     return confidentialInstanceConfig_ == null
         ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.getDefaultInstance()
         : confidentialInstanceConfig_;
+  }
+
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 16;
+
+  private static final class ResourceManagerTagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.ClustersProto
+                .internal_static_google_cloud_dataproc_v1_GceClusterConfig_ResourceManagerTagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResourceManagerTags() {
+    if (resourceManagerTags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+    }
+    return resourceManagerTags_;
+  }
+
+  public int getResourceManagerTagsCount() {
+    return internalGetResourceManagerTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsResourceManagerTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetResourceManagerTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+    return getResourceManagerTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+    return internalGetResourceManagerTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetResourceManagerTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1309,6 +1442,11 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(15, getConfidentialInstanceConfig());
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetResourceManagerTags(),
+        ResourceManagerTagsDefaultEntryHolder.defaultEntry,
+        16);
     getUnknownFields().writeTo(output);
   }
 
@@ -1381,6 +1519,16 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getConfidentialInstanceConfig());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceManagerTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceManagerTags__ =
+          ResourceManagerTagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, resourceManagerTags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1426,6 +1574,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!getConfidentialInstanceConfig().equals(other.getConfidentialInstanceConfig()))
         return false;
     }
+    if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1478,6 +1628,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     if (hasConfidentialInstanceConfig()) {
       hash = (37 * hash) + CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialInstanceConfig().hashCode();
+    }
+    if (!internalGetResourceManagerTags().getMap().isEmpty()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1605,6 +1759,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 5:
           return internalGetMetadata();
+        case 16:
+          return internalGetResourceManagerTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1616,6 +1772,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 5:
           return internalGetMutableMetadata();
+        case 16:
+          return internalGetMutableResourceManagerTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1683,6 +1841,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         confidentialInstanceConfigBuilder_.dispose();
         confidentialInstanceConfigBuilder_ = null;
       }
+      internalGetMutableResourceManagerTags().clear();
       return this;
     }
 
@@ -1779,6 +1938,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
                 : confidentialInstanceConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.resourceManagerTags_ = internalGetResourceManagerTags();
+        result.resourceManagerTags_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1854,6 +2017,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasConfidentialInstanceConfig()) {
         mergeConfidentialInstanceConfig(other.getConfidentialInstanceConfig());
       }
+      internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
+      bitField0_ |= 0x00002000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1972,6 +2137,19 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00001000;
                 break;
               } // case 122
+            case 130:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    resourceManagerTags__ =
+                        input.readMessage(
+                            ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableResourceManagerTags()
+                    .getMutableMap()
+                    .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4231,7 +4409,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4249,7 +4427,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4273,7 +4451,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4300,7 +4478,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4324,7 +4502,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4357,7 +4535,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4380,7 +4558,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4399,7 +4577,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4422,7 +4600,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Confidential Instance Config for clusters using [Confidential
-     * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+     * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
      * </pre>
      *
      * <code>
@@ -4444,6 +4622,220 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         confidentialInstanceConfig_ = null;
       }
       return confidentialInstanceConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourceManagerTags() {
+      if (resourceManagerTags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      return resourceManagerTags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResourceManagerTags() {
+      if (resourceManagerTags_ == null) {
+        resourceManagerTags_ =
+            com.google.protobuf.MapField.newMapField(
+                ResourceManagerTagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!resourceManagerTags_.isMutable()) {
+        resourceManagerTags_ = resourceManagerTags_.copy();
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return resourceManagerTags_;
+    }
+
+    public int getResourceManagerTagsCount() {
+      return internalGetResourceManagerTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetResourceManagerTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getResourceManagerTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags() {
+      return getResourceManagerTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap() {
+      return internalGetResourceManagerTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getResourceManagerTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetResourceManagerTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearResourceManagerTags() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      internalGetMutableResourceManagerTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeResourceManagerTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
+      bitField0_ |= 0x00002000;
+      return internalGetMutableResourceManagerTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putResourceManagerTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Resource manager tags]
+     * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+     * to add to all instances (see [Use secure tags]
+     * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllResourceManagerTags(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.GceClusterConfig)

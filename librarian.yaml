@@ -16,8 +16,8 @@ version: v0.21.1-0.20260617000028-820646f3db93
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 7af3f2c7b8927cffb548fd2cf09b04c6371437ee
-    sha256: fb354b89774f4599bb3559d190fe54e51da76c6339c062900355c874b9defac5
+    commit: 1df255f1feb82e85ec0c8a3b558857e8ca3d3372
+    sha256: 75d9ff8bb7174f6bea0e5ee24aae7b59238a906a878392dccc9b3e0e1226d179
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -98,6 +98,13 @@ libraries:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
+  - name: agentregistry
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/agentregistry/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: aiplatform
     version: 3.95.0-SNAPSHOT
     apis:
@@ -1848,6 +1855,7 @@ libraries:
     keep:
       - src/main/java/io/grafeas/v1/stub/Version.java
     java:
+      alternate_headers: license-header.txt
       api_description_override: n/a
       artifact_id: grafeas
       client_documentation_override: https://cloud.google.com/java/docs/reference/grafeas/latest/overview

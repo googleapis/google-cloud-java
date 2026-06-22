@@ -1,0 +1,81 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.agentregistry.v1",
+  "libraryPackage": "com.google.cloud.agentregistry.v1",
+  "services": {
+    "AgentRegistry": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentRegistryClient",
+          "rpcs": {
+            "CreateBinding": {
+              "methods": ["createBindingAsync", "createBindingAsync", "createBindingAsync", "createBindingOperationCallable", "createBindingCallable"]
+            },
+            "CreateService": {
+              "methods": ["createServiceAsync", "createServiceAsync", "createServiceAsync", "createServiceOperationCallable", "createServiceCallable"]
+            },
+            "DeleteBinding": {
+              "methods": ["deleteBindingAsync", "deleteBindingAsync", "deleteBindingAsync", "deleteBindingOperationCallable", "deleteBindingCallable"]
+            },
+            "DeleteService": {
+              "methods": ["deleteServiceAsync", "deleteServiceAsync", "deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
+            },
+            "FetchAvailableBindings": {
+              "methods": ["fetchAvailableBindings", "fetchAvailableBindings", "fetchAvailableBindings", "fetchAvailableBindingsPagedCallable", "fetchAvailableBindingsCallable"]
+            },
+            "GetAgent": {
+              "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
+            },
+            "GetBinding": {
+              "methods": ["getBinding", "getBinding", "getBinding", "getBindingCallable"]
+            },
+            "GetEndpoint": {
+              "methods": ["getEndpoint", "getEndpoint", "getEndpoint", "getEndpointCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMcpServer": {
+              "methods": ["getMcpServer", "getMcpServer", "getMcpServer", "getMcpServerCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "ListAgents": {
+              "methods": ["listAgents", "listAgents", "listAgents", "listAgentsPagedCallable", "listAgentsCallable"]
+            },
+            "ListBindings": {
+              "methods": ["listBindings", "listBindings", "listBindings", "listBindingsPagedCallable", "listBindingsCallable"]
+            },
+            "ListEndpoints": {
+              "methods": ["listEndpoints", "listEndpoints", "listEndpoints", "listEndpointsPagedCallable", "listEndpointsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMcpServers": {
+              "methods": ["listMcpServers", "listMcpServers", "listMcpServers", "listMcpServersPagedCallable", "listMcpServersCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "SearchAgents": {
+              "methods": ["searchAgents", "searchAgents", "searchAgents", "searchAgentsPagedCallable", "searchAgentsCallable"]
+            },
+            "SearchMcpServers": {
+              "methods": ["searchMcpServers", "searchMcpServers", "searchMcpServers", "searchMcpServersPagedCallable", "searchMcpServersCallable"]
+            },
+            "UpdateBinding": {
+              "methods": ["updateBindingAsync", "updateBindingAsync", "updateBindingOperationCallable", "updateBindingCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
