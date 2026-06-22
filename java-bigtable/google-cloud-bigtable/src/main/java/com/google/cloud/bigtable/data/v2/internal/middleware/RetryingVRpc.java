@@ -32,6 +32,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
+// All mutable state is owned by the op executor; VOperationImpl trampolines every inbound call
+// onto it, so no synchronization is needed here.
 public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   private static final Logger LOG = Logger.getLogger(RetryingVRpc.class.getName());
@@ -47,8 +49,6 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   private final BigtableTimer timer;
 
-  // All mutable state is owned by the op executor; VOperationImpl trampolines every inbound call
-  // onto it, so no synchronization is needed here.
   private State currentState;
   private boolean started;
   // Breaks the loop on uncaught exception during cancel.
