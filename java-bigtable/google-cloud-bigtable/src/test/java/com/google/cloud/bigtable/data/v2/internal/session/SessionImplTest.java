@@ -683,8 +683,7 @@ public class SessionImplTest {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     CountDownLatch onCloseLatch = new CountDownLatch(1);
-    AtomicReference<Status> capturedStatus =
-        new AtomicReference<>();
+    AtomicReference<Status> capturedStatus = new AtomicReference<>();
 
     Session.Listener throwingListener =
         new Session.Listener() {

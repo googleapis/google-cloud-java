@@ -78,7 +78,6 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.LongPredicate;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -86,6 +85,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.LongPredicate;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -429,8 +429,7 @@ public class SessionPoolImplTest {
       // Match anything that isn't one of the two fixed cadences.
       long watchdogMs = Duration.ofMinutes(5).toMillis();
       long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
-      LongPredicate isRetrySchedule =
-          d -> d > 0 && d != watchdogMs && d != afePruneMs;
+      LongPredicate isRetrySchedule = d -> d > 0 && d != watchdogMs && d != afePruneMs;
 
       // start the pool
       sessionPool.start(
