@@ -684,13 +684,18 @@ final class BigQueryJdbcOAuthUtility {
       ExternalAccountCredentials credentials;
       if (credentialsPath != null) {
         try (InputStream stream = Files.newInputStream(Paths.get(credentialsPath))) {
-          credentials = ExternalAccountCredentials.fromStream(stream, httpTransportFactory);
+          credentials =
+              httpTransportFactory != null
+                  ? ExternalAccountCredentials.fromStream(stream, httpTransportFactory)
+                  : ExternalAccountCredentials.fromStream(stream);
         }
       } else if (jsonObject != null) {
+        InputStream stream =
+            new ByteArrayInputStream(jsonObject.toString().getBytes(StandardCharsets.UTF_8));
         credentials =
-            ExternalAccountCredentials.fromStream(
-                new ByteArrayInputStream(jsonObject.toString().getBytes(StandardCharsets.UTF_8)),
-                httpTransportFactory);
+            httpTransportFactory != null
+                ? ExternalAccountCredentials.fromStream(stream, httpTransportFactory)
+                : ExternalAccountCredentials.fromStream(stream);
       } else {
         IllegalArgumentException ex =
             new IllegalArgumentException("Insufficient info provided for external authentication");
