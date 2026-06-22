@@ -52,6 +52,7 @@ import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
@@ -467,9 +468,7 @@ final class BigQueryJdbcOAuthUtility {
     LOG.finer("++enter++\t" + callerClassName);
     UserCredentials credentials = userAuthorizer.getCredentialsFromCode(code, URI.create(""));
     if (httpTransportFactory != null) {
-      credentials =
-          (UserCredentials)
-              credentials.toBuilder().setHttpTransportFactory(httpTransportFactory).build();
+      credentials = credentials.toBuilder().setHttpTransportFactory(httpTransportFactory).build();
     }
     return credentials;
   }
@@ -665,16 +664,13 @@ final class BigQueryJdbcOAuthUtility {
       ExternalAccountCredentials credentials;
       if (credentialsPath != null) {
         try (InputStream stream = Files.newInputStream(Paths.get(credentialsPath))) {
-          credentials =
-              (ExternalAccountCredentials)
-                  ExternalAccountCredentials.fromStream(stream, httpTransportFactory);
+          credentials = ExternalAccountCredentials.fromStream(stream, httpTransportFactory);
         }
       } else if (jsonObject != null) {
         credentials =
-            (ExternalAccountCredentials)
-                ExternalAccountCredentials.fromStream(
-                    new ByteArrayInputStream(jsonObject.toString().getBytes()),
-                    httpTransportFactory);
+            ExternalAccountCredentials.fromStream(
+                new ByteArrayInputStream(jsonObject.toString().getBytes(StandardCharsets.UTF_8)),
+                httpTransportFactory);
       } else {
         IllegalArgumentException ex =
             new IllegalArgumentException("Insufficient info provided for external authentication");
