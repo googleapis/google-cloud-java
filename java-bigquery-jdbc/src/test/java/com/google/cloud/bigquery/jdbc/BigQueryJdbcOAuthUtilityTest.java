@@ -22,8 +22,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -488,5 +490,54 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     } catch (Exception e) {
       assertTrue(false);
     }
+  }
+
+  @Test
+  public void testGetCredentialsPropagatesHttpTransportFactory() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "ProjectId=MyBigQueryProject;OAuthType=0;"
+                    + "OAuthServiceAcctEmail=dummytest@dummytest.iam.gserviceaccount.com;"
+                    + "OAuthPvtKey="
+                    + fake_pkcs8_key
+                    + ";"),
+            null);
+
+    HttpTransportFactory dummyFactory = () -> null;
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, dummyFactory, null);
+
+    assertThat(credentials).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) credentials).toBuilder().getHttpTransportFactory())
+        .isEqualTo(dummyFactory);
+  }
+
+  @Test
+  public void testGetImpersonatedCredentialsPropagatesHttpTransportFactory() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "ProjectId=MyBigQueryProject;OAuthType=0;"
+                    + "OAuthServiceAcctEmail=dummytest@dummytest.iam.gserviceaccount.com;"
+                    + "OAuthPvtKey="
+                    + fake_pkcs8_key
+                    + ";"
+                    + "ServiceAccountImpersonationEmail=impersonated@email.com;"),
+            null);
+
+    HttpTransportFactory dummyFactory = () -> null;
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, dummyFactory, null);
+
+    assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
+    assertThat(((ImpersonatedCredentials) credentials).toBuilder().getHttpTransportFactory())
+        .isEqualTo(dummyFactory);
   }
 }
