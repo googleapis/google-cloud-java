@@ -813,6 +813,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Packet sent from a Cloud Run job that is not ready.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_JOB_NOT_READY = 113;</code>
+     */
+    CLOUD_RUN_JOB_NOT_READY(113),
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped inside Private Service Connect service producer.
      * </pre>
      *
@@ -2042,6 +2052,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Packet sent from a Cloud Run job that is not ready.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_JOB_NOT_READY = 113;</code>
+     */
+    public static final int CLOUD_RUN_JOB_NOT_READY_VALUE = 113;
+
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped inside Private Service Connect service producer.
      * </pre>
      *
@@ -2660,6 +2681,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
           return HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED;
         case 29:
           return CLOUD_RUN_REVISION_NOT_READY;
+        case 113:
+          return CLOUD_RUN_JOB_NOT_READY;
         case 37:
           return DROPPED_INSIDE_PSC_SERVICE_PRODUCER;
         case 39:
