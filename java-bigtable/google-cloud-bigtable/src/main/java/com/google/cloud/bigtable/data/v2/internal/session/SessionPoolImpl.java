@@ -673,8 +673,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         if (SessionPoolImpl.this.poolState != PoolState.STARTED) {
           VRpcResult result =
               VRpcResult.createUncommitedError(
-                  Status.UNAVAILABLE.withCause(
-                      new IllegalStateException("SessionPool is closed")));
+                  Status.UNAVAILABLE.withCause(new IllegalStateException("SessionPool is closed")));
           ctx.getExecutor().execute(() -> listener.onClose(result));
           return;
         }
@@ -771,8 +770,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       return timer.newTimeout(
           () ->
               cancel(
-                  Status.DEADLINE_EXCEEDED.withDescription(
-                      "Deadline exceeded waiting for session"),
+                  Status.DEADLINE_EXCEEDED.withDescription("Deadline exceeded waiting for session"),
                   true),
           deadline.timeRemaining(TimeUnit.NANOSECONDS),
           TimeUnit.NANOSECONDS);

@@ -110,8 +110,7 @@ public interface VRpc<ReqT, RespT> {
      */
     public static VRpcCallContext create(
         Deadline deadline, boolean isIdempotent, VRpcTracer tracer) {
-      return create(
-          deadline, isIdempotent, tracer, new OpExecutor(MoreExecutors.directExecutor()));
+      return create(deadline, isIdempotent, tracer, new OpExecutor(MoreExecutors.directExecutor()));
     }
 
     public static VRpcCallContext create(

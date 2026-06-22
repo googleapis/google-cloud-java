@@ -100,7 +100,9 @@ public class SessionImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    timer = new NettyWheelTimer("session-impl-test", com.google.common.util.concurrent.MoreExecutors.directExecutor());
+    timer =
+        new NettyWheelTimer(
+            "session-impl-test", com.google.common.util.concurrent.MoreExecutors.directExecutor());
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())

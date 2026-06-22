@@ -49,8 +49,7 @@ public final class NettyWheelTimer implements BigtableTimer {
 
   @Override
   public Timeout newTimeout(Runnable task, long delay, TimeUnit unit) {
-    return new TimeoutHandle(
-        delegate.newTimeout(ignored -> dispatcher.execute(task), delay, unit));
+    return new TimeoutHandle(delegate.newTimeout(ignored -> dispatcher.execute(task), delay, unit));
   }
 
   @Override

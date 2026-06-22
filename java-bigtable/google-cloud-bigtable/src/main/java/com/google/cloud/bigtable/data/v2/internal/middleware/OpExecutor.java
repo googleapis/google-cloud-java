@@ -24,8 +24,8 @@ import java.util.concurrent.Executor;
  * SynchronizationContext#throwIfNotInThisSynchronizationContext}).
  *
  * <p>Backing executor evolves over the refactor — for now it is the per-call {@link
- * io.grpc.SynchronizationContext} that {@link VOperationImpl} constructs. Later commits swap it
- * for a {@code SerializingExecutor} over the user-callback pool, and eventually a tailored inline
+ * io.grpc.SynchronizationContext} that {@link VOperationImpl} constructs. Later commits swap it for
+ * a {@code SerializingExecutor} over the user-callback pool, and eventually a tailored inline
  * queue.
  */
 public final class OpExecutor implements Executor {
