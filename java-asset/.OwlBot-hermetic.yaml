@@ -25,7 +25,7 @@ deep-remove-regex:
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-cloud-.*/src/test/java/com/google/.*/it"
-- "/.*google-cloud-asset/src/test/java/com/google/[^/]+/asset/v1/VPCServiceControlTest.java"
+- "/.*google-cloud-asset/src/test/java/com/google/.*/asset/v1/VPCServiceControlTest.java"
 - "/.*proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java"
 
 deep-copy-regex:

@@ -24,8 +24,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-trace/src/test/java/com/google/[^/]+/trace/v1/VPCServiceControlTest.java"
-- "/.*google-cloud-trace/src/test/java/com/google/[^/]+/trace/v2/VPCServiceControlTest.java"
+- "/.*google-cloud-trace/src/test/java/com/google/.*/trace/v1/VPCServiceControlTest.java"
+- "/.*google-cloud-trace/src/test/java/com/google/.*/trace/v2/VPCServiceControlTest.java"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/proto-google-.*/src"

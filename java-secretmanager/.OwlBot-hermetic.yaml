@@ -24,7 +24,6 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/.*/v1/it/IT.*Test.java"
 - "/.*proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicName.java"
 
 

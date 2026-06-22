@@ -19,17 +19,16 @@ deep-remove-regex:
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
-  - "/.*google-.*/src/test/java/com/google/.*/v.*/it/IT.*Test.java"
   - "/.*samples/snippets/generated"
 
 deep-copy-regex:
-  - source: "/google/iam/v2beta/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam-policy/v2beta/google-iam-policy/src"
-  - source: "/google/iam/v2/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam-policy/v2/google-iam-policy/src"
-  - source: "/google/iam/v3/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam-policy/v3/google-iam-policy/src"
-  - source: "/google/iam/v3beta/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam-policy/v3beta/google-iam-policy/src"
+  - source: "/google/iam/v2beta/.*-java/gapic-google-.*/src/main"
+    dest: "/owl-bot-staging/java-iam-policy/v2beta/google-iam-policy/src/main"
+  - source: "/google/iam/v2/.*-java/gapic-google-.*/src/main"
+    dest: "/owl-bot-staging/java-iam-policy/v2/google-iam-policy/src/main"
+  - source: "/google/iam/v3/.*-java/gapic-google-.*/src/main"
+    dest: "/owl-bot-staging/java-iam-policy/v3/google-iam-policy/src/main"
+  - source: "/google/iam/v3beta/.*-java/gapic-google-.*/src/main"
+    dest: "/owl-bot-staging/java-iam-policy/v3beta/google-iam-policy/src/main"
 
 api-name: iam-policy

@@ -28,8 +28,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/proto-admin-$1/src"
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/grpc-admin-$1/src"
-- source: "/google/marketingplatform/admin/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/admin/src"
+- source: "/google/marketingplatform/admin/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/admin/src/main"
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/samples/snippets/generated"
 

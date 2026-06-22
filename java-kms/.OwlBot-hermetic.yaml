@@ -27,7 +27,7 @@ deep-preserve-regex:
 - "/.*proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java"
 - "/.*proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java"
 - "/.*proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java"
-- "/.*google-cloud-kms/src/test/java/com/google/[^/]+/kms/it/ITKmsTest.java"
+- "/.*google-cloud-kms/src/test/java/com/google/.*/kms/it/ITKmsTest.java"
 - "/.*proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java"
 
 deep-copy-regex:

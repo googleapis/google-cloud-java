@@ -23,7 +23,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-compute/src/test/java/com/google/[^/]+/compute/v1/integration"
+- "/.*google-cloud-compute/src/test/java/com/google/.*/compute/v1/integration"
 
 deep-copy-regex:
 - source: "/google/cloud/compute/(v\\d)/.*-java/proto-google-.*/src"

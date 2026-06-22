@@ -24,7 +24,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-tasks/src/test/java/com/google/[^/]+/tasks/v2beta3/CloudTasksSmokeTest.java"
+- "/.*google-cloud-tasks/src/test/java/com/google/.*/tasks/v2beta3/CloudTasksSmokeTest.java"
 - "/.*proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
 - "/.*proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
 - "/.*proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"

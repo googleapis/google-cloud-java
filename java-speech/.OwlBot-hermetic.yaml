@@ -24,8 +24,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-speech/src/test/java/com/google/[^/]+/speech/v1/SpeechSmokeTest.java"
-- "/.*google-cloud-speech/src/test/java/com/google/[^/]+/speech/v1p1beta1/SpeechSmokeTest.java"
+- "/.*google-cloud-speech/src/test/java/com/google/.*/speech/v1/SpeechSmokeTest.java"
+- "/.*google-cloud-speech/src/test/java/com/google/.*/speech/v1p1beta1/SpeechSmokeTest.java"
 - "/.*google-cloud-speech/src/test/resources/hello.flac"
 - "/.*google-cloud-speech/src/test/resources/META-INF/native-image/"
 

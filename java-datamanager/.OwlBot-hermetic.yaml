@@ -28,8 +28,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datamanager/$1/proto-data-manager-$1/src"
 - source: "/google/ads/datamanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-datamanager/$1/grpc-data-manager-$1/src"
-- source: "/google/ads/datamanager/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-datamanager/$1/data-manager/src"
+- source: "/google/ads/datamanager/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-datamanager/$1/data-manager/src/main"
 - source: "/google/ads/datamanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datamanager/$1/samples/snippets/generated"
 

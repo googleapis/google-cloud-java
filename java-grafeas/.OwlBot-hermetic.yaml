@@ -26,7 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-grafeas/$1/src"
 - source: "/grafeas/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-grafeas/$1/src"
-- source: "/grafeas/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-grafeas/$1/src"
+- source: "/grafeas/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-grafeas/$1/src/main"
 
 api-name: containeranalysis

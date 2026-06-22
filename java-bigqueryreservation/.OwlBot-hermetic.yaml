@@ -17,9 +17,9 @@ deep-remove-regex:
 - "/java-bigqueryreservation/grpc-google-.*/src"
 - "/java-bigqueryreservation/proto-google-.*/src"
 - "/java-bigqueryreservation/google-.*/src/main"
-- "/java-bigqueryreservation/google-.*/src/test/java/com/google/[^/]+/.*/v.*/.*ClientTest.java"
-- "/java-bigqueryreservation/google-.*/src/test/java/com/google/[^/]+/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-bigqueryreservation/google-.*/src/test/java/com/google/[^/]+/.*/v.*/Mock.*.java"
+- "/java-bigqueryreservation/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-bigqueryreservation/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-bigqueryreservation/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-bigqueryreservation/samples/snippets/generated"
 
 deep-preserve-regex:

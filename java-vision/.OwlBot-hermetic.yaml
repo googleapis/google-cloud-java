@@ -25,7 +25,7 @@ deep-remove-regex:
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageName.java"
-- "/.*google-cloud-vision/src/test/java/com/google/[^/]+/vision/it/ITSystemTest.java"
+- "/.*google-cloud-vision/src/test/java/com/google/.*/vision/it/ITSystemTest.java"
 - "/.*google-cloud-vision/src/test/resources/city.jpg"
 - "/.*google-cloud-vision/src/test/resources/face_no_surprise.jpg"
 - "/.*google-cloud-vision/src/test/resources/landmark.jpg"

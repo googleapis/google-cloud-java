@@ -24,7 +24,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-dialogflow-cx/src/test/java/com/google/[^/]+/dialogflow/cx/v.*/it/ITSystemTest.java"
+- "/.*google-cloud-dialogflow-cx/src/test/java/com/google/.*/dialogflow/cx/v.*/it/ITSystemTest.java"
 
 deep-copy-regex:
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/proto-google-.*/src"

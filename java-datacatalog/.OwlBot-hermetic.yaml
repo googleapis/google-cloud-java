@@ -24,7 +24,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-datacatalog/src/test/java/com/google/[^/]+/datacatalog/v1beta1/it/ITSystemTest.java"
+- "/.*google-cloud-datacatalog/src/test/java/com/google/.*/datacatalog/v1beta1/it/ITSystemTest.java"
 - "/.*proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java"
 
 deep-copy-regex:
