@@ -42,6 +42,7 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -55,6 +56,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 import javax.annotation.Nullable;
 
 /** Utilities for test code under com.google.auth. */
@@ -64,6 +66,9 @@ public class TestUtils {
       URI.create("https://auth.cloud.google/authorize");
   public static final URI WORKFORCE_IDENTITY_FEDERATION_TOKEN_SERVER_URI =
       URI.create("https://sts.googleapis.com/v1/oauthtoken");
+  public static final String REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION = "0x800000";
+  public static final List<String> REGIONAL_ACCESS_BOUNDARY_LOCATIONS =
+      ImmutableList.of("us-central1", "us-central2");
 
   private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 
@@ -167,7 +172,9 @@ public class TestUtils {
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(new Date());
     calendar.add(Calendar.SECOND, 300);
-    return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(calendar.getTime());
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+    return dateFormat.format(calendar.getTime());
   }
 
   private TestUtils() {}
