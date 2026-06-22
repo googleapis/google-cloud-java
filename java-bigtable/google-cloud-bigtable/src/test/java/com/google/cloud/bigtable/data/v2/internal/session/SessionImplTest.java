@@ -676,8 +676,7 @@ public class SessionImplTest {
 
   @Test
   void abortFiresWhenListenerOnReadyThrows() throws Exception {
-    SessionImpl session =
-        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     java.util.concurrent.CountDownLatch onCloseLatch = new java.util.concurrent.CountDownLatch(1);
     java.util.concurrent.atomic.AtomicReference<Status> capturedStatus =
@@ -718,8 +717,7 @@ public class SessionImplTest {
 
   @Test
   void abortDoesNotHangWhenListenerOnCloseThrows() throws Exception {
-    SessionImpl session =
-        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     java.util.concurrent.CountDownLatch onReadyLatch = new java.util.concurrent.CountDownLatch(1);
     java.util.concurrent.CountDownLatch onCloseLatch = new java.util.concurrent.CountDownLatch(1);
@@ -772,11 +770,9 @@ public class SessionImplTest {
 
   @Test
   void abortDoesNotInfiniteLoopWhenRecoveryListenerAlsoThrows() throws Exception {
-    SessionImpl session =
-        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
-    java.util.concurrent.CountDownLatch onCloseInvoked =
-        new java.util.concurrent.CountDownLatch(1);
+    java.util.concurrent.CountDownLatch onCloseInvoked = new java.util.concurrent.CountDownLatch(1);
 
     Session.Listener doublyThrowingListener =
         new Session.Listener() {

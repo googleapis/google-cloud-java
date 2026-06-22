@@ -814,7 +814,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
     } catch (Throwable t) {
       logger.log(
           Level.WARNING,
-          String.format("Session error: %s Unhandled exception in tracer.onClose", info.getLogName()),
+          String.format(
+              "Session error: %s Unhandled exception in tracer.onClose", info.getLogName()),
           t);
     }
     if (sessionListener != null) {
