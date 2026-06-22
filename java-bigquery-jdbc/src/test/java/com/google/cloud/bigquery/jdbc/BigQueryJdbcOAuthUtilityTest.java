@@ -540,4 +540,25 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(((ImpersonatedCredentials) credentials).toBuilder().getHttpTransportFactory())
         .isEqualTo(dummyFactory);
   }
+
+  @Test
+  public void testGetPreGeneratedRefreshTokenCredentialsPropagatesHttpTransportFactory() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "ProjectId=MyBigQueryProject;OAuthType=2;"
+                    + "OAuthRefreshToken=dummy_refresh_token;OAuthClientId=dummy_client_id;OAuthClientSecret=dummy_client_secret;"),
+            null);
+
+    HttpTransportFactory dummyFactory = () -> null;
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, dummyFactory, null);
+
+    assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertThat(((UserCredentials) credentials).toBuilder().getHttpTransportFactory())
+        .isEqualTo(dummyFactory);
+  }
 }

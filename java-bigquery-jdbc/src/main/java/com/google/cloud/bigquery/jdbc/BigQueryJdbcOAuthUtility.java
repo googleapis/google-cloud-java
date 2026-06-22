@@ -294,10 +294,11 @@ final class BigQueryJdbcOAuthUtility {
         break;
       case PRE_GENERATED_TOKEN:
         credentials =
-            getPreGeneratedTokensCredentials(authProperties, overrideProperties, callerClassName);
+            getPreGeneratedTokensCredentials(
+                authProperties, overrideProperties, httpTransportFactory, callerClassName);
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:
-        credentials = getApplicationDefaultCredentials(callerClassName);
+        credentials = getApplicationDefaultCredentials(httpTransportFactory, callerClassName);
         break;
       case EXTERNAL_ACCOUNT_AUTH:
         credentials =
@@ -553,12 +554,13 @@ final class BigQueryJdbcOAuthUtility {
   static GoogleCredentials getPreGeneratedTokensCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     if (authProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH_REFRESH_TOKEN_PROPERTY_NAME)) {
       try {
         return getPreGeneratedRefreshTokenCredentials(
-            authProperties, overrideProperties, callerClassName);
+            authProperties, overrideProperties, httpTransportFactory, callerClassName);
       } catch (URISyntaxException ex) {
         throw new BigQueryJdbcRuntimeException(
             "URISyntaxException during getPreGeneratedTokensCredentials", ex);
@@ -574,6 +576,16 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> overrideProperties,
       String callerClassName)
       throws URISyntaxException {
+    return getPreGeneratedRefreshTokenCredentials(
+        authProperties, overrideProperties, null, callerClassName);
+  }
+
+  static UserCredentials getPreGeneratedRefreshTokenCredentials(
+      Map<String, String> authProperties,
+      Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
+      String callerClassName)
+      throws URISyntaxException {
     LOG.finer("++enter++\t" + callerClassName);
 
     UserCredentials.Builder userCredentialsBuilder =
@@ -583,6 +595,10 @@ final class BigQueryJdbcOAuthUtility {
             .setClientId(authProperties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME))
             .setClientSecret(
                 authProperties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME));
+
+    if (httpTransportFactory != null) {
+      userCredentialsBuilder.setHttpTransportFactory(httpTransportFactory);
+    }
 
     if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
       userCredentialsBuilder.setTokenServerUri(
@@ -598,10 +614,14 @@ final class BigQueryJdbcOAuthUtility {
     return userCredentialsBuilder.build();
   }
 
-  private static GoogleCredentials getApplicationDefaultCredentials(String callerClassName) {
+  private static GoogleCredentials getApplicationDefaultCredentials(
+      HttpTransportFactory httpTransportFactory, String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     try {
-      GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+      GoogleCredentials credentials =
+          httpTransportFactory != null
+              ? GoogleCredentials.getApplicationDefault(httpTransportFactory)
+              : GoogleCredentials.getApplicationDefault();
       String principal = "unknown";
       if (credentials instanceof ServiceAccountCredentials) {
         principal = ((ServiceAccountCredentials) credentials).getClientEmail();
