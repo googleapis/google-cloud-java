@@ -59,54 +59,53 @@ class BigQueryJdbcMdc {
    * Creates a new fixed thread pool ExecutorService that automatically propagates MDC connection
    * context from the submitting thread to the executing thread.
    */
-  static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
+  static ExecutorService newFixedThreadPool(
+      String threadName, int nThreads, ThreadFactory threadFactory) {
     MdcThreadPoolExecutor executor =
         new MdcThreadPoolExecutor(
+            threadName,
             nThreads,
             nThreads,
             60L,
             TimeUnit.SECONDS,
             new LinkedBlockingQueue<>(),
-            new MdcThreadFactory(threadFactory));
+            new MdcThreadFactory(threadFactory, threadName));
     executor.allowCoreThreadTimeOut(true);
     return executor;
   }
 
-  /**
-   * Creates a new fixed thread pool ExecutorService that automatically propagates MDC connection
-   * context from the submitting thread to the executing thread.
-   */
-  static ExecutorService newFixedThreadPool(int nThreads) {
-    return newFixedThreadPool(nThreads, Executors.defaultThreadFactory());
+  static ExecutorService newFixedThreadPool(String threadName, int nThreads) {
+    return newFixedThreadPool(threadName, nThreads, Executors.defaultThreadFactory());
   }
 
   /**
    * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
    * context from the submitting thread to the executing thread.
    */
-  static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
+  static ExecutorService newCachedThreadPool(String threadName, ThreadFactory threadFactory) {
     return new MdcThreadPoolExecutor(
+        threadName,
         0,
         Integer.MAX_VALUE,
         60L,
         TimeUnit.SECONDS,
         new java.util.concurrent.SynchronousQueue<>(),
-        new MdcThreadFactory(threadFactory));
+        new MdcThreadFactory(threadFactory, threadName));
   }
 
-  /**
-   * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
-   * context from the submitting thread to the executing thread.
-   */
-  static ExecutorService newCachedThreadPool() {
-    return newCachedThreadPool(Executors.defaultThreadFactory());
+  static ExecutorService newCachedThreadPool(String threadName) {
+    return newCachedThreadPool(threadName, Executors.defaultThreadFactory());
   }
 
   private static class MdcThreadFactory implements ThreadFactory {
     private final ThreadFactory delegate;
+    private final String threadName;
+    private final java.util.concurrent.atomic.AtomicInteger count =
+        new java.util.concurrent.atomic.AtomicInteger(1);
 
-    public MdcThreadFactory(ThreadFactory delegate) {
+    public MdcThreadFactory(ThreadFactory delegate, String threadName) {
       this.delegate = delegate;
+      this.threadName = threadName;
     }
 
     @Override
@@ -119,14 +118,17 @@ class BigQueryJdbcMdc {
               });
       if (t != null) {
         t.setDaemon(true);
+        t.setName(threadName + "-" + count.getAndIncrement());
       }
       return t;
     }
   }
 
   private static class MdcThreadPoolExecutor extends ThreadPoolExecutor {
+    private final String poolName;
 
     public MdcThreadPoolExecutor(
+        String poolName,
         int corePoolSize,
         int maximumPoolSize,
         long keepAliveTime,
@@ -134,6 +136,7 @@ class BigQueryJdbcMdc {
         BlockingQueue<Runnable> workQueue,
         ThreadFactory threadFactory) {
       super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
+      this.poolName = poolName;
     }
 
     private final AtomicBoolean warningLogged = new AtomicBoolean(false);
@@ -149,8 +152,8 @@ class BigQueryJdbcMdc {
       if (queueSize >= warnThreshold) {
         if (warningLogged.compareAndSet(false, true)) {
           LOG.warning(
-              "Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the thread count property.",
-              maxPoolSize, getActiveCount(), queueSize);
+              "[%s] Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the metadataFetchThreadCount property.",
+              poolName, maxPoolSize, getActiveCount(), queueSize);
         }
       } else if (queueSize <= recoveryThreshold) {
         if (warningLogged.get()) {

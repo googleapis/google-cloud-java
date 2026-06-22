@@ -24,7 +24,15 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Dataset;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableResult;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -411,5 +419,60 @@ public class ITStatementTest {
       count++;
     }
     return count;
+  }
+
+  @Test
+  public void testTemporaryDatasetLocation() throws SQLException, InterruptedException {
+    String projectId = DEFAULT_CATALOG;
+    String location = "europe-west3";
+    String randomSuffix = String.valueOf(100 + new Random().nextInt(900));
+    String tempDatasetName = "jdbc_temp_dataset_" + System.currentTimeMillis() + "_" + randomSuffix;
+
+    String customConnectionUrl =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
+            + projectId
+            + ";OAuthType=3;Timeout=3600;Location="
+            + location
+            + ";AllowLargeResults=true;LargeResultDataset="
+            + tempDatasetName
+            + ";";
+
+    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
+    try (Connection connection = DriverManager.getConnection(customConnectionUrl)) {
+      Statement statement = connection.createStatement();
+      String query = "SELECT 1 as val;";
+      try (ResultSet rs = statement.executeQuery(query)) {
+        assertTrue(rs.next());
+        assertEquals(1, rs.getInt("val"));
+      }
+
+      Dataset dataset = bigQuery.getDataset(DatasetId.of(tempDatasetName));
+      assertNotNull(dataset);
+      assertEquals(location, dataset.getLocation());
+
+      // Validate that the query results were written to a table in this dataset
+      Page<Table> tables = dataset.list();
+      boolean tableFound = false;
+      for (Table table : tables.iterateAll()) {
+        if (table.getTableId().getTable().startsWith("temp_table_")) {
+          tableFound = true;
+          TableResult tableData = bigQuery.listTableData(table.getTableId());
+          assertNotNull(tableData);
+          assertEquals(1, tableData.getTotalRows());
+          for (FieldValueList row : tableData.iterateAll()) {
+            assertEquals(1, row.get(0).getLongValue());
+          }
+          break;
+        }
+      }
+      assertTrue(tableFound, "Expected temporary table was not found in the dataset");
+    } finally {
+      try {
+        bigQuery.delete(
+            DatasetId.of(tempDatasetName), BigQuery.DatasetDeleteOption.deleteContents());
+      } catch (Exception e) {
+        // Ignore cleanup exceptions to avoid masking the primary test failure
+      }
+    }
   }
 }

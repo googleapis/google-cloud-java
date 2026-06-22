@@ -82,13 +82,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Format:
+   * Identifier. Format:
    * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    *
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -109,13 +109,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Format:
+   * Identifier. Format:
    * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    *
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -930,13 +930,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Format:
+     * Identifier. Format:
      * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      *
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -956,13 +956,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Format:
+     * Identifier. Format:
      * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      *
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -982,13 +982,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Format:
+     * Identifier. Format:
      * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      *
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1007,13 +1007,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Format:
+     * Identifier. Format:
      * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      *
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1028,13 +1028,13 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Format:
+     * Identifier. Format:
      * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      *
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

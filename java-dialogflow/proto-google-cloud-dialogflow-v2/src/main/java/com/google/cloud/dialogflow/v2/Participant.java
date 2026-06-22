@@ -702,9 +702,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
    * Dialogflow adds the obfuscated user id with the participant.
    *
    * 2. If you set this field in
-   * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-   * or
-   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+   * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   * or [StreamingAnalyzeContent]
+   * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    * Dialogflow will update
    * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    *
@@ -715,6 +715,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
+   *
+   * Additionally, to link an escalated Virtual Agent conversation
+   * with its corresponding Agent Assist conversation for analytics, this field
+   * in Agent Assist conversations should be populated to indicate the user id
+   * of the `END_USER` participant in the escalated conversation.
    *
    * Note:
    *
@@ -758,9 +763,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
    * Dialogflow adds the obfuscated user id with the participant.
    *
    * 2. If you set this field in
-   * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-   * or
-   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+   * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+   * or [StreamingAnalyzeContent]
+   * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    * Dialogflow will update
    * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
    *
@@ -771,6 +776,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
    * Dialogflow uses this user id for billing and measurement purposes. For
    * example, Dialogflow determines whether a user in one conversation returned
    * in a later conversation.
+   *
+   * Additionally, to link an escalated Virtual Agent conversation
+   * with its corresponding Agent Assist conversation for analytics, this field
+   * in Agent Assist conversations should be populated to indicate the user id
+   * of the `END_USER` participant in the escalated conversation.
    *
    * Note:
    *
@@ -1888,9 +1898,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow adds the obfuscated user id with the participant.
      *
      * 2. If you set this field in
-     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-     * or
-     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     * or [StreamingAnalyzeContent]
+     * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      * Dialogflow will update
      * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      *
@@ -1901,6 +1911,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
+     *
+     * Additionally, to link an escalated Virtual Agent conversation
+     * with its corresponding Agent Assist conversation for analytics, this field
+     * in Agent Assist conversations should be populated to indicate the user id
+     * of the `END_USER` participant in the escalated conversation.
      *
      * Note:
      *
@@ -1944,9 +1959,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow adds the obfuscated user id with the participant.
      *
      * 2. If you set this field in
-     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-     * or
-     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     * or [StreamingAnalyzeContent]
+     * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      * Dialogflow will update
      * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      *
@@ -1957,6 +1972,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
+     *
+     * Additionally, to link an escalated Virtual Agent conversation
+     * with its corresponding Agent Assist conversation for analytics, this field
+     * in Agent Assist conversations should be populated to indicate the user id
+     * of the `END_USER` participant in the escalated conversation.
      *
      * Note:
      *
@@ -2000,9 +2020,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow adds the obfuscated user id with the participant.
      *
      * 2. If you set this field in
-     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-     * or
-     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     * or [StreamingAnalyzeContent]
+     * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      * Dialogflow will update
      * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      *
@@ -2013,6 +2033,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
+     *
+     * Additionally, to link an escalated Virtual Agent conversation
+     * with its corresponding Agent Assist conversation for analytics, this field
+     * in Agent Assist conversations should be populated to indicate the user id
+     * of the `END_USER` participant in the escalated conversation.
      *
      * Note:
      *
@@ -2055,9 +2080,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow adds the obfuscated user id with the participant.
      *
      * 2. If you set this field in
-     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-     * or
-     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     * or [StreamingAnalyzeContent]
+     * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      * Dialogflow will update
      * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      *
@@ -2068,6 +2093,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
+     *
+     * Additionally, to link an escalated Virtual Agent conversation
+     * with its corresponding Agent Assist conversation for analytics, this field
+     * in Agent Assist conversations should be populated to indicate the user id
+     * of the `END_USER` participant in the escalated conversation.
      *
      * Note:
      *
@@ -2106,9 +2136,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow adds the obfuscated user id with the participant.
      *
      * 2. If you set this field in
-     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.participant]
-     * or
-     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.participant],
+     * [AnalyzeContent][google.cloud.dialogflow.v2.AnalyzeContentRequest.obfuscated_external_user_id]
+     * or [StreamingAnalyzeContent]
+     * [google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
      * Dialogflow will update
      * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2.Participant.obfuscated_external_user_id].
      *
@@ -2119,6 +2149,11 @@ public final class Participant extends com.google.protobuf.GeneratedMessage
      * Dialogflow uses this user id for billing and measurement purposes. For
      * example, Dialogflow determines whether a user in one conversation returned
      * in a later conversation.
+     *
+     * Additionally, to link an escalated Virtual Agent conversation
+     * with its corresponding Agent Assist conversation for analytics, this field
+     * in Agent Assist conversations should be populated to indicate the user id
+     * of the `END_USER` participant in the escalated conversation.
      *
      * Note:
      *

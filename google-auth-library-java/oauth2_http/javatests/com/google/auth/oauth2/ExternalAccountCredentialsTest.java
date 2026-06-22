@@ -32,6 +32,10 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SERVICE_ACCOUNT_IMPERSONATION_URL;
+import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT;
+import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
+import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -53,12 +57,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URI;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -1109,6 +1109,8 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
                 .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
                 .setQuotaProjectId("quotaProjectId")
                 .build();
+    testCredentials.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(testCredentials.clock));
 
     Map<String, List<String>> requestMetadata =
         testCredentials.getRequestMetadata(URI.create("http://googleapis.com/foo/bar"));
@@ -1144,7 +1146,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     assertEquals(
         testCredentials.getServiceAccountImpersonationOptions().getLifetime(),
         deserializedCredentials.getServiceAccountImpersonationOptions().getLifetime());
-    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+    assertSame(deserializedCredentials.clock, Clock.SYSTEM);
     assertEquals(
         MockExternalAccountCredentialsTransportFactory.class,
         deserializedCredentials.toBuilder().getHttpTransportFactory().getClass());
@@ -1237,6 +1239,292 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
               (org.junit.jupiter.api.function.Executable)
                   () -> ExternalAccountCredentials.validateServiceAccountImpersonationInfoUrl(url));
       assertEquals("The provided service account impersonation URL is invalid.", e.getMessage());
+    }
+  }
+
+  @Test
+  public void getRegionalAccessBoundaryUrl_workload() throws IOException {
+    String audience =
+        "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/my-pool/providers/my-provider";
+    ExternalAccountCredentials credentials =
+        TestExternalAccountCredentials.newBuilder()
+            .setAudience(audience)
+            .setSubjectTokenType("subject_token_type")
+            .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
+            .build();
+
+    String expectedUrl =
+        "https://iamcredentials.googleapis.com/v1/projects/12345/locations/global/workloadIdentityPools/my-pool/allowedLocations";
+    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
+  }
+
+  @Test
+  public void getRegionalAccessBoundaryUrl_workforce() throws IOException {
+    String audience =
+        "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider";
+    ExternalAccountCredentials credentials =
+        TestExternalAccountCredentials.newBuilder()
+            .setAudience(audience)
+            .setWorkforcePoolUserProject("12345")
+            .setSubjectTokenType("subject_token_type")
+            .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
+            .build();
+
+    String expectedUrl =
+        "https://iamcredentials.googleapis.com/v1/locations/global/workforcePools/my-pool/allowedLocations";
+    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
+  }
+
+  @Test
+  public void getRegionalAccessBoundaryUrl_invalidAudience_throws() {
+    ExternalAccountCredentials credentials =
+        TestExternalAccountCredentials.newBuilder()
+            .setAudience("invalid-audience")
+            .setSubjectTokenType("subject_token_type")
+            .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
+            .build();
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              credentials.getRegionalAccessBoundaryUrl();
+            });
+
+    assertEquals(
+        "The provided audience is not in a valid format for either a workload identity pool or a workforce pool. "
+            + "Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        exception.getMessage());
+  }
+
+  @Test
+  public void getRegionalAccessBoundaryUrl_nullAudience_throws() {
+    ExternalAccountCredentials credentials =
+        new TestExternalAccountCredentials(
+            TestExternalAccountCredentials.newBuilder()
+                .setAudience("any-audience-to-pass-constructor-check")
+                .setSubjectTokenType("subject_token_type")
+                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))) {
+          @Override
+          public String getAudience() {
+            return null;
+          }
+        };
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              credentials.getRegionalAccessBoundaryUrl();
+            });
+
+    assertEquals(
+        "The audience is null, which is not in a valid format for either a workload identity pool or a workforce pool.",
+        exception.getMessage());
+  }
+
+  @Test
+  public void refresh_workload_regionalAccessBoundarySuccess()
+      throws IOException, InterruptedException {
+
+    String audience =
+        "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/my-pool/providers/my-provider";
+
+    ExternalAccountCredentials credentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setHttpTransportFactory(transportFactory)
+                .setAudience(audience)
+                .setSubjectTokenType("subject_token_type")
+                .setTokenUrl(STS_URL)
+                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))) {
+          @Override
+          public String retrieveSubjectToken() throws IOException {
+            // This override isolates the test from the filesystem.
+            return "dummy-subject-token";
+          }
+        };
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  @Test
+  public void refresh_workforce_regionalAccessBoundarySuccess()
+      throws IOException, InterruptedException {
+
+    String audience =
+        "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider";
+
+    ExternalAccountCredentials credentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setHttpTransportFactory(transportFactory)
+                .setAudience(audience)
+                .setWorkforcePoolUserProject("12345")
+                .setSubjectTokenType("subject_token_type")
+                .setTokenUrl(STS_URL)
+                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))) {
+          @Override
+          public String retrieveSubjectToken() throws IOException {
+            return "dummy-subject-token";
+          }
+        };
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  @Test
+  public void refresh_impersonated_workload_regionalAccessBoundarySuccess()
+      throws IOException, InterruptedException {
+
+    String projectNumber = "12345";
+    String poolId = "my-pool";
+    String providerId = "my-provider";
+    String audience =
+        String.format(
+            "//iam.googleapis.com/projects/%s/locations/global/workloadIdentityPools/%s/providers/%s",
+            projectNumber, poolId, providerId);
+
+    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
+
+    // 1. Setup distinct RABs for workload and impersonated identities.
+    String workloadRabUrl =
+        String.format(
+            IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL, projectNumber, poolId);
+    RegionalAccessBoundary workloadRab =
+        new RegionalAccessBoundary(
+            "workload-encoded", Collections.singletonList("workload-loc"), null);
+    transportFactory.transport.addRegionalAccessBoundary(workloadRabUrl, workloadRab);
+
+    String saEmail =
+        ImpersonatedCredentials.extractTargetPrincipal(SERVICE_ACCOUNT_IMPERSONATION_URL);
+    String impersonatedRabUrl =
+        String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, saEmail);
+    RegionalAccessBoundary impersonatedRab =
+        new RegionalAccessBoundary(
+            "impersonated-encoded", Collections.singletonList("impersonated-loc"), null);
+    transportFactory.transport.addRegionalAccessBoundary(impersonatedRabUrl, impersonatedRab);
+
+    // Use a URL-based source that the mock transport can handle, to avoid file IO.
+    Map<String, Object> urlCredentialSourceMap = new HashMap<>();
+    urlCredentialSourceMap.put("url", "https://www.metadata.google.com");
+    Map<String, String> headers = new HashMap<>();
+    headers.put("Metadata-Flavor", "Google");
+    urlCredentialSourceMap.put("headers", headers);
+
+    ExternalAccountCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(audience)
+            .setSubjectTokenType("subject_token_type")
+            .setTokenUrl(STS_URL)
+            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
+            .setCredentialSource(new IdentityPoolCredentialSource(urlCredentialSourceMap))
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> requestHeaders = credentials.getRequestMetadata();
+    assertNull(requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have the IMPERSONATED header, not the workload one.
+    requestHeaders = credentials.getRequestMetadata();
+    assertEquals(
+        Arrays.asList("impersonated-encoded"),
+        requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+  }
+
+  @Test
+  public void refresh_impersonated_workforce_regionalAccessBoundarySuccess()
+      throws IOException, InterruptedException {
+
+    String poolId = "my-pool";
+    String providerId = "my-provider";
+    String audience =
+        String.format(
+            "//iam.googleapis.com/locations/global/workforcePools/%s/providers/%s",
+            poolId, providerId);
+
+    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
+
+    // 1. Setup distinct RABs for workforce and impersonated identities.
+    String workforceRabUrl =
+        String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
+    RegionalAccessBoundary workforceRab =
+        new RegionalAccessBoundary(
+            "workforce-encoded", Collections.singletonList("workforce-loc"), null);
+    transportFactory.transport.addRegionalAccessBoundary(workforceRabUrl, workforceRab);
+
+    String saEmail =
+        ImpersonatedCredentials.extractTargetPrincipal(SERVICE_ACCOUNT_IMPERSONATION_URL);
+    String impersonatedRabUrl =
+        String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, saEmail);
+    RegionalAccessBoundary impersonatedRab =
+        new RegionalAccessBoundary(
+            "impersonated-encoded", Collections.singletonList("impersonated-loc"), null);
+    transportFactory.transport.addRegionalAccessBoundary(impersonatedRabUrl, impersonatedRab);
+
+    // Use a URL-based source that the mock transport can handle, to avoid file IO.
+    Map<String, Object> urlCredentialSourceMap = new HashMap<>();
+    urlCredentialSourceMap.put("url", "https://www.metadata.google.com");
+    Map<String, String> headers = new HashMap<>();
+    headers.put("Metadata-Flavor", "Google");
+    urlCredentialSourceMap.put("headers", headers);
+
+    ExternalAccountCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(audience)
+            .setWorkforcePoolUserProject("12345")
+            .setSubjectTokenType("subject_token_type")
+            .setTokenUrl(STS_URL)
+            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
+            .setCredentialSource(new IdentityPoolCredentialSource(urlCredentialSourceMap))
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> requestHeaders = credentials.getRequestMetadata();
+    assertNull(requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have the IMPERSONATED header, not the workforce one.
+    requestHeaders = credentials.getRequestMetadata();
+    assertEquals(
+        Arrays.asList("impersonated-encoded"),
+        requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      Assertions.fail("Timed out waiting for regional access boundary refresh");
     }
   }
 
