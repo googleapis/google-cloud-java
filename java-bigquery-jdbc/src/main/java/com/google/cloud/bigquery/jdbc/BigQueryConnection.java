@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.ProjectListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.ConnectionProperty;
@@ -1332,8 +1331,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     try {
       BigQuery bigQuery = getBigQuery();
       List<String> projects = new ArrayList<>();
-      Page<Project> projectPage =
-          bigQuery.listProjects(ProjectListOption.pageSize(getMaxResults()));
+      Page<Project> projectPage = bigQuery.listProjects();
       for (Project project : projectPage.iterateAll()) {
         projects.add(project.getProjectId());
       }

@@ -23,7 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -543,7 +542,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       when(project2.getProjectId()).thenReturn("discovered-p2");
 
       when(mockPage.iterateAll()).thenReturn(Arrays.asList(project1, project2));
-      when(mockBigQuery.listProjects(any(BigQuery.ProjectListOption.class))).thenReturn(mockPage);
+      when(mockBigQuery.listProjects()).thenReturn(mockPage);
 
       List<String> discovered = connection.getDiscoveredProjects();
       assertEquals(Arrays.asList("discovered-p1", "discovered-p2"), discovered);
@@ -551,7 +550,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       // Verify caching: second call should not invoke listProjects again
       List<String> discoveredCached = connection.getDiscoveredProjects();
       assertSame(discovered, discoveredCached);
-      verify(mockBigQuery, times(1)).listProjects(any(BigQuery.ProjectListOption.class));
+      verify(mockBigQuery, times(1)).listProjects();
     }
   }
 
@@ -562,7 +561,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       connection.bigQuery = mockBigQuery;
 
       BigQueryException exception = new BigQueryException(403, "Access Denied");
-      when(mockBigQuery.listProjects(any(BigQuery.ProjectListOption.class))).thenThrow(exception);
+      when(mockBigQuery.listProjects()).thenThrow(exception);
 
       // Verify that it throws BigQueryJdbcException
       BigQueryJdbcException ex =
@@ -582,7 +581,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           () -> {
             connection.getDiscoveredProjects();
           });
-      verify(mockBigQuery, times(2)).listProjects(any(BigQuery.ProjectListOption.class));
+      verify(mockBigQuery, times(2)).listProjects();
     }
   }
 
@@ -593,7 +592,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       connection.bigQuery = mockBigQuery;
 
       RuntimeException exception = new RuntimeException("Generic Network Failure");
-      when(mockBigQuery.listProjects(any(BigQuery.ProjectListOption.class))).thenThrow(exception);
+      when(mockBigQuery.listProjects()).thenThrow(exception);
 
       // Verify that it throws BigQueryJdbcException
       BigQueryJdbcException ex =
