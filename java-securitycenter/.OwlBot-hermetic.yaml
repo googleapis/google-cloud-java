@@ -17,11 +17,13 @@ deep-remove-regex:
 - "/java-securitycenter/samples/snippets/generated"
 - "/java-securitycenter/grpc-google-.*/src"
 - "/java-securitycenter/proto-google-.*/src"
-- "/java-securitycenter/google-.*/src"
+- "/java-securitycenter/google-.*/src/main"
+- "/java-securitycenter/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-securitycenter/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-securitycenter/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/UntypedSecuritymarksName.java"
 - "/.*proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksNames.java"
 - "/.*proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksName.java"
@@ -33,8 +35,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-securitycenter/$1/proto-google-cloud-securitycenter-$1/src"
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-securitycenter/$1/grpc-google-cloud-securitycenter-$1/src"
-- source: "/google/cloud/securitycenter/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-securitycenter/$1/google-cloud-securitycenter/src"
+- source: "/google/cloud/securitycenter/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-securitycenter/$1/google-cloud-securitycenter/src/main"
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-securitycenter/$1/samples/snippets/generated"
 

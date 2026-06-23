@@ -16,11 +16,13 @@
 deep-remove-regex:
 - "/java-maps-geocode/grpc-google-.*/src"
 - "/java-maps-geocode/proto-google-.*/src"
-- "/java-maps-geocode/google-.*/src"
+- "/java-maps-geocode/google-.*/src/main"
+- "/java-maps-geocode/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-maps-geocode/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-maps-geocode/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-maps-geocode/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
 
 deep-copy-regex:
@@ -28,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-maps-geocode/$1/proto-google-maps-geocode-$1/src"
 - source: "/google/maps/geocode/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-geocode/$1/grpc-google-maps-geocode-$1/src"
-- source: "/google/maps/geocode/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-maps-geocode/$1/google-maps-geocode/src"
+- source: "/google/maps/geocode/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-maps-geocode/$1/google-maps-geocode/src/main"
 - source: "/google/maps/geocode/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-geocode/$1/samples/snippets/generated"
 

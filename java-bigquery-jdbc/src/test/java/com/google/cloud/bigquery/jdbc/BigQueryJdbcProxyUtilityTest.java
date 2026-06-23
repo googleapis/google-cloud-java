@@ -161,7 +161,7 @@ public class BigQueryJdbcProxyUtilityTest {
   }
 
   @Test
-  public void testGetHttpTransportOptionsWithNoProxySettingsReturnsNull() {
+  public void testGetHttpTransportOptionsWithNoProxySettingsReturnsDefaultOptions() {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "ProjectId=TestProject"
@@ -172,7 +172,8 @@ public class BigQueryJdbcProxyUtilityTest {
     HttpTransportOptions result =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
             proxyProperties, null, null, null, null, "TestClass");
-    assertNull(result);
+    assertNotNull(result);
+    assertNotNull(result.getHttpTransportFactory());
   }
 
   private String getTestResourcePath(String resourceName) throws URISyntaxException {
@@ -299,11 +300,12 @@ public class BigQueryJdbcProxyUtilityTest {
   }
 
   @Test
-  public void testGetHttpTransportOptions_noProxyNoSsl_returnsNull() {
+  public void testGetHttpTransportOptions_noProxyNoSsl_returnsDefaultOptions() {
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
             Collections.<String, String>emptyMap(), null, null, null, null, "TestClass");
-    assertNull(options);
+    assertNotNull(options);
+    assertNotNull(options.getHttpTransportFactory());
   }
 
   @Test

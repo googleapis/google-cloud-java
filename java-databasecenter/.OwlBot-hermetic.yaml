@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-databasecenter/grpc-google-.*/src"
 - "/java-databasecenter/proto-google-.*/src"
-- "/java-databasecenter/google-.*/src"
+- "/java-databasecenter/google-.*/src/main"
+- "/java-databasecenter/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-databasecenter/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-databasecenter/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-databasecenter/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/databasecenter/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-databasecenter/$1/proto-google-cloud-databasecenter-$1/src"
 - source: "/google/cloud/databasecenter/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-databasecenter/$1/grpc-google-cloud-databasecenter-$1/src"
-- source: "/google/cloud/databasecenter/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-databasecenter/$1/google-cloud-databasecenter/src"
+- source: "/google/cloud/databasecenter/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-databasecenter/$1/google-cloud-databasecenter/src/main"
 - source: "/google/cloud/databasecenter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-databasecenter/$1/samples/snippets/generated"
 

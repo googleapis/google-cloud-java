@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-configdelivery/grpc-google-.*/src"
 - "/java-configdelivery/proto-google-.*/src"
-- "/java-configdelivery/google-.*/src"
+- "/java-configdelivery/google-.*/src/main"
+- "/java-configdelivery/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-configdelivery/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-configdelivery/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-configdelivery/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/configdelivery/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-configdelivery/$1/proto-google-cloud-configdelivery-$1/src"
 - source: "/google/cloud/configdelivery/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-configdelivery/$1/grpc-google-cloud-configdelivery-$1/src"
-- source: "/google/cloud/configdelivery/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-configdelivery/$1/google-cloud-configdelivery/src"
+- source: "/google/cloud/configdelivery/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-configdelivery/$1/google-cloud-configdelivery/src/main"
 - source: "/google/cloud/configdelivery/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-configdelivery/$1/samples/snippets/generated"
 

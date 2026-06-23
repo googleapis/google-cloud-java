@@ -51,8 +51,6 @@ import org.junit.jupiter.api.Test;
 public class ITStatementTest {
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static String DATASET;
-  private static String connectionUrl =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
   private static Random random = new Random();
   private static int randomNumber = random.nextInt(999);
   private static final String TABLE_NAME = "JDBC_STATEMENT_TEST_TABLE" + randomNumber;
@@ -71,8 +69,7 @@ public class ITStatementTest {
   @Disabled
   @Test
   public void testExecute() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
 
@@ -111,8 +108,7 @@ public class ITStatementTest {
 
   @Test
   public void testExecuteQuery() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
     String selectQuery =
         "SELECT * FROM bigquery-public-data.chicago_taxi_trips.taxi_trips LIMIT 1000;";
@@ -169,8 +165,7 @@ public class ITStatementTest {
 
   @Test
   public void testExecuteUpdate() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     String TEMP_TABLE_NAME = "TEMP_DDL_STATEMENT_TABLE";
     String createQuery =
         "CREATE OR REPLACE TABLE "
@@ -230,10 +225,7 @@ public class ITStatementTest {
 
   @Test
   public void testScript() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + DEFAULT_CATALOG
-            + ";OAUTHTYPE=3";
+    String connection_uri = ITBase.connectionUrl;
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
     Connection connection = DriverManager.getConnection(connection_uri, withReadApi);
@@ -262,19 +254,9 @@ public class ITStatementTest {
 
   @Test
   public void testStringColumnLength() throws SQLException {
-    String projectId = DEFAULT_CATALOG;
     String TABLE_NAME = "StringColumnLengthTable";
-    String oauthType = "3"; // Google Application Credentials
     int length = 10;
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + projectId
-            + ";OAuthType="
-            + oauthType
-            + ";Timeout=3600;"
-            + "StringColumnLength="
-            + length
-            + ";";
+    String connectionUrl = ITBase.connectionUrl + "StringColumnLength=" + length + ";";
     // + "EnableSession=1";
     Connection connection1 = DriverManager.getConnection(connectionUrl);
     Statement statement = connection1.createStatement();
@@ -319,8 +301,7 @@ public class ITStatementTest {
   @Test
   public void testCloseStatement() throws SQLException {
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
 
     assertFalse(statement.isClosed());
@@ -339,8 +320,7 @@ public class ITStatementTest {
 
   @Test
   public void testSetTimeout() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
 
     String selectQuery =
@@ -364,16 +344,14 @@ public class ITStatementTest {
   @Disabled
   @Test
   public void testSetTimeoutThrows() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
     assertThrows(SQLException.class, () -> statement.setQueryTimeout(-1));
   }
 
   @Test
   public void testDefaultValues() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
     assertEquals(0, statement.getMaxFieldSize());
     // assertEquals(0, statement.getLargeMaxRows());
@@ -385,8 +363,7 @@ public class ITStatementTest {
 
   @Test
   public void testRangeSelectDataset() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
 
     // execute

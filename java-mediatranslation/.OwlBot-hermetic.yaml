@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-mediatranslation/samples/snippets/generated"
 - "/java-mediatranslation/grpc-google-.*/src"
 - "/java-mediatranslation/proto-google-.*/src"
-- "/java-mediatranslation/google-.*/src"
+- "/java-mediatranslation/google-.*/src/main"
+- "/java-mediatranslation/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-mediatranslation/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-mediatranslation/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-mediatranslation/$1/proto-google-cloud-mediatranslation-$1/src"
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-mediatranslation/$1/grpc-google-cloud-mediatranslation-$1/src"
-- source: "/google/cloud/mediatranslation/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-mediatranslation/$1/google-cloud-mediatranslation/src"
+- source: "/google/cloud/mediatranslation/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-mediatranslation/$1/google-cloud-mediatranslation/src/main"
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-mediatranslation/$1/samples/snippets/generated"
 
