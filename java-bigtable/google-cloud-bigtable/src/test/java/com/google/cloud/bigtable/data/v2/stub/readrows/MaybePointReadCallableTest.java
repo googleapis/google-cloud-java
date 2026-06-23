@@ -33,12 +33,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class MaybePointReadCallableTest {
 
   private static final TableId TABLE_ID = TableId.of("fake-table");
@@ -52,7 +49,7 @@ public class MaybePointReadCallableTest {
   private MaybePointReadCallable<Row> callable;
   private RecordingObserver observer;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     classic = new ServerStreamingStashCallable<>(ImmutableList.of(ROW_A, ROW_B));
     pointReader = new FakePointReader();
@@ -77,7 +74,8 @@ public class MaybePointReadCallableTest {
   @Test
   public void singleClosedRange_routesToPointReader() {
     Query query =
-        Query.create(TABLE_ID).range(ByteStringRange.unbounded().startClosed("a").endClosed("a"));
+        Query.create(TABLE_ID)
+            .range(ByteStringRange.unbounded().startClosed("a").endClosed("a"));
 
     callable.call(query, observer, null);
     pointReader.response.set(ROW_A);
