@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-maps-fleetengine-delivery/grpc-google-.*/src"
 - "/java-maps-fleetengine-delivery/proto-google-.*/src"
-- "/java-maps-fleetengine-delivery/google-.*/src"
+- "/java-maps-fleetengine-delivery/google-.*/src/main"
+- "/java-maps-fleetengine-delivery/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-maps-fleetengine-delivery/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-maps-fleetengine-delivery/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-maps-fleetengine-delivery/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/maps/fleetengine/delivery/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maps-fleetengine-delivery/$1/proto-google-maps-fleetengine-delivery-$1/src"
 - source: "/google/maps/fleetengine/delivery/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-fleetengine-delivery/$1/grpc-google-maps-fleetengine-delivery-$1/src"
-- source: "/google/maps/fleetengine/delivery/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-maps-fleetengine-delivery/$1/google-maps-fleetengine-delivery/src"
+- source: "/google/maps/fleetengine/delivery/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-maps-fleetengine-delivery/$1/google-maps-fleetengine-delivery/src/main"
 - source: "/google/maps/fleetengine/delivery/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-fleetengine-delivery/$1/samples/snippets/generated"
 

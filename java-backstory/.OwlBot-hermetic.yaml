@@ -16,19 +16,20 @@
 deep-remove-regex:
 - "/java-backstory/grpc-google-.*/src"
 - "/java-backstory/proto-google-.*/src"
-- "/java-backstory/google-.*/src"
+- "/java-backstory/google-.*/src/main"
+- "/java-backstory/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-backstory/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-backstory/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-backstory/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-backstory/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/backstory/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-backstory/proto-google-cloud-backstory/src"
 - source: "/backstory/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-backstory/grpc-google-cloud-backstory/src"
-- source: "/backstory/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-backstory/google-cloud-backstory/src"
+- source: "/backstory/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-backstory/google-cloud-backstory/src/main"
 - source: "/backstory/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-backstory/samples/snippets/generated"
 

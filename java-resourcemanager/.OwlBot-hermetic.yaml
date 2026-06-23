@@ -27,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-resourcemanager/$1/proto-google-cloud-resourcemanager-$1/src"
 - source: "/google/cloud/resourcemanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-resourcemanager/$1/grpc-google-cloud-resourcemanager-$1/src"
-- source: "/google/cloud/resourcemanager/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-resourcemanager/$1/google-cloud-resourcemanager/src"
+- source: "/google/cloud/resourcemanager/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-resourcemanager/$1/google-cloud-resourcemanager/src/main"
 - source: "/google/cloud/resourcemanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-resourcemanager/$1/samples/snippets/generated"
 

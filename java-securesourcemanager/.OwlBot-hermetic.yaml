@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-securesourcemanager/grpc-google-.*/src"
 - "/java-securesourcemanager/proto-google-.*/src"
-- "/java-securesourcemanager/google-.*/src"
+- "/java-securesourcemanager/google-.*/src/main"
+- "/java-securesourcemanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-securesourcemanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-securesourcemanager/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-securesourcemanager/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/securesourcemanager/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-securesourcemanager/$1/proto-google-cloud-securesourcemanager-$1/src"
 - source: "/google/cloud/securesourcemanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-securesourcemanager/$1/grpc-google-cloud-securesourcemanager-$1/src"
-- source: "/google/cloud/securesourcemanager/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-securesourcemanager/$1/google-cloud-securesourcemanager/src"
+- source: "/google/cloud/securesourcemanager/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-securesourcemanager/$1/google-cloud-securesourcemanager/src/main"
 - source: "/google/cloud/securesourcemanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-securesourcemanager/$1/samples/snippets/generated"
 

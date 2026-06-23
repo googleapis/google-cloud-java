@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-geminidataanalytics/grpc-google-.*/src"
 - "/java-geminidataanalytics/proto-google-.*/src"
-- "/java-geminidataanalytics/google-.*/src"
+- "/java-geminidataanalytics/google-.*/src/main"
+- "/java-geminidataanalytics/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-geminidataanalytics/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-geminidataanalytics/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-geminidataanalytics/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/geminidataanalytics/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-geminidataanalytics/$1/proto-google-cloud-geminidataanalytics-$1/src"
 - source: "/google/cloud/geminidataanalytics/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-geminidataanalytics/$1/grpc-google-cloud-geminidataanalytics-$1/src"
-- source: "/google/cloud/geminidataanalytics/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-geminidataanalytics/$1/google-cloud-geminidataanalytics/src"
+- source: "/google/cloud/geminidataanalytics/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-geminidataanalytics/$1/google-cloud-geminidataanalytics/src/main"
 - source: "/google/cloud/geminidataanalytics/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-geminidataanalytics/$1/samples/snippets/generated"
 

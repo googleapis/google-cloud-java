@@ -14,7 +14,7 @@
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-billing/src/test/java/com/google/cloud/billing/v1/CloudBillingClientHttpJsonTest.java"
+- "/.*google-cloud-billing/src/test/java/com/google/.*/billing/v1/CloudBillingClientHttpJsonTest.java"
 
 deep-remove-regex:
 - "/.*samples/snippets/generated"
@@ -27,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-billing/$1/proto-google-cloud-billing-$1/src"
 - source: "/google/cloud/billing/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-billing/$1/grpc-google-cloud-billing-$1/src"
-- source: "/google/cloud/billing/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-billing/$1/google-cloud-billing/src"
+- source: "/google/cloud/billing/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-billing/$1/google-cloud-billing/src/main"
 - source: "/google/cloud/billing/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-billing/$1/samples/snippets/generated"
 

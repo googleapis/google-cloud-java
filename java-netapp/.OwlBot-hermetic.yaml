@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-netapp/grpc-google-.*/src"
 - "/java-netapp/proto-google-.*/src"
-- "/java-netapp/google-.*/src"
+- "/java-netapp/google-.*/src/main"
+- "/java-netapp/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-netapp/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-netapp/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-netapp/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/netapp/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-netapp/$1/proto-google-cloud-netapp-$1/src"
 - source: "/google/cloud/netapp/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-netapp/$1/grpc-google-cloud-netapp-$1/src"
-- source: "/google/cloud/netapp/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-netapp/$1/google-cloud-netapp/src"
+- source: "/google/cloud/netapp/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-netapp/$1/google-cloud-netapp/src/main"
 - source: "/google/cloud/netapp/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-netapp/$1/samples/snippets/generated"
 

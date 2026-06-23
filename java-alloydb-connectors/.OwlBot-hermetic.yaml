@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-alloydb-connectors/grpc-google-.*/src"
 - "/java-alloydb-connectors/proto-google-.*/src"
-- "/java-alloydb-connectors/google-.*/src"
+- "/java-alloydb-connectors/google-.*/src/main"
+- "/java-alloydb-connectors/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-alloydb-connectors/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-alloydb-connectors/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-alloydb-connectors/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/alloydb/connectors/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-alloydb-connectors/$1/proto-google-cloud-alloydb-connectors-$1/src"
 - source: "/google/cloud/alloydb/connectors/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-alloydb-connectors/$1/grpc-google-cloud-alloydb-connectors-$1/src"
-- source: "/google/cloud/alloydb/connectors/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-alloydb-connectors/$1/google-cloud-alloydb-connectors/src"
+- source: "/google/cloud/alloydb/connectors/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-alloydb-connectors/$1/google-cloud-alloydb-connectors/src/main"
 - source: "/google/cloud/alloydb/connectors/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-alloydb-connectors/$1/samples/snippets/generated"
 

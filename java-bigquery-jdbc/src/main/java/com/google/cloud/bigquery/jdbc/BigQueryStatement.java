@@ -105,6 +105,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   protected int currentJobIdIndex = -1;
   protected List<String> batchQueries = new ArrayList<>();
   protected BigQueryConnection connection;
+  protected BigQueryParameterHandler parameterHandler = null;
   protected String connectionId;
   protected int maxFieldSize = 0;
   protected int maxRows = 0;
@@ -242,9 +243,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private ResultSet executeQueryImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
     try {
-      QueryJobConfiguration jobConfiguration =
-          setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
-      runQuery(sql, jobConfiguration);
+      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+      jobConfiguration = applyParametersIfPresent(jobConfiguration);
+      jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+      runQuery(sql, jobConfiguration.build());
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcException("Interrupted during executeQuery", ex);
     }
@@ -266,6 +268,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+      jobConfiguration = applyParametersIfPresent(jobConfiguration);
       runQuery(sql, jobConfiguration.build());
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during executeLargeUpdate", ex);
@@ -301,12 +304,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private boolean executeImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
     try {
-      QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
-      // If Large Results are enabled, ensure query type is SELECT
-      if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
+      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+      jobConfiguration = applyParametersIfPresent(jobConfiguration);
+      if (isLargeResultsEnabled()
+          && getQueryType(jobConfiguration.build(), null) == SqlType.SELECT) {
         jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
       }
-      runQuery(sql, jobConfiguration);
+      runQuery(sql, jobConfiguration.build());
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during execute", ex);
     }
@@ -623,35 +627,43 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private boolean isLargeResultsEnabled() {
+  protected QueryJobConfiguration.Builder applyParametersIfPresent(
+      QueryJobConfiguration.Builder jobConfigurationBuilder) throws SQLException {
+    if (this.parameterHandler != null && this.parameterHandler.getParametersArraySize() > 0) {
+      jobConfigurationBuilder.setParameterMode("POSITIONAL");
+      jobConfigurationBuilder = this.parameterHandler.configureParameters(jobConfigurationBuilder);
+    }
+    return jobConfigurationBuilder;
+  }
+
+  boolean isLargeResultsEnabled() {
     String destinationTable = this.querySettings.getDestinationTable();
     String destinationDataset = this.querySettings.getDestinationDataset();
     return destinationDataset != null || destinationTable != null;
   }
 
-  private QueryJobConfiguration setDestinationDatasetAndTableInJobConfig(
-      QueryJobConfiguration jobConfiguration) {
+  QueryJobConfiguration.Builder setDestinationDatasetAndTableInJobConfig(
+      QueryJobConfiguration.Builder jobConfigurationBuilder) {
     String destinationTable = this.querySettings.getDestinationTable();
     String destinationDataset = this.querySettings.getDestinationDataset();
     if (destinationDataset != null || destinationTable != null) {
       if (destinationDataset != null) {
         checkIfDatasetExistElseCreate(destinationDataset);
       }
-      if (jobConfiguration.useLegacySql() && destinationDataset == null) {
+      if (getUseLegacySql() && destinationDataset == null) {
         checkIfDatasetExistElseCreate(DEFAULT_DATASET_NAME);
         destinationDataset = DEFAULT_DATASET_NAME;
       }
       if (destinationTable == null) {
         destinationTable = getDefaultDestinationTable();
       }
-      return jobConfiguration.toBuilder()
+      return jobConfigurationBuilder
           .setAllowLargeResults(this.querySettings.getAllowLargeResults())
           .setDestinationTable(TableId.of(destinationDataset, destinationTable))
           .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_TRUNCATE)
-          .build();
+          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_TRUNCATE);
     }
-    return jobConfiguration;
+    return jobConfigurationBuilder;
   }
 
   Job getNextJob() {
@@ -1407,12 +1419,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (this.querySettings.getQueryProperties() != null) {
       queryConfigBuilder.setConnectionProperties(this.querySettings.getQueryProperties());
     }
-    boolean useLegacy =
-        QueryDialectType.BIG_QUERY.equals(
-            QueryDialectType.valueOf(this.querySettings.getQueryDialect()));
-    queryConfigBuilder.setUseLegacySql(useLegacy);
+    queryConfigBuilder.setUseLegacySql(getUseLegacySql());
 
     return queryConfigBuilder;
+  }
+
+  private boolean getUseLegacySql() {
+    return QueryDialectType.BIG_QUERY.equals(
+        QueryDialectType.valueOf(this.querySettings.getQueryDialect()));
   }
 
   private void checkIfDatasetExistElseCreate(String datasetName) {

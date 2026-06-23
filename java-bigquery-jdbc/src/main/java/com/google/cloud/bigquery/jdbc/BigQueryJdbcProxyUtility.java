@@ -20,6 +20,7 @@ import static com.google.cloud.bigquery.storage.v1.stub.BigQueryReadStubSettings
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.v5.Apache5HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -58,6 +59,7 @@ final class BigQueryJdbcProxyUtility {
       new BigQueryJdbcCustomLogger(BigQueryJdbcProxyUtility.class.getName());
   static final String validPortRegex =
       "^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$";
+  private static final HttpTransport DEFAULT_TRANSPORT = new NetHttpTransport.Builder().build();
 
   private BigQueryJdbcProxyUtility() {}
 
@@ -136,17 +138,14 @@ final class BigQueryJdbcProxyUtility {
     boolean hasProxyOrSsl =
         proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME)
             || sslTrustStorePath != null;
-    boolean hasTimeoutConfig = connectTimeout != null || readTimeout != null;
-
-    if (!hasProxyOrSsl && !hasTimeoutConfig) {
-      return null;
-    }
 
     HttpTransportOptions.Builder httpTransportOptionsBuilder = HttpTransportOptions.newBuilder();
     if (hasProxyOrSsl) {
       httpTransportOptionsBuilder.setHttpTransportFactory(
           getHttpTransportFactory(
               proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
+    } else {
+      httpTransportOptionsBuilder.setHttpTransportFactory(() -> DEFAULT_TRANSPORT);
     }
 
     if (connectTimeout != null) {
@@ -178,9 +177,8 @@ final class BigQueryJdbcProxyUtility {
       HttpRoutePlanner httpRoutePlanner = new DefaultProxyRoutePlanner(proxyHostDetails);
       httpClientBuilder.setRoutePlanner(httpRoutePlanner);
       addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
-    } else {
-      httpClientBuilder.useSystemProperties();
     }
+    httpClientBuilder.useSystemProperties();
 
     if (sslTrustStorePath != null) {
       try (FileInputStream trustStoreStream = new FileInputStream(sslTrustStorePath)) {
