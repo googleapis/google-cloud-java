@@ -17,11 +17,13 @@ deep-remove-regex:
 - "/java-scheduler/samples/snippets/generated"
 - "/java-scheduler/grpc-google-.*/src"
 - "/java-scheduler/proto-google-.*/src"
-- "/java-scheduler/google-.*/src"
+- "/java-scheduler/google-.*/src/main"
+- "/java-scheduler/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-scheduler/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-scheduler/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java"
 - "/.*proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java"
 
@@ -30,8 +32,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-scheduler/$1/proto-google-cloud-scheduler-$1/src"
 - source: "/google/cloud/scheduler/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-scheduler/$1/grpc-google-cloud-scheduler-$1/src"
-- source: "/google/cloud/scheduler/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-scheduler/$1/google-cloud-scheduler/src"
+- source: "/google/cloud/scheduler/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-scheduler/$1/google-cloud-scheduler/src/main"
 - source: "/google/cloud/scheduler/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-scheduler/$1/samples/snippets/generated"
 

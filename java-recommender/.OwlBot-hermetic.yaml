@@ -17,19 +17,20 @@ deep-remove-regex:
 - "/java-recommender/samples/snippets/generated"
 - "/java-recommender/grpc-google-.*/src"
 - "/java-recommender/proto-google-.*/src"
-- "/java-recommender/google-.*/src"
+- "/java-recommender/google-.*/src/main"
+- "/java-recommender/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-recommender/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-recommender/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/recommender/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-recommender/$1/proto-google-cloud-recommender-$1/src"
 - source: "/google/cloud/recommender/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-recommender/$1/grpc-google-cloud-recommender-$1/src"
-- source: "/google/cloud/recommender/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-recommender/$1/google-cloud-recommender/src"
+- source: "/google/cloud/recommender/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-recommender/$1/google-cloud-recommender/src/main"
 - source: "/google/cloud/recommender/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-recommender/$1/samples/snippets/generated"
 

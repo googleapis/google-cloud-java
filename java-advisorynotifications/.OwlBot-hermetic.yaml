@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-advisorynotifications/grpc-google-.*/src"
 - "/java-advisorynotifications/proto-google-.*/src"
-- "/java-advisorynotifications/google-.*/src"
+- "/java-advisorynotifications/google-.*/src/main"
+- "/java-advisorynotifications/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-advisorynotifications/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-advisorynotifications/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-advisorynotifications/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/advisorynotifications/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-advisorynotifications/$1/proto-google-cloud-advisorynotifications-$1/src"
 - source: "/google/cloud/advisorynotifications/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-advisorynotifications/$1/grpc-google-cloud-advisorynotifications-$1/src"
-- source: "/google/cloud/advisorynotifications/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-advisorynotifications/$1/google-cloud-advisorynotifications/src"
+- source: "/google/cloud/advisorynotifications/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-advisorynotifications/$1/google-cloud-advisorynotifications/src/main"
 - source: "/google/cloud/advisorynotifications/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-advisorynotifications/$1/samples/snippets/generated"
 

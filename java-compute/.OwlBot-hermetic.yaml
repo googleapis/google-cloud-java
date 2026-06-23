@@ -15,19 +15,21 @@
 
 deep-remove-regex:
 - "/java-compute/proto-google-.*/src"
-- "/java-compute/google-.*/src"
+- "/java-compute/google-.*/src/main"
+- "/java-compute/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-compute/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-compute/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-compute/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/.*google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration"
+- "/.*google-cloud-compute/src/test/java/com/google/.*/compute/v1/integration"
 
 deep-copy-regex:
 - source: "/google/cloud/compute/(v\\d)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-compute/$1/proto-google-cloud-compute-$1/src"
-- source: "/google/cloud/compute/(v\\d)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-compute/$1/google-cloud-compute/src"
+- source: "/google/cloud/compute/(v\\d)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-compute/$1/google-cloud-compute/src/main"
 - source: "/google/cloud/compute/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-compute/$1/samples/snippets/generated"
 

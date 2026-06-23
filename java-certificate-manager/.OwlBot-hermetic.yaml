@@ -17,19 +17,20 @@ deep-remove-regex:
 - "/java-certificate-manager/samples/snippets/generated"
 - "/java-certificate-manager/grpc-google-.*/src"
 - "/java-certificate-manager/proto-google-.*/src"
-- "/java-certificate-manager/google-.*/src"
+- "/java-certificate-manager/google-.*/src/main"
+- "/java-certificate-manager/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-certificate-manager/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-certificate-manager/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/certificatemanager/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-certificate-manager/$1/proto-google-cloud-certificate-manager-$1/src"
 - source: "/google/cloud/certificatemanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-certificate-manager/$1/grpc-google-cloud-certificate-manager-$1/src"
-- source: "/google/cloud/certificatemanager/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-certificate-manager/$1/google-cloud-certificate-manager/src"
+- source: "/google/cloud/certificatemanager/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-certificate-manager/$1/google-cloud-certificate-manager/src/main"
 - source: "/google/cloud/certificatemanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-certificate-manager/$1/samples/snippets/generated"
 

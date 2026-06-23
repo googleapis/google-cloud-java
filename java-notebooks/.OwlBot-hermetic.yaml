@@ -17,15 +17,18 @@ deep-remove-regex:
 - "/java-notebooks/samples/snippets/generated"
 - "/java-notebooks/grpc-google-.*/src"
 - "/java-notebooks/proto-google-.*/src"
-- "/java-notebooks/google-.*/src"
+- "/java-notebooks/google-.*/src/main"
+- "/java-notebooks/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-notebooks/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-notebooks/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/.*.java"
+- "/.*google-.*/src/test/java/com/google/.*/v.*/it/.*.java"
 
 deep-copy-regex:
-- source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-notebooks/$1/google-cloud-notebooks/src"
+- source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-notebooks/$1/google-cloud-notebooks/src/main"
 - source: "/google/cloud/notebooks/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-notebooks/$1/proto-google-cloud-notebooks-$1/src"
 - source: "/google/cloud/notebooks/(v.*)/.*-java/grpc-google-.*/src"
