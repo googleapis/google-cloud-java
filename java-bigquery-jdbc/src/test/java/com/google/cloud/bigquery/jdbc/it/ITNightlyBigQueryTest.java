@@ -227,7 +227,6 @@ public class ITNightlyBigQueryTest {
               SQLException e =
                   assertThrows(
                       SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
-              System.out.println(e.getMessage());
               assertTrue(e.getMessage().contains("User requested cancellation"));
               threadException.set(false);
             });
