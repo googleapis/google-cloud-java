@@ -165,6 +165,6 @@ public class BuiltInDatastoreMetricsProviderTest {
             .build();
 
     OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-    assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
+    assertThat(otel).isSameInstanceAs(OpenTelemetry.noop());
   }
 }
