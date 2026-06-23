@@ -62,6 +62,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -253,6 +254,21 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(
                       DeleteCloudExadataInfrastructureRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureMethodDescriptor =
+          MethodDescriptor
+              .<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ConfigureExascaleCloudExadataInfrastructure")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ConfigureExascaleCloudExadataInfrastructureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -1245,6 +1261,13 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
       deleteCloudExadataInfrastructureCallable;
   private final OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable;
+  private final UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable;
+  private final OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable;
   private final UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
       listCloudVmClustersCallable;
   private final UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersPagedResponse>
@@ -1624,6 +1647,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         deleteCloudExadataInfrastructureTransportSettings =
             GrpcCallSettings.<DeleteCloudExadataInfrastructureRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteCloudExadataInfrastructureMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureTransportSettings =
+            GrpcCallSettings
+                .<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>newBuilder()
+                .setMethodDescriptor(configureExascaleCloudExadataInfrastructureMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2589,6 +2625,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteCloudExadataInfrastructureOperationSettings(),
             clientContext,
             operationsStub);
+    this.configureExascaleCloudExadataInfrastructureCallable =
+        callableFactory.createUnaryCallable(
+            configureExascaleCloudExadataInfrastructureTransportSettings,
+            settings.configureExascaleCloudExadataInfrastructureSettings(),
+            clientContext);
+    this.configureExascaleCloudExadataInfrastructureOperationCallable =
+        callableFactory.createOperationCallable(
+            configureExascaleCloudExadataInfrastructureTransportSettings,
+            settings.configureExascaleCloudExadataInfrastructureOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listCloudVmClustersCallable =
         callableFactory.createUnaryCallable(
             listCloudVmClustersTransportSettings,
@@ -3285,6 +3332,21 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable() {
     return deleteCloudExadataInfrastructureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    return configureExascaleCloudExadataInfrastructureCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    return configureExascaleCloudExadataInfrastructureOperationCallable;
   }
 
   @Override
