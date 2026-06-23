@@ -331,6 +331,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     } catch (ExecutionException e) {
       // drainedFuture is only completed via .complete(null), never .completeExceptionally —
       // a CancellationException would still be wrapped here. Treat as a bug.
+      debugTagTracer.record(
+          TelemetryConfiguration.Level.ERROR, "session_pool_drained_future_failed");
       throw new IllegalStateException("drainedFuture failed unexpectedly", e);
     } finally {
       // Close the watchdog on the way out — drained or timed out, its job is done.
