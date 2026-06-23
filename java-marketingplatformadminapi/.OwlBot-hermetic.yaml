@@ -21,15 +21,15 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/.*admin.*/src/main/java/.*/stub/Version.java"
-- "/.*admin.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*admin.*/src/test/java/com/google/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/proto-admin-$1/src"
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/grpc-admin-$1/src"
-- source: "/google/marketingplatform/admin/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/admin/src"
+- source: "/google/marketingplatform/admin/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/admin/src/main"
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-marketingplatformadminapi/$1/samples/snippets/generated"
 

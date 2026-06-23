@@ -16,11 +16,13 @@
 deep-remove-regex:
 - "/java-appoptimize/grpc-google-.*/src"
 - "/java-appoptimize/proto-google-.*/src"
-- "/java-appoptimize/google-.*/src"
+- "/java-appoptimize/google-.*/src/main"
+- "/java-appoptimize/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-appoptimize/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-appoptimize/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-appoptimize/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-appoptimize/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
 
 deep-copy-regex:
@@ -28,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-appoptimize/$1/proto-google-cloud-appoptimize-$1/src"
 - source: "/google/cloud/appoptimize/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-appoptimize/$1/grpc-google-cloud-appoptimize-$1/src"
-- source: "/google/cloud/appoptimize/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-appoptimize/$1/google-cloud-appoptimize/src"
+- source: "/google/cloud/appoptimize/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-appoptimize/$1/google-cloud-appoptimize/src/main"
 - source: "/google/cloud/appoptimize/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-appoptimize/$1/samples/snippets/generated"
 

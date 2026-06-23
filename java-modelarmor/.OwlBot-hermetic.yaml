@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-modelarmor/grpc-google-.*/src"
 - "/java-modelarmor/proto-google-.*/src"
-- "/java-modelarmor/google-.*/src"
+- "/java-modelarmor/google-.*/src/main"
+- "/java-modelarmor/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-modelarmor/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-modelarmor/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-modelarmor/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/modelarmor/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-modelarmor/$1/proto-google-cloud-modelarmor-$1/src"
 - source: "/google/cloud/modelarmor/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-modelarmor/$1/grpc-google-cloud-modelarmor-$1/src"
-- source: "/google/cloud/modelarmor/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-modelarmor/$1/google-cloud-modelarmor/src"
+- source: "/google/cloud/modelarmor/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-modelarmor/$1/google-cloud-modelarmor/src/main"
 - source: "/google/cloud/modelarmor/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-modelarmor/$1/samples/snippets/generated"
 

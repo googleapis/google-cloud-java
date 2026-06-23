@@ -36,6 +36,8 @@ import com.google.cloud.chronicle.v1.ListReferenceListsRequest;
 import com.google.cloud.chronicle.v1.ListReferenceListsResponse;
 import com.google.cloud.chronicle.v1.ReferenceList;
 import com.google.cloud.chronicle.v1.UpdateReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -208,6 +210,44 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListMethodDescriptor =
+          ApiMethodDescriptor.<VerifyReferenceListRequest, VerifyReferenceListResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.chronicle.v1.ReferenceListService/VerifyReferenceList")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<VerifyReferenceListRequest>newBuilder()
+                      .setPath(
+                          "/v1/{instance=projects/*/locations/*/instances/*}:verifyReferenceList",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyReferenceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyReferenceListRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearInstance().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VerifyReferenceListResponse>newBuilder()
+                      .setDefaultInstance(VerifyReferenceListResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetReferenceListRequest, ReferenceList> getReferenceListCallable;
   private final UnaryCallable<ListReferenceListsRequest, ListReferenceListsResponse>
       listReferenceListsCallable;
@@ -217,6 +257,8 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
       createReferenceListCallable;
   private final UnaryCallable<UpdateReferenceListRequest, ReferenceList>
       updateReferenceListCallable;
+  private final UnaryCallable<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -314,6 +356,20 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<VerifyReferenceListRequest, VerifyReferenceListResponse>
+        verifyReferenceListTransportSettings =
+            HttpJsonCallSettings
+                .<VerifyReferenceListRequest, VerifyReferenceListResponse>newBuilder()
+                .setMethodDescriptor(verifyReferenceListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getInstance())
+                .build();
 
     this.getReferenceListCallable =
         callableFactory.createUnaryCallable(
@@ -338,6 +394,11 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
             updateReferenceListTransportSettings,
             settings.updateReferenceListSettings(),
             clientContext);
+    this.verifyReferenceListCallable =
+        callableFactory.createUnaryCallable(
+            verifyReferenceListTransportSettings,
+            settings.verifyReferenceListSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -350,6 +411,7 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
     methodDescriptors.add(listReferenceListsMethodDescriptor);
     methodDescriptors.add(createReferenceListMethodDescriptor);
     methodDescriptors.add(updateReferenceListMethodDescriptor);
+    methodDescriptors.add(verifyReferenceListMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -378,6 +440,12 @@ public class HttpJsonReferenceListServiceStub extends ReferenceListServiceStub {
   @Override
   public UnaryCallable<UpdateReferenceListRequest, ReferenceList> updateReferenceListCallable() {
     return updateReferenceListCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListCallable() {
+    return verifyReferenceListCallable;
   }
 
   @Override

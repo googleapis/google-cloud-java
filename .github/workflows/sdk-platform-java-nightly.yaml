@@ -41,10 +41,11 @@ jobs:
             --title "Nightly build for Java ${{ matrix.java }} on ${{ matrix.os }} failed." \
             --body "The build has failed : https://github.com/googleapis/google-cloud-java/actions/runs/${GITHUB_RUN_ID}"
   nightly-java8: # Compile with JDK 11. Run tests with JDK 8.
+    # We use macos-15-intel (x64) because Temurin JDK 8 is not available for macOS arm64 (macos-15)
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-15, ubuntu-24.04, windows-2025 ]
+        os: [ macos-15-intel, ubuntu-24.04, windows-2025 ]
     runs-on: ${{ matrix.os }}
     steps:
       - run: git config --global core.longpaths true

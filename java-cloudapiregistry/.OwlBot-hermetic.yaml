@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-cloudapiregistry/grpc-google-.*/src"
 - "/java-cloudapiregistry/proto-google-.*/src"
-- "/java-cloudapiregistry/google-.*/src"
+- "/java-cloudapiregistry/google-.*/src/main"
+- "/java-cloudapiregistry/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-cloudapiregistry/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-cloudapiregistry/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-cloudapiregistry/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/apiregistry/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-cloudapiregistry/$1/proto-google-cloud-cloudapiregistry-$1/src"
 - source: "/google/cloud/apiregistry/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-cloudapiregistry/$1/grpc-google-cloud-cloudapiregistry-$1/src"
-- source: "/google/cloud/apiregistry/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-cloudapiregistry/$1/google-cloud-cloudapiregistry/src"
+- source: "/google/cloud/apiregistry/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-cloudapiregistry/$1/google-cloud-cloudapiregistry/src/main"
 - source: "/google/cloud/apiregistry/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-cloudapiregistry/$1/samples/snippets/generated"
 

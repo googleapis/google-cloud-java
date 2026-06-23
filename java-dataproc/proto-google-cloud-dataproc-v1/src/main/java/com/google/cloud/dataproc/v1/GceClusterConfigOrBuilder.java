@@ -670,7 +670,7 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * Optional. Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
    * </pre>
    *
    * <code>
@@ -686,7 +686,7 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * Optional. Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
    * </pre>
    *
    * <code>
@@ -702,7 +702,7 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * Optional. Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs).
    * </pre>
    *
    * <code>
@@ -711,4 +711,92 @@ public interface GceClusterConfigOrBuilder
    */
   com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder
       getConfidentialInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getResourceManagerTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsResourceManagerTags(java.lang.String key);
+
+  /** Use {@link #getResourceManagerTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getResourceManagerTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getResourceManagerTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getResourceManagerTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Resource manager tags]
+   * (https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
+   * to add to all instances (see [Use secure tags]
+   * (https://cloud.google.com/dataproc/docs/guides/use-secure-tags)).
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; resource_manager_tags = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getResourceManagerTagsOrThrow(java.lang.String key);
 }

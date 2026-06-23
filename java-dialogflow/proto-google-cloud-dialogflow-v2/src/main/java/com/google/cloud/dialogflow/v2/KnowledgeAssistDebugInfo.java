@@ -3012,6 +3012,762 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
     }
   }
 
+  public interface QueryGenerationDebugInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total number of tokens in the prompt.
+     * </pre>
+     *
+     * <code>int32 prompt_token_count = 1;</code>
+     *
+     * @return The promptTokenCount.
+     */
+    int getPromptTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total number of tokens in the generated candidates.
+     * </pre>
+     *
+     * <code>int32 candidates_token_count = 2;</code>
+     *
+     * @return The candidatesTokenCount.
+     */
+    int getCandidatesTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total number of tokens for the entire request.
+     * </pre>
+     *
+     * <code>int32 total_token_count = 3;</code>
+     *
+     * @return The totalTokenCount.
+     */
+    int getTotalTokenCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo}
+   */
+  public static final class QueryGenerationDebugInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)
+      QueryGenerationDebugInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "QueryGenerationDebugInfo");
+    }
+
+    // Use QueryGenerationDebugInfo.newBuilder() to construct.
+    private QueryGenerationDebugInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QueryGenerationDebugInfo() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.ParticipantProto
+          .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.ParticipantProto
+          .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                  .class,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                  .Builder.class);
+    }
+
+    public static final int PROMPT_TOKEN_COUNT_FIELD_NUMBER = 1;
+    private int promptTokenCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total number of tokens in the prompt.
+     * </pre>
+     *
+     * <code>int32 prompt_token_count = 1;</code>
+     *
+     * @return The promptTokenCount.
+     */
+    @java.lang.Override
+    public int getPromptTokenCount() {
+      return promptTokenCount_;
+    }
+
+    public static final int CANDIDATES_TOKEN_COUNT_FIELD_NUMBER = 2;
+    private int candidatesTokenCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total number of tokens in the generated candidates.
+     * </pre>
+     *
+     * <code>int32 candidates_token_count = 2;</code>
+     *
+     * @return The candidatesTokenCount.
+     */
+    @java.lang.Override
+    public int getCandidatesTokenCount() {
+      return candidatesTokenCount_;
+    }
+
+    public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 3;
+    private int totalTokenCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total number of tokens for the entire request.
+     * </pre>
+     *
+     * <code>int32 total_token_count = 3;</code>
+     *
+     * @return The totalTokenCount.
+     */
+    @java.lang.Override
+    public int getTotalTokenCount() {
+      return totalTokenCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (promptTokenCount_ != 0) {
+        output.writeInt32(1, promptTokenCount_);
+      }
+      if (candidatesTokenCount_ != 0) {
+        output.writeInt32(2, candidatesTokenCount_);
+      }
+      if (totalTokenCount_ != 0) {
+        output.writeInt32(3, totalTokenCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (promptTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, promptTokenCount_);
+      }
+      if (candidatesTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, candidatesTokenCount_);
+      }
+      if (totalTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalTokenCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo other =
+          (com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo) obj;
+
+      if (getPromptTokenCount() != other.getPromptTokenCount()) return false;
+      if (getCandidatesTokenCount() != other.getCandidatesTokenCount()) return false;
+      if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROMPT_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPromptTokenCount();
+      hash = (37 * hash) + CANDIDATES_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCandidatesTokenCount();
+      hash = (37 * hash) + TOTAL_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalTokenCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                    .class,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        promptTokenCount_ = 0;
+        candidatesTokenCount_ = 0;
+        totalTokenCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+          build() {
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+          buildPartial() {
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo result =
+            new com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.promptTokenCount_ = promptTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.candidatesTokenCount_ = candidatesTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.totalTokenCount_ = totalTokenCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                .getDefaultInstance()) return this;
+        if (other.getPromptTokenCount() != 0) {
+          setPromptTokenCount(other.getPromptTokenCount());
+        }
+        if (other.getCandidatesTokenCount() != 0) {
+          setCandidatesTokenCount(other.getCandidatesTokenCount());
+        }
+        if (other.getTotalTokenCount() != 0) {
+          setTotalTokenCount(other.getTotalTokenCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  promptTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  candidatesTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  totalTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int promptTokenCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens in the prompt.
+       * </pre>
+       *
+       * <code>int32 prompt_token_count = 1;</code>
+       *
+       * @return The promptTokenCount.
+       */
+      @java.lang.Override
+      public int getPromptTokenCount() {
+        return promptTokenCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens in the prompt.
+       * </pre>
+       *
+       * <code>int32 prompt_token_count = 1;</code>
+       *
+       * @param value The promptTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPromptTokenCount(int value) {
+
+        promptTokenCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens in the prompt.
+       * </pre>
+       *
+       * <code>int32 prompt_token_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPromptTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        promptTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int candidatesTokenCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens in the generated candidates.
+       * </pre>
+       *
+       * <code>int32 candidates_token_count = 2;</code>
+       *
+       * @return The candidatesTokenCount.
+       */
+      @java.lang.Override
+      public int getCandidatesTokenCount() {
+        return candidatesTokenCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens in the generated candidates.
+       * </pre>
+       *
+       * <code>int32 candidates_token_count = 2;</code>
+       *
+       * @param value The candidatesTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCandidatesTokenCount(int value) {
+
+        candidatesTokenCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens in the generated candidates.
+       * </pre>
+       *
+       * <code>int32 candidates_token_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCandidatesTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        candidatesTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalTokenCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens for the entire request.
+       * </pre>
+       *
+       * <code>int32 total_token_count = 3;</code>
+       *
+       * @return The totalTokenCount.
+       */
+      @java.lang.Override
+      public int getTotalTokenCount() {
+        return totalTokenCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens for the entire request.
+       * </pre>
+       *
+       * <code>int32 total_token_count = 3;</code>
+       *
+       * @param value The totalTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalTokenCount(int value) {
+
+        totalTokenCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total number of tokens for the entire request.
+       * </pre>
+       *
+       * <code>int32 total_token_count = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        totalTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo)
+    private static final com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo
+            .QueryGenerationDebugInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo();
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryGenerationDebugInfo> PARSER =
+        new com.google.protobuf.AbstractParser<QueryGenerationDebugInfo>() {
+          @java.lang.Override
+          public QueryGenerationDebugInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QueryGenerationDebugInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryGenerationDebugInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int QUERY_GENERATION_FAILURE_REASON_FIELD_NUMBER = 1;
   private int queryGenerationFailureReason_ = 0;
@@ -3326,6 +4082,119 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
         : serviceLatency_;
   }
 
+  public static final int QUERY_GENERATION_DEBUG_INFO_FIELD_NUMBER = 7;
+  private com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+      queryGenerationDebugInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+   * </code>
+   *
+   * @return Whether the queryGenerationDebugInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueryGenerationDebugInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+   * </code>
+   *
+   * @return The queryGenerationDebugInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+      getQueryGenerationDebugInfo() {
+    return queryGenerationDebugInfo_ == null
+        ? com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+            .getDefaultInstance()
+        : queryGenerationDebugInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfoOrBuilder
+      getQueryGenerationDebugInfoOrBuilder() {
+    return queryGenerationDebugInfo_ == null
+        ? com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+            .getDefaultInstance()
+        : queryGenerationDebugInfo_;
+  }
+
+  public static final int CES_DEBUG_INFO_FIELD_NUMBER = 8;
+  private com.google.protobuf.Struct cesDebugInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information from CES runtime API.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+   *
+   * @return Whether the cesDebugInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasCesDebugInfo() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information from CES runtime API.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+   *
+   * @return The cesDebugInfo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getCesDebugInfo() {
+    return cesDebugInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cesDebugInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information from CES runtime API.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getCesDebugInfoOrBuilder() {
+    return cesDebugInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cesDebugInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3366,6 +4235,12 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getServiceLatency());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getQueryGenerationDebugInfo());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(8, getCesDebugInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3409,6 +4284,14 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getServiceLatency());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getQueryGenerationDebugInfo());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCesDebugInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3442,6 +4325,14 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
     if (hasServiceLatency()) {
       if (!getServiceLatency().equals(other.getServiceLatency())) return false;
     }
+    if (hasQueryGenerationDebugInfo() != other.hasQueryGenerationDebugInfo()) return false;
+    if (hasQueryGenerationDebugInfo()) {
+      if (!getQueryGenerationDebugInfo().equals(other.getQueryGenerationDebugInfo())) return false;
+    }
+    if (hasCesDebugInfo() != other.hasCesDebugInfo()) return false;
+    if (hasCesDebugInfo()) {
+      if (!getCesDebugInfo().equals(other.getCesDebugInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3470,6 +4361,14 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
     if (hasServiceLatency()) {
       hash = (37 * hash) + SERVICE_LATENCY_FIELD_NUMBER;
       hash = (53 * hash) + getServiceLatency().hashCode();
+    }
+    if (hasQueryGenerationDebugInfo()) {
+      hash = (37 * hash) + QUERY_GENERATION_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryGenerationDebugInfo().hashCode();
+    }
+    if (hasCesDebugInfo()) {
+      hash = (37 * hash) + CES_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCesDebugInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3616,6 +4515,8 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
         internalGetKnowledgeAssistBehaviorFieldBuilder();
         internalGetIngestedContextReferenceDebugInfoFieldBuilder();
         internalGetServiceLatencyFieldBuilder();
+        internalGetQueryGenerationDebugInfoFieldBuilder();
+        internalGetCesDebugInfoFieldBuilder();
       }
     }
 
@@ -3640,6 +4541,16 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       if (serviceLatencyBuilder_ != null) {
         serviceLatencyBuilder_.dispose();
         serviceLatencyBuilder_ = null;
+      }
+      queryGenerationDebugInfo_ = null;
+      if (queryGenerationDebugInfoBuilder_ != null) {
+        queryGenerationDebugInfoBuilder_.dispose();
+        queryGenerationDebugInfoBuilder_ = null;
+      }
+      cesDebugInfo_ = null;
+      if (cesDebugInfoBuilder_ != null) {
+        cesDebugInfoBuilder_.dispose();
+        cesDebugInfoBuilder_ = null;
       }
       return this;
     }
@@ -3706,6 +4617,18 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
             serviceLatencyBuilder_ == null ? serviceLatency_ : serviceLatencyBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.queryGenerationDebugInfo_ =
+            queryGenerationDebugInfoBuilder_ == null
+                ? queryGenerationDebugInfo_
+                : queryGenerationDebugInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.cesDebugInfo_ =
+            cesDebugInfoBuilder_ == null ? cesDebugInfo_ : cesDebugInfoBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3739,6 +4662,12 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       }
       if (other.hasServiceLatency()) {
         mergeServiceLatency(other.getServiceLatency());
+      }
+      if (other.hasQueryGenerationDebugInfo()) {
+        mergeQueryGenerationDebugInfo(other.getQueryGenerationDebugInfo());
+      }
+      if (other.hasCesDebugInfo()) {
+        mergeCesDebugInfo(other.getCesDebugInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3807,6 +4736,21 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetQueryGenerationDebugInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetCesDebugInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4803,6 +5747,430 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
         serviceLatency_ = null;
       }
       return serviceLatencyBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        queryGenerationDebugInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo,
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                .Builder,
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo
+                .QueryGenerationDebugInfoOrBuilder>
+        queryGenerationDebugInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     *
+     * @return Whether the queryGenerationDebugInfo field is set.
+     */
+    public boolean hasQueryGenerationDebugInfo() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     *
+     * @return The queryGenerationDebugInfo.
+     */
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+        getQueryGenerationDebugInfo() {
+      if (queryGenerationDebugInfoBuilder_ == null) {
+        return queryGenerationDebugInfo_ == null
+            ? com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                .getDefaultInstance()
+            : queryGenerationDebugInfo_;
+      } else {
+        return queryGenerationDebugInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    public Builder setQueryGenerationDebugInfo(
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo value) {
+      if (queryGenerationDebugInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryGenerationDebugInfo_ = value;
+      } else {
+        queryGenerationDebugInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    public Builder setQueryGenerationDebugInfo(
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo.Builder
+            builderForValue) {
+      if (queryGenerationDebugInfoBuilder_ == null) {
+        queryGenerationDebugInfo_ = builderForValue.build();
+      } else {
+        queryGenerationDebugInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    public Builder mergeQueryGenerationDebugInfo(
+        com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo value) {
+      if (queryGenerationDebugInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && queryGenerationDebugInfo_ != null
+            && queryGenerationDebugInfo_
+                != com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                    .getDefaultInstance()) {
+          getQueryGenerationDebugInfoBuilder().mergeFrom(value);
+        } else {
+          queryGenerationDebugInfo_ = value;
+        }
+      } else {
+        queryGenerationDebugInfoBuilder_.mergeFrom(value);
+      }
+      if (queryGenerationDebugInfo_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    public Builder clearQueryGenerationDebugInfo() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      queryGenerationDebugInfo_ = null;
+      if (queryGenerationDebugInfoBuilder_ != null) {
+        queryGenerationDebugInfoBuilder_.dispose();
+        queryGenerationDebugInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo.Builder
+        getQueryGenerationDebugInfoBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetQueryGenerationDebugInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfoOrBuilder
+        getQueryGenerationDebugInfoOrBuilder() {
+      if (queryGenerationDebugInfoBuilder_ != null) {
+        return queryGenerationDebugInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return queryGenerationDebugInfo_ == null
+            ? com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                .getDefaultInstance()
+            : queryGenerationDebugInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Token usage metadata for query generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo,
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                .Builder,
+            com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo
+                .QueryGenerationDebugInfoOrBuilder>
+        internalGetQueryGenerationDebugInfoFieldBuilder() {
+      if (queryGenerationDebugInfoBuilder_ == null) {
+        queryGenerationDebugInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+                    .Builder,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo
+                    .QueryGenerationDebugInfoOrBuilder>(
+                getQueryGenerationDebugInfo(), getParentForChildren(), isClean());
+        queryGenerationDebugInfo_ = null;
+      }
+      return queryGenerationDebugInfoBuilder_;
+    }
+
+    private com.google.protobuf.Struct cesDebugInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        cesDebugInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     *
+     * @return Whether the cesDebugInfo field is set.
+     */
+    public boolean hasCesDebugInfo() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     *
+     * @return The cesDebugInfo.
+     */
+    public com.google.protobuf.Struct getCesDebugInfo() {
+      if (cesDebugInfoBuilder_ == null) {
+        return cesDebugInfo_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : cesDebugInfo_;
+      } else {
+        return cesDebugInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    public Builder setCesDebugInfo(com.google.protobuf.Struct value) {
+      if (cesDebugInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cesDebugInfo_ = value;
+      } else {
+        cesDebugInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    public Builder setCesDebugInfo(com.google.protobuf.Struct.Builder builderForValue) {
+      if (cesDebugInfoBuilder_ == null) {
+        cesDebugInfo_ = builderForValue.build();
+      } else {
+        cesDebugInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    public Builder mergeCesDebugInfo(com.google.protobuf.Struct value) {
+      if (cesDebugInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && cesDebugInfo_ != null
+            && cesDebugInfo_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getCesDebugInfoBuilder().mergeFrom(value);
+        } else {
+          cesDebugInfo_ = value;
+        }
+      } else {
+        cesDebugInfoBuilder_.mergeFrom(value);
+      }
+      if (cesDebugInfo_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    public Builder clearCesDebugInfo() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      cesDebugInfo_ = null;
+      if (cesDebugInfoBuilder_ != null) {
+        cesDebugInfoBuilder_.dispose();
+        cesDebugInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    public com.google.protobuf.Struct.Builder getCesDebugInfoBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetCesDebugInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getCesDebugInfoOrBuilder() {
+      if (cesDebugInfoBuilder_ != null) {
+        return cesDebugInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return cesDebugInfo_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : cesDebugInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information from CES runtime API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetCesDebugInfoFieldBuilder() {
+      if (cesDebugInfoBuilder_ == null) {
+        cesDebugInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getCesDebugInfo(), getParentForChildren(), isClean());
+        cesDebugInfo_ = null;
+      }
+      return cesDebugInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo)

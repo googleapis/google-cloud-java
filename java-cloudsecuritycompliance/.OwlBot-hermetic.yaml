@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-cloudsecuritycompliance/grpc-google-.*/src"
 - "/java-cloudsecuritycompliance/proto-google-.*/src"
-- "/java-cloudsecuritycompliance/google-.*/src"
+- "/java-cloudsecuritycompliance/google-.*/src/main"
+- "/java-cloudsecuritycompliance/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-cloudsecuritycompliance/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-cloudsecuritycompliance/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-cloudsecuritycompliance/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/cloudsecuritycompliance/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-cloudsecuritycompliance/$1/proto-google-cloud-cloudsecuritycompliance-$1/src"
 - source: "/google/cloud/cloudsecuritycompliance/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-cloudsecuritycompliance/$1/grpc-google-cloud-cloudsecuritycompliance-$1/src"
-- source: "/google/cloud/cloudsecuritycompliance/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-cloudsecuritycompliance/$1/google-cloud-cloudsecuritycompliance/src"
+- source: "/google/cloud/cloudsecuritycompliance/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-cloudsecuritycompliance/$1/google-cloud-cloudsecuritycompliance/src/main"
 - source: "/google/cloud/cloudsecuritycompliance/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-cloudsecuritycompliance/$1/samples/snippets/generated"
 

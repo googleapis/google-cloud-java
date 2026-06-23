@@ -44,9 +44,13 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -3307,5 +3311,126 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(
         metadataTypeInfo.jdbcType, (int) resultSetType, "Type mapping mismatch for " + type);
+  }
+
+  @Test
+  public void testWrapThread_NullThread() {
+    assertNull(BigQueryDatabaseMetaData.wrapThread(null));
+  }
+
+  @Test
+  public void testWrapThread_BasicLifecycle() throws Exception {
+    CountDownLatch startLatch = new CountDownLatch(1);
+    CountDownLatch finishLatch = new CountDownLatch(1);
+    Thread t =
+        new Thread(
+            () -> {
+              try {
+                startLatch.countDown();
+                finishLatch.await();
+              } catch (InterruptedException e) {
+                // ignore
+              }
+            });
+
+    Future<?>[] futures = BigQueryDatabaseMetaData.wrapThread(t);
+    assertNotNull(futures);
+    assertEquals(1, futures.length);
+    Future<?> f = futures[0];
+
+    // Thread is NEW (not started yet).
+    assertFalse(f.isDone());
+    assertFalse(f.isCancelled());
+
+    t.start();
+    startLatch.await();
+
+    // Thread is running.
+    assertFalse(f.isDone());
+    assertFalse(f.isCancelled());
+
+    finishLatch.countDown();
+    t.join();
+
+    // Thread is terminated.
+    assertTrue(f.isDone());
+    assertFalse(f.isCancelled());
+    assertNull(f.get());
+  }
+
+  @Test
+  public void testWrapThread_CancelBeforeStart() throws Exception {
+    Thread t =
+        new Thread(
+            () -> {
+              try {
+                Thread.sleep(1000);
+              } catch (InterruptedException e) {
+                // ignore
+              }
+            });
+
+    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
+    assertTrue(f.cancel(true));
+    assertTrue(f.isCancelled());
+    assertTrue(f.isDone());
+
+    // cancel on already cancelled should return false
+    assertFalse(f.cancel(true));
+
+    assertThrows(CancellationException.class, () -> f.get());
+    assertThrows(CancellationException.class, () -> f.get(1, TimeUnit.SECONDS));
+  }
+
+  @Test
+  public void testWrapThread_CancelRunningWithInterrupt() throws Exception {
+    CountDownLatch startLatch = new CountDownLatch(1);
+    CountDownLatch interruptedLatch = new CountDownLatch(1);
+    Thread t =
+        new Thread(
+            () -> {
+              startLatch.countDown();
+              try {
+                Thread.sleep(10000);
+              } catch (InterruptedException e) {
+                interruptedLatch.countDown();
+              }
+            });
+
+    t.start();
+    startLatch.await();
+
+    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
+    assertTrue(f.cancel(true));
+    assertTrue(f.isCancelled());
+    assertTrue(f.isDone());
+
+    assertTrue(interruptedLatch.await(5, TimeUnit.SECONDS));
+    assertThrows(CancellationException.class, () -> f.get());
+  }
+
+  @Test
+  public void testWrapThread_GetTimeout() throws Exception {
+    CountDownLatch startLatch = new CountDownLatch(1);
+    Thread t =
+        new Thread(
+            () -> {
+              startLatch.countDown();
+              try {
+                Thread.sleep(10000);
+              } catch (InterruptedException e) {
+                // ignore
+              }
+            });
+
+    t.start();
+    startLatch.await();
+
+    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
+    assertThrows(TimeoutException.class, () -> f.get(100, TimeUnit.MILLISECONDS));
+
+    // Cleanup: stop the thread
+    t.interrupt();
+    t.join();
   }
 }

@@ -113,6 +113,12 @@ public class ReferenceListServiceSettings extends ClientSettings<ReferenceListSe
     return ((ReferenceListServiceStubSettings) getStubSettings()).updateReferenceListSettings();
   }
 
+  /** Returns the object with the settings used for calls to verifyReferenceList. */
+  public UnaryCallSettings<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListSettings() {
+    return ((ReferenceListServiceStubSettings) getStubSettings()).verifyReferenceListSettings();
+  }
+
   public static final ReferenceListServiceSettings create(ReferenceListServiceStubSettings stub)
       throws IOException {
     return new ReferenceListServiceSettings.Builder(stub.toBuilder()).build();
@@ -249,6 +255,12 @@ public class ReferenceListServiceSettings extends ClientSettings<ReferenceListSe
     public UnaryCallSettings.Builder<UpdateReferenceListRequest, ReferenceList>
         updateReferenceListSettings() {
       return getStubSettingsBuilder().updateReferenceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyReferenceList. */
+    public UnaryCallSettings.Builder<VerifyReferenceListRequest, VerifyReferenceListResponse>
+        verifyReferenceListSettings() {
+      return getStubSettingsBuilder().verifyReferenceListSettings();
     }
 
     @Override

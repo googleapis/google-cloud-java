@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-beyondcorp-clientconnectorservices/grpc-google-.*/src"
 - "/java-beyondcorp-clientconnectorservices/proto-google-.*/src"
-- "/java-beyondcorp-clientconnectorservices/google-.*/src"
+- "/java-beyondcorp-clientconnectorservices/google-.*/src/main"
+- "/java-beyondcorp-clientconnectorservices/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-beyondcorp-clientconnectorservices/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-beyondcorp-clientconnectorservices/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-beyondcorp-clientconnectorservices/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/proto-google-cloud-beyondcorp-clientconnectorservices-$1/src"
 - source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/grpc-google-cloud-beyondcorp-clientconnectorservices-$1/src"
-- source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/google-cloud-beyondcorp-clientconnectorservices/src"
+- source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/google-cloud-beyondcorp-clientconnectorservices/src/main"
 - source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/samples/snippets/generated"
 

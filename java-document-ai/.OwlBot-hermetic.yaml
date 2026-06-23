@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-document-ai/samples/snippets/generated"
 - "/java-document-ai/grpc-google-.*/src"
 - "/java-document-ai/proto-google-.*/src"
-- "/java-document-ai/google-.*/src"
+- "/java-document-ai/google-.*/src/main"
+- "/java-document-ai/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-document-ai/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-document-ai/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-document-ai/$1/proto-google-cloud-document-ai-$1/src"
 - source: "/google/cloud/documentai/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-document-ai/$1/grpc-google-cloud-document-ai-$1/src"
-- source: "/google/cloud/documentai/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-document-ai/$1/google-cloud-document-ai/src"
+- source: "/google/cloud/documentai/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-document-ai/$1/google-cloud-document-ai/src/main"
 - source: "/google/cloud/documentai/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-document-ai/$1/samples/snippets/generated"
 
