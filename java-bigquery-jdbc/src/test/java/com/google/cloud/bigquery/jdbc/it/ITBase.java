@@ -22,9 +22,11 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -153,7 +155,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   private static void createSharedResources(String dataset) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     String project = DEFAULT_CATALOG;
     String script = String.format(CREATE_RESOURCES_SCRIPT, project, dataset);
     bigQuery.query(QueryJobConfiguration.of(script));
@@ -165,7 +166,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
             new Thread(
                 () -> {
                   try {
-                    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
                     bigQuery.query(
                         QueryJobConfiguration.of(
                             String.format(dropSchema, DEFAULT_CATALOG, dataset)));
@@ -185,6 +185,16 @@ public class ITBase extends BigQueryJdbcBaseTest {
 
   public static final String connectionUrl =
       getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
+  public static final BigQuery bigQuery;
+  static {
+    BigQuery bq = null;
+    try{
+      bq = ((DriverManager.getConnection(connectionUrl)).unwrap(BigQueryConnection.class)).getBigQuery();
+    }
+    catch(SQLException ex){
+    }
+    bigQuery = bq;
+  } 
 
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";
@@ -258,7 +268,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
 
   public static void setUpProcedure(String dataset, String table) throws InterruptedException {
     {
-      BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
       bigQuery.query(
           QueryJobConfiguration.of(
               String.format(
@@ -267,13 +276,11 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static void setUpDataset(String dataset) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     bigQuery.query(
         QueryJobConfiguration.of(String.format(createDatasetQuery, DEFAULT_CATALOG, dataset)));
   }
 
   public static void setUpTable(String dataset, String table) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     bigQuery.query(
         QueryJobConfiguration.of(String.format(createTableQuery, DEFAULT_CATALOG, dataset, table)));
     bigQuery.query(
@@ -283,7 +290,6 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static void cleanUp(String dataset) throws InterruptedException {
-    BigQuery bigQuery = BigQueryOptions.getDefaultInstance().getService();
     bigQuery.query(QueryJobConfiguration.of(String.format(dropSchema, DEFAULT_CATALOG, dataset)));
   }
 
