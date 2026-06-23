@@ -60,7 +60,8 @@ public abstract class RecordingScheduler implements ScheduledExecutorService {
 
     // mock class methods:
     // ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit);
-    when(mock.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
+    Mockito.lenient()
+        .when(mock.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
         .then(
             new Answer<ScheduledFuture<?>>() {
               @Override
@@ -78,7 +79,8 @@ public abstract class RecordingScheduler implements ScheduledExecutorService {
             });
 
     // List<Runnable> shutdownNow()
-    when(mock.shutdownNow())
+    Mockito.lenient()
+        .when(mock.shutdownNow())
         .then(
             new Answer<List<Runnable>>() {
               @Override
@@ -88,10 +90,11 @@ public abstract class RecordingScheduler implements ScheduledExecutorService {
             });
 
     // List<java.time.Duration> getSleepDurations()
-    when(mock.getSleepDurations()).thenReturn(sleepDurations);
+    Mockito.lenient().when(mock.getSleepDurations()).thenReturn(sleepDurations);
 
     // int getIterationsCount()
-    when(mock.getIterationsCount())
+    Mockito.lenient()
+        .when(mock.getIterationsCount())
         .then(
             new Answer<Integer>() {
               @Override
