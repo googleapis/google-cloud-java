@@ -334,7 +334,9 @@ public class ITStatementTest {
     try {
       statement.executeQuery(selectQuery);
     } catch (SQLException e) {
-      assertEquals("BigQueryException during runQuery\nJob execution was cancelled: Job timed out", e.getMessage());
+      assertEquals(
+          "BigQueryException during runQuery\nJob execution was cancelled: Job timed out",
+          e.getMessage());
     }
     statement.close();
     connection.close();
