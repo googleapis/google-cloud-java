@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
 
 public class BigQueryJdbcBaseTest {
@@ -43,7 +44,7 @@ public class BigQueryJdbcBaseTest {
           "-----END PRIVATE KEY-----";
 
   protected static URIBuilder getBaseUri() {
-    return new URIBuilder("jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;");
+    return new URIBuilder(TestUtilities.getBaseConnectionUrl());
   }
 
   protected static URIBuilder getBaseUri(int authType) {
