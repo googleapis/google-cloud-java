@@ -74,8 +74,7 @@ public class MaybePointReadCallableTest {
   @Test
   public void singleClosedRange_routesToPointReader() {
     Query query =
-        Query.create(TABLE_ID)
-            .range(ByteStringRange.unbounded().startClosed("a").endClosed("a"));
+        Query.create(TABLE_ID).range(ByteStringRange.unbounded().startClosed("a").endClosed("a"));
 
     callable.call(query, observer, null);
     pointReader.response.set(ROW_A);
