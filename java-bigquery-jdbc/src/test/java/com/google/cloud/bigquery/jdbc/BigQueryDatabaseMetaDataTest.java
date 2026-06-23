@@ -2955,7 +2955,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetSchemas_NoArgs_DelegatesCorrectly() {
+  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws SQLException {
     BigQueryDatabaseMetaData spiedDbMetadata = spy(dbMetadata);
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);

@@ -1996,14 +1996,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   @Override
-  public ResultSet getSchemas() {
+  public ResultSet getSchemas() throws SQLException {
     LOG.info("getSchemas() called");
 
     return getSchemas(null, null);
   }
 
   @Override
-  public ResultSet getCatalogs() {
+  public ResultSet getCatalogs() throws SQLException {
     LOG.info("getCatalogs() called");
 
     final List<String> accessibleCatalogs = getAccessibleCatalogNames();
@@ -3618,7 +3618,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   @Override
-  public ResultSet getSchemas(String catalog, String schemaPattern) {
+  public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
       LOG.warning("Returning empty ResultSet as catalog or schemaPattern is an empty string.");
@@ -3641,20 +3641,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           final FieldList localResultSchemaFields = resultSchemaFields;
           List<String> projectsToScanList = new ArrayList<>();
 
-          if (catalogParam != null) {
-            projectsToScanList.add(catalogParam);
-          } else {
-            projectsToScanList.addAll(getAccessibleCatalogNames());
-          }
-
-          if (projectsToScanList.isEmpty()) {
-            LOG.info(
-                "No valid projects to scan (primary, specified, or additional). Returning empty"
-                    + " resultset.");
-            return;
-          }
-
           try {
+            if (catalogParam != null) {
+              projectsToScanList.add(catalogParam);
+            } else {
+              projectsToScanList.addAll(getAccessibleCatalogNames());
+            }
+
+            if (projectsToScanList.isEmpty()) {
+              LOG.info(
+                  "No valid projects to scan (primary, specified, or additional). Returning empty"
+                      + " resultset.");
+              return;
+            }
+
             for (String currentProjectToScan : projectsToScanList) {
               if (Thread.currentThread().isInterrupted()) {
                 LOG.warning(
@@ -3707,6 +3707,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
+            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
+            try {
+              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
+            } catch (InterruptedException ie) {
+              LOG.warning("Failed to put exception to queue due to interruption.");
+              Thread.currentThread().interrupt();
+            }
           } finally {
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Schema fetcher thread finished.");
@@ -5178,7 +5185,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return this.connection.getCatalog();
   }
 
-  private List<String> getAccessibleCatalogNames() {
+  private List<String> getAccessibleCatalogNames() throws SQLException {
     Set<String> accessibleCatalogs = new HashSet<>();
     String primaryCatalog = getCurrentCatalogName();
     if (primaryCatalog != null && !primaryCatalog.isEmpty()) {

@@ -556,42 +556,54 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testGetDiscoveredProjects_NonTransientError() throws Exception {
+  public void testGetDiscoveredProjects_BigQueryExceptionThrown() throws Exception {
     try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
       BigQuery mockBigQuery = mock(BigQuery.class);
       connection.bigQuery = mockBigQuery;
 
-      // 403 Forbidden (Non-transient error)
       BigQueryException exception = new BigQueryException(403, "Access Denied");
       when(mockBigQuery.listProjects(any(BigQuery.ProjectListOption.class))).thenThrow(exception);
 
-      List<String> discovered = connection.getDiscoveredProjects();
-      assertTrue(discovered.isEmpty());
+      // Verify that it throws BigQueryJdbcException
+      BigQueryJdbcException ex =
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> {
+                connection.getDiscoveredProjects();
+              });
+      assertTrue(
+          ex.getMessage()
+              .contains("Failed to list all accessible projects due to BigQuery error."));
+      assertEquals(exception, ex.getCause());
 
-      // Verify that it caches the empty list for 403, so it does not retry.
-      List<String> discoveredCached = connection.getDiscoveredProjects();
-      assertTrue(discoveredCached.isEmpty());
-      verify(mockBigQuery, times(1)).listProjects(any(BigQuery.ProjectListOption.class));
+      // Subsequent call should retry since no cache is set
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> {
+            connection.getDiscoveredProjects();
+          });
+      verify(mockBigQuery, times(2)).listProjects(any(BigQuery.ProjectListOption.class));
     }
   }
 
   @Test
-  public void testGetDiscoveredProjects_TransientError() throws Exception {
+  public void testGetDiscoveredProjects_OtherExceptionThrown() throws Exception {
     try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
       BigQuery mockBigQuery = mock(BigQuery.class);
       connection.bigQuery = mockBigQuery;
 
-      // 500 Internal Error (Transient error, should not cache empty list)
-      BigQueryException exception = new BigQueryException(500, "Internal Server Error");
+      RuntimeException exception = new RuntimeException("Generic Network Failure");
       when(mockBigQuery.listProjects(any(BigQuery.ProjectListOption.class))).thenThrow(exception);
 
-      List<String> discovered = connection.getDiscoveredProjects();
-      assertTrue(discovered.isEmpty());
-
-      // Since it's a transient error, it should NOT cache the empty list and should try again.
-      List<String> discoveredCached = connection.getDiscoveredProjects();
-      assertTrue(discoveredCached.isEmpty());
-      verify(mockBigQuery, times(2)).listProjects(any(BigQuery.ProjectListOption.class));
+      // Verify that it throws BigQueryJdbcException
+      BigQueryJdbcException ex =
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> {
+                connection.getDiscoveredProjects();
+              });
+      assertTrue(ex.getMessage().contains("Failed to list all accessible projects."));
+      assertEquals(exception, ex.getCause());
     }
   }
 }

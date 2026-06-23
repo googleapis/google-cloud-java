@@ -1324,7 +1324,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.enableProjectDiscovery;
   }
 
-  public synchronized List<String> getDiscoveredProjects() {
+  public synchronized List<String> getDiscoveredProjects() throws SQLException {
     if (this.discoveredProjectsCache != null) {
       return this.discoveredProjectsCache;
     }
@@ -1339,16 +1339,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.discoveredProjectsCache = ImmutableList.copyOf(projects);
     } catch (BigQueryException e) {
-      LOG.warning(e, "Failed to list all accessible projects due to BigQuery error.");
-      int statusCode = e.getCode();
-      // Only cache empty list for non-transient auth/permission errors (400, 401, 403)
-      if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
-        this.discoveredProjectsCache = ImmutableList.of();
-      }
-      return ImmutableList.of();
+      throw new BigQueryJdbcException(
+          "Failed to list all accessible projects due to BigQuery error.", e);
     } catch (Exception e) {
-      LOG.warning(e, "Failed to list all accessible projects, falling back to connection default.");
-      return ImmutableList.of();
+      throw new BigQueryJdbcException("Failed to list all accessible projects.", e);
     }
     return this.discoveredProjectsCache;
   }
