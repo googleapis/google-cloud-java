@@ -264,15 +264,6 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       Boolean reqGoogleDriveScopeBool,
-      String callerClassName) {
-    return getCredentials(
-        authProperties, overrideProperties, reqGoogleDriveScopeBool, null, callerClassName);
-  }
-
-  static GoogleCredentials getCredentials(
-      Map<String, String> authProperties,
-      Map<String, String> overrideProperties,
-      Boolean reqGoogleDriveScopeBool,
       HttpTransportFactory httpTransportFactory,
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);

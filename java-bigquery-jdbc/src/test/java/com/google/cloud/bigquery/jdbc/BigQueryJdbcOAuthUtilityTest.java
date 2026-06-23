@@ -110,7 +110,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         DataSource.fromUrl(connectionString).getOverrideProperties();
 
     try {
-      BigQueryJdbcOAuthUtility.getCredentials(oauthProperties, overrideProperties, false, null);
+      BigQueryJdbcOAuthUtility.getCredentials(
+          oauthProperties, overrideProperties, false, null, null);
       Assertions.fail();
     } catch (BigQueryJdbcRuntimeException e) {
       assertThat(e.getMessage()).contains("Validation failure");
@@ -166,7 +167,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             null);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.EMPTY_MAP, false, null, null);
     assertThat(credentials).isNotNull();
   }
 
@@ -186,7 +188,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     Map<String, String> overrideProperties = new HashMap<>(stringStringMap);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, overrideProperties, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, overrideProperties, false, null, null);
     assertThat(credentials.getUniverseDomain()).isEqualTo("testDomain");
   }
 
@@ -201,7 +204,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             null);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null, null);
     assertThat(credentials).isNotNull();
   }
 
@@ -429,7 +432,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       GoogleCredentials credentials =
           BigQueryJdbcOAuthUtility.getCredentials(
-              authProperties, java.util.Collections.EMPTY_MAP, false, null);
+              authProperties, java.util.Collections.EMPTY_MAP, false, null, null);
 
       assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
       assertThat(((ImpersonatedCredentials) credentials).getSourceCredentials())
@@ -447,7 +450,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                     .toString()),
             "");
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.EMPTY_MAP, false, null, null);
     assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
   }
 
