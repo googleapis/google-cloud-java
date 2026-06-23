@@ -2926,6 +2926,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateReportingIdentitySettings</td>
+ *      <td><p> Updates the reporting identity settings for this property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReportingIdentitySettings(UpdateReportingIdentitySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateReportingIdentitySettings(ReportingIdentitySettings reportingIdentitySettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReportingIdentitySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetUserProvidedDataSettings</td>
  *      <td><p> Looks up settings related to user-provided data for a property.</td>
  *      <td>
@@ -22339,6 +22357,110 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsCallable() {
     return stub.getReportingIdentitySettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingIdentitySettings reportingIdentitySettings =
+   *       ReportingIdentitySettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.updateReportingIdentitySettings(
+   *           reportingIdentitySettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param reportingIdentitySettings Required. The reporting identity settings to update. The
+   *     settings' `name` field is used to identify the settings.
+   * @param updateMask Optional. The list of fields to be updated. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields. If omitted, the service
+   *     will treat it as an implied field mask equivalent to all fields that are populated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings updateReportingIdentitySettings(
+      ReportingIdentitySettings reportingIdentitySettings, FieldMask updateMask) {
+    UpdateReportingIdentitySettingsRequest request =
+        UpdateReportingIdentitySettingsRequest.newBuilder()
+            .setReportingIdentitySettings(reportingIdentitySettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateReportingIdentitySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingIdentitySettingsRequest request =
+   *       UpdateReportingIdentitySettingsRequest.newBuilder()
+   *           .setReportingIdentitySettings(ReportingIdentitySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.updateReportingIdentitySettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings updateReportingIdentitySettings(
+      UpdateReportingIdentitySettingsRequest request) {
+    return updateReportingIdentitySettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the reporting identity settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateReportingIdentitySettingsRequest request =
+   *       UpdateReportingIdentitySettingsRequest.newBuilder()
+   *           .setReportingIdentitySettings(ReportingIdentitySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReportingIdentitySettings> future =
+   *       analyticsAdminServiceClient.updateReportingIdentitySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingIdentitySettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsCallable() {
+    return stub.updateReportingIdentitySettingsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

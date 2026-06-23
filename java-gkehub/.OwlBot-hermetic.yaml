@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-gkehub/samples/snippets/generated"
 - "/java-gkehub/grpc-google-.*/src"
 - "/java-gkehub/proto-google-.*/src"
-- "/java-gkehub/google-.*/src"
+- "/java-gkehub/google-.*/src/main"
+- "/java-gkehub/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-gkehub/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-gkehub/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-gkehub/$1/proto-google-cloud-gkehub-$1/src"
 - source: "/google/cloud/gkehub/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-gkehub/$1/grpc-google-cloud-gkehub-$1/src"
-- source: "/google/cloud/gkehub/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/$1/google-cloud-gkehub/src"
+- source: "/google/cloud/gkehub/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-gkehub/$1/google-cloud-gkehub/src/main"
 - source: "/google/cloud/gkehub/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-gkehub/$1/samples/snippets/generated"
 - source: "/google/cloud/gkehub/servicemesh/(v.*)/.*-java/proto-google-.*/src"

@@ -31,7 +31,9 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
 import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
+import static com.google.auth.oauth2.OAuth2Utils.WORKFORCE_AUDIENCE_PATTERN;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
@@ -43,6 +45,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Preconditions;
+import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
@@ -54,6 +57,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Matcher;
 import javax.annotation.Nullable;
 
 /**
@@ -74,7 +78,8 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  */
-public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials {
+public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials
+    implements RegionalAccessBoundaryProvider {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ExternalAccountAuthorizedUserCredentials.class);
 
@@ -227,6 +232,29 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
         .setExpirationTime(expiresAtMilliseconds)
         .setTokenValue(accessToken)
         .build();
+  }
+
+  @InternalApi
+  @Override
+  public String getRegionalAccessBoundaryUrl() throws IOException {
+    String audience = getAudience();
+    if (audience == null) {
+      throw new IllegalStateException(
+          "The audience is null, which is not in the correct format for a workforce pool.");
+    }
+    Matcher matcher = WORKFORCE_AUDIENCE_PATTERN.matcher(audience);
+    if (!matcher.matches()) {
+      throw new IllegalStateException(
+          "The provided audience is not in the correct format for a workforce pool. "
+              + "Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers");
+    }
+    String poolId = matcher.group("pool");
+    return String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
+  }
+
+  @Override
+  HttpTransportFactory getTransportFactory() {
+    return transportFactory;
   }
 
   @Nullable

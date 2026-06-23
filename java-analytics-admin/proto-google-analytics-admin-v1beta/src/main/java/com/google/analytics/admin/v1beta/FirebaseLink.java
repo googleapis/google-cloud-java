@@ -81,10 +81,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Example format: properties/1234/firebaseLinks/5678
+   * Identifier. Example format: properties/1234/firebaseLinks/5678
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -105,10 +105,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Example format: properties/1234/firebaseLinks/5678
+   * Identifier. Example format: properties/1234/firebaseLinks/5678
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -625,10 +625,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Example format: properties/1234/firebaseLinks/5678
+     * Identifier. Example format: properties/1234/firebaseLinks/5678
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -648,10 +648,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Example format: properties/1234/firebaseLinks/5678
+     * Identifier. Example format: properties/1234/firebaseLinks/5678
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -671,10 +671,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Example format: properties/1234/firebaseLinks/5678
+     * Identifier. Example format: properties/1234/firebaseLinks/5678
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -693,10 +693,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Example format: properties/1234/firebaseLinks/5678
+     * Identifier. Example format: properties/1234/firebaseLinks/5678
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -711,10 +711,10 @@ public final class FirebaseLink extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Example format: properties/1234/firebaseLinks/5678
+     * Identifier. Example format: properties/1234/firebaseLinks/5678
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

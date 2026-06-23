@@ -17,12 +17,15 @@ deep-remove-regex:
 - "/java-asset/samples/snippets/generated"
 - "/java-asset/grpc-google-.*/src"
 - "/java-asset/proto-google-.*/src"
-- "/java-asset/google-.*/src"
+- "/java-asset/google-.*/src/main"
+- "/java-asset/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-asset/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-asset/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-.*/src/test/java/com/google/cloud/.*/it"
-- "/.*google-cloud-asset/src/test/java/com/google/cloud/asset/v1/VPCServiceControlTest.java"
+- "/.*google-cloud-.*/src/test/java/com/google/.*/it"
+- "/.*google-cloud-asset/src/test/java/com/google/.*/asset/v1/VPCServiceControlTest.java"
 - "/.*proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java"
 
 deep-copy-regex:
@@ -30,8 +33,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-asset/$1/proto-google-cloud-asset-$1/src"
 - source: "/google/cloud/asset/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-asset/$1/grpc-google-cloud-asset-$1/src"
-- source: "/google/cloud/asset/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-asset/$1/google-cloud-asset/src"
+- source: "/google/cloud/asset/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-asset/$1/google-cloud-asset/src/main"
 - source: "/google/cloud/asset/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-asset/$1/samples/snippets/generated"
 

@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-capacityplanner/grpc-google-.*/src"
 - "/java-capacityplanner/proto-google-.*/src"
-- "/java-capacityplanner/google-.*/src"
+- "/java-capacityplanner/google-.*/src/main"
+- "/java-capacityplanner/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-capacityplanner/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-capacityplanner/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-capacityplanner/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/capacityplanner/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-capacityplanner/$1/proto-google-cloud-capacityplanner-$1/src"
 - source: "/google/cloud/capacityplanner/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-capacityplanner/$1/grpc-google-cloud-capacityplanner-$1/src"
-- source: "/google/cloud/capacityplanner/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-capacityplanner/$1/google-cloud-capacityplanner/src"
+- source: "/google/cloud/capacityplanner/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-capacityplanner/$1/google-cloud-capacityplanner/src/main"
 - source: "/google/cloud/capacityplanner/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-capacityplanner/$1/samples/snippets/generated"
 

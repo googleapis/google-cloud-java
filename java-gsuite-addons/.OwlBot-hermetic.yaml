@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-gsuite-addons/samples/snippets/generated"
 - "/java-gsuite-addons/grpc-google-.*/src"
 - "/java-gsuite-addons/proto-google-.*/src"
-- "/java-gsuite-addons/google-.*/src"
+- "/java-gsuite-addons/google-.*/src/main"
+- "/java-gsuite-addons/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-gsuite-addons/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-gsuite-addons/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-gsuite-addons/$1/proto-google-cloud-gsuite-addons-$1/src"
 - source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-gsuite-addons/$1/grpc-google-cloud-gsuite-addons-$1/src"
-- source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-gsuite-addons/$1/google-cloud-gsuite-addons/src"
+- source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-gsuite-addons/$1/google-cloud-gsuite-addons/src/main"
 - source: "/google/apps/script/type/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-gsuite-addons/v1/proto-google-apps-script-type-protos/src"
 - source: "/google/apps/script/type/calendar/.*-java/proto-google-.*/src"
