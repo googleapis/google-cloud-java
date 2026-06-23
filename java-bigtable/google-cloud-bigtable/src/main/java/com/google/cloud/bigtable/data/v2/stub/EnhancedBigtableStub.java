@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcRawCallableFactory;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.SimpleStreamResumptionStrategy;
@@ -37,6 +38,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.SpanName;
@@ -97,6 +99,7 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsPartialErrorR
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.LargeReadRowsResumptionStrategy;
+import com.google.cloud.bigtable.data.v2.stub.readrows.MaybePointReadCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
@@ -119,6 +122,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
@@ -259,11 +263,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
             bigtableClientContext.getClientContext().getTracerFactory(),
             span);
 
-    return traced.withDefaultCallContext(
-        bigtableClientContext
-            .getClientContext()
-            .getDefaultCallContext()
-            .withRetrySettings(perOpSettings.readRowsSettings.getRetrySettings()));
+    ServerStreamingCallable<Query, RowT> classic =
+        traced.withDefaultCallContext(
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(perOpSettings.readRowsSettings.getRetrySettings()));
+
+    return new MaybePointReadCallable<>(
+        classic,
+        createPointReadCallable(
+            rowAdapter,
+            "ReadRows",
+            perOpSettings.readRowsSettings.getRetrySettings(),
+            perOpSettings.readRowsSettings.getRetryableCodes()));
   }
 
   /**
@@ -281,13 +294,25 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
+    return createPointReadCallable(
+        rowAdapter,
+        "ReadRow",
+        perOpSettings.readRowSettings.getRetrySettings(),
+        perOpSettings.readRowSettings.getRetryableCodes());
+  }
+
+  private <RowT> UnaryCallable<Query, RowT> createPointReadCallable(
+      RowAdapter<RowT> rowAdapter,
+      String spanName,
+      RetrySettings retrySettings,
+      Set<StatusCode.Code> retryableCodes) {
     ClientContext clientContext = bigtableClientContext.getClientContext();
 
     ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
         createReadRowsBaseCallable(
             ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
-                .setRetryableCodes(perOpSettings.readRowSettings.getRetryableCodes())
-                .setRetrySettings(perOpSettings.readRowSettings.getRetrySettings())
+                .setRetryableCodes(retryableCodes)
+                .setRetrySettings(retrySettings)
                 .setIdleTimeoutDuration(Duration.ZERO)
                 .setWaitTimeoutDuration(Duration.ZERO)
                 .build(),
@@ -302,16 +327,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
     BigtableUnaryOperationCallable<Query, RowT> classic =
         new BigtableUnaryOperationCallable<>(
             readRowCallable,
-            clientContext
-                .getDefaultCallContext()
-                .withRetrySettings(perOpSettings.readRowSettings.getRetrySettings()),
+            clientContext.getDefaultCallContext().withRetrySettings(retrySettings),
             clientContext.getTracerFactory(),
-            getSpanName("ReadRow"),
+            getSpanName(spanName),
             /* allowNoResponse= */ true);
+
+    UnaryCallSettings<?, ?> shimSettings =
+        perOpSettings.readRowSettings.toBuilder()
+            .setRetrySettings(retrySettings)
+            .setRetryableCodes(retryableCodes)
+            .build();
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateReadRow(classic, rowAdapter, perOpSettings.readRowSettings);
+        .decorateReadRow(classic, rowAdapter, shimSettings);
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(

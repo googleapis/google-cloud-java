@@ -359,6 +359,7 @@ class ClientConfigurationManagerTest {
                 }
               }
             });
+    threadB.setDaemon(true);
     threadB.start();
 
     // Wait for Thread B to acquire the alien lock

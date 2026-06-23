@@ -31,11 +31,14 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.OAuth2Utils.WORKFORCE_AUDIENCE_PATTERN;
+import static com.google.auth.oauth2.OAuth2Utils.WORKLOAD_AUDIENCE_PATTERN;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Data;
+import com.google.api.core.InternalApi;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
@@ -54,6 +57,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
@@ -63,7 +67,8 @@ import javax.annotation.Nullable;
  * <p>Handles initializing external credentials, calls to the Security Token Service, and service
  * account impersonation.
  */
-public abstract class ExternalAccountCredentials extends GoogleCredentials {
+public abstract class ExternalAccountCredentials extends GoogleCredentials
+    implements RegionalAccessBoundaryProvider {
 
   private static final long serialVersionUID = 8049126194174465023L;
 
@@ -577,6 +582,11 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    */
   public abstract String retrieveSubjectToken() throws IOException;
 
+  @Override
+  HttpTransportFactory getTransportFactory() {
+    return transportFactory;
+  }
+
   public String getAudience() {
     return audience;
   }
@@ -618,6 +628,43 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       return null;
     }
     return ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
+  }
+
+  @InternalApi
+  @Override
+  public String getRegionalAccessBoundaryUrl() throws IOException {
+    if (getServiceAccountEmail() != null) {
+      return String.format(
+          OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT,
+          getServiceAccountEmail());
+    }
+
+    String audience = getAudience();
+    if (audience == null) {
+      throw new IllegalStateException(
+          "The audience is null, which is not in a valid format for either a workload identity pool or a workforce pool.");
+    }
+
+    Matcher workforceMatcher = WORKFORCE_AUDIENCE_PATTERN.matcher(audience);
+    if (workforceMatcher.matches()) {
+      String poolId = workforceMatcher.group("pool");
+      return String.format(
+          OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
+    }
+
+    Matcher workloadMatcher = WORKLOAD_AUDIENCE_PATTERN.matcher(audience);
+    if (workloadMatcher.matches()) {
+      String projectNumber = workloadMatcher.group("project");
+      String poolId = workloadMatcher.group("pool");
+      return String.format(
+          OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL,
+          projectNumber,
+          poolId);
+    }
+
+    throw new IllegalStateException(
+        "The provided audience is not in a valid format for either a workload identity pool or a workforce pool."
+            + " Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers");
   }
 
   @Nullable

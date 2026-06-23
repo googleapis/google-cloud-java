@@ -16,12 +16,14 @@
 deep-remove-regex:
 - "/java-errorreporting/grpc-google-.*/src"
 - "/java-errorreporting/proto-google-.*/src"
-- "/java-errorreporting/google-.*/src"
+- "/java-errorreporting/google-.*/src/main"
+- "/java-errorreporting/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-errorreporting/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-errorreporting/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-errorreporting/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java"
 - "/.*proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java"
 
@@ -30,8 +32,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-errorreporting/$1/proto-google-cloud-error-reporting-$1/src"
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-errorreporting/$1/grpc-google-cloud-error-reporting-$1/src"
-- source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-errorreporting/$1/google-cloud-errorreporting/src"
+- source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-errorreporting/$1/google-cloud-errorreporting/src/main"
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-errorreporting/$1/samples/snippets/generated"
 

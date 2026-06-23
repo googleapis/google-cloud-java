@@ -155,6 +155,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteTeamFolderTree</td>
+ *      <td><p> Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and WorkflowConfigs).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTeamFolderTreeAsync(DeleteTeamFolderTreeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteTeamFolderTreeAsync(TeamFolderName name, boolean force)
+ *           <li><p> deleteTeamFolderTreeAsync(String name, boolean force)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTeamFolderTreeOperationCallable()
+ *           <li><p> deleteTeamFolderTreeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> QueryTeamFolderContents</td>
  *      <td><p> Returns the contents of a given TeamFolder.</td>
  *      <td>
@@ -261,6 +281,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFolderTree</td>
+ *      <td><p> Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and WorkflowConfigs).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFolderTreeAsync(DeleteFolderTreeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteFolderTreeAsync(FolderName name, boolean force)
+ *           <li><p> deleteFolderTreeAsync(String name, boolean force)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFolderTreeOperationCallable()
+ *           <li><p> deleteFolderTreeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -418,6 +458,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRepositoryLongRunning</td>
+ *      <td><p> Deletes a single repository asynchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRepositoryLongRunningAsync(DeleteRepositoryLongRunningRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRepositoryLongRunningAsync(RepositoryName name, boolean force)
+ *           <li><p> deleteRepositoryLongRunningAsync(String name, boolean force)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRepositoryLongRunningOperationCallable()
+ *           <li><p> deleteRepositoryLongRunningCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1304,8 +1364,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1890,6 +1951,174 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+   *   boolean force = true;
+   *   dataformClient.deleteTeamFolderTreeAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The TeamFolder's name. Format:
+   *     projects/{project}/locations/{location}/teamFolders/{team_folder}
+   * @param force Optional. If `false` (default): The operation will fail if any Repository within
+   *     the folder hierarchy has associated Release Configs or Workflow Configs.
+   *     <p>If `true`: The operation will attempt to delete everything, including any Release
+   *     Configs and Workflow Configs linked to Repositories within the folder hierarchy. This
+   *     permanently removes schedules and resources.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteTeamFolderTreeAsync(
+      TeamFolderName name, boolean force) {
+    DeleteTeamFolderTreeRequest request =
+        DeleteTeamFolderTreeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    return deleteTeamFolderTreeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString();
+   *   boolean force = true;
+   *   dataformClient.deleteTeamFolderTreeAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The TeamFolder's name. Format:
+   *     projects/{project}/locations/{location}/teamFolders/{team_folder}
+   * @param force Optional. If `false` (default): The operation will fail if any Repository within
+   *     the folder hierarchy has associated Release Configs or Workflow Configs.
+   *     <p>If `true`: The operation will attempt to delete everything, including any Release
+   *     Configs and Workflow Configs linked to Repositories within the folder hierarchy. This
+   *     permanently removes schedules and resources.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteTeamFolderTreeAsync(
+      String name, boolean force) {
+    DeleteTeamFolderTreeRequest request =
+        DeleteTeamFolderTreeRequest.newBuilder().setName(name).setForce(force).build();
+    return deleteTeamFolderTreeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteTeamFolderTreeRequest request =
+   *       DeleteTeamFolderTreeRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   dataformClient.deleteTeamFolderTreeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteTeamFolderTreeAsync(
+      DeleteTeamFolderTreeRequest request) {
+    return deleteTeamFolderTreeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteTeamFolderTreeRequest request =
+   *       DeleteTeamFolderTreeRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, DeleteFolderTreeMetadata> future =
+   *       dataformClient.deleteTeamFolderTreeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationCallable() {
+    return stub.deleteTeamFolderTreeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteTeamFolderTreeRequest request =
+   *       DeleteTeamFolderTreeRequest.newBuilder()
+   *           .setName(TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataformClient.deleteTeamFolderTreeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTeamFolderTreeRequest, Operation>
+      deleteTeamFolderTreeCallable() {
+    return stub.deleteTeamFolderTreeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the contents of a given TeamFolder.
    *
    * <p>Sample code:
@@ -1909,7 +2138,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param teamFolder Required. Name of the team_folder whose contents to list. Format:
+   * @param teamFolder Required. Resource name of the TeamFolder to list contents for. Format:
    *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1943,7 +2172,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param teamFolder Required. Name of the team_folder whose contents to list. Format:
+   * @param teamFolder Required. Resource name of the TeamFolder to list contents for. Format:
    *     `projects/&#42;/locations/&#42;/teamFolders/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2614,6 +2843,172 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+   *   boolean force = true;
+   *   dataformClient.deleteFolderTreeAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Folder's name. Format:
+   *     projects/{project}/locations/{location}/folders/{folder}
+   * @param force Optional. If `false` (default): The operation will fail if any Repository within
+   *     the folder hierarchy has associated Release Configs or Workflow Configs.
+   *     <p>If `true`: The operation will attempt to delete everything, including any Release
+   *     Configs and Workflow Configs linked to Repositories within the folder hierarchy. This
+   *     permanently removes schedules and resources.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteFolderTreeAsync(
+      FolderName name, boolean force) {
+    DeleteFolderTreeRequest request =
+        DeleteFolderTreeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    return deleteFolderTreeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString();
+   *   boolean force = true;
+   *   dataformClient.deleteFolderTreeAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Folder's name. Format:
+   *     projects/{project}/locations/{location}/folders/{folder}
+   * @param force Optional. If `false` (default): The operation will fail if any Repository within
+   *     the folder hierarchy has associated Release Configs or Workflow Configs.
+   *     <p>If `true`: The operation will attempt to delete everything, including any Release
+   *     Configs and Workflow Configs linked to Repositories within the folder hierarchy. This
+   *     permanently removes schedules and resources.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteFolderTreeAsync(
+      String name, boolean force) {
+    DeleteFolderTreeRequest request =
+        DeleteFolderTreeRequest.newBuilder().setName(name).setForce(force).build();
+    return deleteFolderTreeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteFolderTreeRequest request =
+   *       DeleteFolderTreeRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   dataformClient.deleteFolderTreeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteFolderTreeMetadata> deleteFolderTreeAsync(
+      DeleteFolderTreeRequest request) {
+    return deleteFolderTreeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteFolderTreeRequest request =
+   *       DeleteFolderTreeRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, DeleteFolderTreeMetadata> future =
+   *       dataformClient.deleteFolderTreeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationCallable() {
+    return stub.deleteFolderTreeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and
+   * WorkflowConfigs).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteFolderTreeRequest request =
+   *       DeleteFolderTreeRequest.newBuilder()
+   *           .setName(FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future = dataformClient.deleteFolderTreeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFolderTreeRequest, Operation> deleteFolderTreeCallable() {
+    return stub.deleteFolderTreeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the contents of a given Folder.
    *
    * <p>Sample code:
@@ -2633,7 +3028,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param folder Required. Name of the folder whose contents to list. Format:
+   * @param folder Required. Resource name of the Folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;/folders/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2666,7 +3061,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param folder Required. Name of the folder whose contents to list. Format:
+   * @param folder Required. Resource name of the Folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;/folders/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2811,7 +3206,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param location Required. Location of the user root folder whose contents to list. Format:
+   * @param location Required. Location of the user root folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2845,7 +3240,7 @@ public class DataformClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param location Required. Location of the user root folder whose contents to list. Format:
+   * @param location Required. Location of the user root folder to list contents for. Format:
    *     projects/&#42;/locations/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3774,6 +4169,179 @@ public class DataformClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable() {
     return stub.deleteRepositoryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   boolean force = true;
+   *   DeleteRepositoryLongRunningResponse response =
+   *       dataformClient.deleteRepositoryLongRunningAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The repository's name.
+   * @param force Optional. If set to true, child resources of this repository (compilation results
+   *     and workflow invocations) will also be deleted. Otherwise, the request will only succeed if
+   *     the repository has no child resources.
+   *     <p>&#42;&#42;Note:&#42;&#42; &#42;This flag doesn't support deletion of workspaces, release
+   *     configs or workflow configs. If any of such resources exists in the repository, the request
+   *     will fail.&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeleteRepositoryLongRunningResponse, DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningAsync(RepositoryName name, boolean force) {
+    DeleteRepositoryLongRunningRequest request =
+        DeleteRepositoryLongRunningRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setForce(force)
+            .build();
+    return deleteRepositoryLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   String name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   boolean force = true;
+   *   DeleteRepositoryLongRunningResponse response =
+   *       dataformClient.deleteRepositoryLongRunningAsync(name, force).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The repository's name.
+   * @param force Optional. If set to true, child resources of this repository (compilation results
+   *     and workflow invocations) will also be deleted. Otherwise, the request will only succeed if
+   *     the repository has no child resources.
+   *     <p>&#42;&#42;Note:&#42;&#42; &#42;This flag doesn't support deletion of workspaces, release
+   *     configs or workflow configs. If any of such resources exists in the repository, the request
+   *     will fail.&#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeleteRepositoryLongRunningResponse, DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningAsync(String name, boolean force) {
+    DeleteRepositoryLongRunningRequest request =
+        DeleteRepositoryLongRunningRequest.newBuilder().setName(name).setForce(force).build();
+    return deleteRepositoryLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteRepositoryLongRunningRequest request =
+   *       DeleteRepositoryLongRunningRequest.newBuilder()
+   *           .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   DeleteRepositoryLongRunningResponse response =
+   *       dataformClient.deleteRepositoryLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeleteRepositoryLongRunningResponse, DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningAsync(DeleteRepositoryLongRunningRequest request) {
+    return deleteRepositoryLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteRepositoryLongRunningRequest request =
+   *       DeleteRepositoryLongRunningRequest.newBuilder()
+   *           .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<DeleteRepositoryLongRunningResponse, DeleteRepositoryLongRunningMetadata>
+   *       future =
+   *           dataformClient.deleteRepositoryLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeleteRepositoryLongRunningResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationCallable() {
+    return stub.deleteRepositoryLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single repository asynchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteRepositoryLongRunningRequest request =
+   *       DeleteRepositoryLongRunningRequest.newBuilder()
+   *           .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataformClient.deleteRepositoryLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningCallable() {
+    return stub.deleteRepositoryLongRunningCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5475,6 +6043,7 @@ public class DataformClient implements BackgroundResource {
    *           .setPath("path3433509")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(DirectoryContentsView.forNumber(0))
    *           .build();
    *   for (DirectoryEntry element : dataformClient.queryDirectoryContents(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -5511,6 +6080,7 @@ public class DataformClient implements BackgroundResource {
    *           .setPath("path3433509")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(DirectoryContentsView.forNumber(0))
    *           .build();
    *   ApiFuture<DirectoryEntry> future =
    *       dataformClient.queryDirectoryContentsPagedCallable().futureCall(request);
@@ -5547,6 +6117,7 @@ public class DataformClient implements BackgroundResource {
    *           .setPath("path3433509")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(DirectoryContentsView.forNumber(0))
    *           .build();
    *   while (true) {
    *     QueryDirectoryContentsResponse response =
@@ -9179,13 +9750,19 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -9218,13 +9795,19 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -9257,13 +9840,19 @@ public class DataformClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

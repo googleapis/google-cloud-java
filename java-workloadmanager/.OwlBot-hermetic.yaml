@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-workloadmanager/grpc-google-.*/src"
 - "/java-workloadmanager/proto-google-.*/src"
-- "/java-workloadmanager/google-.*/src"
+- "/java-workloadmanager/google-.*/src/main"
+- "/java-workloadmanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-workloadmanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-workloadmanager/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-workloadmanager/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/workloadmanager/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-workloadmanager/$1/proto-google-cloud-workloadmanager-$1/src"
 - source: "/google/cloud/workloadmanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-workloadmanager/$1/grpc-google-cloud-workloadmanager-$1/src"
-- source: "/google/cloud/workloadmanager/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-workloadmanager/$1/google-cloud-workloadmanager/src"
+- source: "/google/cloud/workloadmanager/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-workloadmanager/$1/google-cloud-workloadmanager/src/main"
 - source: "/google/cloud/workloadmanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-workloadmanager/$1/samples/snippets/generated"
 

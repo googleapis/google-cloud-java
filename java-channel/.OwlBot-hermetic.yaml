@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-channel/samples/snippets/generated"
 - "/java-channel/grpc-google-.*/src"
 - "/java-channel/proto-google-.*/src"
-- "/java-channel/google-.*/src"
+- "/java-channel/google-.*/src/main"
+- "/java-channel/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-channel/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-channel/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-channel/$1/proto-google-cloud-channel-$1/src"
 - source: "/google/cloud/channel/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-channel/$1/grpc-google-cloud-channel-$1/src"
-- source: "/google/cloud/channel/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-channel/$1/google-cloud-channel/src"
+- source: "/google/cloud/channel/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-channel/$1/google-cloud-channel/src/main"
 - source: "/google/cloud/channel/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-channel/$1/samples/snippets/generated"
 

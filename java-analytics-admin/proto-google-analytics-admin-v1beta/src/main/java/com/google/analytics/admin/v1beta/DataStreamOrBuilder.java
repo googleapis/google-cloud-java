@@ -161,12 +161,12 @@ public interface DataStreamOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this Data Stream.
+   * Identifier. Resource name of this Data Stream.
    * Format: properties/{property_id}/dataStreams/{stream_id}
    * Example: "properties/1000/dataStreams/2000"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -176,12 +176,12 @@ public interface DataStreamOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this Data Stream.
+   * Identifier. Resource name of this Data Stream.
    * Format: properties/{property_id}/dataStreams/{stream_id}
    * Example: "properties/1000/dataStreams/2000"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

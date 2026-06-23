@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-binary-authorization/samples/snippets/generated"
 - "/java-binary-authorization/grpc-google-.*/src"
 - "/java-binary-authorization/proto-google-.*/src"
-- "/java-binary-authorization/google-.*/src"
+- "/java-binary-authorization/google-.*/src/main"
+- "/java-binary-authorization/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-binary-authorization/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-binary-authorization/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-binary-authorization/$1/proto-google-cloud-binary-authorization-$1/src"
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-binary-authorization/$1/grpc-google-cloud-binary-authorization-$1/src"
-- source: "/google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src"
+- source: "/google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src/main"
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated"
 
