@@ -693,6 +693,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setAsynchronousMode(true)
             .setUserPseudoId("userPseudoId-1155274652")
             .putAllUserLabels(new HashMap<String, String>())
+            .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
             .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
@@ -742,12 +743,24 @@ public class ConversationalSearchServiceClientHttpJsonTest {
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
               .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
               .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void streamAnswerQueryTest() throws Exception {}
+
+  @Test
+  public void streamAnswerQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
   }
 
   @Test
@@ -759,14 +772,18 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
                     .toString())
             .setAnswerText("answerText959441419")
+            .setGroundingScore(1981101646)
             .addAllCitations(new ArrayList<Answer.Citation>())
+            .addAllGroundingSupports(new ArrayList<Answer.GroundingSupport>())
             .addAllReferences(new ArrayList<Answer.Reference>())
+            .addAllBlobAttachments(new ArrayList<Answer.BlobAttachment>())
             .addAllRelatedQuestions(new ArrayList<String>())
             .addAllSteps(new ArrayList<Answer.Step>())
             .setQueryUnderstandingInfo(Answer.QueryUnderstandingInfo.newBuilder().build())
             .addAllAnswerSkippedReasons(new ArrayList<Answer.AnswerSkippedReason>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCompleteTime(Timestamp.newBuilder().build())
+            .addAllSafetyRatings(new ArrayList<SafetyRating>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -819,14 +836,18 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
                     .toString())
             .setAnswerText("answerText959441419")
+            .setGroundingScore(1981101646)
             .addAllCitations(new ArrayList<Answer.Citation>())
+            .addAllGroundingSupports(new ArrayList<Answer.GroundingSupport>())
             .addAllReferences(new ArrayList<Answer.Reference>())
+            .addAllBlobAttachments(new ArrayList<Answer.BlobAttachment>())
             .addAllRelatedQuestions(new ArrayList<String>())
             .addAllSteps(new ArrayList<Answer.Step>())
             .setQueryUnderstandingInfo(Answer.QueryUnderstandingInfo.newBuilder().build())
             .addAllAnswerSkippedReasons(new ArrayList<Answer.AnswerSkippedReason>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setCompleteTime(Timestamp.newBuilder().build())
+            .addAllSafetyRatings(new ArrayList<SafetyRating>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -879,9 +900,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -936,9 +959,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1077,9 +1102,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1092,9 +1119,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1133,9 +1162,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setUserPseudoId("userPseudoId-1155274652")
               .addAllTurns(new ArrayList<Session.Turn>())
+              .addAllLabels(new ArrayList<String>())
               .setStartTime(Timestamp.newBuilder().build())
               .setEndTime(Timestamp.newBuilder().build())
               .setIsPinned(true)
+              .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSession(session, updateMask);
@@ -1156,9 +1187,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1213,9 +1246,11 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 

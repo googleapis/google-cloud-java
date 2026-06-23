@@ -275,7 +275,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the EndpointPolicy resource. It matches pattern
-   * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+   * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -300,7 +300,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the EndpointPolicy resource. It matches pattern
-   * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+   * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1609,7 +1609,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the EndpointPolicy resource. It matches pattern
-     * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+     * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1633,7 +1633,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the EndpointPolicy resource. It matches pattern
-     * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+     * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1657,7 +1657,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the EndpointPolicy resource. It matches pattern
-     * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+     * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1680,7 +1680,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the EndpointPolicy resource. It matches pattern
-     * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+     * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1699,7 +1699,7 @@ public final class EndpointPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the EndpointPolicy resource. It matches pattern
-     * `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+     * `projects/{project}/locations/&#42;&#47;endpointPolicies/{endpoint_policy}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

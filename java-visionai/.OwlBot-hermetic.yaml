@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-visionai/grpc-google-.*/src"
 - "/java-visionai/proto-google-.*/src"
-- "/java-visionai/google-.*/src"
+- "/java-visionai/google-.*/src/main"
+- "/java-visionai/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-visionai/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-visionai/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-visionai/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/visionai/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-visionai/$1/proto-google-cloud-visionai-$1/src"
 - source: "/google/cloud/visionai/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-visionai/$1/grpc-google-cloud-visionai-$1/src"
-- source: "/google/cloud/visionai/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-visionai/$1/google-cloud-visionai/src"
+- source: "/google/cloud/visionai/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-visionai/$1/google-cloud-visionai/src/main"
 - source: "/google/cloud/visionai/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-visionai/$1/samples/snippets/generated"
 

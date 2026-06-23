@@ -108,4 +108,48 @@ public interface ProvisionProjectRequestOrBuilder
    * @return The bytes for dataUseTermsVersion.
    */
   com.google.protobuf.ByteString getDataUseTermsVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Agentspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the saasParams field is set.
+   */
+  boolean hasSaasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Agentspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The saasParams.
+   */
+  com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams getSaasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Agentspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder
+      getSaasParamsOrBuilder();
 }

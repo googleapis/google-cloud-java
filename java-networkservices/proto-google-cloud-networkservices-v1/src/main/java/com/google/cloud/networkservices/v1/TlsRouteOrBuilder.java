@@ -31,7 +31,7 @@ public interface TlsRouteOrBuilder
    *
    * <pre>
    * Identifier. Name of the TlsRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,7 +45,7 @@ public interface TlsRouteOrBuilder
    *
    * <pre>
    * Identifier. Name of the TlsRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/tlsRoutes/tls_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tlsRoutes/tls_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -272,7 +272,7 @@ public interface TlsRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -293,7 +293,7 @@ public interface TlsRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -314,7 +314,7 @@ public interface TlsRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -336,7 +336,7 @@ public interface TlsRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -358,7 +358,7 @@ public interface TlsRouteOrBuilder
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -377,7 +377,7 @@ public interface TlsRouteOrBuilder
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -396,7 +396,7 @@ public interface TlsRouteOrBuilder
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -416,7 +416,7 @@ public interface TlsRouteOrBuilder
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -427,6 +427,88 @@ public interface TlsRouteOrBuilder
    * @return The bytes of the gateways at the given index.
    */
   com.google.protobuf.ByteString getGatewaysBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the targetProxies.
+   */
+  java.util.List<java.lang.String> getTargetProxiesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of targetProxies.
+   */
+  int getTargetProxiesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetProxies at the given index.
+   */
+  java.lang.String getTargetProxies(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is
+   * attached to, as one of the routing rules to route the requests served by
+   * the TargetTcpProxy.
+   *
+   * Each TargetTcpProxy reference should match the pattern:
+   * `projects/&#42;&#47;locations/&#42;&#47;targetTcpProxies/&lt;target_tcp_proxy_name&gt;`
+   * </pre>
+   *
+   * <code>
+   * repeated string target_proxies = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetProxies at the given index.
+   */
+  com.google.protobuf.ByteString getTargetProxiesBytes(int index);
 
   /**
    *

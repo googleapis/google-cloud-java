@@ -1107,7 +1107,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=673
+   *     google/cloud/networkmanagement/v1/trace.proto;l=680
    * @return The enum numeric value on the wire for routeScope.
    */
   @java.lang.Override
@@ -1129,7 +1129,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=673
+   *     google/cloud/networkmanagement/v1/trace.proto;l=680
    * @return The routeScope.
    */
   @java.lang.Override
@@ -1381,7 +1381,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=695
+   *     google/cloud/networkmanagement/v1/trace.proto;l=702
    * @return The nextHop.
    */
   @java.lang.Override
@@ -1410,7 +1410,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=695
+   *     google/cloud/networkmanagement/v1/trace.proto;l=702
    * @return The bytes for nextHop.
    */
   @java.lang.Override
@@ -2059,7 +2059,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   @java.lang.Override
@@ -2082,7 +2082,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
    * @return The advertisedRouteNextHopUri.
    */
   @java.lang.Override
@@ -2113,7 +2113,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
    * @return The bytes for advertisedRouteNextHopUri.
    */
   @java.lang.Override
@@ -3567,7 +3567,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=673
+     *     google/cloud/networkmanagement/v1/trace.proto;l=680
      * @return The enum numeric value on the wire for routeScope.
      */
     @java.lang.Override
@@ -3589,7 +3589,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=673
+     *     google/cloud/networkmanagement/v1/trace.proto;l=680
      * @param value The enum numeric value on the wire for routeScope to set.
      * @return This builder for chaining.
      */
@@ -3614,7 +3614,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=673
+     *     google/cloud/networkmanagement/v1/trace.proto;l=680
      * @return The routeScope.
      */
     @java.lang.Override
@@ -3640,7 +3640,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=673
+     *     google/cloud/networkmanagement/v1/trace.proto;l=680
      * @param value The routeScope to set.
      * @return This builder for chaining.
      */
@@ -3668,7 +3668,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=673
+     *     google/cloud/networkmanagement/v1/trace.proto;l=680
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4162,7 +4162,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=695
+     *     google/cloud/networkmanagement/v1/trace.proto;l=702
      * @return The nextHop.
      */
     @java.lang.Deprecated
@@ -4190,7 +4190,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=695
+     *     google/cloud/networkmanagement/v1/trace.proto;l=702
      * @return The bytes for nextHop.
      */
     @java.lang.Deprecated
@@ -4218,7 +4218,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=695
+     *     google/cloud/networkmanagement/v1/trace.proto;l=702
      * @param value The nextHop to set.
      * @return This builder for chaining.
      */
@@ -4245,7 +4245,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=695
+     *     google/cloud/networkmanagement/v1/trace.proto;l=702
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4268,7 +4268,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=695
+     *     google/cloud/networkmanagement/v1/trace.proto;l=702
      * @param value The bytes for nextHop to set.
      * @return This builder for chaining.
      */
@@ -5706,7 +5706,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
      * @return Whether the advertisedRouteNextHopUri field is set.
      */
     @java.lang.Deprecated
@@ -5728,7 +5728,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
      * @return The advertisedRouteNextHopUri.
      */
     @java.lang.Deprecated
@@ -5758,7 +5758,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
      * @return The bytes for advertisedRouteNextHopUri.
      */
     @java.lang.Deprecated
@@ -5788,7 +5788,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
      * @param value The advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */
@@ -5817,7 +5817,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5842,7 +5842,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=742
      * @param value The bytes for advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */

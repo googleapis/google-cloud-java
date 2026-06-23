@@ -69,7 +69,9 @@ public interface DeviceInfoOrBuilder
    * more details.
    * </pre>
    *
-   * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The ipAddress.
    */
@@ -92,7 +94,9 @@ public interface DeviceInfoOrBuilder
    * more details.
    * </pre>
    *
-   * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for ipAddress.
    */

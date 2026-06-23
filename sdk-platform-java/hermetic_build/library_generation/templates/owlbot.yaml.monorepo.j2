@@ -16,11 +16,11 @@
 deep-remove-regex:
 - "/{{ module_name }}/grpc-google-.*/src"
 - "/{{ module_name }}/proto-google-.*/src"
-- "/{{ module_name }}/google-.*/src"
+- "/{{ module_name }}/google-.*/src/main"
+- "/{{ module_name }}/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/{{ module_name }}/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/{{ module_name }}/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/{{ module_name }}/samples/snippets/generated"
-
-deep-preserve-regex:
-- "/{{ module_name }}/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 {%- if has_version %}
@@ -28,8 +28,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/{{ module_name }}/$1/proto-{{ artifact_id }}-$1/src"
 - source: "/{{ proto_path }}/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/{{ module_name }}/$1/grpc-{{ artifact_id }}-$1/src"
-- source: "/{{ proto_path }}/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/{{ module_name }}/$1/{{ artifact_id }}/src"
+- source: "/{{ proto_path }}/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/{{ module_name }}/$1/{{ artifact_id }}/src/main"
 - source: "/{{ proto_path }}/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/{{ module_name }}/$1/samples/snippets/generated"
 {%- else %}
@@ -37,8 +37,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/{{ module_name }}/proto-{{ artifact_id }}/src"
 - source: "/{{ proto_path }}/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/{{ module_name }}/grpc-{{ artifact_id }}/src"
-- source: "/{{ proto_path }}/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/{{ module_name }}/{{ artifact_id }}/src"
+- source: "/{{ proto_path }}/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/{{ module_name }}/{{ artifact_id }}/src/main"
 - source: "/{{ proto_path }}/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/{{ module_name }}/samples/snippets/generated"
 {%- endif %}

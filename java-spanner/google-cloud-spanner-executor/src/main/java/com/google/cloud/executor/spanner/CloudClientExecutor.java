@@ -397,9 +397,10 @@ public class CloudClientExecutor extends CloudExecutor {
                   } else {
                     transactionOptions.add(Options.isolationLevel(IsolationLevel.SERIALIZABLE));
                   }
-                  if (optimistic) {
+                  if (!repeatableRead && optimistic) {
                     transactionOptions.add(Options.readLockMode(ReadLockMode.OPTIMISTIC));
-                  } else {
+                  }
+                  if (repeatableRead && !optimistic) {
                     transactionOptions.add(Options.readLockMode(ReadLockMode.PESSIMISTIC));
                   }
                   runner =

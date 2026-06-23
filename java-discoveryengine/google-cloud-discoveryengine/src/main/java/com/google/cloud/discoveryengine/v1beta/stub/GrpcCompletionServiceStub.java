@@ -41,6 +41,8 @@ import com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRespons
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesMetadata;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest;
 import com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionRequest;
+import com.google.cloud.discoveryengine.v1beta.RemoveSuggestionResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -133,6 +135,19 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionMethodDescriptor =
+          MethodDescriptor.<RemoveSuggestionRequest, RemoveSuggestionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.CompletionService/RemoveSuggestion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveSuggestionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveSuggestionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
   private final UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
       advancedCompleteQueryCallable;
@@ -164,6 +179,8 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
           PurgeCompletionSuggestionsResponse,
           PurgeCompletionSuggestionsMetadata>
       purgeCompletionSuggestionsOperationCallable;
+  private final UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -282,6 +299,19 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionTransportSettings =
+            GrpcCallSettings.<RemoveSuggestionRequest, RemoveSuggestionResponse>newBuilder()
+                .setMethodDescriptor(removeSuggestionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "completion_config", String.valueOf(request.getCompletionConfig()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getCompletionConfig())
+                .build();
 
     this.completeQueryCallable =
         callableFactory.createUnaryCallable(
@@ -335,6 +365,9 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
             settings.purgeCompletionSuggestionsOperationSettings(),
             clientContext,
             operationsStub);
+    this.removeSuggestionCallable =
+        callableFactory.createUnaryCallable(
+            removeSuggestionTransportSettings, settings.removeSuggestionSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -413,6 +446,12 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
           PurgeCompletionSuggestionsMetadata>
       purgeCompletionSuggestionsOperationCallable() {
     return purgeCompletionSuggestionsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable() {
+    return removeSuggestionCallable;
   }
 
   @Override

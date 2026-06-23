@@ -57,17 +57,20 @@ public final class CesAppProto extends com.google.protobuf.GeneratedFile {
           + "p.proto\022\037google.cloud.dialogflow.v2beta1"
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\032*google/cloud/dialo"
-          + "gflow/v2beta1/tool.proto\"\243\001\n\nCesAppSpec\022"
+          + "gflow/v2beta1/tool.proto\"\227\002\n\nCesAppSpec\022"
           + "/\n\007ces_app\030\001 \001(\tB\036\340A\001\372A\030\n\026ces.googleapis"
           + ".com/App\022d\n\030confirmation_requirement\030\002 \001"
           + "(\0162=.google.cloud.dialogflow.v2beta1.Too"
-          + "l.ConfirmationRequirementB\003\340A\001B\357\001\n#com.g"
-          + "oogle.cloud.dialogflow.v2beta1B\013CesAppPr"
-          + "otoP\001ZCcloud.google.com/go/dialogflow/ap"
-          + "iv2beta1/dialogflowpb;dialogflowpb\242\002\002DF\252"
-          + "\002\037Google.Cloud.Dialogflow.V2Beta1\352AL\n\026ce"
-          + "s.googleapis.com/App\0222projects/{project}"
-          + "/locations/{location}/apps/{app}b\006proto3"
+          + "l.ConfirmationRequirementB\003\340A\001\022#\n\021proact"
+          + "ive_enabled\030\003 \001(\010B\003\340A\001H\000\210\001\001\022\"\n\020reactive_"
+          + "enabled\030\004 \001(\010B\003\340A\001H\001\210\001\001B\024\n\022_proactive_en"
+          + "abledB\023\n\021_reactive_enabledB\357\001\n#com.googl"
+          + "e.cloud.dialogflow.v2beta1B\013CesAppProtoP"
+          + "\001ZCcloud.google.com/go/dialogflow/apiv2b"
+          + "eta1/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Go"
+          + "ogle.Cloud.Dialogflow.V2Beta1\352AL\n\026ces.go"
+          + "ogleapis.com/App\0222projects/{project}/loc"
+          + "ations/{location}/apps/{app}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,7 +86,7 @@ public final class CesAppProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_CesAppSpec_descriptor,
             new java.lang.String[] {
-              "CesApp", "ConfirmationRequirement",
+              "CesApp", "ConfirmationRequirement", "ProactiveEnabled", "ReactiveEnabled",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

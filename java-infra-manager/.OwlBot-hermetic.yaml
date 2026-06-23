@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-infra-manager/grpc-google-.*/src"
 - "/java-infra-manager/proto-google-.*/src"
-- "/java-infra-manager/google-.*/src"
+- "/java-infra-manager/google-.*/src/main"
+- "/java-infra-manager/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-infra-manager/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-infra-manager/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-infra-manager/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/config/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-infra-manager/$1/proto-google-cloud-infra-manager-$1/src"
 - source: "/google/cloud/config/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-infra-manager/$1/grpc-google-cloud-infra-manager-$1/src"
-- source: "/google/cloud/config/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-infra-manager/$1/google-cloud-infra-manager/src"
+- source: "/google/cloud/config/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-infra-manager/$1/google-cloud-infra-manager/src/main"
 - source: "/google/cloud/config/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-infra-manager/$1/samples/snippets/generated"
 

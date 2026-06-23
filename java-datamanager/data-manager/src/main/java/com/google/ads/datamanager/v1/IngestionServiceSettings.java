@@ -102,6 +102,11 @@ public class IngestionServiceSettings extends ClientSettings<IngestionServiceSet
     return ((IngestionServiceStubSettings) getStubSettings()).ingestEventsSettings();
   }
 
+  /** Returns the object with the settings used for calls to ingestAdEvents. */
+  public UnaryCallSettings<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsSettings() {
+    return ((IngestionServiceStubSettings) getStubSettings()).ingestAdEventsSettings();
+  }
+
   /** Returns the object with the settings used for calls to retrieveRequestStatus. */
   public UnaryCallSettings<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
       retrieveRequestStatusSettings() {
@@ -236,6 +241,12 @@ public class IngestionServiceSettings extends ClientSettings<IngestionServiceSet
     public UnaryCallSettings.Builder<IngestEventsRequest, IngestEventsResponse>
         ingestEventsSettings() {
       return getStubSettingsBuilder().ingestEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to ingestAdEvents. */
+    public UnaryCallSettings.Builder<IngestAdEventsRequest, IngestAdEventsResponse>
+        ingestAdEventsSettings() {
+      return getStubSettingsBuilder().ingestAdEventsSettings();
     }
 
     /** Returns the builder for the settings used for calls to retrieveRequestStatus. */

@@ -31,6 +31,7 @@ import java.nio.file.Path;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Optional;
+import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import org.junit.jupiter.api.AfterEach;
@@ -195,7 +196,8 @@ public class PerConnectionFileHandlerTest {
 
       // Instantiate a real BigQueryJsonResultSet (which extends BigQueryBaseResultSet)
       // passing the mock statement carrying connectionId "c789"
-      BigQueryJsonResultSet rs = BigQueryJsonResultSet.of(schema, 0, null, mockStmt, new Thread[0]);
+      BigQueryJsonResultSet rs =
+          BigQueryJsonResultSet.of(schema, 0, null, mockStmt, new Future<?>[0]);
 
       // Calling findColumn(null) throws SQLException because column label is null
       assertThrows(SQLException.class, () -> rs.findColumn(null));

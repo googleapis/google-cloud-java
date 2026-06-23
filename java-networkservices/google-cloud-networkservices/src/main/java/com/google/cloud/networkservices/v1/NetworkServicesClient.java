@@ -1217,6 +1217,104 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListAgentGateways</td>
+ *      <td><p> Lists AgentGateways in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAgentGateways(ListAgentGatewaysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAgentGateways(LocationName parent)
+ *           <li><p> listAgentGateways(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAgentGatewaysPagedCallable()
+ *           <li><p> listAgentGatewaysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAgentGateway</td>
+ *      <td><p> Gets details of a single AgentGateway.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAgentGateway(GetAgentGatewayRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAgentGateway(AgentGatewayName name)
+ *           <li><p> getAgentGateway(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAgentGatewayCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAgentGateway</td>
+ *      <td><p> Creates a new AgentGateway in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAgentGatewayAsync(CreateAgentGatewayRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAgentGatewayAsync(LocationName parent, AgentGateway agentGateway, String agentGatewayId)
+ *           <li><p> createAgentGatewayAsync(String parent, AgentGateway agentGateway, String agentGatewayId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAgentGatewayOperationCallable()
+ *           <li><p> createAgentGatewayCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAgentGateway</td>
+ *      <td><p> Updates the parameters of a single AgentGateway.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAgentGatewayAsync(UpdateAgentGatewayRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAgentGatewayAsync(AgentGateway agentGateway, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAgentGatewayOperationCallable()
+ *           <li><p> updateAgentGatewayCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAgentGateway</td>
+ *      <td><p> Deletes a single AgentGateway.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAgentGatewayAsync(DeleteAgentGatewayRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAgentGatewayAsync(AgentGatewayName name)
+ *           <li><p> deleteAgentGatewayAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAgentGatewayOperationCallable()
+ *           <li><p> deleteAgentGatewayCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1444,7 +1542,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the EndpointPolicies should be
-   *     listed, specified in the format `projects/&#42;/locations/global`.
+   *     listed, specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEndpointPoliciesPagedResponse listEndpointPolicies(LocationName parent) {
@@ -1477,7 +1575,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the EndpointPolicies should be
-   *     listed, specified in the format `projects/&#42;/locations/global`.
+   *     listed, specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEndpointPoliciesPagedResponse listEndpointPolicies(String parent) {
@@ -1616,7 +1714,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the EndpointPolicy to get. Must be in the format
-   *     `projects/&#42;/locations/global/endpointPolicies/&#42;`.
+   *     `projects/&#42;/locations/&#42;/endpointPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EndpointPolicy getEndpointPolicy(EndpointPolicyName name) {
@@ -1647,7 +1745,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the EndpointPolicy to get. Must be in the format
-   *     `projects/&#42;/locations/global/endpointPolicies/&#42;`.
+   *     `projects/&#42;/locations/&#42;/endpointPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EndpointPolicy getEndpointPolicy(String name) {
@@ -1737,7 +1835,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the EndpointPolicy. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param endpointPolicy Required. EndpointPolicy resource to be created.
    * @param endpointPolicyId Required. Short name of the EndpointPolicy resource to be created. E.g.
    *     "CustomECS".
@@ -1778,7 +1876,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the EndpointPolicy. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param endpointPolicy Required. EndpointPolicy resource to be created.
    * @param endpointPolicyId Required. Short name of the EndpointPolicy resource to be created. E.g.
    *     "CustomECS".
@@ -2035,7 +2133,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the EndpointPolicy to delete. Must be in the format
-   *     `projects/&#42;/locations/global/endpointPolicies/&#42;`.
+   *     `projects/&#42;/locations/&#42;/endpointPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEndpointPolicyAsync(
@@ -2067,7 +2165,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the EndpointPolicy to delete. Must be in the format
-   *     `projects/&#42;/locations/global/endpointPolicies/&#42;`.
+   *     `projects/&#42;/locations/&#42;/endpointPolicies/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEndpointPolicyAsync(String name) {
@@ -4246,7 +4344,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the GrpcRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGrpcRoutesPagedResponse listGrpcRoutes(LocationName parent) {
@@ -4278,7 +4376,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the GrpcRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGrpcRoutesPagedResponse listGrpcRoutes(String parent) {
@@ -4413,7 +4511,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the GrpcRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/grpcRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/grpcRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GrpcRoute getGrpcRoute(GrpcRouteName name) {
@@ -4441,7 +4539,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the GrpcRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/grpcRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/grpcRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GrpcRoute getGrpcRoute(String name) {
@@ -4527,7 +4625,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the GrpcRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param grpcRoute Required. GrpcRoute resource to be created.
    * @param grpcRouteId Required. Short name of the GrpcRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -4565,7 +4663,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the GrpcRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param grpcRoute Required. GrpcRoute resource to be created.
    * @param grpcRouteId Required. Short name of the GrpcRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -4817,7 +4915,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the GrpcRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/grpcRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/grpcRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGrpcRouteAsync(GrpcRouteName name) {
@@ -4845,7 +4943,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the GrpcRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/grpcRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/grpcRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteGrpcRouteAsync(String name) {
@@ -4960,7 +5058,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the HttpRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListHttpRoutesPagedResponse listHttpRoutes(LocationName parent) {
@@ -4992,7 +5090,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the HttpRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListHttpRoutesPagedResponse listHttpRoutes(String parent) {
@@ -5019,6 +5117,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setReturnPartialSuccess(true)
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (HttpRoute element : networkServicesClient.listHttpRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -5052,6 +5151,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setReturnPartialSuccess(true)
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<HttpRoute> future =
    *       networkServicesClient.listHttpRoutesPagedCallable().futureCall(request);
@@ -5086,6 +5186,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setReturnPartialSuccess(true)
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListHttpRoutesResponse response =
@@ -5127,7 +5228,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the HttpRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/httpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/httpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpRoute getHttpRoute(HttpRouteName name) {
@@ -5155,7 +5256,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the HttpRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/httpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/httpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpRoute getHttpRoute(String name) {
@@ -5241,7 +5342,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the HttpRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param httpRoute Required. HttpRoute resource to be created.
    * @param httpRouteId Required. Short name of the HttpRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -5279,7 +5380,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the HttpRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param httpRoute Required. HttpRoute resource to be created.
    * @param httpRouteId Required. Short name of the HttpRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -5313,6 +5414,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setHttpRouteId("httpRouteId-2054835300")
    *           .setHttpRoute(HttpRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   HttpRoute response = networkServicesClient.createHttpRouteAsync(request).get();
    * }
@@ -5344,6 +5446,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setHttpRouteId("httpRouteId-2054835300")
    *           .setHttpRoute(HttpRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<HttpRoute, OperationMetadata> future =
    *       networkServicesClient.createHttpRouteOperationCallable().futureCall(request);
@@ -5375,6 +5478,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setHttpRouteId("httpRouteId-2054835300")
    *           .setHttpRoute(HttpRoute.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       networkServicesClient.createHttpRouteCallable().futureCall(request);
@@ -5531,7 +5635,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the HttpRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/httpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/httpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteHttpRouteAsync(HttpRouteName name) {
@@ -5559,7 +5663,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the HttpRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/httpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/httpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteHttpRouteAsync(String name) {
@@ -5674,7 +5778,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the TcpRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTcpRoutesPagedResponse listTcpRoutes(LocationName parent) {
@@ -5706,7 +5810,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the TcpRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTcpRoutesPagedResponse listTcpRoutes(String parent) {
@@ -5840,7 +5944,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TcpRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/tcpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tcpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TcpRoute getTcpRoute(TcpRouteName name) {
@@ -5868,7 +5972,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TcpRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/tcpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tcpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TcpRoute getTcpRoute(String name) {
@@ -5953,7 +6057,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the TcpRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param tcpRoute Required. TcpRoute resource to be created.
    * @param tcpRouteId Required. Short name of the TcpRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -5991,7 +6095,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the TcpRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param tcpRoute Required. TcpRoute resource to be created.
    * @param tcpRouteId Required. Short name of the TcpRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -6240,7 +6344,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TcpRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/tcpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tcpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTcpRouteAsync(TcpRouteName name) {
@@ -6268,7 +6372,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TcpRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/tcpRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tcpRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTcpRouteAsync(String name) {
@@ -6383,7 +6487,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the TlsRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTlsRoutesPagedResponse listTlsRoutes(LocationName parent) {
@@ -6415,7 +6519,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the TlsRoutes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTlsRoutesPagedResponse listTlsRoutes(String parent) {
@@ -6549,7 +6653,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TlsRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/tlsRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tlsRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TlsRoute getTlsRoute(TlsRouteName name) {
@@ -6577,7 +6681,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TlsRoute to get. Must be in the format
-   *     `projects/&#42;/locations/global/tlsRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tlsRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TlsRoute getTlsRoute(String name) {
@@ -6662,7 +6766,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the TlsRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param tlsRoute Required. TlsRoute resource to be created.
    * @param tlsRouteId Required. Short name of the TlsRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -6700,7 +6804,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the TlsRoute. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param tlsRoute Required. TlsRoute resource to be created.
    * @param tlsRouteId Required. Short name of the TlsRoute resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -6949,7 +7053,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TlsRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/tlsRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tlsRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTlsRouteAsync(TlsRouteName name) {
@@ -6977,7 +7081,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the TlsRoute to delete. Must be in the format
-   *     `projects/&#42;/locations/global/tlsRoutes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/tlsRoutes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteTlsRouteAsync(String name) {
@@ -7831,7 +7935,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the Meshes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMeshesPagedResponse listMeshes(LocationName parent) {
@@ -7861,7 +7965,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location from which the Meshes should be listed,
-   *     specified in the format `projects/&#42;/locations/global`.
+   *     specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMeshesPagedResponse listMeshes(String parent) {
@@ -7992,7 +8096,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the Mesh to get. Must be in the format
-   *     `projects/&#42;/locations/global/meshes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/meshes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Mesh getMesh(MeshName name) {
@@ -8020,7 +8124,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the Mesh to get. Must be in the format
-   *     `projects/&#42;/locations/global/meshes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/meshes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Mesh getMesh(String name) {
@@ -8104,7 +8208,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the Mesh. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param mesh Required. Mesh resource to be created.
    * @param meshId Required. Short name of the Mesh resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -8141,7 +8245,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the Mesh. Must be in the format
-   *     `projects/&#42;/locations/global`.
+   *     `projects/&#42;/locations/&#42;`.
    * @param mesh Required. Mesh resource to be created.
    * @param meshId Required. Short name of the Mesh resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -8382,7 +8486,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the Mesh to delete. Must be in the format
-   *     `projects/&#42;/locations/global/meshes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/meshes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMeshAsync(MeshName name) {
@@ -8410,7 +8514,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. A name of the Mesh to delete. Must be in the format
-   *     `projects/&#42;/locations/global/meshes/&#42;`.
+   *     `projects/&#42;/locations/&#42;/meshes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMeshAsync(String name) {
@@ -9835,6 +9939,729 @@ public class NetworkServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists AgentGateways in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AgentGateway element : networkServicesClient.listAgentGateways(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the AgentGateways should be listed,
+   *     specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAgentGatewaysPagedResponse listAgentGateways(LocationName parent) {
+    ListAgentGatewaysRequest request =
+        ListAgentGatewaysRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAgentGateways(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AgentGateways in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AgentGateway element : networkServicesClient.listAgentGateways(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the AgentGateways should be listed,
+   *     specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAgentGatewaysPagedResponse listAgentGateways(String parent) {
+    ListAgentGatewaysRequest request =
+        ListAgentGatewaysRequest.newBuilder().setParent(parent).build();
+    return listAgentGateways(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AgentGateways in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListAgentGatewaysRequest request =
+   *       ListAgentGatewaysRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (AgentGateway element : networkServicesClient.listAgentGateways(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAgentGatewaysPagedResponse listAgentGateways(ListAgentGatewaysRequest request) {
+    return listAgentGatewaysPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AgentGateways in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListAgentGatewaysRequest request =
+   *       ListAgentGatewaysRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<AgentGateway> future =
+   *       networkServicesClient.listAgentGatewaysPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AgentGateway element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysPagedCallable() {
+    return stub.listAgentGatewaysPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AgentGateways in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   ListAgentGatewaysRequest request =
+   *       ListAgentGatewaysRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   while (true) {
+   *     ListAgentGatewaysResponse response =
+   *         networkServicesClient.listAgentGatewaysCallable().call(request);
+   *     for (AgentGateway element : response.getAgentGatewaysList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysCallable() {
+    return stub.listAgentGatewaysCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   AgentGatewayName name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]");
+   *   AgentGateway response = networkServicesClient.getAgentGateway(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the AgentGateway to get. Must be in the format
+   *     `projects/&#42;/locations/&#42;/agentGateways/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentGateway getAgentGateway(AgentGatewayName name) {
+    GetAgentGatewayRequest request =
+        GetAgentGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAgentGateway(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString();
+   *   AgentGateway response = networkServicesClient.getAgentGateway(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the AgentGateway to get. Must be in the format
+   *     `projects/&#42;/locations/&#42;/agentGateways/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentGateway getAgentGateway(String name) {
+    GetAgentGatewayRequest request = GetAgentGatewayRequest.newBuilder().setName(name).build();
+    return getAgentGateway(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetAgentGatewayRequest request =
+   *       GetAgentGatewayRequest.newBuilder()
+   *           .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+   *           .build();
+   *   AgentGateway response = networkServicesClient.getAgentGateway(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentGateway getAgentGateway(GetAgentGatewayRequest request) {
+    return getAgentGatewayCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   GetAgentGatewayRequest request =
+   *       GetAgentGatewayRequest.newBuilder()
+   *           .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+   *           .build();
+   *   ApiFuture<AgentGateway> future =
+   *       networkServicesClient.getAgentGatewayCallable().futureCall(request);
+   *   // Do something.
+   *   AgentGateway response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAgentGatewayRequest, AgentGateway> getAgentGatewayCallable() {
+    return stub.getAgentGatewayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AgentGateway in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AgentGateway agentGateway = AgentGateway.newBuilder().build();
+   *   String agentGatewayId = "agentGatewayId1729577210";
+   *   AgentGateway response =
+   *       networkServicesClient.createAgentGatewayAsync(parent, agentGateway, agentGatewayId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the AgentGateway. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param agentGateway Required. AgentGateway resource to be created.
+   * @param agentGatewayId Required. Short name of the AgentGateway resource to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AgentGateway, OperationMetadata> createAgentGatewayAsync(
+      LocationName parent, AgentGateway agentGateway, String agentGatewayId) {
+    CreateAgentGatewayRequest request =
+        CreateAgentGatewayRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAgentGateway(agentGateway)
+            .setAgentGatewayId(agentGatewayId)
+            .build();
+    return createAgentGatewayAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AgentGateway in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AgentGateway agentGateway = AgentGateway.newBuilder().build();
+   *   String agentGatewayId = "agentGatewayId1729577210";
+   *   AgentGateway response =
+   *       networkServicesClient.createAgentGatewayAsync(parent, agentGateway, agentGatewayId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the AgentGateway. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param agentGateway Required. AgentGateway resource to be created.
+   * @param agentGatewayId Required. Short name of the AgentGateway resource to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AgentGateway, OperationMetadata> createAgentGatewayAsync(
+      String parent, AgentGateway agentGateway, String agentGatewayId) {
+    CreateAgentGatewayRequest request =
+        CreateAgentGatewayRequest.newBuilder()
+            .setParent(parent)
+            .setAgentGateway(agentGateway)
+            .setAgentGatewayId(agentGatewayId)
+            .build();
+    return createAgentGatewayAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AgentGateway in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateAgentGatewayRequest request =
+   *       CreateAgentGatewayRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAgentGatewayId("agentGatewayId1729577210")
+   *           .setAgentGateway(AgentGateway.newBuilder().build())
+   *           .build();
+   *   AgentGateway response = networkServicesClient.createAgentGatewayAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AgentGateway, OperationMetadata> createAgentGatewayAsync(
+      CreateAgentGatewayRequest request) {
+    return createAgentGatewayOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AgentGateway in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateAgentGatewayRequest request =
+   *       CreateAgentGatewayRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAgentGatewayId("agentGatewayId1729577210")
+   *           .setAgentGateway(AgentGateway.newBuilder().build())
+   *           .build();
+   *   OperationFuture<AgentGateway, OperationMetadata> future =
+   *       networkServicesClient.createAgentGatewayOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AgentGateway response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationCallable() {
+    return stub.createAgentGatewayOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AgentGateway in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   CreateAgentGatewayRequest request =
+   *       CreateAgentGatewayRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAgentGatewayId("agentGatewayId1729577210")
+   *           .setAgentGateway(AgentGateway.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.createAgentGatewayCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAgentGatewayRequest, Operation> createAgentGatewayCallable() {
+    return stub.createAgentGatewayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   AgentGateway agentGateway = AgentGateway.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AgentGateway response =
+   *       networkServicesClient.updateAgentGatewayAsync(agentGateway, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param agentGateway Required. Updated AgentGateway resource.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     AgentGateway resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AgentGateway, OperationMetadata> updateAgentGatewayAsync(
+      AgentGateway agentGateway, FieldMask updateMask) {
+    UpdateAgentGatewayRequest request =
+        UpdateAgentGatewayRequest.newBuilder()
+            .setAgentGateway(agentGateway)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAgentGatewayAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateAgentGatewayRequest request =
+   *       UpdateAgentGatewayRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAgentGateway(AgentGateway.newBuilder().build())
+   *           .build();
+   *   AgentGateway response = networkServicesClient.updateAgentGatewayAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AgentGateway, OperationMetadata> updateAgentGatewayAsync(
+      UpdateAgentGatewayRequest request) {
+    return updateAgentGatewayOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateAgentGatewayRequest request =
+   *       UpdateAgentGatewayRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAgentGateway(AgentGateway.newBuilder().build())
+   *           .build();
+   *   OperationFuture<AgentGateway, OperationMetadata> future =
+   *       networkServicesClient.updateAgentGatewayOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AgentGateway response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationCallable() {
+    return stub.updateAgentGatewayOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   UpdateAgentGatewayRequest request =
+   *       UpdateAgentGatewayRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAgentGateway(AgentGateway.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.updateAgentGatewayCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAgentGatewayRequest, Operation> updateAgentGatewayCallable() {
+    return stub.updateAgentGatewayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   AgentGatewayName name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]");
+   *   networkServicesClient.deleteAgentGatewayAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the AgentGateway to delete. Must be in the format
+   *     `projects/&#42;/locations/&#42;/agentGateways/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAgentGatewayAsync(
+      AgentGatewayName name) {
+    DeleteAgentGatewayRequest request =
+        DeleteAgentGatewayRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteAgentGatewayAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   String name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString();
+   *   networkServicesClient.deleteAgentGatewayAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the AgentGateway to delete. Must be in the format
+   *     `projects/&#42;/locations/&#42;/agentGateways/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAgentGatewayAsync(String name) {
+    DeleteAgentGatewayRequest request =
+        DeleteAgentGatewayRequest.newBuilder().setName(name).build();
+    return deleteAgentGatewayAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteAgentGatewayRequest request =
+   *       DeleteAgentGatewayRequest.newBuilder()
+   *           .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   networkServicesClient.deleteAgentGatewayAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAgentGatewayAsync(
+      DeleteAgentGatewayRequest request) {
+    return deleteAgentGatewayOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteAgentGatewayRequest request =
+   *       DeleteAgentGatewayRequest.newBuilder()
+   *           .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       networkServicesClient.deleteAgentGatewayOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationCallable() {
+    return stub.deleteAgentGatewayOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AgentGateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
+   *   DeleteAgentGatewayRequest request =
+   *       DeleteAgentGatewayRequest.newBuilder()
+   *           .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networkServicesClient.deleteAgentGatewayCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayCallable() {
+    return stub.deleteAgentGatewayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -11246,6 +12073,86 @@ public class NetworkServicesClient implements BackgroundResource {
     protected ListMeshRouteViewsFixedSizeCollection createCollection(
         List<ListMeshRouteViewsPage> pages, int collectionSize) {
       return new ListMeshRouteViewsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAgentGatewaysPagedResponse
+      extends AbstractPagedListResponse<
+          ListAgentGatewaysRequest,
+          ListAgentGatewaysResponse,
+          AgentGateway,
+          ListAgentGatewaysPage,
+          ListAgentGatewaysFixedSizeCollection> {
+
+    public static ApiFuture<ListAgentGatewaysPagedResponse> createAsync(
+        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
+        ApiFuture<ListAgentGatewaysResponse> futureResponse) {
+      ApiFuture<ListAgentGatewaysPage> futurePage =
+          ListAgentGatewaysPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAgentGatewaysPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAgentGatewaysPagedResponse(ListAgentGatewaysPage page) {
+      super(page, ListAgentGatewaysFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAgentGatewaysPage
+      extends AbstractPage<
+          ListAgentGatewaysRequest,
+          ListAgentGatewaysResponse,
+          AgentGateway,
+          ListAgentGatewaysPage> {
+
+    private ListAgentGatewaysPage(
+        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
+        ListAgentGatewaysResponse response) {
+      super(context, response);
+    }
+
+    private static ListAgentGatewaysPage createEmptyPage() {
+      return new ListAgentGatewaysPage(null, null);
+    }
+
+    @Override
+    protected ListAgentGatewaysPage createPage(
+        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
+        ListAgentGatewaysResponse response) {
+      return new ListAgentGatewaysPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAgentGatewaysPage> createPageAsync(
+        PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway> context,
+        ApiFuture<ListAgentGatewaysResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAgentGatewaysFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAgentGatewaysRequest,
+          ListAgentGatewaysResponse,
+          AgentGateway,
+          ListAgentGatewaysPage,
+          ListAgentGatewaysFixedSizeCollection> {
+
+    private ListAgentGatewaysFixedSizeCollection(
+        List<ListAgentGatewaysPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAgentGatewaysFixedSizeCollection createEmptyCollection() {
+      return new ListAgentGatewaysFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAgentGatewaysFixedSizeCollection createCollection(
+        List<ListAgentGatewaysPage> pages, int collectionSize) {
+      return new ListAgentGatewaysFixedSizeCollection(pages, collectionSize);
     }
   }
 

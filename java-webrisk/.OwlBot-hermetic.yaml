@@ -17,19 +17,20 @@ deep-remove-regex:
 - "/java-webrisk/samples/snippets/generated"
 - "/java-webrisk/grpc-google-.*/src"
 - "/java-webrisk/proto-google-.*/src"
-- "/java-webrisk/google-.*/src"
+- "/java-webrisk/google-.*/src/main"
+- "/java-webrisk/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-webrisk/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-webrisk/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/webrisk/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-webrisk/$1/proto-google-cloud-webrisk-$1/src"
 - source: "/google/cloud/webrisk/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-webrisk/$1/grpc-google-cloud-webrisk-$1/src"
-- source: "/google/cloud/webrisk/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-webrisk/$1/google-cloud-webrisk/src"
+- source: "/google/cloud/webrisk/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-webrisk/$1/google-cloud-webrisk/src/main"
 - source: "/google/cloud/webrisk/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-webrisk/$1/samples/snippets/generated"
 

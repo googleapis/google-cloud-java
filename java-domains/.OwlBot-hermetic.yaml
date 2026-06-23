@@ -17,7 +17,10 @@ deep-remove-regex:
 - "/java-domains/samples/snippets/generated"
 - "/java-domains/grpc-google-.*/src"
 - "/java-domains/proto-google-.*/src"
-- "/java-domains/google-.*/src"
+- "/java-domains/google-.*/src/main"
+- "/java-domains/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-domains/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-domains/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-domains/$1/proto-google-cloud-domains-$1/src"
 - source: "/google/cloud/domains/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-domains/$1/grpc-google-cloud-domains-$1/src"
-- source: "/google/cloud/domains/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-domains/$1/google-cloud-domains/src"
+- source: "/google/cloud/domains/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-domains/$1/google-cloud-domains/src/main"
 - source: "/google/cloud/domains/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-domains/$1/samples/snippets/generated"
 

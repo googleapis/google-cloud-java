@@ -84,22 +84,25 @@ public final class GroundingProto extends com.google.protobuf.GeneratedFile {
           + "ryengine.v1beta.GroundingFact.AttributesEntry\0321\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\322\001\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\376\001\n"
           + "\tFactChunk\022\022\n\n"
           + "chunk_text\030\001 \001(\t\022\016\n"
           + "\006source\030\002 \001(\t\022\r\n"
           + "\005index\030\004 \001(\005\022[\n"
           + "\017source_metadata\030\003 \003(\0132B.google.clou"
-          + "d.discoveryengine.v1beta.FactChunk.SourceMetadataEntry\0325\n"
+          + "d.discoveryengine.v1beta.FactChunk.SourceMetadataEntry\022\013\n"
+          + "\003uri\030\005 \001(\t\022\r\n"
+          + "\005title\030\006 \001(\t\022\016\n"
+          + "\006domain\030\007 \001(\t\0325\n"
           + "\023SourceMetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\225\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB\016Groun"
-          + "dingProtoP\001ZQcloud.google.com/go/discoveryengine/apiv1beta/discoveryenginepb;dis"
-          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002#Googl"
-          + "e.Cloud.DiscoveryEngine.V1Beta\312\002#Google\\"
-          + "Cloud\\DiscoveryEngine\\V1beta\352\002&Google::C"
-          + "loud::DiscoveryEngine::V1betab\006proto3"
+          + "\'com.google.cloud.discoveryengine.v1betaB\016G"
+          + "roundingProtoP\001ZQcloud.google.com/go/discoveryengine/apiv1beta/discoveryenginepb"
+          + ";discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#G"
+          + "oogle.Cloud.DiscoveryEngine.V1Beta\312\002#Goo"
+          + "gle\\Cloud\\DiscoveryEngine\\V1beta\352\002&Googl"
+          + "e::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -139,7 +142,7 @@ public final class GroundingProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_FactChunk_descriptor,
             new java.lang.String[] {
-              "ChunkText", "Source", "Index", "SourceMetadata",
+              "ChunkText", "Source", "Index", "SourceMetadata", "Uri", "Title", "Domain",
             });
     internal_static_google_cloud_discoveryengine_v1beta_FactChunk_SourceMetadataEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_FactChunk_descriptor.getNestedType(0);

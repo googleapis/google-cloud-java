@@ -61,6 +61,10 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
    * [QueryResult.diagnostic_info][google.cloud.dialogflow.cx.v3beta1.QueryResult.diagnostic_info]
    * -
    * [QueryResult.generative_info][google.cloud.dialogflow.cx.v3beta1.QueryResult.generative_info]
+   * -
+   * [QueryResult.trace_blocks][google.cloud.dialogflow.cx.v3beta1.QueryResult.trace_blocks]
+   * -
+   * [QueryResult.data_store_connection_signals][google.cloud.dialogflow.cx.v3beta1.QueryResult.data_store_connection_signals]
    * </pre>
    *
    * <code>DETECT_INTENT_RESPONSE_VIEW_BASIC = 2;</code>
@@ -122,6 +126,10 @@ public enum DetectIntentResponseView implements com.google.protobuf.ProtocolMess
    * [QueryResult.diagnostic_info][google.cloud.dialogflow.cx.v3beta1.QueryResult.diagnostic_info]
    * -
    * [QueryResult.generative_info][google.cloud.dialogflow.cx.v3beta1.QueryResult.generative_info]
+   * -
+   * [QueryResult.trace_blocks][google.cloud.dialogflow.cx.v3beta1.QueryResult.trace_blocks]
+   * -
+   * [QueryResult.data_store_connection_signals][google.cloud.dialogflow.cx.v3beta1.QueryResult.data_store_connection_signals]
    * </pre>
    *
    * <code>DETECT_INTENT_RESPONSE_VIEW_BASIC = 2;</code>
