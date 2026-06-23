@@ -120,6 +120,12 @@ public class BuiltInDatastoreMetricsProvider {
    */
   @Nullable
   public OpenTelemetry createOpenTelemetry(@Nonnull DatastoreOptions options) {
+    // If built-in metrics export is disabled, return no-op OpenTelemetry to avoid instantiating
+    // a real SdkMeterProvider. Otherwise, the SDK-internal PeriodicMetricReader will start
+    // and attempt to export diagnostic metrics, leading to log spam if the exporter fails.
+    if (!options.getOpenTelemetryOptions().isExportBuiltinMetricsToGoogleCloudMonitoring()) {
+      return OpenTelemetry.noop();
+    }
     Credentials credentials =
         Preconditions.checkNotNull(
             options.getCredentials(), "Credentials cannot be null for built in metrics");
