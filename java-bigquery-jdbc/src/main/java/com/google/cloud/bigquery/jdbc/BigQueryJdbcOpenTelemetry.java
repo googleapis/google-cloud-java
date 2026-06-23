@@ -209,7 +209,9 @@ public class BigQueryJdbcOpenTelemetry {
 
   private static Credentials resolveCredentialsFromString(String credsString) {
     Map<String, String> authProperties = new java.util.HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, "0"); // Service Account
+    authProperties.put(
+        BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME,
+        BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name()); // Service Account
 
     byte[] credsBytes = credsString.getBytes(StandardCharsets.UTF_8);
     if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
