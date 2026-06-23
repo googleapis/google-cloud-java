@@ -1,4 +1,4 @@
-FROM gcr.io/cloud-devrel-public-resources/java11
+FROM gcr.io/cloud-devrel-public-resources/java11 AS base
 ARG BRANCH=main
 ENV JDBC_DOCKER_ENV=true
 
@@ -17,8 +17,19 @@ RUN bash -c " \
     && install_modules java-bigquery \
     && rm -rf /git"
 
-# This will ensure all deps are present
+# This will ensure all deps are present, including integration test deps, while skipping shade
 WORKDIR /src
-RUN mvn install
+RUN mvn install -Penable-integration-tests -Dtest=NoSuchTest -Dit.test=NoSuchTest -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dit.failIfNoSpecifiedTests=false -Dmaven.shade.skip=true -DskipShade=true
 
 ENTRYPOINT []
+
+# Proxy stage: configured squid proxy and iptables to force all traffic through it
+FROM base AS proxy
+RUN apt-get update && apt-get install -y squid iptables iproute2 curl && rm -rf /var/lib/apt/lists/*
+COPY tools/environments/proxy/start-proxy.sh /usr/local/bin/start-proxy.sh
+RUN chmod +x /usr/local/bin/start-proxy.sh
+ENTRYPOINT ["/usr/local/bin/start-proxy.sh"]
+
+# Regular stage: same as base, default stage
+FROM base AS regular
+
