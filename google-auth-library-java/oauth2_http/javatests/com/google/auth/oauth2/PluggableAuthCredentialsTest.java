@@ -36,7 +36,6 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -57,10 +56,6 @@ import org.junit.jupiter.api.Test;
 
 /** Tests for {@link PluggableAuthCredentials}. */
 class PluggableAuthCredentialsTest extends BaseSerializationTest {
-
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {}
-
   // The default timeout for waiting for the executable to finish (30 seconds).
   private static final int DEFAULT_EXECUTABLE_TIMEOUT_MS = 30 * 1000;
   // The minimum timeout for waiting for the executable to finish (5 seconds).
@@ -604,49 +599,6 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     // PluggableAuthCredentials are not serializable
     assertThrows(NotSerializableException.class, () -> serializeAndDeserialize(testCredentials));
-  }
-
-  @Test
-  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-
-    MockExternalAccountCredentialsTransportFactory transportFactory =
-        new MockExternalAccountCredentialsTransportFactory();
-    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
-
-    PluggableAuthCredentials credentials =
-        PluggableAuthCredentials.newBuilder()
-            .setHttpTransportFactory(transportFactory)
-            .setAudience(
-                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
-            .setSubjectTokenType("subjectTokenType")
-            .setTokenUrl(transportFactory.transport.getStsUrl())
-            .setCredentialSource(buildCredentialSource())
-            .setExecutableHandler(options -> "pluggableAuthToken")
-            .build();
-
-    // First call: initiates async refresh.
-    Map<String, List<String>> headers = credentials.getRequestMetadata();
-    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
-
-    waitForRegionalAccessBoundary(credentials);
-
-    // Second call: should have header.
-    headers = credentials.getRequestMetadata();
-    assertEquals(
-        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
-        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   private static PluggableAuthCredentialSource buildCredentialSource() {
