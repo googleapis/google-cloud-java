@@ -62,6 +62,8 @@ public final class MockStsTransport extends MockHttpTransport {
   private static final String ISSUED_TOKEN_TYPE = "urn:ietf:params:oauth:token-type:access_token";
   private static final String VALID_STS_PATTERN =
       "https:\\/\\/sts.[a-z-_\\.]+\\/v1\\/(token|oauthtoken)";
+  private static final String VALID_REGIONAL_ACCESS_BOUNDARY_PATTERN =
+      "https:\\/\\/iam.[a-z-_\\.]+\\/v1\\/.*\\/allowedLocations";
   private static final String ACCESS_TOKEN = "accessToken";
   private static final String TOKEN_TYPE = "Bearer";
   private static final Long EXPIRES_IN = 3600L;
@@ -99,6 +101,23 @@ public final class MockStsTransport extends MockHttpTransport {
         new MockLowLevelHttpRequest(url) {
           @Override
           public LowLevelHttpResponse execute() throws IOException {
+            // Mocking call to refresh regional access boundaries.
+            // The lookup endpoint is located in the IAM server.
+            Matcher regionalAccessBoundaryMatcher =
+                Pattern.compile(VALID_REGIONAL_ACCESS_BOUNDARY_PATTERN).matcher(url);
+            if (regionalAccessBoundaryMatcher.matches()) {
+              // Mocking call to the /allowedLocations endpoint for regional access boundary
+              // refresh.
+              // For testing convenience, this mock transport handles
+              // the /allowedLocations endpoint.
+              GenericJson response = new GenericJson();
+              response.put("locations", TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS);
+              response.put("encodedLocations", TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION);
+              return new MockLowLevelHttpResponse()
+                  .setContentType(Json.MEDIA_TYPE)
+                  .setContent(OAuth2Utils.JSON_FACTORY.toString(response));
+            }
+
             // Environment version is prefixed by "aws". e.g. "aws1".
             Matcher matcher = Pattern.compile(VALID_STS_PATTERN).matcher(url);
             if (!matcher.matches()) {

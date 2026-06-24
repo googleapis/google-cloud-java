@@ -34,6 +34,13 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitl
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentEnvironmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
@@ -69,6 +76,9 @@ import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
@@ -79,6 +89,9 @@ import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
@@ -93,9 +106,15 @@ import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.GoldengateConnection;
+import com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignment;
+import com.google.cloud.oracledatabase.v1.GoldengateDeployment;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -132,6 +151,20 @@ import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionTypesRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionTypesResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentEnvironmentsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentEnvironmentsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
@@ -148,8 +181,12 @@ import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequ
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StartGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StopGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse;
 import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
 import com.google.common.collect.ImmutableMap;
@@ -174,15 +211,18 @@ import javax.annotation.Generated;
 public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
-          .add(CloudVmCluster.getDescriptor())
-          .add(Empty.getDescriptor())
-          .add(OdbNetwork.getDescriptor())
           .add(AutonomousDatabase.getDescriptor())
-          .add(ExadbVmCluster.getDescriptor())
           .add(CloudExadataInfrastructure.getDescriptor())
           .add(ExascaleDbStorageVault.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(GoldengateConnection.getDescriptor())
+          .add(CloudVmCluster.getDescriptor())
+          .add(Empty.getDescriptor())
+          .add(OdbNetwork.getDescriptor())
+          .add(ExadbVmCluster.getDescriptor())
+          .add(GoldengateDeployment.getDescriptor())
           .add(OdbSubnet.getDescriptor())
+          .add(GoldengateConnectionAssignment.getDescriptor())
           .add(DbSystem.getDescriptor())
           .build();
 
@@ -2406,6 +2446,587 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+      listGoldengateDeploymentsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeployments")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListGoldengateDeploymentsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateDeployments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListGoldengateDeploymentsResponse>newBuilder()
+                      .setDefaultInstance(ListGoldengateDeploymentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentMethodDescriptor =
+          ApiMethodDescriptor.<GetGoldengateDeploymentRequest, GoldengateDeployment>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeployment")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetGoldengateDeploymentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateDeployments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GoldengateDeployment>newBuilder()
+                      .setDefaultInstance(GoldengateDeployment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentMethodDescriptor =
+          ApiMethodDescriptor.<CreateGoldengateDeploymentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateDeployment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateGoldengateDeploymentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateDeployments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "goldengateDeploymentId",
+                                request.getGoldengateDeploymentId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "goldengateDeployment",
+                                      request.getGoldengateDeployment(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateGoldengateDeploymentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentMethodDescriptor =
+          ApiMethodDescriptor.<DeleteGoldengateDeploymentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteGoldengateDeployment")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteGoldengateDeploymentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateDeployments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteGoldengateDeploymentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentMethodDescriptor =
+          ApiMethodDescriptor.<StopGoldengateDeploymentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/StopGoldengateDeployment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StopGoldengateDeploymentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateDeployments/*}:stop",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StopGoldengateDeploymentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentMethodDescriptor =
+          ApiMethodDescriptor.<StartGoldengateDeploymentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/StartGoldengateDeployment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartGoldengateDeploymentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateDeployments/*}:start",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartGoldengateDeploymentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartGoldengateDeploymentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+      listGoldengateConnectionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateConnections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListGoldengateConnectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateConnections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListGoldengateConnectionsResponse>newBuilder()
+                      .setDefaultInstance(ListGoldengateConnectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<GetGoldengateConnectionRequest, GoldengateConnection>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateConnection")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetGoldengateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GoldengateConnection>newBuilder()
+                      .setDefaultInstance(GoldengateConnection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<CreateGoldengateConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateConnection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateGoldengateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateConnections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "goldengateConnectionId",
+                                request.getGoldengateConnectionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "goldengateConnection",
+                                      request.getGoldengateConnection(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateGoldengateConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteGoldengateConnectionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteGoldengateConnection")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteGoldengateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateConnections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGoldengateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteGoldengateConnectionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+      listGoldengateDeploymentVersionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeploymentVersions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListGoldengateDeploymentVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateDeploymentVersions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentVersionsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentVersionsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListGoldengateDeploymentVersionsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListGoldengateDeploymentVersionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+      listGoldengateDeploymentTypesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeploymentTypes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListGoldengateDeploymentTypesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateDeploymentTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListGoldengateDeploymentTypesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListGoldengateDeploymentTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
+      listGoldengateDeploymentEnvironmentsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateDeploymentEnvironmentsRequest,
+                  ListGoldengateDeploymentEnvironmentsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeploymentEnvironments")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListGoldengateDeploymentEnvironmentsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateDeploymentEnvironments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentEnvironmentsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateDeploymentEnvironmentsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListGoldengateDeploymentEnvironmentsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListGoldengateDeploymentEnvironmentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+      listGoldengateConnectionTypesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateConnectionTypes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListGoldengateConnectionTypesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateConnectionTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateConnectionTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateConnectionTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListGoldengateConnectionTypesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListGoldengateConnectionTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListDbVersionsRequest, ListDbVersionsResponse>
       listDbVersionsMethodDescriptor =
           ApiMethodDescriptor.<ListDbVersionsRequest, ListDbVersionsResponse>newBuilder()
@@ -2479,6 +3100,226 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListDatabaseCharacterSetsResponse>newBuilder()
                       .setDefaultInstance(ListDatabaseCharacterSetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+      listGoldengateConnectionAssignmentsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListGoldengateConnectionAssignmentsRequest,
+                  ListGoldengateConnectionAssignmentsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateConnectionAssignments")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListGoldengateConnectionAssignmentsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateConnectionAssignments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateConnectionAssignmentsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListGoldengateConnectionAssignmentsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListGoldengateConnectionAssignmentsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListGoldengateConnectionAssignmentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateConnectionAssignment")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetGoldengateConnectionAssignmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateConnectionAssignments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GoldengateConnectionAssignment>newBuilder()
+                      .setDefaultInstance(GoldengateConnectionAssignment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentMethodDescriptor =
+          ApiMethodDescriptor.<CreateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateConnectionAssignment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CreateGoldengateConnectionAssignmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/goldengateConnectionAssignments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "goldengateConnectionAssignmentId",
+                                request.getGoldengateConnectionAssignmentId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "goldengateConnectionAssignment",
+                                      request.getGoldengateConnectionAssignment(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateGoldengateConnectionAssignmentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentMethodDescriptor =
+          ApiMethodDescriptor.<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteGoldengateConnectionAssignment")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DeleteGoldengateConnectionAssignmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateConnectionAssignments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteGoldengateConnectionAssignmentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestGoldengateConnectionAssignmentRequest,
+                  TestGoldengateConnectionAssignmentResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/TestGoldengateConnectionAssignment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestGoldengateConnectionAssignmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/goldengateConnectionAssignments/*}:test",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestGoldengateConnectionAssignmentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<TestGoldengateConnectionAssignmentResponse>newBuilder()
+                      .setDefaultInstance(
+                          TestGoldengateConnectionAssignmentResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -2754,6 +3595,73 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable;
   private final OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
       deleteDbSystemOperationCallable;
+  private final UnaryCallable<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+      listGoldengateDeploymentsCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsPagedResponse>
+      listGoldengateDeploymentsPagedCallable;
+  private final UnaryCallable<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentCallable;
+  private final UnaryCallable<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentCallable;
+  private final OperationCallable<
+          CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      createGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentCallable;
+  private final OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
+      deleteGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentCallable;
+  private final OperationCallable<
+          StopGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      stopGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentCallable;
+  private final OperationCallable<
+          StartGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      startGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+      listGoldengateConnectionsCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionsRequest, ListGoldengateConnectionsPagedResponse>
+      listGoldengateConnectionsPagedCallable;
+  private final UnaryCallable<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionCallable;
+  private final UnaryCallable<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionCallable;
+  private final OperationCallable<
+          CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      createGoldengateConnectionOperationCallable;
+  private final UnaryCallable<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionCallable;
+  private final OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionOperationCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+      listGoldengateDeploymentVersionsCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
+      listGoldengateDeploymentVersionsPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+      listGoldengateDeploymentTypesCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesPagedResponse>
+      listGoldengateDeploymentTypesPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
+      listGoldengateDeploymentEnvironmentsCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest,
+          ListGoldengateDeploymentEnvironmentsPagedResponse>
+      listGoldengateDeploymentEnvironmentsPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+      listGoldengateConnectionTypesCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesPagedResponse>
+      listGoldengateConnectionTypesPagedCallable;
   private final UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable;
   private final UnaryCallable<ListDbVersionsRequest, ListDbVersionsPagedResponse>
       listDbVersionsPagedCallable;
@@ -2762,6 +3670,31 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
       listDatabaseCharacterSetsPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+      listGoldengateConnectionAssignmentsCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest,
+          ListGoldengateConnectionAssignmentsPagedResponse>
+      listGoldengateConnectionAssignmentsPagedCallable;
+  private final UnaryCallable<
+          GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentCallable;
+  private final UnaryCallable<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentCallable;
+  private final OperationCallable<
+          CreateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      createGoldengateConnectionAssignmentOperationCallable;
+  private final UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentCallable;
+  private final OperationCallable<
+          DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionAssignmentOperationCallable;
+  private final UnaryCallable<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -3581,6 +4514,204 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+        listGoldengateDeploymentsTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetGoldengateDeploymentRequest, GoldengateDeployment>
+        getGoldengateDeploymentTransportSettings =
+            HttpJsonCallSettings.<GetGoldengateDeploymentRequest, GoldengateDeployment>newBuilder()
+                .setMethodDescriptor(getGoldengateDeploymentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateGoldengateDeploymentRequest, Operation>
+        createGoldengateDeploymentTransportSettings =
+            HttpJsonCallSettings.<CreateGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoldengateDeploymentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteGoldengateDeploymentRequest, Operation>
+        deleteGoldengateDeploymentTransportSettings =
+            HttpJsonCallSettings.<DeleteGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoldengateDeploymentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<StopGoldengateDeploymentRequest, Operation>
+        stopGoldengateDeploymentTransportSettings =
+            HttpJsonCallSettings.<StopGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(stopGoldengateDeploymentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<StartGoldengateDeploymentRequest, Operation>
+        startGoldengateDeploymentTransportSettings =
+            HttpJsonCallSettings.<StartGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(startGoldengateDeploymentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+        listGoldengateConnectionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listGoldengateConnectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetGoldengateConnectionRequest, GoldengateConnection>
+        getGoldengateConnectionTransportSettings =
+            HttpJsonCallSettings.<GetGoldengateConnectionRequest, GoldengateConnection>newBuilder()
+                .setMethodDescriptor(getGoldengateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateGoldengateConnectionRequest, Operation>
+        createGoldengateConnectionTransportSettings =
+            HttpJsonCallSettings.<CreateGoldengateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoldengateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteGoldengateConnectionRequest, Operation>
+        deleteGoldengateConnectionTransportSettings =
+            HttpJsonCallSettings.<DeleteGoldengateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoldengateConnectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+        listGoldengateDeploymentVersionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+        listGoldengateDeploymentTypesTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentTypesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            ListGoldengateDeploymentEnvironmentsRequest,
+            ListGoldengateDeploymentEnvironmentsResponse>
+        listGoldengateDeploymentEnvironmentsTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateDeploymentEnvironmentsRequest,
+                    ListGoldengateDeploymentEnvironmentsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentEnvironmentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+        listGoldengateConnectionTypesTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateConnectionTypesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListDbVersionsRequest, ListDbVersionsResponse>
         listDbVersionsTransportSettings =
             HttpJsonCallSettings.<ListDbVersionsRequest, ListDbVersionsResponse>newBuilder()
@@ -3607,6 +4738,83 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+        listGoldengateConnectionAssignmentsTransportSettings =
+            HttpJsonCallSettings
+                .<ListGoldengateConnectionAssignmentsRequest,
+                    ListGoldengateConnectionAssignmentsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateConnectionAssignmentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+        getGoldengateConnectionAssignmentTransportSettings =
+            HttpJsonCallSettings
+                .<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+                    newBuilder()
+                .setMethodDescriptor(getGoldengateConnectionAssignmentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateGoldengateConnectionAssignmentRequest, Operation>
+        createGoldengateConnectionAssignmentTransportSettings =
+            HttpJsonCallSettings
+                .<CreateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoldengateConnectionAssignmentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
+        deleteGoldengateConnectionAssignmentTransportSettings =
+            HttpJsonCallSettings
+                .<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoldengateConnectionAssignmentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+        testGoldengateConnectionAssignmentTransportSettings =
+            HttpJsonCallSettings
+                .<TestGoldengateConnectionAssignmentRequest,
+                    TestGoldengateConnectionAssignmentResponse>
+                    newBuilder()
+                .setMethodDescriptor(testGoldengateConnectionAssignmentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -4110,6 +5318,142 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteDbSystemOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listGoldengateDeploymentsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentsTransportSettings,
+            settings.listGoldengateDeploymentsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentsTransportSettings,
+            settings.listGoldengateDeploymentsSettings(),
+            clientContext);
+    this.getGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            getGoldengateDeploymentTransportSettings,
+            settings.getGoldengateDeploymentSettings(),
+            clientContext);
+    this.createGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            createGoldengateDeploymentTransportSettings,
+            settings.createGoldengateDeploymentSettings(),
+            clientContext);
+    this.createGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoldengateDeploymentTransportSettings,
+            settings.createGoldengateDeploymentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoldengateDeploymentTransportSettings,
+            settings.deleteGoldengateDeploymentSettings(),
+            clientContext);
+    this.deleteGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoldengateDeploymentTransportSettings,
+            settings.deleteGoldengateDeploymentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.stopGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            stopGoldengateDeploymentTransportSettings,
+            settings.stopGoldengateDeploymentSettings(),
+            clientContext);
+    this.stopGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            stopGoldengateDeploymentTransportSettings,
+            settings.stopGoldengateDeploymentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.startGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            startGoldengateDeploymentTransportSettings,
+            settings.startGoldengateDeploymentSettings(),
+            clientContext);
+    this.startGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            startGoldengateDeploymentTransportSettings,
+            settings.startGoldengateDeploymentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listGoldengateConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateConnectionsTransportSettings,
+            settings.listGoldengateConnectionsSettings(),
+            clientContext);
+    this.listGoldengateConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateConnectionsTransportSettings,
+            settings.listGoldengateConnectionsSettings(),
+            clientContext);
+    this.getGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getGoldengateConnectionTransportSettings,
+            settings.getGoldengateConnectionSettings(),
+            clientContext);
+    this.createGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createGoldengateConnectionTransportSettings,
+            settings.createGoldengateConnectionSettings(),
+            clientContext);
+    this.createGoldengateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoldengateConnectionTransportSettings,
+            settings.createGoldengateConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoldengateConnectionTransportSettings,
+            settings.deleteGoldengateConnectionSettings(),
+            clientContext);
+    this.deleteGoldengateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoldengateConnectionTransportSettings,
+            settings.deleteGoldengateConnectionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listGoldengateDeploymentVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentVersionsTransportSettings,
+            settings.listGoldengateDeploymentVersionsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentVersionsTransportSettings,
+            settings.listGoldengateDeploymentVersionsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentTypesCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentTypesTransportSettings,
+            settings.listGoldengateDeploymentTypesSettings(),
+            clientContext);
+    this.listGoldengateDeploymentTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentTypesTransportSettings,
+            settings.listGoldengateDeploymentTypesSettings(),
+            clientContext);
+    this.listGoldengateDeploymentEnvironmentsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentEnvironmentsTransportSettings,
+            settings.listGoldengateDeploymentEnvironmentsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentEnvironmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentEnvironmentsTransportSettings,
+            settings.listGoldengateDeploymentEnvironmentsSettings(),
+            clientContext);
+    this.listGoldengateConnectionTypesCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateConnectionTypesTransportSettings,
+            settings.listGoldengateConnectionTypesSettings(),
+            clientContext);
+    this.listGoldengateConnectionTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateConnectionTypesTransportSettings,
+            settings.listGoldengateConnectionTypesSettings(),
+            clientContext);
     this.listDbVersionsCallable =
         callableFactory.createUnaryCallable(
             listDbVersionsTransportSettings, settings.listDbVersionsSettings(), clientContext);
@@ -4125,6 +5469,48 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listDatabaseCharacterSetsTransportSettings,
             settings.listDatabaseCharacterSetsSettings(),
+            clientContext);
+    this.listGoldengateConnectionAssignmentsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateConnectionAssignmentsTransportSettings,
+            settings.listGoldengateConnectionAssignmentsSettings(),
+            clientContext);
+    this.listGoldengateConnectionAssignmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateConnectionAssignmentsTransportSettings,
+            settings.listGoldengateConnectionAssignmentsSettings(),
+            clientContext);
+    this.getGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            getGoldengateConnectionAssignmentTransportSettings,
+            settings.getGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.createGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            createGoldengateConnectionAssignmentTransportSettings,
+            settings.createGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.createGoldengateConnectionAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoldengateConnectionAssignmentTransportSettings,
+            settings.createGoldengateConnectionAssignmentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoldengateConnectionAssignmentTransportSettings,
+            settings.deleteGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.deleteGoldengateConnectionAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoldengateConnectionAssignmentTransportSettings,
+            settings.deleteGoldengateConnectionAssignmentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.testGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            testGoldengateConnectionAssignmentTransportSettings,
+            settings.testGoldengateConnectionAssignmentSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -4199,8 +5585,27 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(getDbSystemMethodDescriptor);
     methodDescriptors.add(createDbSystemMethodDescriptor);
     methodDescriptors.add(deleteDbSystemMethodDescriptor);
+    methodDescriptors.add(listGoldengateDeploymentsMethodDescriptor);
+    methodDescriptors.add(getGoldengateDeploymentMethodDescriptor);
+    methodDescriptors.add(createGoldengateDeploymentMethodDescriptor);
+    methodDescriptors.add(deleteGoldengateDeploymentMethodDescriptor);
+    methodDescriptors.add(stopGoldengateDeploymentMethodDescriptor);
+    methodDescriptors.add(startGoldengateDeploymentMethodDescriptor);
+    methodDescriptors.add(listGoldengateConnectionsMethodDescriptor);
+    methodDescriptors.add(getGoldengateConnectionMethodDescriptor);
+    methodDescriptors.add(createGoldengateConnectionMethodDescriptor);
+    methodDescriptors.add(deleteGoldengateConnectionMethodDescriptor);
+    methodDescriptors.add(listGoldengateDeploymentVersionsMethodDescriptor);
+    methodDescriptors.add(listGoldengateDeploymentTypesMethodDescriptor);
+    methodDescriptors.add(listGoldengateDeploymentEnvironmentsMethodDescriptor);
+    methodDescriptors.add(listGoldengateConnectionTypesMethodDescriptor);
     methodDescriptors.add(listDbVersionsMethodDescriptor);
     methodDescriptors.add(listDatabaseCharacterSetsMethodDescriptor);
+    methodDescriptors.add(listGoldengateConnectionAssignmentsMethodDescriptor);
+    methodDescriptors.add(getGoldengateConnectionAssignmentMethodDescriptor);
+    methodDescriptors.add(createGoldengateConnectionAssignmentMethodDescriptor);
+    methodDescriptors.add(deleteGoldengateConnectionAssignmentMethodDescriptor);
+    methodDescriptors.add(testGoldengateConnectionAssignmentMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -4804,6 +6209,172 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+      listGoldengateDeploymentsCallable() {
+    return listGoldengateDeploymentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsPagedResponse>
+      listGoldengateDeploymentsPagedCallable() {
+    return listGoldengateDeploymentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentCallable() {
+    return getGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentCallable() {
+    return createGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      createGoldengateDeploymentOperationCallable() {
+    return createGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentCallable() {
+    return deleteGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
+      deleteGoldengateDeploymentOperationCallable() {
+    return deleteGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentCallable() {
+    return stopGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<StopGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      stopGoldengateDeploymentOperationCallable() {
+    return stopGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentCallable() {
+    return startGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          StartGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      startGoldengateDeploymentOperationCallable() {
+    return startGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+      listGoldengateConnectionsCallable() {
+    return listGoldengateConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateConnectionsRequest, ListGoldengateConnectionsPagedResponse>
+      listGoldengateConnectionsPagedCallable() {
+    return listGoldengateConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionCallable() {
+    return getGoldengateConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionCallable() {
+    return createGoldengateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      createGoldengateConnectionOperationCallable() {
+    return createGoldengateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionCallable() {
+    return deleteGoldengateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionOperationCallable() {
+    return deleteGoldengateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+      listGoldengateDeploymentVersionsCallable() {
+    return listGoldengateDeploymentVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
+      listGoldengateDeploymentVersionsPagedCallable() {
+    return listGoldengateDeploymentVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+      listGoldengateDeploymentTypesCallable() {
+    return listGoldengateDeploymentTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesPagedResponse>
+      listGoldengateDeploymentTypesPagedCallable() {
+    return listGoldengateDeploymentTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
+      listGoldengateDeploymentEnvironmentsCallable() {
+    return listGoldengateDeploymentEnvironmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest,
+          ListGoldengateDeploymentEnvironmentsPagedResponse>
+      listGoldengateDeploymentEnvironmentsPagedCallable() {
+    return listGoldengateDeploymentEnvironmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+      listGoldengateConnectionTypesCallable() {
+    return listGoldengateConnectionTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesPagedResponse>
+      listGoldengateConnectionTypesPagedCallable() {
+    return listGoldengateConnectionTypesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable() {
     return listDbVersionsCallable;
   }
@@ -4824,6 +6395,61 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
       listDatabaseCharacterSetsPagedCallable() {
     return listDatabaseCharacterSetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+      listGoldengateConnectionAssignmentsCallable() {
+    return listGoldengateConnectionAssignmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest,
+          ListGoldengateConnectionAssignmentsPagedResponse>
+      listGoldengateConnectionAssignmentsPagedCallable() {
+    return listGoldengateConnectionAssignmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentCallable() {
+    return getGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentCallable() {
+    return createGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      createGoldengateConnectionAssignmentOperationCallable() {
+    return createGoldengateConnectionAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentCallable() {
+    return deleteGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionAssignmentOperationCallable() {
+    return deleteGoldengateConnectionAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentCallable() {
+    return testGoldengateConnectionAssignmentCallable;
   }
 
   @Override

@@ -61,6 +61,14 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_ControlPoint_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_ControlPoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_Control_FilterAction_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Control_FilterAction_fieldAccessorTable;
@@ -72,6 +80,10 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_discoveryengine_v1beta_Control_SynonymsAction_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Control_SynonymsAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Control_PromoteAction_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Control_PromoteAction_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -97,7 +109,7 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
           + "full_match\030\002 \001(\010\032i\n"
           + "\tTimeRange\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\260\n\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\355\022\n"
           + "\007Control\022P\n"
           + "\014boost_action\030\006 \001(\01328.google.cloud."
           + "discoveryengine.v1beta.Control.BoostActionH\000\022R\n\r"
@@ -106,20 +118,47 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
           + "\017redirect_action\030\t \001(\0132;.goog"
           + "le.cloud.discoveryengine.v1beta.Control.RedirectActionH\000\022V\n"
           + "\017synonyms_action\030\n"
-          + " \001(\0132;.google.cloud.discoveryengine.v1beta.Control.SynonymsActionH\000\022\021\n"
+          + " \001(\0132;.google.cloud.discoveryengine.v1beta.Control.SynonymsActionH\000\022T\n"
+          + "\016promote_action\030\017"
+          + " \001(\0132:.google.cloud.discoveryengine.v1beta.Control.PromoteActionH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\005\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022*\n"
           + "\035associated_serving_config_ids\030\003 \003(\tB\003\340A\003\022P\n\r"
-          + "solution_type\030\004"
-          + " \001(\01621.google.cloud.discoveryengine.v1beta.SolutionTypeB\006\340A\002\340A\005\022E\n"
+          + "solution_type\030\004 \001(\01621.google.cloud.d"
+          + "iscoveryengine.v1beta.SolutionTypeB\006\340A\002\340A\005\022E\n"
           + "\tuse_cases\030\010"
           + " \003(\01622.google.cloud.discoveryengine.v1beta.SearchUseCase\022B\n\n"
-          + "conditions\030\005 \003(\0132..google.cloud.discoveryengine.v1beta.Condition\032|\n"
-          + "\013BoostAction\022\022\n"
-          + "\005boost\030\001 \001(\002B\003\340A\002\022\023\n"
+          + "conditions\030\005"
+          + " \003(\0132..google.cloud.discoveryengine.v1beta.Condition\032\254\007\n"
+          + "\013BoostAction\022\032\n"
+          + "\013fixed_boost\030\004 \001(\002B\003\340A\001H\000\022x\n"
+          + "\030interpolation_boost_spec\030\005 \001(\0132O.google.cloud.disco"
+          + "veryengine.v1beta.Control.BoostAction.InterpolationBoostSpecB\003\340A\001H\000\022\021\n"
+          + "\005boost\030\001 \001(\002B\002\030\001\022\023\n"
           + "\006filter\030\002 \001(\tB\003\340A\002\022D\n\n"
           + "data_store\030\003 \001(\tB0\340A\002\372A*\n"
-          + "(discoveryengine.googleapis.com/DataStore\032i\n"
+          + "(discoveryengine.googleapis.com/DataStore\032\212\005\n"
+          + "\026InterpolationBoostSpec\022\027\n\n"
+          + "field_name\030\001 \001(\tB\003\340A\001\022z\n"
+          + "\016attribute_type\030\002 \001(\0162].google.cloud.discoveryen"
+          + "gine.v1beta.Control.BoostAction.InterpolationBoostSpec.AttributeTypeB\003\340A\001\022\202\001\n"
+          + "\022interpolation_type\030\003 \001(\0162a.google.cloud.di"
+          + "scoveryengine.v1beta.Control.BoostAction"
+          + ".InterpolationBoostSpec.InterpolationTypeB\003\340A\001\022y\n"
+          + "\016control_points\030\004 \003(\0132\\.google."
+          + "cloud.discoveryengine.v1beta.Control.Boo"
+          + "stAction.InterpolationBoostSpec.ControlPointB\003\340A\001\032G\n"
+          + "\014ControlPoint\022\034\n"
+          + "\017attribute_value\030\001 \001(\tB\003\340A\001\022\031\n"
+          + "\014boost_amount\030\002 \001(\002B\003\340A\001\"M\n\r"
+          + "AttributeType\022\036\n"
+          + "\032ATTRIBUTE_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tNUMERICAL\020\001\022\r\n"
+          + "\tFRESHNESS\020\002\"C\n"
+          + "\021InterpolationType\022\"\n"
+          + "\036INTERPOLATION_TYPE_UNSPECIFIED\020\000\022\n\n"
+          + "\006LINEAR\020\001B\014\n\n"
+          + "boost_spec\032i\n"
           + "\014FilterAction\022\023\n"
           + "\006filter\030\001 \001(\tB\003\340A\002\022D\n\n"
           + "data_store\030\002 \001(\tB0\340A\002\372A*\n"
@@ -127,19 +166,24 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
           + "\016RedirectAction\022\031\n"
           + "\014redirect_uri\030\001 \001(\tB\003\340A\002\032\"\n"
           + "\016SynonymsAction\022\020\n"
-          + "\010synonyms\030\001 \003(\t:\323\002\352A\317\002\n"
-          + "&discoveryengine.googleapis.com/Control\022Rprojects/{project}/loc"
-          + "ations/{location}/dataStores/{data_store}/controls/{control}\022kprojects/{project}"
-          + "/locations/{location}/collections/{collection}/dataStores/{data_store}/controls/"
-          + "{control}\022dprojects/{project}/locations/"
-          + "{location}/collections/{collection}/engines/{engine}/controls/{control}B\010\n"
+          + "\010synonyms\030\001 \003(\t\032\263\001\n\r"
+          + "PromoteAction\022D\n\n"
+          + "data_store\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(discoveryengine.googleapis.com/DataStore\022\\\n"
+          + "\025search_link_promotion\030\002 \001(\01328.google"
+          + ".cloud.discoveryengine.v1beta.SearchLinkPromotionB\003\340A\002:\323\002\352A\317\002\n"
+          + "&discoveryengine.googleapis.com/Control\022Rprojects/{project"
+          + "}/locations/{location}/dataStores/{data_store}/controls/{control}\022kprojects/{pro"
+          + "ject}/locations/{location}/collections/{collection}/dataStores/{data_store}/cont"
+          + "rols/{control}\022dprojects/{project}/locat"
+          + "ions/{location}/collections/{collection}/engines/{engine}/controls/{control}B\010\n"
           + "\006actionB\223\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB\014ControlProtoP\001ZQcloud.google.com/"
-          + "go/discoveryengine/apiv1beta/discoveryen"
-          + "ginepb;discoveryenginepb\242\002\017DISCOVERYENGI"
-          + "NE\252\002#Google.Cloud.DiscoveryEngine.V1Beta"
-          + "\312\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002"
-          + "&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "\'com.google.cloud.discoveryengine.v1betaB\014ControlProtoP\001ZQcloud.google"
+          + ".com/go/discoveryengine/apiv1beta/discov"
+          + "eryenginepb;discoveryenginepb\242\002\017DISCOVER"
+          + "YENGINE\252\002#Google.Cloud.DiscoveryEngine.V"
+          + "1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1b"
+          + "eta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,6 +228,7 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
               "FilterAction",
               "RedirectAction",
               "SynonymsAction",
+              "PromoteAction",
               "Name",
               "DisplayName",
               "AssociatedServingConfigIds",
@@ -198,7 +243,25 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_descriptor,
             new java.lang.String[] {
-              "Boost", "Filter", "DataStore",
+              "FixedBoost", "InterpolationBoostSpec", "Boost", "Filter", "DataStore", "BoostSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_descriptor,
+            new java.lang.String[] {
+              "FieldName", "AttributeType", "InterpolationType", "ControlPoints",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_ControlPoint_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_ControlPoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Control_BoostAction_InterpolationBoostSpec_ControlPoint_descriptor,
+            new java.lang.String[] {
+              "AttributeValue", "BoostAmount",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Control_FilterAction_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Control_descriptor.getNestedType(1);
@@ -223,6 +286,14 @@ public final class ControlProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_discoveryengine_v1beta_Control_SynonymsAction_descriptor,
             new java.lang.String[] {
               "Synonyms",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Control_PromoteAction_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Control_descriptor.getNestedType(4);
+    internal_static_google_cloud_discoveryengine_v1beta_Control_PromoteAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Control_PromoteAction_descriptor,
+            new java.lang.String[] {
+              "DataStore", "SearchLinkPromotion",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

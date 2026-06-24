@@ -54,10 +54,11 @@ final class HttpDownloadSessionBuilder {
     private final BlobReadChannelContext blobReadChannelContext;
     private boolean autoGzipDecompression;
 
-    // private Hasher hasher; // TODO: wire in Hasher
+    private final Hasher hasher;
 
     private ReadableByteChannelSessionBuilder(BlobReadChannelContext blobReadChannelContext) {
       this.blobReadChannelContext = blobReadChannelContext;
+      this.hasher = Hasher.defaultHasher();
       this.autoGzipDecompression = false;
     }
 
@@ -96,7 +97,8 @@ final class HttpDownloadSessionBuilder {
                   blobReadChannelContext.getApiaryClient(),
                   resultFuture,
                   blobReadChannelContext.getRetrier(),
-                  blobReadChannelContext.getRetryAlgorithmManager().idempotent()),
+                  blobReadChannelContext.getRetryAlgorithmManager().idempotent(),
+                  hasher),
               ApiFutures.transform(
                   resultFuture, StorageObject::getContentEncoding, MoreExecutors.directExecutor()));
         } else {
@@ -105,7 +107,8 @@ final class HttpDownloadSessionBuilder {
               blobReadChannelContext.getApiaryClient(),
               resultFuture,
               blobReadChannelContext.getRetrier(),
-              blobReadChannelContext.getRetryAlgorithmManager().idempotent());
+              blobReadChannelContext.getRetryAlgorithmManager().idempotent(),
+              hasher);
         }
       };
     }

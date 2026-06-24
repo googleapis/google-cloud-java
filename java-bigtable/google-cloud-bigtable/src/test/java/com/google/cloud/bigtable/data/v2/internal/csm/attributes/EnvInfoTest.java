@@ -23,7 +23,6 @@ import com.google.cloud.opentelemetry.detection.DetectedPlatform;
 import com.google.cloud.opentelemetry.detection.GCPPlatformDetector.SupportedPlatform;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
-import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -33,7 +32,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class EnvInfoTest {
-  private static final Supplier<String> NULL_HOST = Suppliers.ofInstance(null);
+  private static final Supplier<String> NULL_HOST = () -> null;
 
   @SuppressWarnings("UnnecessaryLambda")
   private static final Function<String, String> NULL_ENV = (ignored) -> null;

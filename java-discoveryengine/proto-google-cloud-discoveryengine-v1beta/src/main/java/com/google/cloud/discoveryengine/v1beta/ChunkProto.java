@@ -56,6 +56,14 @@ public final class ChunkProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_discoveryengine_v1beta_Chunk_ChunkMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_Chunk_ChunkMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Chunk_StructuredContent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Chunk_StructuredContent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Chunk_AnnotationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Chunk_AnnotationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,7 +77,7 @@ public final class ChunkProto extends com.google.protobuf.GeneratedFile {
           + "unk.proto\022#google.cloud.discoveryengine."
           + "v1beta\032\037google/api/field_behavior.proto\032"
           + "\031google/api/resource.proto\032\034google/proto"
-          + "buf/struct.proto\"\370\007\n\005Chunk\022\014\n\004name\030\001 \001(\t"
+          + "buf/struct.proto\"\263\014\n\005Chunk\022\014\n\004name\030\001 \001(\t"
           + "\022\n\n\002id\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022!\n\017relevan"
           + "ce_score\030\010 \001(\001B\003\340A\003H\000\210\001\001\022V\n\021document_met"
           + "adata\030\005 \001(\0132;.google.cloud.discoveryengi"
@@ -79,29 +87,44 @@ public final class ChunkProto extends com.google.protobuf.GeneratedFile {
           + "cloud.discoveryengine.v1beta.Chunk.PageS"
           + "pan\022U\n\016chunk_metadata\030\007 \001(\01328.google.clo"
           + "ud.discoveryengine.v1beta.Chunk.ChunkMet"
-          + "adataB\003\340A\003\032\\\n\020DocumentMetadata\022\013\n\003uri\030\001 "
-          + "\001(\t\022\r\n\005title\030\002 \001(\t\022,\n\013struct_data\030\003 \001(\0132"
-          + "\027.google.protobuf.Struct\0320\n\010PageSpan\022\022\n\n"
-          + "page_start\030\001 \001(\005\022\020\n\010page_end\030\002 \001(\005\032\225\001\n\rC"
-          + "hunkMetadata\022C\n\017previous_chunks\030\001 \003(\0132*."
-          + "google.cloud.discoveryengine.v1beta.Chun"
-          + "k\022?\n\013next_chunks\030\002 \003(\0132*.google.cloud.di"
-          + "scoveryengine.v1beta.Chunk:\262\002\352A\256\002\n$disco"
-          + "veryengine.googleapis.com/Chunk\022uproject"
-          + "s/{project}/locations/{location}/dataSto"
-          + "res/{data_store}/branches/{branch}/docum"
-          + "ents/{document}/chunks/{chunk}\022\216\001project"
-          + "s/{project}/locations/{location}/collect"
-          + "ions/{collection}/dataStores/{data_store"
-          + "}/branches/{branch}/documents/{document}"
-          + "/chunks/{chunk}B\022\n\020_relevance_scoreB\221\002\n\'"
-          + "com.google.cloud.discoveryengine.v1betaB"
-          + "\nChunkProtoP\001ZQcloud.google.com/go/disco"
-          + "veryengine/apiv1beta/discoveryenginepb;d"
-          + "iscoveryenginepb\242\002\017DISCOVERYENGINE\252\002#Goo"
-          + "gle.Cloud.DiscoveryEngine.V1Beta\312\002#Googl"
-          + "e\\Cloud\\DiscoveryEngine\\V1beta\352\002&Google:"
-          + ":Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "adataB\003\340A\003\022\026\n\tdata_urls\030\t \003(\tB\003\340A\003\022 \n\023an"
+          + "notation_contents\030\013 \003(\tB\003\340A\003\022_\n\023annotati"
+          + "on_metadata\030\014 \003(\0132=.google.cloud.discove"
+          + "ryengine.v1beta.Chunk.AnnotationMetadata"
+          + "B\003\340A\003\032o\n\020DocumentMetadata\022\013\n\003uri\030\001 \001(\t\022\r"
+          + "\n\005title\030\002 \001(\t\022\021\n\tmime_type\030\004 \001(\t\022,\n\013stru"
+          + "ct_data\030\003 \001(\0132\027.google.protobuf.Struct\0320"
+          + "\n\010PageSpan\022\022\n\npage_start\030\001 \001(\005\022\020\n\010page_e"
+          + "nd\030\002 \001(\005\032\225\001\n\rChunkMetadata\022C\n\017previous_c"
+          + "hunks\030\001 \003(\0132*.google.cloud.discoveryengi"
+          + "ne.v1beta.Chunk\022?\n\013next_chunks\030\002 \003(\0132*.g"
+          + "oogle.cloud.discoveryengine.v1beta.Chunk"
+          + "\032\200\001\n\021StructuredContent\022U\n\016structure_type"
+          + "\030\001 \001(\01628.google.cloud.discoveryengine.v1"
+          + "beta.Chunk.StructureTypeB\003\340A\003\022\024\n\007content"
+          + "\030\002 \001(\tB\003\340A\003\032\212\001\n\022AnnotationMetadata\022]\n\022st"
+          + "ructured_content\030\001 \001(\0132<.google.cloud.di"
+          + "scoveryengine.v1beta.Chunk.StructuredCon"
+          + "tentB\003\340A\003\022\025\n\010image_id\030\002 \001(\tB\003\340A\003\"{\n\rStru"
+          + "ctureType\022\036\n\032STRUCTURE_TYPE_UNSPECIFIED\020"
+          + "\000\022\031\n\025SHAREHOLDER_STRUCTURE\020\001\022\027\n\023SIGNATUR"
+          + "E_STRUCTURE\020\002\022\026\n\022CHECKBOX_STRUCTURE\020\003:\262\002"
+          + "\352A\256\002\n$discoveryengine.googleapis.com/Chu"
+          + "nk\022uprojects/{project}/locations/{locati"
+          + "on}/dataStores/{data_store}/branches/{br"
+          + "anch}/documents/{document}/chunks/{chunk"
+          + "}\022\216\001projects/{project}/locations/{locati"
+          + "on}/collections/{collection}/dataStores/"
+          + "{data_store}/branches/{branch}/documents"
+          + "/{document}/chunks/{chunk}B\022\n\020_relevance"
+          + "_scoreB\221\002\n\'com.google.cloud.discoveryeng"
+          + "ine.v1betaB\nChunkProtoP\001ZQcloud.google.c"
+          + "om/go/discoveryengine/apiv1beta/discover"
+          + "yenginepb;discoveryenginepb\242\002\017DISCOVERYE"
+          + "NGINE\252\002#Google.Cloud.DiscoveryEngine.V1B"
+          + "eta\312\002#Google\\Cloud\\DiscoveryEngine\\V1bet"
+          + "a\352\002&Google::Cloud::DiscoveryEngine::V1be"
+          + "tab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -125,6 +148,9 @@ public final class ChunkProto extends com.google.protobuf.GeneratedFile {
               "DerivedStructData",
               "PageSpan",
               "ChunkMetadata",
+              "DataUrls",
+              "AnnotationContents",
+              "AnnotationMetadata",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Chunk_DocumentMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Chunk_descriptor.getNestedType(0);
@@ -132,7 +158,7 @@ public final class ChunkProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_Chunk_DocumentMetadata_descriptor,
             new java.lang.String[] {
-              "Uri", "Title", "StructData",
+              "Uri", "Title", "MimeType", "StructData",
             });
     internal_static_google_cloud_discoveryengine_v1beta_Chunk_PageSpan_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_Chunk_descriptor.getNestedType(1);
@@ -149,6 +175,22 @@ public final class ChunkProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_discoveryengine_v1beta_Chunk_ChunkMetadata_descriptor,
             new java.lang.String[] {
               "PreviousChunks", "NextChunks",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Chunk_StructuredContent_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Chunk_descriptor.getNestedType(3);
+    internal_static_google_cloud_discoveryengine_v1beta_Chunk_StructuredContent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Chunk_StructuredContent_descriptor,
+            new java.lang.String[] {
+              "StructureType", "Content",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Chunk_AnnotationMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_Chunk_descriptor.getNestedType(4);
+    internal_static_google_cloud_discoveryengine_v1beta_Chunk_AnnotationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Chunk_AnnotationMetadata_descriptor,
+            new java.lang.String[] {
+              "StructuredContent", "ImageId",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

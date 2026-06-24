@@ -57,7 +57,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     dbName_ = "";
     dbUniqueName_ = "";
     adminPassword_ = "";
+    adminPasswordSecretVersion_ = "";
     tdeWalletPassword_ = "";
+    tdeWalletPasswordSecretVersion_ = "";
     characterSet_ = "";
     ncharacterSet_ = "";
     ociUrl_ = "";
@@ -65,6 +67,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     dbHomeName_ = "";
     gcpOracleZone_ = "";
     opsInsightsStatus_ = 0;
+    pluggableDatabaseId_ = "";
+    pluggableDatabaseName_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -521,10 +525,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The password for the default ADMIN user.
+   * Optional. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The adminPassword.
    */
@@ -545,10 +551,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The password for the default ADMIN user.
+   * Optional. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for adminPassword.
    */
@@ -565,6 +573,69 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ADMIN_PASSWORD_SECRET_VERSION_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adminPasswordSecretVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The adminPasswordSecretVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getAdminPasswordSecretVersion() {
+    java.lang.Object ref = adminPasswordSecretVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      adminPasswordSecretVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for adminPasswordSecretVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdminPasswordSecretVersionBytes() {
+    java.lang.Object ref = adminPasswordSecretVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      adminPasswordSecretVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TDE_WALLET_PASSWORD_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -575,6 +646,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The TDE wallet password for the database.
+   * Note: Only one of `tde_wallet_password_secret_version` or
+   * `tde_wallet_password` can be populated.
    * </pre>
    *
    * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -599,6 +672,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The TDE wallet password for the database.
+   * Note: Only one of `tde_wallet_password_secret_version` or
+   * `tde_wallet_password` can be populated.
    * </pre>
    *
    * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -612,6 +687,71 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       tdeWalletPassword_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TDE_WALLET_PASSWORD_SECRET_VERSION_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tdeWalletPasswordSecretVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the TDE wallet password for the database. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+   * populated.
+   * </pre>
+   *
+   * <code>
+   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tdeWalletPasswordSecretVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getTdeWalletPasswordSecretVersion() {
+    java.lang.Object ref = tdeWalletPasswordSecretVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tdeWalletPasswordSecretVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the TDE wallet password for the database. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+   * populated.
+   * </pre>
+   *
+   * <code>
+   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tdeWalletPasswordSecretVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTdeWalletPasswordSecretVersionBytes() {
+    java.lang.Object ref = tdeWalletPasswordSecretVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tdeWalletPasswordSecretVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1096,6 +1236,118 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int PLUGGABLE_DATABASE_ID_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pluggableDatabaseId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the pluggable database associated with the Database.
+   * The ID must be unique within the project and location.
+   * </pre>
+   *
+   * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pluggableDatabaseId.
+   */
+  @java.lang.Override
+  public java.lang.String getPluggableDatabaseId() {
+    java.lang.Object ref = pluggableDatabaseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pluggableDatabaseId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the pluggable database associated with the Database.
+   * The ID must be unique within the project and location.
+   * </pre>
+   *
+   * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pluggableDatabaseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPluggableDatabaseIdBytes() {
+    java.lang.Object ref = pluggableDatabaseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pluggableDatabaseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLUGGABLE_DATABASE_NAME_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pluggableDatabaseName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pluggable database associated with the Database. The name
+   * must begin with an alphabetic character and can contain a maximum of thirty
+   * alphanumeric characters.
+   * </pre>
+   *
+   * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pluggableDatabaseName.
+   */
+  @java.lang.Override
+  public java.lang.String getPluggableDatabaseName() {
+    java.lang.Object ref = pluggableDatabaseName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pluggableDatabaseName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pluggable database associated with the Database. The name
+   * must begin with an alphabetic character and can contain a maximum of thirty
+   * alphanumeric characters.
+   * </pre>
+   *
+   * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pluggableDatabaseName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPluggableDatabaseNameBytes() {
+    java.lang.Object ref = pluggableDatabaseName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pluggableDatabaseName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1155,6 +1407,18 @@ public final class Database extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(14, opsInsightsStatus_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pluggableDatabaseId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, pluggableDatabaseId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pluggableDatabaseName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, pluggableDatabaseName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(adminPasswordSecretVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 17, adminPasswordSecretVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tdeWalletPasswordSecretVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 18, tdeWalletPasswordSecretVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1209,6 +1473,21 @@ public final class Database extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, opsInsightsStatus_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pluggableDatabaseId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, pluggableDatabaseId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pluggableDatabaseName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, pluggableDatabaseName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(adminPasswordSecretVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(17, adminPasswordSecretVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tdeWalletPasswordSecretVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              18, tdeWalletPasswordSecretVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1229,7 +1508,11 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     if (!getDbName().equals(other.getDbName())) return false;
     if (!getDbUniqueName().equals(other.getDbUniqueName())) return false;
     if (!getAdminPassword().equals(other.getAdminPassword())) return false;
+    if (!getAdminPasswordSecretVersion().equals(other.getAdminPasswordSecretVersion()))
+      return false;
     if (!getTdeWalletPassword().equals(other.getTdeWalletPassword())) return false;
+    if (!getTdeWalletPasswordSecretVersion().equals(other.getTdeWalletPasswordSecretVersion()))
+      return false;
     if (!getCharacterSet().equals(other.getCharacterSet())) return false;
     if (!getNcharacterSet().equals(other.getNcharacterSet())) return false;
     if (!getOciUrl().equals(other.getOciUrl())) return false;
@@ -1245,6 +1528,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     if (!getDbHomeName().equals(other.getDbHomeName())) return false;
     if (!getGcpOracleZone().equals(other.getGcpOracleZone())) return false;
     if (opsInsightsStatus_ != other.opsInsightsStatus_) return false;
+    if (!getPluggableDatabaseId().equals(other.getPluggableDatabaseId())) return false;
+    if (!getPluggableDatabaseName().equals(other.getPluggableDatabaseName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1264,8 +1549,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDbUniqueName().hashCode();
     hash = (37 * hash) + ADMIN_PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getAdminPassword().hashCode();
+    hash = (37 * hash) + ADMIN_PASSWORD_SECRET_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getAdminPasswordSecretVersion().hashCode();
     hash = (37 * hash) + TDE_WALLET_PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getTdeWalletPassword().hashCode();
+    hash = (37 * hash) + TDE_WALLET_PASSWORD_SECRET_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getTdeWalletPasswordSecretVersion().hashCode();
     hash = (37 * hash) + CHARACTER_SET_FIELD_NUMBER;
     hash = (53 * hash) + getCharacterSet().hashCode();
     hash = (37 * hash) + NCHARACTER_SET_FIELD_NUMBER;
@@ -1288,6 +1577,10 @@ public final class Database extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getGcpOracleZone().hashCode();
     hash = (37 * hash) + OPS_INSIGHTS_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + opsInsightsStatus_;
+    hash = (37 * hash) + PLUGGABLE_DATABASE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPluggableDatabaseId().hashCode();
+    hash = (37 * hash) + PLUGGABLE_DATABASE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPluggableDatabaseName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1443,7 +1736,9 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       dbName_ = "";
       dbUniqueName_ = "";
       adminPassword_ = "";
+      adminPasswordSecretVersion_ = "";
       tdeWalletPassword_ = "";
+      tdeWalletPasswordSecretVersion_ = "";
       characterSet_ = "";
       ncharacterSet_ = "";
       ociUrl_ = "";
@@ -1461,6 +1756,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       dbHomeName_ = "";
       gcpOracleZone_ = "";
       opsInsightsStatus_ = 0;
+      pluggableDatabaseId_ = "";
+      pluggableDatabaseName_ = "";
       return this;
     }
 
@@ -1510,37 +1807,49 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         result.adminPassword_ = adminPassword_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.tdeWalletPassword_ = tdeWalletPassword_;
+        result.adminPasswordSecretVersion_ = adminPasswordSecretVersion_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.characterSet_ = characterSet_;
+        result.tdeWalletPassword_ = tdeWalletPassword_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.ncharacterSet_ = ncharacterSet_;
+        result.tdeWalletPasswordSecretVersion_ = tdeWalletPasswordSecretVersion_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.characterSet_ = characterSet_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ncharacterSet_ = ncharacterSet_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ociUrl_ = ociUrl_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.properties_ = propertiesBuilder_ == null ? properties_ : propertiesBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.databaseId_ = databaseId_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.dbHomeName_ = dbHomeName_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.gcpOracleZone_ = gcpOracleZone_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.opsInsightsStatus_ = opsInsightsStatus_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.pluggableDatabaseId_ = pluggableDatabaseId_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.pluggableDatabaseName_ = pluggableDatabaseName_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1577,24 +1886,34 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getAdminPasswordSecretVersion().isEmpty()) {
+        adminPasswordSecretVersion_ = other.adminPasswordSecretVersion_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (!other.getTdeWalletPassword().isEmpty()) {
         tdeWalletPassword_ = other.tdeWalletPassword_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getTdeWalletPasswordSecretVersion().isEmpty()) {
+        tdeWalletPasswordSecretVersion_ = other.tdeWalletPasswordSecretVersion_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getCharacterSet().isEmpty()) {
         characterSet_ = other.characterSet_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getNcharacterSet().isEmpty()) {
         ncharacterSet_ = other.ncharacterSet_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getOciUrl().isEmpty()) {
         ociUrl_ = other.ociUrl_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1605,21 +1924,31 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getDbHomeName().isEmpty()) {
         dbHomeName_ = other.dbHomeName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getGcpOracleZone().isEmpty()) {
         gcpOracleZone_ = other.gcpOracleZone_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.opsInsightsStatus_ != 0) {
         setOpsInsightsStatusValue(other.getOpsInsightsStatusValue());
+      }
+      if (!other.getPluggableDatabaseId().isEmpty()) {
+        pluggableDatabaseId_ = other.pluggableDatabaseId_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (!other.getPluggableDatabaseName().isEmpty()) {
+        pluggableDatabaseName_ = other.pluggableDatabaseName_;
+        bitField0_ |= 0x00020000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1674,65 +2003,89 @@ public final class Database extends com.google.protobuf.GeneratedMessage
             case 42:
               {
                 tdeWalletPassword_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 characterSet_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 ncharacterSet_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
               {
                 ociUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     internalGetPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 databaseId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
               {
                 dbHomeName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 106:
               {
                 gcpOracleZone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 112:
               {
                 opsInsightsStatus_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 112
+            case 122:
+              {
+                pluggableDatabaseId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 122
+            case 130:
+              {
+                pluggableDatabaseName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 130
+            case 138:
+              {
+                adminPasswordSecretVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 138
+            case 146:
+              {
+                tdeWalletPasswordSecretVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2106,10 +2459,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The password for the default ADMIN user.
+     * Optional. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The adminPassword.
      */
@@ -2129,10 +2484,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The password for the default ADMIN user.
+     * Optional. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for adminPassword.
      */
@@ -2152,10 +2509,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The password for the default ADMIN user.
+     * Optional. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The adminPassword to set.
      * @return This builder for chaining.
@@ -2174,10 +2533,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The password for the default ADMIN user.
+     * Optional. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2192,10 +2553,12 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The password for the default ADMIN user.
+     * Optional. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for adminPassword to set.
      * @return This builder for chaining.
@@ -2211,6 +2574,142 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object adminPasswordSecretVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The adminPasswordSecretVersion.
+     */
+    public java.lang.String getAdminPasswordSecretVersion() {
+      java.lang.Object ref = adminPasswordSecretVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adminPasswordSecretVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for adminPasswordSecretVersion.
+     */
+    public com.google.protobuf.ByteString getAdminPasswordSecretVersionBytes() {
+      java.lang.Object ref = adminPasswordSecretVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        adminPasswordSecretVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The adminPasswordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdminPasswordSecretVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      adminPasswordSecretVersion_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdminPasswordSecretVersion() {
+      adminPasswordSecretVersion_ = getDefaultInstance().getAdminPasswordSecretVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for adminPasswordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdminPasswordSecretVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      adminPasswordSecretVersion_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object tdeWalletPassword_ = "";
 
     /**
@@ -2218,6 +2717,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The TDE wallet password for the database.
+     * Note: Only one of `tde_wallet_password_secret_version` or
+     * `tde_wallet_password` can be populated.
      * </pre>
      *
      * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2241,6 +2742,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The TDE wallet password for the database.
+     * Note: Only one of `tde_wallet_password_secret_version` or
+     * `tde_wallet_password` can be populated.
      * </pre>
      *
      * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2264,6 +2767,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The TDE wallet password for the database.
+     * Note: Only one of `tde_wallet_password_secret_version` or
+     * `tde_wallet_password` can be populated.
      * </pre>
      *
      * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2276,7 +2781,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       tdeWalletPassword_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2286,6 +2791,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The TDE wallet password for the database.
+     * Note: Only one of `tde_wallet_password_secret_version` or
+     * `tde_wallet_password` can be populated.
      * </pre>
      *
      * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2294,7 +2801,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTdeWalletPassword() {
       tdeWalletPassword_ = getDefaultInstance().getTdeWalletPassword();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2304,6 +2811,8 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The TDE wallet password for the database.
+     * Note: Only one of `tde_wallet_password_secret_version` or
+     * `tde_wallet_password` can be populated.
      * </pre>
      *
      * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2317,7 +2826,148 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       tdeWalletPassword_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tdeWalletPasswordSecretVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the TDE wallet password for the database. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+     * populated.
+     * </pre>
+     *
+     * <code>
+     * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The tdeWalletPasswordSecretVersion.
+     */
+    public java.lang.String getTdeWalletPasswordSecretVersion() {
+      java.lang.Object ref = tdeWalletPasswordSecretVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tdeWalletPasswordSecretVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the TDE wallet password for the database. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+     * populated.
+     * </pre>
+     *
+     * <code>
+     * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for tdeWalletPasswordSecretVersion.
+     */
+    public com.google.protobuf.ByteString getTdeWalletPasswordSecretVersionBytes() {
+      java.lang.Object ref = tdeWalletPasswordSecretVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tdeWalletPasswordSecretVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the TDE wallet password for the database. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+     * populated.
+     * </pre>
+     *
+     * <code>
+     * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The tdeWalletPasswordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTdeWalletPasswordSecretVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tdeWalletPasswordSecretVersion_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the TDE wallet password for the database. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+     * populated.
+     * </pre>
+     *
+     * <code>
+     * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTdeWalletPasswordSecretVersion() {
+      tdeWalletPasswordSecretVersion_ = getDefaultInstance().getTdeWalletPasswordSecretVersion();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of a secret version in Secret Manager which
+     * contains the TDE wallet password for the database. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+     * populated.
+     * </pre>
+     *
+     * <code>
+     * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for tdeWalletPasswordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTdeWalletPasswordSecretVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tdeWalletPasswordSecretVersion_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2387,7 +3037,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       characterSet_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2405,7 +3055,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCharacterSet() {
       characterSet_ = getDefaultInstance().getCharacterSet();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2428,7 +3078,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       characterSet_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2501,7 +3151,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ncharacterSet_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2520,7 +3170,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNcharacterSet() {
       ncharacterSet_ = getDefaultInstance().getNcharacterSet();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2544,7 +3194,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ncharacterSet_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2617,7 +3267,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ociUrl_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2636,7 +3286,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearOciUrl() {
       ociUrl_ = getDefaultInstance().getOciUrl();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2660,7 +3310,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ociUrl_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2686,7 +3336,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2732,7 +3382,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2754,7 +3404,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2772,7 +3422,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2783,7 +3433,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -2801,7 +3451,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2823,7 +3473,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2898,7 +3548,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * @return Whether the properties field is set.
      */
     public boolean hasProperties() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -2944,7 +3594,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       } else {
         propertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2967,7 +3617,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       } else {
         propertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2985,7 +3635,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeProperties(com.google.cloud.oracledatabase.v1.DatabaseProperties value) {
       if (propertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && properties_ != null
             && properties_
                 != com.google.cloud.oracledatabase.v1.DatabaseProperties.getDefaultInstance()) {
@@ -2997,7 +3647,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         propertiesBuilder_.mergeFrom(value);
       }
       if (properties_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3015,7 +3665,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearProperties() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       properties_ = null;
       if (propertiesBuilder_ != null) {
         propertiesBuilder_.dispose();
@@ -3037,7 +3687,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.DatabaseProperties.Builder getPropertiesBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetPropertiesFieldBuilder().getBuilder();
     }
@@ -3156,7 +3806,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       databaseId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3174,7 +3824,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDatabaseId() {
       databaseId_ = getDefaultInstance().getDatabaseId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3197,7 +3847,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       databaseId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3267,7 +3917,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       dbHomeName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3285,7 +3935,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDbHomeName() {
       dbHomeName_ = getDefaultInstance().getDbHomeName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3308,7 +3958,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       dbHomeName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3378,7 +4028,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       gcpOracleZone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3396,7 +4046,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGcpOracleZone() {
       gcpOracleZone_ = getDefaultInstance().getGcpOracleZone();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3419,7 +4069,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       gcpOracleZone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3460,7 +4110,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      */
     public Builder setOpsInsightsStatusValue(int value) {
       opsInsightsStatus_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3508,7 +4158,7 @@ public final class Database extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       opsInsightsStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -3528,8 +4178,245 @@ public final class Database extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOpsInsightsStatus() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       opsInsightsStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pluggableDatabaseId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the pluggable database associated with the Database.
+     * The ID must be unique within the project and location.
+     * </pre>
+     *
+     * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pluggableDatabaseId.
+     */
+    public java.lang.String getPluggableDatabaseId() {
+      java.lang.Object ref = pluggableDatabaseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pluggableDatabaseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the pluggable database associated with the Database.
+     * The ID must be unique within the project and location.
+     * </pre>
+     *
+     * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pluggableDatabaseId.
+     */
+    public com.google.protobuf.ByteString getPluggableDatabaseIdBytes() {
+      java.lang.Object ref = pluggableDatabaseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pluggableDatabaseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the pluggable database associated with the Database.
+     * The ID must be unique within the project and location.
+     * </pre>
+     *
+     * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pluggableDatabaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPluggableDatabaseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pluggableDatabaseId_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the pluggable database associated with the Database.
+     * The ID must be unique within the project and location.
+     * </pre>
+     *
+     * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPluggableDatabaseId() {
+      pluggableDatabaseId_ = getDefaultInstance().getPluggableDatabaseId();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the pluggable database associated with the Database.
+     * The ID must be unique within the project and location.
+     * </pre>
+     *
+     * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pluggableDatabaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPluggableDatabaseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pluggableDatabaseId_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pluggableDatabaseName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pluggable database associated with the Database. The name
+     * must begin with an alphabetic character and can contain a maximum of thirty
+     * alphanumeric characters.
+     * </pre>
+     *
+     * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pluggableDatabaseName.
+     */
+    public java.lang.String getPluggableDatabaseName() {
+      java.lang.Object ref = pluggableDatabaseName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pluggableDatabaseName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pluggable database associated with the Database. The name
+     * must begin with an alphabetic character and can contain a maximum of thirty
+     * alphanumeric characters.
+     * </pre>
+     *
+     * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pluggableDatabaseName.
+     */
+    public com.google.protobuf.ByteString getPluggableDatabaseNameBytes() {
+      java.lang.Object ref = pluggableDatabaseName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pluggableDatabaseName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pluggable database associated with the Database. The name
+     * must begin with an alphabetic character and can contain a maximum of thirty
+     * alphanumeric characters.
+     * </pre>
+     *
+     * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pluggableDatabaseName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPluggableDatabaseName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pluggableDatabaseName_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pluggable database associated with the Database. The name
+     * must begin with an alphabetic character and can contain a maximum of thirty
+     * alphanumeric characters.
+     * </pre>
+     *
+     * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPluggableDatabaseName() {
+      pluggableDatabaseName_ = getDefaultInstance().getPluggableDatabaseName();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pluggable database associated with the Database. The name
+     * must begin with an alphabetic character and can contain a maximum of thirty
+     * alphanumeric characters.
+     * </pre>
+     *
+     * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pluggableDatabaseName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPluggableDatabaseNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pluggableDatabaseName_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

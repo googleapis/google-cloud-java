@@ -53,21 +53,24 @@ public final class CesAppProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/cloud/dialogflow/v2/ces_app.pro"
+      "\n"
+          + "(google/cloud/dialogflow/v2/ces_app.pro"
           + "to\022\032google.cloud.dialogflow.v2\032\037google/a"
           + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\032%google/cloud/dialogflow/v2/t"
-          + "ool.proto\"\236\001\n\nCesAppSpec\022/\n\007ces_app\030\001 \001("
-          + "\tB\036\340A\001\372A\030\n\026ces.googleapis.com/App\022_\n\030con"
-          + "firmation_requirement\030\002 \001(\01628.google.clo"
-          + "ud.dialogflow.v2.Tool.ConfirmationRequir"
-          + "ementB\003\340A\001B\340\001\n\036com.google.cloud.dialogfl"
-          + "ow.v2B\013CesAppProtoP\001Z>cloud.google.com/g"
-          + "o/dialogflow/apiv2/dialogflowpb;dialogfl"
-          + "owpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2\352A"
-          + "L\n\026ces.googleapis.com/App\0222projects/{pro"
-          + "ject}/locations/{location}/apps/{app}b\006p"
-          + "roto3"
+          + "urce.proto\032%google/cloud/dialogflow/v2/tool.proto\"\222\002\n\n"
+          + "CesAppSpec\022/\n"
+          + "\007ces_app\030\001 \001(\tB\036\340A\001\372A\030\n"
+          + "\026ces.googleapis.com/App\022_\n"
+          + "\030confirmation_requirement\030\002 \001(\01628.google.clo"
+          + "ud.dialogflow.v2.Tool.ConfirmationRequirementB\003\340A\001\022#\n"
+          + "\021proactive_enabled\030\003 \001(\010B\003\340A\001H\000\210\001\001\022\"\n"
+          + "\020reactive_enabled\030\004 \001(\010B\003\340A\001H\001\210\001\001B\024\n"
+          + "\022_proactive_enabledB\023\n"
+          + "\021_reactive_enabledB\340\001\n"
+          + "\036com.google.cloud.dialogflow.v2B\013CesAppProtoP\001Z>cloud.google.com/go/di"
+          + "alogflow/apiv2/dialogflowpb;dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2\352AL\n"
+          + "\026ces.googleapis.com/App\0222projects/{project"
+          + "}/locations/{location}/apps/{app}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,7 +86,7 @@ public final class CesAppProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_CesAppSpec_descriptor,
             new java.lang.String[] {
-              "CesApp", "ConfirmationRequirement",
+              "CesApp", "ConfirmationRequirement", "ProactiveEnabled", "ReactiveEnabled",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

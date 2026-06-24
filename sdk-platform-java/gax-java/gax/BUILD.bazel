@@ -49,6 +49,7 @@ _TEST_COMPILE_DEPS = [
     "@io_opentelemetry_opentelemetry_sdk_metrics//jar",
     "@io_opentelemetry_opentelemetry_sdk_common//jar",
     "@com_google_guava_guava_testlib//jar",
+    "@org_awaitility_awaitility//jar",
 ]
 
 java_library(

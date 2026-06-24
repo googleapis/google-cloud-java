@@ -90,9 +90,11 @@ public class SessionServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -147,9 +149,11 @@ public class SessionServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -288,9 +292,11 @@ public class SessionServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -303,9 +309,11 @@ public class SessionServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -344,9 +352,11 @@ public class SessionServiceClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setUserPseudoId("userPseudoId-1155274652")
               .addAllTurns(new ArrayList<Session.Turn>())
+              .addAllLabels(new ArrayList<String>())
               .setStartTime(Timestamp.newBuilder().build())
               .setEndTime(Timestamp.newBuilder().build())
               .setIsPinned(true)
+              .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSession(session, updateMask);
@@ -367,9 +377,11 @@ public class SessionServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -424,9 +436,11 @@ public class SessionServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setUserPseudoId("userPseudoId-1155274652")
             .addAllTurns(new ArrayList<Session.Turn>())
+            .addAllLabels(new ArrayList<String>())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 

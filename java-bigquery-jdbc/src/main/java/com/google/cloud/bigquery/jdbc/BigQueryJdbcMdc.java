@@ -26,9 +26,13 @@ import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcMdc.class.getName());
+
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
@@ -55,44 +59,76 @@ class BigQueryJdbcMdc {
    * Creates a new fixed thread pool ExecutorService that automatically propagates MDC connection
    * context from the submitting thread to the executing thread.
    */
-  static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
-    return new MdcThreadPoolExecutor(
-        nThreads,
-        nThreads,
-        0L,
-        TimeUnit.MILLISECONDS,
-        new LinkedBlockingQueue<>(),
-        new MdcThreadFactory(threadFactory));
+  static ExecutorService newFixedThreadPool(
+      String threadName, int nThreads, ThreadFactory threadFactory) {
+    MdcThreadPoolExecutor executor =
+        new MdcThreadPoolExecutor(
+            threadName,
+            nThreads,
+            nThreads,
+            60L,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            new MdcThreadFactory(threadFactory, threadName));
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
+  }
+
+  static ExecutorService newFixedThreadPool(String threadName, int nThreads) {
+    return newFixedThreadPool(threadName, nThreads, Executors.defaultThreadFactory());
   }
 
   /**
-   * Creates a new fixed thread pool ExecutorService that automatically propagates MDC connection
+   * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
    * context from the submitting thread to the executing thread.
    */
-  static ExecutorService newFixedThreadPool(int nThreads) {
-    return newFixedThreadPool(nThreads, Executors.defaultThreadFactory());
+  static ExecutorService newCachedThreadPool(String threadName, ThreadFactory threadFactory) {
+    return new MdcThreadPoolExecutor(
+        threadName,
+        0,
+        Integer.MAX_VALUE,
+        60L,
+        TimeUnit.SECONDS,
+        new java.util.concurrent.SynchronousQueue<>(),
+        new MdcThreadFactory(threadFactory, threadName));
+  }
+
+  static ExecutorService newCachedThreadPool(String threadName) {
+    return newCachedThreadPool(threadName, Executors.defaultThreadFactory());
   }
 
   private static class MdcThreadFactory implements ThreadFactory {
     private final ThreadFactory delegate;
+    private final String threadName;
+    private final java.util.concurrent.atomic.AtomicInteger count =
+        new java.util.concurrent.atomic.AtomicInteger(1);
 
-    public MdcThreadFactory(ThreadFactory delegate) {
+    public MdcThreadFactory(ThreadFactory delegate, String threadName) {
       this.delegate = delegate;
+      this.threadName = threadName;
     }
 
     @Override
     public Thread newThread(Runnable r) {
-      return delegate.newThread(
-          () -> {
-            clear();
-            r.run();
-          });
+      Thread t =
+          delegate.newThread(
+              () -> {
+                clear();
+                r.run();
+              });
+      if (t != null) {
+        t.setDaemon(true);
+        t.setName(threadName + "-" + count.getAndIncrement());
+      }
+      return t;
     }
   }
 
   private static class MdcThreadPoolExecutor extends ThreadPoolExecutor {
+    private final String poolName;
 
     public MdcThreadPoolExecutor(
+        String poolName,
         int corePoolSize,
         int maximumPoolSize,
         long keepAliveTime,
@@ -100,6 +136,30 @@ class BigQueryJdbcMdc {
         BlockingQueue<Runnable> workQueue,
         ThreadFactory threadFactory) {
       super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
+      this.poolName = poolName;
+    }
+
+    private final AtomicBoolean warningLogged = new AtomicBoolean(false);
+
+    private void monitorQueueSaturation(int queueSize) {
+      int maxPoolSize = getMaximumPoolSize();
+      // Warn when queue size is >= maxPoolSize * 5, with a minimum of 10 tasks to avoid false
+      // alerts for tiny pools
+      int warnThreshold = Math.max(10, maxPoolSize * 5);
+      // Recovery reset threshold is maxPoolSize * 2, with a minimum of 4 tasks
+      int recoveryThreshold = Math.max(4, maxPoolSize * 2);
+
+      if (queueSize >= warnThreshold) {
+        if (warningLogged.compareAndSet(false, true)) {
+          LOG.warning(
+              "[%s] Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the metadataFetchThreadCount property.",
+              poolName, maxPoolSize, getActiveCount(), queueSize);
+        }
+      } else if (queueSize <= recoveryThreshold) {
+        if (warningLogged.get()) {
+          warningLogged.set(false);
+        }
+      }
     }
 
     @Override
@@ -107,6 +167,9 @@ class BigQueryJdbcMdc {
       if (command == null) {
         throw new NullPointerException();
       }
+
+      monitorQueueSaturation(getQueue().size());
+
       if (command instanceof MdcFutureTask) {
         super.execute(command);
       } else {

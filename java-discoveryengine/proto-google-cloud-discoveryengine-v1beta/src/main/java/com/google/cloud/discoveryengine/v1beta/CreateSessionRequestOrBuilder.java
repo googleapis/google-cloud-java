@@ -100,4 +100,40 @@ public interface CreateSessionRequestOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.SessionOrBuilder getSessionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the session, which will become the final
+   * component of the session's resource name.
+   *
+   * This value should be 1-63 characters, and valid characters
+   * are /[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/. If not specified, a unique ID will
+   * be generated.
+   * </pre>
+   *
+   * <code>string session_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sessionId.
+   */
+  java.lang.String getSessionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the session, which will become the final
+   * component of the session's resource name.
+   *
+   * This value should be 1-63 characters, and valid characters
+   * are /[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/. If not specified, a unique ID will
+   * be generated.
+   * </pre>
+   *
+   * <code>string session_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sessionId.
+   */
+  com.google.protobuf.ByteString getSessionIdBytes();
 }

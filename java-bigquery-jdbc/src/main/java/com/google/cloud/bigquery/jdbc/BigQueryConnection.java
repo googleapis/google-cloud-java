@@ -62,6 +62,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -209,6 +210,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
+  private final ExecutorService metadataExecutor;
+  private final ExecutorService queryExecutor;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -344,6 +347,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
+      // Fixed thread pool queues tasks to limit concurrent metadata calls and prevent API
+      // throttling.
+      this.metadataExecutor =
+          BigQueryJdbcMdc.newFixedThreadPool(
+              String.format("BQ-Metadata-%s", connectionId), metadataFetchThreadCount);
+      // Cached pool executes queries immediately without queueing and reclaims all idle threads
+      // when inactive, minimizing resources.
+      this.queryExecutor =
+          BigQueryJdbcMdc.newCachedThreadPool(String.format("BQ-Query-%s", connectionId));
     }
   }
 
@@ -937,23 +949,91 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private void closeImpl() throws SQLException {
+    SQLException exceptionToThrow = null;
     try {
       if (this.bigQueryReadClient != null) {
         this.bigQueryReadClient.shutdown();
-        this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
-        this.bigQueryReadClient.close();
       }
-
       if (this.bigQueryWriteClient != null) {
         this.bigQueryWriteClient.shutdown();
-        this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
-        this.bigQueryWriteClient.close();
+      }
+      if (this.metadataExecutor != null) {
+        this.metadataExecutor.shutdown();
+      }
+      if (this.queryExecutor != null) {
+        this.queryExecutor.shutdown();
       }
 
       for (Statement statement : this.openStatements) {
-        statement.close();
+        try {
+          statement.close();
+        } catch (SQLException e) {
+          if (exceptionToThrow == null) {
+            exceptionToThrow = e;
+          } else {
+            exceptionToThrow.addSuppressed(e);
+          }
+        }
       }
       this.openStatements.clear();
+
+      boolean interrupted = Thread.currentThread().isInterrupted();
+
+      try {
+        if (this.bigQueryReadClient != null) {
+          if (interrupted) {
+            this.bigQueryReadClient.shutdownNow();
+          } else {
+            this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
+          }
+        }
+        if (this.bigQueryWriteClient != null) {
+          if (interrupted) {
+            this.bigQueryWriteClient.shutdownNow();
+          } else {
+            this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
+          }
+        }
+        if (this.metadataExecutor != null) {
+          if (interrupted || !this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+            this.metadataExecutor.shutdownNow();
+          }
+        }
+        if (this.queryExecutor != null) {
+          if (interrupted || !this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+            this.queryExecutor.shutdownNow();
+          }
+        }
+      } catch (InterruptedException e) {
+        interrupted = true;
+        if (this.bigQueryReadClient != null) {
+          this.bigQueryReadClient.shutdownNow();
+        }
+        if (this.bigQueryWriteClient != null) {
+          this.bigQueryWriteClient.shutdownNow();
+        }
+        if (this.metadataExecutor != null) {
+          this.metadataExecutor.shutdownNow();
+        }
+        if (this.queryExecutor != null) {
+          this.queryExecutor.shutdownNow();
+        }
+      } finally {
+        try {
+          if (this.bigQueryReadClient != null) {
+            this.bigQueryReadClient.close();
+          }
+        } finally {
+          if (this.bigQueryWriteClient != null) {
+            this.bigQueryWriteClient.close();
+          }
+        }
+      }
+
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+        throw new InterruptedException("Interrupted awaiting executor termination");
+      }
     } catch (ConcurrentModificationException ex) {
       throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
@@ -962,7 +1042,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       BigQueryJdbcMdc.clear();
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
     }
+    if (exceptionToThrow != null) {
+      throw exceptionToThrow;
+    }
     this.isClosed = true;
+  }
+
+  ExecutorService getExecutorService() {
+    return this.queryExecutor;
+  }
+
+  ExecutorService getMetadataExecutor() {
+    return this.metadataExecutor;
   }
 
   @Override

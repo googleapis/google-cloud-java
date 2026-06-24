@@ -306,6 +306,24 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
+  /** Class for specifying project list options. */
+  @BetaApi
+  class ProjectListOption extends Option {
+    private static final long serialVersionUID = -7256063598324265038L;
+
+    private ProjectListOption(BigQueryRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    public static ProjectListOption pageSize(long pageSize) {
+      return new ProjectListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    public static ProjectListOption pageToken(String pageToken) {
+      return new ProjectListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
   /** Class for specifying dataset get, create and update options. */
   class DatasetOption extends Option {
 
@@ -950,6 +968,15 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   Page<Dataset> listDatasets(DatasetListOption... options);
+
+  /**
+   * Lists the projects accessible to the caller.
+   *
+   * @param options options for listing projects
+   * @return a page of projects
+   */
+  @BetaApi
+  Page<Project> listProjects(ProjectListOption... options);
 
   /**
    * Lists the datasets in the provided project. This method returns partial information on each

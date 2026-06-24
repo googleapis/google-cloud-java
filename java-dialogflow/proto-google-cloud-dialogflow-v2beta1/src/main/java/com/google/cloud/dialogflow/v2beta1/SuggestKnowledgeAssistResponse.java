@@ -54,6 +54,7 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
 
   private SuggestKnowledgeAssistResponse() {
     latestMessage_ = "";
+    additionalSuggestedQueryResults_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -212,6 +213,112 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     return contextSize_;
   }
 
+  public static final int ADDITIONAL_SUGGESTED_QUERY_RESULTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult>
+      additionalSuggestedQueryResults_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult>
+      getAdditionalSuggestedQueryResultsList() {
+    return additionalSuggestedQueryResults_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                  .AdditionalSuggestedQueryResultOrBuilder>
+      getAdditionalSuggestedQueryResultsOrBuilderList() {
+    return additionalSuggestedQueryResults_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdditionalSuggestedQueryResultsCount() {
+    return additionalSuggestedQueryResults_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+      getAdditionalSuggestedQueryResults(int index) {
+    return additionalSuggestedQueryResults_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+          .AdditionalSuggestedQueryResultOrBuilder
+      getAdditionalSuggestedQueryResultsOrBuilder(int index) {
+    return additionalSuggestedQueryResults_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -235,6 +342,9 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     if (contextSize_ != 0) {
       output.writeInt32(3, contextSize_);
     }
+    for (int i = 0; i < additionalSuggestedQueryResults_.size(); i++) {
+      output.writeMessage(4, additionalSuggestedQueryResults_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -253,6 +363,11 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     }
     if (contextSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, contextSize_);
+    }
+    for (int i = 0; i < additionalSuggestedQueryResults_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, additionalSuggestedQueryResults_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -276,6 +391,8 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     }
     if (!getLatestMessage().equals(other.getLatestMessage())) return false;
     if (getContextSize() != other.getContextSize()) return false;
+    if (!getAdditionalSuggestedQueryResultsList()
+        .equals(other.getAdditionalSuggestedQueryResultsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -295,6 +412,10 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     hash = (53 * hash) + getLatestMessage().hashCode();
     hash = (37 * hash) + CONTEXT_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getContextSize();
+    if (getAdditionalSuggestedQueryResultsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_SUGGESTED_QUERY_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalSuggestedQueryResultsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -441,6 +562,7 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetKnowledgeAssistAnswerFieldBuilder();
+        internalGetAdditionalSuggestedQueryResultsFieldBuilder();
       }
     }
 
@@ -455,6 +577,13 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       }
       latestMessage_ = "";
       contextSize_ = 0;
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        additionalSuggestedQueryResults_ = java.util.Collections.emptyList();
+      } else {
+        additionalSuggestedQueryResults_ = null;
+        additionalSuggestedQueryResultsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -484,11 +613,26 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     public com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse buildPartial() {
       com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse result =
           new com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse result) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          additionalSuggestedQueryResults_ =
+              java.util.Collections.unmodifiableList(additionalSuggestedQueryResults_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.additionalSuggestedQueryResults_ = additionalSuggestedQueryResults_;
+      } else {
+        result.additionalSuggestedQueryResults_ = additionalSuggestedQueryResultsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -538,6 +682,34 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       if (other.getContextSize() != 0) {
         setContextSize(other.getContextSize());
       }
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        if (!other.additionalSuggestedQueryResults_.isEmpty()) {
+          if (additionalSuggestedQueryResults_.isEmpty()) {
+            additionalSuggestedQueryResults_ = other.additionalSuggestedQueryResults_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureAdditionalSuggestedQueryResultsIsMutable();
+            additionalSuggestedQueryResults_.addAll(other.additionalSuggestedQueryResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.additionalSuggestedQueryResults_.isEmpty()) {
+          if (additionalSuggestedQueryResultsBuilder_.isEmpty()) {
+            additionalSuggestedQueryResultsBuilder_.dispose();
+            additionalSuggestedQueryResultsBuilder_ = null;
+            additionalSuggestedQueryResults_ = other.additionalSuggestedQueryResults_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            additionalSuggestedQueryResultsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAdditionalSuggestedQueryResultsFieldBuilder()
+                    : null;
+          } else {
+            additionalSuggestedQueryResultsBuilder_.addAllMessages(
+                other.additionalSuggestedQueryResults_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -583,6 +755,23 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                        .AdditionalSuggestedQueryResult
+                    m =
+                        input.readMessage(
+                            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                                .AdditionalSuggestedQueryResult.parser(),
+                            extensionRegistry);
+                if (additionalSuggestedQueryResultsBuilder_ == null) {
+                  ensureAdditionalSuggestedQueryResultsIsMutable();
+                  additionalSuggestedQueryResults_.add(m);
+                } else {
+                  additionalSuggestedQueryResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1007,6 +1196,505 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       contextSize_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                .AdditionalSuggestedQueryResult>
+        additionalSuggestedQueryResults_ = java.util.Collections.emptyList();
+
+    private void ensureAdditionalSuggestedQueryResultsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        additionalSuggestedQueryResults_ =
+            new java.util.ArrayList<
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                    .AdditionalSuggestedQueryResult>(additionalSuggestedQueryResults_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                .AdditionalSuggestedQueryResult,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .Builder,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                .AdditionalSuggestedQueryResultOrBuilder>
+        additionalSuggestedQueryResultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                .AdditionalSuggestedQueryResult>
+        getAdditionalSuggestedQueryResultsList() {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(additionalSuggestedQueryResults_);
+      } else {
+        return additionalSuggestedQueryResultsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAdditionalSuggestedQueryResultsCount() {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        return additionalSuggestedQueryResults_.size();
+      } else {
+        return additionalSuggestedQueryResultsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+        getAdditionalSuggestedQueryResults(int index) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        return additionalSuggestedQueryResults_.get(index);
+      } else {
+        return additionalSuggestedQueryResultsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdditionalSuggestedQueryResults(
+        int index,
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            value) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.set(index, value);
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdditionalSuggestedQueryResults(
+        int index,
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .Builder
+            builderForValue) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdditionalSuggestedQueryResults(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            value) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.add(value);
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdditionalSuggestedQueryResults(
+        int index,
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            value) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.add(index, value);
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdditionalSuggestedQueryResults(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .Builder
+            builderForValue) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdditionalSuggestedQueryResults(
+        int index,
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .Builder
+            builderForValue) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAdditionalSuggestedQueryResults(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                        .AdditionalSuggestedQueryResult>
+            values) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, additionalSuggestedQueryResults_);
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdditionalSuggestedQueryResults() {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        additionalSuggestedQueryResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAdditionalSuggestedQueryResults(int index) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        ensureAdditionalSuggestedQueryResultsIsMutable();
+        additionalSuggestedQueryResults_.remove(index);
+        onChanged();
+      } else {
+        additionalSuggestedQueryResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            .Builder
+        getAdditionalSuggestedQueryResultsBuilder(int index) {
+      return internalGetAdditionalSuggestedQueryResultsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResultOrBuilder
+        getAdditionalSuggestedQueryResultsOrBuilder(int index) {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        return additionalSuggestedQueryResults_.get(index);
+      } else {
+        return additionalSuggestedQueryResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                    .AdditionalSuggestedQueryResultOrBuilder>
+        getAdditionalSuggestedQueryResultsOrBuilderList() {
+      if (additionalSuggestedQueryResultsBuilder_ != null) {
+        return additionalSuggestedQueryResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(additionalSuggestedQueryResults_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            .Builder
+        addAdditionalSuggestedQueryResultsBuilder() {
+      return internalGetAdditionalSuggestedQueryResultsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                  .AdditionalSuggestedQueryResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            .Builder
+        addAdditionalSuggestedQueryResultsBuilder(int index) {
+      return internalGetAdditionalSuggestedQueryResultsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                  .AdditionalSuggestedQueryResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of additional suggested queries based on the context.
+     * This is used for the cases when we want to generate multiple queries
+     * for a single request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .Builder>
+        getAdditionalSuggestedQueryResultsBuilderList() {
+      return internalGetAdditionalSuggestedQueryResultsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                .AdditionalSuggestedQueryResult,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .Builder,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                .AdditionalSuggestedQueryResultOrBuilder>
+        internalGetAdditionalSuggestedQueryResultsFieldBuilder() {
+      if (additionalSuggestedQueryResultsBuilder_ == null) {
+        additionalSuggestedQueryResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                    .AdditionalSuggestedQueryResult,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                    .AdditionalSuggestedQueryResult.Builder,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer
+                    .AdditionalSuggestedQueryResultOrBuilder>(
+                additionalSuggestedQueryResults_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        additionalSuggestedQueryResults_ = null;
+      }
+      return additionalSuggestedQueryResultsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse)

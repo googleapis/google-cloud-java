@@ -3,24 +3,26 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dms</artifactId>
-  <version>2.92.0</version><!-- {x-version-update:google-cloud-dms:current} -->
+  <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dms:current} -->
   <packaging>jar</packaging>
   <name>Google Database Migration Service</name>
   <description>Database Migration Service makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dms-parent</artifactId>
-    <version>2.92.0</version><!-- {x-version-update:google-cloud-dms:current} -->
+    <version>2.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dms:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dms</site.installationModule>
   </properties>
   <dependencies>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-dms-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
@@ -46,10 +48,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-dms-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>

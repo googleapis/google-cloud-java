@@ -34,6 +34,13 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitl
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentEnvironmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
@@ -61,6 +68,9 @@ import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
@@ -71,6 +81,9 @@ import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
@@ -85,9 +98,15 @@ import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
 import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
+import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.GoldengateConnection;
+import com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignment;
+import com.google.cloud.oracledatabase.v1.GoldengateDeployment;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -124,6 +143,20 @@ import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
 import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionAssignmentsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionTypesRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionTypesResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateConnectionsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentEnvironmentsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentEnvironmentsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentTypesResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
+import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
@@ -140,8 +173,12 @@ import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequ
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StartGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StopGoldengateDeploymentRequest;
 import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentRequest;
+import com.google.cloud.oracledatabase.v1.TestGoldengateConnectionAssignmentResponse;
 import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
 import com.google.longrunning.Operation;
@@ -865,6 +902,203 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+      listGoldengateDeploymentsMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeployments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateDeploymentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateDeploymentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentMethodDescriptor =
+          MethodDescriptor.<GetGoldengateDeploymentRequest, GoldengateDeployment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGoldengateDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoldengateDeployment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentMethodDescriptor =
+          MethodDescriptor.<CreateGoldengateDeploymentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateGoldengateDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentMethodDescriptor =
+          MethodDescriptor.<DeleteGoldengateDeploymentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteGoldengateDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteGoldengateDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentMethodDescriptor =
+          MethodDescriptor.<StopGoldengateDeploymentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/StopGoldengateDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StopGoldengateDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentMethodDescriptor =
+          MethodDescriptor.<StartGoldengateDeploymentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/StartGoldengateDeployment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartGoldengateDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+      listGoldengateConnectionsMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionMethodDescriptor =
+          MethodDescriptor.<GetGoldengateConnectionRequest, GoldengateConnection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGoldengateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoldengateConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionMethodDescriptor =
+          MethodDescriptor.<CreateGoldengateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateGoldengateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionMethodDescriptor =
+          MethodDescriptor.<DeleteGoldengateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteGoldengateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteGoldengateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+      listGoldengateDeploymentVersionsMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeploymentVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListGoldengateDeploymentVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListGoldengateDeploymentVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+      listGoldengateDeploymentTypesMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeploymentTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateDeploymentTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateDeploymentTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
+      listGoldengateDeploymentEnvironmentsMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateDeploymentEnvironmentsRequest,
+                  ListGoldengateDeploymentEnvironmentsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateDeploymentEnvironments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListGoldengateDeploymentEnvironmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListGoldengateDeploymentEnvironmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+      listGoldengateConnectionTypesMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateConnectionTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateConnectionTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGoldengateConnectionTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListDbVersionsRequest, ListDbVersionsResponse>
       listDbVersionsMethodDescriptor =
           MethodDescriptor.<ListDbVersionsRequest, ListDbVersionsResponse>newBuilder()
@@ -889,6 +1123,87 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   ProtoUtils.marshaller(ListDatabaseCharacterSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatabaseCharacterSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+      listGoldengateConnectionAssignmentsMethodDescriptor =
+          MethodDescriptor
+              .<ListGoldengateConnectionAssignmentsRequest,
+                  ListGoldengateConnectionAssignmentsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ListGoldengateConnectionAssignments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListGoldengateConnectionAssignmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListGoldengateConnectionAssignmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentMethodDescriptor =
+          MethodDescriptor
+              .<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateConnectionAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetGoldengateConnectionAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoldengateConnectionAssignment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentMethodDescriptor =
+          MethodDescriptor.<CreateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/CreateGoldengateConnectionAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateGoldengateConnectionAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentMethodDescriptor =
+          MethodDescriptor.<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/DeleteGoldengateConnectionAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteGoldengateConnectionAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentMethodDescriptor =
+          MethodDescriptor
+              .<TestGoldengateConnectionAssignmentRequest,
+                  TestGoldengateConnectionAssignmentResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/TestGoldengateConnectionAssignment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      TestGoldengateConnectionAssignmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      TestGoldengateConnectionAssignmentResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1116,6 +1431,73 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<DeleteDbSystemRequest, Operation> deleteDbSystemCallable;
   private final OperationCallable<DeleteDbSystemRequest, Empty, OperationMetadata>
       deleteDbSystemOperationCallable;
+  private final UnaryCallable<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+      listGoldengateDeploymentsCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsPagedResponse>
+      listGoldengateDeploymentsPagedCallable;
+  private final UnaryCallable<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentCallable;
+  private final UnaryCallable<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentCallable;
+  private final OperationCallable<
+          CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      createGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentCallable;
+  private final OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
+      deleteGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentCallable;
+  private final OperationCallable<
+          StopGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      stopGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentCallable;
+  private final OperationCallable<
+          StartGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      startGoldengateDeploymentOperationCallable;
+  private final UnaryCallable<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+      listGoldengateConnectionsCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionsRequest, ListGoldengateConnectionsPagedResponse>
+      listGoldengateConnectionsPagedCallable;
+  private final UnaryCallable<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionCallable;
+  private final UnaryCallable<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionCallable;
+  private final OperationCallable<
+          CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      createGoldengateConnectionOperationCallable;
+  private final UnaryCallable<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionCallable;
+  private final OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionOperationCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+      listGoldengateDeploymentVersionsCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
+      listGoldengateDeploymentVersionsPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+      listGoldengateDeploymentTypesCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesPagedResponse>
+      listGoldengateDeploymentTypesPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
+      listGoldengateDeploymentEnvironmentsCallable;
+  private final UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest,
+          ListGoldengateDeploymentEnvironmentsPagedResponse>
+      listGoldengateDeploymentEnvironmentsPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+      listGoldengateConnectionTypesCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesPagedResponse>
+      listGoldengateConnectionTypesPagedCallable;
   private final UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable;
   private final UnaryCallable<ListDbVersionsRequest, ListDbVersionsPagedResponse>
       listDbVersionsPagedCallable;
@@ -1124,6 +1506,31 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<
           ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
       listDatabaseCharacterSetsPagedCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+      listGoldengateConnectionAssignmentsCallable;
+  private final UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest,
+          ListGoldengateConnectionAssignmentsPagedResponse>
+      listGoldengateConnectionAssignmentsPagedCallable;
+  private final UnaryCallable<
+          GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentCallable;
+  private final UnaryCallable<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentCallable;
+  private final OperationCallable<
+          CreateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      createGoldengateConnectionAssignmentOperationCallable;
+  private final UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentCallable;
+  private final OperationCallable<
+          DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionAssignmentOperationCallable;
+  private final UnaryCallable<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1847,6 +2254,188 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+        listGoldengateDeploymentsTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetGoldengateDeploymentRequest, GoldengateDeployment>
+        getGoldengateDeploymentTransportSettings =
+            GrpcCallSettings.<GetGoldengateDeploymentRequest, GoldengateDeployment>newBuilder()
+                .setMethodDescriptor(getGoldengateDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateGoldengateDeploymentRequest, Operation>
+        createGoldengateDeploymentTransportSettings =
+            GrpcCallSettings.<CreateGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoldengateDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteGoldengateDeploymentRequest, Operation>
+        deleteGoldengateDeploymentTransportSettings =
+            GrpcCallSettings.<DeleteGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoldengateDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<StopGoldengateDeploymentRequest, Operation>
+        stopGoldengateDeploymentTransportSettings =
+            GrpcCallSettings.<StopGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(stopGoldengateDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<StartGoldengateDeploymentRequest, Operation>
+        startGoldengateDeploymentTransportSettings =
+            GrpcCallSettings.<StartGoldengateDeploymentRequest, Operation>newBuilder()
+                .setMethodDescriptor(startGoldengateDeploymentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+        listGoldengateConnectionsTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listGoldengateConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetGoldengateConnectionRequest, GoldengateConnection>
+        getGoldengateConnectionTransportSettings =
+            GrpcCallSettings.<GetGoldengateConnectionRequest, GoldengateConnection>newBuilder()
+                .setMethodDescriptor(getGoldengateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateGoldengateConnectionRequest, Operation>
+        createGoldengateConnectionTransportSettings =
+            GrpcCallSettings.<CreateGoldengateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoldengateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteGoldengateConnectionRequest, Operation>
+        deleteGoldengateConnectionTransportSettings =
+            GrpcCallSettings.<DeleteGoldengateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoldengateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+        listGoldengateDeploymentVersionsTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+        listGoldengateDeploymentTypesTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentTypesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            ListGoldengateDeploymentEnvironmentsRequest,
+            ListGoldengateDeploymentEnvironmentsResponse>
+        listGoldengateDeploymentEnvironmentsTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateDeploymentEnvironmentsRequest,
+                    ListGoldengateDeploymentEnvironmentsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateDeploymentEnvironmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+        listGoldengateConnectionTypesTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateConnectionTypesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListDbVersionsRequest, ListDbVersionsResponse>
         listDbVersionsTransportSettings =
             GrpcCallSettings.<ListDbVersionsRequest, ListDbVersionsResponse>newBuilder()
@@ -1871,6 +2460,76 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<
+            ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+        listGoldengateConnectionAssignmentsTransportSettings =
+            GrpcCallSettings
+                .<ListGoldengateConnectionAssignmentsRequest,
+                    ListGoldengateConnectionAssignmentsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGoldengateConnectionAssignmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+        getGoldengateConnectionAssignmentTransportSettings =
+            GrpcCallSettings
+                .<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+                    newBuilder()
+                .setMethodDescriptor(getGoldengateConnectionAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateGoldengateConnectionAssignmentRequest, Operation>
+        createGoldengateConnectionAssignmentTransportSettings =
+            GrpcCallSettings.<CreateGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoldengateConnectionAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
+        deleteGoldengateConnectionAssignmentTransportSettings =
+            GrpcCallSettings.<DeleteGoldengateConnectionAssignmentRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoldengateConnectionAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+        testGoldengateConnectionAssignmentTransportSettings =
+            GrpcCallSettings
+                .<TestGoldengateConnectionAssignmentRequest,
+                    TestGoldengateConnectionAssignmentResponse>
+                    newBuilder()
+                .setMethodDescriptor(testGoldengateConnectionAssignmentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2371,6 +3030,142 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteDbSystemOperationSettings(),
             clientContext,
             operationsStub);
+    this.listGoldengateDeploymentsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentsTransportSettings,
+            settings.listGoldengateDeploymentsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentsTransportSettings,
+            settings.listGoldengateDeploymentsSettings(),
+            clientContext);
+    this.getGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            getGoldengateDeploymentTransportSettings,
+            settings.getGoldengateDeploymentSettings(),
+            clientContext);
+    this.createGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            createGoldengateDeploymentTransportSettings,
+            settings.createGoldengateDeploymentSettings(),
+            clientContext);
+    this.createGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoldengateDeploymentTransportSettings,
+            settings.createGoldengateDeploymentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoldengateDeploymentTransportSettings,
+            settings.deleteGoldengateDeploymentSettings(),
+            clientContext);
+    this.deleteGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoldengateDeploymentTransportSettings,
+            settings.deleteGoldengateDeploymentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.stopGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            stopGoldengateDeploymentTransportSettings,
+            settings.stopGoldengateDeploymentSettings(),
+            clientContext);
+    this.stopGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            stopGoldengateDeploymentTransportSettings,
+            settings.stopGoldengateDeploymentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.startGoldengateDeploymentCallable =
+        callableFactory.createUnaryCallable(
+            startGoldengateDeploymentTransportSettings,
+            settings.startGoldengateDeploymentSettings(),
+            clientContext);
+    this.startGoldengateDeploymentOperationCallable =
+        callableFactory.createOperationCallable(
+            startGoldengateDeploymentTransportSettings,
+            settings.startGoldengateDeploymentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listGoldengateConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateConnectionsTransportSettings,
+            settings.listGoldengateConnectionsSettings(),
+            clientContext);
+    this.listGoldengateConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateConnectionsTransportSettings,
+            settings.listGoldengateConnectionsSettings(),
+            clientContext);
+    this.getGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getGoldengateConnectionTransportSettings,
+            settings.getGoldengateConnectionSettings(),
+            clientContext);
+    this.createGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createGoldengateConnectionTransportSettings,
+            settings.createGoldengateConnectionSettings(),
+            clientContext);
+    this.createGoldengateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoldengateConnectionTransportSettings,
+            settings.createGoldengateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteGoldengateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoldengateConnectionTransportSettings,
+            settings.deleteGoldengateConnectionSettings(),
+            clientContext);
+    this.deleteGoldengateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoldengateConnectionTransportSettings,
+            settings.deleteGoldengateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listGoldengateDeploymentVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentVersionsTransportSettings,
+            settings.listGoldengateDeploymentVersionsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentVersionsTransportSettings,
+            settings.listGoldengateDeploymentVersionsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentTypesCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentTypesTransportSettings,
+            settings.listGoldengateDeploymentTypesSettings(),
+            clientContext);
+    this.listGoldengateDeploymentTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentTypesTransportSettings,
+            settings.listGoldengateDeploymentTypesSettings(),
+            clientContext);
+    this.listGoldengateDeploymentEnvironmentsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateDeploymentEnvironmentsTransportSettings,
+            settings.listGoldengateDeploymentEnvironmentsSettings(),
+            clientContext);
+    this.listGoldengateDeploymentEnvironmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateDeploymentEnvironmentsTransportSettings,
+            settings.listGoldengateDeploymentEnvironmentsSettings(),
+            clientContext);
+    this.listGoldengateConnectionTypesCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateConnectionTypesTransportSettings,
+            settings.listGoldengateConnectionTypesSettings(),
+            clientContext);
+    this.listGoldengateConnectionTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateConnectionTypesTransportSettings,
+            settings.listGoldengateConnectionTypesSettings(),
+            clientContext);
     this.listDbVersionsCallable =
         callableFactory.createUnaryCallable(
             listDbVersionsTransportSettings, settings.listDbVersionsSettings(), clientContext);
@@ -2386,6 +3181,48 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listDatabaseCharacterSetsTransportSettings,
             settings.listDatabaseCharacterSetsSettings(),
+            clientContext);
+    this.listGoldengateConnectionAssignmentsCallable =
+        callableFactory.createUnaryCallable(
+            listGoldengateConnectionAssignmentsTransportSettings,
+            settings.listGoldengateConnectionAssignmentsSettings(),
+            clientContext);
+    this.listGoldengateConnectionAssignmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoldengateConnectionAssignmentsTransportSettings,
+            settings.listGoldengateConnectionAssignmentsSettings(),
+            clientContext);
+    this.getGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            getGoldengateConnectionAssignmentTransportSettings,
+            settings.getGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.createGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            createGoldengateConnectionAssignmentTransportSettings,
+            settings.createGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.createGoldengateConnectionAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoldengateConnectionAssignmentTransportSettings,
+            settings.createGoldengateConnectionAssignmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoldengateConnectionAssignmentTransportSettings,
+            settings.deleteGoldengateConnectionAssignmentSettings(),
+            clientContext);
+    this.deleteGoldengateConnectionAssignmentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoldengateConnectionAssignmentTransportSettings,
+            settings.deleteGoldengateConnectionAssignmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.testGoldengateConnectionAssignmentCallable =
+        callableFactory.createUnaryCallable(
+            testGoldengateConnectionAssignmentTransportSettings,
+            settings.testGoldengateConnectionAssignmentSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -2999,6 +3836,172 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
+  public UnaryCallable<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsResponse>
+      listGoldengateDeploymentsCallable() {
+    return listGoldengateDeploymentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateDeploymentsRequest, ListGoldengateDeploymentsPagedResponse>
+      listGoldengateDeploymentsPagedCallable() {
+    return listGoldengateDeploymentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentCallable() {
+    return getGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentCallable() {
+    return createGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      createGoldengateDeploymentOperationCallable() {
+    return createGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentCallable() {
+    return deleteGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
+      deleteGoldengateDeploymentOperationCallable() {
+    return deleteGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentCallable() {
+    return stopGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<StopGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      stopGoldengateDeploymentOperationCallable() {
+    return stopGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentCallable() {
+    return startGoldengateDeploymentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          StartGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      startGoldengateDeploymentOperationCallable() {
+    return startGoldengateDeploymentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateConnectionsRequest, ListGoldengateConnectionsResponse>
+      listGoldengateConnectionsCallable() {
+    return listGoldengateConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateConnectionsRequest, ListGoldengateConnectionsPagedResponse>
+      listGoldengateConnectionsPagedCallable() {
+    return listGoldengateConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionCallable() {
+    return getGoldengateConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionCallable() {
+    return createGoldengateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      createGoldengateConnectionOperationCallable() {
+    return createGoldengateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionCallable() {
+    return deleteGoldengateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionOperationCallable() {
+    return deleteGoldengateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
+      listGoldengateDeploymentVersionsCallable() {
+    return listGoldengateDeploymentVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
+      listGoldengateDeploymentVersionsPagedCallable() {
+    return listGoldengateDeploymentVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
+      listGoldengateDeploymentTypesCallable() {
+    return listGoldengateDeploymentTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesPagedResponse>
+      listGoldengateDeploymentTypesPagedCallable() {
+    return listGoldengateDeploymentTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
+      listGoldengateDeploymentEnvironmentsCallable() {
+    return listGoldengateDeploymentEnvironmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateDeploymentEnvironmentsRequest,
+          ListGoldengateDeploymentEnvironmentsPagedResponse>
+      listGoldengateDeploymentEnvironmentsPagedCallable() {
+    return listGoldengateDeploymentEnvironmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
+      listGoldengateConnectionTypesCallable() {
+    return listGoldengateConnectionTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesPagedResponse>
+      listGoldengateConnectionTypesPagedCallable() {
+    return listGoldengateConnectionTypesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> listDbVersionsCallable() {
     return listDbVersionsCallable;
   }
@@ -3019,6 +4022,61 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsPagedResponse>
       listDatabaseCharacterSetsPagedCallable() {
     return listDatabaseCharacterSetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest, ListGoldengateConnectionAssignmentsResponse>
+      listGoldengateConnectionAssignmentsCallable() {
+    return listGoldengateConnectionAssignmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListGoldengateConnectionAssignmentsRequest,
+          ListGoldengateConnectionAssignmentsPagedResponse>
+      listGoldengateConnectionAssignmentsPagedCallable() {
+    return listGoldengateConnectionAssignmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentCallable() {
+    return getGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentCallable() {
+    return createGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      createGoldengateConnectionAssignmentOperationCallable() {
+    return createGoldengateConnectionAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentCallable() {
+    return deleteGoldengateConnectionAssignmentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionAssignmentOperationCallable() {
+    return deleteGoldengateConnectionAssignmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentCallable() {
+    return testGoldengateConnectionAssignmentCallable;
   }
 
   @Override

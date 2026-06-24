@@ -48,10 +48,7 @@ import org.junit.jupiter.api.Test;
 
 public class ITCallableStatementTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  static final String connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3";
+  static final String connection_uri = ITBase.connectionUrl;
   private static final Random random = new Random();
   private static String DATASET;
   private static final String CALLABLE_STMT_PROC_NAME = "IT_CALLABLE_STMT_PROC_TEST";

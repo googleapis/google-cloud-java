@@ -3,8 +3,12 @@ target-it/**
 **/*logs*/**
 **/ITBigQueryJDBCLocalTest.java
 **/BigQueryStatementE2EBenchmark.java
+.agents/
 
 tools/**/*.class
 tools/**/drivers/**
 tools/**/logs/**
 tools/**/*.jfr
+
+# Gemini/Jetski agent custom skills
+.agents/
