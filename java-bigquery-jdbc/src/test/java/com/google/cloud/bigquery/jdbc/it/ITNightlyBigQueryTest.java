@@ -1674,12 +1674,4 @@ public class ITNightlyBigQueryTest extends ITBase {
     Job stubJob = bigQuery.getJob(job.getJobId());
     return stubJob.getStatistics().getSessionInfo().getSessionId();
   }
-
-  private int resultSetRowCount(ResultSet resultSet) throws SQLException {
-    int rowCount = 0;
-    while (resultSet.next()) {
-      rowCount++;
-    }
-    return rowCount;
-  }
 }

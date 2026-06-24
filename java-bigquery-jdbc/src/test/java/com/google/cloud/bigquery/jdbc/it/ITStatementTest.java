@@ -244,14 +244,6 @@ public class ITStatementTest extends ITBase {
     connection.close();
   }
 
-  private int resultSetRowCount(ResultSet resultSet) throws SQLException {
-    int rowCount = 0;
-    while (resultSet.next()) {
-      rowCount++;
-    }
-    return rowCount;
-  }
-
   @Test
   public void testStringColumnLength() throws SQLException {
     String TABLE_NAME = "StringColumnLengthTable";
