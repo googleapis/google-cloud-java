@@ -103,10 +103,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
             .setTotalTimeoutDuration(java.time.Duration.ofMillis(10000L))
             .setMaxAttempts(100)
             .build();
-    ScheduledExecutorService localExecutor = Executors.newSingleThreadScheduledExecutor();
-    try {
-      for (int executionsCount = 0; executionsCount < EXECUTIONS_COUNT; executionsCount++) {
-
+    for (int executionsCount = 0; executionsCount < EXECUTIONS_COUNT; executionsCount++) {
+      ScheduledExecutorService localExecutor = Executors.newSingleThreadScheduledExecutor();
+      try {
         FailingCallable callable = new FailingCallable(15, "request", "SUCCESS", tracer);
 
         RetryingExecutorWithContext<String> executor =
@@ -151,9 +150,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
         assertFutureSuccess(future);
         assertEquals(15, future.getAttemptSettings().getAttemptCount());
         assertTrue(failedAttempts.get() > 0);
+      } finally {
+        localExecutor.shutdownNow();
       }
-    } finally {
-      localExecutor.shutdownNow();
     }
   }
 
@@ -284,9 +283,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
             // tiny RRD value is small, but not impossible.
             .setJittered(false)
             .build();
-    ScheduledExecutorService localExecutor = Executors.newSingleThreadScheduledExecutor();
-    try {
-      for (int executionsCount = 0; executionsCount < EXECUTIONS_COUNT; executionsCount++) {
+    for (int executionsCount = 0; executionsCount < EXECUTIONS_COUNT; executionsCount++) {
+      ScheduledExecutorService localExecutor = Executors.newSingleThreadScheduledExecutor();
+      try {
         FailingCallable callable = new FailingCallable(4, "request", "SUCCESS", tracer);
         RetryingExecutorWithContext<String> executor =
             getRetryingExecutor(
@@ -317,9 +316,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
         // i.e. The future from executor.submit() has been run by the ScheduledExecutor
         assertTrue(future.getAttemptSettings().getAttemptCount() > 0);
         assertTrue(future.getAttemptSettings().getAttemptCount() < 4);
+      } finally {
+        localExecutor.shutdownNow();
       }
-    } finally {
-      localExecutor.shutdownNow();
     }
   }
 
