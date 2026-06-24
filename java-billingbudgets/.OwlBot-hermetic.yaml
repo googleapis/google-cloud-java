@@ -16,10 +16,7 @@
 deep-remove-regex:
 - "/java-billingbudgets/grpc-google-.*/src"
 - "/java-billingbudgets/proto-google-.*/src"
-- "/java-billingbudgets/google-.*/src/main"
-- "/java-billingbudgets/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-billingbudgets/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-billingbudgets/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-billingbudgets/google-.*/src"
 - "/java-billingbudgets/samples/snippets/generated"
 
 deep-preserve-regex:
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-billingbudgets/$1/proto-google-cloud-billingbudgets-$1/src"
 - source: "/google/cloud/billing/budgets/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-billingbudgets/$1/grpc-google-cloud-billingbudgets-$1/src"
-- source: "/google/cloud/billing/budgets/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-billingbudgets/$1/google-cloud-billingbudgets/src/main"
+- source: "/google/cloud/billing/budgets/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-billingbudgets/$1/google-cloud-billingbudgets/src"
 - source: "/google/cloud/billing/budgets/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-billingbudgets/$1/samples/snippets/generated"
 

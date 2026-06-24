@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-maps-mapsplatformdatasets/grpc-google-.*/src"
 - "/java-maps-mapsplatformdatasets/proto-google-.*/src"
-- "/java-maps-mapsplatformdatasets/google-.*/src/main"
-- "/java-maps-mapsplatformdatasets/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-maps-mapsplatformdatasets/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-maps-mapsplatformdatasets/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-maps-mapsplatformdatasets/google-.*/src"
 - "/java-maps-mapsplatformdatasets/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/maps/mapsplatformdatasets/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maps-mapsplatformdatasets/$1/proto-google-maps-mapsplatformdatasets-$1/src"
 - source: "/google/maps/mapsplatformdatasets/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-mapsplatformdatasets/$1/grpc-google-maps-mapsplatformdatasets-$1/src"
-- source: "/google/maps/mapsplatformdatasets/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-maps-mapsplatformdatasets/$1/google-maps-mapsplatformdatasets/src/main"
+- source: "/google/maps/mapsplatformdatasets/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-maps-mapsplatformdatasets/$1/google-maps-mapsplatformdatasets/src"
 - source: "/google/maps/mapsplatformdatasets/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-mapsplatformdatasets/$1/samples/snippets/generated"
 

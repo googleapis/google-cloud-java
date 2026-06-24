@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-datalineage/grpc-google-.*/src"
 - "/java-datalineage/proto-google-.*/src"
-- "/java-datalineage/google-.*/src/main"
-- "/java-datalineage/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-datalineage/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-datalineage/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-datalineage/google-.*/src"
 - "/java-datalineage/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-datalineage/$1/proto-google-cloud-datalineage-$1/src"
 - source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-datalineage/$1/grpc-google-cloud-datalineage-$1/src"
-- source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src/main"
+- source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src"
 - source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datalineage/$1/samples/snippets/generated"
 # configmanagement
@@ -38,8 +37,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datalineage/$1/proto-google-cloud-datalineage-$1/src"
 - source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-datalineage/$1/grpc-google-cloud-datalineage-$1/src"
-- source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src/main"
+- source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src"
 - source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datalineage/$1/samples/snippets/generated"
 

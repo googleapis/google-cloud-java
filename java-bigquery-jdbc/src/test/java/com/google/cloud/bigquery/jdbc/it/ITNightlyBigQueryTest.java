@@ -56,7 +56,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class ITNightlyBigQueryTest {
+public class ITNightlyBigQueryTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static Connection bigQueryConnection;
   static Statement bigQueryStatement;
@@ -215,18 +215,13 @@ public class ITNightlyBigQueryTest {
         DriverManager.getConnection(connection_uri + ";JobCreationMode=1", new Properties());
     Statement bigQueryStatement = bigQueryConnection.createStatement();
 
-    // This query takes 300 seconds to complete
-    String query300Seconds =
-        "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
-            + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
-
     // Query will be started in the background thread & we will call cancel from current thread.
     Thread t =
         new Thread(
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("User requested cancellation"));
               threadException.set(false);
             });
@@ -254,18 +249,13 @@ public class ITNightlyBigQueryTest {
         DriverManager.getConnection(connection_uri + ";JobCreationMode=2", new Properties());
     Statement bigQueryStatement = bigQueryConnection.createStatement();
 
-    // This query takes 300 seconds to complete
-    String query300Seconds =
-        "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
-            + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
-
     // Query will be started in the background thread & we will call cancel from current thread.
     Thread t =
         new Thread(
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("Query was cancelled."));
               threadException.set(false);
             });
@@ -1683,13 +1673,5 @@ public class ITNightlyBigQueryTest {
     job = job.waitFor();
     Job stubJob = bigQuery.getJob(job.getJobId());
     return stubJob.getStatistics().getSessionInfo().getSessionId();
-  }
-
-  private int resultSetRowCount(ResultSet resultSet) throws SQLException {
-    int rowCount = 0;
-    while (resultSet.next()) {
-      rowCount++;
-    }
-    return rowCount;
   }
 }

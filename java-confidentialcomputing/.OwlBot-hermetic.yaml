@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-confidentialcomputing/grpc-google-.*/src"
 - "/java-confidentialcomputing/proto-google-.*/src"
-- "/java-confidentialcomputing/google-.*/src/main"
-- "/java-confidentialcomputing/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-confidentialcomputing/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-confidentialcomputing/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-confidentialcomputing/google-.*/src"
 - "/java-confidentialcomputing/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/confidentialcomputing/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-confidentialcomputing/$1/proto-google-cloud-confidentialcomputing-$1/src"
 - source: "/google/cloud/confidentialcomputing/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-confidentialcomputing/$1/grpc-google-cloud-confidentialcomputing-$1/src"
-- source: "/google/cloud/confidentialcomputing/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-confidentialcomputing/$1/google-cloud-confidentialcomputing/src/main"
+- source: "/google/cloud/confidentialcomputing/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-confidentialcomputing/$1/google-cloud-confidentialcomputing/src"
 - source: "/google/cloud/confidentialcomputing/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-confidentialcomputing/$1/samples/snippets/generated"
 

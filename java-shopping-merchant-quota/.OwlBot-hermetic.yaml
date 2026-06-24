@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-shopping-merchant-quota/grpc-google-.*/src"
 - "/java-shopping-merchant-quota/proto-google-.*/src"
-- "/java-shopping-merchant-quota/google-.*/src/main"
-- "/java-shopping-merchant-quota/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-shopping-merchant-quota/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-shopping-merchant-quota/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-shopping-merchant-quota/google-.*/src"
 - "/java-shopping-merchant-quota/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/shopping/merchant/quota/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-merchant-quota/$1/proto-google-shopping-merchant-quota-$1/src"
 - source: "/google/shopping/merchant/quota/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-merchant-quota/$1/grpc-google-shopping-merchant-quota-$1/src"
-- source: "/google/shopping/merchant/quota/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-shopping-merchant-quota/$1/google-shopping-merchant-quota/src/main"
+- source: "/google/shopping/merchant/quota/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-quota/$1/google-shopping-merchant-quota/src"
 - source: "/google/shopping/merchant/quota/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-shopping-merchant-quota/$1/samples/snippets/generated"
 

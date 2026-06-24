@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-publicca/grpc-google-.*/src"
 - "/java-publicca/proto-google-.*/src"
-- "/java-publicca/google-.*/src/main"
-- "/java-publicca/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-publicca/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-publicca/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-publicca/google-.*/src"
 - "/java-publicca/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/security/publicca/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-publicca/$1/proto-google-cloud-publicca-$1/src"
 - source: "/google/cloud/security/publicca/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-publicca/$1/grpc-google-cloud-publicca-$1/src"
-- source: "/google/cloud/security/publicca/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-publicca/$1/google-cloud-publicca/src/main"
+- source: "/google/cloud/security/publicca/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-publicca/$1/google-cloud-publicca/src"
 - source: "/google/cloud/security/publicca/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-publicca/$1/samples/snippets/generated"
 
