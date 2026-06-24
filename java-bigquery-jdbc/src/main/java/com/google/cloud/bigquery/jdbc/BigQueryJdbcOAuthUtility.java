@@ -404,15 +404,6 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       int port,
-      String callerClassName)
-      throws URISyntaxException {
-    return getUserAuthorizer(authProperties, overrideProperties, port, null, callerClassName);
-  }
-
-  static UserAuthorizer getUserAuthorizer(
-      Map<String, String> authProperties,
-      Map<String, String> overrideProperties,
-      int port,
       HttpTransportFactory httpTransportFactory,
       String callerClassName)
       throws URISyntaxException {
@@ -444,11 +435,6 @@ final class BigQueryJdbcOAuthUtility {
     }
 
     return userAuthorizerBuilder.build();
-  }
-
-  static UserCredentials getCredentialsFromCode(
-      UserAuthorizer userAuthorizer, String code, String callerClassName) throws IOException {
-    return getCredentialsFromCode(userAuthorizer, code, null, callerClassName);
   }
 
   static UserCredentials getCredentialsFromCode(
@@ -560,15 +546,6 @@ final class BigQueryJdbcOAuthUtility {
       return getPreGeneratedAccessTokenCredentials(
           authProperties, overrideProperties, callerClassName);
     }
-  }
-
-  static UserCredentials getPreGeneratedRefreshTokenCredentials(
-      Map<String, String> authProperties,
-      Map<String, String> overrideProperties,
-      String callerClassName)
-      throws URISyntaxException {
-    return getPreGeneratedRefreshTokenCredentials(
-        authProperties, overrideProperties, null, callerClassName);
   }
 
   static UserCredentials getPreGeneratedRefreshTokenCredentials(

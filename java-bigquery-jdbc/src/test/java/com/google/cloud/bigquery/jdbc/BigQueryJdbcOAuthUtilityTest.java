@@ -248,7 +248,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserAuthorizer userAuthorizer =
           BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, new HashMap<String, String>(), USER_AUTH_PORT, null);
+              authProperties, new HashMap<String, String>(), USER_AUTH_PORT, null, null);
 
       String userId = "test_user";
       String state = "test_state";
@@ -281,7 +281,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserAuthorizer userAuthorizer =
           BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, overrideProperties, USER_AUTH_PORT, null);
+              authProperties, overrideProperties, USER_AUTH_PORT, null, null);
 
       assertThat(overrideTokenSeverURI).isEqualTo(userAuthorizer.toBuilder().getTokenServerUri());
     } catch (URISyntaxException e) {
@@ -322,7 +322,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserCredentials userCredentials =
           BigQueryJdbcOAuthUtility.getPreGeneratedRefreshTokenCredentials(
-              authProperties, overrideProperties, null);
+              authProperties, overrideProperties, null, null);
 
       assertThat(userCredentials.toBuilder().getTokenServerUri())
           .isEqualTo(URI.create("https://oauth2-private.p.googleapis.com/token"));
