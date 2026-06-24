@@ -16,10 +16,7 @@
 deep-remove-regex:
 - "/java-contact-center-insights/grpc-google-.*/src"
 - "/java-contact-center-insights/proto-google-.*/src"
-- "/java-contact-center-insights/google-.*/src/main"
-- "/java-contact-center-insights/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-contact-center-insights/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-contact-center-insights/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-contact-center-insights/google-.*/src"
 - "/java-contact-center-insights/samples/snippets/generated"
 
 deep-preserve-regex:
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-contact-center-insights/$1/proto-google-cloud-contact-center-insights-$1/src"
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-contact-center-insights/$1/grpc-google-cloud-contact-center-insights-$1/src"
-- source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-contact-center-insights/$1/google-cloud-contact-center-insights/src/main"
+- source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-contact-center-insights/$1/google-cloud-contact-center-insights/src"
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-contact-center-insights/$1/samples/snippets/generated"  
 

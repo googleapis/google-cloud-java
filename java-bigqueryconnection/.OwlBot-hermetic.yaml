@@ -16,23 +16,20 @@
 deep-remove-regex:
 - "/java-bigqueryconnection/grpc-google-.*/src"
 - "/java-bigqueryconnection/proto-google-.*/src"
-- "/java-bigqueryconnection/google-.*/src/main"
-- "/java-bigqueryconnection/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-bigqueryconnection/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-bigqueryconnection/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-bigqueryconnection/google-.*/src"
 - "/java-bigqueryconnection/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-bigqueryconnection/src/test/java/com/google/.*/bigqueryconnection/v.*/it/ITSystemTest.java"
+- "/.*google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryconnection/$1/proto-google-cloud-bigqueryconnection-$1/src"
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryconnection/$1/grpc-google-cloud-bigqueryconnection-$1/src"
-- source: "/google/cloud/bigquery/connection/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-bigqueryconnection/$1/google-cloud-bigqueryconnection/src/main"
+- source: "/google/cloud/bigquery/connection/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-bigqueryconnection/$1/google-cloud-bigqueryconnection/src"
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-bigqueryconnection/$1/samples/snippets/generated"
 

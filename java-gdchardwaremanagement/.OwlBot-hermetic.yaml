@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-gdchardwaremanagement/grpc-google-.*/src"
 - "/java-gdchardwaremanagement/proto-google-.*/src"
-- "/java-gdchardwaremanagement/google-.*/src/main"
-- "/java-gdchardwaremanagement/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-gdchardwaremanagement/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-gdchardwaremanagement/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-gdchardwaremanagement/google-.*/src"
 - "/java-gdchardwaremanagement/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/gdchardwaremanagement/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-gdchardwaremanagement/$1/proto-google-cloud-gdchardwaremanagement-$1/src"
 - source: "/google/cloud/gdchardwaremanagement/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-gdchardwaremanagement/$1/grpc-google-cloud-gdchardwaremanagement-$1/src"
-- source: "/google/cloud/gdchardwaremanagement/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-gdchardwaremanagement/$1/google-cloud-gdchardwaremanagement/src/main"
+- source: "/google/cloud/gdchardwaremanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-gdchardwaremanagement/$1/google-cloud-gdchardwaremanagement/src"
 - source: "/google/cloud/gdchardwaremanagement/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-gdchardwaremanagement/$1/samples/snippets/generated"
 

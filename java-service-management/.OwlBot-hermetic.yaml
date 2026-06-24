@@ -16,23 +16,21 @@
 deep-remove-regex:
 - "/java-service-management/grpc-google-.*/src"
 - "/java-service-management/proto-google-.*/src"
-- "/java-service-management/google-.*/src/main"
-- "/java-service-management/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-service-management/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-service-management/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-service-management/google-.*/src"
 - "/java-service-management/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-service-management/src/test/java/com/google/.*/api/servicemanagement/v1/ServiceManagerClientHttpJsonTest.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-cloud-service-management/src/test/java/com/google/cloud/api/servicemanagement/v1/ServiceManagerClientHttpJsonTest.java"
 
 deep-copy-regex:
 - source: "/google/api/servicemanagement/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-service-management/$1/proto-google-cloud-service-management-$1/src"
 - source: "/google/api/servicemanagement/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-service-management/$1/grpc-google-cloud-service-management-$1/src"
-- source: "/google/api/servicemanagement/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-service-management/$1/google-cloud-service-management/src/main"
+- source: "/google/api/servicemanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-service-management/$1/google-cloud-service-management/src"
 - source: "/google/api/servicemanagement/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-service-management/$1/samples/snippets/generated"
 

@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-dataproc-metastore/grpc-google-.*/src"
 - "/java-dataproc-metastore/proto-google-.*/src"
-- "/java-dataproc-metastore/google-.*/src/main"
-- "/java-dataproc-metastore/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-dataproc-metastore/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-dataproc-metastore/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-dataproc-metastore/google-.*/src"
 - "/java-dataproc-metastore/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/metastore/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-dataproc-metastore/$1/proto-google-cloud-dataproc-metastore-$1/src"
 - source: "/google/cloud/metastore/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-dataproc-metastore/$1/grpc-google-cloud-dataproc-metastore-$1/src"
-- source: "/google/cloud/metastore/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-dataproc-metastore/$1/google-cloud-dataproc-metastore/src/main"
+- source: "/google/cloud/metastore/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-dataproc-metastore/$1/google-cloud-dataproc-metastore/src"
 - source: "/google/cloud/metastore/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dataproc-metastore/$1/samples/snippets/generated"
 

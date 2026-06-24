@@ -17,20 +17,19 @@ deep-remove-regex:
 - "/java-orchestration-airflow/samples/snippets/generated"
 - "/java-orchestration-airflow/grpc-google-.*/src"
 - "/java-orchestration-airflow/proto-google-.*/src"
-- "/java-orchestration-airflow/google-.*/src/main"
-- "/java-orchestration-airflow/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-orchestration-airflow/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-orchestration-airflow/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-orchestration-airflow/google-.*/src"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-orchestration-airflow/$1/proto-google-cloud-orchestration-airflow-$1/src"
 - source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-orchestration-airflow/$1/grpc-google-cloud-orchestration-airflow-$1/src"
-- source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-orchestration-airflow/$1/google-cloud-orchestration-airflow/src/main"
+- source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-orchestration-airflow/$1/google-cloud-orchestration-airflow/src"
 - source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-orchestration-airflow/$1/samples/snippets/generated"
 

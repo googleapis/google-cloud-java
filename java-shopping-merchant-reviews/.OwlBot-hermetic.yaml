@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-shopping-merchant-reviews/grpc-google-.*/src"
 - "/java-shopping-merchant-reviews/proto-google-.*/src"
-- "/java-shopping-merchant-reviews/google-.*/src/main"
-- "/java-shopping-merchant-reviews/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-shopping-merchant-reviews/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-shopping-merchant-reviews/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-shopping-merchant-reviews/google-.*/src"
 - "/java-shopping-merchant-reviews/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/shopping/merchant/reviews/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-merchant-reviews/$1/proto-google-shopping-merchant-reviews-$1/src"
 - source: "/google/shopping/merchant/reviews/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-merchant-reviews/$1/grpc-google-shopping-merchant-reviews-$1/src"
-- source: "/google/shopping/merchant/reviews/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-shopping-merchant-reviews/$1/google-shopping-merchant-reviews/src/main"
+- source: "/google/shopping/merchant/reviews/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-reviews/$1/google-shopping-merchant-reviews/src"
 - source: "/google/shopping/merchant/reviews/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-shopping-merchant-reviews/$1/samples/snippets/generated"
 

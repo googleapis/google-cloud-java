@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-storagebatchoperations/grpc-google-.*/src"
 - "/java-storagebatchoperations/proto-google-.*/src"
-- "/java-storagebatchoperations/google-.*/src/main"
-- "/java-storagebatchoperations/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-storagebatchoperations/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-storagebatchoperations/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-storagebatchoperations/google-.*/src"
 - "/java-storagebatchoperations/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/storagebatchoperations/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-storagebatchoperations/$1/proto-google-cloud-storagebatchoperations-$1/src"
 - source: "/google/cloud/storagebatchoperations/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-storagebatchoperations/$1/grpc-google-cloud-storagebatchoperations-$1/src"
-- source: "/google/cloud/storagebatchoperations/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-storagebatchoperations/$1/google-cloud-storagebatchoperations/src/main"
+- source: "/google/cloud/storagebatchoperations/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-storagebatchoperations/$1/google-cloud-storagebatchoperations/src"
 - source: "/google/cloud/storagebatchoperations/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-storagebatchoperations/$1/samples/snippets/generated"
 
