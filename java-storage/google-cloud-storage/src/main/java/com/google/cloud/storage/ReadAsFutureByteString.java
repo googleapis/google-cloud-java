@@ -97,7 +97,7 @@ public final class ReadAsFutureByteString
    */
   @BetaApi
   boolean getCrc32cValidationEnabled() {
-    return !Hasher.noop().equals(hasher);
+    return Hasher.enabled().equals(hasher);
   }
 
   /**
@@ -111,7 +111,7 @@ public final class ReadAsFutureByteString
    */
   @BetaApi
   ReadAsFutureByteString withCrc32cValidationEnabled(boolean enabled) {
-    if (enabled && !Hasher.noop().equals(hasher)) {
+    if (enabled && Hasher.enabled().equals(hasher)) {
       return this;
     } else if (!enabled && Hasher.noop().equals(hasher)) {
       return this;
