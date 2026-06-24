@@ -69,7 +69,7 @@ final class RegionalAccessBoundary implements Serializable {
   static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
   static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
 
-  private static MtlsUtils.MtlsEndpointUsagePolicy userMtlsPolicy = null;
+  private static volatile MtlsUtils.MtlsEndpointUsagePolicy userMtlsPolicy = null;
 
   private final String encodedLocations;
   private final List<String> locations;
@@ -193,8 +193,12 @@ final class RegionalAccessBoundary implements Serializable {
     }
 
     if (userMtlsPolicy == null) {
-      userMtlsPolicy =
-          MtlsUtils.getMtlsEndpointUsagePolicy(SystemEnvironmentProvider.getInstance());
+      synchronized (RegionalAccessBoundary.class) {
+        if (userMtlsPolicy == null) {
+          userMtlsPolicy =
+              MtlsUtils.getMtlsEndpointUsagePolicy(SystemEnvironmentProvider.getInstance());
+        }
+      }
     }
     if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory
         || userMtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
