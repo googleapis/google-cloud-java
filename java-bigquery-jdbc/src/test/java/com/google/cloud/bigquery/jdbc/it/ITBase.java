@@ -34,7 +34,7 @@ import java.util.List;
 public class ITBase extends BigQueryJdbcBaseTest {
 
   // This query takes 300 seconds to complete
-  protected final String query300seconds =
+  public static final String query300seconds =
       "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
           + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
 

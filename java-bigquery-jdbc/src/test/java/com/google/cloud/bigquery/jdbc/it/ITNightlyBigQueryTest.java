@@ -221,7 +221,7 @@ public class ITNightlyBigQueryTest extends ITBase {
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("User requested cancellation"));
               threadException.set(false);
             });
@@ -255,7 +255,7 @@ public class ITNightlyBigQueryTest extends ITBase {
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("Query was cancelled."));
               threadException.set(false);
             });

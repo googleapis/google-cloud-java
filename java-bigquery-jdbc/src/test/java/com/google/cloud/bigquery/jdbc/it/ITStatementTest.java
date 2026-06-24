@@ -328,7 +328,7 @@ public class ITStatementTest extends ITBase {
     statement.setQueryTimeout(1);
     assertEquals(1, statement.getQueryTimeout());
     SQLException e =
-        assertThrows(SQLException.class, () -> statement.executeQuery(query300seconds));
+        assertThrows(SQLException.class, () -> statement.executeQuery(ITBase.query300seconds));
     assertEquals(
         "BigQueryException during runQuery\nJob execution was cancelled: Job timed out",
         e.getMessage());
