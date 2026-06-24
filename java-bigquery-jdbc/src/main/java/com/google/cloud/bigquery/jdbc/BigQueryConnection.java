@@ -980,7 +980,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       if (isTransactionStarted()) {
         try {
           // It looks like there's no need to start a new transaction after a rollback,
-          // but the commit behavior is preserved since close() may still fail before isClosed is updated.
+          // but the commit behavior is preserved since close() may still fail before isClosed is
+          // updated.
           rollbackImpl();
         } catch (SQLException e) {
           if (exceptionToThrow == null) {

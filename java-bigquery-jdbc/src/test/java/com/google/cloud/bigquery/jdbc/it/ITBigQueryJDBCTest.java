@@ -2219,7 +2219,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
             DATASET, TRANSACTION_TABLE);
     String insertQuery =
-        String.format("INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
     String selectQuery =
         String.format("SELECT id, name, age FROM %s.%s ORDER BY id;", DATASET, TRANSACTION_TABLE);
 
@@ -2228,7 +2229,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
       connection.setAutoCommit(false);
       try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
-           PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+          PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
         ps1.setInt(1, 1);
         ps1.setString(2, "DwightShrute");
         ps1.setInt(3, 10);
@@ -2266,7 +2267,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
             DATASET, TRANSACTION_TABLE);
     String insertQuery =
-        String.format("INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
     String selectQuery =
         String.format("SELECT id, name, age FROM %s.%s ORDER BY id;", DATASET, TRANSACTION_TABLE);
 
@@ -2275,7 +2277,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
       connection.setAutoCommit(false);
       try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
-           PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+          PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
 
         ps2.setInt(1, 1);
         ps2.setString(2, "MichaelScott");
