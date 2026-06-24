@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-managedkafka/grpc-google-.*/src"
 - "/java-managedkafka/proto-google-.*/src"
-- "/java-managedkafka/google-.*/src"
+- "/java-managedkafka/google-.*/src/main"
+- "/java-managedkafka/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-managedkafka/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-managedkafka/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-managedkafka/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/managedkafka/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-managedkafka/$1/proto-google-cloud-managedkafka-$1/src"
 - source: "/google/cloud/managedkafka/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-managedkafka/$1/grpc-google-cloud-managedkafka-$1/src"
-- source: "/google/cloud/managedkafka/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-managedkafka/$1/google-cloud-managedkafka/src"
+- source: "/google/cloud/managedkafka/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-managedkafka/$1/google-cloud-managedkafka/src/main"
 - source: "/google/cloud/managedkafka/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-managedkafka/$1/samples/snippets/generated"
 

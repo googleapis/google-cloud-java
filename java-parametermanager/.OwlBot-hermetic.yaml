@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-parametermanager/grpc-google-.*/src"
 - "/java-parametermanager/proto-google-.*/src"
-- "/java-parametermanager/google-.*/src"
+- "/java-parametermanager/google-.*/src/main"
+- "/java-parametermanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-parametermanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-parametermanager/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-parametermanager/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/parametermanager/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-parametermanager/$1/proto-google-cloud-parametermanager-$1/src"
 - source: "/google/cloud/parametermanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-parametermanager/$1/grpc-google-cloud-parametermanager-$1/src"
-- source: "/google/cloud/parametermanager/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-parametermanager/$1/google-cloud-parametermanager/src"
+- source: "/google/cloud/parametermanager/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-parametermanager/$1/google-cloud-parametermanager/src/main"
 - source: "/google/cloud/parametermanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-parametermanager/$1/samples/snippets/generated"
 

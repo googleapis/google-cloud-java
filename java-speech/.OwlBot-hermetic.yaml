@@ -17,13 +17,15 @@ deep-remove-regex:
 - "/java-speech/samples/snippets/generated"
 - "/java-speech/grpc-google-.*/src"
 - "/java-speech/proto-google-.*/src"
-- "/java-speech/google-.*/src"
+- "/java-speech/google-.*/src/main"
+- "/java-speech/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-speech/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-speech/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/.*google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
-- "/.*google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
+- "/.*google-cloud-speech/src/test/java/com/google/.*/speech/v1/SpeechSmokeTest.java"
+- "/.*google-cloud-speech/src/test/java/com/google/.*/speech/v1p1beta1/SpeechSmokeTest.java"
 - "/.*google-cloud-speech/src/test/resources/hello.flac"
 - "/.*google-cloud-speech/src/test/resources/META-INF/native-image/"
 
@@ -32,8 +34,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-speech/$1/proto-google-cloud-speech-$1/src"
 - source: "/google/cloud/speech/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-speech/$1/grpc-google-cloud-speech-$1/src"
-- source: "/google/cloud/speech/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-speech/$1/google-cloud-speech/src"
+- source: "/google/cloud/speech/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-speech/$1/google-cloud-speech/src/main"
 - source: "/google/cloud/speech/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-speech/$1/samples/snippets/generated"
 

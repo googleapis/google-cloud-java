@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-backupdr/grpc-google-.*/src"
 - "/java-backupdr/proto-google-.*/src"
-- "/java-backupdr/google-.*/src"
+- "/java-backupdr/google-.*/src/main"
+- "/java-backupdr/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-backupdr/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-backupdr/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-backupdr/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/backupdr/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-backupdr/$1/proto-google-cloud-backupdr-$1/src"
 - source: "/google/cloud/backupdr/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-backupdr/$1/grpc-google-cloud-backupdr-$1/src"
-- source: "/google/cloud/backupdr/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-backupdr/$1/google-cloud-backupdr/src"
+- source: "/google/cloud/backupdr/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-backupdr/$1/google-cloud-backupdr/src/main"
 - source: "/google/cloud/backupdr/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-backupdr/$1/samples/snippets/generated"
 

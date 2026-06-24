@@ -16,19 +16,20 @@
 deep-remove-regex:
 - "/java-developerknowledge/grpc-google-.*/src"
 - "/java-developerknowledge/proto-google-.*/src"
-- "/java-developerknowledge/google-.*/src"
+- "/java-developerknowledge/google-.*/src/main"
+- "/java-developerknowledge/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-developerknowledge/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-developerknowledge/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-developerknowledge/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-developerknowledge/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/developers/knowledge/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-developerknowledge/$1/proto-google-cloud-developer-knowledge-$1/src"
 - source: "/google/developers/knowledge/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-developerknowledge/$1/grpc-google-cloud-developer-knowledge-$1/src"
-- source: "/google/developers/knowledge/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-developerknowledge/$1/google-cloud-developer-knowledge/src"
+- source: "/google/developers/knowledge/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-developerknowledge/$1/google-cloud-developer-knowledge/src/main"
 - source: "/google/developers/knowledge/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-developerknowledge/$1/samples/snippets/generated"
 

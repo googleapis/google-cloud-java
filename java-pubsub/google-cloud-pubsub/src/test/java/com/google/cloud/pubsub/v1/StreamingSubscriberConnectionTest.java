@@ -101,6 +101,7 @@ public class StreamingSubscriberConnectionTest {
   @Before
   public void setUp() {
     systemExecutor = new FakeScheduledExecutorService();
+    executor = new FakeScheduledExecutorService();
     clock = systemExecutor.getClock();
     mockSubscriberStub = mock(SubscriberStub.class, RETURNS_DEEP_STUBS);
   }
@@ -108,6 +109,7 @@ public class StreamingSubscriberConnectionTest {
   @After
   public void tearDown() {
     systemExecutor.shutdown();
+    executor.shutdown();
   }
 
   @Test

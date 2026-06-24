@@ -15,18 +15,19 @@
 
 deep-remove-regex:
 - "/java-connectgateway/proto-google-.*/src"
-- "/java-connectgateway/google-.*/src"
+- "/java-connectgateway/google-.*/src/main"
+- "/java-connectgateway/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-connectgateway/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-connectgateway/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-connectgateway/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-connectgateway/$1/proto-google-cloud-connectgateway-$1/src"
-- source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-connectgateway/$1/google-cloud-connectgateway/src"
+- source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-connectgateway/$1/google-cloud-connectgateway/src/main"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-connectgateway/$1/samples/snippets/generated"
 

@@ -16,20 +16,21 @@
 deep-remove-regex:
 - "/java-shopping-css/grpc-google-.*/src"
 - "/java-shopping-css/proto-google-.*/src"
-- "/java-shopping-css/google-.*/src"
+- "/java-shopping-css/google-.*/src/main"
+- "/java-shopping-css/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-shopping-css/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-shopping-css/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-shopping-css/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
 - source: "/google/shopping/css/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-css/$1/proto-google-shopping-css-$1/src"
 - source: "/google/shopping/css/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-shopping-css/$1/grpc-google-shopping-css-$1/src"
-- source: "/google/shopping/css/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-shopping-css/$1/google-shopping-css/src"
+- source: "/google/shopping/css/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-shopping-css/$1/google-shopping-css/src/main"
 - source: "/google/shopping/css/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-shopping-css/$1/samples/snippets/generated"
 

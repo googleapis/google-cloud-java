@@ -16,7 +16,10 @@
 deep-remove-regex:
 - "/java-analytics-data/grpc-google-.*/src"
 - "/java-analytics-data/proto-google-.*/src"
-- "/java-analytics-data/google-.*/src"
+- "/java-analytics-data/google-.*/src/main"
+- "/java-analytics-data/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
+- "/java-analytics-data/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
+- "/java-analytics-data/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
 - "/java-analytics-data/samples/snippets/generated"
 
 deep-preserve-regex:
@@ -27,8 +30,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-analytics-data/$1/proto-google-analytics-data-$1/src"
 - source: "/google/analytics/data/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-analytics-data/$1/grpc-google-analytics-data-$1/src"
-- source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-analytics-data/$1/google-analytics-data/src"
+- source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src/main"
+  dest: "/owl-bot-staging/java-analytics-data/$1/google-analytics-data/src/main"
 - source: "/google/analytics/data/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-analytics-data/$1/samples/snippets/generated"
 
