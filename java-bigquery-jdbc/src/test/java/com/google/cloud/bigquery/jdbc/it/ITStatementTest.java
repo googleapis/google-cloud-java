@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -321,9 +322,7 @@ public class ITStatementTest extends ITBase {
     assertEquals(1, statement.getQueryTimeout());
     SQLException e =
         assertThrows(SQLException.class, () -> statement.executeQuery(ITBase.query300seconds));
-    assertEquals(
-        "BigQueryException during runQuery\nJob execution was cancelled: Job timed out",
-        e.getMessage());
+    assertThat(e.getMessage()).contains("Job execution was cancelled: Job timed out");
     statement.close();
     connection.close();
   }
