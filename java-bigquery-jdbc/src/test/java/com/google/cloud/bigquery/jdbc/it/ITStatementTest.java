@@ -48,7 +48,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class ITStatementTest {
+public class ITStatementTest extends ITBase {
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static String DATASET;
   private static Random random = new Random();
@@ -323,15 +323,12 @@ public class ITStatementTest {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
 
-    String selectQuery =
-        "SELECT views FROM bigquery-public-data.wikipedia.pageviews_2020 WHERE datehour >="
-            + " '2020-01-01' LIMIT 9000000";
-
     // statement.execute(selectQuery);
     assertEquals(0, statement.getQueryTimeout());
     statement.setQueryTimeout(1);
     assertEquals(1, statement.getQueryTimeout());
-    SQLException e = assertThrows(SQLException.class, () -> statement.executeQuery(selectQuery));
+    SQLException e =
+        assertThrows(SQLException.class, () -> statement.executeQuery(query300seconds));
     assertEquals(
         "BigQueryException during runQuery\nJob execution was cancelled: Job timed out",
         e.getMessage());
@@ -386,14 +383,6 @@ public class ITStatementTest {
       statement.close();
     }
     connection.close();
-  }
-
-  int getSizeOfResultSet(ResultSet resultSet) throws SQLException {
-    int count = 0;
-    while (resultSet.next()) {
-      count++;
-    }
-    return count;
   }
 
   @Test
