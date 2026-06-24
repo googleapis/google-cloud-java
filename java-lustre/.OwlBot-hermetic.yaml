@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-lustre/grpc-google-.*/src"
 - "/java-lustre/proto-google-.*/src"
-- "/java-lustre/google-.*/src/main"
-- "/java-lustre/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-lustre/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-lustre/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-lustre/google-.*/src"
 - "/java-lustre/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/lustre/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-lustre/$1/proto-google-cloud-lustre-$1/src"
 - source: "/google/cloud/lustre/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-lustre/$1/grpc-google-cloud-lustre-$1/src"
-- source: "/google/cloud/lustre/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-lustre/$1/google-cloud-lustre/src/main"
+- source: "/google/cloud/lustre/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-lustre/$1/google-cloud-lustre/src"
 - source: "/google/cloud/lustre/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-lustre/$1/samples/snippets/generated"
 

@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-securitycentermanagement/grpc-google-.*/src"
 - "/java-securitycentermanagement/proto-google-.*/src"
-- "/java-securitycentermanagement/google-.*/src/main"
-- "/java-securitycentermanagement/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-securitycentermanagement/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-securitycentermanagement/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-securitycentermanagement/google-.*/src"
 - "/java-securitycentermanagement/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/securitycentermanagement/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-securitycentermanagement/$1/proto-google-cloud-securitycentermanagement-$1/src"
 - source: "/google/cloud/securitycentermanagement/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-securitycentermanagement/$1/grpc-google-cloud-securitycentermanagement-$1/src"
-- source: "/google/cloud/securitycentermanagement/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-securitycentermanagement/$1/google-cloud-securitycentermanagement/src/main"
+- source: "/google/cloud/securitycentermanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-securitycentermanagement/$1/google-cloud-securitycentermanagement/src"
 - source: "/google/cloud/securitycentermanagement/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-securitycentermanagement/$1/samples/snippets/generated"
 

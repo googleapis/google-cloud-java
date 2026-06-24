@@ -17,20 +17,19 @@ deep-remove-regex:
 - "/java-networkconnectivity/samples/snippets/generated"
 - "/java-networkconnectivity/grpc-google-.*/src"
 - "/java-networkconnectivity/proto-google-.*/src"
-- "/java-networkconnectivity/google-.*/src/main"
-- "/java-networkconnectivity/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-networkconnectivity/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-networkconnectivity/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-networkconnectivity/google-.*/src"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/networkconnectivity/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-networkconnectivity/$1/proto-google-cloud-networkconnectivity-$1/src"
 - source: "/google/cloud/networkconnectivity/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-networkconnectivity/$1/grpc-google-cloud-networkconnectivity-$1/src"
-- source: "/google/cloud/networkconnectivity/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-networkconnectivity/$1/google-cloud-networkconnectivity/src/main"
+- source: "/google/cloud/networkconnectivity/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-networkconnectivity/$1/google-cloud-networkconnectivity/src"
 - source: "/google/cloud/networkconnectivity/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-networkconnectivity/$1/samples/snippets/generated"
 

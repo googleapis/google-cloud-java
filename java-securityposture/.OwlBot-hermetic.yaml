@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-securityposture/grpc-google-.*/src"
 - "/java-securityposture/proto-google-.*/src"
-- "/java-securityposture/google-.*/src/main"
-- "/java-securityposture/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-securityposture/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-securityposture/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-securityposture/google-.*/src"
 - "/java-securityposture/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/securityposture/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-securityposture/$1/proto-google-cloud-securityposture-$1/src"
 - source: "/google/cloud/securityposture/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-securityposture/$1/grpc-google-cloud-securityposture-$1/src"
-- source: "/google/cloud/securityposture/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-securityposture/$1/google-cloud-securityposture/src/main"
+- source: "/google/cloud/securityposture/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-securityposture/$1/google-cloud-securityposture/src"
 - source: "/google/cloud/securityposture/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-securityposture/$1/samples/snippets/generated"
 
