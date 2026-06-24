@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-maintenance/grpc-google-.*/src"
 - "/java-maintenance/proto-google-.*/src"
-- "/java-maintenance/google-.*/src/main"
-- "/java-maintenance/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-maintenance/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-maintenance/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-maintenance/google-.*/src"
 - "/java-maintenance/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/maintenance/api/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maintenance/$1/proto-google-cloud-maintenance-$1/src"
 - source: "/google/cloud/maintenance/api/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maintenance/$1/grpc-google-cloud-maintenance-$1/src"
-- source: "/google/cloud/maintenance/api/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-maintenance/$1/google-cloud-maintenance/src/main"
+- source: "/google/cloud/maintenance/api/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-maintenance/$1/google-cloud-maintenance/src"
 - source: "/google/cloud/maintenance/api/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maintenance/$1/samples/snippets/generated"
 

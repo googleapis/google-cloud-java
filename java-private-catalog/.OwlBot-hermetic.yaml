@@ -17,10 +17,7 @@ deep-remove-regex:
 - "/java-private-catalog/samples/snippets/generated"
 - "/java-private-catalog/grpc-google-.*/src"
 - "/java-private-catalog/proto-google-.*/src"
-- "/java-private-catalog/google-.*/src/main"
-- "/java-private-catalog/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-private-catalog/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-private-catalog/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-private-catalog/google-.*/src"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-private-catalog/$1/proto-google-cloud-private-catalog-$1/src"
 - source: "/google/cloud/privatecatalog/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-private-catalog/$1/grpc-google-cloud-private-catalog-$1/src"
-- source: "/google/cloud/privatecatalog/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-private-catalog/$1/google-cloud-private-catalog/src/main"
+- source: "/google/cloud/privatecatalog/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-private-catalog/$1/google-cloud-private-catalog/src"
 - source: "/google/cloud/privatecatalog/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-private-catalog/$1/samples/snippets/generated"
 

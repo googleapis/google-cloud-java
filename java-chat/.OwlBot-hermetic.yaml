@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-chat/grpc-google-.*/src"
 - "/java-chat/proto-google-.*/src"
-- "/java-chat/google-.*/src/main"
-- "/java-chat/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-chat/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-chat/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-chat/google-.*/src"
 - "/java-chat/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/chat/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-chat/$1/proto-google-cloud-chat-$1/src"
 - source: "/google/chat/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-chat/$1/grpc-google-cloud-chat-$1/src"
-- source: "/google/chat/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-chat/$1/google-cloud-chat/src/main"
+- source: "/google/chat/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-chat/$1/google-cloud-chat/src"
 - source: "/google/chat/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-chat/$1/samples/snippets/generated"
 

@@ -17,15 +17,13 @@ deep-remove-regex:
 - "/java-websecurityscanner/samples/snippets/generated"
 - "/java-websecurityscanner/grpc-google-.*/src"
 - "/java-websecurityscanner/proto-google-.*/src"
-- "/java-websecurityscanner/google-.*/src/main"
-- "/java-websecurityscanner/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-websecurityscanner/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-websecurityscanner/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-websecurityscanner/google-.*/src"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-websecurityscanner/src/test/java/com/google/.*/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
-- "/.*google-cloud-websecurityscanner/src/test/java/com/google/.*/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
+- "/.*google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
 
 
 deep-copy-regex:
@@ -33,8 +31,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-websecurityscanner/$1/proto-google-cloud-websecurityscanner-$1/src"
 - source: "/google/cloud/websecurityscanner/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-websecurityscanner/$1/grpc-google-cloud-websecurityscanner-$1/src"
-- source: "/google/cloud/websecurityscanner/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-websecurityscanner/$1/google-cloud-websecurityscanner/src/main"
+- source: "/google/cloud/websecurityscanner/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-websecurityscanner/$1/google-cloud-websecurityscanner/src"
 - source: "/google/cloud/websecurityscanner/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-websecurityscanner/$1/samples/snippets/generated"
 
