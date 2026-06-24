@@ -232,7 +232,11 @@ public class ITNightlyBigQueryTest {
             });
     t.start();
     // Allow thread to actually initiate the query
-    Thread.sleep(3000);
+    // Even when job is created, we might be using `query` API which means if we cancle within first
+    // 10 seconds,
+    // it is similar to Optional job cancellation. Need to wait until after we're in "Wait for job
+    // completion" mode.
+    Thread.sleep(15000);
     bigQueryStatement.cancel();
     // Wait until background thread is finished
     t.join();
