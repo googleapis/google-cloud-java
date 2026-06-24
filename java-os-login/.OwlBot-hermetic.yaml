@@ -16,14 +16,12 @@
 deep-remove-regex:
 - "/java-os-login/grpc-google-.*/src"
 - "/java-os-login/proto-google-.*/src"
-- "/java-os-login/google-.*/src/main"
-- "/java-os-login/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-os-login/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-os-login/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-os-login/google-.*/src"
 - "/java-os-login/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java"
 - "/.*proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java"
 - "/.*proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java"
@@ -36,8 +34,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-os-login/$1/proto-google-cloud-os-login-$1/src"
 - source: "/google/cloud/oslogin/(v\\d)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-os-login/$1/grpc-google-cloud-os-login-$1/src"
-- source: "/google/cloud/oslogin/(v\\d)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-os-login/$1/google-cloud-os-login/src/main"
+- source: "/google/cloud/oslogin/(v\\d)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-os-login/$1/google-cloud-os-login/src"
 - source: "/google/cloud/oslogin/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-os-login/$1/samples/snippets/generated"
 

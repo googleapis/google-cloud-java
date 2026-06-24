@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-java-shopping-merchant-issue-resolution/grpc-google-.*/src"
 - "/java-java-shopping-merchant-issue-resolution/proto-google-.*/src"
-- "/java-java-shopping-merchant-issue-resolution/google-.*/src/main"
-- "/java-java-shopping-merchant-issue-resolution/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-java-shopping-merchant-issue-resolution/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-java-shopping-merchant-issue-resolution/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-java-shopping-merchant-issue-resolution/google-.*/src"
 - "/java-java-shopping-merchant-issue-resolution/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/shopping/merchant/issueresolution/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-java-shopping-merchant-issue-resolution/$1/proto-google-shopping-merchant-issue-resolution-$1/src"
 - source: "/google/shopping/merchant/issueresolution/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-java-shopping-merchant-issue-resolution/$1/grpc-google-shopping-merchant-issue-resolution-$1/src"
-- source: "/google/shopping/merchant/issueresolution/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-java-shopping-merchant-issue-resolution/$1/google-shopping-merchant-issue-resolution/src/main"
+- source: "/google/shopping/merchant/issueresolution/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-java-shopping-merchant-issue-resolution/$1/google-shopping-merchant-issue-resolution/src"
 - source: "/google/shopping/merchant/issueresolution/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-java-shopping-merchant-issue-resolution/$1/samples/snippets/generated"
 

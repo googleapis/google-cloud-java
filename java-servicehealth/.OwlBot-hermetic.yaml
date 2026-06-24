@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-servicehealth/grpc-google-.*/src"
 - "/java-servicehealth/proto-google-.*/src"
-- "/java-servicehealth/google-.*/src/main"
-- "/java-servicehealth/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-servicehealth/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-servicehealth/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-servicehealth/google-.*/src"
 - "/java-servicehealth/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/servicehealth/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-servicehealth/$1/proto-google-cloud-servicehealth-$1/src"
 - source: "/google/cloud/servicehealth/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-servicehealth/$1/grpc-google-cloud-servicehealth-$1/src"
-- source: "/google/cloud/servicehealth/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-servicehealth/$1/google-cloud-servicehealth/src/main"
+- source: "/google/cloud/servicehealth/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-servicehealth/$1/google-cloud-servicehealth/src"
 - source: "/google/cloud/servicehealth/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-servicehealth/$1/samples/snippets/generated"
 
