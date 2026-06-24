@@ -101,7 +101,7 @@ docker-session:
 	$(MAKE) .docker-run args="bash"
 
 docker-proxy-session:
-	$(MAKE) .docker-run-proxy args="bash"
+	$(MAKE) .docker-run CONTAINER_NAME=$(PROXY_CONTAINER_NAME) args="bash"
 
 docker-package-all-dependencies: docker-build
 	mkdir -p $(PACKAGE_DESTINATION)

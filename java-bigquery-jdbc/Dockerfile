@@ -17,9 +17,9 @@ RUN bash -c " \
     && install_modules java-bigquery \
     && rm -rf /git"
 
-# This will ensure all deps are present, including integration test deps, while skipping shade
+# This will ensure all deps are present
 WORKDIR /src
-RUN mvn install -Penable-integration-tests -Dtest=NoSuchTest -Dit.test=NoSuchTest -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dit.failIfNoSpecifiedTests=false -Dmaven.shade.skip=true -DskipShade=true
+RUN mvn install 
 
 ENTRYPOINT []
 
