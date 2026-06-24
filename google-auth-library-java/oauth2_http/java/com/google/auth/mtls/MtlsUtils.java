@@ -287,13 +287,13 @@ public class MtlsUtils {
 
     MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);
     try {
-      if (!canBeEnabled(envProvider, propProvider, certConfigPathOverride)) {
-        return baseTransportFactory;
-      }
-
       if (baseTransportFactory instanceof MtlsHttpTransportFactory) {
         // A custom MtlsHttpTransportFactory was already pre-configured by the user.
         // Keep using it as-is without re-initializing.
+        return baseTransportFactory;
+      }
+
+      if (!canBeEnabled(envProvider, propProvider, certConfigPathOverride)) {
         return baseTransportFactory;
       }
 
