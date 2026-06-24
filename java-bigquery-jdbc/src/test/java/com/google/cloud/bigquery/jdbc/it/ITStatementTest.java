@@ -122,7 +122,7 @@ public class ITStatementTest extends ITBase {
     // setMaxRows Test
     statement.setMaxRows(5);
     ResultSet maxRowsResultSet = statement.executeQuery(selectQuery);
-    assertEquals(5, getSizeOfResultSet(maxRowsResultSet));
+    assertEquals(5, resultSetRowCount(maxRowsResultSet));
 
     try {
       statement.setMaxRows(0);
