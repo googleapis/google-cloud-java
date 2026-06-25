@@ -73,6 +73,7 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
     when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
+    when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
   }

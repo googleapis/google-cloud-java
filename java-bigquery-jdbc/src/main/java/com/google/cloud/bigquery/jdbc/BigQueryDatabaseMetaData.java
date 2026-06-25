@@ -912,7 +912,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(procedureFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(procedureFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
@@ -1127,7 +1127,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(procedureColumnFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(procedureColumnFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
@@ -1759,7 +1759,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(tableFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(tableFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
@@ -2084,7 +2084,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(columnFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(columnFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
@@ -3600,7 +3600,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(schemaFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(schemaFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
@@ -3879,7 +3879,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(functionFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(functionFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
@@ -4085,7 +4085,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(functionColumnFetcher);
+    Future<?> fetcherFuture = connection.getExecutorService().submit(functionColumnFetcher);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
