@@ -16,10 +16,7 @@
 deep-remove-regex:
 - "/java-service-usage/grpc-google-.*/src"
 - "/java-service-usage/proto-google-.*/src"
-- "/java-service-usage/google-.*/src/main"
-- "/java-service-usage/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-service-usage/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-service-usage/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-service-usage/google-.*/src"
 - "/java-service-usage/samples/snippets/generated"
 
 deep-preserve-regex:
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-service-usage/$1/proto-google-cloud-service-usage-$1/src"
 - source: "/google/api/serviceusage/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-service-usage/$1/grpc-google-cloud-service-usage-$1/src"
-- source: "/google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src/main"
+- source: "/google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src"
 - source: "/google/api/serviceusage/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-service-usage/$1/samples/snippets/generated"
 

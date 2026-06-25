@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-hypercomputecluster/grpc-google-.*/src"
 - "/java-hypercomputecluster/proto-google-.*/src"
-- "/java-hypercomputecluster/google-.*/src/main"
-- "/java-hypercomputecluster/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-hypercomputecluster/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-hypercomputecluster/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-hypercomputecluster/google-.*/src"
 - "/java-hypercomputecluster/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/hypercomputecluster/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-hypercomputecluster/$1/proto-google-cloud-hypercomputecluster-$1/src"
 - source: "/google/cloud/hypercomputecluster/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-hypercomputecluster/$1/grpc-google-cloud-hypercomputecluster-$1/src"
-- source: "/google/cloud/hypercomputecluster/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-hypercomputecluster/$1/google-cloud-hypercomputecluster/src/main"
+- source: "/google/cloud/hypercomputecluster/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-hypercomputecluster/$1/google-cloud-hypercomputecluster/src"
 - source: "/google/cloud/hypercomputecluster/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-hypercomputecluster/$1/samples/snippets/generated"
 

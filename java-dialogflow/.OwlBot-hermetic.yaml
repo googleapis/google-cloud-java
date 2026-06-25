@@ -17,14 +17,12 @@ deep-remove-regex:
 - "/java-dialogflow/samples/snippets/generated"
 - "/java-dialogflow/grpc-google-.*/src"
 - "/java-dialogflow/proto-google-.*/src"
-- "/java-dialogflow/google-.*/src/main"
-- "/java-dialogflow/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-dialogflow/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-dialogflow/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-dialogflow/google-.*/src"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-cloud-dialogflow/src/test/java/com/google/.*/dialogflow/v2/ContextManagementSmokeTest.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java"
 - "/.*proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java"
 - "/.*proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java"
 - "/.*proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java"
@@ -39,8 +37,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-dialogflow/$1/proto-google-cloud-dialogflow-$1/src"
 - source: "/google/cloud/dialogflow/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-dialogflow/$1/grpc-google-cloud-dialogflow-$1/src"
-- source: "/google/cloud/dialogflow/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-dialogflow/$1/google-cloud-dialogflow/src/main"
+- source: "/google/cloud/dialogflow/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-dialogflow/$1/google-cloud-dialogflow/src"
 - source: "/google/cloud/dialogflow/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dialogflow/$1/samples/snippets/generated"
 

@@ -17,10 +17,7 @@ deep-remove-regex:
 - "/java-automl/samples/snippets/generated"
 - "/java-automl/grpc-google-.*/src"
 - "/java-automl/proto-google-.*/src"
-- "/java-automl/google-.*/src/main"
-- "/java-automl/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-automl/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-automl/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-automl/google-.*/src"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-automl/$1/proto-google-cloud-automl-$1/src"
 - source: "/google/cloud/automl/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-automl/$1/grpc-google-cloud-automl-$1/src"
-- source: "/google/cloud/automl/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-automl/$1/google-cloud-automl/src/main"
+- source: "/google/cloud/automl/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-automl/$1/google-cloud-automl/src"
 - source: "/google/cloud/automl/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-automl/$1/samples/snippets/generated"
 

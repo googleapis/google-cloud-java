@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-privilegedaccessmanager/grpc-google-.*/src"
 - "/java-privilegedaccessmanager/proto-google-.*/src"
-- "/java-privilegedaccessmanager/google-.*/src/main"
-- "/java-privilegedaccessmanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-privilegedaccessmanager/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-privilegedaccessmanager/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-privilegedaccessmanager/google-.*/src"
 - "/java-privilegedaccessmanager/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/privilegedaccessmanager/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-privilegedaccessmanager/$1/proto-google-cloud-privilegedaccessmanager-$1/src"
 - source: "/google/cloud/privilegedaccessmanager/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-privilegedaccessmanager/$1/grpc-google-cloud-privilegedaccessmanager-$1/src"
-- source: "/google/cloud/privilegedaccessmanager/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-privilegedaccessmanager/$1/google-cloud-privilegedaccessmanager/src/main"
+- source: "/google/cloud/privilegedaccessmanager/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-privilegedaccessmanager/$1/google-cloud-privilegedaccessmanager/src"
 - source: "/google/cloud/privilegedaccessmanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-privilegedaccessmanager/$1/samples/snippets/generated"
 

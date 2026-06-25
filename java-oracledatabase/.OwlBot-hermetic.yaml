@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-oracledatabase/grpc-google-.*/src"
 - "/java-oracledatabase/proto-google-.*/src"
-- "/java-oracledatabase/google-.*/src/main"
-- "/java-oracledatabase/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-oracledatabase/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-oracledatabase/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-oracledatabase/google-.*/src"
 - "/java-oracledatabase/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/oracledatabase/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-oracledatabase/$1/proto-google-cloud-oracledatabase-$1/src"
 - source: "/google/cloud/oracledatabase/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-oracledatabase/$1/grpc-google-cloud-oracledatabase-$1/src"
-- source: "/google/cloud/oracledatabase/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-oracledatabase/$1/google-cloud-oracledatabase/src/main"
+- source: "/google/cloud/oracledatabase/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-oracledatabase/$1/google-cloud-oracledatabase/src"
 - source: "/google/cloud/oracledatabase/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-oracledatabase/$1/samples/snippets/generated"
 

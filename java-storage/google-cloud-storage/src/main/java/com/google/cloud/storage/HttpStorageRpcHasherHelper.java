@@ -40,7 +40,7 @@ public final class HttpStorageRpcHasherHelper {
   private final Hasher hasher;
 
   private HttpStorageRpcHasherHelper() {
-    hasher = Hasher.defaultHasher();
+    hasher = Hasher.readHasher();
   }
 
   /**

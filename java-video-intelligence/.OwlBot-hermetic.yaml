@@ -17,20 +17,19 @@ deep-remove-regex:
 - "/java-video-intelligence/samples/snippets/generated"
 - "/java-video-intelligence/grpc-google-.*/src"
 - "/java-video-intelligence/proto-google-.*/src"
-- "/java-video-intelligence/google-.*/src/main"
-- "/java-video-intelligence/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-video-intelligence/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-video-intelligence/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-video-intelligence/google-.*/src"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-video-intelligence/$1/proto-google-cloud-video-intelligence-$1/src"
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-video-intelligence/$1/grpc-google-cloud-video-intelligence-$1/src"
-- source: "/google/cloud/videointelligence/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-video-intelligence/$1/google-cloud-video-intelligence/src/main"
+- source: "/google/cloud/videointelligence/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-video-intelligence/$1/google-cloud-video-intelligence/src"
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-video-intelligence/$1/samples/snippets/generated"
 
