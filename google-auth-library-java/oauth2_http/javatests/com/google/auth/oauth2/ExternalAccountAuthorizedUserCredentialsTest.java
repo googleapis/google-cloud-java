@@ -32,7 +32,6 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
-import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -44,6 +43,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
@@ -62,7 +62,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -129,9 +128,6 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void setup() {
     transportFactory = new MockExternalAccountAuthorizedUserCredentialsTransportFactory();
   }
-
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {}
 
   @Test
   void builder_allFields() throws IOException {
@@ -707,7 +703,6 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void getRequestMetadata() throws IOException {
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -719,7 +714,6 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void getRequestMetadata_withQuotaProjectId() throws IOException {
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -738,7 +732,6 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
             .setHttpTransportFactory(transportFactory)
             .setAccessToken(new AccessToken(ACCESS_TOKEN, /* expirationTime= */ null))
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -1240,109 +1233,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
     assertEquals(credentials, deserializedCredentials);
     assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(com.google.api.client.util.Clock.SYSTEM, deserializedCredentials.clock);
-  }
-
-  @org.junit.jupiter.api.Test
-  void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-
-    ExternalAccountAuthorizedUserCredentials credentials =
-        ExternalAccountAuthorizedUserCredentials.newBuilder()
-            .setClientId(CLIENT_ID)
-            .setClientSecret(CLIENT_SECRET)
-            .setRefreshToken(REFRESH_TOKEN)
-            .setTokenUrl(TOKEN_URL)
-            .setAudience(
-                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
-            .setHttpTransportFactory(transportFactory)
-            .build();
-
-    // First call: initiates async refresh.
-    Map<String, List<String>> headers = credentials.getRequestMetadata();
-    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
-
-    waitForRegionalAccessBoundary(credentials);
-
-    // Second call: should have header.
-    headers = credentials.getRequestMetadata();
-    assertEquals(
-        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
-        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
-  }
-
-  @Test
-  void getRegionalAccessBoundaryUrl_workforce() throws IOException {
-    ExternalAccountAuthorizedUserCredentials credentials =
-        ExternalAccountAuthorizedUserCredentials.newBuilder()
-            .setClientId(CLIENT_ID)
-            .setClientSecret(CLIENT_SECRET)
-            .setRefreshToken(REFRESH_TOKEN)
-            .setTokenUrl(TOKEN_URL)
-            .setAudience(
-                "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider")
-            .build();
-
-    String expectedUrl =
-        "https://iamcredentials.googleapis.com/v1/locations/global/workforcePools/my-pool/allowedLocations";
-    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
-  }
-
-  @Test
-  void getRegionalAccessBoundaryUrl_invalidAudience_throws() {
-    ExternalAccountAuthorizedUserCredentials credentials =
-        ExternalAccountAuthorizedUserCredentials.newBuilder()
-            .setClientId(CLIENT_ID)
-            .setClientSecret(CLIENT_SECRET)
-            .setRefreshToken(REFRESH_TOKEN)
-            .setTokenUrl(TOKEN_URL)
-            .setAudience("invalid-audience")
-            .build();
-
-    IllegalStateException exception =
-        assertThrows(
-            IllegalStateException.class,
-            () -> {
-              credentials.getRegionalAccessBoundaryUrl();
-            });
-
-    assertEquals(
-        "The provided audience is not in the correct format for a workforce pool. "
-            + "Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers",
-        exception.getMessage());
-  }
-
-  @Test
-  void getRegionalAccessBoundaryUrl_nullAudience_throws() {
-    ExternalAccountAuthorizedUserCredentials credentials =
-        ExternalAccountAuthorizedUserCredentials.newBuilder()
-            .setClientId(CLIENT_ID)
-            .setClientSecret(CLIENT_SECRET)
-            .setRefreshToken(REFRESH_TOKEN)
-            .setTokenUrl(TOKEN_URL)
-            .build();
-
-    IllegalStateException exception =
-        assertThrows(
-            IllegalStateException.class,
-            () -> {
-              credentials.getRegionalAccessBoundaryUrl();
-            });
-
-    assertEquals(
-        "The audience is null, which is not in the correct format for a workforce pool.",
-        exception.getMessage());
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      Assertions.fail("Timed out waiting for regional access boundary refresh");
-    }
+    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
   }
 
   static GenericJson buildJsonCredentials() {

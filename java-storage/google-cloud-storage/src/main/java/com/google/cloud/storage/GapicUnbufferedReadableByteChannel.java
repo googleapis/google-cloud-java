@@ -93,7 +93,7 @@ final class GapicUnbufferedReadableByteChannel
     this.read = read;
     this.req = req;
     this.hasher =
-        (req.getReadOffset() == 0 && !(hasher instanceof Hasher.NoOpHasher))
+        (req.getReadOffset() == 0)
             ? new CumulativeHasher(
                 hasher,
                 0,

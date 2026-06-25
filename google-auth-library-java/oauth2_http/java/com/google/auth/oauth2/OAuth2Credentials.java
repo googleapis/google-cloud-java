@@ -62,6 +62,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.ServiceLoader;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
@@ -166,16 +167,6 @@ public class OAuth2Credentials extends Credentials {
     return this.expirationMargin;
   }
 
-  /**
-   * Asynchronously provides the request metadata by ensuring there is a current access token and
-   * providing it as an authorization bearer token.
-   *
-   * <p>This method is non-blocking. The results are provided through the given callback.
-   *
-   * @param uri The URI of the request.
-   * @param executor The executor to use for any required background tasks.
-   * @param callback The callback to receive the metadata or any error.
-   */
   @Override
   public void getRequestMetadata(
       final URI uri, Executor executor, final RequestMetadataCallback callback) {
@@ -187,14 +178,8 @@ public class OAuth2Credentials extends Credentials {
   }
 
   /**
-   * Synchronously provides the request metadata by ensuring there is a current access token and
-   * providing it as an authorization bearer token.
-   *
-   * <p>This method is blocking and will wait for a token refresh if necessary.
-   *
-   * @param uri The URI of the request.
-   * @return The request metadata containing the authorization header.
-   * @throws IOException If an error occurs while fetching the token.
+   * Provide the request metadata by ensuring there is a current access token and providing it as an
+   * authorization bearer token.
    */
   @Override
   public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
@@ -282,8 +267,11 @@ public class OAuth2Credentials extends Credentials {
 
       final ListenableFutureTask<OAuthValue> task =
           ListenableFutureTask.create(
-              () -> {
-                return OAuthValue.create(refreshAccessToken(), getAdditionalHeaders());
+              new Callable<OAuthValue>() {
+                @Override
+                public OAuthValue call() throws Exception {
+                  return OAuthValue.create(refreshAccessToken(), getAdditionalHeaders());
+                }
               });
 
       refreshTask = new RefreshTask(task, new RefreshTaskListener(task));
@@ -388,7 +376,7 @@ public class OAuth2Credentials extends Credentials {
   /**
    * Provide additional headers to return as request metadata.
    *
-   * @return additional headers.
+   * @return additional headers
    */
   protected Map<String, List<String>> getAdditionalHeaders() {
     return EMPTY_EXTRA_HEADERS;
