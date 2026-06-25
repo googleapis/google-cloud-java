@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.jdbc.utils;
 
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicReference;
@@ -77,20 +76,14 @@ public final class BigQueryJdbcVersionUtility {
         BigQueryJdbcVersionUtility.class.getResourceAsStream(
             "/com/google/cloud/bigquery/jdbc/dependencies.properties")) {
       if (input == null) {
-        String errorMessage =
-            "Could not find dependencies.properties. Driver version information is unavailable.";
-        IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(errorMessage, ex);
-        throw ex;
+        throw new IllegalStateException(
+            "Could not find dependencies.properties. Driver version information is unavailable.");
       }
       props.load(input);
       String versionString = props.getProperty("version.jdbc");
       if (versionString == null || versionString.trim().isEmpty()) {
-        String errorMessage =
-            "The property version.jdbc not found or empty in dependencies.properties.";
-        IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(errorMessage, ex);
-        throw ex;
+        throw new IllegalStateException(
+            "The property version.jdbc not found or empty in dependencies.properties.");
       }
       parsedDriverVersion.compareAndSet(null, versionString.trim());
       String[] parts = versionString.split("\\.");
@@ -103,7 +96,7 @@ public final class BigQueryJdbcVersionUtility {
       if (!numericMinor.isEmpty()) {
         parsedDriverMinorVersion.compareAndSet(null, Integer.parseInt(numericMinor));
       }
-    } catch (IOException | NumberFormatException e) {
+    } catch (Exception e) {
       String errorMessage =
           "Error reading dependencies.properties. Driver version information is"
               + " unavailable. Error: "
