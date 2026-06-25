@@ -125,35 +125,46 @@ public class BigQueryDriver implements Driver {
     LOG.finest("++enter++");
     try {
       if (acceptsURL(url)) {
-        // strip 'jdbc:' from the URL, add any extra properties
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(url.substring(5), this.toString(), info);
+        Level logLevel;
+        String logPath;
+        try {
+          // LogLevel
+          String logLevelStr =
+              BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                  connectionUri, BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME);
+          if (logLevelStr == null) {
+            logLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
+          }
+          logLevel = BigQueryJdbcUrlUtility.parseLogLevel(logLevelStr);
+
+          // LogPath
+          logPath =
+              BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                  connectionUri, BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME);
+          if (logPath == null) {
+            logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
+          }
+          if (logPath == null) {
+            logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
+          }
+
+          BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
+        } catch (RuntimeException e) {
+          LOG.log(Level.SEVERE, "Failed to parse connection URL properties", e);
+          throw new BigQueryJdbcException("Failed to parse connection URL properties", e);
+        }
+
+        // Logging starts from here.
         DataSource ds;
         try {
           ds = DataSource.fromUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
+          LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
 
-        // LogLevel
-        String logLevelStr = ds.getLogLevel();
-        if (logLevelStr == null) {
-          logLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
-        }
-        Level logLevel = BigQueryJdbcUrlUtility.parseLogLevel(logLevelStr);
-
-        // LogPath
-        String logPath = ds.getLogPath();
-        if (logPath == null) {
-          logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
-        }
-        if (logPath == null) {
-          logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
-        }
-
-        BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
-
-        // Logging starts from here.
         BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
         LOG.info(
             "Driver info : { {Database Product Name : %s}, "

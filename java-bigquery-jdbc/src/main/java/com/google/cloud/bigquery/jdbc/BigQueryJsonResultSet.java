@@ -23,11 +23,13 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 
 /** {@link ResultSet} Implementation for JSON datasource (Using REST APIs) */
 class BigQueryJsonResultSet extends BigQueryBaseResultSet {
@@ -42,7 +44,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   private boolean afterLast = false;
   private final int fromIndex;
   private final int toIndexExclusive;
-  private final Thread[] ownedThreads;
+  private final Future<?>[] ownedTasks;
 
   private BigQueryJsonResultSet(
       Schema schema,
@@ -53,16 +55,17 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       BigQueryFieldValueListWrapper cursor,
       int fromIndex,
       int toIndexExclusive,
-      Thread[] ownedThreads,
-      BigQuery bigQuery) {
-    super(bigQuery, statement, schema, isNested);
+      Future<?>[] ownedTasks,
+      BigQuery bigQuery,
+      Job job) {
+    super(bigQuery, statement, schema, isNested, job);
     this.totalRows = totalRows;
     this.buffer = buffer;
     this.cursor = cursor;
     this.fromIndex = fromIndex;
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
-    this.ownedThreads = ownedThreads;
+    this.ownedTasks = ownedTasks;
   }
 
   /**
@@ -76,11 +79,10 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BlockingQueue<BigQueryFieldValueListWrapper> buffer,
       BigQueryStatement statement,
-      Thread[] ownedThreads,
+      Future<?>[] ownedTasks,
       BigQuery bigQuery) {
 
-    return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, bigQuery);
+    return of(schema, totalRows, buffer, statement, ownedTasks, bigQuery, null);
   }
 
   static BigQueryJsonResultSet of(
@@ -88,10 +90,23 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BlockingQueue<BigQueryFieldValueListWrapper> buffer,
       BigQueryStatement statement,
-      Thread[] ownedThreads) {
+      Future<?>[] ownedTasks,
+      BigQuery bigQuery,
+      Job job) {
 
     return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, null);
+        schema, totalRows, buffer, statement, false, null, -1, -1, ownedTasks, bigQuery, job);
+  }
+
+  static BigQueryJsonResultSet of(
+      Schema schema,
+      long totalRows,
+      BlockingQueue<BigQueryFieldValueListWrapper> buffer,
+      BigQueryStatement statement,
+      Future<?>[] ownedTasks) {
+
+    return new BigQueryJsonResultSet(
+        schema, totalRows, buffer, statement, false, null, -1, -1, ownedTasks, null, null);
   }
 
   BigQueryJsonResultSet() {
@@ -99,7 +114,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     totalRows = 0;
     buffer = null;
     fromIndex = 0;
-    ownedThreads = new Thread[0];
+    ownedTasks = new Future<?>[0];
     toIndexExclusive = 0;
   }
 
@@ -126,6 +141,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         cursor,
         fromIndex,
         toIndexExclusive,
+        null,
         null,
         null);
   }
@@ -276,11 +292,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   public void close() {
     LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
-    if (ownedThreads != null) {
-      for (Thread ownedThread : ownedThreads) {
-        if (!ownedThread.isInterrupted()) {
-          ownedThread.interrupt();
-        }
+    if (ownedTasks != null) {
+      for (Future<?> ownedTask : ownedTasks) {
+        ownedTask.cancel(true);
       }
     }
     super.close();

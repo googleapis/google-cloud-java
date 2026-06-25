@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SpannerImpl.ClosedException;
@@ -218,21 +219,25 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction() {
-    ISpan span = tracer.spanBuilder(READ_ONLY_TRANSACTION, databaseAttributes);
-    try (IScope s = tracer.withSpan(span)) {
-      return getMultiplexedSession().readOnlyTransaction();
-    } catch (RuntimeException e) {
-      span.setStatus(e);
-      span.end();
-      throw e;
-    }
+    return readOnlyTransaction(TimestampBound.strong());
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
+    return readOnlyTransaction(bound, new ReadOnlyTransactionOption[0]);
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
     ISpan span = tracer.spanBuilder(READ_ONLY_TRANSACTION, databaseAttributes);
     try (IScope s = tracer.withSpan(span)) {
-      return getMultiplexedSession().readOnlyTransaction(bound);
+      return getMultiplexedSession().readOnlyTransaction(bound, options);
     } catch (RuntimeException e) {
       span.setStatus(e);
       span.end();

@@ -18,7 +18,10 @@ package com.google.storage.control.v2.stub;
 
 import static com.google.storage.control.v2.StorageControlClient.ListAnywhereCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -72,19 +75,28 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.FindingSummary;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetFolderRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
+import com.google.storage.control.v2.IntelligenceFinding;
+import com.google.storage.control.v2.IntelligenceFindingRevision;
 import com.google.storage.control.v2.ListAnywhereCachesRequest;
 import com.google.storage.control.v2.ListAnywhereCachesResponse;
 import com.google.storage.control.v2.ListFoldersRequest;
 import com.google.storage.control.v2.ListFoldersResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ManagedFolder;
@@ -93,6 +105,8 @@ import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
 import com.google.storage.control.v2.StorageLayout;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
@@ -249,6 +263,26 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingSettings;
+  private final PagedCallSettings<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsSettings;
+  private final PagedCallSettings<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsSettings;
+  private final UnaryCallSettings<
+          GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionSettings;
+  private final PagedCallSettings<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsSettings;
 
   private static final PagedListDescriptor<ListFoldersRequest, ListFoldersResponse, Folder>
       LIST_FOLDERS_PAGE_STR_DESC =
@@ -360,6 +394,145 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse, IntelligenceFinding>
+      LIST_INTELLIGENCE_FINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListIntelligenceFindingsRequest,
+              ListIntelligenceFindingsResponse,
+              IntelligenceFinding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListIntelligenceFindingsRequest injectToken(
+                ListIntelligenceFindingsRequest payload, String token) {
+              return ListIntelligenceFindingsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListIntelligenceFindingsRequest injectPageSize(
+                ListIntelligenceFindingsRequest payload, int pageSize) {
+              return ListIntelligenceFindingsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListIntelligenceFindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListIntelligenceFindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<IntelligenceFinding> extractResources(
+                ListIntelligenceFindingsResponse payload) {
+              return payload.getIntelligenceFindingsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          FindingSummary>
+      SUMMARIZE_INTELLIGENCE_FINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SummarizeIntelligenceFindingsRequest,
+              SummarizeIntelligenceFindingsResponse,
+              FindingSummary>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SummarizeIntelligenceFindingsRequest injectToken(
+                SummarizeIntelligenceFindingsRequest payload, String token) {
+              return SummarizeIntelligenceFindingsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public SummarizeIntelligenceFindingsRequest injectPageSize(
+                SummarizeIntelligenceFindingsRequest payload, int pageSize) {
+              return SummarizeIntelligenceFindingsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(SummarizeIntelligenceFindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SummarizeIntelligenceFindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FindingSummary> extractResources(
+                SummarizeIntelligenceFindingsResponse payload) {
+              return payload.getFindingSummariesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          IntelligenceFindingRevision>
+      LIST_INTELLIGENCE_FINDING_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListIntelligenceFindingRevisionsRequest,
+              ListIntelligenceFindingRevisionsResponse,
+              IntelligenceFindingRevision>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListIntelligenceFindingRevisionsRequest injectToken(
+                ListIntelligenceFindingRevisionsRequest payload, String token) {
+              return ListIntelligenceFindingRevisionsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListIntelligenceFindingRevisionsRequest injectPageSize(
+                ListIntelligenceFindingRevisionsRequest payload, int pageSize) {
+              return ListIntelligenceFindingRevisionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListIntelligenceFindingRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListIntelligenceFindingRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<IntelligenceFindingRevision> extractResources(
+                ListIntelligenceFindingRevisionsResponse payload) {
+              return payload.getIntelligenceFindingRevisionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListFoldersRequest, ListFoldersResponse, ListFoldersPagedResponse>
       LIST_FOLDERS_PAGE_STR_FACT =
@@ -416,6 +589,98 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
                       PageContext.create(
                           callable, LIST_ANYWHERE_CACHES_PAGE_STR_DESC, request, context);
               return ListAnywhereCachesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          ListIntelligenceFindingsPagedResponse>
+      LIST_INTELLIGENCE_FINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListIntelligenceFindingsRequest,
+              ListIntelligenceFindingsResponse,
+              ListIntelligenceFindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListIntelligenceFindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+                    callable,
+                ListIntelligenceFindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListIntelligenceFindingsResponse> futureResponse) {
+              PageContext<
+                      ListIntelligenceFindingsRequest,
+                      ListIntelligenceFindingsResponse,
+                      IntelligenceFinding>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_INTELLIGENCE_FINDINGS_PAGE_STR_DESC, request, context);
+              return ListIntelligenceFindingsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          SummarizeIntelligenceFindingsPagedResponse>
+      SUMMARIZE_INTELLIGENCE_FINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SummarizeIntelligenceFindingsRequest,
+              SummarizeIntelligenceFindingsResponse,
+              SummarizeIntelligenceFindingsPagedResponse>() {
+            @Override
+            public ApiFuture<SummarizeIntelligenceFindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                    callable,
+                SummarizeIntelligenceFindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<SummarizeIntelligenceFindingsResponse> futureResponse) {
+              PageContext<
+                      SummarizeIntelligenceFindingsRequest,
+                      SummarizeIntelligenceFindingsResponse,
+                      FindingSummary>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          SUMMARIZE_INTELLIGENCE_FINDINGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return SummarizeIntelligenceFindingsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          ListIntelligenceFindingRevisionsPagedResponse>
+      LIST_INTELLIGENCE_FINDING_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListIntelligenceFindingRevisionsRequest,
+              ListIntelligenceFindingRevisionsResponse,
+              ListIntelligenceFindingRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListIntelligenceFindingRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListIntelligenceFindingRevisionsRequest,
+                        ListIntelligenceFindingRevisionsResponse>
+                    callable,
+                ListIntelligenceFindingRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListIntelligenceFindingRevisionsResponse> futureResponse) {
+              PageContext<
+                      ListIntelligenceFindingRevisionsRequest,
+                      ListIntelligenceFindingRevisionsResponse,
+                      IntelligenceFindingRevision>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_INTELLIGENCE_FINDING_REVISIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListIntelligenceFindingRevisionsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -598,6 +863,45 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIntelligenceFinding. */
+  public UnaryCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingSettings() {
+    return getIntelligenceFindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listIntelligenceFindings. */
+  public PagedCallSettings<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsSettings() {
+    return listIntelligenceFindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to summarizeIntelligenceFindings. */
+  public PagedCallSettings<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsSettings() {
+    return summarizeIntelligenceFindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIntelligenceFindingRevision. */
+  public UnaryCallSettings<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionSettings() {
+    return getIntelligenceFindingRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listIntelligenceFindingRevisions. */
+  public PagedCallSettings<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsSettings() {
+    return listIntelligenceFindingRevisionsSettings;
+  }
+
   public StorageControlStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -749,6 +1053,14 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    getIntelligenceFindingSettings = settingsBuilder.getIntelligenceFindingSettings().build();
+    listIntelligenceFindingsSettings = settingsBuilder.listIntelligenceFindingsSettings().build();
+    summarizeIntelligenceFindingsSettings =
+        settingsBuilder.summarizeIntelligenceFindingsSettings().build();
+    getIntelligenceFindingRevisionSettings =
+        settingsBuilder.getIntelligenceFindingRevisionSettings().build();
+    listIntelligenceFindingRevisionsSettings =
+        settingsBuilder.listIntelligenceFindingRevisionsSettings().build();
   }
 
   @Override
@@ -829,6 +1141,26 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<GetIntelligenceFindingRequest, IntelligenceFinding>
+        getIntelligenceFindingSettings;
+    private final PagedCallSettings.Builder<
+            ListIntelligenceFindingsRequest,
+            ListIntelligenceFindingsResponse,
+            ListIntelligenceFindingsPagedResponse>
+        listIntelligenceFindingsSettings;
+    private final PagedCallSettings.Builder<
+            SummarizeIntelligenceFindingsRequest,
+            SummarizeIntelligenceFindingsResponse,
+            SummarizeIntelligenceFindingsPagedResponse>
+        summarizeIntelligenceFindingsSettings;
+    private final UnaryCallSettings.Builder<
+            GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+        getIntelligenceFindingRevisionSettings;
+    private final PagedCallSettings.Builder<
+            ListIntelligenceFindingRevisionsRequest,
+            ListIntelligenceFindingRevisionsResponse,
+            ListIntelligenceFindingRevisionsPagedResponse>
+        listIntelligenceFindingRevisionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -915,6 +1247,14 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIntelligenceFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listIntelligenceFindingsSettings =
+          PagedCallSettings.newBuilder(LIST_INTELLIGENCE_FINDINGS_PAGE_STR_FACT);
+      summarizeIntelligenceFindingsSettings =
+          PagedCallSettings.newBuilder(SUMMARIZE_INTELLIGENCE_FINDINGS_PAGE_STR_FACT);
+      getIntelligenceFindingRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listIntelligenceFindingRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_INTELLIGENCE_FINDING_REVISIONS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -944,7 +1284,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               updateOrganizationIntelligenceConfigSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              getIntelligenceFindingSettings,
+              listIntelligenceFindingsSettings,
+              summarizeIntelligenceFindingsSettings,
+              getIntelligenceFindingRevisionSettings,
+              listIntelligenceFindingRevisionsSettings);
       initDefaults(this);
     }
 
@@ -991,6 +1336,14 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      getIntelligenceFindingSettings = settings.getIntelligenceFindingSettings.toBuilder();
+      listIntelligenceFindingsSettings = settings.listIntelligenceFindingsSettings.toBuilder();
+      summarizeIntelligenceFindingsSettings =
+          settings.summarizeIntelligenceFindingsSettings.toBuilder();
+      getIntelligenceFindingRevisionSettings =
+          settings.getIntelligenceFindingRevisionSettings.toBuilder();
+      listIntelligenceFindingRevisionsSettings =
+          settings.listIntelligenceFindingRevisionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1020,7 +1373,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               updateOrganizationIntelligenceConfigSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              getIntelligenceFindingSettings,
+              listIntelligenceFindingsSettings,
+              summarizeIntelligenceFindingsSettings,
+              getIntelligenceFindingRevisionSettings,
+              listIntelligenceFindingRevisionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1182,6 +1540,31 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getIntelligenceFindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listIntelligenceFindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .summarizeIntelligenceFindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIntelligenceFindingRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listIntelligenceFindingRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .renameFolderOperationSettings()
@@ -1487,6 +1870,46 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIntelligenceFinding. */
+    public UnaryCallSettings.Builder<GetIntelligenceFindingRequest, IntelligenceFinding>
+        getIntelligenceFindingSettings() {
+      return getIntelligenceFindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listIntelligenceFindings. */
+    public PagedCallSettings.Builder<
+            ListIntelligenceFindingsRequest,
+            ListIntelligenceFindingsResponse,
+            ListIntelligenceFindingsPagedResponse>
+        listIntelligenceFindingsSettings() {
+      return listIntelligenceFindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to summarizeIntelligenceFindings. */
+    public PagedCallSettings.Builder<
+            SummarizeIntelligenceFindingsRequest,
+            SummarizeIntelligenceFindingsResponse,
+            SummarizeIntelligenceFindingsPagedResponse>
+        summarizeIntelligenceFindingsSettings() {
+      return summarizeIntelligenceFindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIntelligenceFindingRevision. */
+    public UnaryCallSettings.Builder<
+            GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+        getIntelligenceFindingRevisionSettings() {
+      return getIntelligenceFindingRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listIntelligenceFindingRevisions. */
+    public PagedCallSettings.Builder<
+            ListIntelligenceFindingRevisionsRequest,
+            ListIntelligenceFindingRevisionsResponse,
+            ListIntelligenceFindingRevisionsPagedResponse>
+        listIntelligenceFindingRevisionsSettings() {
+      return listIntelligenceFindingRevisionsSettings;
     }
 
     @Override

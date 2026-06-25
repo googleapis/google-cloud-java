@@ -512,6 +512,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Packet was dropped inside DMS Private Connection.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_DMS_PRIVATE_CONNECTION = 114;</code>
+     */
+    DROPPED_INSIDE_DMS_PRIVATE_CONNECTION(114),
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped because there is no peering between the originating
      * network and the Google Managed Services Network.
      * </pre>
@@ -809,6 +819,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      * <code>CLOUD_RUN_REVISION_NOT_READY = 29;</code>
      */
     CLOUD_RUN_REVISION_NOT_READY(29),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud Run job that is not ready.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_JOB_NOT_READY = 113;</code>
+     */
+    CLOUD_RUN_JOB_NOT_READY(113),
     /**
      *
      *
@@ -1236,6 +1256,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      * <code>NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION = 110;</code>
      */
     NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION(110),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to no running instance found for private
+     * connection.
+     * </pre>
+     *
+     * <code>PRIVATE_CONNECTION_NO_RUNNING_INSTANCE = 111;</code>
+     */
+    PRIVATE_CONNECTION_NO_RUNNING_INSTANCE(111),
     UNRECOGNIZED(-1),
     ;
 
@@ -1714,6 +1745,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Packet was dropped inside DMS Private Connection.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_DMS_PRIVATE_CONNECTION = 114;</code>
+     */
+    public static final int DROPPED_INSIDE_DMS_PRIVATE_CONNECTION_VALUE = 114;
+
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped because there is no peering between the originating
      * network and the Google Managed Services Network.
      * </pre>
@@ -2037,6 +2079,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      * <code>CLOUD_RUN_REVISION_NOT_READY = 29;</code>
      */
     public static final int CLOUD_RUN_REVISION_NOT_READY_VALUE = 29;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from a Cloud Run job that is not ready.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_JOB_NOT_READY = 113;</code>
+     */
+    public static final int CLOUD_RUN_JOB_NOT_READY_VALUE = 113;
 
     /**
      *
@@ -2504,6 +2557,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      */
     public static final int NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION_VALUE = 110;
 
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to no running instance found for private
+     * connection.
+     * </pre>
+     *
+     * <code>PRIVATE_CONNECTION_NO_RUNNING_INSTANCE = 111;</code>
+     */
+    public static final int PRIVATE_CONNECTION_NO_RUNNING_INSTANCE_VALUE = 111;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -2606,6 +2671,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
           return DROPPED_INSIDE_GKE_SERVICE;
         case 19:
           return DROPPED_INSIDE_CLOUD_SQL_SERVICE;
+        case 114:
+          return DROPPED_INSIDE_DMS_PRIVATE_CONNECTION;
         case 20:
           return GOOGLE_MANAGED_SERVICE_NO_PEERING;
         case 38:
@@ -2660,6 +2727,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
           return HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED;
         case 29:
           return CLOUD_RUN_REVISION_NOT_READY;
+        case 113:
+          return CLOUD_RUN_JOB_NOT_READY;
         case 37:
           return DROPPED_INSIDE_PSC_SERVICE_PRODUCER;
         case 39:
@@ -2738,6 +2807,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
           return GKE_NETWORK_POLICY;
         case 110:
           return NO_VALID_ROUTE_FROM_GOOGLE_MANAGED_NETWORK_TO_DESTINATION;
+        case 111:
+          return PRIVATE_CONNECTION_NO_RUNNING_INSTANCE;
         default:
           return null;
       }

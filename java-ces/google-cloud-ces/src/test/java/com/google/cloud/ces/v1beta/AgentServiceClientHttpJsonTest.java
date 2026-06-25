@@ -45,6 +45,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
@@ -226,9 +227,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -296,9 +299,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -366,9 +371,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -443,9 +450,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -520,9 +529,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -599,9 +610,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -678,9 +691,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -710,9 +725,11 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -768,9 +785,11 @@ public class AgentServiceClientHttpJsonTest {
               .setEtag("etag3123477")
               .setDeploymentCount(2081851157)
               .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+              .setVpcScSettings(VpcScSettings.newBuilder().build())
               .setLocked(true)
               .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
               .setEvaluationSettings(EvaluationSettings.newBuilder().build())
+              .addAllValidationErrors(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateApp(app, updateMask);
@@ -1354,6 +1373,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1417,6 +1437,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1480,6 +1501,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1545,6 +1567,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1610,6 +1633,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1677,6 +1701,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1744,6 +1769,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1769,6 +1795,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1820,6 +1847,7 @@ public class AgentServiceClientHttpJsonTest {
               .addAllToolsets(new ArrayList<Agent.AgentToolset>())
               .setGeneratedSummary("generatedSummary-323053801")
               .addAllTransferRules(new ArrayList<TransferRule>())
+              .addAllValidationErrors(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);
@@ -2596,6 +2624,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2647,6 +2676,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3106,6 +3136,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3159,6 +3190,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3212,6 +3244,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3267,6 +3300,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3322,6 +3356,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3335,6 +3370,7 @@ public class AgentServiceClientHttpJsonTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3374,6 +3410,7 @@ public class AgentServiceClientHttpJsonTest {
               .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
               .setDisplayName("displayName1714148973")
               .setExecutionType(ExecutionType.forNumber(0))
+              .setTimeout(Duration.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setEtag("etag3123477")
@@ -4157,6 +4194,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4209,6 +4247,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4263,6 +4302,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4317,6 +4357,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4371,6 +4412,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4427,6 +4469,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4483,6 +4526,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4497,6 +4541,7 @@ public class AgentServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4537,6 +4582,7 @@ public class AgentServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setEtag("etag3123477")
+              .setExperimentConfig(ExperimentConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeployment(deployment, updateMask);

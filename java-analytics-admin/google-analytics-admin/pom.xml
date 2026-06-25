@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin</artifactId>
-  <version>0.103.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+  <version>0.104.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Admin</name>
   <description>allows you to manage Google Analytics accounts and properties.</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
-    <version>0.103.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+    <version>0.104.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-admin</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-analytics-admin-v1beta</artifactId>
@@ -49,6 +50,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-analytics-admin-v1alpha</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -77,6 +79,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-analytics-admin-v1alpha</artifactId>
@@ -87,6 +90,7 @@
       <artifactId>grpc-google-analytics-admin-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

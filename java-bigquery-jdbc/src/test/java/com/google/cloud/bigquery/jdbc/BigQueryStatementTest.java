@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchema;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -33,6 +34,8 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValueList;
@@ -66,6 +69,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
@@ -149,6 +154,8 @@ public class BigQueryStatementTest {
         .when(bigQueryConnection)
         .getQueryDialect();
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
+    ExecutorService executorService = mock(ExecutorService.class);
+    doReturn(executorService).when(bigQueryConnection).getExecutorService();
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
@@ -199,7 +206,7 @@ public class BigQueryStatementTest {
     QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
 
     doReturn(result).when(bigquery).query(jobConfiguration);
-    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(eq(result), any());
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
     // verify the statement's state
@@ -232,7 +239,7 @@ public class BigQueryStatementTest {
 
     doReturn(bigQueryJsonResultSet)
         .when(bigQueryStatementSpy)
-        .processJsonResultSet(any(TableResult.class));
+        .processJsonResultSet(any(TableResult.class), any());
 
     bigQueryStatementSpy.runQuery(query, queryJobConfiguration);
     // verify the statement's state
@@ -251,7 +258,7 @@ public class BigQueryStatementTest {
     doReturn(readSession)
         .when(bigQueryStatementSpy)
         .getReadSession(any(CreateReadSessionRequest.class));
-    Thread mockWorker = new Thread();
+    Future<?> mockWorker = mock(Future.class);
     doReturn(mockWorker)
         .when(bigQueryStatementSpy)
         .populateArrowBufferedQueue(
@@ -269,7 +276,7 @@ public class BigQueryStatementTest {
     doReturn(mock(QueryStatistics.class)).when(job).getStatistics();
     doReturn(job).when(bigquery).getJob(jobId);
 
-    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result);
+    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result, null);
     assertThat(resultSet).isNotNull();
     assertThat(resultSet).isInstanceOf(BigQueryArrowResultSet.class);
     assertThat(resultSet.isLast()).isFalse(); // as we have 10 rows
@@ -307,7 +314,7 @@ public class BigQueryStatementTest {
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
-    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(eq(result), any());
     ArgumentCaptor<QueryJobConfiguration> captor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
@@ -379,7 +386,7 @@ public class BigQueryStatementTest {
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(joblessStatementSpy)
-        .processJsonResultSet(tableResultMock);
+        .processJsonResultSet(eq(tableResultMock), any());
 
     Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
     ArgumentCaptor<JobInfo> dryRunCaptor = ArgumentCaptor.forClass(JobInfo.class);
@@ -407,7 +414,7 @@ public class BigQueryStatementTest {
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(jobfulStatementSpy)
-        .processJsonResultSet(tableResultJobfulMock);
+        .processJsonResultSet(eq(tableResultJobfulMock), any());
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 
@@ -467,7 +474,9 @@ public class BigQueryStatementTest {
     doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
 
     BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
-    doReturn(resultSetMock).when(joblessStatementSpy).processJsonResultSet(tableResultMock);
+    doReturn(resultSetMock)
+        .when(joblessStatementSpy)
+        .processJsonResultSet(eq(tableResultMock), any());
 
     joblessStatementSpy.executeQuery("SELECT 1");
 
@@ -481,6 +490,20 @@ public class BigQueryStatementTest {
 
     // And no backend cancellation was attempted
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
+  }
+
+  @Test
+  public void testCancelDoesNotRollbackTransaction() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isTransactionStarted();
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    statementSpy.jobIds.add(jobId);
+
+    statementSpy.cancel();
+
+    // Cancel should call bigquery.cancel() but not rollback the transaction
+    verify(bigquery).cancel(eq(jobId));
+    verify(bigQueryConnection, Mockito.never()).rollback();
+    verify(bigQueryConnection).removeStatement(statementSpy);
   }
 
   @ParameterizedTest
@@ -516,16 +539,18 @@ public class BigQueryStatementTest {
         new BigQueryJdbcException("Simulated permission denied", apiExceptionMock);
 
     // Force processArrowResultSet to throw the permission exception
-    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+    Mockito.doThrow(exceptionToThrow)
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
 
     BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
     // Mock processJsonResultSet to return our mock JSON result set
-    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
 
     statementSpy.processQueryResponse("SELECT 1", tableResultMock);
 
     // Verify that processJsonResultSet was indeed called as a fallback
-    verify(statementSpy).processJsonResultSet(tableResultMock);
+    verify(statementSpy).processJsonResultSet(eq(tableResultMock), any());
     // Verify that currentResultSet is set to the mocked JSON result set
     assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
   }
@@ -545,10 +570,12 @@ public class BigQueryStatementTest {
         new BigQueryJdbcException("Simulated internal error", apiExceptionMock);
 
     // Force processArrowResultSet to throw the non-permission exception
-    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+    Mockito.doThrow(exceptionToThrow)
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
 
     BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
-    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
 
     // Assert that the exception is propagated
     try {
@@ -559,7 +586,7 @@ public class BigQueryStatementTest {
     }
 
     // Verify that processJsonResultSet was NOT called
-    verify(statementSpy, Mockito.never()).processJsonResultSet(tableResultMock);
+    verify(statementSpy, Mockito.never()).processJsonResultSet(eq(tableResultMock), any());
   }
 
   private TableResult mockTableResultWithJob(String jobId) {
@@ -668,5 +695,158 @@ public class BigQueryStatementTest {
     // This should not throw ArithmeticException (/ by zero) and should evaluate safely
     boolean useReadApi = statement.useReadAPI(tableResult);
     assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
+  }
+
+  @Test
+  public void testWrapperMethods() throws SQLException {
+    assertTrue(bigQueryStatement.isWrapperFor(java.sql.Statement.class));
+    assertTrue(bigQueryStatement.isWrapperFor(BigQueryStatement.class));
+    assertFalse(bigQueryStatement.isWrapperFor(java.sql.Connection.class));
+    assertFalse(bigQueryStatement.isWrapperFor(null));
+
+    Object unwrappedStmt = bigQueryStatement.unwrap(java.sql.Statement.class);
+    org.junit.jupiter.api.Assertions.assertSame(unwrappedStmt, bigQueryStatement);
+
+    Object unwrappedImpl = bigQueryStatement.unwrap(BigQueryStatement.class);
+    org.junit.jupiter.api.Assertions.assertSame(unwrappedImpl, bigQueryStatement);
+
+    BigQueryJdbcException e =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            BigQueryJdbcException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
+    assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
+  }
+
+  @Test
+  public void testPreparedStatementExecuteQueryWithLargeResults() throws Exception {
+    // Setup connection mocks to return large results settings
+    doReturn(true).when(bigQueryConnection).isAllowLargeResults();
+    doReturn("test_dataset").when(bigQueryConnection).getDestinationDataset();
+    doReturn("test_table").when(bigQueryConnection).getDestinationTable();
+
+    com.google.cloud.bigquery.Dataset dataset = mock(com.google.cloud.bigquery.Dataset.class);
+    doReturn(dataset).when(bigquery).getDataset(any(com.google.cloud.bigquery.DatasetId.class));
+
+    // Create PreparedStatement
+    BigQueryPreparedStatement preparedStatement =
+        new BigQueryPreparedStatement(bigQueryConnection, query);
+    BigQueryPreparedStatement preparedStatementSpy = Mockito.spy(preparedStatement);
+
+    TableResult result = Mockito.mock(TableResult.class);
+    BigQueryJsonResultSet jsonResultSet = mock(BigQueryJsonResultSet.class);
+    QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
+    Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
+
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
+    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(eq(result), any());
+
+    Job dryRunJob = getJobMock(null, jobConfiguration, StatementType.SELECT);
+    doReturn(dryRunJob).when(bigquery).create(any(JobInfo.class));
+
+    // Act
+    preparedStatementSpy.executeQuery();
+
+    // Assert
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration capturedConfig = captor.getValue();
+
+    assertThat(capturedConfig.getDestinationTable())
+        .isEqualTo(TableId.of("test_dataset", "test_table"));
+    assertThat(capturedConfig.allowLargeResults()).isTrue();
+  }
+
+  @Test
+  public void testPreparedStatementExecuteWithLargeResults() throws Exception {
+    // Setup connection mocks to return large results settings
+    doReturn(true).when(bigQueryConnection).isAllowLargeResults();
+    doReturn("test_dataset").when(bigQueryConnection).getDestinationDataset();
+    doReturn("test_table").when(bigQueryConnection).getDestinationTable();
+
+    com.google.cloud.bigquery.Dataset dataset = mock(com.google.cloud.bigquery.Dataset.class);
+    doReturn(dataset).when(bigquery).getDataset(any(com.google.cloud.bigquery.DatasetId.class));
+
+    // Create PreparedStatement
+    BigQueryPreparedStatement preparedStatement =
+        new BigQueryPreparedStatement(bigQueryConnection, query);
+    BigQueryPreparedStatement preparedStatementSpy = Mockito.spy(preparedStatement);
+
+    TableResult result = Mockito.mock(TableResult.class);
+    BigQueryJsonResultSet jsonResultSet = mock(BigQueryJsonResultSet.class);
+    QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
+    Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
+
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
+    doReturn(jsonResultSet).when(preparedStatementSpy).processJsonResultSet(eq(result), any());
+
+    Job dryRunJob = getJobMock(null, jobConfiguration, StatementType.SELECT);
+    doReturn(dryRunJob).when(bigquery).create(any(JobInfo.class));
+
+    // Act
+    preparedStatementSpy.execute();
+
+    // Assert
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration capturedConfig = captor.getValue();
+
+    assertThat(capturedConfig.getDestinationTable())
+        .isEqualTo(TableId.of("test_dataset", "test_table"));
+    assertThat(capturedConfig.allowLargeResults()).isTrue();
+  }
+
+  @Test
+  public void testSetFetchSizeNegativeThrows() {
+    org.junit.jupiter.api.Assertions.assertThrows(
+        SQLException.class, () -> bigQueryStatement.setFetchSize(-1));
+  }
+
+  @Test
+  public void testSetAndGetFetchSize() throws SQLException {
+    bigQueryStatement.setFetchSize(100);
+    assertEquals(100, bigQueryStatement.getFetchSize());
+  }
+
+  @Test
+  public void testTemporaryDatasetCreationRespectsConnectionLocation()
+      throws SQLException, InterruptedException {
+    // 1. Setup mock connection with location and destination dataset
+    doReturn("europe-west3").when(bigQueryConnection).getLocation();
+    doReturn("temp_dataset").when(bigQueryConnection).getDestinationDataset();
+
+    // Re-instantiate bigQueryStatement so it regenerates querySettings with these mocked connection
+    // values
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    BigQueryStatement statementSpy = Mockito.spy(statement);
+
+    // 2. Mock bigQuery.getDataset to return null (triggering creation)
+    doReturn(null).when(bigquery).getDataset(eq(DatasetId.of("temp_dataset")));
+
+    // 2b. Mock bigQuery.create for dry run during getStatementType
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+
+    // 3. Mock bigquery.queryWithTimeout(...) to return tableResult (so execution doesn't fail on
+    // query execution)
+    TableResult result = mock(TableResult.class);
+    doReturn(result)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(JobId.class), any());
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(statementSpy)
+        .processJsonResultSet(eq(result), any());
+
+    // 4. Capture DatasetInfo passed to bigQuery.create()
+    ArgumentCaptor<DatasetInfo> datasetInfoCaptor = ArgumentCaptor.forClass(DatasetInfo.class);
+
+    // 5. Execute query
+    statementSpy.executeQuery("SELECT 1");
+
+    // 6. Verify dataset was created with correct location
+    verify(bigquery).create(datasetInfoCaptor.capture());
+    DatasetInfo createdDatasetInfo = datasetInfoCaptor.getValue();
+    assertEquals("temp_dataset", createdDatasetInfo.getDatasetId().getDataset());
+    assertEquals("europe-west3", createdDatasetInfo.getLocation());
   }
 }

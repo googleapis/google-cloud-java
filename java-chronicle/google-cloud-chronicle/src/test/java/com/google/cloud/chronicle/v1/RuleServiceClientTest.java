@@ -542,6 +542,90 @@ public class RuleServiceClientTest {
   }
 
   @Test
+  public void verifyRuleTextTest() throws Exception {
+    VerifyRuleTextResponse expectedResponse =
+        VerifyRuleTextResponse.newBuilder()
+            .setSuccess(true)
+            .addAllCompilationDiagnostics(new ArrayList<CompilationDiagnostic>())
+            .build();
+    mockRuleService.addResponse(expectedResponse);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String ruleText = "ruleText763458121";
+
+    VerifyRuleTextResponse actualResponse = client.verifyRuleText(instance, ruleText);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRuleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyRuleTextRequest actualRequest = ((VerifyRuleTextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance.toString(), actualRequest.getInstance());
+    Assert.assertEquals(ruleText, actualRequest.getRuleText());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyRuleTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRuleService.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String ruleText = "ruleText763458121";
+      client.verifyRuleText(instance, ruleText);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyRuleTextTest2() throws Exception {
+    VerifyRuleTextResponse expectedResponse =
+        VerifyRuleTextResponse.newBuilder()
+            .setSuccess(true)
+            .addAllCompilationDiagnostics(new ArrayList<CompilationDiagnostic>())
+            .build();
+    mockRuleService.addResponse(expectedResponse);
+
+    String instance = "instance555127957";
+    String ruleText = "ruleText763458121";
+
+    VerifyRuleTextResponse actualResponse = client.verifyRuleText(instance, ruleText);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRuleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifyRuleTextRequest actualRequest = ((VerifyRuleTextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(ruleText, actualRequest.getRuleText());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifyRuleTextExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRuleService.addException(exception);
+
+    try {
+      String instance = "instance555127957";
+      String ruleText = "ruleText763458121";
+      client.verifyRuleText(instance, ruleText);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listRuleRevisionsTest() throws Exception {
     Rule responsesElement = Rule.newBuilder().build();
     ListRuleRevisionsResponse expectedResponse =

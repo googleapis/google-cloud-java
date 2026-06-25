@@ -576,6 +576,49 @@ public interface ConversationProfileOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for SIP connections.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sipConfig field is set.
+   */
+  boolean hasSipConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for SIP connections.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sipConfig.
+   */
+  com.google.cloud.dialogflow.v2beta1.SipConfig getSipConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for SIP connections.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.SipConfigOrBuilder getSipConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The time zone of this conversational profile from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
    * America/New_York, Europe/Paris. Defaults to America/New_York.

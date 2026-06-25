@@ -105,27 +105,37 @@ public interface CreateTeamFolderRequestOrBuilder
    *
    *
    * <pre>
+   * Deprecated: This field is not used. The resource name is generated
+   * automatically.
    * The ID to use for the TeamFolder, which will become the final component of
    * the TeamFolder's resource name.
    * </pre>
    *
-   * <code>string team_folder_id = 3;</code>
+   * <code>string team_folder_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is deprecated.
+   *     See google/cloud/dataform/v1beta1/dataform.proto;l=3864
    * @return The teamFolderId.
    */
+  @java.lang.Deprecated
   java.lang.String getTeamFolderId();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: This field is not used. The resource name is generated
+   * automatically.
    * The ID to use for the TeamFolder, which will become the final component of
    * the TeamFolder's resource name.
    * </pre>
    *
-   * <code>string team_folder_id = 3;</code>
+   * <code>string team_folder_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is deprecated.
+   *     See google/cloud/dataform/v1beta1/dataform.proto;l=3864
    * @return The bytes for teamFolderId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTeamFolderIdBytes();
 }

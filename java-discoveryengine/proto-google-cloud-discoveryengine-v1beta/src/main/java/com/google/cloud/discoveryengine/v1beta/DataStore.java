@@ -58,6 +58,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     solutionTypes_ = emptyIntList();
     defaultSchemaId_ = "";
     contentConfig_ = 0;
+    kmsKeyName_ = "";
+    identityMappingStore_ = "";
+    configurableBillingApproach_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -298,6 +301,182 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.DataStore.ContentConfig)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for configurable billing approach.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach}
+   */
+  public enum ConfigurableBillingApproach implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. For Spark and non-Spark non-configurable billing approach.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED = 0;</code>
+     */
+    CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the subscription base + overage billing for indexing core for non
+     * embedding storage.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE = 1;</code>
+     */
+    CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use the consumption pay-as-you-go billing for embedding storage add-on.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_CONSUMPTION_EMBEDDING = 2;</code>
+     */
+    CONFIGURABLE_CONSUMPTION_EMBEDDING(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ConfigurableBillingApproach");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. For Spark and non-Spark non-configurable billing approach.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use the subscription base + overage billing for indexing core for non
+     * embedding storage.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE = 1;</code>
+     */
+    public static final int CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use the consumption pay-as-you-go billing for embedding storage add-on.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_CONSUMPTION_EMBEDDING = 2;</code>
+     */
+    public static final int CONFIGURABLE_CONSUMPTION_EMBEDDING_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfigurableBillingApproach valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConfigurableBillingApproach forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED;
+        case 1:
+          return CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE;
+        case 2:
+          return CONFIGURABLE_CONSUMPTION_EMBEDDING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConfigurableBillingApproach>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConfigurableBillingApproach>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConfigurableBillingApproach>() {
+              public ConfigurableBillingApproach findValueByNumber(int number) {
+                return ConfigurableBillingApproach.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.DataStore.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ConfigurableBillingApproach[] VALUES = values();
+
+    public static ConfigurableBillingApproach valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConfigurableBillingApproach(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach)
   }
 
   public interface BillingEstimationOrBuilder
@@ -2030,11 +2209,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set true, the DataStore will not be available for serving search
-     * requests.
+     * Optional. If set true, the DataStore will not be available for serving
+     * search requests.
      * </pre>
      *
-     * <code>bool disabled_for_serving = 1;</code>
+     * <code>bool disabled_for_serving = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The disabledForServing.
      */
@@ -2096,11 +2275,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set true, the DataStore will not be available for serving search
-     * requests.
+     * Optional. If set true, the DataStore will not be available for serving
+     * search requests.
      * </pre>
      *
-     * <code>bool disabled_for_serving = 1;</code>
+     * <code>bool disabled_for_serving = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The disabledForServing.
      */
@@ -2442,11 +2621,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If set true, the DataStore will not be available for serving search
-       * requests.
+       * Optional. If set true, the DataStore will not be available for serving
+       * search requests.
        * </pre>
        *
-       * <code>bool disabled_for_serving = 1;</code>
+       * <code>bool disabled_for_serving = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The disabledForServing.
        */
@@ -2459,11 +2638,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If set true, the DataStore will not be available for serving search
-       * requests.
+       * Optional. If set true, the DataStore will not be available for serving
+       * search requests.
        * </pre>
        *
-       * <code>bool disabled_for_serving = 1;</code>
+       * <code>bool disabled_for_serving = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The disabledForServing to set.
        * @return This builder for chaining.
@@ -2480,11 +2659,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If set true, the DataStore will not be available for serving search
-       * requests.
+       * Optional. If set true, the DataStore will not be available for serving
+       * search requests.
        * </pre>
        *
-       * <code>bool disabled_for_serving = 1;</code>
+       * <code>bool disabled_for_serving = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2551,6 +2730,7650 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface FederatedSearchConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+     * </code>
+     *
+     * @return Whether the alloyDbConfig field is set.
+     */
+    boolean hasAlloyDbConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+     * </code>
+     *
+     * @return The alloyDbConfig.
+     */
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+        getAlloyDbConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfigOrBuilder
+        getAlloyDbConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Third Party OAuth config. If set, this DataStore is connected to a
+     * third party application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+     * </code>
+     *
+     * @return Whether the thirdPartyOauthConfig field is set.
+     */
+    boolean hasThirdPartyOauthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Third Party OAuth config. If set, this DataStore is connected to a
+     * third party application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+     * </code>
+     *
+     * @return The thirdPartyOauthConfig.
+     */
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig
+        getThirdPartyOauthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Third Party OAuth config. If set, this DataStore is connected to a
+     * third party application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .ThirdPartyOauthConfigOrBuilder
+        getThirdPartyOauthConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * NotebookLM config. If set, this DataStore is connected to
+     * NotebookLM Enterprise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+     * </code>
+     *
+     * @return Whether the notebooklmConfig field is set.
+     */
+    boolean hasNotebooklmConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * NotebookLM config. If set, this DataStore is connected to
+     * NotebookLM Enterprise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+     * </code>
+     *
+     * @return The notebooklmConfig.
+     */
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+        getNotebooklmConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * NotebookLM config. If set, this DataStore is connected to
+     * NotebookLM Enterprise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .NotebooklmConfigOrBuilder
+        getNotebooklmConfigOrBuilder();
+
+    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.DataSourceConfigCase
+        getDataSourceConfigCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Stores information for federated search.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig}
+   */
+  public static final class FederatedSearchConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig)
+      FederatedSearchConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "FederatedSearchConfig");
+    }
+
+    // Use FederatedSearchConfig.newBuilder() to construct.
+    private FederatedSearchConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FederatedSearchConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+          .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+          .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.class,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder
+                  .class);
+    }
+
+    public interface AlloyDbConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the alloydbConnectionConfig field is set.
+       */
+      boolean hasAlloydbConnectionConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The alloydbConnectionConfig.
+       */
+      com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbConnectionConfig
+          getAlloydbConnectionConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbConnectionConfigOrBuilder
+          getAlloydbConnectionConfigOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for Magic.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the alloydbAiNlConfig field is set.
+       */
+      boolean hasAlloydbAiNlConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for Magic.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The alloydbAiNlConfig.
+       */
+      com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbAiNaturalLanguageConfig
+          getAlloydbAiNlConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for Magic.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbAiNaturalLanguageConfigOrBuilder
+          getAlloydbAiNlConfigOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the returnedFields.
+       */
+      java.util.List<java.lang.String> getReturnedFieldsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of returnedFields.
+       */
+      int getReturnedFieldsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The returnedFields at the given index.
+       */
+      java.lang.String getReturnedFields(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the returnedFields at the given index.
+       */
+      com.google.protobuf.ByteString getReturnedFieldsBytes(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stores information for connecting to AlloyDB.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig}
+     */
+    public static final class AlloyDbConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig)
+        AlloyDbConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "AlloyDbConfig");
+      }
+
+      // Use AlloyDbConfig.newBuilder() to construct.
+      private AlloyDbConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AlloyDbConfig() {
+        returnedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.class,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.Builder.class);
+      }
+
+      public interface AlloyDbConnectionConfigOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB instance to connect to.
+         * </pre>
+         *
+         * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The instance.
+         */
+        java.lang.String getInstance();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB instance to connect to.
+         * </pre>
+         *
+         * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for instance.
+         */
+        com.google.protobuf.ByteString getInstanceBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB database to connect to.
+         * </pre>
+         *
+         * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The database.
+         */
+        java.lang.String getDatabase();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB database to connect to.
+         * </pre>
+         *
+         * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for database.
+         */
+        com.google.protobuf.ByteString getDatabaseBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database user.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the user will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The user.
+         */
+        java.lang.String getUser();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database user.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the user will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for user.
+         */
+        com.google.protobuf.ByteString getUserBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database password.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the password will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The password.
+         */
+        java.lang.String getPassword();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database password.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the password will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for password.
+         */
+        com.google.protobuf.ByteString getPasswordBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Auth mode.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for authMode.
+         */
+        int getAuthModeValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Auth mode.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The authMode.
+         */
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig.AuthMode
+            getAuthMode();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable PSVS for AlloyDB.
+         * </pre>
+         *
+         * <code>bool enable_psvs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The enablePsvs.
+         */
+        boolean getEnablePsvs();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig}
+       */
+      public static final class AlloyDbConnectionConfig extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig)
+          AlloyDbConnectionConfigOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "AlloyDbConnectionConfig");
+        }
+
+        // Use AlloyDbConnectionConfig.newBuilder() to construct.
+        private AlloyDbConnectionConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private AlloyDbConnectionConfig() {
+          instance_ = "";
+          database_ = "";
+          user_ = "";
+          password_ = "";
+          authMode_ = 0;
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.AlloyDbConnectionConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.AlloyDbConnectionConfig.Builder.class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Auth mode.
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode}
+         */
+        public enum AuthMode implements com.google.protobuf.ProtocolMessageEnum {
+          /** <code>AUTH_MODE_UNSPECIFIED = 0;</code> */
+          AUTH_MODE_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * Uses P4SA when VAIS talks to AlloyDB.
+           * </pre>
+           *
+           * <code>AUTH_MODE_SERVICE_ACCOUNT = 1;</code>
+           */
+          AUTH_MODE_SERVICE_ACCOUNT(1),
+          /**
+           *
+           *
+           * <pre>
+           * Uses EUC when VAIS talks to AlloyDB.
+           * </pre>
+           *
+           * <code>AUTH_MODE_END_USER_ACCOUNT = 2;</code>
+           */
+          AUTH_MODE_END_USER_ACCOUNT(2),
+          UNRECOGNIZED(-1),
+          ;
+
+          static {
+            com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+                com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+                /* major= */ 4,
+                /* minor= */ 33,
+                /* patch= */ 2,
+                /* suffix= */ "",
+                "AuthMode");
+          }
+
+          /** <code>AUTH_MODE_UNSPECIFIED = 0;</code> */
+          public static final int AUTH_MODE_UNSPECIFIED_VALUE = 0;
+
+          /**
+           *
+           *
+           * <pre>
+           * Uses P4SA when VAIS talks to AlloyDB.
+           * </pre>
+           *
+           * <code>AUTH_MODE_SERVICE_ACCOUNT = 1;</code>
+           */
+          public static final int AUTH_MODE_SERVICE_ACCOUNT_VALUE = 1;
+
+          /**
+           *
+           *
+           * <pre>
+           * Uses EUC when VAIS talks to AlloyDB.
+           * </pre>
+           *
+           * <code>AUTH_MODE_END_USER_ACCOUNT = 2;</code>
+           */
+          public static final int AUTH_MODE_END_USER_ACCOUNT_VALUE = 2;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static AuthMode valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static AuthMode forNumber(int value) {
+            switch (value) {
+              case 0:
+                return AUTH_MODE_UNSPECIFIED;
+              case 1:
+                return AUTH_MODE_SERVICE_ACCOUNT;
+              case 2:
+                return AUTH_MODE_END_USER_ACCOUNT;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<AuthMode> internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<AuthMode> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<AuthMode>() {
+                public AuthMode findValueByNumber(int number) {
+                  return AuthMode.forNumber(number);
+                }
+              };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig.getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final AuthMode[] VALUES = values();
+
+          public static AuthMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private AuthMode(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode)
+        }
+
+        public static final int INSTANCE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object instance_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB instance to connect to.
+         * </pre>
+         *
+         * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The instance.
+         */
+        @java.lang.Override
+        public java.lang.String getInstance() {
+          java.lang.Object ref = instance_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            instance_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB instance to connect to.
+         * </pre>
+         *
+         * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for instance.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getInstanceBytes() {
+          java.lang.Object ref = instance_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            instance_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int DATABASE_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object database_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB database to connect to.
+         * </pre>
+         *
+         * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The database.
+         */
+        @java.lang.Override
+        public java.lang.String getDatabase() {
+          java.lang.Object ref = database_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            database_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The AlloyDB database to connect to.
+         * </pre>
+         *
+         * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for database.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDatabaseBytes() {
+          java.lang.Object ref = database_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            database_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int USER_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object user_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database user.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the user will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The user.
+         */
+        @java.lang.Override
+        public java.lang.String getUser() {
+          java.lang.Object ref = user_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            user_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database user.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the user will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for user.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getUserBytes() {
+          java.lang.Object ref = user_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            user_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int PASSWORD_FIELD_NUMBER = 4;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object password_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database password.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the password will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The password.
+         */
+        @java.lang.Override
+        public java.lang.String getPassword() {
+          java.lang.Object ref = password_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            password_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Database password.
+         *
+         * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+         * the password will be inferred on the AlloyDB side, based on the
+         * authenticated user.
+         * </pre>
+         *
+         * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for password.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getPasswordBytes() {
+          java.lang.Object ref = password_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            password_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int AUTH_MODE_FIELD_NUMBER = 5;
+        private int authMode_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Auth mode.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for authMode.
+         */
+        @java.lang.Override
+        public int getAuthModeValue() {
+          return authMode_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Auth mode.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The authMode.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig.AuthMode
+            getAuthMode() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .AlloyDbConnectionConfig.AuthMode
+              result =
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode.forNumber(authMode_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode.UNRECOGNIZED
+              : result;
+        }
+
+        public static final int ENABLE_PSVS_FIELD_NUMBER = 6;
+        private boolean enablePsvs_ = false;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, enable PSVS for AlloyDB.
+         * </pre>
+         *
+         * <code>bool enable_psvs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The enablePsvs.
+         */
+        @java.lang.Override
+        public boolean getEnablePsvs() {
+          return enablePsvs_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, instance_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(database_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, database_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(user_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 3, user_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 4, password_);
+          }
+          if (authMode_
+              != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode.AUTH_MODE_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(5, authMode_);
+          }
+          if (enablePsvs_ != false) {
+            output.writeBool(6, enablePsvs_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, instance_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(database_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, database_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(user_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(3, user_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(4, password_);
+          }
+          if (authMode_
+              != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode.AUTH_MODE_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, authMode_);
+          }
+          if (enablePsvs_ != false) {
+            size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enablePsvs_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .AlloyDbConnectionConfig)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .AlloyDbConnectionConfig
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .AlloyDbConfig.AlloyDbConnectionConfig)
+                      obj;
+
+          if (!getInstance().equals(other.getInstance())) return false;
+          if (!getDatabase().equals(other.getDatabase())) return false;
+          if (!getUser().equals(other.getUser())) return false;
+          if (!getPassword().equals(other.getPassword())) return false;
+          if (authMode_ != other.authMode_) return false;
+          if (getEnablePsvs() != other.getEnablePsvs()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+          hash = (53 * hash) + getInstance().hashCode();
+          hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+          hash = (53 * hash) + getDatabase().hashCode();
+          hash = (37 * hash) + USER_FIELD_NUMBER;
+          hash = (53 * hash) + getUser().hashCode();
+          hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+          hash = (53 * hash) + getPassword().hashCode();
+          hash = (37 * hash) + AUTH_MODE_FIELD_NUMBER;
+          hash = (53 * hash) + authMode_;
+          hash = (37 * hash) + ENABLE_PSVS_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePsvs());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig)
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfigOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+                .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+                .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig.class,
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            instance_ = "";
+            database_ = "";
+            user_ = "";
+            password_ = "";
+            authMode_ = 0;
+            enablePsvs_ = false;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+                .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbConnectionConfig_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig
+              build() {
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                      .AlloyDbConnectionConfig
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.instance_ = instance_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.database_ = database_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.user_ = user_;
+            }
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.password_ = password_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.authMode_ = authMode_;
+            }
+            if (((from_bitField0_ & 0x00000020) != 0)) {
+              result.enablePsvs_ = enablePsvs_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .AlloyDbConfig.AlloyDbConnectionConfig)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                      .AlloyDbConnectionConfig
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig.getDefaultInstance()) return this;
+            if (!other.getInstance().isEmpty()) {
+              instance_ = other.instance_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getDatabase().isEmpty()) {
+              database_ = other.database_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (!other.getUser().isEmpty()) {
+              user_ = other.user_;
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
+            if (!other.getPassword().isEmpty()) {
+              password_ = other.password_;
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            if (other.authMode_ != 0) {
+              setAuthModeValue(other.getAuthModeValue());
+            }
+            if (other.getEnablePsvs() != false) {
+              setEnablePsvs(other.getEnablePsvs());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      instance_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      database_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      user_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  case 34:
+                    {
+                      password_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
+                  case 40:
+                    {
+                      authMode_ = input.readEnum();
+                      bitField0_ |= 0x00000010;
+                      break;
+                    } // case 40
+                  case 48:
+                    {
+                      enablePsvs_ = input.readBool();
+                      bitField0_ |= 0x00000020;
+                      break;
+                    } // case 48
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object instance_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB instance to connect to.
+           * </pre>
+           *
+           * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The instance.
+           */
+          public java.lang.String getInstance() {
+            java.lang.Object ref = instance_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              instance_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB instance to connect to.
+           * </pre>
+           *
+           * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for instance.
+           */
+          public com.google.protobuf.ByteString getInstanceBytes() {
+            java.lang.Object ref = instance_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              instance_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB instance to connect to.
+           * </pre>
+           *
+           * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The instance to set.
+           * @return This builder for chaining.
+           */
+          public Builder setInstance(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            instance_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB instance to connect to.
+           * </pre>
+           *
+           * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearInstance() {
+            instance_ = getDefaultInstance().getInstance();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB instance to connect to.
+           * </pre>
+           *
+           * <code>string instance = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for instance to set.
+           * @return This builder for chaining.
+           */
+          public Builder setInstanceBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            instance_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object database_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB database to connect to.
+           * </pre>
+           *
+           * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The database.
+           */
+          public java.lang.String getDatabase() {
+            java.lang.Object ref = database_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              database_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB database to connect to.
+           * </pre>
+           *
+           * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for database.
+           */
+          public com.google.protobuf.ByteString getDatabaseBytes() {
+            java.lang.Object ref = database_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              database_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB database to connect to.
+           * </pre>
+           *
+           * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The database to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDatabase(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            database_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB database to connect to.
+           * </pre>
+           *
+           * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearDatabase() {
+            database_ = getDefaultInstance().getDatabase();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The AlloyDB database to connect to.
+           * </pre>
+           *
+           * <code>string database = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for database to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            database_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object user_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database user.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the user will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The user.
+           */
+          public java.lang.String getUser() {
+            java.lang.Object ref = user_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              user_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database user.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the user will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for user.
+           */
+          public com.google.protobuf.ByteString getUserBytes() {
+            java.lang.Object ref = user_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              user_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database user.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the user will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The user to set.
+           * @return This builder for chaining.
+           */
+          public Builder setUser(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            user_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database user.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the user will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearUser() {
+            user_ = getDefaultInstance().getUser();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database user.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the user will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for user to set.
+           * @return This builder for chaining.
+           */
+          public Builder setUserBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            user_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object password_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database password.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the password will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The password.
+           */
+          public java.lang.String getPassword() {
+            java.lang.Object ref = password_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              password_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database password.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the password will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for password.
+           */
+          public com.google.protobuf.ByteString getPasswordBytes() {
+            java.lang.Object ref = password_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              password_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database password.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the password will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The password to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPassword(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            password_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database password.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the password will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPassword() {
+            password_ = getDefaultInstance().getPassword();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Database password.
+           *
+           * If auth_mode = END_USER_ACCOUNT, it can be unset. In that case,
+           * the password will be inferred on the AlloyDB side, based on the
+           * authenticated user.
+           * </pre>
+           *
+           * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for password to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            password_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          private int authMode_ = 0;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Auth mode.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for authMode.
+           */
+          @java.lang.Override
+          public int getAuthModeValue() {
+            return authMode_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Auth mode.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for authMode to set.
+           * @return This builder for chaining.
+           */
+          public Builder setAuthModeValue(int value) {
+            authMode_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Auth mode.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The authMode.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode
+              getAuthMode() {
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig.AuthMode
+                result =
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode.forNumber(authMode_);
+            return result == null
+                ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig.AuthMode.UNRECOGNIZED
+                : result;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Auth mode.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The authMode to set.
+           * @return This builder for chaining.
+           */
+          public Builder setAuthMode(
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                      .AlloyDbConnectionConfig.AuthMode
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000010;
+            authMode_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Auth mode.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig.AuthMode auth_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearAuthMode() {
+            bitField0_ = (bitField0_ & ~0x00000010);
+            authMode_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private boolean enablePsvs_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. If true, enable PSVS for AlloyDB.
+           * </pre>
+           *
+           * <code>bool enable_psvs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The enablePsvs.
+           */
+          @java.lang.Override
+          public boolean getEnablePsvs() {
+            return enablePsvs_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. If true, enable PSVS for AlloyDB.
+           * </pre>
+           *
+           * <code>bool enable_psvs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The enablePsvs to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEnablePsvs(boolean value) {
+
+            enablePsvs_ = value;
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. If true, enable PSVS for AlloyDB.
+           * </pre>
+           *
+           * <code>bool enable_psvs = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEnablePsvs() {
+            bitField0_ = (bitField0_ & ~0x00000020);
+            enablePsvs_ = false;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig)
+        private static final com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbConnectionConfig();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<AlloyDbConnectionConfig> PARSER =
+            new com.google.protobuf.AbstractParser<AlloyDbConnectionConfig>() {
+              @java.lang.Override
+              public AlloyDbConnectionConfig parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<AlloyDbConnectionConfig> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<AlloyDbConnectionConfig> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface AlloyDbAiNaturalLanguageConfigOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+         * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+         * empty.
+         * </pre>
+         *
+         * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The nlConfigId.
+         */
+        java.lang.String getNlConfigId();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+         * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+         * empty.
+         * </pre>
+         *
+         * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for nlConfigId.
+         */
+        com.google.protobuf.ByteString getNlConfigIdBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for AlloyDB AI Natural Language.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig}
+       */
+      public static final class AlloyDbAiNaturalLanguageConfig
+          extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+          AlloyDbAiNaturalLanguageConfigOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "AlloyDbAiNaturalLanguageConfig");
+        }
+
+        // Use AlloyDbAiNaturalLanguageConfig.newBuilder() to construct.
+        private AlloyDbAiNaturalLanguageConfig(
+            com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private AlloyDbAiNaturalLanguageConfig() {
+          nlConfigId_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.Builder.class);
+        }
+
+        public static final int NL_CONFIG_ID_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object nlConfigId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+         * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+         * empty.
+         * </pre>
+         *
+         * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The nlConfigId.
+         */
+        @java.lang.Override
+        public java.lang.String getNlConfigId() {
+          java.lang.Object ref = nlConfigId_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            nlConfigId_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+         * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+         * empty.
+         * </pre>
+         *
+         * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for nlConfigId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getNlConfigIdBytes() {
+          java.lang.Object ref = nlConfigId_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            nlConfigId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nlConfigId_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, nlConfigId_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nlConfigId_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, nlConfigId_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .AlloyDbAiNaturalLanguageConfig)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .AlloyDbAiNaturalLanguageConfig
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+                      obj;
+
+          if (!getNlConfigId().equals(other.getNlConfigId())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + NL_CONFIG_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getNlConfigId().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbAiNaturalLanguageConfig
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Configuration for AlloyDB AI Natural Language.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfigOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+                .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+                .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.class,
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            nlConfigId_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+                .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_AlloyDbAiNaturalLanguageConfig_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+              build() {
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbAiNaturalLanguageConfig
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbAiNaturalLanguageConfig
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                      .AlloyDbAiNaturalLanguageConfig
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.nlConfigId_ = nlConfigId_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                      .AlloyDbAiNaturalLanguageConfig
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.getDefaultInstance()) return this;
+            if (!other.getNlConfigId().isEmpty()) {
+              nlConfigId_ = other.nlConfigId_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      nlConfigId_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object nlConfigId_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+           * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+           * empty.
+           * </pre>
+           *
+           * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The nlConfigId.
+           */
+          public java.lang.String getNlConfigId() {
+            java.lang.Object ref = nlConfigId_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              nlConfigId_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+           * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+           * empty.
+           * </pre>
+           *
+           * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for nlConfigId.
+           */
+          public com.google.protobuf.ByteString getNlConfigIdBytes() {
+            java.lang.Object ref = nlConfigId_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              nlConfigId_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+           * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+           * empty.
+           * </pre>
+           *
+           * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The nlConfigId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNlConfigId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nlConfigId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+           * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+           * empty.
+           * </pre>
+           *
+           * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearNlConfigId() {
+            nlConfigId_ = getDefaultInstance().getNlConfigId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. AlloyDb AI NL config id, i.e. the value that was used for
+           * calling `SELECT alloydb_ai_nl.g_create_configuration(...)`. Can be
+           * empty.
+           * </pre>
+           *
+           * <code>string nl_config_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for nlConfigId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNlConfigIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            nlConfigId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig)
+        private static final com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<AlloyDbAiNaturalLanguageConfig> PARSER =
+            new com.google.protobuf.AbstractParser<AlloyDbAiNaturalLanguageConfig>() {
+              @java.lang.Override
+              public AlloyDbAiNaturalLanguageConfig parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<AlloyDbAiNaturalLanguageConfig> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<AlloyDbAiNaturalLanguageConfig> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfig
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int ALLOYDB_CONNECTION_CONFIG_FIELD_NUMBER = 1;
+      private com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbConnectionConfig
+          alloydbConnectionConfig_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the alloydbConnectionConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasAlloydbConnectionConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The alloydbConnectionConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbConnectionConfig
+          getAlloydbConnectionConfig() {
+        return alloydbConnectionConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig.getDefaultInstance()
+            : alloydbConnectionConfig_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Configuration for connecting to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbConnectionConfigOrBuilder
+          getAlloydbConnectionConfigOrBuilder() {
+        return alloydbConnectionConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig.getDefaultInstance()
+            : alloydbConnectionConfig_;
+      }
+
+      public static final int ALLOYDB_AI_NL_CONFIG_FIELD_NUMBER = 2;
+      private com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbAiNaturalLanguageConfig
+          alloydbAiNlConfig_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for Magic.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the alloydbAiNlConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasAlloydbAiNlConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for Magic.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The alloydbAiNlConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbAiNaturalLanguageConfig
+          getAlloydbAiNlConfig() {
+        return alloydbAiNlConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfig.getDefaultInstance()
+            : alloydbAiNlConfig_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for Magic.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .AlloyDbAiNaturalLanguageConfigOrBuilder
+          getAlloydbAiNlConfigOrBuilder() {
+        return alloydbAiNlConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfig.getDefaultInstance()
+            : alloydbAiNlConfig_;
+      }
+
+      public static final int RETURNED_FIELDS_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList returnedFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the returnedFields.
+       */
+      public com.google.protobuf.ProtocolStringList getReturnedFieldsList() {
+        return returnedFields_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of returnedFields.
+       */
+      public int getReturnedFieldsCount() {
+        return returnedFields_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The returnedFields at the given index.
+       */
+      public java.lang.String getReturnedFields(int index) {
+        return returnedFields_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to be returned in the search results. If empty, all
+       * fields will be returned.
+       * </pre>
+       *
+       * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the returnedFields at the given index.
+       */
+      public com.google.protobuf.ByteString getReturnedFieldsBytes(int index) {
+        return returnedFields_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getAlloydbConnectionConfig());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(2, getAlloydbAiNlConfig());
+        }
+        for (int i = 0; i < returnedFields_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, returnedFields_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, getAlloydbConnectionConfig());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAlloydbAiNlConfig());
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < returnedFields_.size(); i++) {
+            dataSize += computeStringSizeNoTag(returnedFields_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getReturnedFieldsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig)
+                    obj;
+
+        if (hasAlloydbConnectionConfig() != other.hasAlloydbConnectionConfig()) return false;
+        if (hasAlloydbConnectionConfig()) {
+          if (!getAlloydbConnectionConfig().equals(other.getAlloydbConnectionConfig()))
+            return false;
+        }
+        if (hasAlloydbAiNlConfig() != other.hasAlloydbAiNlConfig()) return false;
+        if (hasAlloydbAiNlConfig()) {
+          if (!getAlloydbAiNlConfig().equals(other.getAlloydbAiNlConfig())) return false;
+        }
+        if (!getReturnedFieldsList().equals(other.getReturnedFieldsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasAlloydbConnectionConfig()) {
+          hash = (37 * hash) + ALLOYDB_CONNECTION_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getAlloydbConnectionConfig().hashCode();
+        }
+        if (hasAlloydbAiNlConfig()) {
+          hash = (37 * hash) + ALLOYDB_AI_NL_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getAlloydbAiNlConfig().hashCode();
+        }
+        if (getReturnedFieldsCount() > 0) {
+          hash = (37 * hash) + RETURNED_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getReturnedFieldsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Stores information for connecting to AlloyDB.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig)
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetAlloydbConnectionConfigFieldBuilder();
+            internalGetAlloydbAiNlConfigFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          alloydbConnectionConfig_ = null;
+          if (alloydbConnectionConfigBuilder_ != null) {
+            alloydbConnectionConfigBuilder_.dispose();
+            alloydbConnectionConfigBuilder_ = null;
+          }
+          alloydbAiNlConfig_ = null;
+          if (alloydbAiNlConfigBuilder_ != null) {
+            alloydbAiNlConfigBuilder_.dispose();
+            alloydbAiNlConfigBuilder_ = null;
+          }
+          returnedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_AlloyDbConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.alloydbConnectionConfig_ =
+                alloydbConnectionConfigBuilder_ == null
+                    ? alloydbConnectionConfig_
+                    : alloydbConnectionConfigBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.alloydbAiNlConfig_ =
+                alloydbAiNlConfigBuilder_ == null
+                    ? alloydbAiNlConfig_
+                    : alloydbAiNlConfigBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            returnedFields_.makeImmutable();
+            result.returnedFields_ = returnedFields_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfig.getDefaultInstance()) return this;
+          if (other.hasAlloydbConnectionConfig()) {
+            mergeAlloydbConnectionConfig(other.getAlloydbConnectionConfig());
+          }
+          if (other.hasAlloydbAiNlConfig()) {
+            mergeAlloydbAiNlConfig(other.getAlloydbAiNlConfig());
+          }
+          if (!other.returnedFields_.isEmpty()) {
+            if (returnedFields_.isEmpty()) {
+              returnedFields_ = other.returnedFields_;
+              bitField0_ |= 0x00000004;
+            } else {
+              ensureReturnedFieldsIsMutable();
+              returnedFields_.addAll(other.returnedFields_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetAlloydbConnectionConfigFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetAlloydbAiNlConfigFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureReturnedFieldsIsMutable();
+                    returnedFields_.add(s);
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbConnectionConfig
+            alloydbConnectionConfig_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfigOrBuilder>
+            alloydbConnectionConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the alloydbConnectionConfig field is set.
+         */
+        public boolean hasAlloydbConnectionConfig() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The alloydbConnectionConfig.
+         */
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig
+            getAlloydbConnectionConfig() {
+          if (alloydbConnectionConfigBuilder_ == null) {
+            return alloydbConnectionConfig_ == null
+                ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig.getDefaultInstance()
+                : alloydbConnectionConfig_;
+          } else {
+            return alloydbConnectionConfigBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setAlloydbConnectionConfig(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig
+                value) {
+          if (alloydbConnectionConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            alloydbConnectionConfig_ = value;
+          } else {
+            alloydbConnectionConfigBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setAlloydbConnectionConfig(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig.Builder
+                builderForValue) {
+          if (alloydbConnectionConfigBuilder_ == null) {
+            alloydbConnectionConfig_ = builderForValue.build();
+          } else {
+            alloydbConnectionConfigBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder mergeAlloydbConnectionConfig(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbConnectionConfig
+                value) {
+          if (alloydbConnectionConfigBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && alloydbConnectionConfig_ != null
+                && alloydbConnectionConfig_
+                    != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig.getDefaultInstance()) {
+              getAlloydbConnectionConfigBuilder().mergeFrom(value);
+            } else {
+              alloydbConnectionConfig_ = value;
+            }
+          } else {
+            alloydbConnectionConfigBuilder_.mergeFrom(value);
+          }
+          if (alloydbConnectionConfig_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearAlloydbConnectionConfig() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          alloydbConnectionConfig_ = null;
+          if (alloydbConnectionConfigBuilder_ != null) {
+            alloydbConnectionConfigBuilder_.dispose();
+            alloydbConnectionConfigBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfig.Builder
+            getAlloydbConnectionConfigBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return internalGetAlloydbConnectionConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbConnectionConfigOrBuilder
+            getAlloydbConnectionConfigOrBuilder() {
+          if (alloydbConnectionConfigBuilder_ != null) {
+            return alloydbConnectionConfigBuilder_.getMessageOrBuilder();
+          } else {
+            return alloydbConnectionConfig_ == null
+                ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig.getDefaultInstance()
+                : alloydbConnectionConfig_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Configuration for connecting to AlloyDB.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbConnectionConfig alloydb_connection_config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbConnectionConfigOrBuilder>
+            internalGetAlloydbConnectionConfigFieldBuilder() {
+          if (alloydbConnectionConfigBuilder_ == null) {
+            alloydbConnectionConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig,
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfig.Builder,
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbConnectionConfigOrBuilder>(
+                    getAlloydbConnectionConfig(), getParentForChildren(), isClean());
+            alloydbConnectionConfig_ = null;
+          }
+          return alloydbConnectionConfigBuilder_;
+        }
+
+        private com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig
+            alloydbAiNlConfig_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfigOrBuilder>
+            alloydbAiNlConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the alloydbAiNlConfig field is set.
+         */
+        public boolean hasAlloydbAiNlConfig() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The alloydbAiNlConfig.
+         */
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfig
+            getAlloydbAiNlConfig() {
+          if (alloydbAiNlConfigBuilder_ == null) {
+            return alloydbAiNlConfig_ == null
+                ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.getDefaultInstance()
+                : alloydbAiNlConfig_;
+          } else {
+            return alloydbAiNlConfigBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setAlloydbAiNlConfig(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbAiNaturalLanguageConfig
+                value) {
+          if (alloydbAiNlConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            alloydbAiNlConfig_ = value;
+          } else {
+            alloydbAiNlConfigBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setAlloydbAiNlConfig(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbAiNaturalLanguageConfig.Builder
+                builderForValue) {
+          if (alloydbAiNlConfigBuilder_ == null) {
+            alloydbAiNlConfig_ = builderForValue.build();
+          } else {
+            alloydbAiNlConfigBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeAlloydbAiNlConfig(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                    .AlloyDbAiNaturalLanguageConfig
+                value) {
+          if (alloydbAiNlConfigBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && alloydbAiNlConfig_ != null
+                && alloydbAiNlConfig_
+                    != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.getDefaultInstance()) {
+              getAlloydbAiNlConfigBuilder().mergeFrom(value);
+            } else {
+              alloydbAiNlConfig_ = value;
+            }
+          } else {
+            alloydbAiNlConfigBuilder_.mergeFrom(value);
+          }
+          if (alloydbAiNlConfig_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearAlloydbAiNlConfig() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          alloydbAiNlConfig_ = null;
+          if (alloydbAiNlConfigBuilder_ != null) {
+            alloydbAiNlConfigBuilder_.dispose();
+            alloydbAiNlConfigBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfig.Builder
+            getAlloydbAiNlConfigBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return internalGetAlloydbAiNlConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                .AlloyDbAiNaturalLanguageConfigOrBuilder
+            getAlloydbAiNlConfigOrBuilder() {
+          if (alloydbAiNlConfigBuilder_ != null) {
+            return alloydbAiNlConfigBuilder_.getMessageOrBuilder();
+          } else {
+            return alloydbAiNlConfig_ == null
+                ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.getDefaultInstance()
+                : alloydbAiNlConfig_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for Magic.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig.AlloyDbAiNaturalLanguageConfig alloydb_ai_nl_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.AlloyDbAiNaturalLanguageConfigOrBuilder>
+            internalGetAlloydbAiNlConfigFieldBuilder() {
+          if (alloydbAiNlConfigBuilder_ == null) {
+            alloydbAiNlConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig,
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfig.Builder,
+                    com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig.AlloyDbAiNaturalLanguageConfigOrBuilder>(
+                    getAlloydbAiNlConfig(), getParentForChildren(), isClean());
+            alloydbAiNlConfig_ = null;
+          }
+          return alloydbAiNlConfigBuilder_;
+        }
+
+        private com.google.protobuf.LazyStringArrayList returnedFields_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureReturnedFieldsIsMutable() {
+          if (!returnedFields_.isModifiable()) {
+            returnedFields_ = new com.google.protobuf.LazyStringArrayList(returnedFields_);
+          }
+          bitField0_ |= 0x00000004;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the returnedFields.
+         */
+        public com.google.protobuf.ProtocolStringList getReturnedFieldsList() {
+          returnedFields_.makeImmutable();
+          return returnedFields_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of returnedFields.
+         */
+        public int getReturnedFieldsCount() {
+          return returnedFields_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The returnedFields at the given index.
+         */
+        public java.lang.String getReturnedFields(int index) {
+          return returnedFields_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the returnedFields at the given index.
+         */
+        public com.google.protobuf.ByteString getReturnedFieldsBytes(int index) {
+          return returnedFields_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The returnedFields to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReturnedFields(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnedFieldsIsMutable();
+          returnedFields_.set(index, value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The returnedFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addReturnedFields(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnedFieldsIsMutable();
+          returnedFields_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The returnedFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllReturnedFields(java.lang.Iterable<java.lang.String> values) {
+          ensureReturnedFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, returnedFields_);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReturnedFields() {
+          returnedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to be returned in the search results. If empty, all
+         * fields will be returned.
+         * </pre>
+         *
+         * <code>repeated string returned_fields = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the returnedFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addReturnedFieldsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureReturnedFieldsIsMutable();
+          returnedFields_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AlloyDbConfig> PARSER =
+          new com.google.protobuf.AbstractParser<AlloyDbConfig>() {
+            @java.lang.Override
+            public AlloyDbConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AlloyDbConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AlloyDbConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ThirdPartyOauthConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the application. E.g., "jira", "box", etc.
+       * </pre>
+       *
+       * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The appName.
+       */
+      java.lang.String getAppName();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the application. E.g., "jira", "box", etc.
+       * </pre>
+       *
+       * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for appName.
+       */
+      com.google.protobuf.ByteString getAppNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The instance name identifying the 3P app, e.g.,
+       * "vaissptbots-my". This is different from the instance_uri which is the
+       * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+       * </pre>
+       *
+       * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The instanceName.
+       */
+      java.lang.String getInstanceName();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The instance name identifying the 3P app, e.g.,
+       * "vaissptbots-my". This is different from the instance_uri which is the
+       * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+       * </pre>
+       *
+       * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for instanceName.
+       */
+      com.google.protobuf.ByteString getInstanceNameBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stores information for third party applicationOAuth.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig}
+     */
+    public static final class ThirdPartyOauthConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig)
+        ThirdPartyOauthConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "ThirdPartyOauthConfig");
+      }
+
+      // Use ThirdPartyOauthConfig.newBuilder() to construct.
+      private ThirdPartyOauthConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ThirdPartyOauthConfig() {
+        appName_ = "";
+        instanceName_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig.class,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig.Builder.class);
+      }
+
+      public static final int APP_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object appName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the application. E.g., "jira", "box", etc.
+       * </pre>
+       *
+       * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The appName.
+       */
+      @java.lang.Override
+      public java.lang.String getAppName() {
+        java.lang.Object ref = appName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the application. E.g., "jira", "box", etc.
+       * </pre>
+       *
+       * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for appName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAppNameBytes() {
+        java.lang.Object ref = appName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          appName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INSTANCE_NAME_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object instanceName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The instance name identifying the 3P app, e.g.,
+       * "vaissptbots-my". This is different from the instance_uri which is the
+       * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+       * </pre>
+       *
+       * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The instanceName.
+       */
+      @java.lang.Override
+      public java.lang.String getInstanceName() {
+        java.lang.Object ref = instanceName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The instance name identifying the 3P app, e.g.,
+       * "vaissptbots-my". This is different from the instance_uri which is the
+       * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+       * </pre>
+       *
+       * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for instanceName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getInstanceNameBytes() {
+        java.lang.Object ref = instanceName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          instanceName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, appName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, instanceName_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, appName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, instanceName_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .ThirdPartyOauthConfig)
+                    obj;
+
+        if (!getAppName().equals(other.getAppName())) return false;
+        if (!getInstanceName().equals(other.getInstanceName())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getAppName().hashCode();
+        hash = (37 * hash) + INSTANCE_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getInstanceName().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Stores information for third party applicationOAuth.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig)
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          appName_ = "";
+          instanceName_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_ThirdPartyOauthConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.appName_ = appName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.instanceName_ = instanceName_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .ThirdPartyOauthConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig.getDefaultInstance()) return this;
+          if (!other.getAppName().isEmpty()) {
+            appName_ = other.appName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getInstanceName().isEmpty()) {
+            instanceName_ = other.instanceName_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    appName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    instanceName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object appName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The type of the application. E.g., "jira", "box", etc.
+         * </pre>
+         *
+         * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The appName.
+         */
+        public java.lang.String getAppName() {
+          java.lang.Object ref = appName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            appName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The type of the application. E.g., "jira", "box", etc.
+         * </pre>
+         *
+         * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for appName.
+         */
+        public com.google.protobuf.ByteString getAppNameBytes() {
+          java.lang.Object ref = appName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            appName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The type of the application. E.g., "jira", "box", etc.
+         * </pre>
+         *
+         * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The appName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAppName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          appName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The type of the application. E.g., "jira", "box", etc.
+         * </pre>
+         *
+         * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAppName() {
+          appName_ = getDefaultInstance().getAppName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The type of the application. E.g., "jira", "box", etc.
+         * </pre>
+         *
+         * <code>string app_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for appName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAppNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          appName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object instanceName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The instance name identifying the 3P app, e.g.,
+         * "vaissptbots-my". This is different from the instance_uri which is the
+         * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+         * </pre>
+         *
+         * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The instanceName.
+         */
+        public java.lang.String getInstanceName() {
+          java.lang.Object ref = instanceName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            instanceName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The instance name identifying the 3P app, e.g.,
+         * "vaissptbots-my". This is different from the instance_uri which is the
+         * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+         * </pre>
+         *
+         * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for instanceName.
+         */
+        public com.google.protobuf.ByteString getInstanceNameBytes() {
+          java.lang.Object ref = instanceName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            instanceName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The instance name identifying the 3P app, e.g.,
+         * "vaissptbots-my". This is different from the instance_uri which is the
+         * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+         * </pre>
+         *
+         * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The instanceName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInstanceName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          instanceName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The instance name identifying the 3P app, e.g.,
+         * "vaissptbots-my". This is different from the instance_uri which is the
+         * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+         * </pre>
+         *
+         * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearInstanceName() {
+          instanceName_ = getDefaultInstance().getInstanceName();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The instance name identifying the 3P app, e.g.,
+         * "vaissptbots-my". This is different from the instance_uri which is the
+         * full URL of the 3P app e.g., "https://vaissptbots-my.sharepoint.com".
+         * </pre>
+         *
+         * <code>string instance_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for instanceName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInstanceNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          instanceName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ThirdPartyOauthConfig> PARSER =
+          new com.google.protobuf.AbstractParser<ThirdPartyOauthConfig>() {
+            @java.lang.Override
+            public ThirdPartyOauthConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ThirdPartyOauthConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ThirdPartyOauthConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface NotebooklmConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Search config name.
+       *
+       * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+       * </pre>
+       *
+       * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The searchConfig.
+       */
+      java.lang.String getSearchConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Search config name.
+       *
+       * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+       * </pre>
+       *
+       * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for searchConfig.
+       */
+      com.google.protobuf.ByteString getSearchConfigBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Config for connecting to NotebookLM Enterprise.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig}
+     */
+    public static final class NotebooklmConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig)
+        NotebooklmConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "NotebooklmConfig");
+      }
+
+      // Use NotebooklmConfig.newBuilder() to construct.
+      private NotebooklmConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private NotebooklmConfig() {
+        searchConfig_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_NotebooklmConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_NotebooklmConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig.class,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig.Builder.class);
+      }
+
+      public static final int SEARCH_CONFIG_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object searchConfig_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Search config name.
+       *
+       * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+       * </pre>
+       *
+       * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The searchConfig.
+       */
+      @java.lang.Override
+      public java.lang.String getSearchConfig() {
+        java.lang.Object ref = searchConfig_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          searchConfig_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Search config name.
+       *
+       * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+       * </pre>
+       *
+       * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for searchConfig.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSearchConfigBytes() {
+        java.lang.Object ref = searchConfig_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          searchConfig_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(searchConfig_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, searchConfig_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(searchConfig_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, searchConfig_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .NotebooklmConfig)
+                    obj;
+
+        if (!getSearchConfig().equals(other.getSearchConfig())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SEARCH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchConfig().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Config for connecting to NotebookLM Enterprise.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig)
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_NotebooklmConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_NotebooklmConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          searchConfig_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+              .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_NotebooklmConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.searchConfig_ = searchConfig_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .NotebooklmConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfig.getDefaultInstance()) return this;
+          if (!other.getSearchConfig().isEmpty()) {
+            searchConfig_ = other.searchConfig_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    searchConfig_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object searchConfig_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Search config name.
+         *
+         * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+         * </pre>
+         *
+         * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The searchConfig.
+         */
+        public java.lang.String getSearchConfig() {
+          java.lang.Object ref = searchConfig_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            searchConfig_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Search config name.
+         *
+         * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+         * </pre>
+         *
+         * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for searchConfig.
+         */
+        public com.google.protobuf.ByteString getSearchConfigBytes() {
+          java.lang.Object ref = searchConfig_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            searchConfig_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Search config name.
+         *
+         * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+         * </pre>
+         *
+         * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The searchConfig to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSearchConfig(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          searchConfig_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Search config name.
+         *
+         * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+         * </pre>
+         *
+         * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSearchConfig() {
+          searchConfig_ = getDefaultInstance().getSearchConfig();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Search config name.
+         *
+         * Format: projects/&#42;&#47;locations/global/notebookLmSearchConfigs/&#42;
+         * </pre>
+         *
+         * <code>string search_config = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for searchConfig to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSearchConfigBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          searchConfig_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<NotebooklmConfig> PARSER =
+          new com.google.protobuf.AbstractParser<NotebooklmConfig>() {
+            @java.lang.Override
+            public NotebooklmConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<NotebooklmConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<NotebooklmConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int dataSourceConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object dataSourceConfig_;
+
+    public enum DataSourceConfigCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      ALLOY_DB_CONFIG(1),
+      THIRD_PARTY_OAUTH_CONFIG(2),
+      NOTEBOOKLM_CONFIG(3),
+      DATASOURCECONFIG_NOT_SET(0);
+      private final int value;
+
+      private DataSourceConfigCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataSourceConfigCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataSourceConfigCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return ALLOY_DB_CONFIG;
+          case 2:
+            return THIRD_PARTY_OAUTH_CONFIG;
+          case 3:
+            return NOTEBOOKLM_CONFIG;
+          case 0:
+            return DATASOURCECONFIG_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataSourceConfigCase getDataSourceConfigCase() {
+      return DataSourceConfigCase.forNumber(dataSourceConfigCase_);
+    }
+
+    public static final int ALLOY_DB_CONFIG_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+     * </code>
+     *
+     * @return Whether the alloyDbConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlloyDbConfig() {
+      return dataSourceConfigCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+     * </code>
+     *
+     * @return The alloyDbConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+        getAlloyDbConfig() {
+      if (dataSourceConfigCase_ == 1) {
+        return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig)
+            dataSourceConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .AlloyDbConfigOrBuilder
+        getAlloyDbConfigOrBuilder() {
+      if (dataSourceConfigCase_ == 1) {
+        return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .AlloyDbConfig)
+            dataSourceConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+          .getDefaultInstance();
+    }
+
+    public static final int THIRD_PARTY_OAUTH_CONFIG_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Third Party OAuth config. If set, this DataStore is connected to a
+     * third party application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+     * </code>
+     *
+     * @return Whether the thirdPartyOauthConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasThirdPartyOauthConfig() {
+      return dataSourceConfigCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Third Party OAuth config. If set, this DataStore is connected to a
+     * third party application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+     * </code>
+     *
+     * @return The thirdPartyOauthConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .ThirdPartyOauthConfig
+        getThirdPartyOauthConfig() {
+      if (dataSourceConfigCase_ == 2) {
+        return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig)
+            dataSourceConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+          .ThirdPartyOauthConfig.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Third Party OAuth config. If set, this DataStore is connected to a
+     * third party application.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .ThirdPartyOauthConfigOrBuilder
+        getThirdPartyOauthConfigOrBuilder() {
+      if (dataSourceConfigCase_ == 2) {
+        return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .ThirdPartyOauthConfig)
+            dataSourceConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+          .ThirdPartyOauthConfig.getDefaultInstance();
+    }
+
+    public static final int NOTEBOOKLM_CONFIG_FIELD_NUMBER = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * NotebookLM config. If set, this DataStore is connected to
+     * NotebookLM Enterprise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+     * </code>
+     *
+     * @return Whether the notebooklmConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotebooklmConfig() {
+      return dataSourceConfigCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NotebookLM config. If set, this DataStore is connected to
+     * NotebookLM Enterprise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+     * </code>
+     *
+     * @return The notebooklmConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+        getNotebooklmConfig() {
+      if (dataSourceConfigCase_ == 3) {
+        return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig)
+            dataSourceConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+          .NotebooklmConfig.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NotebookLM config. If set, this DataStore is connected to
+     * NotebookLM Enterprise.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .NotebooklmConfigOrBuilder
+        getNotebooklmConfigOrBuilder() {
+      if (dataSourceConfigCase_ == 3) {
+        return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .NotebooklmConfig)
+            dataSourceConfig_;
+      }
+      return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+          .NotebooklmConfig.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (dataSourceConfigCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig)
+                dataSourceConfig_);
+      }
+      if (dataSourceConfigCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig)
+                dataSourceConfig_);
+      }
+      if (dataSourceConfigCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig)
+                dataSourceConfig_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dataSourceConfigCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .AlloyDbConfig)
+                    dataSourceConfig_);
+      }
+      if (dataSourceConfigCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .ThirdPartyOauthConfig)
+                    dataSourceConfig_);
+      }
+      if (dataSourceConfigCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                        .NotebooklmConfig)
+                    dataSourceConfig_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig other =
+          (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig) obj;
+
+      if (!getDataSourceConfigCase().equals(other.getDataSourceConfigCase())) return false;
+      switch (dataSourceConfigCase_) {
+        case 1:
+          if (!getAlloyDbConfig().equals(other.getAlloyDbConfig())) return false;
+          break;
+        case 2:
+          if (!getThirdPartyOauthConfig().equals(other.getThirdPartyOauthConfig())) return false;
+          break;
+        case 3:
+          if (!getNotebooklmConfig().equals(other.getNotebooklmConfig())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (dataSourceConfigCase_) {
+        case 1:
+          hash = (37 * hash) + ALLOY_DB_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getAlloyDbConfig().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + THIRD_PARTY_OAUTH_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getThirdPartyOauthConfig().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + NOTEBOOKLM_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getNotebooklmConfig().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stores information for federated search.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig)
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.class,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (alloyDbConfigBuilder_ != null) {
+          alloyDbConfigBuilder_.clear();
+        }
+        if (thirdPartyOauthConfigBuilder_ != null) {
+          thirdPartyOauthConfigBuilder_.clear();
+        }
+        if (notebooklmConfigBuilder_ != null) {
+          notebooklmConfigBuilder_.clear();
+        }
+        dataSourceConfigCase_ = 0;
+        dataSourceConfig_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.DataStoreProto
+            .internal_static_google_cloud_discoveryengine_v1beta_DataStore_FederatedSearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig build() {
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig result =
+            new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig result) {
+        result.dataSourceConfigCase_ = dataSourceConfigCase_;
+        result.dataSourceConfig_ = this.dataSourceConfig_;
+        if (dataSourceConfigCase_ == 1 && alloyDbConfigBuilder_ != null) {
+          result.dataSourceConfig_ = alloyDbConfigBuilder_.build();
+        }
+        if (dataSourceConfigCase_ == 2 && thirdPartyOauthConfigBuilder_ != null) {
+          result.dataSourceConfig_ = thirdPartyOauthConfigBuilder_.build();
+        }
+        if (dataSourceConfigCase_ == 3 && notebooklmConfigBuilder_ != null) {
+          result.dataSourceConfig_ = notebooklmConfigBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .getDefaultInstance()) return this;
+        switch (other.getDataSourceConfigCase()) {
+          case ALLOY_DB_CONFIG:
+            {
+              mergeAlloyDbConfig(other.getAlloyDbConfig());
+              break;
+            }
+          case THIRD_PARTY_OAUTH_CONFIG:
+            {
+              mergeThirdPartyOauthConfig(other.getThirdPartyOauthConfig());
+              break;
+            }
+          case NOTEBOOKLM_CONFIG:
+            {
+              mergeNotebooklmConfig(other.getNotebooklmConfig());
+              break;
+            }
+          case DATASOURCECONFIG_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetAlloyDbConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  dataSourceConfigCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetThirdPartyOauthConfigFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  dataSourceConfigCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetNotebooklmConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  dataSourceConfigCase_ = 3;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int dataSourceConfigCase_ = 0;
+      private java.lang.Object dataSourceConfig_;
+
+      public DataSourceConfigCase getDataSourceConfigCase() {
+        return DataSourceConfigCase.forNumber(dataSourceConfigCase_);
+      }
+
+      public Builder clearDataSourceConfig() {
+        dataSourceConfigCase_ = 0;
+        dataSourceConfig_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfigOrBuilder>
+          alloyDbConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       *
+       * @return Whether the alloyDbConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasAlloyDbConfig() {
+        return dataSourceConfigCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       *
+       * @return The alloyDbConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+          getAlloyDbConfig() {
+        if (alloyDbConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 1) {
+            return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig)
+                dataSourceConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig.getDefaultInstance();
+        } else {
+          if (dataSourceConfigCase_ == 1) {
+            return alloyDbConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      public Builder setAlloyDbConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              value) {
+        if (alloyDbConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSourceConfig_ = value;
+          onChanged();
+        } else {
+          alloyDbConfigBuilder_.setMessage(value);
+        }
+        dataSourceConfigCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      public Builder setAlloyDbConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .Builder
+              builderForValue) {
+        if (alloyDbConfigBuilder_ == null) {
+          dataSourceConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          alloyDbConfigBuilder_.setMessage(builderForValue.build());
+        }
+        dataSourceConfigCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      public Builder mergeAlloyDbConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              value) {
+        if (alloyDbConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 1
+              && dataSourceConfig_
+                  != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.getDefaultInstance()) {
+            dataSourceConfig_ =
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.newBuilder(
+                        (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                                .AlloyDbConfig)
+                            dataSourceConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            dataSourceConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataSourceConfigCase_ == 1) {
+            alloyDbConfigBuilder_.mergeFrom(value);
+          } else {
+            alloyDbConfigBuilder_.setMessage(value);
+          }
+        }
+        dataSourceConfigCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      public Builder clearAlloyDbConfig() {
+        if (alloyDbConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 1) {
+            dataSourceConfigCase_ = 0;
+            dataSourceConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataSourceConfigCase_ == 1) {
+            dataSourceConfigCase_ = 0;
+            dataSourceConfig_ = null;
+          }
+          alloyDbConfigBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+              .Builder
+          getAlloyDbConfigBuilder() {
+        return internalGetAlloyDbConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfigOrBuilder
+          getAlloyDbConfigOrBuilder() {
+        if ((dataSourceConfigCase_ == 1) && (alloyDbConfigBuilder_ != null)) {
+          return alloyDbConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataSourceConfigCase_ == 1) {
+            return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig)
+                dataSourceConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .AlloyDbConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AlloyDB config. If set, this DataStore is connected to AlloyDB.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig alloy_db_config = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.AlloyDbConfig
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .AlloyDbConfigOrBuilder>
+          internalGetAlloyDbConfigFieldBuilder() {
+        if (alloyDbConfigBuilder_ == null) {
+          if (!(dataSourceConfigCase_ == 1)) {
+            dataSourceConfig_ =
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .AlloyDbConfig.getDefaultInstance();
+          }
+          alloyDbConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfig.Builder,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .AlloyDbConfigOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .AlloyDbConfig)
+                      dataSourceConfig_,
+                  getParentForChildren(),
+                  isClean());
+          dataSourceConfig_ = null;
+        }
+        dataSourceConfigCase_ = 1;
+        onChanged();
+        return alloyDbConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfigOrBuilder>
+          thirdPartyOauthConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       *
+       * @return Whether the thirdPartyOauthConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasThirdPartyOauthConfig() {
+        return dataSourceConfigCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       *
+       * @return The thirdPartyOauthConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig
+          getThirdPartyOauthConfig() {
+        if (thirdPartyOauthConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 2) {
+            return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig)
+                dataSourceConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig.getDefaultInstance();
+        } else {
+          if (dataSourceConfigCase_ == 2) {
+            return thirdPartyOauthConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      public Builder setThirdPartyOauthConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig
+              value) {
+        if (thirdPartyOauthConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSourceConfig_ = value;
+          onChanged();
+        } else {
+          thirdPartyOauthConfigBuilder_.setMessage(value);
+        }
+        dataSourceConfigCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      public Builder setThirdPartyOauthConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig.Builder
+              builderForValue) {
+        if (thirdPartyOauthConfigBuilder_ == null) {
+          dataSourceConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          thirdPartyOauthConfigBuilder_.setMessage(builderForValue.build());
+        }
+        dataSourceConfigCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      public Builder mergeThirdPartyOauthConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig
+              value) {
+        if (thirdPartyOauthConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 2
+              && dataSourceConfig_
+                  != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfig.getDefaultInstance()) {
+            dataSourceConfig_ =
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig.newBuilder(
+                        (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                                .ThirdPartyOauthConfig)
+                            dataSourceConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            dataSourceConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataSourceConfigCase_ == 2) {
+            thirdPartyOauthConfigBuilder_.mergeFrom(value);
+          } else {
+            thirdPartyOauthConfigBuilder_.setMessage(value);
+          }
+        }
+        dataSourceConfigCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      public Builder clearThirdPartyOauthConfig() {
+        if (thirdPartyOauthConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 2) {
+            dataSourceConfigCase_ = 0;
+            dataSourceConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataSourceConfigCase_ == 2) {
+            dataSourceConfigCase_ = 0;
+            dataSourceConfig_ = null;
+          }
+          thirdPartyOauthConfigBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig.Builder
+          getThirdPartyOauthConfigBuilder() {
+        return internalGetThirdPartyOauthConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfigOrBuilder
+          getThirdPartyOauthConfigOrBuilder() {
+        if ((dataSourceConfigCase_ == 2) && (thirdPartyOauthConfigBuilder_ != null)) {
+          return thirdPartyOauthConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataSourceConfigCase_ == 2) {
+            return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig)
+                dataSourceConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .ThirdPartyOauthConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Third Party OAuth config. If set, this DataStore is connected to a
+       * third party application.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.ThirdPartyOauthConfig third_party_oauth_config = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .ThirdPartyOauthConfigOrBuilder>
+          internalGetThirdPartyOauthConfigFieldBuilder() {
+        if (thirdPartyOauthConfigBuilder_ == null) {
+          if (!(dataSourceConfigCase_ == 2)) {
+            dataSourceConfig_ =
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .ThirdPartyOauthConfig.getDefaultInstance();
+          }
+          thirdPartyOauthConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfig,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfig.Builder,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .ThirdPartyOauthConfigOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .ThirdPartyOauthConfig)
+                      dataSourceConfig_,
+                  getParentForChildren(),
+                  isClean());
+          dataSourceConfig_ = null;
+        }
+        dataSourceConfigCase_ = 2;
+        onChanged();
+        return thirdPartyOauthConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfig,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfigOrBuilder>
+          notebooklmConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       *
+       * @return Whether the notebooklmConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasNotebooklmConfig() {
+        return dataSourceConfigCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       *
+       * @return The notebooklmConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig
+          getNotebooklmConfig() {
+        if (notebooklmConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig)
+                dataSourceConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig.getDefaultInstance();
+        } else {
+          if (dataSourceConfigCase_ == 3) {
+            return notebooklmConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      public Builder setNotebooklmConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+              value) {
+        if (notebooklmConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSourceConfig_ = value;
+          onChanged();
+        } else {
+          notebooklmConfigBuilder_.setMessage(value);
+        }
+        dataSourceConfigCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      public Builder setNotebooklmConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+                  .Builder
+              builderForValue) {
+        if (notebooklmConfigBuilder_ == null) {
+          dataSourceConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          notebooklmConfigBuilder_.setMessage(builderForValue.build());
+        }
+        dataSourceConfigCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      public Builder mergeNotebooklmConfig(
+          com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig
+              value) {
+        if (notebooklmConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 3
+              && dataSourceConfig_
+                  != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfig.getDefaultInstance()) {
+            dataSourceConfig_ =
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig.newBuilder(
+                        (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                                .NotebooklmConfig)
+                            dataSourceConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            dataSourceConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataSourceConfigCase_ == 3) {
+            notebooklmConfigBuilder_.mergeFrom(value);
+          } else {
+            notebooklmConfigBuilder_.setMessage(value);
+          }
+        }
+        dataSourceConfigCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      public Builder clearNotebooklmConfig() {
+        if (notebooklmConfigBuilder_ == null) {
+          if (dataSourceConfigCase_ == 3) {
+            dataSourceConfigCase_ = 0;
+            dataSourceConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataSourceConfigCase_ == 3) {
+            dataSourceConfigCase_ = 0;
+            dataSourceConfig_ = null;
+          }
+          notebooklmConfigBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig.Builder
+          getNotebooklmConfigBuilder() {
+        return internalGetNotebooklmConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfigOrBuilder
+          getNotebooklmConfigOrBuilder() {
+        if ((dataSourceConfigCase_ == 3) && (notebooklmConfigBuilder_ != null)) {
+          return notebooklmConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataSourceConfigCase_ == 3) {
+            return (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig)
+                dataSourceConfig_;
+          }
+          return com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+              .NotebooklmConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * NotebookLM config. If set, this DataStore is connected to
+       * NotebookLM Enterprise.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.NotebooklmConfig notebooklm_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfig,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                  .NotebooklmConfigOrBuilder>
+          internalGetNotebooklmConfigFieldBuilder() {
+        if (notebooklmConfigBuilder_ == null) {
+          if (!(dataSourceConfigCase_ == 3)) {
+            dataSourceConfig_ =
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .NotebooklmConfig.getDefaultInstance();
+          }
+          notebooklmConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfig,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfig.Builder,
+                  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                      .NotebooklmConfigOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                          .NotebooklmConfig)
+                      dataSourceConfig_,
+                  getParentForChildren(),
+                  isClean());
+          dataSourceConfig_ = null;
+        }
+        dataSourceConfigCase_ = 3;
+        onChanged();
+        return notebooklmConfigBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig)
+    private static final com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FederatedSearchConfig> PARSER =
+        new com.google.protobuf.AbstractParser<FederatedSearchConfig>() {
+          @java.lang.Override
+          public FederatedSearchConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FederatedSearchConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FederatedSearchConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -2561,7 +10384,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. The full resource name of the data store.
+   * Immutable. Identifier. The full resource name of the data store.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
    *
@@ -2569,7 +10392,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -2590,7 +10415,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. The full resource name of the data store.
+   * Immutable. Identifier. The full resource name of the data store.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
    *
@@ -2598,7 +10423,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -2858,7 +10685,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+   * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
    * data store.
    * </pre>
    *
@@ -2884,7 +10711,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+   * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
    * data store.
    * </pre>
    *
@@ -3007,6 +10834,68 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int ADVANCED_SITE_SEARCH_CONFIG_FIELD_NUMBER = 12;
+  private com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig
+      advancedSiteSearchConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advancedSiteSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedSiteSearchConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The advancedSiteSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig
+      getAdvancedSiteSearchConfig() {
+    return advancedSiteSearchConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.getDefaultInstance()
+        : advancedSiteSearchConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfigOrBuilder
+      getAdvancedSiteSearchConfigOrBuilder() {
+    return advancedSiteSearchConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.getDefaultInstance()
+        : advancedSiteSearchConfig_;
+  }
+
   public static final int LANGUAGE_INFO_FIELD_NUMBER = 14;
   private com.google.cloud.discoveryengine.v1beta.LanguageInfo languageInfo_;
 
@@ -3023,7 +10912,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLanguageInfo() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -3079,7 +10968,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNaturalLanguageQueryUnderstandingConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -3124,6 +11013,132 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         : naturalLanguageQueryUnderstandingConfig_;
   }
 
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 32;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The KMS key to be used to protect this DataStore at creation
+   * time.
+   *
+   * Must be set for requests that need to comply with CMEK Org Policy
+   * protections.
+   *
+   * If this field is set and processed successfully, the DataStore will be
+   * protected by the KMS key, as indicated in the cmek_config field.
+   * </pre>
+   *
+   * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The KMS key to be used to protect this DataStore at creation
+   * time.
+   *
+   * Must be set for requests that need to comply with CMEK Org Policy
+   * protections.
+   *
+   * If this field is set and processed successfully, the DataStore will be
+   * protected by the KMS key, as indicated in the cmek_config field.
+   * </pre>
+   *
+   * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CMEK_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.discoveryengine.v1beta.CmekConfig cmekConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cmekConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCmekConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cmekConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CmekConfig getCmekConfig() {
+    return cmekConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+        : cmekConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder getCmekConfigOrBuilder() {
+    return cmekConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+        : cmekConfig_;
+  }
+
   public static final int BILLING_ESTIMATION_FIELD_NUMBER = 23;
   private com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation billingEstimation_;
 
@@ -3142,7 +11157,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBillingEstimation() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -3185,6 +11200,41 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         : billingEstimation_;
   }
 
+  public static final int ACL_ENABLED_FIELD_NUMBER = 24;
+  private boolean aclEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether data in the
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] has ACL
+   * information. If set to `true`, the source data must have ACL. ACL will be
+   * ingested when data is ingested by
+   * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ImportDocuments]
+   * methods.
+   *
+   * When ACL is enabled for the
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore],
+   * [Document][google.cloud.discoveryengine.v1beta.Document] can't be accessed
+   * by calling
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+   *
+   * Currently ACL is only supported in `GENERIC` industry vertical with
+   * non-`PUBLIC_WEBSITE` content config.
+   * </pre>
+   *
+   * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The aclEnabled.
+   */
+  @java.lang.Override
+  public boolean getAclEnabled() {
+    return aclEnabled_;
+  }
+
   public static final int WORKSPACE_CONFIG_FIELD_NUMBER = 25;
   private com.google.cloud.discoveryengine.v1beta.WorkspaceConfig workspaceConfig_;
 
@@ -3205,7 +11255,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasWorkspaceConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -3270,7 +11320,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -3325,9 +11375,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    * provisioning it. If unset, a default vertical specialized schema will be
    * used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
    * API instead.
@@ -3343,7 +11396,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -3355,9 +11408,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    * provisioning it. If unset, a default vertical specialized schema will be
    * used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
    * API instead.
@@ -3387,9 +11443,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    * provisioning it. If unset, a default vertical specialized schema will be
    * used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
    * API instead.
@@ -3406,6 +11465,66 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     return startingSchema_ == null
         ? com.google.cloud.discoveryengine.v1beta.Schema.getDefaultInstance()
         : startingSchema_;
+  }
+
+  public static final int HEALTHCARE_FHIR_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcareFhirConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the healthcareFhirConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasHealthcareFhirConfig() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The healthcareFhirConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig getHealthcareFhirConfig() {
+    return healthcareFhirConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.getDefaultInstance()
+        : healthcareFhirConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfigOrBuilder
+      getHealthcareFhirConfigOrBuilder() {
+    return healthcareFhirConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.getDefaultInstance()
+        : healthcareFhirConfig_;
   }
 
   public static final int SERVING_CONFIG_DATA_STORE_FIELD_NUMBER = 30;
@@ -3427,7 +11546,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServingConfigDataStore() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -3470,6 +11589,262 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore
             .getDefaultInstance()
         : servingConfigDataStore_;
+  }
+
+  public static final int IDENTITY_MAPPING_STORE_FIELD_NUMBER = 31;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityMappingStore_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The fully qualified resource name of the associated
+   * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+   * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+   * `GSUITE` IdP. Format:
+   * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+   * </pre>
+   *
+   * <code>
+   * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The identityMappingStore.
+   */
+  @java.lang.Override
+  public java.lang.String getIdentityMappingStore() {
+    java.lang.Object ref = identityMappingStore_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      identityMappingStore_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The fully qualified resource name of the associated
+   * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+   * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+   * `GSUITE` IdP. Format:
+   * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+   * </pre>
+   *
+   * <code>
+   * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for identityMappingStore.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdentityMappingStoreBytes() {
+    java.lang.Object ref = identityMappingStore_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      identityMappingStore_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IS_INFOBOT_FAQ_DATA_STORE_FIELD_NUMBER = 37;
+  private boolean isInfobotFaqDataStore_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is an Infobot FAQ DataStore.
+   * </pre>
+   *
+   * <code>bool is_infobot_faq_data_store = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isInfobotFaqDataStore.
+   */
+  @java.lang.Override
+  public boolean getIsInfobotFaqDataStore() {
+    return isInfobotFaqDataStore_;
+  }
+
+  public static final int FEDERATED_SEARCH_CONFIG_FIELD_NUMBER = 38;
+  private com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+      federatedSearchConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the federatedSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasFederatedSearchConfig() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The federatedSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+      getFederatedSearchConfig() {
+    return federatedSearchConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .getDefaultInstance()
+        : federatedSearchConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder
+      getFederatedSearchConfigOrBuilder() {
+    return federatedSearchConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+            .getDefaultInstance()
+        : federatedSearchConfig_;
+  }
+
+  public static final int CONFIGURABLE_BILLING_APPROACH_FIELD_NUMBER = 45;
+  private int configurableBillingApproach_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach. See
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for configurableBillingApproach.
+   */
+  @java.lang.Override
+  public int getConfigurableBillingApproachValue() {
+    return configurableBillingApproach_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach. See
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configurableBillingApproach.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach
+      getConfigurableBillingApproach() {
+    com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach result =
+        com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach.forNumber(
+            configurableBillingApproach_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CONFIGURABLE_BILLING_APPROACH_UPDATE_TIME_FIELD_NUMBER = 46;
+  private com.google.protobuf.Timestamp configurableBillingApproachUpdateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the configurableBillingApproachUpdateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfigurableBillingApproachUpdateTime() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The configurableBillingApproachUpdateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getConfigurableBillingApproachUpdateTime() {
+    return configurableBillingApproachUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : configurableBillingApproachUpdateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder
+      getConfigurableBillingApproachUpdateTimeOrBuilder() {
+    return configurableBillingApproachUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : configurableBillingApproachUpdateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3518,25 +11893,58 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(14, getLanguageInfo());
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(23, getBillingEstimation());
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(25, getWorkspaceConfig());
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeMessage(27, getDocumentProcessingConfig());
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(28, getStartingSchema());
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeMessage(30, getServingConfigDataStore());
+      output.writeMessage(12, getAdvancedSiteSearchConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(14, getLanguageInfo());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(18, getCmekConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(23, getBillingEstimation());
+    }
+    if (aclEnabled_ != false) {
+      output.writeBool(24, aclEnabled_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(28, getStartingSchema());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(29, getHealthcareFhirConfig());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(30, getServingConfigDataStore());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(identityMappingStore_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 31, identityMappingStore_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 32, kmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(34, getNaturalLanguageQueryUnderstandingConfig());
+    }
+    if (isInfobotFaqDataStore_ != false) {
+      output.writeBool(37, isInfobotFaqDataStore_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(38, getFederatedSearchConfig());
+    }
+    if (configurableBillingApproach_
+        != com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach
+            .CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(45, configurableBillingApproach_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(46, getConfigurableBillingApproachUpdateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3584,30 +11992,70 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, getAdvancedSiteSearchConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLanguageInfo());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
-    }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getCmekConfig());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
+    }
+    if (aclEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, aclEnabled_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(29, getHealthcareFhirConfig());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(30, getServingConfigDataStore());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(identityMappingStore_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(31, identityMappingStore_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(32, kmsKeyName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               34, getNaturalLanguageQueryUnderstandingConfig());
+    }
+    if (isInfobotFaqDataStore_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(37, isInfobotFaqDataStore_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(38, getFederatedSearchConfig());
+    }
+    if (configurableBillingApproach_
+        != com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach
+            .CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(45, configurableBillingApproach_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              46, getConfigurableBillingApproachUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3635,6 +12083,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasAdvancedSiteSearchConfig() != other.hasAdvancedSiteSearchConfig()) return false;
+    if (hasAdvancedSiteSearchConfig()) {
+      if (!getAdvancedSiteSearchConfig().equals(other.getAdvancedSiteSearchConfig())) return false;
+    }
     if (hasLanguageInfo() != other.hasLanguageInfo()) return false;
     if (hasLanguageInfo()) {
       if (!getLanguageInfo().equals(other.getLanguageInfo())) return false;
@@ -3645,10 +12097,16 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       if (!getNaturalLanguageQueryUnderstandingConfig()
           .equals(other.getNaturalLanguageQueryUnderstandingConfig())) return false;
     }
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (hasCmekConfig() != other.hasCmekConfig()) return false;
+    if (hasCmekConfig()) {
+      if (!getCmekConfig().equals(other.getCmekConfig())) return false;
+    }
     if (hasBillingEstimation() != other.hasBillingEstimation()) return false;
     if (hasBillingEstimation()) {
       if (!getBillingEstimation().equals(other.getBillingEstimation())) return false;
     }
+    if (getAclEnabled() != other.getAclEnabled()) return false;
     if (hasWorkspaceConfig() != other.hasWorkspaceConfig()) return false;
     if (hasWorkspaceConfig()) {
       if (!getWorkspaceConfig().equals(other.getWorkspaceConfig())) return false;
@@ -3661,9 +12119,26 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     if (hasStartingSchema()) {
       if (!getStartingSchema().equals(other.getStartingSchema())) return false;
     }
+    if (hasHealthcareFhirConfig() != other.hasHealthcareFhirConfig()) return false;
+    if (hasHealthcareFhirConfig()) {
+      if (!getHealthcareFhirConfig().equals(other.getHealthcareFhirConfig())) return false;
+    }
     if (hasServingConfigDataStore() != other.hasServingConfigDataStore()) return false;
     if (hasServingConfigDataStore()) {
       if (!getServingConfigDataStore().equals(other.getServingConfigDataStore())) return false;
+    }
+    if (!getIdentityMappingStore().equals(other.getIdentityMappingStore())) return false;
+    if (getIsInfobotFaqDataStore() != other.getIsInfobotFaqDataStore()) return false;
+    if (hasFederatedSearchConfig() != other.hasFederatedSearchConfig()) return false;
+    if (hasFederatedSearchConfig()) {
+      if (!getFederatedSearchConfig().equals(other.getFederatedSearchConfig())) return false;
+    }
+    if (configurableBillingApproach_ != other.configurableBillingApproach_) return false;
+    if (hasConfigurableBillingApproachUpdateTime()
+        != other.hasConfigurableBillingApproachUpdateTime()) return false;
+    if (hasConfigurableBillingApproachUpdateTime()) {
+      if (!getConfigurableBillingApproachUpdateTime()
+          .equals(other.getConfigurableBillingApproachUpdateTime())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3694,6 +12169,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    if (hasAdvancedSiteSearchConfig()) {
+      hash = (37 * hash) + ADVANCED_SITE_SEARCH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedSiteSearchConfig().hashCode();
+    }
     if (hasLanguageInfo()) {
       hash = (37 * hash) + LANGUAGE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getLanguageInfo().hashCode();
@@ -3702,10 +12181,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + NATURAL_LANGUAGE_QUERY_UNDERSTANDING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNaturalLanguageQueryUnderstandingConfig().hashCode();
     }
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    if (hasCmekConfig()) {
+      hash = (37 * hash) + CMEK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCmekConfig().hashCode();
+    }
     if (hasBillingEstimation()) {
       hash = (37 * hash) + BILLING_ESTIMATION_FIELD_NUMBER;
       hash = (53 * hash) + getBillingEstimation().hashCode();
     }
+    hash = (37 * hash) + ACL_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAclEnabled());
     if (hasWorkspaceConfig()) {
       hash = (37 * hash) + WORKSPACE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkspaceConfig().hashCode();
@@ -3718,9 +12205,27 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + STARTING_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getStartingSchema().hashCode();
     }
+    if (hasHealthcareFhirConfig()) {
+      hash = (37 * hash) + HEALTHCARE_FHIR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getHealthcareFhirConfig().hashCode();
+    }
     if (hasServingConfigDataStore()) {
       hash = (37 * hash) + SERVING_CONFIG_DATA_STORE_FIELD_NUMBER;
       hash = (53 * hash) + getServingConfigDataStore().hashCode();
+    }
+    hash = (37 * hash) + IDENTITY_MAPPING_STORE_FIELD_NUMBER;
+    hash = (53 * hash) + getIdentityMappingStore().hashCode();
+    hash = (37 * hash) + IS_INFOBOT_FAQ_DATA_STORE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsInfobotFaqDataStore());
+    if (hasFederatedSearchConfig()) {
+      hash = (37 * hash) + FEDERATED_SEARCH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getFederatedSearchConfig().hashCode();
+    }
+    hash = (37 * hash) + CONFIGURABLE_BILLING_APPROACH_FIELD_NUMBER;
+    hash = (53 * hash) + configurableBillingApproach_;
+    if (hasConfigurableBillingApproachUpdateTime()) {
+      hash = (37 * hash) + CONFIGURABLE_BILLING_APPROACH_UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigurableBillingApproachUpdateTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3864,13 +12369,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
+        internalGetAdvancedSiteSearchConfigFieldBuilder();
         internalGetLanguageInfoFieldBuilder();
         internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder();
+        internalGetCmekConfigFieldBuilder();
         internalGetBillingEstimationFieldBuilder();
         internalGetWorkspaceConfigFieldBuilder();
         internalGetDocumentProcessingConfigFieldBuilder();
         internalGetStartingSchemaFieldBuilder();
+        internalGetHealthcareFhirConfigFieldBuilder();
         internalGetServingConfigDataStoreFieldBuilder();
+        internalGetFederatedSearchConfigFieldBuilder();
+        internalGetConfigurableBillingApproachUpdateTimeFieldBuilder();
       }
     }
 
@@ -3889,6 +12399,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      advancedSiteSearchConfig_ = null;
+      if (advancedSiteSearchConfigBuilder_ != null) {
+        advancedSiteSearchConfigBuilder_.dispose();
+        advancedSiteSearchConfigBuilder_ = null;
+      }
       languageInfo_ = null;
       if (languageInfoBuilder_ != null) {
         languageInfoBuilder_.dispose();
@@ -3899,11 +12414,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         naturalLanguageQueryUnderstandingConfigBuilder_.dispose();
         naturalLanguageQueryUnderstandingConfigBuilder_ = null;
       }
+      kmsKeyName_ = "";
+      cmekConfig_ = null;
+      if (cmekConfigBuilder_ != null) {
+        cmekConfigBuilder_.dispose();
+        cmekConfigBuilder_ = null;
+      }
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
         billingEstimationBuilder_.dispose();
         billingEstimationBuilder_ = null;
       }
+      aclEnabled_ = false;
       workspaceConfig_ = null;
       if (workspaceConfigBuilder_ != null) {
         workspaceConfigBuilder_.dispose();
@@ -3919,10 +12441,28 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         startingSchemaBuilder_.dispose();
         startingSchemaBuilder_ = null;
       }
+      healthcareFhirConfig_ = null;
+      if (healthcareFhirConfigBuilder_ != null) {
+        healthcareFhirConfigBuilder_.dispose();
+        healthcareFhirConfigBuilder_ = null;
+      }
       servingConfigDataStore_ = null;
       if (servingConfigDataStoreBuilder_ != null) {
         servingConfigDataStoreBuilder_.dispose();
         servingConfigDataStoreBuilder_ = null;
+      }
+      identityMappingStore_ = "";
+      isInfobotFaqDataStore_ = false;
+      federatedSearchConfig_ = null;
+      if (federatedSearchConfigBuilder_ != null) {
+        federatedSearchConfigBuilder_.dispose();
+        federatedSearchConfigBuilder_ = null;
+      }
+      configurableBillingApproach_ = 0;
+      configurableBillingApproachUpdateTime_ = null;
+      if (configurableBillingApproachUpdateTimeBuilder_ != null) {
+        configurableBillingApproachUpdateTimeBuilder_.dispose();
+        configurableBillingApproachUpdateTimeBuilder_ = null;
       }
       return this;
     }
@@ -3985,47 +12525,94 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.languageInfo_ =
-            languageInfoBuilder_ == null ? languageInfo_ : languageInfoBuilder_.build();
+        result.advancedSiteSearchConfig_ =
+            advancedSiteSearchConfigBuilder_ == null
+                ? advancedSiteSearchConfig_
+                : advancedSiteSearchConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.languageInfo_ =
+            languageInfoBuilder_ == null ? languageInfo_ : languageInfoBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.naturalLanguageQueryUnderstandingConfig_ =
             naturalLanguageQueryUnderstandingConfigBuilder_ == null
                 ? naturalLanguageQueryUnderstandingConfig_
                 : naturalLanguageQueryUnderstandingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.cmekConfig_ = cmekConfigBuilder_ == null ? cmekConfig_ : cmekConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.billingEstimation_ =
             billingEstimationBuilder_ == null
                 ? billingEstimation_
                 : billingEstimationBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.aclEnabled_ = aclEnabled_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.workspaceConfig_ =
             workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.healthcareFhirConfig_ =
+            healthcareFhirConfigBuilder_ == null
+                ? healthcareFhirConfig_
+                : healthcareFhirConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.servingConfigDataStore_ =
             servingConfigDataStoreBuilder_ == null
                 ? servingConfigDataStore_
                 : servingConfigDataStoreBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.identityMappingStore_ = identityMappingStore_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.isInfobotFaqDataStore_ = isInfobotFaqDataStore_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.federatedSearchConfig_ =
+            federatedSearchConfigBuilder_ == null
+                ? federatedSearchConfig_
+                : federatedSearchConfigBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.configurableBillingApproach_ = configurableBillingApproach_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.configurableBillingApproachUpdateTime_ =
+            configurableBillingApproachUpdateTimeBuilder_ == null
+                ? configurableBillingApproachUpdateTime_
+                : configurableBillingApproachUpdateTimeBuilder_.build();
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4078,6 +12665,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasAdvancedSiteSearchConfig()) {
+        mergeAdvancedSiteSearchConfig(other.getAdvancedSiteSearchConfig());
+      }
       if (other.hasLanguageInfo()) {
         mergeLanguageInfo(other.getLanguageInfo());
       }
@@ -4085,8 +12675,19 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         mergeNaturalLanguageQueryUnderstandingConfig(
             other.getNaturalLanguageQueryUnderstandingConfig());
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (other.hasCmekConfig()) {
+        mergeCmekConfig(other.getCmekConfig());
+      }
       if (other.hasBillingEstimation()) {
         mergeBillingEstimation(other.getBillingEstimation());
+      }
+      if (other.getAclEnabled() != false) {
+        setAclEnabled(other.getAclEnabled());
       }
       if (other.hasWorkspaceConfig()) {
         mergeWorkspaceConfig(other.getWorkspaceConfig());
@@ -4097,8 +12698,29 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       if (other.hasStartingSchema()) {
         mergeStartingSchema(other.getStartingSchema());
       }
+      if (other.hasHealthcareFhirConfig()) {
+        mergeHealthcareFhirConfig(other.getHealthcareFhirConfig());
+      }
       if (other.hasServingConfigDataStore()) {
         mergeServingConfigDataStore(other.getServingConfigDataStore());
+      }
+      if (!other.getIdentityMappingStore().isEmpty()) {
+        identityMappingStore_ = other.identityMappingStore_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (other.getIsInfobotFaqDataStore() != false) {
+        setIsInfobotFaqDataStore(other.getIsInfobotFaqDataStore());
+      }
+      if (other.hasFederatedSearchConfig()) {
+        mergeFederatedSearchConfig(other.getFederatedSearchConfig());
+      }
+      if (other.configurableBillingApproach_ != 0) {
+        setConfigurableBillingApproachValue(other.getConfigurableBillingApproachValue());
+      }
+      if (other.hasConfigurableBillingApproachUpdateTime()) {
+        mergeConfigurableBillingApproachUpdateTime(
+            other.getConfigurableBillingApproachUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4181,25 +12803,46 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 98:
+              {
+                input.readMessage(
+                    internalGetAdvancedSiteSearchConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 98
             case 114:
               {
                 input.readMessage(
                     internalGetLanguageInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 114
+            case 146:
+              {
+                input.readMessage(
+                    internalGetCmekConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 146
             case 186:
               {
                 input.readMessage(
                     internalGetBillingEstimationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 186
+            case 192:
+              {
+                aclEnabled_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 192
             case 202:
               {
                 input.readMessage(
                     internalGetWorkspaceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 202
             case 218:
@@ -4207,32 +12850,78 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetDocumentProcessingConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(
                     internalGetStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 226
+            case 234:
+              {
+                input.readMessage(
+                    internalGetHealthcareFhirConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 234
             case 242:
               {
                 input.readMessage(
                     internalGetServingConfigDataStoreFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 242
+            case 250:
+              {
+                identityMappingStore_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 250
+            case 258:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 258
             case 274:
               {
                 input.readMessage(
                     internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 274
+            case 296:
+              {
+                isInfobotFaqDataStore_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 296
+            case 306:
+              {
+                input.readMessage(
+                    internalGetFederatedSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 306
+            case 360:
+              {
+                configurableBillingApproach_ = input.readEnum();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 360
+            case 370:
+              {
+                input.readMessage(
+                    internalGetConfigurableBillingApproachUpdateTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4258,7 +12947,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -4266,7 +12955,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -4286,7 +12977,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -4294,7 +12985,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -4314,7 +13007,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -4322,7 +13015,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4341,7 +13036,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -4349,7 +13044,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4364,7 +13061,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The full resource name of the data store.
+     * Immutable. Identifier. The full resource name of the data store.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
      *
@@ -4372,7 +13069,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4925,7 +13624,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
      * data store.
      * </pre>
      *
@@ -4950,7 +13649,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
      * data store.
      * </pre>
      *
@@ -4975,7 +13674,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
      * data store.
      * </pre>
      *
@@ -4999,7 +13698,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
      * data store.
      * </pre>
      *
@@ -5019,7 +13718,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+     * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
      * data store.
      * </pre>
      *
@@ -5378,6 +14077,227 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       return createTimeBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig
+        advancedSiteSearchConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig,
+            com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfigOrBuilder>
+        advancedSiteSearchConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the advancedSiteSearchConfig field is set.
+     */
+    public boolean hasAdvancedSiteSearchConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The advancedSiteSearchConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig
+        getAdvancedSiteSearchConfig() {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        return advancedSiteSearchConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.getDefaultInstance()
+            : advancedSiteSearchConfig_;
+      } else {
+        return advancedSiteSearchConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdvancedSiteSearchConfig(
+        com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig value) {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedSiteSearchConfig_ = value;
+      } else {
+        advancedSiteSearchConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdvancedSiteSearchConfig(
+        com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.Builder builderForValue) {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        advancedSiteSearchConfig_ = builderForValue.build();
+      } else {
+        advancedSiteSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAdvancedSiteSearchConfig(
+        com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig value) {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && advancedSiteSearchConfig_ != null
+            && advancedSiteSearchConfig_
+                != com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig
+                    .getDefaultInstance()) {
+          getAdvancedSiteSearchConfigBuilder().mergeFrom(value);
+        } else {
+          advancedSiteSearchConfig_ = value;
+        }
+      } else {
+        advancedSiteSearchConfigBuilder_.mergeFrom(value);
+      }
+      if (advancedSiteSearchConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdvancedSiteSearchConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      advancedSiteSearchConfig_ = null;
+      if (advancedSiteSearchConfigBuilder_ != null) {
+        advancedSiteSearchConfigBuilder_.dispose();
+        advancedSiteSearchConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.Builder
+        getAdvancedSiteSearchConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetAdvancedSiteSearchConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfigOrBuilder
+        getAdvancedSiteSearchConfigOrBuilder() {
+      if (advancedSiteSearchConfigBuilder_ != null) {
+        return advancedSiteSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedSiteSearchConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.getDefaultInstance()
+            : advancedSiteSearchConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig,
+            com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfigOrBuilder>
+        internalGetAdvancedSiteSearchConfigFieldBuilder() {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        advancedSiteSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig,
+                com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfigOrBuilder>(
+                getAdvancedSiteSearchConfig(), getParentForChildren(), isClean());
+        advancedSiteSearchConfig_ = null;
+      }
+      return advancedSiteSearchConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.LanguageInfo languageInfo_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.discoveryengine.v1beta.LanguageInfo,
@@ -5397,7 +14317,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the languageInfo field is set.
      */
     public boolean hasLanguageInfo() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -5439,7 +14359,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         languageInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5460,7 +14380,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         languageInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5476,7 +14396,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeLanguageInfo(com.google.cloud.discoveryengine.v1beta.LanguageInfo value) {
       if (languageInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && languageInfo_ != null
             && languageInfo_
                 != com.google.cloud.discoveryengine.v1beta.LanguageInfo.getDefaultInstance()) {
@@ -5488,7 +14408,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         languageInfoBuilder_.mergeFrom(value);
       }
       if (languageInfo_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -5504,7 +14424,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
      */
     public Builder clearLanguageInfo() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       languageInfo_ = null;
       if (languageInfoBuilder_ != null) {
         languageInfoBuilder_.dispose();
@@ -5524,7 +14444,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.LanguageInfo language_info = 14;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.LanguageInfo.Builder getLanguageInfoBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetLanguageInfoFieldBuilder().getBuilder();
     }
@@ -5598,7 +14518,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the naturalLanguageQueryUnderstandingConfig field is set.
      */
     public boolean hasNaturalLanguageQueryUnderstandingConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -5647,7 +14567,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         naturalLanguageQueryUnderstandingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5671,7 +14591,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         naturalLanguageQueryUnderstandingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5690,7 +14610,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeNaturalLanguageQueryUnderstandingConfig(
         com.google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig value) {
       if (naturalLanguageQueryUnderstandingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && naturalLanguageQueryUnderstandingConfig_ != null
             && naturalLanguageQueryUnderstandingConfig_
                 != com.google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig
@@ -5703,7 +14623,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         naturalLanguageQueryUnderstandingConfigBuilder_.mergeFrom(value);
       }
       if (naturalLanguageQueryUnderstandingConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -5721,7 +14641,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNaturalLanguageQueryUnderstandingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       naturalLanguageQueryUnderstandingConfig_ = null;
       if (naturalLanguageQueryUnderstandingConfigBuilder_ != null) {
         naturalLanguageQueryUnderstandingConfigBuilder_.dispose();
@@ -5744,7 +14664,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig.Builder
         getNaturalLanguageQueryUnderstandingConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetNaturalLanguageQueryUnderstandingConfigFieldBuilder().getBuilder();
     }
@@ -5803,6 +14723,366 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       return naturalLanguageQueryUnderstandingConfigBuilder_;
     }
 
+    private java.lang.Object kmsKeyName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The KMS key to be used to protect this DataStore at creation
+     * time.
+     *
+     * Must be set for requests that need to comply with CMEK Org Policy
+     * protections.
+     *
+     * If this field is set and processed successfully, the DataStore will be
+     * protected by the KMS key, as indicated in the cmek_config field.
+     * </pre>
+     *
+     * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.CmekConfig cmekConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.CmekConfig,
+            com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder>
+        cmekConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cmekConfig field is set.
+     */
+    public boolean hasCmekConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cmekConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.CmekConfig getCmekConfig() {
+      if (cmekConfigBuilder_ == null) {
+        return cmekConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+            : cmekConfig_;
+      } else {
+        return cmekConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmekConfig(com.google.cloud.discoveryengine.v1beta.CmekConfig value) {
+      if (cmekConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cmekConfig_ = value;
+      } else {
+        cmekConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmekConfig(
+        com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder builderForValue) {
+      if (cmekConfigBuilder_ == null) {
+        cmekConfig_ = builderForValue.build();
+      } else {
+        cmekConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCmekConfig(com.google.cloud.discoveryengine.v1beta.CmekConfig value) {
+      if (cmekConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && cmekConfig_ != null
+            && cmekConfig_
+                != com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()) {
+          getCmekConfigBuilder().mergeFrom(value);
+        } else {
+          cmekConfig_ = value;
+        }
+      } else {
+        cmekConfigBuilder_.mergeFrom(value);
+      }
+      if (cmekConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCmekConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      cmekConfig_ = null;
+      if (cmekConfigBuilder_ != null) {
+        cmekConfigBuilder_.dispose();
+        cmekConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder getCmekConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetCmekConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder getCmekConfigOrBuilder() {
+      if (cmekConfigBuilder_ != null) {
+        return cmekConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return cmekConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+            : cmekConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.CmekConfig,
+            com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder>
+        internalGetCmekConfigFieldBuilder() {
+      if (cmekConfigBuilder_ == null) {
+        cmekConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.CmekConfig,
+                com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder>(
+                getCmekConfig(), getParentForChildren(), isClean());
+        cmekConfig_ = null;
+      }
+      return cmekConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation billingEstimation_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation,
@@ -5824,7 +15104,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the billingEstimation field is set.
      */
     public boolean hasBillingEstimation() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -5873,7 +15153,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         billingEstimationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5897,7 +15177,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         billingEstimationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5916,7 +15196,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeBillingEstimation(
         com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation value) {
       if (billingEstimationBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && billingEstimation_ != null
             && billingEstimation_
                 != com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation
@@ -5929,7 +15209,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         billingEstimationBuilder_.mergeFrom(value);
       }
       if (billingEstimation_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5947,7 +15227,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearBillingEstimation() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
         billingEstimationBuilder_.dispose();
@@ -5970,7 +15250,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation.Builder
         getBillingEstimationBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetBillingEstimationFieldBuilder().getBuilder();
     }
@@ -6026,6 +15306,110 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       return billingEstimationBuilder_;
     }
 
+    private boolean aclEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] has ACL
+     * information. If set to `true`, the source data must have ACL. ACL will be
+     * ingested when data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore],
+     * [Document][google.cloud.discoveryengine.v1beta.Document] can't be accessed
+     * by calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The aclEnabled.
+     */
+    @java.lang.Override
+    public boolean getAclEnabled() {
+      return aclEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] has ACL
+     * information. If set to `true`, the source data must have ACL. ACL will be
+     * ingested when data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore],
+     * [Document][google.cloud.discoveryengine.v1beta.Document] can't be accessed
+     * by calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The aclEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclEnabled(boolean value) {
+
+      aclEnabled_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] has ACL
+     * information. If set to `true`, the source data must have ACL. ACL will be
+     * ingested when data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore],
+     * [Document][google.cloud.discoveryengine.v1beta.Document] can't be accessed
+     * by calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAclEnabled() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      aclEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.WorkspaceConfig workspaceConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.discoveryengine.v1beta.WorkspaceConfig,
@@ -6049,7 +15433,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the workspaceConfig field is set.
      */
     public boolean hasWorkspaceConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6100,7 +15484,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         workspaceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6125,7 +15509,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         workspaceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6146,7 +15530,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeWorkspaceConfig(
         com.google.cloud.discoveryengine.v1beta.WorkspaceConfig value) {
       if (workspaceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && workspaceConfig_ != null
             && workspaceConfig_
                 != com.google.cloud.discoveryengine.v1beta.WorkspaceConfig.getDefaultInstance()) {
@@ -6158,7 +15542,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         workspaceConfigBuilder_.mergeFrom(value);
       }
       if (workspaceConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6178,7 +15562,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.WorkspaceConfig workspace_config = 25;</code>
      */
     public Builder clearWorkspaceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00004000);
       workspaceConfig_ = null;
       if (workspaceConfigBuilder_ != null) {
         workspaceConfigBuilder_.dispose();
@@ -6203,7 +15587,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.WorkspaceConfig.Builder
         getWorkspaceConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetWorkspaceConfigFieldBuilder().getBuilder();
     }
@@ -6284,7 +15668,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6332,7 +15716,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6355,7 +15739,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6374,7 +15758,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig
@@ -6387,7 +15771,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6405,7 +15789,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00008000);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -6428,7 +15812,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetDocumentProcessingConfigFieldBuilder().getBuilder();
     }
@@ -6499,9 +15883,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6516,7 +15903,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6528,9 +15915,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6563,9 +15953,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6586,7 +15979,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6600,9 +15993,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6621,7 +16017,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6635,9 +16031,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6651,7 +16050,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1beta.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && startingSchema_ != null
             && startingSchema_
                 != com.google.cloud.discoveryengine.v1beta.Schema.getDefaultInstance()) {
@@ -6663,7 +16062,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6678,9 +16077,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6693,7 +16095,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -6712,9 +16114,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6727,7 +16132,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1beta.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetStartingSchemaFieldBuilder().getBuilder();
     }
@@ -6741,9 +16146,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6774,9 +16182,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * provisioning it. If unset, a default vertical specialized schema will be
      * used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
      * API instead.
@@ -6805,6 +16216,225 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       return startingSchemaBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcareFhirConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig,
+            com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfigOrBuilder>
+        healthcareFhirConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the healthcareFhirConfig field is set.
+     */
+    public boolean hasHealthcareFhirConfig() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The healthcareFhirConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig getHealthcareFhirConfig() {
+      if (healthcareFhirConfigBuilder_ == null) {
+        return healthcareFhirConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.getDefaultInstance()
+            : healthcareFhirConfig_;
+      } else {
+        return healthcareFhirConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHealthcareFhirConfig(
+        com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig value) {
+      if (healthcareFhirConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        healthcareFhirConfig_ = value;
+      } else {
+        healthcareFhirConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHealthcareFhirConfig(
+        com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.Builder builderForValue) {
+      if (healthcareFhirConfigBuilder_ == null) {
+        healthcareFhirConfig_ = builderForValue.build();
+      } else {
+        healthcareFhirConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHealthcareFhirConfig(
+        com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig value) {
+      if (healthcareFhirConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && healthcareFhirConfig_ != null
+            && healthcareFhirConfig_
+                != com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig
+                    .getDefaultInstance()) {
+          getHealthcareFhirConfigBuilder().mergeFrom(value);
+        } else {
+          healthcareFhirConfig_ = value;
+        }
+      } else {
+        healthcareFhirConfigBuilder_.mergeFrom(value);
+      }
+      if (healthcareFhirConfig_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHealthcareFhirConfig() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      healthcareFhirConfig_ = null;
+      if (healthcareFhirConfigBuilder_ != null) {
+        healthcareFhirConfigBuilder_.dispose();
+        healthcareFhirConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.Builder
+        getHealthcareFhirConfigBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return internalGetHealthcareFhirConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfigOrBuilder
+        getHealthcareFhirConfigOrBuilder() {
+      if (healthcareFhirConfigBuilder_ != null) {
+        return healthcareFhirConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return healthcareFhirConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.getDefaultInstance()
+            : healthcareFhirConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig,
+            com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfigOrBuilder>
+        internalGetHealthcareFhirConfigFieldBuilder() {
+      if (healthcareFhirConfigBuilder_ == null) {
+        healthcareFhirConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig,
+                com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfigOrBuilder>(
+                getHealthcareFhirConfig(), getParentForChildren(), isClean());
+        healthcareFhirConfig_ = null;
+      }
+      return healthcareFhirConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore
         servingConfigDataStore_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -6827,7 +16457,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * @return Whether the servingConfigDataStore field is set.
      */
     public boolean hasServingConfigDataStore() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6876,7 +16506,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         servingConfigDataStoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6900,7 +16530,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
       } else {
         servingConfigDataStoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6919,7 +16549,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
     public Builder mergeServingConfigDataStore(
         com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore value) {
       if (servingConfigDataStoreBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && servingConfigDataStore_ != null
             && servingConfigDataStore_
                 != com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore
@@ -6932,7 +16562,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         servingConfigDataStoreBuilder_.mergeFrom(value);
       }
       if (servingConfigDataStore_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6950,7 +16580,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearServingConfigDataStore() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       servingConfigDataStore_ = null;
       if (servingConfigDataStoreBuilder_ != null) {
         servingConfigDataStoreBuilder_.dispose();
@@ -6973,7 +16603,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore.Builder
         getServingConfigDataStoreBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return internalGetServingConfigDataStoreFieldBuilder().getBuilder();
     }
@@ -7027,6 +16657,762 @@ public final class DataStore extends com.google.protobuf.GeneratedMessage
         servingConfigDataStore_ = null;
       }
       return servingConfigDataStoreBuilder_;
+    }
+
+    private java.lang.Object identityMappingStore_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The identityMappingStore.
+     */
+    public java.lang.String getIdentityMappingStore() {
+      java.lang.Object ref = identityMappingStore_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        identityMappingStore_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for identityMappingStore.
+     */
+    public com.google.protobuf.ByteString getIdentityMappingStoreBytes() {
+      java.lang.Object ref = identityMappingStore_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        identityMappingStore_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The identityMappingStore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityMappingStore(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      identityMappingStore_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityMappingStore() {
+      identityMappingStore_ = getDefaultInstance().getIdentityMappingStore();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The fully qualified resource name of the associated
+     * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+     * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+     * `GSUITE` IdP. Format:
+     * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+     * </pre>
+     *
+     * <code>
+     * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for identityMappingStore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityMappingStoreBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      identityMappingStore_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private boolean isInfobotFaqDataStore_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is an Infobot FAQ DataStore.
+     * </pre>
+     *
+     * <code>bool is_infobot_faq_data_store = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isInfobotFaqDataStore.
+     */
+    @java.lang.Override
+    public boolean getIsInfobotFaqDataStore() {
+      return isInfobotFaqDataStore_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is an Infobot FAQ DataStore.
+     * </pre>
+     *
+     * <code>bool is_infobot_faq_data_store = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The isInfobotFaqDataStore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsInfobotFaqDataStore(boolean value) {
+
+      isInfobotFaqDataStore_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is an Infobot FAQ DataStore.
+     * </pre>
+     *
+     * <code>bool is_infobot_faq_data_store = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsInfobotFaqDataStore() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      isInfobotFaqDataStore_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        federatedSearchConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig,
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder>
+        federatedSearchConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the federatedSearchConfig field is set.
+     */
+    public boolean hasFederatedSearchConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The federatedSearchConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+        getFederatedSearchConfig() {
+      if (federatedSearchConfigBuilder_ == null) {
+        return federatedSearchConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .getDefaultInstance()
+            : federatedSearchConfig_;
+      } else {
+        return federatedSearchConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFederatedSearchConfig(
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig value) {
+      if (federatedSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        federatedSearchConfig_ = value;
+      } else {
+        federatedSearchConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFederatedSearchConfig(
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder
+            builderForValue) {
+      if (federatedSearchConfigBuilder_ == null) {
+        federatedSearchConfig_ = builderForValue.build();
+      } else {
+        federatedSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFederatedSearchConfig(
+        com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig value) {
+      if (federatedSearchConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && federatedSearchConfig_ != null
+            && federatedSearchConfig_
+                != com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                    .getDefaultInstance()) {
+          getFederatedSearchConfigBuilder().mergeFrom(value);
+        } else {
+          federatedSearchConfig_ = value;
+        }
+      } else {
+        federatedSearchConfigBuilder_.mergeFrom(value);
+      }
+      if (federatedSearchConfig_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFederatedSearchConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      federatedSearchConfig_ = null;
+      if (federatedSearchConfigBuilder_ != null) {
+        federatedSearchConfigBuilder_.dispose();
+        federatedSearchConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder
+        getFederatedSearchConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return internalGetFederatedSearchConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder
+        getFederatedSearchConfigOrBuilder() {
+      if (federatedSearchConfigBuilder_ != null) {
+        return federatedSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return federatedSearchConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+                .getDefaultInstance()
+            : federatedSearchConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, this DataStore is a federated search DataStore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig,
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder>
+        internalGetFederatedSearchConfigFieldBuilder() {
+      if (federatedSearchConfigBuilder_ == null) {
+        federatedSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder>(
+                getFederatedSearchConfig(), getParentForChildren(), isClean());
+        federatedSearchConfig_ = null;
+      }
+      return federatedSearchConfigBuilder_;
+    }
+
+    private int configurableBillingApproach_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach. See
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for configurableBillingApproach.
+     */
+    @java.lang.Override
+    public int getConfigurableBillingApproachValue() {
+      return configurableBillingApproach_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach. See
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for configurableBillingApproach to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigurableBillingApproachValue(int value) {
+      configurableBillingApproach_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach. See
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The configurableBillingApproach.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach
+        getConfigurableBillingApproach() {
+      com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach result =
+          com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach.forNumber(
+              configurableBillingApproach_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach. See
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The configurableBillingApproach to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigurableBillingApproach(
+        com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00400000;
+      configurableBillingApproach_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach. See
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConfigurableBillingApproach() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      configurableBillingApproach_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp configurableBillingApproachUpdateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        configurableBillingApproachUpdateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the configurableBillingApproachUpdateTime field is set.
+     */
+    public boolean hasConfigurableBillingApproachUpdateTime() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The configurableBillingApproachUpdateTime.
+     */
+    public com.google.protobuf.Timestamp getConfigurableBillingApproachUpdateTime() {
+      if (configurableBillingApproachUpdateTimeBuilder_ == null) {
+        return configurableBillingApproachUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : configurableBillingApproachUpdateTime_;
+      } else {
+        return configurableBillingApproachUpdateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setConfigurableBillingApproachUpdateTime(com.google.protobuf.Timestamp value) {
+      if (configurableBillingApproachUpdateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        configurableBillingApproachUpdateTime_ = value;
+      } else {
+        configurableBillingApproachUpdateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setConfigurableBillingApproachUpdateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (configurableBillingApproachUpdateTimeBuilder_ == null) {
+        configurableBillingApproachUpdateTime_ = builderForValue.build();
+      } else {
+        configurableBillingApproachUpdateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeConfigurableBillingApproachUpdateTime(com.google.protobuf.Timestamp value) {
+      if (configurableBillingApproachUpdateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && configurableBillingApproachUpdateTime_ != null
+            && configurableBillingApproachUpdateTime_
+                != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getConfigurableBillingApproachUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          configurableBillingApproachUpdateTime_ = value;
+        }
+      } else {
+        configurableBillingApproachUpdateTimeBuilder_.mergeFrom(value);
+      }
+      if (configurableBillingApproachUpdateTime_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearConfigurableBillingApproachUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      configurableBillingApproachUpdateTime_ = null;
+      if (configurableBillingApproachUpdateTimeBuilder_ != null) {
+        configurableBillingApproachUpdateTimeBuilder_.dispose();
+        configurableBillingApproachUpdateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getConfigurableBillingApproachUpdateTimeBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return internalGetConfigurableBillingApproachUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder
+        getConfigurableBillingApproachUpdateTimeOrBuilder() {
+      if (configurableBillingApproachUpdateTimeBuilder_ != null) {
+        return configurableBillingApproachUpdateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return configurableBillingApproachUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : configurableBillingApproachUpdateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when configurable_billing_approach was last
+     * updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetConfigurableBillingApproachUpdateTimeFieldBuilder() {
+      if (configurableBillingApproachUpdateTimeBuilder_ == null) {
+        configurableBillingApproachUpdateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getConfigurableBillingApproachUpdateTime(), getParentForChildren(), isClean());
+        configurableBillingApproachUpdateTime_ = null;
+      }
+      return configurableBillingApproachUpdateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.DataStore)

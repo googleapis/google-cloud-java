@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static java.time.Month.MARCH;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -47,20 +48,30 @@ import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryJsonResultSetTest {
 
-  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+  static {
+    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    TimeZoneCache.reset();
+  }
+
+  @RegisterExtension public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private static final FieldList fieldList =
       FieldList.of(
@@ -158,9 +169,9 @@ public class BigQueryJsonResultSetTest {
     statement = mock(BigQueryStatement.class);
     buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
     buffer.add(BigQueryFieldValueListWrapper.of(null, null, true)); // last marker
-    Thread[] workerThreads = {new Thread()};
+    Future<?>[] workerTasks = {mock(Future.class)};
     bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
 
     // Buffer with 2 rows.
     bufferWithTwoRows = new LinkedBlockingDeque<>(3);
@@ -186,9 +197,9 @@ public class BigQueryJsonResultSetTest {
 
   private boolean resetResultSet()
       throws SQLException { // re-initialises the resultset and moves the cursor to the first row
-    Thread[] workerThreads = {new Thread()};
+    Future<?>[] workerTasks = {mock(Future.class)};
     bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
     return bigQueryJsonResultSet.next(); // move to the first row
   }
 
@@ -204,15 +215,15 @@ public class BigQueryJsonResultSetTest {
 
   @Test
   public void testRowCount() throws SQLException {
-    Thread[] workerThreads = {new Thread()};
+    Future<?>[] workerTasks = {mock(Future.class)};
     // ResultSet with 1 row buffer and 1 total rows.
     BigQueryJsonResultSet bigQueryJsonResultSet2 =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerTasks);
     assertThat(resultSetRowCount(bigQueryJsonResultSet2)).isEqualTo(1);
     // ResultSet with 2 rows buffer and 1 total rows.
     bigQueryJsonResultSet2 =
         BigQueryJsonResultSet.of(
-            QUERY_SCHEMA, 1L, bufferWithTwoRows, statementForTwoRows, workerThreads);
+            QUERY_SCHEMA, 1L, bufferWithTwoRows, statementForTwoRows, workerTasks);
     assertThat(resultSetRowCount(bigQueryJsonResultSet2)).isEqualTo(1);
   }
 
@@ -430,40 +441,66 @@ public class BigQueryJsonResultSetTest {
     assertThat(bigQueryJsonResultSetNested.isAfterLast()).isTrue();
   }
 
-  @Test
-  public void testTime() throws SQLException {
-    assertThat(resetResultSet()).isTrue();
-    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    Time expectedTime = new Time(TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay()));
-    assertThat(bigQueryJsonResultSet.getTime(12))
-        .isEqualTo(bigQueryJsonResultSet.getTime(12, calendar));
-    assertThat(expectedTime).isEqualTo(bigQueryJsonResultSet.getTime(12, calendar));
-    assertThat(bigQueryJsonResultSet.getTime("twelfth"))
-        .isEqualTo(bigQueryJsonResultSet.getTime("twelfth", calendar));
+  public static Stream<Arguments> successfulCoercionCases() {
+    return Stream.of(
+        Arguments.of("fourteenth", LocalDate.class, LocalDate.of(2020, 1, 15)),
+        Arguments.of(14, LocalDate.class, LocalDate.of(2020, 1, 15)),
+        Arguments.of("twelfth", LocalTime.class, LocalTime.of(11, 14, 19, 820000000)),
+        Arguments.of(12, LocalTime.class, LocalTime.of(11, 14, 19, 820000000)),
+        Arguments.of(
+            "fifth", LocalDateTime.class, LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000)),
+        Arguments.of(5, LocalDateTime.class, LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000)),
+        Arguments.of("first", Boolean.class, false),
+        Arguments.of(1, Boolean.class, false),
+        Arguments.of("second", Long.class, 1L),
+        Arguments.of(2, Integer.class, 1),
+        Arguments.of(2, Short.class, (short) 1),
+        Arguments.of(2, String.class, "1"),
+        Arguments.of("third", Double.class, 1.5D),
+        Arguments.of(3, Float.class, 1.5F),
+        Arguments.of("fourth", String.class, STRING_VAL),
+        Arguments.of("tenth", BigDecimal.class, new BigDecimal("12345678")),
+        Arguments.of(10, Long.class, 12345678L),
+        Arguments.of("eleventh", BigDecimal.class, new BigDecimal("12345678.99")),
+        Arguments.of(11, Double.class, 12345678.99D),
+        Arguments.of("twelfth", Time.class, new Time(40459820L)),
+        Arguments.of(12, Time.class, new Time(40459820L)),
+        Arguments.of("fifth", Timestamp.class, new Timestamp(1680174859820L)),
+        Arguments.of(5, Timestamp.class, new Timestamp(1680174859820L)),
+        Arguments.of("fourteenth", Date.class, Date.valueOf("2020-01-15")),
+        Arguments.of(14, Date.class, Date.valueOf("2020-01-15")));
   }
 
-  @Test
-  public void testTimestamp() throws SQLException {
-    assertThat(resetResultSet()).isTrue();
-    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    Timestamp time = bigQueryJsonResultSet.getTimestamp(5);
-    Timestamp timeWithCal = bigQueryJsonResultSet.getTimestamp(5, calendar);
-    assertThat(time).isEqualTo(timeWithCal);
-    assertThat(bigQueryJsonResultSet.getTimestamp("fifth"))
-        .isEqualTo(bigQueryJsonResultSet.getTimestamp("fifth"));
+  public static Stream<Arguments> failingCoercionCases() {
+    return Stream.of(
+        Arguments.of("first", LocalDate.class),
+        Arguments.of("fourteenth", Boolean.class),
+        Arguments.of("fourth", BigDecimal.class));
   }
 
-  @Test
-  public void testDate() throws SQLException {
+  @ParameterizedTest
+  @MethodSource("successfulCoercionCases")
+  public void testGetObjectWithType_success(Object column, Class<?> type, Object expectedValue)
+      throws SQLException {
     assertThat(resetResultSet()).isTrue();
-    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    // epoc should match
-    assertThat(bigQueryJsonResultSet.getDate(14).getTime())
-        .isEqualTo(bigQueryJsonResultSet.getDate(14, calendar).getTime());
-    assertThat(Date.valueOf("2020-01-15").getTime())
-        .isEqualTo(bigQueryJsonResultSet.getDate(14, calendar).getTime());
-    assertThat(bigQueryJsonResultSet.getDate("fourteenth").getTime())
-        .isEqualTo(bigQueryJsonResultSet.getDate("fourteenth", calendar).getTime());
+    if (column instanceof String) {
+      assertThat(bigQueryJsonResultSet.getObject((String) column, type)).isEqualTo(expectedValue);
+    } else {
+      assertThat(bigQueryJsonResultSet.getObject((Integer) column, type)).isEqualTo(expectedValue);
+    }
+  }
+
+  @ParameterizedTest
+  @MethodSource("failingCoercionCases")
+  public void testGetObjectWithType_failure(Object column, Class<?> type) throws SQLException {
+    assertThat(resetResultSet()).isTrue();
+    if (column instanceof String) {
+      assertThrows(
+          SQLException.class, () -> bigQueryJsonResultSet.getObject((String) column, type));
+    } else {
+      assertThrows(
+          SQLException.class, () -> bigQueryJsonResultSet.getObject((Integer) column, type));
+    }
   }
 
   private int resultSetRowCount(BigQueryJsonResultSet resultSet) throws SQLException {

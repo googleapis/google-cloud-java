@@ -137,10 +137,21 @@ public class SpannerException extends BaseGrpcServiceException {
    * retry delay.
    */
   public long getRetryDelayInMillis() {
-    return extractRetryDelay(this.getCause());
+    return extractRetryDelay(this, this.apiException);
   }
 
   static long extractRetryDelay(Throwable cause) {
+    return extractRetryDelay(cause, null);
+  }
+
+  static long extractRetryDelay(Throwable cause, @Nullable ApiException apiException) {
+    ErrorDetails details = SpannerExceptionFactory.extractErrorDetails(cause, apiException);
+    if (details != null && details.getRetryInfo() != null) {
+      RetryInfo retryInfo = details.getRetryInfo();
+      if (retryInfo.hasRetryDelay()) {
+        return Durations.toMillis(retryInfo.getRetryDelay());
+      }
+    }
     if (cause != null) {
       Metadata trailers = Status.trailersFromThrowable(cause);
       if (trailers != null && trailers.containsKey(KEY_RETRY_INFO)) {
@@ -227,7 +238,7 @@ public class SpannerException extends BaseGrpcServiceException {
     if (this.apiException != null) {
       return this.apiException.getErrorDetails();
     }
-    return null;
+    return SpannerExceptionFactory.extractErrorDetails(getCause(), null);
   }
 
   void setStatement(String statement) {

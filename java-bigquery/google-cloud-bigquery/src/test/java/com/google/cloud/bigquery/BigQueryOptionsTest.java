@@ -92,4 +92,11 @@ public class BigQueryOptionsTest {
 
     assertTrue(options.getDataFormatOptions().useInt64Timestamp());
   }
+
+  @Test
+  void testUseJwtAccessWithScope_defaultsToFalse() {
+    BigQueryOptions options = BigQueryOptions.newBuilder().setProjectId("project-id").build();
+
+    assertFalse(options.getUseJwtAccessWithScope());
+  }
 }

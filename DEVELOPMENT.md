@@ -1,6 +1,6 @@
 # Monorepo Scoped Development Guide
 
-This document outlines development workflows and build strategies when working with specific client libraries or modules in the `google-cloud-java` monorepo.
+This document outlines development workflows, build strategies, and code generation processes when working with or managing client libraries in the `google-cloud-java` monorepo.
 
 ---
 
@@ -51,3 +51,19 @@ mvn compile
 ```
 
 Your IDE such as Intellij should also be able to import all the upstream dependencies at this moment. You can perform the same operations as you would in a normal project such as running unit tests, debugging and so on. 
+
+---
+
+## 3. Code Generation (Librarian)
+
+This repository uses **[Librarian](https://github.com/googleapis/librarian)** to generate code from API specifications.
+
+The configuration for Librarian in this repository is defined in the [librarian.yaml](librarian.yaml) file at the root.
+
+### Documentation & Guides
+
+For more information on how to use Librarian, configure generation, or troubleshoot issues, refer to the following guides:
+
+*   **[Librarian GitHub Repository](https://github.com/googleapis/librarian)**: The main repository for the Librarian tool.
+*   **[Librarian Command Reference](https://pkg.go.dev/github.com/googleapis/librarian/cmd/librarian)**: Detailed documentation of `librarian` CLI commands.
+*   **[Librarian Configuration Schema](https://github.com/googleapis/librarian/blob/main/doc/config-schema.md)**: Guide to the structure and options available in `librarian.yaml`.

@@ -189,6 +189,12 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
     return ((DataScanServiceStubSettings) getStubSettings()).listDataScanJobsSettings();
   }
 
+  /** Returns the object with the settings used for calls to cancelDataScanJob. */
+  public UnaryCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobSettings() {
+    return ((DataScanServiceStubSettings) getStubSettings()).cancelDataScanJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateDataQualityRules. */
   public UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesSettings() {
@@ -395,6 +401,12 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings() {
       return getStubSettingsBuilder().listDataScanJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDataScanJob. */
+    public UnaryCallSettings.Builder<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobSettings() {
+      return getStubSettingsBuilder().cancelDataScanJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateDataQualityRules. */

@@ -23,6 +23,7 @@ import com.google.bigtable.v2.SessionResponse;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Ticker;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import io.grpc.CallOptions;
@@ -65,6 +66,11 @@ public class ChannelPoolDpImpl implements ChannelPool {
   private static final String DEFAULT_LOG_NAME = "pool";
   private static final AtomicInteger INDEX = new AtomicInteger();
 
+  // TODO: Move to client configuration.
+  private static final int CONSECUTIVE_OPEN_SESSION_FAILURE_THRESHOLD = 5;
+  private static final Duration INITIAL_RECYCLE_BACKOFF = Duration.ofMillis(1);
+  private static final Duration MAX_RECYCLE_BACKOFF = Duration.ofMinutes(1);
+
   private final String poolLogId;
 
   @VisibleForTesting volatile int minGroups;
@@ -95,12 +101,27 @@ public class ChannelPoolDpImpl implements ChannelPool {
   @GuardedBy("this")
   private boolean closed = false;
 
+  private final Ticker ticker;
+
+  @GuardedBy("this")
+  private long lastRecycleNano = 0;
+
+  @GuardedBy("this")
+  private Duration recycleBackoff = INITIAL_RECYCLE_BACKOFF;
+
   public ChannelPoolDpImpl(
       Supplier<ManagedChannel> channelSupplier,
       ChannelPoolConfiguration config,
       DebugTagTracer debugTagTracer,
       ScheduledExecutorService executor) {
-    this(channelSupplier, config, DEFAULT_LOG_NAME, debugTagTracer, executor, Clock.systemUTC());
+    this(
+        channelSupplier,
+        config,
+        DEFAULT_LOG_NAME,
+        debugTagTracer,
+        executor,
+        Clock.systemUTC(),
+        Ticker.systemTicker());
   }
 
   public ChannelPoolDpImpl(
@@ -109,7 +130,14 @@ public class ChannelPoolDpImpl implements ChannelPool {
       String logName,
       DebugTagTracer debugTagTracer,
       ScheduledExecutorService executor) {
-    this(channelSupplier, config, logName, debugTagTracer, executor, Clock.systemUTC());
+    this(
+        channelSupplier,
+        config,
+        logName,
+        debugTagTracer,
+        executor,
+        Clock.systemUTC(),
+        Ticker.systemTicker());
   }
 
   public ChannelPoolDpImpl(
@@ -119,8 +147,20 @@ public class ChannelPoolDpImpl implements ChannelPool {
       DebugTagTracer debugTagTracer,
       ScheduledExecutorService executor,
       Clock clock) {
+    this(channelSupplier, config, logName, debugTagTracer, executor, clock, Ticker.systemTicker());
+  }
+
+  public ChannelPoolDpImpl(
+      Supplier<ManagedChannel> channelSupplier,
+      ChannelPoolConfiguration config,
+      String logName,
+      DebugTagTracer debugTagTracer,
+      ScheduledExecutorService executor,
+      Clock clock,
+      Ticker ticker) {
     this.poolLogId = String.format("%d-%s", INDEX.getAndIncrement(), logName);
     this.clock = clock;
+    this.ticker = ticker;
     this.channelSupplier = channelSupplier;
     this.executor = executor;
     updateConfig(config);
@@ -221,6 +261,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
               public void onBeforeSessionStart(PeerInfo peerInfo) {
                 afeId = AfeId.extract(peerInfo);
                 synchronized (ChannelPoolDpImpl.this) {
+                  channelWrapper.consecutiveFailures = 0;
+                  recycleBackoff = INITIAL_RECYCLE_BACKOFF;
                   rehomeChannel(channelWrapper, afeId);
                   sessionsPerAfeId.add(afeId);
                 }
@@ -232,6 +274,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
                 synchronized (ChannelPoolDpImpl.this) {
                   if (afeId != null) {
                     sessionsPerAfeId.remove(afeId);
+                  } else if (!status.isOk() && status.getCode() != Code.CANCELLED) {
+                    channelWrapper.consecutiveFailures++;
                   }
                   releaseChannel(channelWrapper, status);
                 }
@@ -306,12 +350,12 @@ public class ChannelPoolDpImpl implements ChannelPool {
     channelWrapper.group.numStreams--;
     channelWrapper.numOutstanding--;
 
-    if (shouldRecycleChannel(status)) {
+    if (shouldRecycleChannel(channelWrapper, status)) {
       recycleChannel(channelWrapper);
     }
   }
 
-  private static boolean shouldRecycleChannel(Status status) {
+  private static boolean shouldRecycleChannel(ChannelWrapper channelWrapper, Status status) {
     if (status.getCode() == Code.UNIMPLEMENTED) {
       return true;
     }
@@ -319,6 +363,10 @@ public class ChannelPoolDpImpl implements ChannelPool {
     // TODO: replace this with a flag in the ErrorDetails
     if (status.getDescription() != null
         && status.getDescription().toLowerCase(Locale.ENGLISH).contains("server is draining")) {
+      return true;
+    }
+
+    if (channelWrapper.consecutiveFailures >= CONSECUTIVE_OPEN_SESSION_FAILURE_THRESHOLD) {
       return true;
     }
 
@@ -330,6 +378,17 @@ public class ChannelPoolDpImpl implements ChannelPool {
     if (channelWrapper.channel.isShutdown()) {
       // Channel is already recycled.
       return;
+    }
+
+    long nowNano = ticker.read();
+    if (nowNano - lastRecycleNano < recycleBackoff.toNanos()) {
+      return;
+    }
+
+    lastRecycleNano = nowNano;
+    recycleBackoff = recycleBackoff.multipliedBy(2);
+    if (recycleBackoff.compareTo(MAX_RECYCLE_BACKOFF) > 0) {
+      recycleBackoff = MAX_RECYCLE_BACKOFF;
     }
 
     channelWrapper.group.channels.remove(channelWrapper);
@@ -358,9 +417,6 @@ public class ChannelPoolDpImpl implements ChannelPool {
   private synchronized void serviceChannelsSafe() {
     log(Level.FINE, "Servicing channels");
     dumpState();
-
-    Instant now = Instant.now(clock);
-    Instant createdAtThreshold = now.minus(Duration.ofMinutes(50));
 
     // Thin out the channels in each group, so that each AFEGroup only has 1 channel
     for (AfeChannelGroup group : channelGroups) {
@@ -480,6 +536,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
     private final ManagedChannel channel;
     private final Instant createdAt;
     private int numOutstanding = 0;
+    private int consecutiveFailures = 0;
 
     public ChannelWrapper(AfeChannelGroup group, ManagedChannel channel, Clock clock) {
       this.group = group;

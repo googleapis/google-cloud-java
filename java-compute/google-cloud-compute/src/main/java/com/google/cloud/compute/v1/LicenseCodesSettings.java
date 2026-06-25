@@ -87,6 +87,16 @@ public class LicenseCodesSettings extends ClientSettings<LicenseCodesSettings> {
     return ((LicenseCodesStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicySettings() {
+    return ((LicenseCodesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicySettings() {
+    return ((LicenseCodesStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsSettings() {
@@ -193,6 +203,18 @@ public class LicenseCodesSettings extends ClientSettings<LicenseCodesSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetLicenseCodeRequest, LicenseCode> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyLicenseCodeRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyLicenseCodeRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

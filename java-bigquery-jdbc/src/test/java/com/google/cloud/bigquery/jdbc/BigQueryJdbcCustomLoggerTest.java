@@ -94,6 +94,31 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testLazyCallerInference() {
+    logger.fine("Lazy log message");
+
+    List<LogRecord> records = testHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
+
+    assertTrue(record instanceof BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord);
+    BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord lazyRecord =
+        (BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord) record;
+
+    // Verify stack walk has not been executed yet
+    assertTrue(!lazyRecord.isCallerInferred());
+
+    // Trigger stack walk
+    String className = record.getSourceClassName();
+    String methodName = record.getSourceMethodName();
+
+    // Verify stack walk has executed and correct caller was inferred
+    assertTrue(lazyRecord.isCallerInferred());
+    assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), className);
+    assertEquals("testLazyCallerInference", methodName);
+  }
+
+  @Test
   public void testHotPathLoggerLogToDefaultWhenContextIsNull() {
     BigQueryJdbcCustomLogger hotpathLogger =
         new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");

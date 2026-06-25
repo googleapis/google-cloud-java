@@ -44,6 +44,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import com.google.common.collect.ImmutableMap;
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -61,6 +62,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -72,6 +74,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
@@ -937,7 +941,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(procedureFetcher, "getProcedures-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedures");
@@ -1199,7 +1203,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(procedureColumnFetcher, "getProcedureColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedureColumns for catalog: " + catalog);
@@ -1870,7 +1874,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(tableFetcher, "getTables-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getTables");
@@ -1988,14 +1992,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   @Override
-  public ResultSet getSchemas() {
+  public ResultSet getSchemas() throws SQLException {
     LOG.info("getSchemas() called");
 
     return getSchemas(null, null);
   }
 
   @Override
-  public ResultSet getCatalogs() {
+  public ResultSet getCatalogs() throws SQLException {
     LOG.info("getCatalogs() called");
 
     final List<String> accessibleCatalogs = getAccessibleCatalogNames();
@@ -2010,7 +2014,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(catalogRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, new Thread[0]);
+    return BigQueryJsonResultSet.of(
+        catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -2042,7 +2047,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     signalEndOfData(queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
-        tableTypesSchema, tableTypeRows.size(), queue, null, new Thread[0]);
+        tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
   }
 
   static Schema defineGetTableTypesSchema() {
@@ -2196,7 +2201,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(columnFetcher, "getColumns-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getColumns");
@@ -2426,27 +2431,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     values.add(createStringFieldValue("NO")); // 24. IS_GENERATEDCOLUMN
 
     return values;
-  }
-
-  static class ColumnTypeInfo {
-    final int jdbcType;
-    final String typeName;
-    final Integer columnSize;
-    final Integer decimalDigits;
-    final Integer numPrecRadix;
-
-    ColumnTypeInfo(
-        int jdbcType,
-        String typeName,
-        Integer columnSize,
-        Integer decimalDigits,
-        Integer numPrecRadix) {
-      this.jdbcType = jdbcType;
-      this.typeName = typeName;
-      this.columnSize = columnSize;
-      this.decimalDigits = decimalDigits;
-      this.numPrecRadix = numPrecRadix;
-    }
   }
 
   ColumnTypeInfo mapBigQueryTypeToJdbc(Field field) {
@@ -2732,7 +2716,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(typeInfoRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
     return BigQueryJsonResultSet.of(
-        typeInfoSchema, typeInfoRows.size(), queue, null, new Thread[0]);
+        typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetTypeInfoSchema() {
@@ -3630,7 +3614,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   @Override
-  public ResultSet getSchemas(String catalog, String schemaPattern) {
+  public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
       LOG.warning("Returning empty ResultSet as catalog or schemaPattern is an empty string.");
@@ -3653,20 +3637,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           final FieldList localResultSchemaFields = resultSchemaFields;
           List<String> projectsToScanList = new ArrayList<>();
 
-          if (catalogParam != null) {
-            projectsToScanList.add(catalogParam);
-          } else {
-            projectsToScanList.addAll(getAccessibleCatalogNames());
-          }
-
-          if (projectsToScanList.isEmpty()) {
-            LOG.info(
-                "No valid projects to scan (primary, specified, or additional). Returning empty"
-                    + " resultset.");
-            return;
-          }
-
           try {
+            if (catalogParam != null) {
+              projectsToScanList.add(catalogParam);
+            } else {
+              projectsToScanList.addAll(getAccessibleCatalogNames());
+            }
+
+            if (projectsToScanList.isEmpty()) {
+              LOG.info(
+                  "No valid projects to scan (primary, specified, or additional). Returning empty"
+                      + " resultset.");
+              return;
+            }
+
             for (String currentProjectToScan : projectsToScanList) {
               if (Thread.currentThread().isInterrupted()) {
                 LOG.warning(
@@ -3719,6 +3703,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
+            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
+            try {
+              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
+            } catch (InterruptedException ie) {
+              LOG.warning("Failed to put exception to queue due to interruption.");
+              Thread.currentThread().interrupt();
+            }
           } finally {
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Schema fetcher thread finished.");
@@ -3727,7 +3718,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(schemaFetcher, "getSchemas-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getSchemas");
@@ -3846,7 +3837,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       signalEndOfData(queue, resultSchemaFields);
     }
     return BigQueryJsonResultSet.of(
-        resultSchema, collectedResults.size(), queue, null, new Thread[0]);
+        resultSchema, collectedResults.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetClientInfoPropertiesSchema() {
@@ -4021,7 +4012,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(functionFetcher, "getFunctions-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctions");
@@ -4275,7 +4266,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(functionColumnFetcher, "getFunctionColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctionColumns for catalog: " + catalog);
@@ -4748,7 +4739,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     if (iface.isInstance(this)) {
       return iface.cast(this);
     }
-    throw new SQLException("Cannot unwrap to " + iface.getName());
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
@@ -4825,53 +4816,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Tuple.of(effectiveCatalog, effectiveSchemaPattern);
   }
 
-  // BigQuery STRING represents Unicode character strings (UTF-8).
-  // Standard JDBC maps UTF-8/Unicode data to Types.NVARCHAR rather than Types.VARCHAR.
-  private static final Map<StandardSQLTypeName, ColumnTypeInfo> STANDARD_TYPE_INFO =
-      ImmutableMap.<StandardSQLTypeName, ColumnTypeInfo>builder()
-          .put(StandardSQLTypeName.INT64, new ColumnTypeInfo(Types.BIGINT, "INT64", 19, 0, 10))
-          .put(StandardSQLTypeName.BOOL, new ColumnTypeInfo(Types.BOOLEAN, "BOOL", 1, null, null))
-          .put(
-              StandardSQLTypeName.FLOAT64,
-              new ColumnTypeInfo(Types.DOUBLE, "FLOAT64", 15, null, 10))
-          .put(StandardSQLTypeName.NUMERIC, new ColumnTypeInfo(Types.NUMERIC, "NUMERIC", 38, 9, 10))
-          .put(
-              StandardSQLTypeName.BIGNUMERIC,
-              new ColumnTypeInfo(Types.NUMERIC, "BIGNUMERIC", 77, 38, 10))
-          .put(
-              StandardSQLTypeName.STRING,
-              new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null))
-          .put(
-              StandardSQLTypeName.TIMESTAMP,
-              new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 29, null, null))
-          .put(
-              StandardSQLTypeName.DATETIME,
-              new ColumnTypeInfo(Types.TIMESTAMP, "DATETIME", 29, null, null))
-          .put(StandardSQLTypeName.DATE, new ColumnTypeInfo(Types.DATE, "DATE", 10, null, null))
-          .put(StandardSQLTypeName.TIME, new ColumnTypeInfo(Types.TIME, "TIME", 15, null, null))
-          .put(
-              StandardSQLTypeName.GEOGRAPHY,
-              new ColumnTypeInfo(Types.OTHER, "GEOGRAPHY", null, null, null))
-          .put(StandardSQLTypeName.JSON, new ColumnTypeInfo(Types.OTHER, "JSON", null, null, null))
-          .put(
-              StandardSQLTypeName.INTERVAL,
-              new ColumnTypeInfo(Types.OTHER, "INTERVAL", null, null, null))
-          .put(
-              StandardSQLTypeName.RANGE, new ColumnTypeInfo(Types.OTHER, "RANGE", null, null, null))
-          .put(
-              StandardSQLTypeName.BYTES,
-              new ColumnTypeInfo(Types.VARBINARY, "BYTES", null, null, null))
-          .put(
-              StandardSQLTypeName.STRUCT,
-              new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null))
-          .build();
-
   private ColumnTypeInfo getColumnTypeInfoForSqlType(StandardSQLTypeName bqType) {
     if (bqType == null) {
       LOG.warning("Null BigQuery type encountered. Mapping to STRING.");
       return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     }
-    ColumnTypeInfo info = STANDARD_TYPE_INFO.get(bqType);
+    ColumnTypeInfo info = BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(bqType);
     if (info == null) {
       LOG.warning("Unknown BigQuery type encountered: " + bqType.name() + ". Mapping to STRING.");
       return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
@@ -5072,38 +5022,33 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
     StringBuilder regex = new StringBuilder(sqlLikePattern.length() * 2);
     regex.append('^');
+    boolean escaped = false;
     for (int i = 0; i < sqlLikePattern.length(); i++) {
       char c = sqlLikePattern.charAt(i);
-      switch (c) {
-        case '%':
-          regex.append(".*");
-          break;
-        case '_':
-          regex.append('.');
-          break;
-        case '\\':
-        case '.':
-        case '[':
-        case ']':
-        case '(':
-        case ')':
-        case '{':
-        case '}':
-        case '*':
-        case '+':
-        case '?':
-        case '^':
-        case '$':
-        case '|':
-          regex.append('\\').append(c);
-          break;
-        default:
-          regex.append(c);
-          break;
+      if (!escaped && c == '\\') {
+        escaped = true;
+        continue;
+      } else if (!escaped && c == '%') {
+        regex.append(".*");
+      } else if (!escaped && c == '_') {
+        regex.append('.');
+      } else {
+        if (isRegexMetacharacter(c)) {
+          regex.append('\\');
+        }
+        regex.append(c);
+        escaped = false;
       }
+    }
+    if (escaped) {
+      regex.append('\\').append('\\');
     }
     regex.append('$');
     return Pattern.compile(regex.toString(), Pattern.CASE_INSENSITIVE);
+  }
+
+  private static boolean isRegexMetacharacter(char c) {
+    return "\\.[]{}()*+?^$|".indexOf(c) != -1;
   }
 
   boolean needsListing(String pattern) {
@@ -5236,7 +5181,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return this.connection.getCatalog();
   }
 
-  private List<String> getAccessibleCatalogNames() {
+  private List<String> getAccessibleCatalogNames() throws SQLException {
     Set<String> accessibleCatalogs = new HashSet<>();
     String primaryCatalog = getCurrentCatalogName();
     if (primaryCatalog != null && !primaryCatalog.isEmpty()) {
@@ -5255,6 +5200,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           accessibleCatalogs.add(project);
         }
       }
+    }
+
+    if (this.connection.isEnableProjectDiscovery()) {
+      accessibleCatalogs.addAll(this.connection.getDiscoveredProjects());
     }
 
     List<String> sortedCatalogs = new ArrayList<>(accessibleCatalogs);
@@ -5278,5 +5227,126 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   String replaceSqlParameters(String sql, String... params) throws SQLException {
     return String.format(sql, (Object[]) params);
+  }
+
+  private void loadDriverVersionProperties() {
+    if (parsedDriverVersion.get() != null) {
+      return;
+    }
+    Properties props = new Properties();
+    try (InputStream input =
+        getClass().getResourceAsStream("/com/google/cloud/bigquery/jdbc/dependencies.properties")) {
+      if (input == null) {
+        String errorMessage =
+            "Could not find dependencies.properties. Driver version information is unavailable.";
+        IllegalStateException ex = new IllegalStateException(errorMessage);
+        LOG.severe(errorMessage, ex);
+        throw ex;
+      }
+      props.load(input);
+      String versionString = props.getProperty("version.jdbc");
+      if (versionString == null || versionString.trim().isEmpty()) {
+        String errorMessage =
+            "The property version.jdbc not found or empty in dependencies.properties.";
+        IllegalStateException ex = new IllegalStateException(errorMessage);
+        LOG.severe(errorMessage, ex);
+        throw ex;
+      }
+      parsedDriverVersion.compareAndSet(null, versionString.trim());
+      String[] parts = versionString.split("\\.");
+      if (parts.length < 2) {
+        return;
+      }
+      parsedDriverMajorVersion.compareAndSet(null, Integer.parseInt(parts[0]));
+      String minorPart = parts[1];
+      String numericMinor = minorPart.replaceAll("[^0-9].*", "");
+      if (!numericMinor.isEmpty()) {
+        parsedDriverMinorVersion.compareAndSet(null, Integer.parseInt(numericMinor));
+      }
+    } catch (IOException | NumberFormatException e) {
+      String errorMessage =
+          "Error reading dependencies.properties. Driver version information is"
+              + " unavailable. Error: "
+              + e.getMessage();
+      IllegalStateException ex = new IllegalStateException(errorMessage, e);
+      LOG.severe(errorMessage, ex);
+      throw ex;
+    }
+  }
+
+  // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
+  // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
+  // directly.
+  static Future<?>[] wrapThread(final Thread thread) {
+    if (thread == null) {
+      return null;
+    }
+    return new Future<?>[] {
+      new Future<Object>() {
+        private volatile boolean cancelled = false;
+
+        @Override
+        public synchronized boolean cancel(boolean mayInterruptIfRunning) {
+          if (cancelled || thread.getState() == Thread.State.TERMINATED) {
+            return false;
+          }
+          cancelled = true;
+          if (mayInterruptIfRunning) {
+            thread.interrupt();
+          }
+          return true;
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return cancelled;
+        }
+
+        @Override
+        public boolean isDone() {
+          return cancelled || thread.getState() == Thread.State.TERMINATED;
+        }
+
+        @Override
+        public Object get() throws InterruptedException, CancellationException {
+          try {
+            return get(365, TimeUnit.DAYS);
+          } catch (TimeoutException e) {
+            throw new RuntimeException(e);
+          }
+        }
+
+        @Override
+        public Object get(long timeout, TimeUnit unit)
+            throws InterruptedException, CancellationException, TimeoutException {
+          if (isCancelled()) {
+            throw new CancellationException();
+          }
+          long remainingNanos = unit.toNanos(timeout);
+          long deadline = System.nanoTime() + remainingNanos;
+          while (thread.getState() != Thread.State.TERMINATED) {
+            if (isCancelled()) {
+              throw new CancellationException();
+            }
+            if (remainingNanos <= 0) {
+              throw new TimeoutException();
+            }
+            long remainingMillis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
+            if (remainingMillis == 0) {
+              remainingMillis = 1;
+            }
+
+            long delay = Math.min(remainingMillis, 50);
+            if (thread.getState() == Thread.State.NEW) {
+              Thread.sleep(delay);
+            } else {
+              thread.join(delay);
+            }
+            remainingNanos = deadline - System.nanoTime();
+          }
+          return null;
+        }
+      }
+    };
   }
 }

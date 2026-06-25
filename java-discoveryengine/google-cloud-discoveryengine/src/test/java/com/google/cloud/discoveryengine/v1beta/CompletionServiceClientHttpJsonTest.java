@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.discoveryengine.v1beta.stub.HttpJsonCompletionServiceStub;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -169,6 +170,9 @@ public class CompletionServiceClientHttpJsonTest {
             .setIncludeTailSuggestions(true)
             .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
             .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+            .addAllSuggestionTypeSpecs(
+                new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+            .addAllExperimentIds(new ArrayList<String>())
             .build();
 
     AdvancedCompleteQueryResponse actualResponse = client.advancedCompleteQuery(request);
@@ -210,6 +214,9 @@ public class CompletionServiceClientHttpJsonTest {
               .setIncludeTailSuggestions(true)
               .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
               .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .addAllSuggestionTypeSpecs(
+                  new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+              .addAllExperimentIds(new ArrayList<String>())
               .build();
       client.advancedCompleteQuery(request);
       Assert.fail("No exception raised");
@@ -470,6 +477,65 @@ public class CompletionServiceClientHttpJsonTest {
       client.purgeCompletionSuggestionsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void removeSuggestionTest() throws Exception {
+    RemoveSuggestionResponse expectedResponse = RemoveSuggestionResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    RemoveSuggestionRequest request =
+        RemoveSuggestionRequest.newBuilder()
+            .setCompletionConfig(
+                CompletionConfigName.ofProjectLocationCollectionEngineName(
+                        "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+                    .toString())
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setRemoveTime(Timestamp.newBuilder().build())
+            .build();
+
+    RemoveSuggestionResponse actualResponse = client.removeSuggestion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeSuggestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RemoveSuggestionRequest request =
+          RemoveSuggestionRequest.newBuilder()
+              .setCompletionConfig(
+                  CompletionConfigName.ofProjectLocationCollectionEngineName(
+                          "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+                      .toString())
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setRemoveTime(Timestamp.newBuilder().build())
+              .build();
+      client.removeSuggestion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java-pom-parent</artifactId>
-  <version>2.73.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
   <packaging>pom</packaging>
   <name>GAPIC Generator Java POM Parent</name>
   <url>https://github.com/googleapis/sdk-platform-java</url>
@@ -15,7 +15,8 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.17.0</version>
+    <version>1.17.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <relativePath>../../java-shared-config/java-shared-config/pom.xml</relativePath>
   </parent>
 
   <properties>
@@ -31,12 +32,14 @@
     <gson.version>2.13.2</gson.version>
     <guava.version>33.5.0-jre</guava.version>
     <protobuf.version>4.33.2</protobuf.version>
-    <opentelemetry.version>1.57.0</opentelemetry.version>
+    <opentelemetry.version>1.62.0</opentelemetry.version>
     <errorprone.version>2.48.0</errorprone.version>
+    <jspecify.version>1.0.0</jspecify.version>
     <j2objc-annotations.version>3.1</j2objc-annotations.version>
     <threetenbp.version>1.7.0</threetenbp.version>
     <junit.version>5.11.4</junit.version>
     <mockito.version>4.11.0</mockito.version>
+    <awaitility.version>4.3.0</awaitility.version>
     <slf4j.version>2.0.16</slf4j.version>
     <!--  skipping clirr check for protobuf 4.x upgrade -->
     <clirr.skip>true</clirr.skip>

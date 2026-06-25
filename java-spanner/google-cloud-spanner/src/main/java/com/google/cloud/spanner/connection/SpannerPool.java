@@ -173,7 +173,7 @@ public class SpannerPool {
     private final boolean enableEndToEndTracing;
     private final String clientCertificate;
     private final String clientCertificateKey;
-    private final boolean isExperimentalHost;
+    private final SpannerOptions.InstanceType instanceType;
     private final Boolean enableDirectAccess;
     private final String universeDomain;
     private final String grpcInterceptorProvider;
@@ -218,7 +218,7 @@ public class SpannerPool {
       this.enableEndToEndTracing = options.isEndToEndTracingEnabled();
       this.clientCertificate = options.getClientCertificate();
       this.clientCertificateKey = options.getClientCertificateKey();
-      this.isExperimentalHost = options.isExperimentalHost();
+      this.instanceType = options.getInstanceType();
       this.enableDirectAccess = options.isEnableDirectAccess();
       this.universeDomain = options.getUniverseDomain();
       this.grpcInterceptorProvider = options.getGrpcInterceptorProviderName();
@@ -256,7 +256,7 @@ public class SpannerPool {
           && Objects.equals(this.enableEndToEndTracing, other.enableEndToEndTracing)
           && Objects.equals(this.clientCertificate, other.clientCertificate)
           && Objects.equals(this.clientCertificateKey, other.clientCertificateKey)
-          && Objects.equals(this.isExperimentalHost, other.isExperimentalHost)
+          && Objects.equals(this.instanceType, other.instanceType)
           && Objects.equals(this.enableDirectAccess, other.enableDirectAccess)
           && Objects.equals(this.universeDomain, other.universeDomain)
           && Objects.equals(this.grpcInterceptorProvider, other.grpcInterceptorProvider);
@@ -289,7 +289,7 @@ public class SpannerPool {
           this.enableEndToEndTracing,
           this.clientCertificate,
           this.clientCertificateKey,
-          this.isExperimentalHost,
+          this.instanceType,
           this.enableDirectAccess,
           this.universeDomain,
           this.grpcInterceptorProvider);
@@ -525,8 +525,8 @@ public class SpannerPool {
     if (key.clientCertificate != null && key.clientCertificateKey != null) {
       builder.useClientCert(key.clientCertificate, key.clientCertificateKey);
     }
-    if (key.isExperimentalHost) {
-      builder.setExperimentalHost(key.host);
+    if (key.instanceType != null) {
+      builder.setType(key.instanceType);
     }
     if (key.enableDirectAccess != null) {
       builder.setEnableDirectAccess(key.enableDirectAccess);

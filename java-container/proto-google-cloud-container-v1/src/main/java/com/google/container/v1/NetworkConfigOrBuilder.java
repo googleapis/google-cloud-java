@@ -534,6 +534,49 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. DataplaneV2Config specifies the DPv2 configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplaneV2Config field is set.
+   */
+  boolean hasDataplaneV2Config();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DataplaneV2Config specifies the DPv2 configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplaneV2Config.
+   */
+  com.google.container.v1.DataplaneV2Config getDataplaneV2Config();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DataplaneV2Config specifies the DPv2 configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.DataplaneV2ConfigOrBuilder getDataplaneV2ConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Disable L4 load balancer VPC firewalls to enable firewall policies.
    * </pre>
    *

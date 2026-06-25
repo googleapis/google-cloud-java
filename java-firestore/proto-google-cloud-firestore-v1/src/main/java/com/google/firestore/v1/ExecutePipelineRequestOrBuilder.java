@@ -216,6 +216,21 @@ public interface ExecutePipelineRequestOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automatically commits the transaction after the pipeline has been
+   * executed. Only permitted in combination with `transaction` or
+   * `new_transaction`.
+   * </pre>
+   *
+   * <code>bool auto_commit_transaction = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoCommitTransaction.
+   */
+  boolean getAutoCommitTransaction();
+
   com.google.firestore.v1.ExecutePipelineRequest.PipelineTypeCase getPipelineTypeCase();
 
   com.google.firestore.v1.ExecutePipelineRequest.ConsistencySelectorCase

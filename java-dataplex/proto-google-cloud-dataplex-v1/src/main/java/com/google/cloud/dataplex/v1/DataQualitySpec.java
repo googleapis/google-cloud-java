@@ -54,6 +54,7 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
   private DataQualitySpec() {
     rules_ = java.util.Collections.emptyList();
     rowFilter_ = "";
+    filter_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6312,6 +6313,100 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
     return catalogPublishingEnabled_;
   }
 
+  public static final int ENABLE_CATALOG_BASED_RULES_FIELD_NUMBER = 10;
+  private boolean enableCatalogBasedRules_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, the data scan will retrieve rules defined in the
+   * dataplex-types.global.data-rules aspect on all paths of the catalog entry
+   * corresponding to the BigQuery table resource and all attached glossary
+   * terms. The path that data-rules aspect is attached on the table entry
+   * defines the column that the rule will be evaluated against. For glossary
+   * terms, the path that the terms are attached on the table entry defines the
+   * column that the rule will be evaluated against. At the start of scan
+   * execution, the rules reflect the latest state retrieved from the catalog
+   * entry and any updates on the rules thereafter are ignored for that
+   * execution. The updates will be reflected from the next execution. Rules
+   * defined in the datascan must be empty if this field is enabled.
+   * </pre>
+   *
+   * <code>bool enable_catalog_based_rules = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableCatalogBasedRules.
+   */
+  @java.lang.Override
+  public boolean getEnableCatalogBasedRules() {
+    return enableCatalogBasedRules_;
+  }
+
+  public static final int FILTER_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for selectively running a subset of rules. You can filter
+   * the request by the name or attribute key-value pairs defined on the rule.
+   * If not specified, all rules are run. The filter is applicable to both, the
+   * rules retrieved from catalog and explicitly defined rules in the scan.
+   * Please see [filter
+   * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+   * for more details.
+   * </pre>
+   *
+   * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for selectively running a subset of rules. You can filter
+   * the request by the name or attribute key-value pairs defined on the rule.
+   * If not specified, all rules are run. The filter is applicable to both, the
+   * rules retrieved from catalog and explicitly defined rules in the scan.
+   * Please see [filter
+   * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+   * for more details.
+   * </pre>
+   *
+   * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6341,6 +6436,12 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
     if (catalogPublishingEnabled_ != false) {
       output.writeBool(8, catalogPublishingEnabled_);
     }
+    if (enableCatalogBasedRules_ != false) {
+      output.writeBool(10, enableCatalogBasedRules_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6364,6 +6465,12 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
     }
     if (catalogPublishingEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, catalogPublishingEnabled_);
+    }
+    if (enableCatalogBasedRules_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableCatalogBasedRules_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, filter_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6390,6 +6497,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
       if (!getPostScanActions().equals(other.getPostScanActions())) return false;
     }
     if (getCatalogPublishingEnabled() != other.getCatalogPublishingEnabled()) return false;
+    if (getEnableCatalogBasedRules() != other.getEnableCatalogBasedRules()) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6415,6 +6524,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + CATALOG_PUBLISHING_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCatalogPublishingEnabled());
+    hash = (37 * hash) + ENABLE_CATALOG_BASED_RULES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableCatalogBasedRules());
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6580,6 +6693,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
         postScanActionsBuilder_ = null;
       }
       catalogPublishingEnabled_ = false;
+      enableCatalogBasedRules_ = false;
+      filter_ = "";
       return this;
     }
 
@@ -6644,6 +6759,12 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.catalogPublishingEnabled_ = catalogPublishingEnabled_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.enableCatalogBasedRules_ = enableCatalogBasedRules_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.filter_ = filter_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -6699,6 +6820,14 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
       }
       if (other.getCatalogPublishingEnabled() != false) {
         setCatalogPublishingEnabled(other.getCatalogPublishingEnabled());
+      }
+      if (other.getEnableCatalogBasedRules() != false) {
+        setEnableCatalogBasedRules(other.getEnableCatalogBasedRules());
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6764,6 +6893,18 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 64
+            case 80:
+              {
+                enableCatalogBasedRules_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
+            case 90:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7687,6 +7828,233 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessage
     public Builder clearCatalogPublishingEnabled() {
       bitField0_ = (bitField0_ & ~0x00000010);
       catalogPublishingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableCatalogBasedRules_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, the data scan will retrieve rules defined in the
+     * dataplex-types.global.data-rules aspect on all paths of the catalog entry
+     * corresponding to the BigQuery table resource and all attached glossary
+     * terms. The path that data-rules aspect is attached on the table entry
+     * defines the column that the rule will be evaluated against. For glossary
+     * terms, the path that the terms are attached on the table entry defines the
+     * column that the rule will be evaluated against. At the start of scan
+     * execution, the rules reflect the latest state retrieved from the catalog
+     * entry and any updates on the rules thereafter are ignored for that
+     * execution. The updates will be reflected from the next execution. Rules
+     * defined in the datascan must be empty if this field is enabled.
+     * </pre>
+     *
+     * <code>bool enable_catalog_based_rules = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableCatalogBasedRules.
+     */
+    @java.lang.Override
+    public boolean getEnableCatalogBasedRules() {
+      return enableCatalogBasedRules_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, the data scan will retrieve rules defined in the
+     * dataplex-types.global.data-rules aspect on all paths of the catalog entry
+     * corresponding to the BigQuery table resource and all attached glossary
+     * terms. The path that data-rules aspect is attached on the table entry
+     * defines the column that the rule will be evaluated against. For glossary
+     * terms, the path that the terms are attached on the table entry defines the
+     * column that the rule will be evaluated against. At the start of scan
+     * execution, the rules reflect the latest state retrieved from the catalog
+     * entry and any updates on the rules thereafter are ignored for that
+     * execution. The updates will be reflected from the next execution. Rules
+     * defined in the datascan must be empty if this field is enabled.
+     * </pre>
+     *
+     * <code>bool enable_catalog_based_rules = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableCatalogBasedRules to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableCatalogBasedRules(boolean value) {
+
+      enableCatalogBasedRules_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If enabled, the data scan will retrieve rules defined in the
+     * dataplex-types.global.data-rules aspect on all paths of the catalog entry
+     * corresponding to the BigQuery table resource and all attached glossary
+     * terms. The path that data-rules aspect is attached on the table entry
+     * defines the column that the rule will be evaluated against. For glossary
+     * terms, the path that the terms are attached on the table entry defines the
+     * column that the rule will be evaluated against. At the start of scan
+     * execution, the rules reflect the latest state retrieved from the catalog
+     * entry and any updates on the rules thereafter are ignored for that
+     * execution. The updates will be reflected from the next execution. Rules
+     * defined in the datascan must be empty if this field is enabled.
+     * </pre>
+     *
+     * <code>bool enable_catalog_based_rules = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableCatalogBasedRules() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      enableCatalogBasedRules_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for selectively running a subset of rules. You can filter
+     * the request by the name or attribute key-value pairs defined on the rule.
+     * If not specified, all rules are run. The filter is applicable to both, the
+     * rules retrieved from catalog and explicitly defined rules in the scan.
+     * Please see [filter
+     * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+     * for more details.
+     * </pre>
+     *
+     * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for selectively running a subset of rules. You can filter
+     * the request by the name or attribute key-value pairs defined on the rule.
+     * If not specified, all rules are run. The filter is applicable to both, the
+     * rules retrieved from catalog and explicitly defined rules in the scan.
+     * Please see [filter
+     * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+     * for more details.
+     * </pre>
+     *
+     * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for selectively running a subset of rules. You can filter
+     * the request by the name or attribute key-value pairs defined on the rule.
+     * If not specified, all rules are run. The filter is applicable to both, the
+     * rules retrieved from catalog and explicitly defined rules in the scan.
+     * Please see [filter
+     * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+     * for more details.
+     * </pre>
+     *
+     * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for selectively running a subset of rules. You can filter
+     * the request by the name or attribute key-value pairs defined on the rule.
+     * If not specified, all rules are run. The filter is applicable to both, the
+     * rules retrieved from catalog and explicitly defined rules in the scan.
+     * Please see [filter
+     * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+     * for more details.
+     * </pre>
+     *
+     * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for selectively running a subset of rules. You can filter
+     * the request by the name or attribute key-value pairs defined on the rule.
+     * If not specified, all rules are run. The filter is applicable to both, the
+     * rules retrieved from catalog and explicitly defined rules in the scan.
+     * Please see [filter
+     * syntax](https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview#rule-filtering)
+     * for more details.
+     * </pre>
+     *
+     * <code>string filter = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

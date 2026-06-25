@@ -157,6 +157,10 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1_CloudRunRevisionInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1_CloudRunJobInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1_CloudRunJobInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_fieldAccessorTable;
@@ -212,7 +216,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "endpoint_info\030\001"
           + " \001(\0132/.google.cloud.networkmanagement.v1.EndpointInfo\0226\n"
           + "\005steps\030\002 \003(\0132\'.google.cloud.networkmanagement.v1.Step\022\030\n"
-          + "\020forward_trace_id\030\004 \001(\005\"\375!\n"
+          + "\020forward_trace_id\030\004 \001(\005\"\350\"\n"
           + "\004Step\022\023\n"
           + "\013description\030\001 \001(\t\022<\n"
           + "\005state\030\002 \001(\0162-.google.cloud.networkmanagement.v1.Step.State\022\023\n"
@@ -273,18 +277,20 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\022app_engine_version\030\026 \001(\01327.goo"
           + "gle.cloud.networkmanagement.v1.AppEngineVersionInfoH\000\022U\n"
           + "\022cloud_run_revision\030\027 \001("
-          + "\01327.google.cloud.networkmanagement.v1.CloudRunRevisionInfoH\000\0229\n"
+          + "\01327.google.cloud.networkmanagement.v1.CloudRunRevisionInfoH\000\022K\n\r"
+          + "cloud_run_job\030- "
+          + "\001(\01322.google.cloud.networkmanagement.v1.CloudRunJobInfoH\000\0229\n"
           + "\003nat\030\031 \001(\0132*.google.cloud.networkmanagement.v1.NatInfoH\000\022R\n"
-          + "\020proxy_connection\030\032 \001(\01326.google.cloud"
-          + ".networkmanagement.v1.ProxyConnectionInfoH\000\022`\n"
-          + "\032load_balancer_backend_info\030\033 \001(\0132"
-          + ":.google.cloud.networkmanagement.v1.LoadBalancerBackendInfoH\000\022N\n"
-          + "\016storage_bucket\030\034"
-          + " \001(\01324.google.cloud.networkmanagement.v1.StorageBucketInfoH\000\022N\n"
-          + "\016serverless_neg\030\035"
-          + " \001(\01324.google.cloud.networkmanagement.v1.ServerlessNegInfoH\000\022]\n"
+          + "\020proxy_connection\030\032 \001(\01326.google.cloud.ne"
+          + "tworkmanagement.v1.ProxyConnectionInfoH\000\022`\n"
+          + "\032load_balancer_backend_info\030\033 \001(\0132:.g"
+          + "oogle.cloud.networkmanagement.v1.LoadBalancerBackendInfoH\000\022N\n"
+          + "\016storage_bucket\030\034 \001"
+          + "(\01324.google.cloud.networkmanagement.v1.StorageBucketInfoH\000\022N\n"
+          + "\016serverless_neg\030\035 \001"
+          + "(\01324.google.cloud.networkmanagement.v1.ServerlessNegInfoH\000\022]\n"
           + "\026ngfw_packet_inspection\030*"
-          + " \001(\0132;.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfoH\000\"\260\n\n"
+          + " \001(\0132;.google.cloud.networkmanagement.v1.NgfwPacketInspectionInfoH\000\"\316\n\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\027\n"
           + "\023START_FROM_INSTANCE\020\001\022\027\n"
@@ -298,7 +304,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\030START_FROM_REDIS_CLUSTER\020!\022\035\n"
           + "\031START_FROM_CLOUD_FUNCTION\020\027\022!\n"
           + "\035START_FROM_APP_ENGINE_VERSION\020\031\022!\n"
-          + "\035START_FROM_CLOUD_RUN_REVISION\020\032\022\035\n"
+          + "\035START_FROM_CLOUD_RUN_REVISION\020\032\022\034\n"
+          + "\030START_FROM_CLOUD_RUN_JOB\0202\022\035\n"
           + "\031START_FROM_STORAGE_BUCKET\020\035\022$\n"
           + " START_FROM_PSC_PUBLISHED_SERVICE\020\036\022\035\n"
           + "\031START_FROM_SERVERLESS_NEG\020\037\022\037\n"
@@ -347,8 +354,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\032psc_network_attachment_uri\030\t \001(\t\022\023\n"
           + "\007running\030\n"
           + " \001(\010B\002\030\001\022F\n"
-          + "\006status\030\013 \001(\01626"
-          + ".google.cloud.networkmanagement.v1.InstanceInfo.Status\">\n"
+          + "\006status\030\013 \001(\01626.google.cloud"
+          + ".networkmanagement.v1.InstanceInfo.Status\">\n"
           + "\006Status\022\026\n"
           + "\022STATUS_UNSPECIFIED\020\000\022\013\n"
           + "\007RUNNING\020\001\022\017\n"
@@ -397,8 +404,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + " \001(\01626.google.cloud.networkmanagement.v1.RouteInfo.RouteType\022O\n\r"
           + "next_hop_type\030\t"
           + " \001(\01628.google.cloud.networkmanagement.v1.RouteInfo.NextHopType\022P\n"
-          + "\013route_scope\030\016"
-          + " \001(\01627.google.cloud.networkmanagement.v1.RouteInfo.RouteScopeB\002\030\001\022\024\n"
+          + "\013route_scope\030\016 "
+          + "\001(\01627.google.cloud.networkmanagement.v1.RouteInfo.RouteScopeB\002\030\001\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\016\n"
           + "\006region\030\023 \001(\t\022\025\n\r"
@@ -460,8 +467,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\036_advertised_route_next_hop_uri\"\332\002\n"
           + "\021GoogleServiceInfo\022\021\n"
           + "\tsource_ip\030\001 \001(\t\022c\n"
-          + "\023google_service_type\030\002 \001(\0162F.google.cloud.networkmana"
-          + "gement.v1.GoogleServiceInfo.GoogleServiceType\"\314\001\n"
+          + "\023google_service_type\030\002 \001(\016"
+          + "2F.google.cloud.networkmanagement.v1.GoogleServiceInfo.GoogleServiceType\"\314\001\n"
           + "\021GoogleServiceType\022#\n"
           + "\037GOOGLE_SERVICE_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003IAP\020\001\022$\n"
@@ -485,13 +492,13 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + " \001(\t\022\035\n"
           + "\025psc_google_api_target\030\013 \001(\t\"\302\004\n"
           + "\020LoadBalancerInfo\022`\n"
-          + "\022load_balancer_type\030\001 \001(\0162D.google.cloud.networkman"
-          + "agement.v1.LoadBalancerInfo.LoadBalancerType\022\034\n"
+          + "\022load_balancer_type\030\001 \001("
+          + "\0162D.google.cloud.networkmanagement.v1.LoadBalancerInfo.LoadBalancerType\022\034\n"
           + "\020health_check_uri\030\002 \001(\tB\002\030\001\022H\n"
-          + "\010backends\030\003"
-          + " \003(\01326.google.cloud.networkmanagement.v1.LoadBalancerBackend\022U\n"
-          + "\014backend_type\030\004"
-          + " \001(\0162?.google.cloud.networkmanagement.v1.LoadBalancerInfo.BackendType\022\023\n"
+          + "\010backends\030\003 \003(\0132"
+          + "6.google.cloud.networkmanagement.v1.LoadBalancerBackend\022U\n"
+          + "\014backend_type\030\004 \001(\0162?."
+          + "google.cloud.networkmanagement.v1.LoadBalancerInfo.BackendType\022\023\n"
           + "\013backend_uri\030\005 \001(\t\"\217\001\n"
           + "\020LoadBalancerType\022\"\n"
           + "\036LOAD_BALANCER_TYPE_UNSPECIFIED\020\000\022\024\n"
@@ -508,9 +515,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\023LoadBalancerBackend\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022t\n"
-          + "\033health_check_firewall_state\030\003 \001"
-          + "(\0162O.google.cloud.networkmanagement.v1.L"
-          + "oadBalancerBackend.HealthCheckFirewallState\022,\n"
+          + "\033health_check_firewall_state\030\003 \001(\0162O.google.c"
+          + "loud.networkmanagement.v1.LoadBalancerBackend.HealthCheckFirewallState\022,\n"
           + "$health_check_allowing_firewall_rules\030\004 \003(\t\022,\n"
           + "$health_check_blocking_firewall_rules\030\005 \003(\t\"j\n"
           + "\030HealthCheckFirewallState\022+\n"
@@ -527,7 +533,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\013network_uri\030\003 \001(\t\022\022\n\n"
           + "ip_address\030\004 \001(\t\022\026\n"
           + "\016vpn_tunnel_uri\030\005 \001(\t\022\016\n"
-          + "\006region\030\006 \001(\t\"\356\002\n\r"
+          + "\006region\030\006 \001(\t\"\356\002\n"
+          + "\r"
           + "VpnTunnelInfo\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\026\n"
@@ -537,8 +544,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\021source_gateway_ip\030\006 \001(\t\022\023\n"
           + "\013network_uri\030\007 \001(\t\022\016\n"
           + "\006region\030\010 \001(\t\022R\n"
-          + "\014routing_type\030\t \001(\0162<.google.cloud.n"
-          + "etworkmanagement.v1.VpnTunnelInfo.RoutingType\"[\n"
+          + "\014routing_type\030\t"
+          + " \001(\0162<.google.cloud.networkmanagement.v1.VpnTunnelInfo.RoutingType\"[\n"
           + "\013RoutingType\022\034\n"
           + "\030ROUTING_TYPE_UNSPECIFIED\020\000\022\017\n"
           + "\013ROUTE_BASED\020\001\022\020\n"
@@ -550,8 +557,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\020interconnect_uri\030\003 \001(\t\022\016\n"
           + "\006region\030\004 \001(\t\022\030\n"
           + "\020cloud_router_uri\030\005 \001(\t\022P\n"
-          + "\004type\030\006"
-          + " \001(\0162B.google.cloud.networkmanagement.v1.InterconnectAttachmentInfo.Type\0222\n"
+          + "\004type\030\006 \001(\0162B.goog"
+          + "le.cloud.networkmanagement.v1.InterconnectAttachmentInfo.Type\0222\n"
           + " l2_attachment_matched_ip_address\030\007 \001("
           + "\tB\010\342\214\317\327\010\002\010\004\"`\n"
           + "\004Type\022\024\n"
@@ -568,16 +575,16 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\020destination_port\030\005 \001(\005\022\032\n"
           + "\022source_network_uri\030\006 \001(\t\022\037\n"
           + "\027destination_network_uri\030\007 \001(\t\022\030\n"
-          + "\020source_agent_uri\030\010 \001(\t\"\324\006\n"
+          + "\020source_agent_uri\030\010 \001(\t\"\347\006\n"
           + "\013DeliverInfo\022E\n"
-          + "\006target\030\001 \001(\01625.google.cl"
-          + "oud.networkmanagement.v1.DeliverInfo.Target\022\024\n"
+          + "\006target\030\001"
+          + " \001(\01625.google.cloud.networkmanagement.v1.DeliverInfo.Target\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\034\n\n"
           + "ip_address\030\003 \001(\tB\010\342\214\317\327\010\002\010\004\022\026\n"
           + "\016storage_bucket\030\004 \001(\t\022\035\n"
           + "\025psc_google_api_target\030\005 \001(\t\022]\n"
-          + "\023google_service_type\030\006 \001(\0162@.google.cloud.netwo"
-          + "rkmanagement.v1.DeliverInfo.GoogleServiceType\"\204\003\n"
+          + "\023google_service_type\030\006"
+          + " \001(\0162@.google.cloud.networkmanagement.v1.DeliverInfo.GoogleServiceType\"\227\003\n"
           + "\006Target\022\026\n"
           + "\022TARGET_UNSPECIFIED\020\000\022\014\n"
           + "\010INSTANCE\020\001\022\014\n"
@@ -599,7 +606,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\026GOOGLE_MANAGED_SERVICE\020\017\022\022\n"
           + "\016REDIS_INSTANCE\020\020\022\021\n\r"
           + "REDIS_CLUSTER\020\021\022\013\n"
-          + "\007GKE_POD\020\023\"\254\001\n"
+          + "\007GKE_POD\020\023\022\021\n\r"
+          + "CLOUD_RUN_JOB\020\024\"\254\001\n"
           + "\021GoogleServiceType\022#\n"
           + "\037GOOGLE_SERVICE_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003IAP\020\001\022$\n"
@@ -608,16 +616,15 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\025PRIVATE_GOOGLE_ACCESS\020\004\022\031\n"
           + "\025SERVERLESS_VPC_ACCESS\020\005\"\211\003\n"
           + "\013ForwardInfo\022E\n"
-          + "\006target\030\001 "
-          + "\001(\01625.google.cloud.networkmanagement.v1.ForwardInfo.Target\022\024\n"
+          + "\006target\030\001"
+          + " \001(\01625.google.cloud.networkmanagement.v1.ForwardInfo.Target\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\034\n\n"
           + "ip_address\030\003 \001(\tB\010\342\214\317\327\010\002\010\004\"\376\001\n"
           + "\006Target\022\026\n"
           + "\022TARGET_UNSPECIFIED\020\000\022\017\n"
           + "\013PEERING_VPC\020\001\022\017\n"
           + "\013VPN_GATEWAY\020\002\022\020\n"
-          + "\014INTERCONNECT\020\003\022\022\n"
-          + "\n"
+          + "\014INTERCONNECT\020\003\022\022\n\n"
           + "GKE_MASTER\020\004\032\002\010\001\022\"\n"
           + "\036IMPORTED_CUSTOM_ROUTE_NEXT_HOP\020\005\022\032\n"
           + "\022CLOUD_SQL_INSTANCE\020\006\032\002\010\001\022\023\n"
@@ -627,8 +634,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\030SECURE_WEB_PROXY_GATEWAY\020\n"
           + "\"\205\r\n"
           + "\tAbortInfo\022A\n"
-          + "\005cause\030\001 \001(\01622.g"
-          + "oogle.cloud.networkmanagement.v1.AbortInfo.Cause\022\024\n"
+          + "\005cause\030\001 \001"
+          + "(\01622.google.cloud.networkmanagement.v1.AbortInfo.Cause\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\034\n\n"
           + "ip_address\030\004 \001(\tB\010\342\214\317\327\010\002\010\004\022#\n"
           + "\033projects_missing_permission\030\003 \003(\t\"\333\013\n"
@@ -678,16 +685,16 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + ")UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG\020\037\022\033\n"
           + "\027NO_SERVERLESS_IP_RANGES\020%\022 \n"
           + "\034IP_VERSION_PROTOCOL_MISMATCH\020(\022%\n"
-          + "!GKE_POD_UNKNOWN_ENDPOINT_LOCATION\020)\"\261\"\n"
+          + "!GKE_POD_UNKNOWN_ENDPOINT_LOCATION\020)\"\316\"\n"
           + "\010DropInfo\022@\n"
-          + "\005cause\030\001 \001(\01621.google.clo"
-          + "ud.networkmanagement.v1.DropInfo.Cause\022\024\n"
+          + "\005cause\030\001 \001(\01621.goog"
+          + "le.cloud.networkmanagement.v1.DropInfo.Cause\022\024\n"
           + "\014resource_uri\030\002 \001(\t\022\021\n"
           + "\tsource_ip\030\003 \001(\t\022\026\n"
           + "\016destination_ip\030\004 \001(\t\022\016\n"
           + "\006region\030\005 \001(\t\022\037\n"
           + "\027source_geolocation_code\030\006 \001(\t\022$\n"
-          + "\034destination_geolocation_code\030\007 \001(\t\"\312 \n"
+          + "\034destination_geolocation_code\030\007 \001(\t\"\347 \n"
           + "\005Cause\022\025\n"
           + "\021CAUSE_UNSPECIFIED\020\000\022\034\n"
           + "\030UNKNOWN_EXTERNAL_ADDRESS\020\001\022\031\n"
@@ -752,12 +759,13 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "*PSC_NEG_PRODUCER_ENDPOINT_NO_GLOBAL_ACCESS\0200\0223\n"
           + "/PSC_NEG_PRODUCER_FORWARDING_RULE_MULTIPLE_PORTS\0206\022!\n"
           + "\035CLOUD_SQL_PSC_NEG_UNSUPPORTED\020:\022-\n"
-          + ")NO_NAT_SUBNETS_FOR_PSC_SERVICE_ATTACHMENT\0209\022#\n"
+          + ")NO_NAT_SUBNETS_FOR_",
+      "PSC_SERVICE_ATTACHMENT\0209\022#\n"
           + "\037PSC_TRANSITIVITY_NOT_PROPAGATED\020@\022(\n"
           + "$HYBRID_NEG_NON_DYNAMIC_ROUTE_MATCHED\0207\022.\n"
-          + "*HYBRID_NEG_NON_LOCA",
-      "L_DYNAMIC_ROUTE_MATCHED\0208\022 \n"
-          + "\034CLOUD_RUN_REVISION_NOT_READY\020\035\022\'\n"
+          + "*HYBRID_NEG_NON_LOCAL_DYNAMIC_ROUTE_MATCHED\0208\022 \n"
+          + "\034CLOUD_RUN_REVISION_NOT_READY\020\035\022\033\n"
+          + "\027CLOUD_RUN_JOB_NOT_READY\020q\022\'\n"
           + "#DROPPED_INSIDE_PSC_SERVICE_PRODUCER\020%\022%\n"
           + "!LOAD_BALANCER_HAS_NO_PROXY_SUBNET\020\'\022\032\n"
           + "\026CLOUD_NAT_NO_ADDRESSES\020(\022\020\n"
@@ -808,8 +816,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "ip_address\030\002 \001(\tB\010\342\214\317\327\010\002\010\004\022\023\n"
           + "\013network_uri\030\003 \001(\t\"\277\003\n"
           + "\031IpMasqueradingSkippedInfo\022S\n"
-          + "\006reason\030\001 \001(\0162C.google.cloud.n"
-          + "etworkmanagement.v1.IpMasqueradingSkippedInfo.Reason\022\034\n"
+          + "\006reason\030\001 \001(\0162C.google.cloud.networ"
+          + "kmanagement.v1.IpMasqueradingSkippedInfo.Reason\022\034\n"
           + "\024non_masquerade_range\030\002 \001(\t\"\256\002\n"
           + "\006Reason\022\026\n"
           + "\022REASON_UNSPECIFIED\020\000\0225\n"
@@ -826,8 +834,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\tdirection\030\003 \001(\t\022\016\n"
           + "\006action\030\004 \001(\t\"\336\002\n"
           + "\033GkeNetworkPolicySkippedInfo\022U\n"
-          + "\006reason\030\001 \001(\0162E.google.cloud.networkmanageme"
-          + "nt.v1.GkeNetworkPolicySkippedInfo.Reason\"\347\001\n"
+          + "\006reason\030\001"
+          + " \001(\0162E.google.cloud.networkmanagement.v1.GkeNetworkPolicySkippedInfo.Reason\"\347\001\n"
           + "\006Reason\022\026\n"
           + "\022REASON_UNSPECIFIED\020\000\022\033\n"
           + "\027NETWORK_POLICY_DISABLED\020\001\022\037\n"
@@ -867,7 +875,11 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\020\n"
           + "\010location\030\004 \001(\t\022\023\n"
-          + "\013service_uri\030\005 \001(\t\"_\n"
+          + "\013service_uri\030\005 \001(\t\"F\n"
+          + "\017CloudRunJobInfo\022\024\n"
+          + "\014display_name\030\001 \001(\t\022\013\n"
+          + "\003uri\030\002 \001(\t\022\020\n"
+          + "\010location\030\003 \001(\t\"_\n"
           + "\024AppEngineVersionInfo\022\024\n"
           + "\014display_name\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\022\017\n"
@@ -889,8 +901,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\007NatInfo\022=\n"
           + "\004type\030\001 \001(\0162/.google.cloud.networkmanagement.v1.NatInfo.Type\022\020\n"
           + "\010protocol\030\002 \001(\t\022\023\n"
-          + "\013network_uri\030\003 \001(\t\022\025\n"
-          + "\r"
+          + "\013network_uri\030\003 \001(\t\022\025\n\r"
           + "old_source_ip\030\004 \001(\t\022\025\n\r"
           + "new_source_ip\030\005 \001(\t\022\032\n"
           + "\022old_destination_ip\030\006 \001(\t\022\032\n"
@@ -903,8 +914,8 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "router_uri\030\014 \001(\t\022\030\n"
           + "\020nat_gateway_name\030\r"
           + " \001(\t\022^\n"
-          + "\026cloud_nat_gateway_type\030\016"
-          + " \001(\0162>.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType\"\231\001\n"
+          + "\026cloud_nat_gateway_type\030\016 \001(\0162>.goo"
+          + "gle.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType\"\231\001\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\030\n"
           + "\024INTERNAL_TO_EXTERNAL\020\001\022\030\n"
@@ -943,8 +954,9 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\025psc_google_api_target\030\n"
           + " \001(\t\022\030\n"
           + "\020health_check_uri\030\006 \001(\t\022\214\001\n"
-          + "#health_check_firewalls_config_state\030\007 \001(\0162Z.google.cloud.networkmanagem"
-          + "ent.v1.LoadBalancerBackendInfo.HealthCheckFirewallsConfigStateB\003\340A\003\"\315\001\n"
+          + "#health_check_firewalls_config_state\030\007 \001(\0162Z."
+          + "google.cloud.networkmanagement.v1.LoadBa"
+          + "lancerBackendInfo.HealthCheckFirewallsConfigStateB\003\340A\003\"\315\001\n"
           + "\037HealthCheckFirewallsConfigState\0223\n"
           + "/HEALTH_CHECK_FIREWALLS_CONFIG_STATE_UNSPECIFIED\020\000\022\030\n"
           + "\024FIREWALLS_CONFIGURED\020\001\022\"\n"
@@ -971,10 +983,11 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
           + "\036TCP_UDP_INTERNAL_LOAD_BALANCER\020\n"
           + "B\371\001\n"
           + "%com.google.cloud.networkmanagement.v1B\n"
-          + "TraceProtoP\001ZScloud.google.com/go/networkmana"
-          + "gement/apiv1/networkmanagementpb;networkmanagementpb\252\002!Google.Cloud.NetworkManag"
-          + "ement.V1\312\002!Google\\Cloud\\NetworkManagemen"
-          + "t\\V1\352\002$Google::Cloud::NetworkManagement::V1b\006proto3"
+          + "TraceProtoP\001ZScloud.google.com/go/networkmanagement/apiv1/"
+          + "networkmanagementpb;networkmanagementpb\252"
+          + "\002!Google.Cloud.NetworkManagement.V1\312\002!Go"
+          + "ogle\\Cloud\\NetworkManagement\\V1\352\002$Google"
+          + "::Cloud::NetworkManagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1031,6 +1044,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "CloudFunction",
               "AppEngineVersion",
               "CloudRunRevision",
+              "CloudRunJob",
               "Nat",
               "ProxyConnection",
               "LoadBalancerBackendInfo",
@@ -1351,8 +1365,16 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "DisplayName", "Uri", "Location", "ServiceUri",
             });
-    internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_descriptor =
+    internal_static_google_cloud_networkmanagement_v1_CloudRunJobInfo_descriptor =
         getDescriptor().getMessageType(29);
+    internal_static_google_cloud_networkmanagement_v1_CloudRunJobInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1_CloudRunJobInfo_descriptor,
+            new java.lang.String[] {
+              "DisplayName", "Uri", "Location",
+            });
+    internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_descriptor =
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_AppEngineVersionInfo_descriptor,
@@ -1360,7 +1382,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "DisplayName", "Uri", "Runtime", "Environment",
             });
     internal_static_google_cloud_networkmanagement_v1_VpcConnectorInfo_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_networkmanagement_v1_VpcConnectorInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_VpcConnectorInfo_descriptor,
@@ -1368,7 +1390,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "DisplayName", "Uri", "Location",
             });
     internal_static_google_cloud_networkmanagement_v1_DirectVpcEgressConnectionInfo_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_networkmanagement_v1_DirectVpcEgressConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_DirectVpcEgressConnectionInfo_descriptor,
@@ -1376,7 +1398,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "NetworkUri", "SubnetworkUri", "SelectedIpRange", "SelectedIpAddress", "Region",
             });
     internal_static_google_cloud_networkmanagement_v1_ServerlessExternalConnectionInfo_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_networkmanagement_v1_ServerlessExternalConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ServerlessExternalConnectionInfo_descriptor,
@@ -1384,7 +1406,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "SelectedIpAddress",
             });
     internal_static_google_cloud_networkmanagement_v1_NatInfo_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_networkmanagement_v1_NatInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_NatInfo_descriptor,
@@ -1405,7 +1427,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "CloudNatGatewayType",
             });
     internal_static_google_cloud_networkmanagement_v1_ProxyConnectionInfo_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_networkmanagement_v1_ProxyConnectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ProxyConnectionInfo_descriptor,
@@ -1423,7 +1445,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "NetworkUri",
             });
     internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackendInfo_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackendInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_LoadBalancerBackendInfo_descriptor,
@@ -1440,7 +1462,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "HealthCheckFirewallsConfigState",
             });
     internal_static_google_cloud_networkmanagement_v1_StorageBucketInfo_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_networkmanagement_v1_StorageBucketInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_StorageBucketInfo_descriptor,
@@ -1448,7 +1470,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "Bucket",
             });
     internal_static_google_cloud_networkmanagement_v1_ServerlessNegInfo_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_networkmanagement_v1_ServerlessNegInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_ServerlessNegInfo_descriptor,
@@ -1456,7 +1478,7 @@ public final class TraceProto extends com.google.protobuf.GeneratedFile {
               "NegUri",
             });
     internal_static_google_cloud_networkmanagement_v1_NgfwPacketInspectionInfo_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_networkmanagement_v1_NgfwPacketInspectionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkmanagement_v1_NgfwPacketInspectionInfo_descriptor,

@@ -86,6 +86,8 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
     IMAGE_LOCATION(3),
     DOCUMENT_LOCATION(5),
     METADATA_LOCATION(8),
+    CONVERSATION_LOCATION(10),
+    BATCH_CONTENT_LOCATION(11),
     LOCATION_NOT_SET(0);
     private final int value;
 
@@ -113,6 +115,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
           return DOCUMENT_LOCATION;
         case 8:
           return METADATA_LOCATION;
+        case 10:
+          return CONVERSATION_LOCATION;
+        case 11:
+          return BATCH_CONTENT_LOCATION;
         case 0:
           return LOCATION_NOT_SET;
         default:
@@ -416,6 +422,116 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.MetadataLocation.getDefaultInstance();
   }
 
+  public static final int CONVERSATION_LOCATION_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a conversation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+   *
+   * @return Whether the conversationLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversationLocation() {
+    return locationCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a conversation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+   *
+   * @return The conversationLocation.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ConversationLocation getConversationLocation() {
+    if (locationCase_ == 10) {
+      return (com.google.privacy.dlp.v2.ConversationLocation) location_;
+    }
+    return com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a conversation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ConversationLocationOrBuilder
+      getConversationLocationOrBuilder() {
+    if (locationCase_ == 10) {
+      return (com.google.privacy.dlp.v2.ConversationLocation) location_;
+    }
+    return com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance();
+  }
+
+  public static final int BATCH_CONTENT_LOCATION_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a batch of content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+   *
+   * @return Whether the batchContentLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatchContentLocation() {
+    return locationCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a batch of content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+   *
+   * @return The batchContentLocation.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.BatchContentLocation getBatchContentLocation() {
+    if (locationCase_ == 11) {
+      return (com.google.privacy.dlp.v2.BatchContentLocation) location_;
+    }
+    return com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a batch of content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.BatchContentLocationOrBuilder
+      getBatchContentLocationOrBuilder() {
+    if (locationCase_ == 11) {
+      return (com.google.privacy.dlp.v2.BatchContentLocation) location_;
+    }
+    return com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance();
+  }
+
   public static final int CONTAINER_TIMESTAMP_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp containerTimestamp_;
 
@@ -568,6 +684,12 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
     if (locationCase_ == 8) {
       output.writeMessage(8, (com.google.privacy.dlp.v2.MetadataLocation) location_);
     }
+    if (locationCase_ == 10) {
+      output.writeMessage(10, (com.google.privacy.dlp.v2.ConversationLocation) location_);
+    }
+    if (locationCase_ == 11) {
+      output.writeMessage(11, (com.google.privacy.dlp.v2.BatchContentLocation) location_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -606,6 +728,16 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.privacy.dlp.v2.MetadataLocation) location_);
     }
+    if (locationCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.privacy.dlp.v2.ConversationLocation) location_);
+    }
+    if (locationCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.privacy.dlp.v2.BatchContentLocation) location_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -641,6 +773,12 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
         break;
       case 8:
         if (!getMetadataLocation().equals(other.getMetadataLocation())) return false;
+        break;
+      case 10:
+        if (!getConversationLocation().equals(other.getConversationLocation())) return false;
+        break;
+      case 11:
+        if (!getBatchContentLocation().equals(other.getBatchContentLocation())) return false;
         break;
       case 0:
       default:
@@ -680,6 +818,14 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       case 8:
         hash = (37 * hash) + METADATA_LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + getMetadataLocation().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + CONVERSATION_LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getConversationLocation().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + BATCH_CONTENT_LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getBatchContentLocation().hashCode();
         break;
       case 0:
       default:
@@ -847,6 +993,12 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       if (metadataLocationBuilder_ != null) {
         metadataLocationBuilder_.clear();
       }
+      if (conversationLocationBuilder_ != null) {
+        conversationLocationBuilder_.clear();
+      }
+      if (batchContentLocationBuilder_ != null) {
+        batchContentLocationBuilder_.clear();
+      }
       containerTimestamp_ = null;
       if (containerTimestampBuilder_ != null) {
         containerTimestampBuilder_.dispose();
@@ -896,14 +1048,14 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
         result.containerName_ = containerName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.containerTimestamp_ =
             containerTimestampBuilder_ == null
                 ? containerTimestamp_
                 : containerTimestampBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.containerVersion_ = containerVersion_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -923,6 +1075,12 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       }
       if (locationCase_ == 8 && metadataLocationBuilder_ != null) {
         result.location_ = metadataLocationBuilder_.build();
+      }
+      if (locationCase_ == 10 && conversationLocationBuilder_ != null) {
+        result.location_ = conversationLocationBuilder_.build();
+      }
+      if (locationCase_ == 11 && batchContentLocationBuilder_ != null) {
+        result.location_ = batchContentLocationBuilder_.build();
       }
     }
 
@@ -948,7 +1106,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getContainerVersion().isEmpty()) {
         containerVersion_ = other.containerVersion_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getLocationCase()) {
@@ -970,6 +1128,16 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
         case METADATA_LOCATION:
           {
             mergeMetadataLocation(other.getMetadataLocation());
+            break;
+          }
+        case CONVERSATION_LOCATION:
+          {
+            mergeConversationLocation(other.getConversationLocation());
+            break;
+          }
+        case BATCH_CONTENT_LOCATION:
+          {
+            mergeBatchContentLocation(other.getBatchContentLocation());
             break;
           }
         case LOCATION_NOT_SET:
@@ -1034,13 +1202,13 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetContainerTimestampFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 containerVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
@@ -1050,6 +1218,20 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
                 locationCase_ = 8;
                 break;
               } // case 66
+            case 82:
+              {
+                input.readMessage(
+                    internalGetConversationLocationFieldBuilder().getBuilder(), extensionRegistry);
+                locationCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetBatchContentLocationFieldBuilder().getBuilder(), extensionRegistry);
+                locationCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2111,6 +2293,444 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       return metadataLocationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.ConversationLocation,
+            com.google.privacy.dlp.v2.ConversationLocation.Builder,
+            com.google.privacy.dlp.v2.ConversationLocationOrBuilder>
+        conversationLocationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     *
+     * @return Whether the conversationLocation field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversationLocation() {
+      return locationCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     *
+     * @return The conversationLocation.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ConversationLocation getConversationLocation() {
+      if (conversationLocationBuilder_ == null) {
+        if (locationCase_ == 10) {
+          return (com.google.privacy.dlp.v2.ConversationLocation) location_;
+        }
+        return com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance();
+      } else {
+        if (locationCase_ == 10) {
+          return conversationLocationBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    public Builder setConversationLocation(com.google.privacy.dlp.v2.ConversationLocation value) {
+      if (conversationLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        onChanged();
+      } else {
+        conversationLocationBuilder_.setMessage(value);
+      }
+      locationCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    public Builder setConversationLocation(
+        com.google.privacy.dlp.v2.ConversationLocation.Builder builderForValue) {
+      if (conversationLocationBuilder_ == null) {
+        location_ = builderForValue.build();
+        onChanged();
+      } else {
+        conversationLocationBuilder_.setMessage(builderForValue.build());
+      }
+      locationCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    public Builder mergeConversationLocation(com.google.privacy.dlp.v2.ConversationLocation value) {
+      if (conversationLocationBuilder_ == null) {
+        if (locationCase_ == 10
+            && location_ != com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance()) {
+          location_ =
+              com.google.privacy.dlp.v2.ConversationLocation.newBuilder(
+                      (com.google.privacy.dlp.v2.ConversationLocation) location_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          location_ = value;
+        }
+        onChanged();
+      } else {
+        if (locationCase_ == 10) {
+          conversationLocationBuilder_.mergeFrom(value);
+        } else {
+          conversationLocationBuilder_.setMessage(value);
+        }
+      }
+      locationCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    public Builder clearConversationLocation() {
+      if (conversationLocationBuilder_ == null) {
+        if (locationCase_ == 10) {
+          locationCase_ = 0;
+          location_ = null;
+          onChanged();
+        }
+      } else {
+        if (locationCase_ == 10) {
+          locationCase_ = 0;
+          location_ = null;
+        }
+        conversationLocationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.ConversationLocation.Builder getConversationLocationBuilder() {
+      return internalGetConversationLocationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ConversationLocationOrBuilder
+        getConversationLocationOrBuilder() {
+      if ((locationCase_ == 10) && (conversationLocationBuilder_ != null)) {
+        return conversationLocationBuilder_.getMessageOrBuilder();
+      } else {
+        if (locationCase_ == 10) {
+          return (com.google.privacy.dlp.v2.ConversationLocation) location_;
+        }
+        return com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a conversation.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.ConversationLocation,
+            com.google.privacy.dlp.v2.ConversationLocation.Builder,
+            com.google.privacy.dlp.v2.ConversationLocationOrBuilder>
+        internalGetConversationLocationFieldBuilder() {
+      if (conversationLocationBuilder_ == null) {
+        if (!(locationCase_ == 10)) {
+          location_ = com.google.privacy.dlp.v2.ConversationLocation.getDefaultInstance();
+        }
+        conversationLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.ConversationLocation,
+                com.google.privacy.dlp.v2.ConversationLocation.Builder,
+                com.google.privacy.dlp.v2.ConversationLocationOrBuilder>(
+                (com.google.privacy.dlp.v2.ConversationLocation) location_,
+                getParentForChildren(),
+                isClean());
+        location_ = null;
+      }
+      locationCase_ = 10;
+      onChanged();
+      return conversationLocationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.BatchContentLocation,
+            com.google.privacy.dlp.v2.BatchContentLocation.Builder,
+            com.google.privacy.dlp.v2.BatchContentLocationOrBuilder>
+        batchContentLocationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     *
+     * @return Whether the batchContentLocation field is set.
+     */
+    @java.lang.Override
+    public boolean hasBatchContentLocation() {
+      return locationCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     *
+     * @return The batchContentLocation.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.BatchContentLocation getBatchContentLocation() {
+      if (batchContentLocationBuilder_ == null) {
+        if (locationCase_ == 11) {
+          return (com.google.privacy.dlp.v2.BatchContentLocation) location_;
+        }
+        return com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance();
+      } else {
+        if (locationCase_ == 11) {
+          return batchContentLocationBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    public Builder setBatchContentLocation(com.google.privacy.dlp.v2.BatchContentLocation value) {
+      if (batchContentLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        onChanged();
+      } else {
+        batchContentLocationBuilder_.setMessage(value);
+      }
+      locationCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    public Builder setBatchContentLocation(
+        com.google.privacy.dlp.v2.BatchContentLocation.Builder builderForValue) {
+      if (batchContentLocationBuilder_ == null) {
+        location_ = builderForValue.build();
+        onChanged();
+      } else {
+        batchContentLocationBuilder_.setMessage(builderForValue.build());
+      }
+      locationCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    public Builder mergeBatchContentLocation(com.google.privacy.dlp.v2.BatchContentLocation value) {
+      if (batchContentLocationBuilder_ == null) {
+        if (locationCase_ == 11
+            && location_ != com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance()) {
+          location_ =
+              com.google.privacy.dlp.v2.BatchContentLocation.newBuilder(
+                      (com.google.privacy.dlp.v2.BatchContentLocation) location_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          location_ = value;
+        }
+        onChanged();
+      } else {
+        if (locationCase_ == 11) {
+          batchContentLocationBuilder_.mergeFrom(value);
+        } else {
+          batchContentLocationBuilder_.setMessage(value);
+        }
+      }
+      locationCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    public Builder clearBatchContentLocation() {
+      if (batchContentLocationBuilder_ == null) {
+        if (locationCase_ == 11) {
+          locationCase_ = 0;
+          location_ = null;
+          onChanged();
+        }
+      } else {
+        if (locationCase_ == 11) {
+          locationCase_ = 0;
+          location_ = null;
+        }
+        batchContentLocationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    public com.google.privacy.dlp.v2.BatchContentLocation.Builder getBatchContentLocationBuilder() {
+      return internalGetBatchContentLocationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.BatchContentLocationOrBuilder
+        getBatchContentLocationOrBuilder() {
+      if ((locationCase_ == 11) && (batchContentLocationBuilder_ != null)) {
+        return batchContentLocationBuilder_.getMessageOrBuilder();
+      } else {
+        if (locationCase_ == 11) {
+          return (com.google.privacy.dlp.v2.BatchContentLocation) location_;
+        }
+        return com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Location within a batch of content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.BatchContentLocation,
+            com.google.privacy.dlp.v2.BatchContentLocation.Builder,
+            com.google.privacy.dlp.v2.BatchContentLocationOrBuilder>
+        internalGetBatchContentLocationFieldBuilder() {
+      if (batchContentLocationBuilder_ == null) {
+        if (!(locationCase_ == 11)) {
+          location_ = com.google.privacy.dlp.v2.BatchContentLocation.getDefaultInstance();
+        }
+        batchContentLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.BatchContentLocation,
+                com.google.privacy.dlp.v2.BatchContentLocation.Builder,
+                com.google.privacy.dlp.v2.BatchContentLocationOrBuilder>(
+                (com.google.privacy.dlp.v2.BatchContentLocation) location_,
+                getParentForChildren(),
+                isClean());
+        location_ = null;
+      }
+      locationCase_ = 11;
+      onChanged();
+      return batchContentLocationBuilder_;
+    }
+
     private com.google.protobuf.Timestamp containerTimestamp_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -2133,7 +2753,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
      * @return Whether the containerTimestamp field is set.
      */
     public boolean hasContainerTimestamp() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2181,7 +2801,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       } else {
         containerTimestampBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2204,7 +2824,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       } else {
         containerTimestampBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2223,7 +2843,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeContainerTimestamp(com.google.protobuf.Timestamp value) {
       if (containerTimestampBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && containerTimestamp_ != null
             && containerTimestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getContainerTimestampBuilder().mergeFrom(value);
@@ -2234,7 +2854,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
         containerTimestampBuilder_.mergeFrom(value);
       }
       if (containerTimestamp_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2253,7 +2873,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
     public Builder clearContainerTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       containerTimestamp_ = null;
       if (containerTimestampBuilder_ != null) {
         containerTimestampBuilder_.dispose();
@@ -2276,7 +2896,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getContainerTimestampBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetContainerTimestampFieldBuilder().getBuilder();
     }
@@ -2400,7 +3020,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       containerVersion_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2419,7 +3039,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearContainerVersion() {
       containerVersion_ = getDefaultInstance().getContainerVersion();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2443,7 +3063,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       containerVersion_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

@@ -128,6 +128,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AggregateQueryStats</td>
+ *      <td><p> AggregateQueryStats provides database resource query execution statistics.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregateQueryStats(AggregateQueryStatsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregateQueryStatsPagedCallable()
+ *           <li><p> aggregateQueryStatsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> QueryIssues</td>
  *      <td><p> QueryIssues provides a list of issues and recommendations that a user has access to and that are within the requested scope.</td>
  *      <td>
@@ -661,6 +676,119 @@ public class DatabaseCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * AggregateQueryStats provides database resource query execution statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateQueryStatsRequest request =
+   *       AggregateQueryStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (QueryStatsInfo element :
+   *       databaseCenterClient.aggregateQueryStats(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregateQueryStatsPagedResponse aggregateQueryStats(
+      AggregateQueryStatsRequest request) {
+    return aggregateQueryStatsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateQueryStats provides database resource query execution statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateQueryStatsRequest request =
+   *       AggregateQueryStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<QueryStatsInfo> future =
+   *       databaseCenterClient.aggregateQueryStatsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QueryStatsInfo element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsPagedCallable() {
+    return stub.aggregateQueryStatsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateQueryStats provides database resource query execution statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateQueryStatsRequest request =
+   *       AggregateQueryStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     AggregateQueryStatsResponse response =
+   *         databaseCenterClient.aggregateQueryStatsCallable().call(request);
+   *     for (QueryStatsInfo element : response.getQueryStatsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsResponse>
+      aggregateQueryStatsCallable() {
+    return stub.aggregateQueryStatsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * QueryIssues provides a list of issues and recommendations that a user has access to and that
    * are within the requested scope.
    *
@@ -1088,6 +1216,90 @@ public class DatabaseCenterClient implements BackgroundResource {
     protected QueryDatabaseResourceGroupsFixedSizeCollection createCollection(
         List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
       return new QueryDatabaseResourceGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class AggregateQueryStatsPagedResponse
+      extends AbstractPagedListResponse<
+          AggregateQueryStatsRequest,
+          AggregateQueryStatsResponse,
+          QueryStatsInfo,
+          AggregateQueryStatsPage,
+          AggregateQueryStatsFixedSizeCollection> {
+
+    public static ApiFuture<AggregateQueryStatsPagedResponse> createAsync(
+        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+            context,
+        ApiFuture<AggregateQueryStatsResponse> futureResponse) {
+      ApiFuture<AggregateQueryStatsPage> futurePage =
+          AggregateQueryStatsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregateQueryStatsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregateQueryStatsPagedResponse(AggregateQueryStatsPage page) {
+      super(page, AggregateQueryStatsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregateQueryStatsPage
+      extends AbstractPage<
+          AggregateQueryStatsRequest,
+          AggregateQueryStatsResponse,
+          QueryStatsInfo,
+          AggregateQueryStatsPage> {
+
+    private AggregateQueryStatsPage(
+        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+            context,
+        AggregateQueryStatsResponse response) {
+      super(context, response);
+    }
+
+    private static AggregateQueryStatsPage createEmptyPage() {
+      return new AggregateQueryStatsPage(null, null);
+    }
+
+    @Override
+    protected AggregateQueryStatsPage createPage(
+        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+            context,
+        AggregateQueryStatsResponse response) {
+      return new AggregateQueryStatsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregateQueryStatsPage> createPageAsync(
+        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+            context,
+        ApiFuture<AggregateQueryStatsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregateQueryStatsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregateQueryStatsRequest,
+          AggregateQueryStatsResponse,
+          QueryStatsInfo,
+          AggregateQueryStatsPage,
+          AggregateQueryStatsFixedSizeCollection> {
+
+    private AggregateQueryStatsFixedSizeCollection(
+        List<AggregateQueryStatsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregateQueryStatsFixedSizeCollection createEmptyCollection() {
+      return new AggregateQueryStatsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregateQueryStatsFixedSizeCollection createCollection(
+        List<AggregateQueryStatsPage> pages, int collectionSize) {
+      return new AggregateQueryStatsFixedSizeCollection(pages, collectionSize);
     }
   }
 

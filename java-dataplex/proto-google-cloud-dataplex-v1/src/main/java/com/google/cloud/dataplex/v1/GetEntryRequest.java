@@ -141,6 +141,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. View to control which parts of an entry the service should
    * return.
+   * **Please check the limitations on returned aspects in the Entry view
+   * documentation. Amount of returned aspects depends on the selected Entry
+   * View.**
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -159,6 +162,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. View to control which parts of an entry the service should
    * return.
+   * **Please check the limitations on returned aspects in the Entry view
+   * documentation. Amount of returned aspects depends on the selected Entry
+   * View.**
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -858,6 +864,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. View to control which parts of an entry the service should
      * return.
+     * **Please check the limitations on returned aspects in the Entry view
+     * documentation. Amount of returned aspects depends on the selected Entry
+     * View.**
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -876,6 +885,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. View to control which parts of an entry the service should
      * return.
+     * **Please check the limitations on returned aspects in the Entry view
+     * documentation. Amount of returned aspects depends on the selected Entry
+     * View.**
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -897,6 +909,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. View to control which parts of an entry the service should
      * return.
+     * **Please check the limitations on returned aspects in the Entry view
+     * documentation. Amount of returned aspects depends on the selected Entry
+     * View.**
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -917,6 +932,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. View to control which parts of an entry the service should
      * return.
+     * **Please check the limitations on returned aspects in the Entry view
+     * documentation. Amount of returned aspects depends on the selected Entry
+     * View.**
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -941,6 +959,9 @@ public final class GetEntryRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. View to control which parts of an entry the service should
      * return.
+     * **Please check the limitations on returned aspects in the Entry view
+     * documentation. Amount of returned aspects depends on the selected Entry
+     * View.**
      * </pre>
      *
      * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];

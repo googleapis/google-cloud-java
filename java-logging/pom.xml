@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.34.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+  <version>3.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
   <name>Google Cloud Logging Parent</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.87.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.88.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -59,21 +59,23 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>3.34.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
+        <version>3.35.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
-        <version>3.34.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
+        <version>3.35.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>3.34.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <version>3.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
@@ -95,9 +97,11 @@
   </build>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-logging</module>
     <module>grpc-google-cloud-logging-v2</module>
     <module>proto-google-cloud-logging-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-logging-bom</module>
   </modules>
 

@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -158,6 +160,18 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobMethodDescriptor =
+          MethodDescriptor.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.DataScanService/CancelDataScanJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelDataScanJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CancelDataScanJobResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<
           GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesMethodDescriptor =
@@ -243,6 +257,8 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
       listDataScanJobsCallable;
   private final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable;
+  private final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable;
   private final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -386,6 +402,18 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobTransportSettings =
+            GrpcCallSettings.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+                .setMethodDescriptor(cancelDataScanJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesTransportSettings =
             GrpcCallSettings
@@ -501,6 +529,11 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
     this.listDataScanJobsPagedCallable =
         callableFactory.createPagedCallable(
             listDataScanJobsTransportSettings, settings.listDataScanJobsSettings(), clientContext);
+    this.cancelDataScanJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelDataScanJobTransportSettings,
+            settings.cancelDataScanJobSettings(),
+            clientContext);
     this.generateDataQualityRulesCallable =
         callableFactory.createUnaryCallable(
             generateDataQualityRulesTransportSettings,
@@ -604,6 +637,12 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
   public UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable() {
     return listDataScanJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return cancelDataScanJobCallable;
   }
 
   @Override

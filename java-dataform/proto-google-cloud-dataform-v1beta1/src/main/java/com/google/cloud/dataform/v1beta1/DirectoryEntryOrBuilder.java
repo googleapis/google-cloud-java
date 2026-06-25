@@ -30,7 +30,8 @@ public interface DirectoryEntryOrBuilder
    *
    *
    * <pre>
-   * A file in the directory.
+   * A file in the directory. The path is returned including the full
+   * folder structure from the root.
    * </pre>
    *
    * <code>string file = 1;</code>
@@ -43,7 +44,8 @@ public interface DirectoryEntryOrBuilder
    *
    *
    * <pre>
-   * A file in the directory.
+   * A file in the directory. The path is returned including the full
+   * folder structure from the root.
    * </pre>
    *
    * <code>string file = 1;</code>
@@ -56,7 +58,8 @@ public interface DirectoryEntryOrBuilder
    *
    *
    * <pre>
-   * A file in the directory.
+   * A file in the directory. The path is returned including the full
+   * folder structure from the root.
    * </pre>
    *
    * <code>string file = 1;</code>
@@ -69,7 +72,8 @@ public interface DirectoryEntryOrBuilder
    *
    *
    * <pre>
-   * A child directory in the directory.
+   * A child directory in the directory. The path is returned including
+   * the full folder structure from the root.
    * </pre>
    *
    * <code>string directory = 2;</code>
@@ -82,7 +86,8 @@ public interface DirectoryEntryOrBuilder
    *
    *
    * <pre>
-   * A child directory in the directory.
+   * A child directory in the directory. The path is returned including
+   * the full folder structure from the root.
    * </pre>
    *
    * <code>string directory = 2;</code>
@@ -95,7 +100,8 @@ public interface DirectoryEntryOrBuilder
    *
    *
    * <pre>
-   * A child directory in the directory.
+   * A child directory in the directory. The path is returned including
+   * the full folder structure from the root.
    * </pre>
    *
    * <code>string directory = 2;</code>
@@ -103,6 +109,43 @@ public interface DirectoryEntryOrBuilder
    * @return The bytes for directory.
    */
   com.google.protobuf.ByteString getDirectoryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.FilesystemEntryMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.FilesystemEntryMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
+   */
+  com.google.cloud.dataform.v1beta1.FilesystemEntryMetadata getMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entry with metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataform.v1beta1.FilesystemEntryMetadata metadata = 3;</code>
+   */
+  com.google.cloud.dataform.v1beta1.FilesystemEntryMetadataOrBuilder getMetadataOrBuilder();
 
   com.google.cloud.dataform.v1beta1.DirectoryEntry.EntryCase getEntryCase();
 }

@@ -56,7 +56,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class ITNightlyBigQueryTest {
+public class ITNightlyBigQueryTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static Connection bigQueryConnection;
   static Statement bigQueryStatement;
@@ -79,20 +79,16 @@ public class ITNightlyBigQueryTest {
   private static final String CALLABLE_STMT_DML_DELETE_PROC_NAME =
       "IT_CALLABLE_STMT_PROC_DML_DELETE_TEST";
   private static final String CALLABLE_STMT_DML_TABLE_NAME = "IT_CALLABLE_STMT_PROC_DML_TABLE";
-  private static final String DATASET = "JDBC_NIGHTLY_IT_DATASET";
-  private static final String DATASET2 = "JDBC_PRESUBMIT_INTEGRATION_DATASET_2";
-  static final String session_enabled_connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3;EnableSession=1";
+  private static String DATASET;
+  private static String DATASET2;
+  static final String session_enabled_connection_uri = ITBase.connectionUrl + "EnableSession=1;";
 
-  static final String connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3";
+  static final String connection_uri = ITBase.connectionUrl;
 
   @BeforeAll
   public static void beforeClass() throws SQLException {
+    DATASET = ITBase.getSharedDataset();
+    DATASET2 = ITBase.getSharedDataset2();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
     bigQuery = BigQueryOptions.newBuilder().build().getService();
@@ -107,7 +103,6 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testMergeInExecuteBatch() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "Inventory" + random.nextInt(9999);
     String TABLE_NAME2 = "DetailedInventory" + random.nextInt(9999);
 
@@ -220,24 +215,23 @@ public class ITNightlyBigQueryTest {
         DriverManager.getConnection(connection_uri + ";JobCreationMode=1", new Properties());
     Statement bigQueryStatement = bigQueryConnection.createStatement();
 
-    // This query takes 300 seconds to complete
-    String query300Seconds =
-        "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
-            + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
-
     // Query will be started in the background thread & we will call cancel from current thread.
     Thread t =
         new Thread(
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("User requested cancellation"));
               threadException.set(false);
             });
     t.start();
     // Allow thread to actually initiate the query
-    Thread.sleep(3000);
+    // Even when job is created, we might be using `query` API which means if we cancle within first
+    // 10 seconds,
+    // it is similar to Optional job cancellation. Need to wait until after we're in "Wait for job
+    // completion" mode.
+    Thread.sleep(15000);
     bigQueryStatement.cancel();
     // Wait until background thread is finished
     t.join();
@@ -255,18 +249,13 @@ public class ITNightlyBigQueryTest {
         DriverManager.getConnection(connection_uri + ";JobCreationMode=2", new Properties());
     Statement bigQueryStatement = bigQueryConnection.createStatement();
 
-    // This query takes 300 seconds to complete
-    String query300Seconds =
-        "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
-            + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
-
     // Query will be started in the background thread & we will call cancel from current thread.
     Thread t =
         new Thread(
             () -> {
               SQLException e =
                   assertThrows(
-                      SQLException.class, () -> bigQueryStatement.execute(query300Seconds));
+                      SQLException.class, () -> bigQueryStatement.execute(ITBase.query300seconds));
               assertTrue(e.getMessage().contains("Query was cancelled."));
               threadException.set(false);
             });
@@ -342,11 +331,8 @@ public class ITNightlyBigQueryTest {
   public void testHTAPIWithValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=SQL;"
+        ITNightlyBigQueryTest.connection_uri
+            + "QueryDialect=SQL;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;"
             + "EnableHighThroughputAPI=1;";
@@ -577,7 +563,6 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testPreparedStatementExecuteUpdate() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "Inventory" + random.nextInt(9999);
     String TABLE_NAME2 = "DetailedInventory" + random.nextInt(9999);
 
@@ -733,11 +718,8 @@ public class ITNightlyBigQueryTest {
   public void testHTAPIWithValidDestinationTableSavesQueriesWithLegacy() throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=BIG_QUERY;"
+        ITNightlyBigQueryTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;"
             + "EnableHighThroughputAPI=1;";
@@ -1121,10 +1103,8 @@ public class ITNightlyBigQueryTest {
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME + " LIMIT 5000;";
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";EnableHighThroughputAPI=1;"
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableHighThroughputAPI=1;"
             + "HighThroughputActivationRatio=2;"
             + "HighThroughputMinTableSize=1000;";
 
@@ -1183,10 +1163,10 @@ public class ITNightlyBigQueryTest {
     String selectQuery = String.format("SELECT * FROM %s.%s", DATASET, TABLE_NAME);
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;"
-            + "EnableWriteAPI=1;SWA_ActivationRowCount=5;SWA_AppendRowCount=500";
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=1;"
+            + "SWA_ActivationRowCount=5;"
+            + "SWA_AppendRowCount=500";
 
     try (Connection connection = DriverManager.getConnection(connection_uri)) {
       bigQueryStatement.execute(createQuery);
@@ -1232,10 +1212,10 @@ public class ITNightlyBigQueryTest {
     String selectQuery = String.format("SELECT * FROM %s.%s", DATASET, TABLE_NAME);
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;"
-            + "EnableWriteAPI=0;SWA_ActivationRowCount=50;SWA_AppendRowCount=500";
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=0;"
+            + "SWA_ActivationRowCount=50;"
+            + "SWA_AppendRowCount=500";
 
     try (Connection connection = DriverManager.getConnection(connection_uri)) {
       bigQueryStatement.execute(createQuery);
@@ -1365,13 +1345,7 @@ public class ITNightlyBigQueryTest {
 
     // Run the transaction
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryProperties=session_id="
-            + sessionId
-            + ";";
+        ITNightlyBigQueryTest.connection_uri + "QueryProperties=session_id=" + sessionId + ";";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1613,12 +1587,7 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";";
+    String connection_uri = ITNightlyBigQueryTest.connection_uri;
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -1661,10 +1630,12 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;MaxResults=300;HighThroughputActivationRatio=2;"
-            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+        ITNightlyBigQueryTest.connection_uri
+            + "MaxResults=300;"
+            + "HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1";
+
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
@@ -1679,10 +1650,11 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;HighThroughputActivationRatio=4;"
-            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+        ITNightlyBigQueryTest.connection_uri
+            + "HighThroughputActivationRatio=4;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1";
+
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
@@ -1701,13 +1673,5 @@ public class ITNightlyBigQueryTest {
     job = job.waitFor();
     Job stubJob = bigQuery.getJob(job.getJobId());
     return stubJob.getStatistics().getSessionInfo().getSessionId();
-  }
-
-  private int resultSetRowCount(ResultSet resultSet) throws SQLException {
-    int rowCount = 0;
-    while (resultSet.next()) {
-      rowCount++;
-    }
-    return rowCount;
   }
 }

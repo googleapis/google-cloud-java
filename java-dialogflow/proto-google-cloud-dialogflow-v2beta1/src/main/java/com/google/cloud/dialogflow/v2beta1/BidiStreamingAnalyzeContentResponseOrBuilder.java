@@ -204,6 +204,50 @@ public interface BidiStreamingAnalyzeContentResponseOrBuilder
   com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.TurnCompleteOrBuilder
       getTurnCompleteOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The tool calls from the server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.ToolCalls tool_calls = 5;
+   * </code>
+   *
+   * @return Whether the toolCalls field is set.
+   */
+  boolean hasToolCalls();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool calls from the server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.ToolCalls tool_calls = 5;
+   * </code>
+   *
+   * @return The toolCalls.
+   */
+  com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.ToolCalls getToolCalls();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tool calls from the server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.ToolCalls tool_calls = 5;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.ToolCallsOrBuilder
+      getToolCallsOrBuilder();
+
   com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse.ResponseCase
       getResponseCase();
 }

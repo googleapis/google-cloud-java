@@ -115,7 +115,10 @@ import javax.annotation.Generated;
 public class PartnerLinkServiceStubSettings extends StubSettings<PartnerLinkServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/datamanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/datamanager")
+          .add("https://www.googleapis.com/auth/datamanager.partnerlink")
+          .build();
 
   private final UnaryCallSettings<CreatePartnerLinkRequest, PartnerLink> createPartnerLinkSettings;
   private final UnaryCallSettings<DeletePartnerLinkRequest, Empty> deletePartnerLinkSettings;

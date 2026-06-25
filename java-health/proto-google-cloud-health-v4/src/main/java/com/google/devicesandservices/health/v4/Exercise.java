@@ -4976,7 +4976,23 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
      * exercises.
      * </pre>
      *
-     * <code>int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the poolLengthMillimeters field is set.
+     */
+    boolean hasPoolLengthMillimeters();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pool length in millimeters. Only present in the swimming
+     * exercises.
+     * </pre>
+     *
+     * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The poolLengthMillimeters.
      */
@@ -5043,6 +5059,7 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
               com.google.devicesandservices.health.v4.Exercise.ExerciseMetadata.Builder.class);
     }
 
+    private int bitField0_;
     public static final int POOL_LENGTH_MILLIMETERS_FIELD_NUMBER = 1;
     private long poolLengthMillimeters_ = 0L;
 
@@ -5054,7 +5071,26 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
      * exercises.
      * </pre>
      *
-     * <code>int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the poolLengthMillimeters field is set.
+     */
+    @java.lang.Override
+    public boolean hasPoolLengthMillimeters() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pool length in millimeters. Only present in the swimming
+     * exercises.
+     * </pre>
+     *
+     * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The poolLengthMillimeters.
      */
@@ -5096,7 +5132,7 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (poolLengthMillimeters_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt64(1, poolLengthMillimeters_);
       }
       if (hasGps_ != false) {
@@ -5111,7 +5147,7 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
       if (size != -1) return size;
 
       size = 0;
-      if (poolLengthMillimeters_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, poolLengthMillimeters_);
       }
       if (hasGps_ != false) {
@@ -5133,7 +5169,10 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
       com.google.devicesandservices.health.v4.Exercise.ExerciseMetadata other =
           (com.google.devicesandservices.health.v4.Exercise.ExerciseMetadata) obj;
 
-      if (getPoolLengthMillimeters() != other.getPoolLengthMillimeters()) return false;
+      if (hasPoolLengthMillimeters() != other.hasPoolLengthMillimeters()) return false;
+      if (hasPoolLengthMillimeters()) {
+        if (getPoolLengthMillimeters() != other.getPoolLengthMillimeters()) return false;
+      }
       if (getHasGps() != other.getHasGps()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -5146,8 +5185,10 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POOL_LENGTH_MILLIMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPoolLengthMillimeters());
+      if (hasPoolLengthMillimeters()) {
+        hash = (37 * hash) + POOL_LENGTH_MILLIMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPoolLengthMillimeters());
+      }
       hash = (37 * hash) + HAS_GPS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasGps());
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -5334,12 +5375,15 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
       private void buildPartial0(
           com.google.devicesandservices.health.v4.Exercise.ExerciseMetadata result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.poolLengthMillimeters_ = poolLengthMillimeters_;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.hasGps_ = hasGps_;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -5358,7 +5402,7 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
         if (other
             == com.google.devicesandservices.health.v4.Exercise.ExerciseMetadata
                 .getDefaultInstance()) return this;
-        if (other.getPoolLengthMillimeters() != 0L) {
+        if (other.hasPoolLengthMillimeters()) {
           setPoolLengthMillimeters(other.getPoolLengthMillimeters());
         }
         if (other.getHasGps() != false) {
@@ -5431,7 +5475,26 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
        * exercises.
        * </pre>
        *
-       * <code>int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the poolLengthMillimeters field is set.
+       */
+      @java.lang.Override
+      public boolean hasPoolLengthMillimeters() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Pool length in millimeters. Only present in the swimming
+       * exercises.
+       * </pre>
+       *
+       * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The poolLengthMillimeters.
        */
@@ -5448,7 +5511,8 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
        * exercises.
        * </pre>
        *
-       * <code>int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The poolLengthMillimeters to set.
        * @return This builder for chaining.
@@ -5469,7 +5533,8 @@ public final class Exercise extends com.google.protobuf.GeneratedMessage
        * exercises.
        * </pre>
        *
-       * <code>int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>optional int64 pool_length_millimeters = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */

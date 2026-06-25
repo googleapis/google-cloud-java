@@ -142,6 +142,7 @@ final class BigQueryJdbcUrlUtility {
           Pattern.CASE_INSENSITIVE);
   static final String METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME = "MetaDataFetchThreadCount";
   static final int DEFAULT_METADATA_FETCH_THREAD_COUNT_VALUE = 32;
+
   static final String RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME = "Timeout";
   static final long DEFAULT_RETRY_TIMEOUT_IN_SECS_VALUE = 0L;
   static final String JOB_TIMEOUT_PROPERTY_NAME = "JobTimeout";
@@ -167,6 +168,8 @@ final class BigQueryJdbcUrlUtility {
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
       "FilterTablesOnDefaultDataset";
   static final boolean DEFAULT_FILTER_TABLES_ON_DEFAULT_DATASET_VALUE = false;
+  static final String ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME = "EnableProjectDiscovery";
+  static final boolean DEFAULT_ENABLE_PROJECT_DISCOVERY_VALUE = false;
   static final String REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME = "RequestGoogleDriveScope";
   static final String SSL_TRUST_STORE_PROPERTY_NAME = "SSLTrustStore";
   static final String SSL_TRUST_STORE_PWD_PROPERTY_NAME = "SSLTrustStorePwd";
@@ -577,6 +580,13 @@ final class BigQueryJdbcUrlUtility {
                           String.valueOf(DEFAULT_FILTER_TABLES_ON_DEFAULT_DATASET_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables automatic discovery of all accessible Google Cloud projects. "
+                              + "When disabled, only the default ProjectId and AdditionalProjects are listed as catalogs.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_PROJECT_DISCOVERY_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
                       .setName(REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME)
                       .setDescription(
                           "Enables or disables whether the connector requests access to Google"
@@ -660,6 +670,37 @@ final class BigQueryJdbcUrlUtility {
       return map.get(PROPERTY_NAME_MAP.get(property.toUpperCase()));
     }
     return map.get(property);
+  }
+
+  /**
+   * Parses a URI property from the given URI without validating any other properties.
+   *
+   * @param uri The URI to parse.
+   * @param property The name of the property to parse.
+   * @return The String value of the property, or null if the property is not found.
+   */
+  static String parseUriPropertyWithoutValidation(String uri, String property) {
+    if (uri == null) {
+      return null;
+    }
+    int start = 0;
+    int len = uri.length();
+    while (start < len) {
+      int nextSemi = uri.indexOf(';', start);
+      int end = (nextSemi == -1) ? len : nextSemi;
+
+      int eqIndex = uri.indexOf('=', start);
+      if (eqIndex > start && eqIndex < end) {
+        String key = uri.substring(start, eqIndex).trim();
+        if (key.equalsIgnoreCase(property)) {
+          String value = uri.substring(eqIndex + 1, end);
+          return CharEscapers.decodeUriPath(value.replace("+", "%2B"));
+        }
+      }
+
+      start = end + 1;
+    }
+    return null;
   }
 
   /**

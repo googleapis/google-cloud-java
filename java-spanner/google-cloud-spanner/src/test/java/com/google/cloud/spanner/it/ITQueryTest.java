@@ -17,7 +17,7 @@
 package com.google.cloud.spanner.it;
 
 import static com.google.cloud.spanner.testing.EmulatorSpannerHelper.isUsingEmulator;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.base.Strings.isNullOrEmpty;
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.Arrays.asList;
@@ -144,9 +144,7 @@ public class ITQueryTest {
           exception.getMessage().contains("column \"apples\" does not exist"));
       // See https://www.postgresql.org/docs/current/errcodes-appendix.html
       // '42703' == undefined_column
-      assumeFalse(
-          "Skipping PGErrorCode check on experimental host due to b/473270453",
-          isExperimentalHost());
+      assumeFalse("Skipping PGErrorCode check on Spanner Omni due to b/473270453", isSpannerOmni());
       assertEquals("42703", exception.getPostgreSQLErrorCode());
     } else {
       assertTrue(

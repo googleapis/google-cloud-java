@@ -117,4 +117,19 @@ public interface RetrieveToolsRequestOrBuilder
    * @return The bytes of the toolIds at the given index.
    */
   com.google.protobuf.ByteString getToolIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the returned tools will contain raw descriptions and
+   * schemas directly from the server, bypassing any stored persistence
+   * configurations (overrides/snapshots).
+   * </pre>
+   *
+   * <code>bool bypass_persistence_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bypassPersistenceConfig.
+   */
+  boolean getBypassPersistenceConfig();
 }

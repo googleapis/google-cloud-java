@@ -22,11 +22,13 @@ import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class BigQueryDriverTest {
+public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   static BigQueryDriver bigQueryDriver;
 
@@ -106,5 +108,64 @@ public class BigQueryDriverTest {
                 + "InvalidProperty=Value",
             new Properties());
     assertThat(connection.isClosed()).isFalse();
+  }
+
+  @Test
+  public void testUnknownPropertyWarningIsLogged() throws SQLException {
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;LogPath=target/;"
+                + "MyUnknownSetting=Value",
+            new Properties());
+    assertThat(connection.isClosed()).isFalse();
+
+    boolean foundWarning =
+        capturedLogs.stream()
+            .anyMatch(
+                r ->
+                    r.getLevel() == Level.WARNING
+                        && r.getMessage()
+                            .contains("Wrong value or unknown setting: MYUNKNOWNSETTING"));
+    assertThat(foundWarning).isTrue();
+  }
+
+  @Test
+  public void testMalformedUrlExceptionIsLogged() {
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;LogPath=target/;"
+                    + "MalformedPropertyWithoutEquals",
+                new Properties()));
+
+    boolean foundSevere =
+        capturedLogs.stream()
+            .anyMatch(
+                r ->
+                    r.getLevel() == Level.SEVERE
+                        && r.getMessage().contains("Failed to parse connection URL"));
+    assertThat(foundSevere).isTrue();
+  }
+
+  @Test
+  public void testInvalidLogLevelExceptionIsLogged() {
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=invalidInt;LogPath=target/;",
+                new Properties()));
+
+    boolean foundSevere =
+        capturedLogs.stream()
+            .anyMatch(
+                r ->
+                    r.getLevel() == Level.SEVERE
+                        && r.getMessage().contains("Failed to parse connection URL properties"));
+    assertThat(foundSevere).isTrue();
   }
 }

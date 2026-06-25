@@ -53,12 +53,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
 import java.util.function.BiFunction;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -66,17 +64,14 @@ import org.junit.jupiter.api.Test;
 
 public class ITBigQueryJDBCTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  static final String connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3";
-  static final String session_enabled_connection_uri = connection_uri + ";EnableSession=1";
+  static final String connection_uri = ITBase.connectionUrl;
+  static final String session_enabled_connection_uri = connection_uri + "EnableSession=1;";
   private static final String BASE_QUERY =
       "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
           + " trip_distance asc LIMIT %s";
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String DATASET = "JDBC_PRESUBMIT_INTEGRATION_DATASET";
+  private static String DATASET;
   private static final Object EXCEPTION_REPLACEMENT = "EXCEPTION-WAS-RAISED";
   static Connection bigQueryConnection;
   static BigQuery bigQuery;
@@ -86,6 +81,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @BeforeAll
   public static void beforeClass() throws SQLException {
+    DATASET = ITBase.getSharedDataset();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
 
@@ -110,10 +106,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME + " LIMIT 5000;";
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + DEFAULT_CATALOG
-            + ";EnableHighThroughputAPI=1;"
+        ITBigQueryJDBCTest.connection_uri
+            + "EnableHighThroughputAPI=1;"
             + "HighThroughputActivationRatio=2;"
             + "HighThroughputMinTableSize=1000;";
 
@@ -121,29 +115,27 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
     ResultSet resultSet = statement.executeQuery(selectQuery);
-    Assert.assertNotNull(resultSet);
+    assertNotNull(resultSet);
 
     ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
     resultSet.next();
-    Assert.assertEquals(15, resultSetMetaData.getColumnCount());
-    Assert.assertTrue(resultSet.getBoolean(1));
-    Assert.assertEquals(33, resultSet.getInt(2));
-    Assert.assertEquals(50.05f, resultSet.getFloat(3), 0.0);
-    Assert.assertEquals(123.456, resultSet.getDouble(4), 0.0);
-    Assert.assertEquals(123.456789, resultSet.getDouble(5), 0.0);
-    Assert.assertEquals("testString", resultSet.getString(6));
-    Assert.assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
-    Assert.assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    Assert.assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
-    Assert.assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
-    Assert.assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
-    Assert.assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
-    Assert.assertEquals(Time.valueOf("14:00:00"), resultSet.getTime(12));
-    Assert.assertEquals(Timestamp.valueOf("2022-01-22 22:22:12.142265"), resultSet.getObject(13));
-    Assert.assertEquals("POINT(1 2)", resultSet.getString(14));
-    Assert.assertEquals(
-        "{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
-    connection.close();
+    assertEquals(15, resultSetMetaData.getColumnCount());
+    assertTrue(resultSet.getBoolean(1));
+    assertEquals(33, resultSet.getInt(2));
+    assertEquals(50.05f, resultSet.getFloat(3), 0.0);
+    assertEquals(123.456, resultSet.getDouble(4), 0.0);
+    assertEquals(123.456789, resultSet.getDouble(5), 0.0);
+    assertEquals("testString", resultSet.getString(6));
+    assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
+    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
+    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
+    assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
+    assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
+    assertEquals(Time.valueOf("14:00:00"), resultSet.getTime(12));
+    assertEquals(Timestamp.valueOf("2022-01-22 22:22:12.142265"), resultSet.getObject(13));
+    assertEquals("POINT(1 2)", resultSet.getString(14));
+    assertEquals("{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
     connection.close();
   }
 
@@ -162,7 +154,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     Statement bigQueryStatement = connection.createStatement();
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
-    Assert.assertEquals(0, resultSetRowCount(jsonResultSet));
+    assertEquals(0, resultSetRowCount(jsonResultSet));
     connection.close();
   }
 
@@ -214,10 +206,10 @@ public class ITBigQueryJDBCTest extends ITBase {
     while (rs.next()) {
       double tripDis = rs.getDouble("trip_distance");
       ++cnt;
-      Assert.assertTrue(oldTriDis <= tripDis);
+      assertTrue(oldTriDis <= tripDis);
       oldTriDis = tripDis;
     }
-    Assert.assertEquals(expectedCnt, cnt); // all the records were retrieved
+    assertEquals(expectedCnt, cnt); // all the records were retrieved
     connection.close();
   }
 
@@ -235,7 +227,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     int expectedCnt = 5000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
@@ -243,16 +235,17 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + DEFAULT_CATALOG
-            + ";OAUTHTYPE=3;MaxResults=300;HighThroughputActivationRatio=2;"
-            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=300;"
+            + "HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1";
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
@@ -260,16 +253,16 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + DEFAULT_CATALOG
-            + ";OAUTHTYPE=3;HighThroughputActivationRatio=4;"
-            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+        ITBigQueryJDBCTest.connection_uri
+            + "HighThroughputActivationRatio=4;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1";
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
@@ -285,12 +278,12 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     ResultSet jsonResultSet = statement.executeQuery(query);
-    Assert.assertEquals(850, resultSetRowCount(jsonResultSet));
+    assertEquals(850, resultSetRowCount(jsonResultSet));
 
     String queryEmpty =
         "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
-    Assert.assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
+    assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
     connectionUseStateless.close();
   }
 
@@ -308,10 +301,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testDriver() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri;
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -326,10 +316,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testDefaultDataset() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;DEFAULTDATASET=testDataset";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -340,10 +327,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         DatasetId.of("testDataset"),
         connection.unwrap(BigQueryConnection.class).getDefaultDataset());
 
-    String connection_uri_null_default_dataset =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3";
+    String connection_uri_null_default_dataset = ITBigQueryJDBCTest.connection_uri;
 
     assertTrue(driver.acceptsURL(connection_uri_null_default_dataset));
 
@@ -357,11 +341,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDefaultDatasetWithProject() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;DEFAULTDATASET="
-            + PROJECT_ID
-            + ".testDataset";
+        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ".testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -376,10 +356,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testLocation() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;LOCATION=EU";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=EU";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -395,10 +372,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet resultSet = statement.executeQuery(query);
     assertEquals(100, resultSetRowCount(resultSet));
 
-    String connection_uri_null_location =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3";
+    String connection_uri_null_location = ITBigQueryJDBCTest.connection_uri;
 
     assertTrue(driver.acceptsURL(connection_uri_null_location));
 
@@ -411,10 +385,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testIncorrectLocation() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=3;LOCATION=europe-west3";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=europe-west3";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
 
@@ -583,16 +554,16 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     int rows = statement.executeUpdate(updateQuery);
-    Assert.assertEquals(1, rows);
+    assertEquals(1, rows);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
     connection.close();
 
     // Separate query to check if transaction rollback worked
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -652,16 +623,16 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     int rows = statement.executeUpdate(updateQuery);
-    Assert.assertEquals(1, rows);
+    assertEquals(1, rows);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
     connection.rollback();
 
     // Separate query to check if transaction rollback worked
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -711,10 +682,10 @@ public class ITBigQueryJDBCTest extends ITBase {
     while (hasMoreResult || statement.getUpdateCount() != -1) {
       if (statement.getUpdateCount() == -1) {
         ResultSet result = statement.getResultSet();
-        Assert.assertTrue(result.next());
-        Assert.assertEquals(-1, statement.getUpdateCount());
+        assertTrue(result.next());
+        assertEquals(-1, statement.getUpdateCount());
       } else {
-        Assert.assertTrue(statement.getUpdateCount() > -1);
+        assertTrue(statement.getUpdateCount() > -1);
       }
       hasMoreResult = statement.getMoreResults();
       resultsCount++;
@@ -725,9 +696,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     int rowCount = 0;
     while (resultSet.next()) {
       rowCount++;
-      Assert.assertEquals(14, resultSet.getInt(3));
+      assertEquals(14, resultSet.getInt(3));
     }
-    Assert.assertEquals(2, rowCount);
+    assertEquals(2, rowCount);
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -801,15 +772,15 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     int rows = statement.executeUpdate(updateQuery);
-    Assert.assertEquals(1, rows);
+    assertEquals(1, rows);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
 
     // Separate query to check nothing committed
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -843,17 +814,17 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     status = statement.execute(updateQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
     connection.commit();
 
     // Separate query to check inserted and updated data committed
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertTrue(resultSet.next());
-    Assert.assertEquals(14, resultSet.getInt(3));
+    assertTrue(resultSet.next());
+    assertEquals(14, resultSet.getInt(3));
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -898,7 +869,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     // do a check to see if no vals inserted
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -1294,12 +1265,13 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testUnsupportedHTAPIFallbacksToStandardQueriesWithRange() throws SQLException {
     String selectQuery = "select * from `DATATYPERANGETEST.RangeIntervalTestTable` LIMIT 5000;";
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";MaxResults=500;HighThroughputActivationRatio=1;"
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=1;"
             + "HighThroughputMinTableSize=100;"
-            + "EnableHighThroughputAPI=1;UnsupportedHTAPIFallback=1;JobCreationMode=1;";
+            + "EnableHighThroughputAPI=1;"
+            + "UnsupportedHTAPIFallback=1;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1318,12 +1290,12 @@ public class ITBigQueryJDBCTest extends ITBase {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";MaxResults=500;HighThroughputActivationRatio=0;"
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=0;"
             + "HighThroughputMinTableSize=100;"
-            + "EnableHighThroughputAPI=1;JobCreationMode=1;";
+            + "EnableHighThroughputAPI=1;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1343,12 +1315,12 @@ public class ITBigQueryJDBCTest extends ITBase {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 10 ;";
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";MaxResults=500;HighThroughputActivationRatio=1;"
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=1;"
             + "HighThroughputMinTableSize=100;"
-            + "EnableHighThroughputAPI=0;JobCreationMode=1;";
+            + "EnableHighThroughputAPI=0;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1369,11 +1341,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        "jdbc:bigquery://https://googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";"
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://us-east4-bigquery.googleapis.com;";
 
     // Read data via JDBC
@@ -1389,11 +1357,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "JDBC_REGIONAL_TABLE_" + randomNumber;
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        "jdbc:bigquery://https://googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";"
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://us-east4-bigquery.googleapis.com:12312312;";
 
     // Read data via JDBC
@@ -1409,11 +1373,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";"
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://us-east5-bigquery.googleapis.com;";
 
     // Attempting read data via JDBC
@@ -1429,11 +1389,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";"
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://bigquery.us-east4.rep.googleapis.com;";
 
     // Read data via JDBC
@@ -1450,11 +1406,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";"
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://bigquery.us-east7.rep.googleapis.com;";
 
     // Attempting read data via JDBC
@@ -1530,7 +1482,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDataSource() throws SQLException {
     DataSource ds = new DataSource();
-    ds.setURL("jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;");
+    ds.setURL(getBaseConnectionUrl());
     ds.setOAuthType(3);
 
     try (Connection connection = ds.getConnection()) {
@@ -1543,7 +1495,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     File tempFile = File.createTempFile("auth", ".json");
     tempFile.deleteOnExit();
     DataSource ds = new DataSource();
-    ds.setURL("jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;");
+    ds.setURL(getBaseConnectionUrl());
     ds.setOAuthType(0);
     ds.setOAuthPvtKeyPath(tempFile.toPath().toString());
     assertEquals(0, ds.getOAuthType().intValue());
@@ -1567,7 +1519,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementExecuteUpdate() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "Inventory" + random.nextInt(9999);
     String TABLE_NAME2 = "DetailedInventory" + random.nextInt(9999);
 
@@ -1658,7 +1609,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementDateTimeValues() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "DateTimeTestTable" + random.nextInt(9999);
 
     final String createTableQuery =
@@ -1680,7 +1630,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     PreparedStatement insertPs = bigQueryConnection.prepareStatement(insertQuery);
     insertPs.setString(1, "dishwasher");
     insertPs.setInt(2, 1);
-    insertPs.setTimestamp(3, Timestamp.from(Instant.now()));
+    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
     insertPs.setTime(4, Time.valueOf(LocalTime.NOON));
     insertPs.setDate(5, Date.valueOf("2025-12-3"));
 
@@ -1702,11 +1652,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testValidDestinationTableSavesQueriesWithLegacySQL() throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test_legacy;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
@@ -1734,19 +1681,14 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + DEFAULT_CATALOG
-            + ";";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri;
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
     Statement statement = connection.createStatement();
 
     // act & assertion
-    Assert.assertThrows(SQLException.class, () -> statement.execute(selectLegacyQuery));
+    assertThrows(SQLException.class, () -> statement.execute(selectLegacyQuery));
     connection.close();
   }
 
@@ -1754,11 +1696,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testUseLegacySQLWithLargeResultsNotAllowedQueries() throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + DEFAULT_CATALOG
-            + ";QueryDialect=BIG_QUERY;AllowLargeResults=0;";
+        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=0;";
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
@@ -1768,7 +1706,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
 
     // assertion
-    Assert.assertNotNull(resultSet);
+    assertNotNull(resultSet);
     connection.close();
   }
 
@@ -1776,11 +1714,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=SQL;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=SQL;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
     String selectLegacyQuery =
@@ -1809,11 +1744,8 @@ public class ITBigQueryJDBCTest extends ITBase {
       throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=FakeTable;"
             + "LargeResultDataset=FakeDataset;";
@@ -1842,11 +1774,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + DEFAULT_CATALOG
-            + ";QueryDialect=BIG_QUERY;AllowLargeResults=1;";
+        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=1;";
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
@@ -1856,7 +1784,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
 
     // assertion
-    Assert.assertNotNull(resultSet);
+    assertNotNull(resultSet);
     connection.close();
   }
 
@@ -1864,11 +1792,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testDestinationTableWithMissingDestinationDatasetDefaults() throws SQLException {
     // setup
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=FakeTable;";
     String selectLegacyQuery =
@@ -1897,11 +1822,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
             DATASET, TRANSACTION_TABLE);
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
@@ -1923,11 +1845,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
             DATASET, TRANSACTION_TABLE);
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=SQL;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=SQL;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
@@ -2006,12 +1925,12 @@ public class ITBigQueryJDBCTest extends ITBase {
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";MaxResults=500;HighThroughputActivationRatio=0;"
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=0;"
             + "HighThroughputMinTableSize=100;"
-            + "EnableHighThroughputAPI=1;JobCreationMode=1;";
+            + "EnableHighThroughputAPI=1;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -2057,11 +1976,8 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   public void testQueryPropertyDataSetProjectIdQueriesToCorrectDataset() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryProperties=dataset_project_id="
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryProperties=dataset_project_id="
             + PROJECT_ID
             + ";";
     String insertQuery =
@@ -2092,11 +2008,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testQueryPropertyDataSetProjectIdQueriesToIncorrectDatasetThrows()
       throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryProperties=dataset_project_id=bigquerytestdefault"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryProperties=dataset_project_id=bigquerytestdefault"
             + ";";
     String insertQuery =
         String.format(
@@ -2114,11 +2027,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testQueryPropertyTimeZoneQueries() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryProperties=time_zone=America/New_York;";
+        ITBigQueryJDBCTest.connection_uri + "QueryProperties=time_zone=America/New_York;";
     String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
@@ -2138,13 +2047,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       throws SQLException, InterruptedException {
     String sessionId = getSessionId();
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryProperties=session_id="
-            + sessionId
-            + ";";
+        ITBigQueryJDBCTest.connection_uri + "QueryProperties=session_id=" + sessionId + ";";
     String selectQuery =
         "INSERT INTO `bigquery-devtools-drivers.JDBC_INTEGRATION_DATASET.No_KMS_Test_table` (id,"
             + " name, age) VALUES (132, 'Batman', 531);";
@@ -2169,14 +2072,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testEncryptedTableWithKmsQueries() throws SQLException {
     // setup
     String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";KMSKeyName="
-            + KMSKeyName
-            + ";";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery = "SELECT * FROM `JDBC_INTEGRATION_DATASET.KMS_Test_table`;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
@@ -2195,14 +2091,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testIncorrectKmsThrows() throws SQLException {
     String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";KMSKeyName="
-            + KMSKeyName
-            + ";";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery =
         "INSERT INTO `bigquery-devtools-drivers.JDBC_INTEGRATION_DATASET.No_KMS_Test_table` (id,"
             + " name, age) VALUES (132, 'Batman', 531);";
@@ -2219,11 +2108,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testQueryPropertyServiceAccountFollowsIamPermission() throws SQLException {
     final String SERVICE_ACCOUNT_EMAIL = requireEnvVar("SA_EMAIL");
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";QueryProperties=service_account="
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryProperties=service_account="
             + SERVICE_ACCOUNT_EMAIL
             + ";";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -2247,11 +2133,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "FROM\n"
             + "  [bigquery-public-data.github_repos.commits],\n"
             + "  [bigquery-public-data.github_repos.sample_commits] LIMIT 10";
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";QueryDialect=BIG_QUERY;";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;";
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
 
@@ -2327,6 +2209,96 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     statement.close();
     connection.close();
+  }
+
+  @Test
+  public void testPreparedStatementCloseDoesNotRollbackTransaction() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_PS_CLOSE_TABLE" + randomNumber;
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s ORDER BY id;", DATASET, TRANSACTION_TABLE);
+
+    bigQueryStatement.execute(createTransactionTable);
+
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      connection.setAutoCommit(false);
+      try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
+          PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+        ps1.setInt(1, 1);
+        ps1.setString(2, "DwightShrute");
+        ps1.setInt(3, 10);
+        assertEquals(1, ps1.executeUpdate());
+
+        ps2.setInt(1, 2);
+        ps2.setString(2, "MichaelScott");
+        ps2.setInt(3, 20);
+        assertEquals(1, ps2.executeUpdate());
+
+        ps1.close();
+        connection.commit();
+
+        try (ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery)) {
+          int rowCount = 0;
+          while (resultSet.next()) {
+            rowCount++;
+            assertEquals(rowCount, resultSet.getInt(1));
+          }
+          assertEquals(2, rowCount);
+        }
+      } finally {
+        bigQueryStatement.execute(
+            String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
+      }
+    }
+  }
+
+  @Test
+  public void testClosingUnusedPreparedStatementDoesNotRollbackPreviousExecute()
+      throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_PS_UNUSED_CLOSE_TABLE" + randomNumber;
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (?, ?, ?);", DATASET, TRANSACTION_TABLE);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s ORDER BY id;", DATASET, TRANSACTION_TABLE);
+
+    bigQueryStatement.execute(createTransactionTable);
+
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      connection.setAutoCommit(false);
+      try (PreparedStatement ps1 = connection.prepareStatement(insertQuery);
+          PreparedStatement ps2 = connection.prepareStatement(insertQuery)) {
+
+        ps2.setInt(1, 1);
+        ps2.setString(2, "MichaelScott");
+        ps2.setInt(3, 20);
+        assertEquals(1, ps2.executeUpdate());
+
+        ps1.close();
+        connection.commit();
+
+        try (ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery)) {
+          assertTrue(resultSet.next());
+          assertEquals(1, resultSet.getInt(1));
+          assertEquals("MichaelScott", resultSet.getString(2));
+          assertEquals(20, resultSet.getInt(3));
+          assertFalse(resultSet.next());
+        }
+      }
+    } finally {
+      bigQueryStatement.execute(
+          String.format("DROP TABLE IF EXISTS %s.%s", DATASET, TRANSACTION_TABLE));
+    }
   }
 
   // Private Helper functions

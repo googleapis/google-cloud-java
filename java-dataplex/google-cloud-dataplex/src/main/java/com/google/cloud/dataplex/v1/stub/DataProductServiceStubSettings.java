@@ -64,6 +64,8 @@ import com.google.cloud.dataplex.v1.ListDataAssetsResponse;
 import com.google.cloud.dataplex.v1.ListDataProductsRequest;
 import com.google.cloud.dataplex.v1.ListDataProductsResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessRequest;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessResponse;
 import com.google.cloud.dataplex.v1.UpdateDataAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateDataProductRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -168,7 +170,12 @@ import javax.annotation.Generated;
 public class DataProductServiceStubSettings extends StubSettings<DataProductServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateDataProductRequest, Operation> createDataProductSettings;
   private final OperationCallSettings<CreateDataProductRequest, DataProduct, OperationMetadata>
@@ -183,6 +190,8 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
   private final UnaryCallSettings<UpdateDataProductRequest, Operation> updateDataProductSettings;
   private final OperationCallSettings<UpdateDataProductRequest, DataProduct, OperationMetadata>
       updateDataProductOperationSettings;
+  private final UnaryCallSettings<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessSettings;
   private final UnaryCallSettings<CreateDataAssetRequest, Operation> createDataAssetSettings;
   private final OperationCallSettings<CreateDataAssetRequest, DataAsset, OperationMetadata>
       createDataAssetOperationSettings;
@@ -410,6 +419,12 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
     return updateDataProductOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to requestDataProductAccess. */
+  public UnaryCallSettings<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessSettings() {
+    return requestDataProductAccessSettings;
+  }
+
   /** Returns the object with the settings used for calls to createDataAsset. */
   public UnaryCallSettings<CreateDataAssetRequest, Operation> createDataAssetSettings() {
     return createDataAssetSettings;
@@ -604,6 +619,7 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
     updateDataProductSettings = settingsBuilder.updateDataProductSettings().build();
     updateDataProductOperationSettings =
         settingsBuilder.updateDataProductOperationSettings().build();
+    requestDataProductAccessSettings = settingsBuilder.requestDataProductAccessSettings().build();
     createDataAssetSettings = settingsBuilder.createDataAssetSettings().build();
     createDataAssetOperationSettings = settingsBuilder.createDataAssetOperationSettings().build();
     updateDataAssetSettings = settingsBuilder.updateDataAssetSettings().build();
@@ -651,6 +667,9 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
     private final OperationCallSettings.Builder<
             UpdateDataProductRequest, DataProduct, OperationMetadata>
         updateDataProductOperationSettings;
+    private final UnaryCallSettings.Builder<
+            RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+        requestDataProductAccessSettings;
     private final UnaryCallSettings.Builder<CreateDataAssetRequest, Operation>
         createDataAssetSettings;
     private final OperationCallSettings.Builder<
@@ -712,6 +731,7 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
       listDataProductsSettings = PagedCallSettings.newBuilder(LIST_DATA_PRODUCTS_PAGE_STR_FACT);
       updateDataProductSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDataProductOperationSettings = OperationCallSettings.newBuilder();
+      requestDataProductAccessSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDataAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDataAssetOperationSettings = OperationCallSettings.newBuilder();
       updateDataAssetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -733,6 +753,7 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
               getDataProductSettings,
               listDataProductsSettings,
               updateDataProductSettings,
+              requestDataProductAccessSettings,
               createDataAssetSettings,
               updateDataAssetSettings,
               deleteDataAssetSettings,
@@ -757,6 +778,7 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
       listDataProductsSettings = settings.listDataProductsSettings.toBuilder();
       updateDataProductSettings = settings.updateDataProductSettings.toBuilder();
       updateDataProductOperationSettings = settings.updateDataProductOperationSettings.toBuilder();
+      requestDataProductAccessSettings = settings.requestDataProductAccessSettings.toBuilder();
       createDataAssetSettings = settings.createDataAssetSettings.toBuilder();
       createDataAssetOperationSettings = settings.createDataAssetOperationSettings.toBuilder();
       updateDataAssetSettings = settings.updateDataAssetSettings.toBuilder();
@@ -778,6 +800,7 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
               getDataProductSettings,
               listDataProductsSettings,
               updateDataProductSettings,
+              requestDataProductAccessSettings,
               createDataAssetSettings,
               updateDataAssetSettings,
               deleteDataAssetSettings,
@@ -837,6 +860,11 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
 
       builder
           .updateDataProductSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .requestDataProductAccessSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1098,6 +1126,13 @@ public class DataProductServiceStubSettings extends StubSettings<DataProductServ
     public OperationCallSettings.Builder<UpdateDataProductRequest, DataProduct, OperationMetadata>
         updateDataProductOperationSettings() {
       return updateDataProductOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to requestDataProductAccess. */
+    public UnaryCallSettings.Builder<
+            RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+        requestDataProductAccessSettings() {
+      return requestDataProductAccessSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDataAsset. */

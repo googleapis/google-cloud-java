@@ -139,7 +139,23 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
    * Required. Number of floors in the recorded interval
    * </pre>
    *
-   * <code>int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the count field is set.
+   */
+  @java.lang.Override
+  public boolean hasCount() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of floors in the recorded interval
+   * </pre>
+   *
+   * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count.
    */
@@ -165,7 +181,7 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getInterval());
     }
-    if (count_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(4, count_);
     }
     getUnknownFields().writeTo(output);
@@ -180,7 +196,7 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getInterval());
     }
-    if (count_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, count_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -203,7 +219,10 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
     if (hasInterval()) {
       if (!getInterval().equals(other.getInterval())) return false;
     }
-    if (getCount() != other.getCount()) return false;
+    if (hasCount() != other.hasCount()) return false;
+    if (hasCount()) {
+      if (getCount() != other.getCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -219,8 +238,10 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
     }
-    hash = (37 * hash) + COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+    if (hasCount()) {
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -419,6 +440,7 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.count_ = count_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -438,7 +460,7 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
       if (other.hasInterval()) {
         mergeInterval(other.getInterval());
       }
-      if (other.getCount() != 0L) {
+      if (other.hasCount()) {
         setCount(other.getCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -727,7 +749,23 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
      * Required. Number of floors in the recorded interval
      * </pre>
      *
-     * <code>int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the count field is set.
+     */
+    @java.lang.Override
+    public boolean hasCount() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Number of floors in the recorded interval
+     * </pre>
+     *
+     * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The count.
      */
@@ -743,7 +781,7 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
      * Required. Number of floors in the recorded interval
      * </pre>
      *
-     * <code>int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The count to set.
      * @return This builder for chaining.
@@ -763,7 +801,7 @@ public final class Floors extends com.google.protobuf.GeneratedMessage
      * Required. Number of floors in the recorded interval
      * </pre>
      *
-     * <code>int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

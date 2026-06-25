@@ -165,6 +165,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> VerifyRuleText</td>
+ *      <td><p> Verifies the given rule text.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyRuleText(VerifyRuleTextRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> verifyRuleText(InstanceName instance, String ruleText)
+ *           <li><p> verifyRuleText(String instance, String ruleText)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyRuleTextCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListRuleRevisions</td>
  *      <td><p> Lists all revisions of the rule.</td>
  *      <td>
@@ -1027,6 +1046,130 @@ public class RuleServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
     return stub.deleteRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the given rule text.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RuleServiceClient ruleServiceClient = RuleServiceClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String ruleText = "ruleText763458121";
+   *   VerifyRuleTextResponse response = ruleServiceClient.verifyRuleText(instance, ruleText);
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The name of the parent resource, which is the SecOps instance
+   *     associated with the request. Format:
+   *     `projects/{project}/locations/{location}/instances/{instance}`
+   * @param ruleText Required. The rule text to verify as a UTF-8 string.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyRuleTextResponse verifyRuleText(InstanceName instance, String ruleText) {
+    VerifyRuleTextRequest request =
+        VerifyRuleTextRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setRuleText(ruleText)
+            .build();
+    return verifyRuleText(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the given rule text.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RuleServiceClient ruleServiceClient = RuleServiceClient.create()) {
+   *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   String ruleText = "ruleText763458121";
+   *   VerifyRuleTextResponse response = ruleServiceClient.verifyRuleText(instance, ruleText);
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The name of the parent resource, which is the SecOps instance
+   *     associated with the request. Format:
+   *     `projects/{project}/locations/{location}/instances/{instance}`
+   * @param ruleText Required. The rule text to verify as a UTF-8 string.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyRuleTextResponse verifyRuleText(String instance, String ruleText) {
+    VerifyRuleTextRequest request =
+        VerifyRuleTextRequest.newBuilder().setInstance(instance).setRuleText(ruleText).build();
+    return verifyRuleText(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the given rule text.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RuleServiceClient ruleServiceClient = RuleServiceClient.create()) {
+   *   VerifyRuleTextRequest request =
+   *       VerifyRuleTextRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRuleText("ruleText763458121")
+   *           .build();
+   *   VerifyRuleTextResponse response = ruleServiceClient.verifyRuleText(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyRuleTextResponse verifyRuleText(VerifyRuleTextRequest request) {
+    return verifyRuleTextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the given rule text.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RuleServiceClient ruleServiceClient = RuleServiceClient.create()) {
+   *   VerifyRuleTextRequest request =
+   *       VerifyRuleTextRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setRuleText("ruleText763458121")
+   *           .build();
+   *   ApiFuture<VerifyRuleTextResponse> future =
+   *       ruleServiceClient.verifyRuleTextCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyRuleTextResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse>
+      verifyRuleTextCallable() {
+    return stub.verifyRuleTextCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

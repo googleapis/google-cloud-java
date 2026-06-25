@@ -84,6 +84,7 @@ public class DataSource implements javax.sql.DataSource {
   private Boolean enableWriteAPI;
   private String additionalProjects;
   private Boolean filterTablesOnDefaultDataset;
+  private Boolean enableProjectDiscovery;
   private Integer requestGoogleDriveScope;
   private Integer metadataFetchThreadCount;
   private String sslTrustStorePath;
@@ -242,6 +243,12 @@ public class DataSource implements javax.sql.DataSource {
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val,
                           BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableProjectDiscovery(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
               (ds, val) -> ds.setRequestGoogleDriveScope(Integer.parseInt(val)))
@@ -555,6 +562,11 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
           String.valueOf(this.filterTablesOnDefaultDataset));
     }
+    if (this.enableProjectDiscovery != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
+          String.valueOf(this.enableProjectDiscovery));
+    }
     if (this.requestGoogleDriveScope != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
@@ -565,6 +577,7 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
           String.valueOf(this.metadataFetchThreadCount));
     }
+
     if (this.sslTrustStorePath != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
@@ -1059,6 +1072,16 @@ public class DataSource implements javax.sql.DataSource {
     this.filterTablesOnDefaultDataset = filterTablesOnDefaultDataset;
   }
 
+  public Boolean getEnableProjectDiscovery() {
+    return enableProjectDiscovery != null
+        ? enableProjectDiscovery
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_PROJECT_DISCOVERY_VALUE;
+  }
+
+  public void setEnableProjectDiscovery(Boolean enableProjectDiscovery) {
+    this.enableProjectDiscovery = enableProjectDiscovery;
+  }
+
   public Integer getRequestGoogleDriveScope() {
     return requestGoogleDriveScope != null
         ? requestGoogleDriveScope
@@ -1077,8 +1100,9 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setMetadataFetchThreadCount(Integer metadataFetchThreadCount) {
     if (metadataFetchThreadCount != null) {
-      validateNonNegative(
+      validateMin(
           metadataFetchThreadCount,
+          1,
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME);
     }
     this.metadataFetchThreadCount = metadataFetchThreadCount;
@@ -1368,13 +1392,16 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) {
-    return null;
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return false;
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 
   private static void validateNonNegative(long val, String propertyName) {
@@ -1382,6 +1409,15 @@ public class DataSource implements javax.sql.DataSource {
       throw new BigQueryJdbcRuntimeException(
           String.format(
               "Invalid value for %s. It must be greater than or equal to 0.", propertyName));
+    }
+  }
+
+  /** Validates that a property value is greater than or equal to a minimum threshold. */
+  private static void validateMin(long val, long min, String propertyName) {
+    if (val < min) {
+      throw new BigQueryJdbcRuntimeException(
+          String.format(
+              "Invalid value for %s. It must be greater than or equal to %d.", propertyName, min));
     }
   }
 }

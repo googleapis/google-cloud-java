@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>third-party-dependencies</artifactId>
   <packaging>pom</packaging>
-  <version>3.63.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Google Cloud Third-party Shared Dependencies</name>
   <description>
     Shared third-party dependencies for Google Cloud Java libraries.
@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.api</groupId>
     <artifactId>gapic-generator-java-pom-parent</artifactId>
-    <version>2.73.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
     <relativePath>../../gapic-generator-java-pom-parent</relativePath>
   </parent>
 
@@ -42,6 +42,7 @@
     <flogger.version>0.8</flogger.version>
     <arrow.version>17.0.0</arrow.version>
     <dev.cel.version>0.6.0</dev.cel.version>
+    <bouncycastle.version>1.80</bouncycastle.version>
     <com.google.crypto.tink.version>1.16.0</com.google.crypto.tink.version>
     <io.opentelemetry.contrib.opentelemetry-gcp-resources.version>1.45.0-alpha</io.opentelemetry.contrib.opentelemetry-gcp-resources.version>
     <json.version>20250517</json.version>
@@ -49,6 +50,11 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.apache.arrow</groupId>
         <artifactId>arrow-memory-core</artifactId>
@@ -261,6 +267,11 @@
         <groupId>com.google.crypto.tink</groupId>
         <artifactId>tink</artifactId>
         <version>${com.google.crypto.tink.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>${jspecify.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
