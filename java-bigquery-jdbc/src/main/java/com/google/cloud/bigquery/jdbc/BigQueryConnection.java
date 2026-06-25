@@ -992,6 +992,21 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements.clear();
 
+      if (isTransactionStarted()) {
+        try {
+          // It looks like there's no need to start a new transaction after a rollback,
+          // but the commit behavior is preserved since close() may still fail before isClosed is
+          // updated.
+          rollbackImpl();
+        } catch (SQLException e) {
+          if (exceptionToThrow == null) {
+            exceptionToThrow = e;
+          } else {
+            exceptionToThrow.addSuppressed(e);
+          }
+        }
+      }
+
       boolean interrupted = Thread.currentThread().isInterrupted();
 
       try {
