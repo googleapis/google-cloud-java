@@ -75,11 +75,14 @@ public class BuiltInMetricsConstant {
   public static final String GRPC_LB_BACKEND_SERVICE_ATTRIBUTE = "grpc.lb.backend_service";
   public static final String GRPC_LB_LOCALITY_ATTRIBUTE = "grpc.lb.locality";
   public static final String GRPC_DISCONNECT_ERROR_ATTRIBUTE = "grpc.disconnect_error";
+  public static final String GRPC_CLIENT_CALL_CUSTOM_LABEL = "grpc.client.call.custom";
+  public static final AttributeKey<String> GRPC_CLIENT_CALL_CUSTOM_KEY =
+      AttributeKey.stringKey(GRPC_CLIENT_CALL_CUSTOM_LABEL);
 
   static final Set<String> GRPC_LB_RLS_ATTRIBUTES =
       ImmutableSet.of("grpc.lb.rls.data_plane_target", "grpc.lb.pick_result");
   static final Set<String> GRPC_CLIENT_ATTEMPT_STARTED_ATTRIBUTES =
-      ImmutableSet.of("grpc.method", "grpc.target");
+      ImmutableSet.of("grpc.method", "grpc.target", GRPC_CLIENT_CALL_CUSTOM_LABEL);
   static final Set<String> GRPC_SUBCHANNEL_DEFAULT_ATTRIBUTES =
       ImmutableSet.of("grpc.target", GRPC_LB_BACKEND_SERVICE_ATTRIBUTE, GRPC_LB_LOCALITY_ATTRIBUTE);
   static final Set<String> GRPC_SUBCHANNEL_DISCONNECTION_ATTRIBUTES =

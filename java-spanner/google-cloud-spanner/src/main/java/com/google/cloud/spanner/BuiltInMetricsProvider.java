@@ -199,6 +199,7 @@ final class BuiltInMetricsProvider {
             .addOptionalLabel(BuiltInMetricsConstant.GRPC_LB_BACKEND_SERVICE_ATTRIBUTE)
             .addOptionalLabel(BuiltInMetricsConstant.GRPC_LB_LOCALITY_ATTRIBUTE)
             .addOptionalLabel(BuiltInMetricsConstant.GRPC_DISCONNECT_ERROR_ATTRIBUTE)
+            .addOptionalLabel(BuiltInMetricsConstant.GRPC_CLIENT_CALL_CUSTOM_LABEL)
             .build();
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
         channelProviderBuilder.getChannelConfigurator();

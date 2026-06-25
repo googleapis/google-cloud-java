@@ -64,7 +64,9 @@ import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.metrics.data.SumData;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -130,6 +132,9 @@ class SpannerCloudMonitoringExporterUtils {
     Metric.Builder metricBuilder = Metric.newBuilder().setType(metricData.getName());
 
     Attributes attributes = pointData.getAttributes();
+    String customLabel = attributes.get(BuiltInMetricsConstant.GRPC_CLIENT_CALL_CUSTOM_KEY);
+    Map<String, String> parsedAttributes = parseCustomLabel(customLabel);
+
     String projectId = attributes.get(PROJECT_ID_KEY);
     if (!isUsableProjectId(projectId)) {
       projectId = shouldUseFallbackProject(metricData) ? fallbackProjectId : null;
@@ -141,7 +146,7 @@ class SpannerCloudMonitoringExporterUtils {
     monitoredResourceBuilder.putLabels(PROJECT_ID_KEY.getKey(), projectId);
 
     for (AttributeKey<?> key : attributes.asMap().keySet()) {
-      if (PROJECT_ID_KEY.equals(key)) {
+      if (PROJECT_ID_KEY.equals(key) || BuiltInMetricsConstant.GRPC_CLIENT_CALL_CUSTOM_KEY.equals(key)) {
         continue;
       } else if (SPANNER_PROMOTED_RESOURCE_LABELS.contains(key)) {
         monitoredResourceBuilder.putLabels(key.getKey(), String.valueOf(attributes.get(key)));
@@ -155,6 +160,18 @@ class SpannerCloudMonitoringExporterUtils {
 
     // Add common labels like "client_name" and "client_uid" for all the exported metrics.
     metricBuilder.putAllLabels(BuiltInMetricsProvider.INSTANCE.createClientAttributes());
+
+    // Populate database label if not already present on the point
+    String parsedDb = parsedAttributes.get("database");
+    if (parsedDb != null && attributes.get(BuiltInMetricsConstant.DATABASE_KEY) == null) {
+      metricBuilder.putLabels("database", parsedDb);
+    }
+
+    // Populate instance_id label if not already present on the resource
+    String parsedInstance = parsedAttributes.get("instance_id");
+    if (parsedInstance != null) {
+      monitoredResourceBuilder.putLabels(BuiltInMetricsConstant.INSTANCE_ID_KEY.getKey(), parsedInstance);
+    }
 
     builder.setResource(monitoredResourceBuilder.build());
     builder.setMetric(metricBuilder.build());
@@ -339,5 +356,20 @@ class SpannerCloudMonitoringExporterUtils {
     // . is commonly used in OTel but disallowed in GCM label names,
     // https://cloud.google.com/monitoring/api/ref_v3/rest/v3/LabelDescriptor#:~:text=Matches%20the%20following%20regular%20expression%3A
     return key.replace('.', '_');
+  }
+
+  private static Map<String, String> parseCustomLabel(String customLabel) {
+    Map<String, String> result = new HashMap<>();
+    if (customLabel == null || customLabel.isEmpty()) {
+      return result;
+    }
+    String[] parts = customLabel.split(";");
+    for (String part : parts) {
+      String[] kv = part.split("=", 2);
+      if (kv.length == 2) {
+        result.put(kv[0], kv[1]);
+      }
+    }
+    return result;
   }
 }

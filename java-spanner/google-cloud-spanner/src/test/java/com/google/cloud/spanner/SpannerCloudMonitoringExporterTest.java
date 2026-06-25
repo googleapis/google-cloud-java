@@ -651,6 +651,65 @@ public class SpannerCloudMonitoringExporterTest {
   }
 
   @Test
+  public void testCustomLabelExtraction() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = Mockito.mock(UnaryCallable.class);
+    Mockito.when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    Mockito.when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Attributes attributesWithCustomLabel =
+        Attributes.builder()
+            .put(PROJECT_ID_KEY, projectId)
+            .put(
+                BuiltInMetricsConstant.GRPC_CLIENT_CALL_CUSTOM_KEY,
+                "database=custom-db;instance_id=custom-instance")
+            .build();
+
+    LongPointData longPointData =
+        ImmutableLongPointData.create(10, 15, attributesWithCustomLabel, 42L);
+
+    MetricData longData =
+        ImmutableMetricData.createLongSum(
+            resource,
+            InstrumentationScopeInfo.create(GRPC_METER_NAME),
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
+
+    exporter.export(Collections.singletonList(longData));
+    CreateTimeSeriesRequest request = argumentCaptor.getValue();
+
+    assertThat(request.getTimeSeriesList()).hasSize(1);
+    TimeSeries timeSeries = request.getTimeSeriesList().get(0);
+
+    // Verify converted database is added to metric labels
+    assertThat(timeSeries.getMetric().getLabelsMap())
+        .containsEntry(DATABASE_KEY.getKey(), "custom-db");
+
+    // Verify converted instance_id is added to resource labels
+    assertThat(timeSeries.getResource().getLabelsMap())
+        .containsEntry(INSTANCE_ID_KEY.getKey(), "custom-instance");
+
+    // Verify common labels like client_uid are still present
+    assertThat(timeSeries.getMetric().getLabelsMap())
+        .containsEntry(CLIENT_UID_KEY.getKey(), this.client_uid);
+
+    // Verify raw custom label is stripped
+    assertThat(
+            timeSeries
+                .getMetric()
+                .getLabelsMap()
+                .containsKey(
+                    BuiltInMetricsConstant.GRPC_CLIENT_CALL_CUSTOM_KEY.getKey().replace(".", "_")))
+        .isFalse();
+  }
+
+  @Test
   public void getAggregationTemporality() throws IOException {
     SpannerCloudMonitoringExporter actualExporter =
         SpannerCloudMonitoringExporter.create(() -> null, null, null, null);

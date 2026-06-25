@@ -205,6 +205,8 @@ import io.grpc.auth.MoreCallCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -2373,6 +2375,26 @@ public class GapicSpannerRpc implements SpannerRpc {
     context =
         context.withCallOptions(
             context.getCallOptions().withOption(REQUEST_ID_CALL_OPTIONS_KEY, requestId));
+    Map<String, String> resourceInfo = extractResourceInfo(resource);
+    if (!resourceInfo.isEmpty()) {
+      StringBuilder customLabelBuilder = new StringBuilder();
+      String db = resourceInfo.get("database");
+      if (db != null) {
+        customLabelBuilder.append("database=").append(db);
+      }
+      String inst = resourceInfo.get("instance_id");
+      if (inst != null) {
+        if (customLabelBuilder.length() > 0) {
+          customLabelBuilder.append(";");
+        }
+        customLabelBuilder.append("instance_id=").append(inst);
+      }
+      context =
+          context.withCallOptions(
+              context
+                  .getCallOptions()
+                  .withOption(io.grpc.Grpc.CALL_OPTION_CUSTOM_LABEL, customLabelBuilder.toString()));
+    }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
     if (routeToLeader && leaderAwareRoutingEnabled) {
       context = context.withExtraHeaders(metadataProvider.newRouteToLeaderHeader());
@@ -2390,6 +2412,27 @@ public class GapicSpannerRpc implements SpannerRpc {
       apiCallContextFromContext = configurator.configure(context, request, method);
     }
     return (GrpcCallContext) context.merge(apiCallContextFromContext);
+  }
+
+  private static final Pattern RESOURCE_PATTERN =
+      Pattern.compile("^projects/[^/]*/instances/(?<instance>[^/]+)(/databases/(?<database>[^/]+))?");
+
+  private Map<String, String> extractResourceInfo(String resource) {
+    Map<String, String> info = new HashMap<>();
+    if (resource != null) {
+      Matcher matcher = RESOURCE_PATTERN.matcher(resource);
+      if (matcher.find()) {
+        String instance = matcher.group("instance");
+        if (instance != null) {
+          info.put("instance_id", instance);
+        }
+        String database = matcher.group("database");
+        if (database != null) {
+          info.put("database", database);
+        }
+      }
+    }
+    return info;
   }
 
   @Override
