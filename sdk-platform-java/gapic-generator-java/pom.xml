@@ -111,6 +111,9 @@
         <configuration>
           <source>8</source>
           <target>8</target>
+          <annotationProcessors>
+            <annotationProcessor>com.google.auto.value.processor.AutoValueProcessor</annotationProcessor>
+          </annotationProcessors>
           <annotationProcessorPaths>
             <path>
               <groupId>com.google.auto.value</groupId>

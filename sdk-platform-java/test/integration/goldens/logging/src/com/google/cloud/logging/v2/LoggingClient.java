@@ -54,6 +54,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -232,7 +233,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LoggingClient implements BackgroundResource {
-  private final LoggingSettings settings;
+  @Nullable private final LoggingSettings settings;
   private final LoggingServiceV2Stub stub;
 
   /** Constructs an instance of LoggingClient with default settings. */
@@ -270,6 +271,7 @@ public class LoggingClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final LoggingSettings getSettings() {
     return settings;
   }
@@ -488,7 +490,7 @@ public class LoggingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
-      LogName logName,
+      @Nullable LogName logName,
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {

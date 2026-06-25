@@ -43,6 +43,7 @@ import com.google.api.generator.engine.ast.ThisObjectValue;
 import com.google.api.generator.engine.ast.ThrowExpr;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
+import com.google.api.generator.engine.ast.VaporReference;
 import com.google.api.generator.engine.ast.Variable;
 import com.google.api.generator.engine.ast.VariableExpr;
 import com.google.api.generator.gapic.composer.comment.CommentComposer;
@@ -59,6 +60,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -69,6 +71,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
+import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
 
 public class ResourceNameHelperClassComposer {
@@ -792,6 +795,9 @@ public class ResourceNameHelperClassComposer {
       return MethodDefinition.builder()
           .setScope(ScopeNode.PUBLIC)
           .setIsStatic(true)
+          .setAnnotations(
+              Collections.singletonList(
+                  AnnotationNode.withType(FIXED_TYPESTORE.get("Nullable"))))
           .setReturnType(thisClassType)
           .setName("parse")
           .setArguments(formattedStringArgDeclList)
@@ -887,6 +893,9 @@ public class ResourceNameHelperClassComposer {
     return MethodDefinition.builder()
         .setScope(ScopeNode.PUBLIC)
         .setIsStatic(true)
+        .setAnnotations(
+            Collections.singletonList(
+                AnnotationNode.withType(FIXED_TYPESTORE.get("Nullable"))))
         .setReturnType(thisClassType)
         .setName("parse")
         .setArguments(formattedStringArgDeclList)
@@ -970,7 +979,12 @@ public class ResourceNameHelperClassComposer {
         TypeNode.withReference(
             ConcreteReference.builder()
                 .setClazz(List.class)
-                .setGenerics(Arrays.asList(thisClassType.reference()))
+                .setGenerics(
+                    Arrays.asList(
+                        VaporReference.builder()
+                            .setName("@Nullable " + thisClassType.reference().name())
+                            .setPakkage(thisClassType.reference().pakkage())
+                            .build()))
                 .build());
     VariableExpr valuesVarExpr =
         VariableExpr.withVariable(
@@ -1399,7 +1413,14 @@ public class ResourceNameHelperClassComposer {
     return MethodDefinition.builder()
         .setIsOverride(true)
         .setScope(ScopeNode.PUBLIC)
-        .setArguments(argVarExpr.toBuilder().setIsDecl(true).build())
+        .setArguments(
+            argVarExpr
+                .toBuilder()
+                .setIsDecl(true)
+                .setAnnotations(
+                    Collections.singletonList(
+                        AnnotationNode.withType(FIXED_TYPESTORE.get("Nullable"))))
+                .build())
         .setReturnType(TypeNode.BOOLEAN)
         .setName("equals")
         .setReturnExpr(falseValueExpr)
@@ -1702,12 +1723,13 @@ public class ResourceNameHelperClassComposer {
             ImmutableMap.class,
             List.class,
             Map.class,
+            NullMarked.class,
+            Nullable.class,
             Objects.class,
             PathTemplate.class,
             Preconditions.class,
             com.google.api.resourcenames.ResourceName.class,
-            ValidationException.class,
-            NullMarked.class);
+            ValidationException.class);
     return new TypeStore(concreteClazzes);
   }
 

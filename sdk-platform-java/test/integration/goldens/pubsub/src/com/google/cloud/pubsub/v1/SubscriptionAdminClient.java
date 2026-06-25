@@ -66,6 +66,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -484,7 +485,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SubscriptionAdminClient implements BackgroundResource {
-  private final SubscriptionAdminSettings settings;
+  @Nullable private final SubscriptionAdminSettings settings;
   private final SubscriberStub stub;
 
   /** Constructs an instance of SubscriptionAdminClient with default settings. */
@@ -524,6 +525,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final SubscriptionAdminSettings getSettings() {
     return settings;
   }

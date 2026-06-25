@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -454,7 +455,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MessagingClient implements BackgroundResource {
-  private final MessagingSettings settings;
+  @Nullable private final MessagingSettings settings;
   private final MessagingStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -500,6 +501,7 @@ public class MessagingClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
+  @Nullable
   public final MessagingSettings getSettings() {
     return settings;
   }
@@ -1976,7 +1978,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SearchBlurbsResponse, SearchBlurbsMetadata> searchBlurbsAsync(
-      ProfileName parent, String query) {
+      @Nullable ProfileName parent, String query) {
     SearchBlurbsRequest request =
         SearchBlurbsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2013,7 +2015,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SearchBlurbsResponse, SearchBlurbsMetadata> searchBlurbsAsync(
-      RoomName parent, String query) {
+      @Nullable RoomName parent, String query) {
     SearchBlurbsRequest request =
         SearchBlurbsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

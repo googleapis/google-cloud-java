@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -65,6 +66,7 @@ public class SessionName implements ResourceName {
     return newBuilder().setSession(session).build().toString();
   }
 
+  @Nullable
   public static SessionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -83,7 +85,7 @@ public class SessionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SessionName> values) {
+  public static List<String> toStringList(List<@Nullable SessionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SessionName value : values) {
       if (value == null) {
@@ -125,7 +127,7 @@ public class SessionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

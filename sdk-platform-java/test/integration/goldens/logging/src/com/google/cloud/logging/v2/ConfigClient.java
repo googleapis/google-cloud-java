@@ -87,6 +87,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -634,7 +635,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConfigClient implements BackgroundResource {
-  private final ConfigSettings settings;
+  @Nullable private final ConfigSettings settings;
   private final ConfigServiceV2Stub stub;
   private final OperationsClient operationsClient;
 
@@ -675,6 +676,7 @@ public class ConfigClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @Nullable
   public final ConfigSettings getSettings() {
     return settings;
   }

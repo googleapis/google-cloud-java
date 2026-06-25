@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -118,7 +119,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WickedClient implements BackgroundResource {
-  private final WickedSettings settings;
+  @Nullable private final WickedSettings settings;
   private final WickedStub stub;
 
   /** Constructs an instance of WickedClient with default settings. */
@@ -156,6 +157,7 @@ public class WickedClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final WickedSettings getSettings() {
     return settings;
   }

@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -202,7 +203,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IamCredentialsClient implements BackgroundResource {
-  private final IamCredentialsSettings settings;
+  @Nullable private final IamCredentialsSettings settings;
   private final IamCredentialsStub stub;
 
   /** Constructs an instance of IamCredentialsClient with default settings. */
@@ -242,6 +243,7 @@ public class IamCredentialsClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final IamCredentialsSettings getSettings() {
     return settings;
   }

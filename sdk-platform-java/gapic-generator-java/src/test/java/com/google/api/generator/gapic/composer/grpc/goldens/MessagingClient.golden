@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -330,7 +331,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MessagingClient implements BackgroundResource {
-  private final MessagingSettings settings;
+  @Nullable private final MessagingSettings settings;
   private final MessagingStub stub;
   private final OperationsClient operationsClient;
 
@@ -371,6 +372,7 @@ public class MessagingClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
+  @Nullable
   public final MessagingSettings getSettings() {
     return settings;
   }

@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -360,7 +361,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ComplianceClient implements BackgroundResource {
-  private final ComplianceSettings settings;
+  @Nullable private final ComplianceSettings settings;
   private final ComplianceStub stub;
 
   /** Constructs an instance of ComplianceClient with default settings. */
@@ -398,6 +399,7 @@ public class ComplianceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final ComplianceSettings getSettings() {
     return settings;
   }

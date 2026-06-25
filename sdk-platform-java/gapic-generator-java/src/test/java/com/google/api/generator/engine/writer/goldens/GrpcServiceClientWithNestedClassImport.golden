@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -99,7 +100,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NestedMessageServiceClient implements BackgroundResource {
-  private final NestedMessageServiceSettings settings;
+  @Nullable private final NestedMessageServiceSettings settings;
   private final NestedMessageServiceStub stub;
 
   /** Constructs an instance of NestedMessageServiceClient with default settings. */
@@ -139,6 +140,7 @@ public class NestedMessageServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final NestedMessageServiceSettings getSettings() {
     return settings;
   }

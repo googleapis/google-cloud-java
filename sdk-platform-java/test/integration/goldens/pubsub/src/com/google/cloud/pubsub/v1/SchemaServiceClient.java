@@ -55,6 +55,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -362,7 +363,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SchemaServiceClient implements BackgroundResource {
-  private final SchemaServiceSettings settings;
+  @Nullable private final SchemaServiceSettings settings;
   private final SchemaServiceStub stub;
 
   /** Constructs an instance of SchemaServiceClient with default settings. */
@@ -402,6 +403,7 @@ public class SchemaServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final SchemaServiceSettings getSettings() {
     return settings;
   }

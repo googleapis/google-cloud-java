@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -355,7 +356,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LibraryServiceClient implements BackgroundResource {
-  private final LibraryServiceSettings settings;
+  @Nullable private final LibraryServiceSettings settings;
   private final LibraryServiceStub stub;
 
   /** Constructs an instance of LibraryServiceClient with default settings. */
@@ -395,6 +396,7 @@ public class LibraryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final LibraryServiceSettings getSettings() {
     return settings;
   }

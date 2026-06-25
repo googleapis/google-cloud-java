@@ -104,6 +104,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 public abstract class AbstractServiceClientClassComposer implements ClassComposer {
   private static final String CALLABLE_NAME_PATTERN = "%sCallable";
@@ -290,14 +291,19 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
               String varName = e.getKey();
               TypeNode varType = e.getValue();
               Variable variable = Variable.builder().setName(varName).setType(varType).build();
-              VariableExpr varExpr =
+              VariableExpr.Builder varExprBuilder =
                   VariableExpr.builder()
                       .setVariable(variable)
                       .setScope(ScopeNode.PRIVATE)
                       .setIsFinal(true)
-                      .setIsDecl(true)
-                      .build();
-              return ExprStatement.withExpr(varExpr);
+                      .setIsDecl(true);
+              if (varName.equals("settings")) {
+                varExprBuilder =
+                    varExprBuilder.setAnnotations(
+                        Collections.singletonList(
+                            AnnotationNode.withType(typeStore.get("Nullable"))));
+              }
+              return ExprStatement.withExpr(varExprBuilder.build());
             })
         .collect(Collectors.toList());
   }
@@ -577,6 +583,12 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                         ServiceClientCommentComposer.GET_OPERATIONS_CLIENT_METHOD_COMMENT);
                 methodBuilder.setAnnotations(annotations);
               }
+              if (methodName.equals("getSettings")) {
+                methodBuilder =
+                    methodBuilder.setAnnotations(
+                        Collections.singletonList(
+                            AnnotationNode.withType(typeStore.get("Nullable"))));
+              }
               return methodBuilder
                   .setScope(ScopeNode.PUBLIC)
                   .setName(methodName)
@@ -750,15 +762,22 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
       List<VariableExpr> arguments =
           signature.stream()
               .map(
-                  methodArg ->
-                      VariableExpr.builder()
-                          .setVariable(
-                              Variable.builder()
-                                  .setName(JavaStyle.toLowerCamelCase(methodArg.name()))
-                                  .setType(methodArg.type())
-                                  .build())
-                          .setIsDecl(true)
-                          .build())
+                  methodArg -> {
+                    VariableExpr.Builder argBuilder =
+                        VariableExpr.builder()
+                            .setVariable(
+                                Variable.builder()
+                                    .setName(JavaStyle.toLowerCamelCase(methodArg.name()))
+                                    .setType(methodArg.type())
+                                    .build())
+                            .setIsDecl(true);
+                    if (methodArg.isResourceNameHelper() && !methodArg.field().isRequired()) {
+                      argBuilder.setAnnotations(
+                          Collections.singletonList(
+                              AnnotationNode.withType(typeStore.get("Nullable"))));
+                    }
+                    return argBuilder.build();
+                  })
               .collect(Collectors.toList());
 
       // Request proto builder.
@@ -1789,6 +1808,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             IOException.class,
             MoreExecutors.class,
             NullMarked.class,
+            Nullable.class,
             Objects.class,
             Operation.class,
             OperationFuture.class,
