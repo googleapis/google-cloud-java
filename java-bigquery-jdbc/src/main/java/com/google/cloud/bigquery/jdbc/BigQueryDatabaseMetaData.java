@@ -905,8 +905,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in procedure fetcher runnable: " + t.getMessage());
-            apiFutures.forEach(f -> f.cancel(true));
           } finally {
+            apiFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Procedure fetcher thread finished.");
           }
@@ -1752,8 +1752,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in table fetcher runnable: " + t.getMessage());
-            apiFutures.forEach(f -> f.cancel(true));
           } finally {
+            apiFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Table fetcher thread finished.");
           }
@@ -2077,8 +2077,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in column fetcher runnable: " + t.getMessage());
-            taskFutures.forEach(f -> f.cancel(true));
           } finally {
+            taskFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Column fetcher thread finished.");
           }
@@ -3872,8 +3872,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             populateQueue(collectedResults, queue, localResultSchemaFields);
           } catch (Throwable t) {
             LOG.severe("Unexpected error in function fetcher runnable: " + t.getMessage());
-            apiFutures.forEach(f -> f.cancel(true));
           } finally {
+            apiFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Function fetcher thread finished.");
           }

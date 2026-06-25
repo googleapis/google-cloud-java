@@ -949,7 +949,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    * @see Connection#close()
    */
   @Override
-  public void close() throws SQLException {
+  public synchronized void close() throws SQLException {
     if (isClosed()) {
       return;
     }
@@ -1063,11 +1063,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   synchronized ExecutorService getMetadataExecutor() {
-    if (this.metadataExecutor == null) {
-      this.metadataExecutor =
-          BigQueryJdbcMdc.newFixedThreadPool(
-              String.format("BQ-Metadata-%s", connectionId), metadataFetchThreadCount);
+    if (this.metadataExecutor != null) {
+      return this.metadataExecutor;
     }
+    checkClosed();
+    this.metadataExecutor =
+        BigQueryJdbcMdc.newFixedThreadPool(
+            String.format("BQ-Metadata-%s", connectionId), metadataFetchThreadCount);
     return this.metadataExecutor;
   }
 
