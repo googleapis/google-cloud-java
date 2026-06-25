@@ -128,6 +128,12 @@ public class OrderTest {
     groups.add(new Value[] {blobValue(new byte[] {0, 1, 2, 4, 3})});
     groups.add(new Value[] {blobValue(new byte[] {127})});
 
+    // BSON Binary Data Subtype 1
+    groups.add(new Value[] {bsonBinaryData(1, new byte[] {})});
+    groups.add(new Value[] {bsonBinaryData(1, new byte[] {0}), bsonBinaryData(1, new byte[] {0})});
+    groups.add(new Value[] {bsonBinaryData(1, new byte[] {0, 1, 2, 3, 4})});
+    groups.add(new Value[] {bsonBinaryData(1, new byte[] {0, 1, 2, 4, 3})});
+
     // BSON Binary Data
     groups.add(new Value[] {bsonBinaryData(5, new byte[] {})});
     groups.add(new Value[] {bsonBinaryData(5, new byte[] {0}), bsonBinaryData(5, new byte[] {0})});

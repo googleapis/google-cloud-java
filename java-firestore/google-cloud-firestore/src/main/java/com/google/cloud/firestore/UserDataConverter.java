@@ -173,7 +173,7 @@ class UserDataConverter {
       return Value.newBuilder().setGeoPointValue(geopoint.toProto()).build();
     } else if (sanitizedObject instanceof Blob) {
       Blob blob = (Blob) sanitizedObject;
-      if (blob.isBson() && blob.subtype() != 0) {
+      if (blob.subtype() != 0) {
         return Value.newBuilder()
             .setMapValue(encodeBsonBinaryData(blob.subtype(), blob.toByteString()))
             .build();

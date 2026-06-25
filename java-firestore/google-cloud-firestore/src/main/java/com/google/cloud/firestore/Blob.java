@@ -28,16 +28,14 @@ public final class Blob implements Serializable {
 
   private final ByteString byteString;
   private final int subtype;
-  private final boolean isBson;
 
-  private Blob(ByteString byteString, int subtype, boolean isBson) {
+  private Blob(ByteString byteString, int subtype) {
     if (subtype < 0 || subtype > 255) {
       throw new IllegalArgumentException(
           "The subtype for Blob must be a value in the inclusive [0, 255] range.");
     }
     this.byteString = byteString;
     this.subtype = subtype;
-    this.isBson = isBson;
   }
 
   /**
@@ -49,7 +47,7 @@ public final class Blob implements Serializable {
    */
   @Nonnull
   public static Blob fromByteString(@Nonnull ByteString byteString) {
-    return new Blob(byteString, 0, false);
+    return new Blob(byteString, 0);
   }
 
   /**
@@ -61,7 +59,7 @@ public final class Blob implements Serializable {
    */
   @Nonnull
   public static Blob fromBytes(@Nonnull byte[] bytes) {
-    return new Blob(ByteString.copyFrom(bytes), 0, false);
+    return new Blob(ByteString.copyFrom(bytes), 0);
   }
 
   /**
@@ -73,7 +71,7 @@ public final class Blob implements Serializable {
    */
   @Nonnull
   public static Blob createBsonBinary(@Nonnull byte[] bytes) {
-    return new Blob(ByteString.copyFrom(bytes), 0, true);
+    return new Blob(ByteString.copyFrom(bytes), 0);
   }
 
   /**
@@ -85,7 +83,7 @@ public final class Blob implements Serializable {
    */
   @Nonnull
   public static Blob createBsonBinary(@Nonnull ByteString data) {
-    return new Blob(data, 0, true);
+    return new Blob(data, 0);
   }
 
   /**
@@ -98,7 +96,7 @@ public final class Blob implements Serializable {
    */
   @Nonnull
   public static Blob createBsonBinary(int subtype, @Nonnull byte[] bytes) {
-    return new Blob(ByteString.copyFrom(bytes), subtype, true);
+    return new Blob(ByteString.copyFrom(bytes), subtype);
   }
 
   /**
@@ -111,7 +109,7 @@ public final class Blob implements Serializable {
    */
   @Nonnull
   public static Blob createBsonBinary(int subtype, @Nonnull ByteString data) {
-    return new Blob(data, subtype, true);
+    return new Blob(data, subtype);
   }
 
   /**
@@ -142,15 +140,6 @@ public final class Blob implements Serializable {
    */
   public int subtype() {
     return this.subtype;
-  }
-
-  /**
-   * Returns whether this Blob represents a BSON binary data type.
-   *
-   * @return True if BSON representation, false if native representation.
-   */
-  public boolean isBson() {
-    return this.isBson;
   }
 
   /**
@@ -194,6 +183,6 @@ public final class Blob implements Serializable {
               + this.byteString.size()
               + ")";
     }
-    return "Blob{subtype=" + this.subtype + ", isBson=" + this.isBson + ", data=" + dataStr + "}";
+    return "Blob{subtype=" + this.subtype + ", data=" + dataStr + "}";
   }
 }

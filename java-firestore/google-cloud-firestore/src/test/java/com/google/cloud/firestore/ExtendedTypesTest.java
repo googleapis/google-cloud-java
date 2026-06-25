@@ -544,4 +544,13 @@ public class ExtendedTypesTest {
             .build();
     assertEncodesAndDecodesCorrectly(proto, bsonBinaryData);
   }
+
+  @Test
+  public void canEncodeAndDecodeBsonBinaryDataSubtype0() {
+    Blob bsonBinaryData = Blob.createBsonBinary(0, new byte[] {1, 2, 3});
+    Value proto =
+        Value.newBuilder().setBytesValue(ByteString.copyFrom(new byte[] {1, 2, 3})).build();
+    // BSON binary subtype 0 matches standard native Blob
+    assertEncodesAndDecodesCorrectly(proto, bsonBinaryData);
+  }
 }
