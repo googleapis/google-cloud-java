@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Nullable;
 
 /**
  * Provides an interface to either build a TransportChannel or provide a fixed TransportChannel that
@@ -69,6 +70,17 @@ public interface TransportChannelProvider {
    */
   @Deprecated
   boolean needsExecutor();
+
+  /**
+   * @return the user provided executor. This can be null if the user didn't override the executor
+   *     and the TransportProvider is using its internal executor.
+   * @throws UnsupportedOperationException if the TransportProvider doesn't support this method.
+   */
+  @Nullable
+  default Executor getExecutor() {
+    throw new UnsupportedOperationException(
+        this.getClass().getName() + " doesnt support getExecutor()");
+  }
 
   /** Sets the executor to use when constructing a new {@link TransportChannel}. */
   TransportChannelProvider withExecutor(Executor executor);
