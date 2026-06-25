@@ -55,7 +55,7 @@ public class BuiltInDatastoreMetricsProviderTest {
             .setCredentials(NoCredentials.getInstance())
             .build();
     OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-    assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
+    assertThat(otel).isSameInstanceAs(OpenTelemetry.noop());
   }
 
   @Test
@@ -145,7 +145,7 @@ public class BuiltInDatastoreMetricsProviderTest {
               .setCredentials(NoCredentials.getInstance())
               .build();
       OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-      assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
+      assertThat(otel).isSameInstanceAs(OpenTelemetry.noop());
     } finally {
       System.clearProperty(DatastoreOptions.LOCAL_HOST_ENV_VAR);
     }

@@ -36,7 +36,6 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * Provides a built-in {@link OpenTelemetry} instance for Datastore client-side metrics.
@@ -116,9 +115,8 @@ public class BuiltInDatastoreMetricsProvider {
    * the lifetime of their Datastore client.
    *
    * @param options Datastore Client Options
-   * @return a new {@link OpenTelemetry} instance, or {@code null} if it could not be created.
+   * @return a new {@link OpenTelemetry} instance.
    */
-  @Nullable
   public OpenTelemetry createOpenTelemetry(@Nonnull DatastoreOptions options) {
     // If built-in metrics export is disabled, return no-op OpenTelemetry to avoid instantiating
     // a real SdkMeterProvider. Otherwise, the SDK-internal PeriodicMetricReader will start
