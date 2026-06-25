@@ -526,9 +526,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.currentUpdateCount = -1;
     this.currentJobIdIndex = -1;
     if (this.connection != null) {
-      if (this.connection.isTransactionStarted()) {
-        this.connection.rollback();
-      }
       this.connection.removeStatement(this);
     }
   }

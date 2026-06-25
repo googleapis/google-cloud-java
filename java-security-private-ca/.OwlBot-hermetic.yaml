@@ -17,10 +17,7 @@ deep-remove-regex:
 - "/java-security-private-ca/samples/snippets/generated"
 - "/java-security-private-ca/grpc-google-.*/src"
 - "/java-security-private-ca/proto-google-.*/src"
-- "/java-security-private-ca/google-.*/src/main"
-- "/java-security-private-ca/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-security-private-ca/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-security-private-ca/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-security-private-ca/google-.*/src"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-security-private-ca/$1/proto-google-cloud-security-private-ca-$1/src"
 - source: "/google/cloud/security/privateca/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-security-private-ca/$1/grpc-google-cloud-security-private-ca-$1/src"
-- source: "/google/cloud/security/privateca/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-security-private-ca/$1/google-cloud-security-private-ca/src/main"
+- source: "/google/cloud/security/privateca/v.*/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-security-private-ca/$1/google-cloud-security-private-ca/src"
 - source: "/google/cloud/security/privateca/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-security-private-ca/$1/samples/snippets/generated"
 

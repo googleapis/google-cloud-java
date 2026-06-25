@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-parallelstore/grpc-google-.*/src"
 - "/java-parallelstore/proto-google-.*/src"
-- "/java-parallelstore/google-.*/src/main"
-- "/java-parallelstore/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-parallelstore/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-parallelstore/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-parallelstore/google-.*/src"
 - "/java-parallelstore/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/parallelstore/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-parallelstore/$1/proto-google-cloud-parallelstore-$1/src"
 - source: "/google/cloud/parallelstore/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-parallelstore/$1/grpc-google-cloud-parallelstore-$1/src"
-- source: "/google/cloud/parallelstore/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-parallelstore/$1/google-cloud-parallelstore/src/main"
+- source: "/google/cloud/parallelstore/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-parallelstore/$1/google-cloud-parallelstore/src"
 - source: "/google/cloud/parallelstore/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-parallelstore/$1/samples/snippets/generated"
 

@@ -16,12 +16,11 @@
 deep-remove-regex:
 - "/java-common-protos/grpc-google-.*/src"
 - "/java-common-protos/proto-google-.*/src"
-- "/java-common-protos/google-.*/src/main"
-- "/java-common-protos/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-common-protos/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-common-protos/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-common-protos/google-.*/src"
 
 deep-preserve-regex:
+- "/java-common-protos/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/api/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-common-protos/v1/proto-google-common-protos/src"

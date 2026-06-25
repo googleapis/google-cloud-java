@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-maps-addressvalidation/grpc-google-.*/src"
 - "/java-maps-addressvalidation/proto-google-.*/src"
-- "/java-maps-addressvalidation/google-.*/src/main"
-- "/java-maps-addressvalidation/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-maps-addressvalidation/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-maps-addressvalidation/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-maps-addressvalidation/google-.*/src"
 - "/java-maps-addressvalidation/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/maps/addressvalidation/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maps-addressvalidation/$1/proto-google-maps-addressvalidation-$1/src"
 - source: "/google/maps/addressvalidation/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-addressvalidation/$1/grpc-google-maps-addressvalidation-$1/src"
-- source: "/google/maps/addressvalidation/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-maps-addressvalidation/$1/google-maps-addressvalidation/src/main"
+- source: "/google/maps/addressvalidation/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-maps-addressvalidation/$1/google-maps-addressvalidation/src"
 - source: "/google/maps/addressvalidation/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-addressvalidation/$1/samples/snippets/generated"
 
