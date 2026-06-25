@@ -53,6 +53,9 @@ public abstract class ConcreteReference implements Reference {
   public abstract boolean isStaticImport();
 
   @Override
+  public abstract boolean isNullable();
+
+  @Override
   public String name() {
     StringBuilder sb = new StringBuilder();
     if (isWildcard()) {
@@ -199,6 +202,11 @@ public abstract class ConcreteReference implements Reference {
     return toBuilder().setGenerics(generics).build();
   }
 
+  @Override
+  public Reference copyAndSetNullable(boolean isNullable) {
+    return toBuilder().setIsNullable(isNullable).build();
+  }
+
   public static ConcreteReference withClazz(Class<?> clazz) {
     return builder().setClazz(clazz).build();
   }
@@ -215,7 +223,8 @@ public abstract class ConcreteReference implements Reference {
     return new AutoValue_ConcreteReference.Builder()
         .setUseFullName(false)
         .setGenerics(ImmutableList.of())
-        .setIsStaticImport(false);
+        .setIsStaticImport(false)
+        .setIsNullable(false);
   }
 
   // Private.
@@ -236,6 +245,8 @@ public abstract class ConcreteReference implements Reference {
     public abstract Builder setGenerics(List<Reference> references);
 
     public abstract Builder setIsStaticImport(boolean isStaticImport);
+
+    public abstract Builder setIsNullable(boolean isNullable);
 
     public abstract ConcreteReference autoBuild();
 

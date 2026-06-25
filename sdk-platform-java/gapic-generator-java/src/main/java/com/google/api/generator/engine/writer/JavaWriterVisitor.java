@@ -222,6 +222,10 @@ public class JavaWriterVisitor implements AstNodeVisitor {
       buffer.append(DOT);
     }
 
+    if (reference.isNullable()) {
+      buffer.append("@Nullable ");
+    }
+
     buffer.append(reference.simpleName());
 
     if (!reference.generics().isEmpty()) {
@@ -253,6 +257,10 @@ public class JavaWriterVisitor implements AstNodeVisitor {
         buffer.append(String.join(DOT, reference.enclosingClassNames()));
         buffer.append(DOT);
       }
+    }
+
+    if (reference.isNullable()) {
+      buffer.append("@Nullable ");
     }
 
     // A null pointer exception will be thrown if reference is null, which is WAI.

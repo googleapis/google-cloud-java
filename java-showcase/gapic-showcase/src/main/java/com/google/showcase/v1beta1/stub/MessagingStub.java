@@ -75,13 +75,12 @@ import org.jspecify.annotations.Nullable;
 @Generated("by gapic-generator-java")
 public abstract class MessagingStub implements BackgroundResource {
 
-  @Nullable
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  @Nullable
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
