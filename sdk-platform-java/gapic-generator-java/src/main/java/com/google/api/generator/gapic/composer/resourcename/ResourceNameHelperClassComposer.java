@@ -1311,7 +1311,7 @@ public class ResourceNameHelperClassComposer {
     // Create method definition variables.
     Variable oVariable =
         Variable.builder()
-            .setType(TypeNode.withReference(javaObjectReference))
+            .setType(TypeNode.withReference(javaObjectReference.copyAndSetNullable(true)))
             .setName("o")
             .build();
     VariableExpr argVarExpr =
@@ -1405,13 +1405,7 @@ public class ResourceNameHelperClassComposer {
     return MethodDefinition.builder()
         .setIsOverride(true)
         .setScope(ScopeNode.PUBLIC)
-        .setArguments(
-            argVarExpr.toBuilder()
-                .setIsDecl(true)
-                .setAnnotations(
-                    Collections.singletonList(
-                        AnnotationNode.withType(FIXED_TYPESTORE.get("Nullable"))))
-                .build())
+        .setArguments(argVarExpr.toBuilder().setIsDecl(true).build())
         .setReturnType(TypeNode.BOOLEAN)
         .setName("equals")
         .setReturnExpr(falseValueExpr)
