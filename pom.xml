@@ -222,6 +222,7 @@
     <module>java-service-usage</module>
     <module>java-servicedirectory</module>
     <module>java-servicehealth</module>
+    <module>java-shared-config</module>
     <module>java-shell</module>
     <module>java-shopping-css</module>
     <module>java-shopping-merchant-accounts</module>

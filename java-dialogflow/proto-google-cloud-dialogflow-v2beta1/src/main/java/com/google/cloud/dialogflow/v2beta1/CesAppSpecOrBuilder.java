@@ -87,4 +87,68 @@ public interface CesAppSpecOrBuilder
    * @return The confirmationRequirement.
    */
   com.google.cloud.dialogflow.v2beta1.Tool.ConfirmationRequirement getConfirmationRequirement();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in proactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the proactiveEnabled field is set.
+   */
+  boolean hasProactiveEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in proactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The proactiveEnabled.
+   */
+  boolean getProactiveEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in reactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the reactiveEnabled field is set.
+   */
+  boolean hasReactiveEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in reactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reactiveEnabled.
+   */
+  boolean getReactiveEnabled();
 }

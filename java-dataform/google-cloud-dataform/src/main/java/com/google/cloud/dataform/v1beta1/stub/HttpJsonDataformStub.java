@@ -70,9 +70,15 @@ import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningResponse;
 import com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
@@ -199,7 +205,10 @@ public class HttpJsonDataformStub extends DataformStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(DeleteRepositoryLongRunningResponse.getDescriptor())
+          .add(DeleteRepositoryLongRunningMetadata.getDescriptor())
           .add(MoveRepositoryMetadata.getDescriptor())
+          .add(DeleteFolderTreeMetadata.getDescriptor())
           .add(MoveFolderMetadata.getDescriptor())
           .build();
 
@@ -347,6 +356,46 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTeamFolderTreeRequest, Operation>
+      deleteTeamFolderTreeMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTeamFolderTreeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteTeamFolderTree")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTeamFolderTreeRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/teamFolders/*}:deleteTree",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTeamFolderTreeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTeamFolderTreeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTeamFolderTreeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<
@@ -569,6 +618,46 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFolderTreeRequest, Operation>
+      deleteFolderTreeMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFolderTreeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteFolderTree")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFolderTreeRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/folders/*}:deleteTree",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderTreeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderTreeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteFolderTreeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<QueryFolderContentsRequest, QueryFolderContentsResponse>
@@ -872,6 +961,47 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningMethodDescriptor =
+          ApiMethodDescriptor.<DeleteRepositoryLongRunningRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/DeleteRepositoryLongRunning")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteRepositoryLongRunningRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*}:deleteLongRunning",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRepositoryLongRunningRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteRepositoryLongRunningRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteRepositoryLongRunningRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<MoveRepositoryRequest, Operation>
@@ -1614,6 +1744,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "path", request.getPath());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -2932,6 +3063,9 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<CreateTeamFolderRequest, TeamFolder> createTeamFolderCallable;
   private final UnaryCallable<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderCallable;
   private final UnaryCallable<DeleteTeamFolderRequest, Empty> deleteTeamFolderCallable;
+  private final UnaryCallable<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeCallable;
+  private final OperationCallable<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationCallable;
   private final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
       queryTeamFolderContentsCallable;
   private final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsPagedResponse>
@@ -2944,6 +3078,9 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
   private final UnaryCallable<UpdateFolderRequest, Folder> updateFolderCallable;
   private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
+  private final UnaryCallable<DeleteFolderTreeRequest, Operation> deleteFolderTreeCallable;
+  private final OperationCallable<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationCallable;
   private final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse>
       queryFolderContentsCallable;
   private final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsPagedResponse>
@@ -2963,6 +3100,13 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<CreateRepositoryRequest, Repository> createRepositoryCallable;
   private final UnaryCallable<UpdateRepositoryRequest, Repository> updateRepositoryCallable;
   private final UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable;
+  private final UnaryCallable<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningCallable;
+  private final OperationCallable<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationCallable;
   private final UnaryCallable<MoveRepositoryRequest, Operation> moveRepositoryCallable;
   private final OperationCallable<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
       moveRepositoryOperationCallable;
@@ -3199,6 +3343,19 @@ public class HttpJsonDataformStub extends DataformStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeTransportSettings =
+            HttpJsonCallSettings.<DeleteTeamFolderTreeRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteTeamFolderTreeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
         queryTeamFolderContentsTransportSettings =
             HttpJsonCallSettings
@@ -3264,6 +3421,18 @@ public class HttpJsonDataformStub extends DataformStub {
     HttpJsonCallSettings<DeleteFolderRequest, Empty> deleteFolderTransportSettings =
         HttpJsonCallSettings.<DeleteFolderRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeTransportSettings =
+        HttpJsonCallSettings.<DeleteFolderTreeRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteFolderTreeMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -3373,6 +3542,19 @@ public class HttpJsonDataformStub extends DataformStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningTransportSettings =
+            HttpJsonCallSettings.<DeleteRepositoryLongRunningRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRepositoryLongRunningMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<MoveRepositoryRequest, Operation> moveRepositoryTransportSettings =
         HttpJsonCallSettings.<MoveRepositoryRequest, Operation>newBuilder()
             .setMethodDescriptor(moveRepositoryMethodDescriptor)
@@ -4108,6 +4290,17 @@ public class HttpJsonDataformStub extends DataformStub {
     this.deleteTeamFolderCallable =
         callableFactory.createUnaryCallable(
             deleteTeamFolderTransportSettings, settings.deleteTeamFolderSettings(), clientContext);
+    this.deleteTeamFolderTreeCallable =
+        callableFactory.createUnaryCallable(
+            deleteTeamFolderTreeTransportSettings,
+            settings.deleteTeamFolderTreeSettings(),
+            clientContext);
+    this.deleteTeamFolderTreeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTeamFolderTreeTransportSettings,
+            settings.deleteTeamFolderTreeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.queryTeamFolderContentsCallable =
         callableFactory.createUnaryCallable(
             queryTeamFolderContentsTransportSettings,
@@ -4140,6 +4333,15 @@ public class HttpJsonDataformStub extends DataformStub {
     this.deleteFolderCallable =
         callableFactory.createUnaryCallable(
             deleteFolderTransportSettings, settings.deleteFolderSettings(), clientContext);
+    this.deleteFolderTreeCallable =
+        callableFactory.createUnaryCallable(
+            deleteFolderTreeTransportSettings, settings.deleteFolderTreeSettings(), clientContext);
+    this.deleteFolderTreeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFolderTreeTransportSettings,
+            settings.deleteFolderTreeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.queryFolderContentsCallable =
         callableFactory.createUnaryCallable(
             queryFolderContentsTransportSettings,
@@ -4187,6 +4389,17 @@ public class HttpJsonDataformStub extends DataformStub {
     this.deleteRepositoryCallable =
         callableFactory.createUnaryCallable(
             deleteRepositoryTransportSettings, settings.deleteRepositorySettings(), clientContext);
+    this.deleteRepositoryLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            deleteRepositoryLongRunningTransportSettings,
+            settings.deleteRepositoryLongRunningSettings(),
+            clientContext);
+    this.deleteRepositoryLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRepositoryLongRunningTransportSettings,
+            settings.deleteRepositoryLongRunningOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.moveRepositoryCallable =
         callableFactory.createUnaryCallable(
             moveRepositoryTransportSettings, settings.moveRepositorySettings(), clientContext);
@@ -4488,12 +4701,14 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(createTeamFolderMethodDescriptor);
     methodDescriptors.add(updateTeamFolderMethodDescriptor);
     methodDescriptors.add(deleteTeamFolderMethodDescriptor);
+    methodDescriptors.add(deleteTeamFolderTreeMethodDescriptor);
     methodDescriptors.add(queryTeamFolderContentsMethodDescriptor);
     methodDescriptors.add(searchTeamFoldersMethodDescriptor);
     methodDescriptors.add(getFolderMethodDescriptor);
     methodDescriptors.add(createFolderMethodDescriptor);
     methodDescriptors.add(updateFolderMethodDescriptor);
     methodDescriptors.add(deleteFolderMethodDescriptor);
+    methodDescriptors.add(deleteFolderTreeMethodDescriptor);
     methodDescriptors.add(queryFolderContentsMethodDescriptor);
     methodDescriptors.add(queryUserRootContentsMethodDescriptor);
     methodDescriptors.add(moveFolderMethodDescriptor);
@@ -4502,6 +4717,7 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(createRepositoryMethodDescriptor);
     methodDescriptors.add(updateRepositoryMethodDescriptor);
     methodDescriptors.add(deleteRepositoryMethodDescriptor);
+    methodDescriptors.add(deleteRepositoryLongRunningMethodDescriptor);
     methodDescriptors.add(moveRepositoryMethodDescriptor);
     methodDescriptors.add(commitRepositoryChangesMethodDescriptor);
     methodDescriptors.add(readRepositoryFileMethodDescriptor);
@@ -4585,6 +4801,17 @@ public class HttpJsonDataformStub extends DataformStub {
   }
 
   @Override
+  public UnaryCallable<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeCallable() {
+    return deleteTeamFolderTreeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationCallable() {
+    return deleteTeamFolderTreeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
       queryTeamFolderContentsCallable() {
     return queryTeamFolderContentsCallable;
@@ -4626,6 +4853,17 @@ public class HttpJsonDataformStub extends DataformStub {
   @Override
   public UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
     return deleteFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFolderTreeRequest, Operation> deleteFolderTreeCallable() {
+    return deleteFolderTreeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationCallable() {
+    return deleteFolderTreeOperationCallable;
   }
 
   @Override
@@ -4693,6 +4931,21 @@ public class HttpJsonDataformStub extends DataformStub {
   @Override
   public UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable() {
     return deleteRepositoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningCallable() {
+    return deleteRepositoryLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationCallable() {
+    return deleteRepositoryLongRunningOperationCallable;
   }
 
   @Override

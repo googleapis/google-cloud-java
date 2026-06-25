@@ -284,4 +284,8 @@ class BigQueryParameterHandler {
     }
     return null;
   }
+
+  int getParametersArraySize() {
+    return this.parametersArraySize;
+  }
 }

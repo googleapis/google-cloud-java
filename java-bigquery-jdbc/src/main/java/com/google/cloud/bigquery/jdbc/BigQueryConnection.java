@@ -19,11 +19,13 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -31,6 +33,7 @@ import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -41,6 +44,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSortedSet;
 import java.io.IOException;
 import java.io.InputStream;
@@ -121,6 +125,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.MAX_BYTES_BILLED_PROPERTY_NAME,
@@ -170,6 +175,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
+  boolean enableProjectDiscovery;
+  private List<String> discoveredProjectsCache;
   boolean unsupportedHTAPIFallback;
   boolean useQueryCache;
   String queryDialect;
@@ -265,11 +272,34 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
+      Map<String, String> proxyProperties =
+          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
+
+      this.sslTrustStorePath = ds.getSSLTrustStorePath();
+      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
+      this.httpConnectTimeout = ds.getHttpConnectTimeout();
+      this.httpReadTimeout = ds.getHttpReadTimeout();
+
+      this.httpTransportOptions =
+          BigQueryJdbcProxyUtility.getHttpTransportOptions(
+              proxyProperties,
+              this.sslTrustStorePath,
+              this.sslTrustStorePassword,
+              this.httpConnectTimeout,
+              this.httpReadTimeout,
+              this.connectionClassName);
+
+      HttpTransportFactory httpTransportFactory =
+          this.httpTransportOptions != null
+              ? this.httpTransportOptions.getHttpTransportFactory()
+              : null;
+
       this.credentials =
           BigQueryJdbcOAuthUtility.getCredentials(
               authProperties,
               overrideProperties,
               this.reqGoogleDriveScope,
+              httpTransportFactory,
               this.connectionClassName);
       String defaultDatasetString = ds.getDefaultDataset();
       if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
@@ -302,22 +332,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.destinationDataset = ds.getDestinationDataset();
       this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
       this.kmsKeyName = ds.getKmsKeyName();
-      Map<String, String> proxyProperties =
-          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
-
-      this.sslTrustStorePath = ds.getSSLTrustStorePath();
-      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
-      this.httpConnectTimeout = ds.getHttpConnectTimeout();
-      this.httpReadTimeout = ds.getHttpReadTimeout();
-
-      this.httpTransportOptions =
-          BigQueryJdbcProxyUtility.getHttpTransportOptions(
-              proxyProperties,
-              this.sslTrustStorePath,
-              this.sslTrustStorePassword,
-              this.httpConnectTimeout,
-              this.httpReadTimeout,
-              this.connectionClassName);
       this.transportChannelProvider =
           BigQueryJdbcProxyUtility.getTransportChannelProvider(
               proxyProperties,
@@ -338,6 +352,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.additionalProjects = ds.getAdditionalProjects();
 
       this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
+      this.enableProjectDiscovery = ds.getEnableProjectDiscovery();
       this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
       this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
       this.requestReason = ds.getRequestReason();
@@ -347,8 +362,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
-      this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(metadataFetchThreadCount);
-      this.queryExecutor = BigQueryJdbcMdc.newCachedThreadPool();
+      // Fixed thread pool queues tasks to limit concurrent metadata calls and prevent API
+      // throttling.
+      this.metadataExecutor =
+          BigQueryJdbcMdc.newFixedThreadPool(
+              String.format("BQ-Metadata-%s", connectionId), metadataFetchThreadCount);
+      // Cached pool executes queries immediately without queueing and reclaims all idle threads
+      // when inactive, minimizing resources.
+      this.queryExecutor =
+          BigQueryJdbcMdc.newCachedThreadPool(String.format("BQ-Query-%s", connectionId));
     }
   }
 
@@ -1303,6 +1325,29 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;
+  }
+
+  public boolean isEnableProjectDiscovery() {
+    return this.enableProjectDiscovery;
+  }
+
+  public synchronized List<String> getDiscoveredProjects() throws SQLException {
+    if (this.discoveredProjectsCache != null) {
+      return this.discoveredProjectsCache;
+    }
+
+    try {
+      BigQuery bigQuery = getBigQuery();
+      List<String> projects = new ArrayList<>();
+      Page<Project> projectPage = bigQuery.listProjects();
+      for (Project project : projectPage.iterateAll()) {
+        projects.add(project.getProjectId());
+      }
+      this.discoveredProjectsCache = ImmutableList.copyOf(projects);
+    } catch (Exception e) {
+      throw new BigQueryJdbcException("Failed to list all accessible projects.", e);
+    }
+    return this.discoveredProjectsCache;
   }
 
   @Override
