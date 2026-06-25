@@ -16,25 +16,22 @@
 deep-remove-regex:
 - "/java-container/grpc-google-.*/src"
 - "/java-container/proto-google-.*/src"
-- "/java-container/google-.*/src/main"
-- "/java-container/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-container/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-container/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-container/google-.*/src"
 - "/java-container/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
-- "/.*google-cloud-container/src/test/java/com/google/.*/container/v1/it/ITSystemTest.java"
-- "/.*google-cloud-container/src/test/java/com/google/.*/container/v1/it/Util.java"
+- "/.*google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
+- "/.*google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java"
 
 deep-copy-regex:
 - source: "/google/container/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-container/$1/proto-google-cloud-container-$1/src"
 - source: "/google/container/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-container/$1/grpc-google-cloud-container-$1/src"
-- source: "/google/container/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-container/$1/google-cloud-container/src/main"
+- source: "/google/container/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-container/$1/google-cloud-container/src"
 - source: "/google/container/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-container/$1/samples/snippets/generated"
 

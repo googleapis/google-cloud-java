@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-storage-transfer/grpc-google-.*/src"
 - "/java-storage-transfer/proto-google-.*/src"
-- "/java-storage-transfer/google-.*/src/main"
-- "/java-storage-transfer/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-storage-transfer/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-storage-transfer/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-storage-transfer/google-.*/src"
 - "/java-storage-transfer/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/storagetransfer/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-storage-transfer/$1/proto-google-cloud-storage-transfer-$1/src"
 - source: "/google/storagetransfer/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-storage-transfer/$1/grpc-google-cloud-storage-transfer-$1/src"
-- source: "/google/storagetransfer/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-storage-transfer/$1/google-cloud-storage-transfer/src/main"
+- source: "/google/storagetransfer/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-storage-transfer/$1/google-cloud-storage-transfer/src"
 - source: "/google/storagetransfer/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-storage-transfer/$1/samples/snippets/generated"
 

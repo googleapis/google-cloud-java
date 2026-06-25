@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-valkey/grpc-google-.*/src"
 - "/java-valkey/proto-google-.*/src"
-- "/java-valkey/google-.*/src/main"
-- "/java-valkey/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-valkey/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-valkey/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-valkey/google-.*/src"
 - "/java-valkey/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/memorystore/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-valkey/$1/proto-google-cloud-valkey-$1/src"
 - source: "/google/cloud/memorystore/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-valkey/$1/grpc-google-cloud-valkey-$1/src"
-- source: "/google/cloud/memorystore/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-valkey/$1/google-cloud-valkey/src/main"
+- source: "/google/cloud/memorystore/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-valkey/$1/google-cloud-valkey/src"
 - source: "/google/cloud/memorystore/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-valkey/$1/samples/snippets/generated"
 

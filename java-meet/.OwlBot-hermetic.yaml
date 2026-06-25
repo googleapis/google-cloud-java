@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-meet/grpc-google-.*/src"
 - "/java-meet/proto-google-.*/src"
-- "/java-meet/google-.*/src/main"
-- "/java-meet/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-meet/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-meet/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-meet/google-.*/src"
 - "/java-meet/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/apps/meet/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-meet/$1/proto-google-cloud-meet-$1/src"
 - source: "/google/apps/meet/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-meet/$1/grpc-google-cloud-meet-$1/src"
-- source: "/google/apps/meet/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-meet/$1/google-cloud-meet/src/main"
+- source: "/google/apps/meet/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-meet/$1/google-cloud-meet/src"
 - source: "/google/apps/meet/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-meet/$1/samples/snippets/generated"
 

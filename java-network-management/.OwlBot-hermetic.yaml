@@ -17,20 +17,19 @@ deep-remove-regex:
 - "/java-network-management/samples/snippets/generated"
 - "/java-network-management/grpc-google-.*/src"
 - "/java-network-management/proto-google-.*/src"
-- "/java-network-management/google-.*/src/main"
-- "/java-network-management/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-network-management/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-network-management/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-network-management/google-.*/src"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/networkmanagement/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-network-management/$1/proto-google-cloud-network-management-$1/src"
 - source: "/google/cloud/networkmanagement/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-network-management/$1/grpc-google-cloud-network-management-$1/src"
-- source: "/google/cloud/networkmanagement/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-network-management/$1/google-cloud-network-management/src/main"
+- source: "/google/cloud/networkmanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-network-management/$1/google-cloud-network-management/src"
 - source: "/google/cloud/networkmanagement/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-network-management/$1/samples/snippets/generated"
 

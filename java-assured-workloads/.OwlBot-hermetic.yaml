@@ -17,10 +17,7 @@ deep-remove-regex:
 - "/java-assured-workloads/samples/snippets/generated"
 - "/java-assured-workloads/grpc-google-.*/src"
 - "/java-assured-workloads/proto-google-.*/src"
-- "/java-assured-workloads/google-.*/src/main"
-- "/java-assured-workloads/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-assured-workloads/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-assured-workloads/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-assured-workloads/google-.*/src"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-assured-workloads/$1/proto-google-cloud-assured-workloads-$1/src"
 - source: "/google/cloud/assuredworkloads/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-assured-workloads/$1/grpc-google-cloud-assured-workloads-$1/src"
-- source: "/google/cloud/assuredworkloads/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-assured-workloads/$1/google-cloud-assured-workloads/src/main"
+- source: "/google/cloud/assuredworkloads/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-assured-workloads/$1/google-cloud-assured-workloads/src"
 - source: "/google/cloud/assuredworkloads/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-assured-workloads/$1/samples/snippets/generated"
 

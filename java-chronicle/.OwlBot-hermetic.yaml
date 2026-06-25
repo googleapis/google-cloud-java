@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-chronicle/grpc-google-.*/src"
 - "/java-chronicle/proto-google-.*/src"
-- "/java-chronicle/google-.*/src/main"
-- "/java-chronicle/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-chronicle/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-chronicle/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-chronicle/google-.*/src"
 - "/java-chronicle/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/chronicle/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-chronicle/$1/proto-google-cloud-chronicle-$1/src"
 - source: "/google/cloud/chronicle/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-chronicle/$1/grpc-google-cloud-chronicle-$1/src"
-- source: "/google/cloud/chronicle/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-chronicle/$1/google-cloud-chronicle/src/main"
+- source: "/google/cloud/chronicle/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-chronicle/$1/google-cloud-chronicle/src"
 - source: "/google/cloud/chronicle/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-chronicle/$1/samples/snippets/generated"
 
