@@ -42,9 +42,8 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -61,8 +60,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -75,7 +72,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
@@ -5228,8 +5224,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   String replaceSqlParameters(String sql, String... params) throws SQLException {
     return String.format(sql, (Object[]) params);
   }
-
-  
 
   // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
   // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
