@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -27,17 +28,25 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.ApiaryUnbufferedReadableByteChannel.ApiaryReadRequest;
+import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.Retrying.RetrierWithAlg;
+import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
+import com.google.cloud.storage.spi.v1.AuditingHttpTransport;
 import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.Test;
 
-public class ApiaryUnbufferedReadableByteChannelTest {
+public final class ApiaryUnbufferedReadableByteChannelTest {
 
   private static final byte[] CONTENT_BYTES = "Hello, World!".getBytes();
   private static final String CORRECT_CRC32C_BASE64 = "TVUQaA==";
@@ -216,6 +225,63 @@ public class ApiaryUnbufferedReadableByteChannelTest {
 
       // We read the entire response content successfully (no exception thrown)
       assertArrayEquals(CONTENT_BYTES, out.toByteArray());
+    }
+  }
+
+  @Test
+  public void logsWarning_whenReceivingMoreBytesThanRequested() throws IOException {
+    byte[] content = "0123456789extra_bytes".getBytes();
+    MockLowLevelHttpResponse response =
+        new MockLowLevelHttpResponse()
+            .setContentType("application/octet-stream")
+            .setContent(content)
+            .setStatusCode(200);
+
+    AuditingHttpTransport transport = new AuditingHttpTransport(response);
+    Storage storage =
+        new Storage.Builder(transport, GsonFactory.getDefaultInstance(), null).build();
+
+    StorageObject storageObject = new StorageObject().setBucket("bucket").setName("object");
+    // Explicit range request for 10 bytes
+    ByteRangeSpec byteRangeSpec = ByteRangeSpec.relativeLength(0L, 10L);
+    ApiaryReadRequest apiaryReadRequest =
+        new ApiaryReadRequest(storageObject, ImmutableMap.of(), byteRangeSpec);
+
+    Logger logger = Logger.getLogger(ApiaryUnbufferedReadableByteChannel.class.getName());
+    List<LogRecord> records = new ArrayList<>();
+    Handler handler =
+        new Handler() {
+          @Override
+          public void publish(LogRecord record) {
+            records.add(record);
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() throws SecurityException {}
+        };
+    logger.addHandler(handler);
+
+    try {
+      try (UnbufferedReadableByteChannel c =
+          new ApiaryUnbufferedReadableByteChannel(
+              apiaryReadRequest,
+              storage,
+              SettableApiFuture.<StorageObject>create(),
+              Retrier.attemptOnce(),
+              Retrying.neverRetry(),
+              Hasher.defaultHasher())) {
+        ByteBuffer dst = ByteBuffer.allocate(25);
+        c.read(dst);
+      }
+
+      boolean warningLogged =
+          records.stream().anyMatch(r -> r.getMessage().contains("more bytes than requested"));
+      assertThat(warningLogged).isTrue();
+    } finally {
+      logger.removeHandler(handler);
     }
   }
 }
