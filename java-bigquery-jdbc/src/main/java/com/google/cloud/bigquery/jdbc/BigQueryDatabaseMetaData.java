@@ -43,8 +43,8 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
@@ -60,7 +60,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Properties;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -73,7 +72,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
@@ -92,7 +90,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";
-  private static final String DRIVER_DEFAULT_VERSION = "0.0.0";
+
   private static final String SCHEMA_TERM = "Dataset";
   private static final String CATALOG_TERM = "Project";
   private static final String PROCEDURE_TERM = "Procedure";
@@ -143,18 +141,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   BigQueryConnection connection;
   private final BigQuery bigquery;
   private final int metadataFetchThreadCount;
-  private static final AtomicReference<String> parsedDriverVersion = new AtomicReference<>(null);
-  private static final AtomicReference<Integer> parsedDriverMajorVersion =
-      new AtomicReference<>(null);
-  private static final AtomicReference<Integer> parsedDriverMinorVersion =
-      new AtomicReference<>(null);
 
   BigQueryDatabaseMetaData(BigQueryConnection connection) {
     this.URL = connection.getConnectionUrl();
     this.connection = connection;
     this.bigquery = connection.getBigQuery();
     this.metadataFetchThreadCount = connection.getMetadataFetchThreadCount();
-    loadDriverVersionProperties();
   }
 
   @Override
@@ -223,17 +215,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public String getDriverVersion() {
-    return parsedDriverVersion.get() != null ? parsedDriverVersion.get() : DRIVER_DEFAULT_VERSION;
+    return BigQueryJdbcVersionUtility.getDriverVersion();
   }
 
   @Override
   public int getDriverMajorVersion() {
-    return parsedDriverMajorVersion.get() != null ? parsedDriverMajorVersion.get() : 0;
+    return BigQueryJdbcVersionUtility.getDriverMajorVersion();
   }
 
   @Override
   public int getDriverMinorVersion() {
-    return parsedDriverMinorVersion.get() != null ? parsedDriverMinorVersion.get() : 0;
+    return BigQueryJdbcVersionUtility.getDriverMinorVersion();
   }
 
   @Override
@@ -5231,51 +5223,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   String replaceSqlParameters(String sql, String... params) throws SQLException {
     return String.format(sql, (Object[]) params);
-  }
-
-  private void loadDriverVersionProperties() {
-    if (parsedDriverVersion.get() != null) {
-      return;
-    }
-    Properties props = new Properties();
-    try (InputStream input =
-        getClass().getResourceAsStream("/com/google/cloud/bigquery/jdbc/dependencies.properties")) {
-      if (input == null) {
-        String errorMessage =
-            "Could not find dependencies.properties. Driver version information is unavailable.";
-        IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(errorMessage, ex);
-        throw ex;
-      }
-      props.load(input);
-      String versionString = props.getProperty("version.jdbc");
-      if (versionString == null || versionString.trim().isEmpty()) {
-        String errorMessage =
-            "The property version.jdbc not found or empty in dependencies.properties.";
-        IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(errorMessage, ex);
-        throw ex;
-      }
-      parsedDriverVersion.compareAndSet(null, versionString.trim());
-      String[] parts = versionString.split("\\.");
-      if (parts.length < 2) {
-        return;
-      }
-      parsedDriverMajorVersion.compareAndSet(null, Integer.parseInt(parts[0]));
-      String minorPart = parts[1];
-      String numericMinor = minorPart.replaceAll("[^0-9].*", "");
-      if (!numericMinor.isEmpty()) {
-        parsedDriverMinorVersion.compareAndSet(null, Integer.parseInt(numericMinor));
-      }
-    } catch (IOException | NumberFormatException e) {
-      String errorMessage =
-          "Error reading dependencies.properties. Driver version information is"
-              + " unavailable. Error: "
-              + e.getMessage();
-      IllegalStateException ex = new IllegalStateException(errorMessage, e);
-      LOG.severe(errorMessage, ex);
-      throw ex;
-    }
   }
 
   // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
