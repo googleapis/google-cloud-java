@@ -53,6 +53,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -123,8 +124,19 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void fromStream_invalidJson_throws() throws IOException {
+    // This test ensures Java successfully throws an IOException when ADC JSON parsing
+    // fails, preventing silent fallbacks.
+    MockHttpTransportFactory transportFactory = new MockHttpTransportFactory();
+    try (InputStream stream =
+        new ByteArrayInputStream("invalid-json{".getBytes(StandardCharsets.UTF_8))) {
+      assertThrows(IOException.class, () -> GoogleCredentials.fromStream(stream, transportFactory));
+    }
+  }
+
+  @Test
   void fromStream_nullTransport_throws() {
-    InputStream stream = new ByteArrayInputStream("foo".getBytes());
+    InputStream stream = new ByteArrayInputStream("foo".getBytes(StandardCharsets.UTF_8));
     assertThrows(NullPointerException.class, () -> GoogleCredentials.fromStream(stream, null));
   }
 
