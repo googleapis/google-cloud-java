@@ -16,20 +16,19 @@
 deep-remove-regex:
 - "/java-maps-mapmanagement/grpc-google-.*/src"
 - "/java-maps-mapmanagement/proto-google-.*/src"
-- "/java-maps-mapmanagement/google-.*/src/main"
-- "/java-maps-mapmanagement/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-maps-mapmanagement/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-maps-mapmanagement/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-maps-mapmanagement/google-.*/src"
 - "/java-maps-mapmanagement/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-maps-mapmanagement/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/maps/mapmanagement/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-maps-mapmanagement/$1/proto-google-maps-mapmanagement-$1/src"
 - source: "/google/maps/mapmanagement/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-maps-mapmanagement/$1/grpc-google-maps-mapmanagement-$1/src"
-- source: "/google/maps/mapmanagement/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-maps-mapmanagement/$1/google-maps-mapmanagement/src/main"
+- source: "/google/maps/mapmanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-maps-mapmanagement/$1/google-maps-mapmanagement/src"
 - source: "/google/maps/mapmanagement/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-mapmanagement/$1/samples/snippets/generated"
 

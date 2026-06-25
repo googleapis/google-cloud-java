@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-monitoring-metricsscope/grpc-google-.*/src"
 - "/java-monitoring-metricsscope/proto-google-.*/src"
-- "/java-monitoring-metricsscope/google-.*/src/main"
-- "/java-monitoring-metricsscope/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-monitoring-metricsscope/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-monitoring-metricsscope/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-monitoring-metricsscope/google-.*/src"
 - "/java-monitoring-metricsscope/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/monitoring/metricsscope/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring-metricsscope/$1/proto-google-cloud-monitoring-metricsscope-$1/src"
 - source: "/google/monitoring/metricsscope/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring-metricsscope/$1/grpc-google-cloud-monitoring-metricsscope-$1/src"
-- source: "/google/monitoring/metricsscope/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-monitoring-metricsscope/$1/google-cloud-monitoring-metricsscope/src/main"
+- source: "/google/monitoring/metricsscope/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-monitoring-metricsscope/$1/google-cloud-monitoring-metricsscope/src"
 - source: "/google/monitoring/metricsscope/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-monitoring-metricsscope/$1/samples/snippets/generated"
 

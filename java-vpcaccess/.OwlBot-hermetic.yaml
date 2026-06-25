@@ -17,10 +17,7 @@ deep-remove-regex:
 - "/java-vpcaccess/samples/snippets/generated"
 - "/java-vpcaccess/grpc-google-.*/src"
 - "/java-vpcaccess/proto-google-.*/src"
-- "/java-vpcaccess/google-.*/src/main"
-- "/java-vpcaccess/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-vpcaccess/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-vpcaccess/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-vpcaccess/google-.*/src"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -30,8 +27,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-vpcaccess/$1/proto-google-cloud-vpcaccess-$1/src"
 - source: "/google/cloud/vpcaccess/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-vpcaccess/$1/grpc-google-cloud-vpcaccess-$1/src"
-- source: "/google/cloud/vpcaccess/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-vpcaccess/$1/google-cloud-vpcaccess/src/main"
+- source: "/google/cloud/vpcaccess/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-vpcaccess/$1/google-cloud-vpcaccess/src"
 - source: "/google/cloud/vpcaccess/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vpcaccess/$1/samples/snippets/generated"
 

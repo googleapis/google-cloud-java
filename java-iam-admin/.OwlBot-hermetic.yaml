@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-iam-admin/grpc-google-.*/src"
 - "/java-iam-admin/proto-google-.*/src"
-- "/java-iam-admin/google-.*/src/main"
-- "/java-iam-admin/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-iam-admin/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-iam-admin/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-iam-admin/google-.*/src"
 - "/java-iam-admin/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/iam/admin/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-iam-admin/$1/proto-google-iam-admin-$1/src"
 - source: "/google/iam/admin/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-iam-admin/$1/grpc-google-iam-admin-$1/src"
-- source: "/google/iam/admin/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-iam-admin/$1/google-iam-admin/src/main"
+- source: "/google/iam/admin/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-iam-admin/$1/google-iam-admin/src"
 - source: "/google/iam/admin/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-iam-admin/$1/samples/snippets/generated"
 

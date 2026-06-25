@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-discoveryengine/grpc-google-.*/src"
 - "/java-discoveryengine/proto-google-.*/src"
-- "/java-discoveryengine/google-.*/src/main"
-- "/java-discoveryengine/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-discoveryengine/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-discoveryengine/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-discoveryengine/google-.*/src"
 - "/java-discoveryengine/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/cloud/discoveryengine/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-discoveryengine/$1/proto-google-cloud-discoveryengine-$1/src"
 - source: "/google/cloud/discoveryengine/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-discoveryengine/$1/grpc-google-cloud-discoveryengine-$1/src"
-- source: "/google/cloud/discoveryengine/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-discoveryengine/$1/google-cloud-discoveryengine/src/main"
+- source: "/google/cloud/discoveryengine/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-discoveryengine/$1/google-cloud-discoveryengine/src"
 - source: "/google/cloud/discoveryengine/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-discoveryengine/$1/samples/snippets/generated"
 

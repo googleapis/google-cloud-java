@@ -51,6 +51,7 @@ import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.UpdateSnapshotRequest;
 import com.google.pubsub.v1.UpdateSubscriptionRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -58,6 +59,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class SubscriberStub implements BackgroundResource {
 
