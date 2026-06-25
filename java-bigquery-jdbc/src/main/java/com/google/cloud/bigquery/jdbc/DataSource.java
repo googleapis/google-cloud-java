@@ -84,6 +84,7 @@ public class DataSource implements javax.sql.DataSource {
   private Boolean enableWriteAPI;
   private String additionalProjects;
   private Boolean filterTablesOnDefaultDataset;
+  private Boolean enableProjectDiscovery;
   private Integer requestGoogleDriveScope;
   private Integer metadataFetchThreadCount;
   private String sslTrustStorePath;
@@ -242,6 +243,12 @@ public class DataSource implements javax.sql.DataSource {
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val,
                           BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableProjectDiscovery(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
               (ds, val) -> ds.setRequestGoogleDriveScope(Integer.parseInt(val)))
@@ -554,6 +561,11 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
           String.valueOf(this.filterTablesOnDefaultDataset));
+    }
+    if (this.enableProjectDiscovery != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
+          String.valueOf(this.enableProjectDiscovery));
     }
     if (this.requestGoogleDriveScope != null) {
       connectionProperties.setProperty(
@@ -1058,6 +1070,16 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setFilterTablesOnDefaultDataset(Boolean filterTablesOnDefaultDataset) {
     this.filterTablesOnDefaultDataset = filterTablesOnDefaultDataset;
+  }
+
+  public Boolean getEnableProjectDiscovery() {
+    return enableProjectDiscovery != null
+        ? enableProjectDiscovery
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_PROJECT_DISCOVERY_VALUE;
+  }
+
+  public void setEnableProjectDiscovery(Boolean enableProjectDiscovery) {
+    this.enableProjectDiscovery = enableProjectDiscovery;
   }
 
   public Integer getRequestGoogleDriveScope() {
