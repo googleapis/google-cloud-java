@@ -40,7 +40,7 @@ final class CumulativeHasher implements Hasher {
     this.delegate = delegate;
     this.startOffset = startOffset;
     this.limit = limit;
-    this.cumulativeHash = Crc32cValue.zero();
+    this.cumulativeHash = delegate.initialValue();
   }
 
   @Override
@@ -91,6 +91,17 @@ final class CumulativeHasher implements Hasher {
   }
 
   @Override
+  public void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual)
+      throws ChecksumMismatchException {
+    if (actual != null) {
+      if (expected != null && !actual.eqValue(expected)) {
+        throw new ChecksumMismatchException(expected, actual);
+      }
+      accumulate(actual);
+    }
+  }
+
+  @Override
   public <C extends Crc32cValue<?>> C nullSafeConcat(C r1, Crc32cLengthKnown r2) {
     return delegate.nullSafeConcat(r1, r2);
   }
@@ -112,8 +123,11 @@ final class CumulativeHasher implements Hasher {
   void validateCumulativeChecksum(Object metadata)
       throws UncheckedCumulativeChecksumMismatchException {
     if (qualifiesForVerification(metadata)) {
-      Crc32cValue<?> expected = Crc32cValue.of(metadata.getChecksums().getCrc32C());
       Crc32cLengthKnown actual = getCumulativeHash();
+      if (actual == null) {
+        return;
+      }
+      Crc32cValue<?> expected = Crc32cValue.of(metadata.getChecksums().getCrc32C());
       if (!actual.eqValue(expected)) {
         throw new UncheckedCumulativeChecksumMismatchException(expected, actual);
       }
@@ -121,7 +135,7 @@ final class CumulativeHasher implements Hasher {
   }
 
   private void accumulate(Crc32cLengthKnown actual) {
-    cumulativeHash = cumulativeHash.concat(actual);
+    cumulativeHash = nullSafeConcat(cumulativeHash, actual);
   }
 
   Crc32cLengthKnown getCumulativeHash() {

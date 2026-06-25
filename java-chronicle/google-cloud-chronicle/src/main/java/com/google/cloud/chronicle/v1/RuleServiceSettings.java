@@ -144,6 +144,11 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
     return ((RuleServiceStubSettings) getStubSettings()).deleteRuleSettings();
   }
 
+  /** Returns the object with the settings used for calls to verifyRuleText. */
+  public UnaryCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextSettings() {
+    return ((RuleServiceStubSettings) getStubSettings()).verifyRuleTextSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRuleRevisions. */
   public PagedCallSettings<
           ListRuleRevisionsRequest, ListRuleRevisionsResponse, ListRuleRevisionsPagedResponse>
@@ -327,6 +332,12 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteRule. */
     public UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings() {
       return getStubSettingsBuilder().deleteRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyRuleText. */
+    public UnaryCallSettings.Builder<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextSettings() {
+      return getStubSettingsBuilder().verifyRuleTextSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRuleRevisions. */

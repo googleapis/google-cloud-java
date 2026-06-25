@@ -27,12 +27,20 @@ PARAMS = ProjectId=bigquery-devtools-drivers;OAuthType=0;OAuthServiceAcctEmail=;
 # Additional connection parameters
 EXTRA_PARAMS ?=
 
+METHOD ?= getTables
+
 ROWS ?= 10
 COLS ?= 5
-METHOD ?= getTables
 
 OUTPUT ?= false
 QUERY ?= SELECT 1
+QUERY_FILE ?=
+
+ifneq ($(QUERY_FILE),)
+  QUERY_FLAG = --query-file "$(QUERY_FILE)"
+else
+  QUERY_FLAG = --query "$(QUERY)"
+endif
 
 ifeq ($(OUTPUT),false)
   OUTPUT_FLAG = --no-output
@@ -53,7 +61,7 @@ COMMON_FLAGS = --url "$(URL);$(DEFAULT_PARAMS);$(PARAMS);$(EXTRA_PARAMS)" \
                --driver-class "$(DRIVER_CLASS)"
 
 query: classes
-	$(J) $(JFR_FLAGS) -cp .:$(DRIVER_JAR) JDBCClient --action query $(COMMON_FLAGS) --query "$(QUERY)" $(OUTPUT_FLAG) $(EXTRA_ARGS)
+	$(J) $(JFR_FLAGS) -cp .:$(DRIVER_JAR) JDBCClient --action query $(COMMON_FLAGS) $(QUERY_FLAG) $(OUTPUT_FLAG) $(EXTRA_ARGS)
 
 query-generated: classes
 	$(J) $(JFR_FLAGS) -cp .:$(DRIVER_JAR) JDBCClient --action query $(COMMON_FLAGS) $(OUTPUT_FLAG) --generate-rows $(ROWS) --generate-cols $(COLS) $(EXTRA_ARGS)

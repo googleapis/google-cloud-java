@@ -21,6 +21,7 @@ import static com.google.cloud.discoveryengine.v1beta.ConversationalSearchServic
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.Answer;
 import com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest;
@@ -88,6 +89,11 @@ public abstract class ConversationalSearchServiceStub implements BackgroundResou
 
   public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: answerQueryCallable()");
+  }
+
+  public ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamAnswerQueryCallable()");
   }
 
   public UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {

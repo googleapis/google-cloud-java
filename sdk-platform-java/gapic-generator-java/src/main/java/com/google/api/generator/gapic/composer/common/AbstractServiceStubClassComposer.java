@@ -54,6 +54,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceStubClassComposer implements ClassComposer {
 
@@ -93,6 +94,7 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
 
   private static List<AnnotationNode> createClassAnnotations(Service service, TypeStore typeStore) {
     List<AnnotationNode> annotations = new ArrayList<>();
+    annotations.add(AnnotationNode.withType(typeStore.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(typeStore.get("BetaApi")));
     }
@@ -270,7 +272,8 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
             OperationCallable.class,
             ServerStreamingCallable.class,
             UnaryCallable.class,
-            UnsupportedOperationException.class);
+            UnsupportedOperationException.class,
+            NullMarked.class);
     TypeStore typeStore = new TypeStore(concreteClazzes);
 
     typeStore.put("com.google.longrunning.stub", "OperationsStub");

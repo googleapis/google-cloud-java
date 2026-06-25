@@ -1,0 +1,2 @@
+# to change language of repo from Shell to Java
+*.sh linguist-language=Java

@@ -64,8 +64,7 @@ import java.util.Queue;
 class BigQueryPreparedStatement extends BigQueryStatement implements PreparedStatement {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final char POSITIONAL_PARAMETER_CHAR = '?';
-  // Making this protected so BigQueryCallableStatement subclass can access the parameters.
-  protected final BigQueryParameterHandler parameterHandler;
+  // parameterHandler is inherited from BigQueryStatement
   protected int parameterCount = 0;
   protected String currentQuery;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
@@ -90,49 +89,22 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public ResultSet executeQuery() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
-    try {
-      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
-      jobConfiguration.setParameterMode("POSITIONAL");
-      jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
-      runQuery(this.currentQuery, jobConfiguration.build());
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException("Interrupted during executeQuery", ex);
-    }
-    return getCurrentResultSet();
+    return super.executeQuery(this.currentQuery);
   }
 
   @Override
   public long executeLargeUpdate() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
-    try {
-      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
-      jobConfiguration.setParameterMode("POSITIONAL");
-      jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
-      runQuery(this.currentQuery, jobConfiguration.build());
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException("Interrupted during executeLargeUpdate", ex);
-    }
-    return this.currentUpdateCount;
+    return super.executeLargeUpdate(this.currentQuery);
   }
 
   @Override
   public int executeUpdate() throws SQLException {
-    return checkUpdateCount(executeLargeUpdate());
+    return super.executeUpdate(this.currentQuery);
   }
 
   @Override
   public boolean execute() throws SQLException {
-    logQueryExecutionStart(this.currentQuery);
-    try {
-      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
-      jobConfiguration.setParameterMode("POSITIONAL");
-      jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
-      runQuery(this.currentQuery, jobConfiguration.build());
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException("Interrupted during execute", ex);
-    }
-    return getCurrentResultSet() != null;
+    return super.execute(this.currentQuery);
   }
 
   @Override

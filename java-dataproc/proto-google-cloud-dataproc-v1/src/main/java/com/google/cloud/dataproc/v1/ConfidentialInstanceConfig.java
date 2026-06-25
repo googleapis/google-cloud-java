@@ -25,7 +25,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Confidential Instance Config for clusters using [Confidential
- * VMs](https://cloud.google.com/compute/confidential-vm/docs)
+ * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs)
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.ConfidentialInstanceConfig}
@@ -52,7 +52,9 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     super(builder);
   }
 
-  private ConfidentialInstanceConfig() {}
+  private ConfidentialInstanceConfig() {
+    confidentialInstanceType_ = 0;
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
@@ -69,6 +71,212 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
             com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of Confidential Compute technology as per [Confidential Computing
+   * types](https://cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance#create-instance).
+   * New values may be added in the future.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType}
+   */
+  public enum ConfidentialInstanceType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Confidential Instance Type is not specified.
+     * </pre>
+     *
+     * <code>CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * [AMD Secure Encrypted
+     * Virtualization](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#amd_sev)
+     * </pre>
+     *
+     * <code>SEV = 1;</code>
+     */
+    SEV(1),
+    /**
+     *
+     *
+     * <pre>
+     * [AMD Secure Encrypted Virtualization-Secure Nested
+     * Paging](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#amd_sev-snp)
+     * </pre>
+     *
+     * <code>SEV_SNP = 2;</code>
+     */
+    SEV_SNP(2),
+    /**
+     *
+     *
+     * <pre>
+     * [Intel Trust Domain
+     * Extensions](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#intel_tdx)
+     * </pre>
+     *
+     * <code>TDX = 3;</code>
+     */
+    TDX(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ConfidentialInstanceType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Confidential Instance Type is not specified.
+     * </pre>
+     *
+     * <code>CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * [AMD Secure Encrypted
+     * Virtualization](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#amd_sev)
+     * </pre>
+     *
+     * <code>SEV = 1;</code>
+     */
+    public static final int SEV_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * [AMD Secure Encrypted Virtualization-Secure Nested
+     * Paging](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#amd_sev-snp)
+     * </pre>
+     *
+     * <code>SEV_SNP = 2;</code>
+     */
+    public static final int SEV_SNP_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Intel Trust Domain
+     * Extensions](https://cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview#intel_tdx)
+     * </pre>
+     *
+     * <code>TDX = 3;</code>
+     */
+    public static final int TDX_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfidentialInstanceType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConfidentialInstanceType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED;
+        case 1:
+          return SEV;
+        case 2:
+          return SEV_SNP;
+        case 3:
+          return TDX;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConfidentialInstanceType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConfidentialInstanceType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConfidentialInstanceType>() {
+              public ConfidentialInstanceType findValueByNumber(int number) {
+                return ConfidentialInstanceType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ConfidentialInstanceType[] VALUES = values();
+
+    public static ConfidentialInstanceType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConfidentialInstanceType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType)
+  }
+
   public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 1;
   private boolean enableConfidentialCompute_ = false;
 
@@ -76,17 +284,68 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Defines whether the instance should have confidential compute
-   * enabled.
+   * Optional. Deprecated: Use 'confidential_instance_type' instead.
+   * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *
-   * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool enable_confidential_compute = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute is
+   *     deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
    * @return The enableConfidentialCompute.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnableConfidentialCompute() {
     return enableConfidentialCompute_;
+  }
+
+  public static final int CONFIDENTIAL_INSTANCE_TYPE_FIELD_NUMBER = 2;
+  private int confidentialInstanceType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the type of Confidential Compute technology to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for confidentialInstanceType.
+   */
+  @java.lang.Override
+  public int getConfidentialInstanceTypeValue() {
+    return confidentialInstanceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the type of Confidential Compute technology to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confidentialInstanceType.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+      getConfidentialInstanceType() {
+    com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType result =
+        com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType.forNumber(
+            confidentialInstanceType_);
+    return result == null
+        ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+            .UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -106,6 +365,12 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     if (enableConfidentialCompute_ != false) {
       output.writeBool(1, enableConfidentialCompute_);
     }
+    if (confidentialInstanceType_
+        != com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+            .CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, confidentialInstanceType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -117,6 +382,12 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     size = 0;
     if (enableConfidentialCompute_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableConfidentialCompute_);
+    }
+    if (confidentialInstanceType_
+        != com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+            .CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, confidentialInstanceType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -135,6 +406,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
         (com.google.cloud.dataproc.v1.ConfidentialInstanceConfig) obj;
 
     if (getEnableConfidentialCompute() != other.getEnableConfidentialCompute()) return false;
+    if (confidentialInstanceType_ != other.confidentialInstanceType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -148,6 +420,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialCompute());
+    hash = (37 * hash) + CONFIDENTIAL_INSTANCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + confidentialInstanceType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -255,7 +529,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    *
    * <pre>
    * Confidential Instance Config for clusters using [Confidential
-   * VMs](https://cloud.google.com/compute/confidential-vm/docs)
+   * VMs](https://cloud.google.com/confidential-computing/confidential-vm/docs)
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.ConfidentialInstanceConfig}
@@ -291,6 +565,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       enableConfidentialCompute_ = false;
+      confidentialInstanceType_ = 0;
       return this;
     }
 
@@ -330,6 +605,9 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enableConfidentialCompute_ = enableConfidentialCompute_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidentialInstanceType_ = confidentialInstanceType_;
+      }
     }
 
     @java.lang.Override
@@ -347,6 +625,9 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
         return this;
       if (other.getEnableConfidentialCompute() != false) {
         setEnableConfidentialCompute(other.getEnableConfidentialCompute());
+      }
+      if (other.confidentialInstanceType_ != 0) {
+        setConfidentialInstanceTypeValue(other.getConfidentialInstanceTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -380,6 +661,12 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                confidentialInstanceType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -405,15 +692,20 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Defines whether the instance should have confidential compute
-     * enabled.
+     * Optional. Deprecated: Use 'confidential_instance_type' instead.
+     * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool enable_confidential_compute = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute
+     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
      * @return The enableConfidentialCompute.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnableConfidentialCompute() {
       return enableConfidentialCompute_;
     }
@@ -422,15 +714,20 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Defines whether the instance should have confidential compute
-     * enabled.
+     * Optional. Deprecated: Use 'confidential_instance_type' instead.
+     * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool enable_confidential_compute = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute
+     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
      * @param value The enableConfidentialCompute to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnableConfidentialCompute(boolean value) {
 
       enableConfidentialCompute_ = value;
@@ -443,17 +740,133 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Defines whether the instance should have confidential compute
-     * enabled.
+     * Optional. Deprecated: Use 'confidential_instance_type' instead.
+     * Defines whether the instance should have confidential compute enabled.
      * </pre>
      *
-     * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool enable_confidential_compute = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute
+     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnableConfidentialCompute() {
       bitField0_ = (bitField0_ & ~0x00000001);
       enableConfidentialCompute_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int confidentialInstanceType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the type of Confidential Compute technology to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for confidentialInstanceType.
+     */
+    @java.lang.Override
+    public int getConfidentialInstanceTypeValue() {
+      return confidentialInstanceType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the type of Confidential Compute technology to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for confidentialInstanceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfidentialInstanceTypeValue(int value) {
+      confidentialInstanceType_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the type of Confidential Compute technology to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confidentialInstanceType.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+        getConfidentialInstanceType() {
+      com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType result =
+          com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+              .forNumber(confidentialInstanceType_);
+      return result == null
+          ? com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the type of Confidential Compute technology to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The confidentialInstanceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfidentialInstanceType(
+        com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      confidentialInstanceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines the type of Confidential Compute technology to use.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConfidentialInstanceType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      confidentialInstanceType_ = 0;
       onChanged();
       return this;
     }

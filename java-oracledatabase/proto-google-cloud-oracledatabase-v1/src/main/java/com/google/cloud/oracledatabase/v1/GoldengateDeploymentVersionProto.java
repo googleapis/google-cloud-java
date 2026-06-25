@@ -49,10 +49,6 @@ public final class GoldengateDeploymentVersionProto extends com.google.protobuf.
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_GoldengateDeploymentVersionProperties_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentVersionRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentVersionRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsRequest_fieldAccessorTable;
@@ -108,25 +104,22 @@ public final class GoldengateDeploymentVersionProto extends com.google.protobuf.
           + "#DEPLOYMENT_RELEASE_TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005MAJOR\020\001\022\n\n"
           + "\006BUNDLE\020\002\022\t\n"
-          + "\005MINOR\020\003\"x\n"
-          + "%GetGoldengateDeploymentVersionRequest\022O\n"
-          + "\004name\030\001 \001(\tBA\340A\002\372A;\n"
-          + "9oracledatabase.googleapis.com/GoldengateDeploymentVersion\"\302\001\n"
+          + "\005MINOR\020\003\"\302\001\n"
           + "\'ListGoldengateDeploymentVersionsRequest\022Q\n"
-          + "\006parent\030\001 \001(\tBA"
-          + "\340A\002\372A;\0229oracledatabase.googleapis.com/GoldengateDeploymentVersion\022\026\n"
+          + "\006parent\030\001 \001(\tBA\340A"
+          + "\002\372A;\0229oracledatabase.googleapis.com/GoldengateDeploymentVersion\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\302\001\n"
           + "(ListGoldengateDeploymentVersionsResponse\022c\n"
-          + "\036goldengate_deployment_versions\030\001 \003(\0132;.google.cloud.orac"
-          + "ledatabase.v1.GoldengateDeploymentVersion\022\027\n"
+          + "\036goldengate_deployment_versions\030\001 \003(\0132;.google.cloud.oracle"
+          + "database.v1.GoldengateDeploymentVersion\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006B\372\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B GoldengateDeploymentVersion"
-          + "ProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledatabas"
-          + "epb\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036G"
-          + "oogle\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B GoldengateDeploymentVersionPr"
+          + "otoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledatabasep"
+          + "b\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036Goo"
+          + "gle\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -157,16 +150,8 @@ public final class GoldengateDeploymentVersionProto extends com.google.protobuf.
               "ReleaseTime",
               "SupportEndTime",
             });
-    internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentVersionRequest_descriptor =
-        getDescriptor().getMessageType(2);
-    internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentVersionRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentVersionRequest_descriptor,
-            new java.lang.String[] {
-              "Name",
-            });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsRequest_descriptor,
@@ -174,7 +159,7 @@ public final class GoldengateDeploymentVersionProto extends com.google.protobuf.
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentVersionsResponse_descriptor,

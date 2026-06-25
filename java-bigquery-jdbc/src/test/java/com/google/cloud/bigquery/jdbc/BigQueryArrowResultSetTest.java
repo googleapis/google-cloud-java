@@ -49,6 +49,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
@@ -237,10 +238,10 @@ public class BigQueryArrowResultSetTest {
         ArrowSchema.newBuilder()
             .setSerializedSchema(serializeSchema(vectorSchemaRoot.getSchema()))
             .build();
-    Thread workerThread = new Thread();
+    Future<?> workerTask = mock(Future.class);
     bigQueryArrowResultSet =
         BigQueryArrowResultSet.of(
-            QUERY_SCHEMA, arrowSchema, 1, statement, buffer, workerThread, null);
+            QUERY_SCHEMA, arrowSchema, 1, statement, buffer, workerTask, null);
 
     // nested result set data setup
     JsonStringArrayList<Long> jsonStringArrayList = getJsonStringArrayList();
@@ -275,17 +276,17 @@ public class BigQueryArrowResultSetTest {
         ArrowSchema.newBuilder()
             .setSerializedSchema(serializeSchema(vectorSchemaRoot.getSchema()))
             .build();
-    Thread workerThread = new Thread();
+    Future<?> workerTask = mock(Future.class);
     // ResultSet with 1 row buffer and 1 total rows.
     BigQueryArrowResultSet bigQueryArrowResultSet2 =
         BigQueryArrowResultSet.of(
-            QUERY_SCHEMA, arrowSchema, 1, statement, buffer, workerThread, null);
+            QUERY_SCHEMA, arrowSchema, 1, statement, buffer, workerTask, null);
 
     assertThat(resultSetRowCount(bigQueryArrowResultSet2)).isEqualTo(1);
     // ResultSet with 2 rows buffer and 1 total rows.
     bigQueryArrowResultSet2 =
         BigQueryArrowResultSet.of(
-            QUERY_SCHEMA, arrowSchema, 1, statement, bufferWithTwoRows, workerThread, null);
+            QUERY_SCHEMA, arrowSchema, 1, statement, bufferWithTwoRows, workerTask, null);
 
     assertThat(resultSetRowCount(bigQueryArrowResultSet2)).isEqualTo(1);
   }

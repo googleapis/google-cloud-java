@@ -60,6 +60,14 @@ public final class PartnerLinkServiceProto extends com.google.protobuf.Generated
       internal_static_google_ads_datamanager_v1_PartnerLink_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_PartnerLink_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_PartnerCustomerAccount_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_PartnerCustomerAccount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_PartnerLinkMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_PartnerLinkMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,59 +77,75 @@ public final class PartnerLinkServiceProto extends com.google.protobuf.Generated
 
   static {
     java.lang.String[] descriptorData = {
-      "\n4google/ads/datamanager/v1/partner_link"
-          + "_service.proto\022\031google.ads.datamanager.v"
+      "\n"
+          + "4google/ads/datamanager/v1/partner_link_service.proto\022\031google.ads.datamanager.v"
           + "1\032+google/ads/datamanager/v1/destination"
           + ".proto\032\034google/api/annotations.proto\032\027go"
           + "ogle/api/client.proto\032\037google/api/field_"
-          + "behavior.proto\032\031google/api/resource.prot"
-          + "o\032\033google/protobuf/empty.proto\"\235\001\n\030Creat"
-          + "ePartnerLinkRequest\022>\n\006parent\030\001 \001(\tB.\340A\002"
-          + "\372A(\022&datamanager.googleapis.com/PartnerL"
-          + "ink\022A\n\014partner_link\030\002 \001(\0132&.google.ads.d"
-          + "atamanager.v1.PartnerLinkB\003\340A\002\"X\n\030Delete"
-          + "PartnerLinkRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A("
-          + "\n&datamanager.googleapis.com/PartnerLink"
-          + "\"\227\001\n\031SearchPartnerLinksRequest\022>\n\006parent"
-          + "\030\001 \001(\tB.\340A\002\372A(\022&datamanager.googleapis.c"
-          + "om/PartnerLink\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
-          + "e_token\030\003 \001(\t\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"t\n\032Se"
-          + "archPartnerLinksResponse\022=\n\rpartner_link"
-          + "s\030\001 \003(\0132&.google.ads.datamanager.v1.Part"
-          + "nerLink\022\027\n\017next_page_token\030\002 \001(\t\"\345\002\n\013Par"
-          + "tnerLink\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\034\n\017partner_l"
-          + "ink_id\030\002 \001(\tB\003\340A\003\022F\n\016owning_account\030\003 \001("
-          + "\0132).google.ads.datamanager.v1.ProductAcc"
-          + "ountB\003\340A\002\022G\n\017partner_account\030\004 \001(\0132).goo"
-          + "gle.ads.datamanager.v1.ProductAccountB\003\340"
-          + "A\002:\223\001\352A\217\001\n&datamanager.googleapis.com/Pa"
-          + "rtnerLink\022JaccountTypes/{account_type}/a"
-          + "ccounts/{account}/partnerLinks/{partner_"
-          + "link}*\014partnerLinks2\013partnerLink2\346\005\n\022Par"
-          + "tnerLinkService\022\321\001\n\021CreatePartnerLink\0223."
-          + "google.ads.datamanager.v1.CreatePartnerL"
-          + "inkRequest\032&.google.ads.datamanager.v1.P"
-          + "artnerLink\"_\332A\023parent,partner_link\202\323\344\223\002C"
-          + "\"3/v1/{parent=accountTypes/*/accounts/*}"
-          + "/partnerLinks:\014partner_link\022\244\001\n\021DeletePa"
-          + "rtnerLink\0223.google.ads.datamanager.v1.De"
-          + "letePartnerLinkRequest\032\026.google.protobuf"
-          + ".Empty\"B\332A\004name\202\323\344\223\0025*3/v1/{name=account"
-          + "Types/*/accounts/*/partnerLinks/*}\022\316\001\n\022S"
-          + "earchPartnerLinks\0224.google.ads.datamanag"
-          + "er.v1.SearchPartnerLinksRequest\0325.google"
-          + ".ads.datamanager.v1.SearchPartnerLinksRe"
-          + "sponse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{parent=acc"
-          + "ountTypes/*/accounts/*}/partnerLinks:sea"
-          + "rch\032\203\001\312A\032datamanager.googleapis.com\322Acht"
-          + "tps://www.googleapis.com/auth/datamanage"
-          + "r,https://www.googleapis.com/auth/datama"
-          + "nager.partnerlinkB\324\001\n\035com.google.ads.dat"
-          + "amanager.v1B\027PartnerLinkServiceProtoP\001ZA"
-          + "cloud.google.com/go/datamanager/apiv1/da"
-          + "tamanagerpb;datamanagerpb\252\002\031Google.Ads.D"
-          + "ataManager.V1\312\002\031Google\\Ads\\DataManager\\V"
-          + "1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "behavior.proto\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\"\235\001\n"
+          + "\030CreatePartnerLinkRequest\022>\n"
+          + "\006parent\030\001 \001(\tB.\340A\002"
+          + "\372A(\022&datamanager.googleapis.com/PartnerLink\022A\n"
+          + "\014partner_link\030\002"
+          + " \001(\0132&.google.ads.datamanager.v1.PartnerLinkB\003\340A\002\"X\n"
+          + "\030DeletePartnerLinkRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&datamanager.googleapis.com/PartnerLink\"\227\001\n"
+          + "\031SearchPartnerLinksRequest\022>\n"
+          + "\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&datamanager.googleapis.com/PartnerLink\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"t\n"
+          + "\032SearchPartnerLinksResponse\022=\n\r"
+          + "partner_links\030\001 \003(\0132&.google.ads.datamanager.v1.PartnerLink\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\327\004\n"
+          + "\013PartnerLink\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\034\n"
+          + "\017partner_link_id\030\002 \001(\tB\003\340A\003\022F\n"
+          + "\016owning_account\030\003 \001("
+          + "\0132).google.ads.datamanager.v1.ProductAccountB\003\340A\002\022G\n"
+          + "\017partner_account\030\004 \001(\0132).goo"
+          + "gle.ads.datamanager.v1.ProductAccountB\003\340A\002\022B\n"
+          + "\013feature_set\030\005"
+          + " \001(\0162%.google.ads.datamanager.v1.FeatureSetB\006\340A\001\340A\005\022X\n"
+          + "\030partner_customer_account\030\006 \001(\01321.google.ads.da"
+          + "tamanager.v1.PartnerCustomerAccountB\003\340A\001\022R\n"
+          + "\025partner_link_metadata\030\007 \001(\0132..google"
+          + ".ads.datamanager.v1.PartnerLinkMetadataB\003\340A\001:\223\001\352A\217\001\n"
+          + "&datamanager.googleapis.com/PartnerLink\022JaccountTypes/{account_type}"
+          + "/accounts/{account}/partnerLinks/{partner_link}*\014partnerLinks2\013partnerLink\"g\n"
+          + "\026PartnerCustomerAccount\022\027\n\n"
+          + "account_id\030\001 \001(\tB\003\340A\002\022\031\n"
+          + "\014account_name\030\002 \001(\tB\003\340A\001\022\031\n"
+          + "\014account_type\030\003 \001(\tB\003\340A\001\"h\n"
+          + "\023PartnerLinkMetadata\022Q\n"
+          + "\021implicit_accounts\030\001 \003(\01321.google.a"
+          + "ds.datamanager.v1.PartnerCustomerAccountB\003\340A\001*}\n\n"
+          + "FeatureSet\022\033\n"
+          + "\027FEATURE_SET_UNSPECIFIED\020\000\022-\n"
+          + ")FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT\020\001\022#\n"
+          + "\037FEATURE_SET_AD_EVENT_MANAGEMENT\020\0022\346\005\n"
+          + "\022PartnerLinkService\022\321\001\n"
+          + "\021CreatePartnerLink\0223.google.ads.datamanag"
+          + "er.v1.CreatePartnerLinkRequest\032&.google."
+          + "ads.datamanager.v1.PartnerLink\"_\332A\023paren"
+          + "t,partner_link\202\323\344\223\002C\"3/v1/{parent=accoun"
+          + "tTypes/*/accounts/*}/partnerLinks:\014partner_link\022\244\001\n"
+          + "\021DeletePartnerLink\0223.google.ads.datamanager.v1.DeletePartnerLinkReque"
+          + "st\032\026.google.protobuf.Empty\"B\332A\004name\202\323\344\223\002"
+          + "5*3/v1/{name=accountTypes/*/accounts/*/partnerLinks/*}\022\316\001\n"
+          + "\022SearchPartnerLinks\0224.google.ads.datamanager.v1.SearchPartnerL"
+          + "inksRequest\0325.google.ads.datamanager.v1."
+          + "SearchPartnerLinksResponse\"K\332A\006parent\202\323\344"
+          + "\223\002<\022:/v1/{parent=accountTypes/*/accounts"
+          + "/*}/partnerLinks:search\032\203\001\312A\032datamanager"
+          + ".googleapis.com\322Achttps://www.googleapis.com/auth/datamanager,https://www.google"
+          + "apis.com/auth/datamanager.partnerlinkB\324\001\n"
+          + "\035com.google.ads.datamanager.v1B\027Partner"
+          + "LinkServiceProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;datamana"
+          + "gerpb\252\002\031Google.Ads.DataManager.V1\312\002\031Goog"
+          + "le\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -172,7 +196,29 @@ public final class PartnerLinkServiceProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_PartnerLink_descriptor,
             new java.lang.String[] {
-              "Name", "PartnerLinkId", "OwningAccount", "PartnerAccount",
+              "Name",
+              "PartnerLinkId",
+              "OwningAccount",
+              "PartnerAccount",
+              "FeatureSet",
+              "PartnerCustomerAccount",
+              "PartnerLinkMetadata",
+            });
+    internal_static_google_ads_datamanager_v1_PartnerCustomerAccount_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_datamanager_v1_PartnerCustomerAccount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_PartnerCustomerAccount_descriptor,
+            new java.lang.String[] {
+              "AccountId", "AccountName", "AccountType",
+            });
+    internal_static_google_ads_datamanager_v1_PartnerLinkMetadata_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_datamanager_v1_PartnerLinkMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_PartnerLinkMetadata_descriptor,
+            new java.lang.String[] {
+              "ImplicitAccounts",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.datamanager.v1.DestinationProto.getDescriptor();

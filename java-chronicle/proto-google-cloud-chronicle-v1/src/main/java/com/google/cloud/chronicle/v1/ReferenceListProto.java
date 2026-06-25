@@ -69,6 +69,14 @@ public final class ReferenceListProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_chronicle_v1_UpdateReferenceListRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_chronicle_v1_VerifyReferenceListRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_chronicle_v1_VerifyReferenceListRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_chronicle_v1_VerifyReferenceListResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_chronicle_v1_VerifyReferenceListResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_chronicle_v1_ReferenceList_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_chronicle_v1_ReferenceList_fieldAccessorTable;
@@ -76,6 +84,10 @@ public final class ReferenceListProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_cloud_chronicle_v1_ReferenceListEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_chronicle_v1_ReferenceListEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_chronicle_v1_ReferenceListError_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_chronicle_v1_ReferenceListError_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -85,94 +97,109 @@ public final class ReferenceListProto extends com.google.protobuf.GeneratedFile 
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ".google/cloud/chronicle/v1/reference_li"
+      "\n.google/cloud/chronicle/v1/reference_li"
           + "st.proto\022\031google.cloud.chronicle.v1\032\034goo"
           + "gle/api/annotations.proto\032\027google/api/cl"
-          + "ient.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"]\n"
-          + "\tScopeInfo\022P\n"
-          + "\024reference_list_scope\030\002"
-          + " \001(\0132-.google.cloud.chronicle.v1.ReferenceListScopeB\003\340A\002\".\n"
-          + "\022ReferenceListScope\022\030\n"
-          + "\013scope_names\030\001 \003(\tB\003\340A\001\"\223\001\n"
-          + "\027GetReferenceListRequest\022<\n"
-          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&chronicle.googleapis.com/ReferenceList\022:\n"
-          + "\004view\030\002 \001(\0162,.google.cloud.chronicle.v1.ReferenceListView\"\276\001\n"
-          + "\031ListReferenceListsRequest\022>\n"
-          + "\006parent\030\001 \001(\tB.\340A"
-          + "\002\372A(\022&chronicle.googleapis.com/ReferenceList\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\022:\n"
-          + "\004view\030\004 \001(\0162,.google.cloud.chronicle.v1.ReferenceListView\"x\n"
-          + "\032ListReferenceListsResponse\022A\n"
-          + "\017reference_lists\030\001 \003(\0132("
-          + ".google.cloud.chronicle.v1.ReferenceList\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\303\001\n"
-          + "\032CreateReferenceListRequest\022>\n"
-          + "\006parent\030\001 \001(\tB.\340A\002\372A("
-          + "\022&chronicle.googleapis.com/ReferenceList\022E\n"
-          + "\016reference_list\030\002"
-          + " \001(\0132(.google.cloud.chronicle.v1.ReferenceListB\003\340A\002\022\036\n"
-          + "\021reference_list_id\030\003 \001(\tB\003\340A\002\"\224\001\n"
-          + "\032UpdateReferenceListRequest\022E\n"
-          + "\016reference_list\030\001 \001(\0132("
-          + ".google.cloud.chronicle.v1.ReferenceListB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"\252\004\n\r"
-          + "ReferenceList\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\003\022=\n"
-          + "\024revision_create_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
-          + "\013description\030\004 \001(\tB\003\340A\002\022C\n"
-          + "\007entries\030\005"
-          + " \003(\0132-.google.cloud.chronicle.v1.ReferenceListEntryB\003\340A\002\022\022\n"
-          + "\005rules\030\006 \003(\tB\003\340A\003\022L\n"
-          + "\013syntax_type\030\010 \001(\01622."
-          + "google.cloud.chronicle.v1.ReferenceListSyntaxTypeB\003\340A\002\022$\n"
-          + "\027rule_associations_count\030\t \001(\005B\003\340A\003\0228\n\n"
-          + "scope_info\030\013"
-          + " \001(\0132$.google.cloud.chronicle.v1.ScopeInfo:\212\001\352A\206\001\n"
-          + "&chronicle.googleapis.com/ReferenceList\022\\projects/{project}/locations/{location}/i"
-          + "nstances/{instance}/referenceLists/{reference_list}\"(\n"
-          + "\022ReferenceListEntry\022\022\n"
-          + "\005value\030\001 \001(\tB\003\340A\002*\302\001\n"
-          + "\027ReferenceListSyntaxType\022*\n"
-          + "&REFERENCE_LIST_SYNTAX_TYPE_UNSPECIFIED\020\000\0220\n"
-          + ",REFERENCE_LIST_SYNTAX_TYPE_PLAIN_TEXT_STRING\020\001\022$\n"
-          + " REFERENCE_LIST_SYNTAX_TYPE_REGEX\020\002\022#\n"
-          + "\037REFERENCE_LIST_SYNTAX_TYPE_CIDR\020\003*u\n"
-          + "\021ReferenceListView\022#\n"
-          + "\037REFERENCE_LIST_VIEW_UNSPECIFIED\020\000\022\035\n"
-          + "\031REFERENCE_LIST_VIEW_BASIC\020\001\022\034\n"
-          + "\030REFERENCE_LIST_VIEW_FULL\020\0022\365\007\n"
-          + "\024ReferenceListService\022\277\001\n"
-          + "\020GetReferenceList\0222.google.cloud.chronicle"
-          + ".v1.GetReferenceListRequest\032(.google.clo"
-          + "ud.chronicle.v1.ReferenceList\"M\332A\004name\202\323"
-          + "\344\223\002@\022>/v1/{name=projects/*/locations/*/instances/*/referenceLists/*}\022\322\001\n"
-          + "\022ListReferenceLists\0224.google.cloud.chronicle.v1."
-          + "ListReferenceListsRequest\0325.google.cloud.chronicle.v1.ListReferenceListsResponse"
-          + "\"O\332A\006parent\202\323\344\223\002@\022>/v1/{parent=projects/"
-          + "*/locations/*/instances/*}/referenceLists\022\371\001\n"
-          + "\023CreateReferenceList\0225.google.cloud.chronicle.v1.CreateReferenceListRequest"
-          + "\032(.google.cloud.chronicle.v1.ReferenceLi"
-          + "st\"\200\001\332A\'parent,reference_list,reference_"
-          + "list_id\202\323\344\223\002P\">/v1/{parent=projects/*/lo"
-          + "cations/*/instances/*}/referenceLists:\016reference_list\022\373\001\n"
-          + "\023UpdateReferenceList\0225.google.cloud.chronicle.v1.UpdateReferenc"
-          + "eListRequest\032(.google.cloud.chronicle.v1"
-          + ".ReferenceList\"\202\001\332A\032reference_list,updat"
-          + "e_mask\202\323\344\223\002_2M/v1/{reference_list.name=p"
-          + "rojects/*/locations/*/instances/*/refere"
-          + "nceLists/*}:\016reference_list\032L\312A\030chronicl"
-          + "e.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\311\001\n"
-          + "\035com.google.cloud.chronicle.v1B\022ReferenceListProtoP"
-          + "\001Z;cloud.google.com/go/chronicle/apiv1/c"
-          + "hroniclepb;chroniclepb\252\002\031Google.Cloud.Ch"
-          + "ronicle.V1\312\002\031Google\\Cloud\\Chronicle\\V1\352\002"
-          + "\034Google::Cloud::Chronicle::V1b\006proto3"
+          + "ient.proto\032\037google/api/field_behavior.pr"
+          + "oto\032\031google/api/resource.proto\032 google/p"
+          + "rotobuf/field_mask.proto\032\037google/protobu"
+          + "f/timestamp.proto\"]\n\tScopeInfo\022P\n\024refere"
+          + "nce_list_scope\030\002 \001(\0132-.google.cloud.chro"
+          + "nicle.v1.ReferenceListScopeB\003\340A\002\".\n\022Refe"
+          + "renceListScope\022\030\n\013scope_names\030\001 \003(\tB\003\340A\001"
+          + "\"\223\001\n\027GetReferenceListRequest\022<\n\004name\030\001 \001"
+          + "(\tB.\340A\002\372A(\n&chronicle.googleapis.com/Ref"
+          + "erenceList\022:\n\004view\030\002 \001(\0162,.google.cloud."
+          + "chronicle.v1.ReferenceListView\"\276\001\n\031ListR"
+          + "eferenceListsRequest\022>\n\006parent\030\001 \001(\tB.\340A"
+          + "\002\372A(\022&chronicle.googleapis.com/Reference"
+          + "List\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\022:\n\004view\030\004 \001(\0162,.google.cloud.chronic"
+          + "le.v1.ReferenceListView\"x\n\032ListReference"
+          + "ListsResponse\022A\n\017reference_lists\030\001 \003(\0132("
+          + ".google.cloud.chronicle.v1.ReferenceList"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"\303\001\n\032CreateRefe"
+          + "renceListRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A("
+          + "\022&chronicle.googleapis.com/ReferenceList"
+          + "\022E\n\016reference_list\030\002 \001(\0132(.google.cloud."
+          + "chronicle.v1.ReferenceListB\003\340A\002\022\036\n\021refer"
+          + "ence_list_id\030\003 \001(\tB\003\340A\002\"\224\001\n\032UpdateRefere"
+          + "nceListRequest\022E\n\016reference_list\030\001 \001(\0132("
+          + ".google.cloud.chronicle.v1.ReferenceList"
+          + "B\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.prot"
+          + "obuf.FieldMask\"\354\001\n\032VerifyReferenceListRe"
+          + "quest\022;\n\010instance\030\001 \001(\tB)\340A\002\372A#\n!chronic"
+          + "le.googleapis.com/Instance\022L\n\013syntax_typ"
+          + "e\030\002 \001(\01622.google.cloud.chronicle.v1.Refe"
+          + "renceListSyntaxTypeB\003\340A\002\022C\n\007entries\030\003 \003("
+          + "\0132-.google.cloud.chronicle.v1.ReferenceL"
+          + "istEntryB\003\340A\002\"m\n\033VerifyReferenceListResp"
+          + "onse\022\017\n\007success\030\001 \001(\010\022=\n\006errors\030\002 \003(\0132-."
+          + "google.cloud.chronicle.v1.ReferenceListE"
+          + "rror\"\252\004\n\rReferenceList\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\010\022\031\n\014display_name\030\002 \001(\tB\003\340A\003\022=\n\024revision"
+          + "_create_time\030\003 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\022\030\n\013description\030\004 \001(\tB\003\340A\002\022C\n"
+          + "\007entries\030\005 \003(\0132-.google.cloud.chronicle."
+          + "v1.ReferenceListEntryB\003\340A\002\022\022\n\005rules\030\006 \003("
+          + "\tB\003\340A\003\022L\n\013syntax_type\030\010 \001(\01622.google.clo"
+          + "ud.chronicle.v1.ReferenceListSyntaxTypeB"
+          + "\003\340A\002\022$\n\027rule_associations_count\030\t \001(\005B\003\340"
+          + "A\003\0228\n\nscope_info\030\013 \001(\0132$.google.cloud.ch"
+          + "ronicle.v1.ScopeInfo:\212\001\352A\206\001\n&chronicle.g"
+          + "oogleapis.com/ReferenceList\022\\projects/{p"
+          + "roject}/locations/{location}/instances/{"
+          + "instance}/referenceLists/{reference_list"
+          + "}\"(\n\022ReferenceListEntry\022\022\n\005value\030\001 \001(\tB\003"
+          + "\340A\002\"@\n\022ReferenceListError\022\023\n\013line_number"
+          + "\030\001 \001(\005\022\025\n\rerror_message\030\002 \001(\t*\302\001\n\027Refere"
+          + "nceListSyntaxType\022*\n&REFERENCE_LIST_SYNT"
+          + "AX_TYPE_UNSPECIFIED\020\000\0220\n,REFERENCE_LIST_"
+          + "SYNTAX_TYPE_PLAIN_TEXT_STRING\020\001\022$\n REFER"
+          + "ENCE_LIST_SYNTAX_TYPE_REGEX\020\002\022#\n\037REFEREN"
+          + "CE_LIST_SYNTAX_TYPE_CIDR\020\003*u\n\021ReferenceL"
+          + "istView\022#\n\037REFERENCE_LIST_VIEW_UNSPECIFI"
+          + "ED\020\000\022\035\n\031REFERENCE_LIST_VIEW_BASIC\020\001\022\034\n\030R"
+          + "EFERENCE_LIST_VIEW_FULL\020\0022\255\n\n\024ReferenceL"
+          + "istService\022\277\001\n\020GetReferenceList\0222.google"
+          + ".cloud.chronicle.v1.GetReferenceListRequ"
+          + "est\032(.google.cloud.chronicle.v1.Referenc"
+          + "eList\"M\332A\004name\202\323\344\223\002@\022>/v1/{name=projects"
+          + "/*/locations/*/instances/*/referenceList"
+          + "s/*}\022\322\001\n\022ListReferenceLists\0224.google.clo"
+          + "ud.chronicle.v1.ListReferenceListsReques"
+          + "t\0325.google.cloud.chronicle.v1.ListRefere"
+          + "nceListsResponse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{"
+          + "parent=projects/*/locations/*/instances/"
+          + "*}/referenceLists\022\371\001\n\023CreateReferenceLis"
+          + "t\0225.google.cloud.chronicle.v1.CreateRefe"
+          + "renceListRequest\032(.google.cloud.chronicl"
+          + "e.v1.ReferenceList\"\200\001\332A\'parent,reference"
+          + "_list,reference_list_id\202\323\344\223\002P\">/v1/{pare"
+          + "nt=projects/*/locations/*/instances/*}/r"
+          + "eferenceLists:\016reference_list\022\373\001\n\023Update"
+          + "ReferenceList\0225.google.cloud.chronicle.v"
+          + "1.UpdateReferenceListRequest\032(.google.cl"
+          + "oud.chronicle.v1.ReferenceList\"\202\001\332A\032refe"
+          + "rence_list,update_mask\202\323\344\223\002_2M/v1/{refer"
+          + "ence_list.name=projects/*/locations/*/in"
+          + "stances/*/referenceLists/*}:\016reference_l"
+          + "ist\022\326\001\n\023VerifyReferenceList\0225.google.clo"
+          + "ud.chronicle.v1.VerifyReferenceListReque"
+          + "st\0326.google.cloud.chronicle.v1.VerifyRef"
+          + "erenceListResponse\"P\202\323\344\223\002J\"E/v1/{instanc"
+          + "e=projects/*/locations/*/instances/*}:ve"
+          + "rifyReferenceList:\001*\032\252\001\312A\030chronicle.goog"
+          + "leapis.com\322A\213\001https://www.googleapis.com"
+          + "/auth/chronicle,https://www.googleapis.c"
+          + "om/auth/chronicle.readonly,https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\311\001\n\035co"
+          + "m.google.cloud.chronicle.v1B\022ReferenceLi"
+          + "stProtoP\001Z;cloud.google.com/go/chronicle"
+          + "/apiv1/chroniclepb;chroniclepb\252\002\031Google."
+          + "Cloud.Chronicle.V1\312\002\031Google\\Cloud\\Chroni"
+          + "cle\\V1\352\002\034Google::Cloud::Chronicle::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -241,8 +268,24 @@ public final class ReferenceListProto extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "ReferenceList", "UpdateMask",
             });
-    internal_static_google_cloud_chronicle_v1_ReferenceList_descriptor =
+    internal_static_google_cloud_chronicle_v1_VerifyReferenceListRequest_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_chronicle_v1_VerifyReferenceListRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_chronicle_v1_VerifyReferenceListRequest_descriptor,
+            new java.lang.String[] {
+              "Instance", "SyntaxType", "Entries",
+            });
+    internal_static_google_cloud_chronicle_v1_VerifyReferenceListResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_chronicle_v1_VerifyReferenceListResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_chronicle_v1_VerifyReferenceListResponse_descriptor,
+            new java.lang.String[] {
+              "Success", "Errors",
+            });
+    internal_static_google_cloud_chronicle_v1_ReferenceList_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_chronicle_v1_ReferenceList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ReferenceList_descriptor,
@@ -258,12 +301,20 @@ public final class ReferenceListProto extends com.google.protobuf.GeneratedFile 
               "ScopeInfo",
             });
     internal_static_google_cloud_chronicle_v1_ReferenceListEntry_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_chronicle_v1_ReferenceListEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ReferenceListEntry_descriptor,
             new java.lang.String[] {
               "Value",
+            });
+    internal_static_google_cloud_chronicle_v1_ReferenceListError_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_chronicle_v1_ReferenceListError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_chronicle_v1_ReferenceListError_descriptor,
+            new java.lang.String[] {
+              "LineNumber", "ErrorMessage",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
