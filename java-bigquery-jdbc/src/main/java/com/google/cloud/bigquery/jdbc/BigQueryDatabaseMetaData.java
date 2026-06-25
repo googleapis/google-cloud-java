@@ -5229,50 +5229,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return String.format(sql, (Object[]) params);
   }
 
-  private void loadDriverVersionProperties() {
-    if (parsedDriverVersion.get() != null) {
-      return;
-    }
-    Properties props = new Properties();
-    try (InputStream input =
-        getClass().getResourceAsStream("/com/google/cloud/bigquery/jdbc/dependencies.properties")) {
-      if (input == null) {
-        String errorMessage =
-            "Could not find dependencies.properties. Driver version information is unavailable.";
-        IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(errorMessage, ex);
-        throw ex;
-      }
-      props.load(input);
-      String versionString = props.getProperty("version.jdbc");
-      if (versionString == null || versionString.trim().isEmpty()) {
-        String errorMessage =
-            "The property version.jdbc not found or empty in dependencies.properties.";
-        IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(errorMessage, ex);
-        throw ex;
-      }
-      parsedDriverVersion.compareAndSet(null, versionString.trim());
-      String[] parts = versionString.split("\\.");
-      if (parts.length < 2) {
-        return;
-      }
-      parsedDriverMajorVersion.compareAndSet(null, Integer.parseInt(parts[0]));
-      String minorPart = parts[1];
-      String numericMinor = minorPart.replaceAll("[^0-9].*", "");
-      if (!numericMinor.isEmpty()) {
-        parsedDriverMinorVersion.compareAndSet(null, Integer.parseInt(numericMinor));
-      }
-    } catch (IOException | NumberFormatException e) {
-      String errorMessage =
-          "Error reading dependencies.properties. Driver version information is"
-              + " unavailable. Error: "
-              + e.getMessage();
-      IllegalStateException ex = new IllegalStateException(errorMessage, e);
-      LOG.severe(errorMessage, ex);
-      throw ex;
-    }
-  }
+  
 
   // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
   // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
