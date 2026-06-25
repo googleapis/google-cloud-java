@@ -68,11 +68,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -802,13 +800,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    final List<Future<?>> processingTaskFutures = new ArrayList<>();
     final String catalogParam = catalog;
 
     Runnable procedureFetcher =
         () -> {
           ExecutorService apiExecutor = null;
-          ExecutorService routineProcessorExecutor = null;
           final FieldList localResultSchemaFields = resultSchemaFields;
           final List<Future<List<Routine>>> apiFutures = new ArrayList<>();
 
@@ -830,8 +826,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
-            routineProcessorExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
+            apiExecutor = connection.getMetadataExecutor();
 
             LOG.fine("Submitting parallel findMatchingRoutines tasks...");
             for (Dataset dataset : datasetsToScan) {
@@ -862,7 +857,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingRoutines tasks.");
-            apiExecutor.shutdown();
 
             LOG.fine("Processing results from findMatchingRoutines tasks...");
             for (Future<List<Routine>> apiFuture : apiFutures) {
@@ -877,15 +871,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     if (Thread.currentThread().isInterrupted()) break;
 
                     if ("PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
-                      LOG.fine(
-                          "Submitting processing task for procedure: " + routine.getRoutineId());
-                      final Routine finalRoutine = routine;
-                      Future<?> processFuture =
-                          routineProcessorExecutor.submit(
-                              () ->
-                                  processProcedureInfo(
-                                      finalRoutine, collectedResults, localResultSchemaFields));
-                      processingTaskFutures.add(processFuture);
+                      LOG.fine("Processing procedure sequentially: " + routine.getRoutineId());
+                      processProcedureInfo(routine, collectedResults, localResultSchemaFields);
                     } else {
                       LOG.finer("Skipping non-procedure routine: " + routine.getRoutineId());
                     }
@@ -906,21 +893,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               }
             }
 
-            LOG.fine(
-                "Finished submitting "
-                    + processingTaskFutures.size()
-                    + " processProcedureInfo tasks.");
-
-            if (Thread.currentThread().isInterrupted()) {
-              LOG.warning(
-                  "Fetcher interrupted before waiting for processing tasks; cancelling remaining.");
-              processingTaskFutures.forEach(f -> f.cancel(true));
-            } else {
-              LOG.fine("Waiting for processProcedureInfo tasks to complete...");
-              waitForTasksCompletion(processingTaskFutures);
-              LOG.fine("All processProcedureInfo tasks completed or handled.");
-            }
-
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetProceduresComparator(localResultSchemaFields);
@@ -934,21 +906,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             LOG.severe("Unexpected error in procedure fetcher runnable: " + t.getMessage());
             apiFutures.forEach(f -> f.cancel(true));
-            processingTaskFutures.forEach(f -> f.cancel(true));
           } finally {
             signalEndOfData(queue, localResultSchemaFields);
-            shutdownExecutor(apiExecutor);
-            shutdownExecutor(routineProcessorExecutor);
             LOG.info("Procedure fetcher thread finished.");
           }
         };
 
-    Thread fetcherThread = new Thread(procedureFetcher, "getProcedures-fetcher-" + catalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(procedureFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
-    LOG.info("Started background thread for getProcedures");
+    LOG.info("Submitted background task for getProcedures to metadata executor");
     return resultSet;
   }
 
@@ -1087,17 +1055,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    final List<Future<?>> processingTaskFutures = new ArrayList<>();
     final String catalogParam = catalog;
 
     Runnable procedureColumnFetcher =
         () -> {
           ExecutorService listRoutinesExecutor = null;
           ExecutorService getRoutineDetailsExecutor = null;
-          ExecutorService processArgsExecutor = null;
-
-          final String fetcherThreadNameSuffix =
-              "-" + catalogParam.substring(0, Math.min(10, catalogParam.length()));
 
           try {
             List<Dataset> datasetsToScan =
@@ -1108,10 +1071,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            listRoutinesExecutor =
-                Executors.newFixedThreadPool(
-                    API_EXECUTOR_POOL_SIZE,
-                    runnable -> new Thread(runnable, "pcol-list-rout" + fetcherThreadNameSuffix));
+            listRoutinesExecutor = connection.getMetadataExecutor();
             List<RoutineId> procedureIdsToGet =
                 listMatchingProcedureIdsFromDatasets(
                     datasetsToScan,
@@ -1120,7 +1080,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     listRoutinesExecutor,
                     catalogParam,
                     LOG);
-            shutdownExecutor(listRoutinesExecutor);
             listRoutinesExecutor = null;
 
             if (procedureIdsToGet.isEmpty() || Thread.currentThread().isInterrupted()) {
@@ -1128,13 +1087,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            getRoutineDetailsExecutor =
-                Executors.newFixedThreadPool(
-                    100,
-                    runnable -> new Thread(runnable, "pcol-get-details" + fetcherThreadNameSuffix));
+            getRoutineDetailsExecutor = connection.getMetadataExecutor();
             List<Routine> fullRoutines =
                 fetchFullRoutineDetailsForIds(procedureIdsToGet, getRoutineDetailsExecutor, LOG);
-            shutdownExecutor(getRoutineDetailsExecutor);
             getRoutineDetailsExecutor = null;
 
             if (fullRoutines.isEmpty() || Thread.currentThread().isInterrupted()) {
@@ -1143,35 +1098,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            processArgsExecutor =
-                Executors.newFixedThreadPool(
-                    this.metadataFetchThreadCount,
-                    runnable -> new Thread(runnable, "pcol-proc-args" + fetcherThreadNameSuffix));
-            submitProcedureArgumentProcessingJobs(
-                fullRoutines,
-                columnNameRegex,
-                collectedResults,
-                resultSchema.getFields(),
-                processArgsExecutor,
-                processingTaskFutures,
-                LOG);
-
-            if (Thread.currentThread().isInterrupted()) {
-              LOG.warning(
-                  "Fetcher: Interrupted before waiting for argument processing. Catalog: "
-                      + catalogParam);
-              processingTaskFutures.forEach(f -> f.cancel(true));
-            } else {
-              LOG.fine(
-                  "Fetcher: Waiting for "
-                      + processingTaskFutures.size()
-                      + " argument processing tasks. Catalog: "
-                      + catalogParam);
-              waitForTasksCompletion(processingTaskFutures);
-              LOG.fine(
-                  "Fetcher: All argument processing tasks completed or handled. Catalog: "
-                      + catalogParam);
-            }
+            processProcedureArgumentsSequentially(
+                fullRoutines, columnNameRegex, collectedResults, resultSchema.getFields(), LOG);
 
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
@@ -1187,30 +1115,23 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     + catalogParam
                     + ". Error: "
                     + e.getMessage());
-            processingTaskFutures.forEach(f -> f.cancel(true));
           } catch (Throwable t) {
             LOG.severe(
                 "Fetcher: Unexpected error in main try block for catalog "
                     + catalogParam
                     + ". Error: "
                     + t.getMessage());
-            processingTaskFutures.forEach(f -> f.cancel(true));
           } finally {
             signalEndOfData(queue, resultSchema.getFields());
-            if (listRoutinesExecutor != null) shutdownExecutor(listRoutinesExecutor);
-            if (getRoutineDetailsExecutor != null) shutdownExecutor(getRoutineDetailsExecutor);
-            if (processArgsExecutor != null) shutdownExecutor(processArgsExecutor);
             LOG.info("Procedure column fetcher thread finished for catalog: " + catalogParam);
           }
         };
 
-    Thread fetcherThread =
-        new Thread(procedureColumnFetcher, "getProcedureColumns-fetcher-" + catalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(procedureColumnFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
-    LOG.info("Started background thread for getProcedureColumns for catalog: " + catalog);
+    LOG.info("Started background task for getProcedureColumns for catalog: " + catalog);
     return resultSet;
   }
 
@@ -1378,33 +1299,26 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return fullRoutines;
   }
 
-  void submitProcedureArgumentProcessingJobs(
+  void processProcedureArgumentsSequentially(
       List<Routine> fullRoutines,
       Pattern columnNameRegex,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      ExecutorService processArgsExecutor,
-      List<Future<?>> outArgumentProcessingFutures,
       BigQueryJdbcCustomLogger logger)
       throws InterruptedException {
-    logger.fine("Submitting argument processing jobs for %d routines.", fullRoutines.size());
+    logger.fine("Processing argument jobs sequentially for %d routines.", fullRoutines.size());
 
     for (Routine fullRoutine : fullRoutines) {
       if (Thread.currentThread().isInterrupted()) {
         InterruptedException ex =
-            new InterruptedException("Interrupted while submitting argument processing jobs");
+            new InterruptedException("Interrupted while processing argument jobs sequentially");
         logger.severe(ex.getMessage(), ex);
         throw ex;
       }
       if (fullRoutine != null) {
         if ("PROCEDURE".equalsIgnoreCase(fullRoutine.getRoutineType())) {
-          final Routine finalFullRoutine = fullRoutine;
-          Future<?> processFuture =
-              processArgsExecutor.submit(
-                  () ->
-                      processProcedureArguments(
-                          finalFullRoutine, columnNameRegex, collectedResults, resultSchemaFields));
-          outArgumentProcessingFutures.add(processFuture);
+          processProcedureArguments(
+              fullRoutine, columnNameRegex, collectedResults, resultSchemaFields);
         } else {
           logger.warning(
               "Routine "
@@ -1417,10 +1331,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       }
     }
-    logger.fine(
-        "Finished submitting "
-            + outArgumentProcessingFutures.size()
-            + " processProcedureArguments tasks.");
   }
 
   Schema defineGetProcedureColumnsSchema() {
@@ -1745,10 +1655,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Runnable tableFetcher =
         () -> {
           ExecutorService apiExecutor = null;
-          ExecutorService tableProcessorExecutor = null;
           final FieldList localResultSchemaFields = resultSchemaFields;
           final List<Future<List<Table>>> apiFutures = new ArrayList<>();
-          final List<Future<?>> processingFutures = new ArrayList<>();
 
           try {
             List<Dataset> datasetsToScan =
@@ -1768,8 +1676,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
-            tableProcessorExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
+            apiExecutor = connection.getMetadataExecutor();
 
             LOG.fine("Submitting parallel findMatchingTables tasks...");
             for (Dataset dataset : datasetsToScan) {
@@ -1800,7 +1707,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingTables tasks.");
-            apiExecutor.shutdown();
 
             LOG.fine("Processing results from findMatchingTables tasks...");
             for (Future<List<Table>> apiFuture : apiFutures) {
@@ -1814,16 +1720,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   for (Table table : tablesResult) {
                     if (Thread.currentThread().isInterrupted()) break;
 
-                    final Table currentTable = table;
-                    Future<?> processFuture =
-                        tableProcessorExecutor.submit(
-                            () ->
-                                processTableInfo(
-                                    currentTable,
-                                    requestedTypes,
-                                    collectedResults,
-                                    localResultSchemaFields));
-                    processingFutures.add(processFuture);
+                    LOG.fine("Processing table sequentially: " + table.getTableId());
+                    processTableInfo(
+                        table, requestedTypes, collectedResults, localResultSchemaFields);
                   }
                 }
               } catch (InterruptedException e) {
@@ -1841,19 +1740,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               }
             }
 
-            LOG.fine(
-                "Finished submitting " + processingFutures.size() + " processTableInfo tasks.");
-
-            if (Thread.currentThread().isInterrupted()) {
-              LOG.warning(
-                  "Fetcher interrupted before waiting for processing tasks; cancelling remaining.");
-              processingFutures.forEach(f -> f.cancel(true));
-            } else {
-              LOG.fine("Waiting for processTableInfo tasks to complete...");
-              waitForTasksCompletion(processingFutures);
-              LOG.fine("All processTableInfo tasks completed.");
-            }
-
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetTablesComparator(localResultSchemaFields);
@@ -1867,20 +1753,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             LOG.severe("Unexpected error in table fetcher runnable: " + t.getMessage());
             apiFutures.forEach(f -> f.cancel(true));
-            processingFutures.forEach(f -> f.cancel(true));
           } finally {
             signalEndOfData(queue, localResultSchemaFields);
-            shutdownExecutor(apiExecutor);
-            shutdownExecutor(tableProcessorExecutor);
             LOG.info("Table fetcher thread finished.");
           }
         };
 
-    Thread fetcherThread = new Thread(tableFetcher, "getTables-fetcher-" + effectiveCatalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(tableFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
     LOG.info("Started background thread for getTables");
     return resultSet;
   }
@@ -2132,7 +2014,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            columnExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
+            columnExecutor = connection.getMetadataExecutor();
 
             for (Dataset dataset : datasetsToScan) {
               if (Thread.currentThread().isInterrupted()) {
@@ -2198,16 +2080,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             taskFutures.forEach(f -> f.cancel(true));
           } finally {
             signalEndOfData(queue, localResultSchemaFields);
-            shutdownExecutor(columnExecutor);
             LOG.info("Column fetcher thread finished.");
           }
         };
 
-    Thread fetcherThread = new Thread(columnFetcher, "getColumns-fetcher-" + effectiveCatalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(columnFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
     LOG.info("Started background thread for getColumns");
     return resultSet;
   }
@@ -3720,12 +3600,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Thread fetcherThread = new Thread(schemaFetcher, "getSchemas-fetcher-" + catalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(schemaFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
-    LOG.info("Started background thread for getSchemas");
+    LOG.info("Submitted background task for getSchemas to metadata executor");
     return resultSet;
   }
 
@@ -3887,13 +3766,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    final List<Future<?>> processingTaskFutures = new ArrayList<>();
     final String catalogParam = catalog;
 
     Runnable functionFetcher =
         () -> {
           ExecutorService apiExecutor = null;
-          ExecutorService routineProcessorExecutor = null;
           final FieldList localResultSchemaFields = resultSchemaFields;
           final List<Future<List<Routine>>> apiFutures = new ArrayList<>();
 
@@ -3915,8 +3792,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
-            routineProcessorExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
+            apiExecutor = connection.getMetadataExecutor();
 
             for (Dataset dataset : datasetsToScan) {
               if (Thread.currentThread().isInterrupted()) {
@@ -3954,7 +3830,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 "Finished submitting "
                     + apiFutures.size()
                     + " findMatchingRoutines (for functions) tasks.");
-            apiExecutor.shutdown();
 
             for (Future<List<Routine>> apiFuture : apiFutures) {
               if (Thread.currentThread().isInterrupted()) {
@@ -3972,17 +3847,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     if ("SCALAR_FUNCTION".equalsIgnoreCase(routineType)
                         || "TABLE_FUNCTION".equalsIgnoreCase(routineType)) {
                       LOG.fine(
-                          "Submitting processing task for function: "
+                          "Processing function sequentially: "
                               + routine.getRoutineId()
                               + " of type "
                               + routineType);
-                      final Routine finalRoutine = routine;
-                      Future<?> processFuture =
-                          routineProcessorExecutor.submit(
-                              () ->
-                                  processFunctionInfo(
-                                      finalRoutine, collectedResults, localResultSchemaFields));
-                      processingTaskFutures.add(processFuture);
+                      processFunctionInfo(routine, collectedResults, localResultSchemaFields);
                     }
                   }
                 }
@@ -3997,7 +3866,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         + e.getMessage());
               }
             }
-            waitForTasksCompletion(processingTaskFutures);
             Comparator<FieldValueList> comparator =
                 defineGetFunctionsComparator(localResultSchemaFields);
             sortResults(collectedResults, comparator, "getFunctions", LOG);
@@ -4005,20 +3873,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             LOG.severe("Unexpected error in function fetcher runnable: " + t.getMessage());
             apiFutures.forEach(f -> f.cancel(true));
-            processingTaskFutures.forEach(f -> f.cancel(true));
           } finally {
             signalEndOfData(queue, localResultSchemaFields);
-            shutdownExecutor(apiExecutor);
-            shutdownExecutor(routineProcessorExecutor);
             LOG.info("Function fetcher thread finished.");
           }
         };
 
-    Thread fetcherThread = new Thread(functionFetcher, "getFunctions-fetcher-" + catalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(functionFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
     LOG.info("Started background thread for getFunctions");
     return resultSet;
   }
@@ -4139,16 +4003,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    final List<Future<?>> processingTaskFutures = new ArrayList<>();
     final String catalogParam = catalog;
 
     Runnable functionColumnFetcher =
         () -> {
           ExecutorService listRoutinesExecutor = null;
           ExecutorService getRoutineDetailsExecutor = null;
-          ExecutorService processParamsExecutor = null;
-          final String fetcherThreadNameSuffix =
-              "-" + catalogParam.substring(0, Math.min(10, catalogParam.length()));
 
           try {
             List<Dataset> datasetsToScan =
@@ -4169,10 +4029,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            listRoutinesExecutor =
-                Executors.newFixedThreadPool(
-                    API_EXECUTOR_POOL_SIZE,
-                    runnable -> new Thread(runnable, "funcol-list-rout" + fetcherThreadNameSuffix));
+            listRoutinesExecutor = connection.getMetadataExecutor();
             List<RoutineId> functionIdsToGet =
                 listMatchingFunctionIdsFromDatasets(
                     datasetsToScan,
@@ -4181,7 +4038,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     listRoutinesExecutor,
                     catalogParam,
                     LOG);
-            shutdownExecutor(listRoutinesExecutor);
             listRoutinesExecutor = null;
 
             if (functionIdsToGet.isEmpty() || Thread.currentThread().isInterrupted()) {
@@ -4189,14 +4045,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            getRoutineDetailsExecutor =
-                Executors.newFixedThreadPool(
-                    this.metadataFetchThreadCount,
-                    runnable ->
-                        new Thread(runnable, "funcol-get-details" + fetcherThreadNameSuffix));
+            getRoutineDetailsExecutor = connection.getMetadataExecutor();
             List<Routine> fullFunctions =
                 fetchFullRoutineDetailsForIds(functionIdsToGet, getRoutineDetailsExecutor, LOG);
-            shutdownExecutor(getRoutineDetailsExecutor);
             getRoutineDetailsExecutor = null;
 
             if (fullFunctions.isEmpty() || Thread.currentThread().isInterrupted()) {
@@ -4205,36 +4056,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return;
             }
 
-            processParamsExecutor =
-                Executors.newFixedThreadPool(
-                    this.metadataFetchThreadCount,
-                    runnable ->
-                        new Thread(runnable, "funcol-proc-params" + fetcherThreadNameSuffix));
-            submitFunctionParameterProcessingJobs(
-                fullFunctions,
-                columnNameRegex,
-                collectedResults,
-                resultSchemaFields,
-                processParamsExecutor,
-                processingTaskFutures,
-                LOG);
-
-            if (Thread.currentThread().isInterrupted()) {
-              LOG.warning(
-                  "Fetcher: Interrupted before waiting for parameter processing. Catalog: "
-                      + catalogParam);
-              processingTaskFutures.forEach(f -> f.cancel(true));
-            } else {
-              LOG.fine(
-                  "Fetcher: Waiting for "
-                      + processingTaskFutures.size()
-                      + " parameter processing tasks. Catalog: "
-                      + catalogParam);
-              waitForTasksCompletion(processingTaskFutures);
-              LOG.fine(
-                  "Fetcher: All parameter processing tasks completed or handled. Catalog: "
-                      + catalogParam);
-            }
+            processFunctionParametersSequentially(
+                fullFunctions, columnNameRegex, collectedResults, resultSchemaFields, LOG);
 
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
@@ -4250,29 +4073,22 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     + catalogParam
                     + ". Error: "
                     + e.getMessage());
-            processingTaskFutures.forEach(f -> f.cancel(true));
           } catch (Throwable t) {
             LOG.severe(
                 "Fetcher: Unexpected error in main try block for catalog "
                     + catalogParam
                     + ". Error: "
                     + t.getMessage());
-            processingTaskFutures.forEach(f -> f.cancel(true));
           } finally {
             signalEndOfData(queue, resultSchemaFields);
-            if (listRoutinesExecutor != null) shutdownExecutor(listRoutinesExecutor);
-            if (getRoutineDetailsExecutor != null) shutdownExecutor(getRoutineDetailsExecutor);
-            if (processParamsExecutor != null) shutdownExecutor(processParamsExecutor);
             LOG.info("Function column fetcher thread finished for catalog: " + catalogParam);
           }
         };
 
-    Thread fetcherThread =
-        new Thread(functionColumnFetcher, "getFunctionColumns-fetcher-" + catalog);
+    Future<?> fetcherFuture = connection.getMetadataExecutor().submit(functionColumnFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
 
-    fetcherThread.start();
     LOG.info("Started background thread for getFunctionColumns for catalog: " + catalog);
     return resultSet;
   }
@@ -4432,37 +4248,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return functionIdsToGet;
   }
 
-  void submitFunctionParameterProcessingJobs(
+  void processFunctionParametersSequentially(
       List<Routine> fullFunctions,
       Pattern columnNameRegex,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      ExecutorService processParamsExecutor,
-      List<Future<?>> outParameterProcessingFutures,
       BigQueryJdbcCustomLogger logger)
       throws InterruptedException {
-    logger.fine("Submitting parameter processing jobs for %d functions.", fullFunctions.size());
+    logger.fine("Processing parameter jobs sequentially for %d functions.", fullFunctions.size());
 
     for (Routine fullFunction : fullFunctions) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning("Interrupted during submission of function parameter processing tasks.");
+        logger.warning("Interrupted during function parameter processing.");
         throw new InterruptedException(
-            "Interrupted while submitting function parameter processing jobs");
+            "Interrupted while processing function parameters sequentially");
       }
       if (fullFunction != null) {
         String routineType = fullFunction.getRoutineType();
         if ("SCALAR_FUNCTION".equalsIgnoreCase(routineType)
             || "TABLE_FUNCTION".equalsIgnoreCase(routineType)) {
-          final Routine finalFullFunction = fullFunction;
-          Future<?> processFuture =
-              processParamsExecutor.submit(
-                  () ->
-                      processFunctionParametersAndReturnValue(
-                          finalFullFunction,
-                          columnNameRegex,
-                          collectedResults,
-                          resultSchemaFields));
-          outParameterProcessingFutures.add(processFuture);
+          processFunctionParametersAndReturnValue(
+              fullFunction, columnNameRegex, collectedResults, resultSchemaFields);
         } else {
           logger.warning(
               "Routine "
@@ -4475,10 +4281,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       }
     }
-    logger.fine(
-        "Finished submitting "
-            + outParameterProcessingFutures.size()
-            + " processFunctionParametersAndReturnValue tasks.");
   }
 
   void processFunctionParametersAndReturnValue(
@@ -5276,81 +5078,5 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.severe(errorMessage, ex);
       throw ex;
     }
-  }
-
-  // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
-  // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
-  // directly.
-  static Future<?>[] wrapThread(final Thread thread) {
-    if (thread == null) {
-      return null;
-    }
-    return new Future<?>[] {
-      new Future<Object>() {
-        private volatile boolean cancelled = false;
-
-        @Override
-        public synchronized boolean cancel(boolean mayInterruptIfRunning) {
-          if (cancelled || thread.getState() == Thread.State.TERMINATED) {
-            return false;
-          }
-          cancelled = true;
-          if (mayInterruptIfRunning) {
-            thread.interrupt();
-          }
-          return true;
-        }
-
-        @Override
-        public boolean isCancelled() {
-          return cancelled;
-        }
-
-        @Override
-        public boolean isDone() {
-          return cancelled || thread.getState() == Thread.State.TERMINATED;
-        }
-
-        @Override
-        public Object get() throws InterruptedException, CancellationException {
-          try {
-            return get(365, TimeUnit.DAYS);
-          } catch (TimeoutException e) {
-            throw new RuntimeException(e);
-          }
-        }
-
-        @Override
-        public Object get(long timeout, TimeUnit unit)
-            throws InterruptedException, CancellationException, TimeoutException {
-          if (isCancelled()) {
-            throw new CancellationException();
-          }
-          long remainingNanos = unit.toNanos(timeout);
-          long deadline = System.nanoTime() + remainingNanos;
-          while (thread.getState() != Thread.State.TERMINATED) {
-            if (isCancelled()) {
-              throw new CancellationException();
-            }
-            if (remainingNanos <= 0) {
-              throw new TimeoutException();
-            }
-            long remainingMillis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
-            if (remainingMillis == 0) {
-              remainingMillis = 1;
-            }
-
-            long delay = Math.min(remainingMillis, 50);
-            if (thread.getState() == Thread.State.NEW) {
-              Thread.sleep(delay);
-            } else {
-              thread.join(delay);
-            }
-            remainingNanos = deadline - System.nanoTime();
-          }
-          return null;
-        }
-      }
-    };
   }
 }
