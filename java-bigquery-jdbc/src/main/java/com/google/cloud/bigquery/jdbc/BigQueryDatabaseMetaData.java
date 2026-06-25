@@ -72,6 +72,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -944,7 +945,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(procedureFetcher, "getProcedures-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedures");
@@ -1206,7 +1207,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(procedureColumnFetcher, "getProcedureColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedureColumns for catalog: " + catalog);
@@ -1877,7 +1878,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(tableFetcher, "getTables-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getTables");
@@ -2017,7 +2018,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(catalogRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, new Thread[0]);
+    return BigQueryJsonResultSet.of(
+        catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -2049,7 +2051,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     signalEndOfData(queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
-        tableTypesSchema, tableTypeRows.size(), queue, null, new Thread[0]);
+        tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
   }
 
   static Schema defineGetTableTypesSchema() {
@@ -2203,7 +2205,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(columnFetcher, "getColumns-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getColumns");
@@ -2718,7 +2720,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(typeInfoRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
     return BigQueryJsonResultSet.of(
-        typeInfoSchema, typeInfoRows.size(), queue, null, new Thread[0]);
+        typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetTypeInfoSchema() {
@@ -3713,7 +3715,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(schemaFetcher, "getSchemas-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getSchemas");
@@ -3832,7 +3834,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       signalEndOfData(queue, resultSchemaFields);
     }
     return BigQueryJsonResultSet.of(
-        resultSchema, collectedResults.size(), queue, null, new Thread[0]);
+        resultSchema, collectedResults.size(), queue, null, new Future<?>[0]);
   }
 
   Schema defineGetClientInfoPropertiesSchema() {
@@ -4007,7 +4009,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(functionFetcher, "getFunctions-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctions");
@@ -4261,7 +4263,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(functionColumnFetcher, "getFunctionColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, wrapThread(fetcherThread));
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctionColumns for catalog: " + catalog);
@@ -5263,5 +5265,81 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.severe(errorMessage, ex);
       throw ex;
     }
+  }
+
+  // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
+  // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
+  // directly.
+  static Future<?>[] wrapThread(final Thread thread) {
+    if (thread == null) {
+      return null;
+    }
+    return new Future<?>[] {
+      new Future<Object>() {
+        private volatile boolean cancelled = false;
+
+        @Override
+        public synchronized boolean cancel(boolean mayInterruptIfRunning) {
+          if (cancelled || thread.getState() == Thread.State.TERMINATED) {
+            return false;
+          }
+          cancelled = true;
+          if (mayInterruptIfRunning) {
+            thread.interrupt();
+          }
+          return true;
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return cancelled;
+        }
+
+        @Override
+        public boolean isDone() {
+          return cancelled || thread.getState() == Thread.State.TERMINATED;
+        }
+
+        @Override
+        public Object get() throws InterruptedException, CancellationException {
+          try {
+            return get(365, TimeUnit.DAYS);
+          } catch (TimeoutException e) {
+            throw new RuntimeException(e);
+          }
+        }
+
+        @Override
+        public Object get(long timeout, TimeUnit unit)
+            throws InterruptedException, CancellationException, TimeoutException {
+          if (isCancelled()) {
+            throw new CancellationException();
+          }
+          long remainingNanos = unit.toNanos(timeout);
+          long deadline = System.nanoTime() + remainingNanos;
+          while (thread.getState() != Thread.State.TERMINATED) {
+            if (isCancelled()) {
+              throw new CancellationException();
+            }
+            if (remainingNanos <= 0) {
+              throw new TimeoutException();
+            }
+            long remainingMillis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
+            if (remainingMillis == 0) {
+              remainingMillis = 1;
+            }
+
+            long delay = Math.min(remainingMillis, 50);
+            if (thread.getState() == Thread.State.NEW) {
+              Thread.sleep(delay);
+            } else {
+              thread.join(delay);
+            }
+            remainingNanos = deadline - System.nanoTime();
+          }
+          return null;
+        }
+      }
+    };
   }
 }

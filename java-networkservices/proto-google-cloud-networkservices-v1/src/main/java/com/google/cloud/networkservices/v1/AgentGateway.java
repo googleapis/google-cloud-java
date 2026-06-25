@@ -7904,7 +7904,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * Optional. A list of Agent registries containing the agents, MCP servers and
    * tools governed by the Agent Gateway. Note: Currently limited to
    * project-scoped registries Must be of format
-   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
    * </pre>
    *
    * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7922,7 +7922,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * Optional. A list of Agent registries containing the agents, MCP servers and
    * tools governed by the Agent Gateway. Note: Currently limited to
    * project-scoped registries Must be of format
-   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
    * </pre>
    *
    * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7940,7 +7940,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * Optional. A list of Agent registries containing the agents, MCP servers and
    * tools governed by the Agent Gateway. Note: Currently limited to
    * project-scoped registries Must be of format
-   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
    * </pre>
    *
    * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7959,7 +7959,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * Optional. A list of Agent registries containing the agents, MCP servers and
    * tools governed by the Agent Gateway. Note: Currently limited to
    * project-scoped registries Must be of format
-   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+   * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
    * </pre>
    *
    * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10635,7 +10635,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10654,7 +10654,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10672,7 +10672,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10691,7 +10691,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10710,7 +10710,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10737,7 +10737,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10763,7 +10763,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10786,7 +10786,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10808,7 +10808,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * Optional. A list of Agent registries containing the agents, MCP servers and
      * tools governed by the Agent Gateway. Note: Currently limited to
      * project-scoped registries Must be of format
-     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/
+     * `//agentregistry.googleapis.com/projects/{project}/locations/{location}/`
      * </pre>
      *
      * <code>repeated string registries = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
