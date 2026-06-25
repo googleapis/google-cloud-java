@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -265,11 +266,34 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
+      Map<String, String> proxyProperties =
+          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
+
+      this.sslTrustStorePath = ds.getSSLTrustStorePath();
+      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
+      this.httpConnectTimeout = ds.getHttpConnectTimeout();
+      this.httpReadTimeout = ds.getHttpReadTimeout();
+
+      this.httpTransportOptions =
+          BigQueryJdbcProxyUtility.getHttpTransportOptions(
+              proxyProperties,
+              this.sslTrustStorePath,
+              this.sslTrustStorePassword,
+              this.httpConnectTimeout,
+              this.httpReadTimeout,
+              this.connectionClassName);
+
+      HttpTransportFactory httpTransportFactory =
+          this.httpTransportOptions != null
+              ? this.httpTransportOptions.getHttpTransportFactory()
+              : null;
+
       this.credentials =
           BigQueryJdbcOAuthUtility.getCredentials(
               authProperties,
               overrideProperties,
               this.reqGoogleDriveScope,
+              httpTransportFactory,
               this.connectionClassName);
       String defaultDatasetString = ds.getDefaultDataset();
       if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
@@ -302,22 +326,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.destinationDataset = ds.getDestinationDataset();
       this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
       this.kmsKeyName = ds.getKmsKeyName();
-      Map<String, String> proxyProperties =
-          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
-
-      this.sslTrustStorePath = ds.getSSLTrustStorePath();
-      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
-      this.httpConnectTimeout = ds.getHttpConnectTimeout();
-      this.httpReadTimeout = ds.getHttpReadTimeout();
-
-      this.httpTransportOptions =
-          BigQueryJdbcProxyUtility.getHttpTransportOptions(
-              proxyProperties,
-              this.sslTrustStorePath,
-              this.sslTrustStorePassword,
-              this.httpConnectTimeout,
-              this.httpReadTimeout,
-              this.connectionClassName);
       this.transportChannelProvider =
           BigQueryJdbcProxyUtility.getTransportChannelProvider(
               proxyProperties,
