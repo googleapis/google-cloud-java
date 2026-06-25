@@ -1336,9 +1336,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         projects.add(project.getProjectId());
       }
       this.discoveredProjectsCache = ImmutableList.copyOf(projects);
-    } catch (BigQueryException e) {
-      throw new BigQueryJdbcException(
-          "Failed to list all accessible projects due to BigQuery error.", e);
     } catch (Exception e) {
       throw new BigQueryJdbcException("Failed to list all accessible projects.", e);
     }

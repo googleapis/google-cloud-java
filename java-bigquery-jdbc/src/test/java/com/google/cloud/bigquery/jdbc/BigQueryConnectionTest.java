@@ -570,9 +570,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
               () -> {
                 connection.getDiscoveredProjects();
               });
-      assertTrue(
-          ex.getMessage()
-              .contains("Failed to list all accessible projects due to BigQuery error."));
+      assertTrue(ex.getMessage().contains("Failed to list all accessible projects."));
       assertEquals(exception, ex.getCause());
 
       // Subsequent call should retry since no cache is set
