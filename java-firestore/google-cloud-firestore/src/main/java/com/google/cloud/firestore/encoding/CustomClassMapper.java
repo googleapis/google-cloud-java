@@ -19,7 +19,6 @@ package com.google.cloud.firestore.encoding;
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Blob;
-import com.google.cloud.firestore.BsonBinaryData;
 import com.google.cloud.firestore.BsonObjectId;
 import com.google.cloud.firestore.BsonTimestamp;
 import com.google.cloud.firestore.Decimal128Value;
@@ -171,7 +170,6 @@ public class CustomClassMapper {
         || o instanceof Decimal128Value
         || o instanceof BsonTimestamp
         || o instanceof BsonObjectId
-        || o instanceof BsonBinaryData
         || o instanceof GeoPoint
         || o instanceof Blob
         || o instanceof DocumentReference
@@ -346,8 +344,7 @@ public class CustomClassMapper {
       return (T) convertBsonObjectId(o, context.errorPath);
     } else if (BsonTimestamp.class.isAssignableFrom(clazz)) {
       return (T) convertBsonTimestamp(o, context.errorPath);
-    } else if (BsonBinaryData.class.isAssignableFrom(clazz)) {
-      return (T) convertBsonBinaryData(o, context.errorPath);
+
     } else if (DocumentReference.class.isAssignableFrom(clazz)) {
       return (T) convertDocumentReference(o, context.errorPath);
     } else if (clazz.isArray()) {
@@ -683,16 +680,6 @@ public class CustomClassMapper {
     } else {
       throw errorPath.deserializeError(
           "Failed to convert value of type " + o.getClass().getName() + " to BsonTimestamp");
-    }
-  }
-
-  private static BsonBinaryData convertBsonBinaryData(
-      Object o, DeserializeContext.ErrorPath errorPath) {
-    if (o instanceof BsonBinaryData) {
-      return (BsonBinaryData) o;
-    } else {
-      throw errorPath.deserializeError(
-          "Failed to convert value of type " + o.getClass().getName() + " to BsonBinaryData");
     }
   }
 

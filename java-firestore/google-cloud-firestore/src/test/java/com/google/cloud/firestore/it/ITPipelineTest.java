@@ -111,6 +111,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.util.Collections.emptyList;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
@@ -416,6 +417,33 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(stringOfOrderedKeyValues((Map<String, Object>) data.get("map")))
         .isEqualTo(stringOfOrderedKeyValues(refMap));
     assertThat(data.get("array").toString()).isEqualTo(refArray.toString());
+  }
+
+  @Test
+  public void canFilterAndOrderBlobWithSubtypes() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        ImmutableMap.of(
+            "doc1", ImmutableMap.of("key", Blob.createBsonBinary(1, new byte[] {1, 2, 3})),
+            "doc2", ImmutableMap.of("key", Blob.createBsonBinary(1, new byte[] {1, 2, 4})),
+            "doc3", ImmutableMap.of("key", Blob.createBsonBinary(2, new byte[] {1, 2, 3})));
+    CollectionReference coll = testCollectionWithDocs(data);
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .createFrom(coll)
+            .where(
+                Expression.greaterThan(
+                    field("key"), constant(Blob.createBsonBinary(1, new byte[] {1, 2, 3}))))
+            .sort(field("key").descending())
+            .execute()
+            .get()
+            .getResults();
+
+    List<Map<String, Object>> resultData = data(results);
+    // Expected: doc3 (subtype 2), then doc2 (subtype 1, data larger)
+    assertThat(resultData).containsExactly(data.get("doc3"), data.get("doc2")).inOrder();
   }
 
   private String stringOfOrderedKeyValues(Map<String, Object> map) {

@@ -173,12 +173,13 @@ class UserDataConverter {
       return Value.newBuilder().setGeoPointValue(geopoint.toProto()).build();
     } else if (sanitizedObject instanceof Blob) {
       Blob blob = (Blob) sanitizedObject;
-      return Value.newBuilder().setBytesValue(blob.toByteString()).build();
-    } else if (sanitizedObject instanceof BsonBinaryData) {
-      BsonBinaryData bson = (BsonBinaryData) sanitizedObject;
-      return Value.newBuilder()
-          .setMapValue(encodeBsonBinaryData(bson.subtype(), bson.dataAsByteString()))
-          .build();
+      if (blob.subtype() != 0) {
+        return Value.newBuilder()
+            .setMapValue(encodeBsonBinaryData(blob.subtype(), blob.toByteString()))
+            .build();
+      } else {
+        return Value.newBuilder().setBytesValue(blob.toByteString()).build();
+      }
     } else if (sanitizedObject instanceof Expression) {
       return exprToValue((Expression) sanitizedObject);
     } else if (sanitizedObject instanceof AggregateFunction) {
@@ -409,8 +410,8 @@ class UserDataConverter {
     return new BsonTimestamp(seconds, increment);
   }
 
-  /** Decodes the given MapValue into a BsonBinaryData. Assumes the given map is a BSON binary. */
-  static BsonBinaryData decodeBsonBinary(MapValue mapValue) {
+  /** Decodes the given MapValue into a Blob. Assumes the given map is a BSON binary. */
+  static Blob decodeBsonBinary(MapValue mapValue) {
     ByteString bytes =
         mapValue.getFieldsMap().get(MapType.RESERVED_BSON_BINARY_KEY).getBytesValue();
     // Note: A byte is interpreted as a signed 8-bit value. Since values larger than 127 have a
@@ -420,7 +421,7 @@ class UserDataConverter {
     // Since we want the `subtype` to be an unsigned byte, we need to perform 0-extension (rather
     // than sign-extension) to convert it to an int.
     int subtype = bytes.byteAt(0) & 0xFF;
-    return BsonBinaryData.fromByteString(subtype, bytes.substring(1));
+    return Blob.createBsonBinary(subtype, bytes.substring(1));
   }
 
   /**
