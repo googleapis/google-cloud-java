@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -239,7 +240,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BaseBigtableDataClient implements BackgroundResource {
-  private final BaseBigtableDataSettings settings;
+  @Nullable private final BaseBigtableDataSettings settings;
   private final BigtableStub stub;
 
   /** Constructs an instance of BaseBigtableDataClient with default settings. */
@@ -279,6 +280,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final BaseBigtableDataSettings getSettings() {
     return settings;
   }

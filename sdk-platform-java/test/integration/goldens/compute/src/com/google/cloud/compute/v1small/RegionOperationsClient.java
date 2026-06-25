@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -140,7 +141,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionOperationsClient implements BackgroundResource {
-  private final RegionOperationsSettings settings;
+  @Nullable private final RegionOperationsSettings settings;
   private final RegionOperationsStub stub;
 
   /** Constructs an instance of RegionOperationsClient with default settings. */
@@ -180,6 +181,7 @@ public class RegionOperationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final RegionOperationsSettings getSettings() {
     return settings;
   }

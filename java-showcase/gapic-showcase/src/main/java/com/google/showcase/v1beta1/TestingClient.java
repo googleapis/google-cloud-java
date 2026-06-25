@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -323,7 +324,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TestingClient implements BackgroundResource {
-  private final TestingSettings settings;
+  @Nullable private final TestingSettings settings;
   private final TestingStub stub;
 
   /** Constructs an instance of TestingClient with default settings. */
@@ -361,6 +362,7 @@ public class TestingClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final TestingSettings getSettings() {
     return settings;
   }

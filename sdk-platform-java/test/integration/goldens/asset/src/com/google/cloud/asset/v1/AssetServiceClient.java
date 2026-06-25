@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -486,7 +487,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AssetServiceClient implements BackgroundResource {
-  private final AssetServiceSettings settings;
+  @Nullable private final AssetServiceSettings settings;
   private final AssetServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -533,6 +534,7 @@ public class AssetServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
+  @Nullable
   public final AssetServiceSettings getSettings() {
     return settings;
   }

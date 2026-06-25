@@ -62,6 +62,7 @@ import com.google.showcase.v1beta1.UpdateBlurbRequest;
 import com.google.showcase.v1beta1.UpdateRoomRequest;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -74,10 +75,12 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public abstract class MessagingStub implements BackgroundResource {
 
+  @Nullable
   public OperationsStub getOperationsStub() {
     return null;
   }
 
+  @Nullable
   public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
     return null;
   }

@@ -15,6 +15,7 @@
  */
 package com.google.api.generator.gapic.composer.grpcrest;
 
+import com.google.api.generator.engine.ast.AnnotationNode;
 import com.google.api.generator.engine.ast.MethodDefinition;
 import com.google.api.generator.engine.ast.ReturnExpr;
 import com.google.api.generator.engine.ast.ScopeNode;
@@ -22,6 +23,8 @@ import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
 import com.google.api.generator.gapic.composer.common.AbstractServiceStubClassComposer;
 import com.google.api.generator.gapic.composer.store.TypeStore;
+import java.util.Collections;
+import org.jspecify.annotations.Nullable;
 
 public class ServiceStubClassComposer extends AbstractServiceStubClassComposer {
   private static final ServiceStubClassComposer INSTANCE = new ServiceStubClassComposer();
@@ -39,6 +42,9 @@ public class ServiceStubClassComposer extends AbstractServiceStubClassComposer {
       TypeNode returnType, String methodName, TypeStore typeStore) {
     return MethodDefinition.builder()
         .setScope(ScopeNode.PUBLIC)
+        .setAnnotations(
+            Collections.singletonList(
+                AnnotationNode.withType(typeStore.get("Nullable"))))
         .setReturnType(returnType)
         .setName(methodName)
         .setReturnExpr(ReturnExpr.withExpr(ValueExpr.createNullExpr()))

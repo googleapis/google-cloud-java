@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -73,6 +74,7 @@ public class BillingAccountLocationName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).setLocation(location).build().toString();
   }
 
+  @Nullable
   public static BillingAccountLocationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -92,7 +94,7 @@ public class BillingAccountLocationName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BillingAccountLocationName> values) {
+  public static List<String> toStringList(List<@Nullable BillingAccountLocationName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BillingAccountLocationName value : values) {
       if (value == null) {
@@ -138,7 +140,7 @@ public class BillingAccountLocationName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

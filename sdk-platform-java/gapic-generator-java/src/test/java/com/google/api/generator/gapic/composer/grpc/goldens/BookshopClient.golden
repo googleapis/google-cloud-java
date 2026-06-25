@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -103,7 +104,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BookshopClient implements BackgroundResource {
-  private final BookshopSettings settings;
+  @Nullable private final BookshopSettings settings;
   private final BookshopStub stub;
 
   /** Constructs an instance of BookshopClient with default settings. */
@@ -141,6 +142,7 @@ public class BookshopClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final BookshopSettings getSettings() {
     return settings;
   }

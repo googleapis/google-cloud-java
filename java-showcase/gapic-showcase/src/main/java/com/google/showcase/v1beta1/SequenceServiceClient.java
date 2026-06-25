@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -314,7 +315,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SequenceServiceClient implements BackgroundResource {
-  private final SequenceServiceSettings settings;
+  @Nullable private final SequenceServiceSettings settings;
   private final SequenceServiceStub stub;
 
   /** Constructs an instance of SequenceServiceClient with default settings. */
@@ -354,6 +355,7 @@ public class SequenceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final SequenceServiceSettings getSettings() {
     return settings;
   }

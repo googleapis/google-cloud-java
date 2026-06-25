@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -671,7 +672,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StorageClient implements BackgroundResource {
-  private final StorageSettings settings;
+  @Nullable private final StorageSettings settings;
   private final StorageStub stub;
 
   /** Constructs an instance of StorageClient with default settings. */
@@ -709,6 +710,7 @@ public class StorageClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final StorageSettings getSettings() {
     return settings;
   }

@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -104,6 +105,7 @@ public class TopicName implements ResourceName {
     return "_deleted-topic_";
   }
 
+  @Nullable
   public static TopicName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -125,7 +127,7 @@ public class TopicName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<TopicName> values) {
+  public static List<String> toStringList(List<@Nullable TopicName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (TopicName value : values) {
       if (value == null) {
@@ -170,7 +172,7 @@ public class TopicName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

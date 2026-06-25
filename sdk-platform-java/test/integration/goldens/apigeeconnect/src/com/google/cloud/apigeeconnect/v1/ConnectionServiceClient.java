@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -146,7 +147,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConnectionServiceClient implements BackgroundResource {
-  private final ConnectionServiceSettings settings;
+  @Nullable private final ConnectionServiceSettings settings;
   private final ConnectionServiceStub stub;
 
   /** Constructs an instance of ConnectionServiceClient with default settings. */
@@ -186,6 +187,7 @@ public class ConnectionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final ConnectionServiceSettings getSettings() {
     return settings;
   }

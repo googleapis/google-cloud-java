@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -634,7 +635,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class KeyManagementServiceClient implements BackgroundResource {
-  private final KeyManagementServiceSettings settings;
+  @Nullable private final KeyManagementServiceSettings settings;
   private final KeyManagementServiceStub stub;
 
   /** Constructs an instance of KeyManagementServiceClient with default settings. */
@@ -674,6 +675,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final KeyManagementServiceSettings getSettings() {
     return settings;
   }

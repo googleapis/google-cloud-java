@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -376,7 +377,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudRedisClient implements BackgroundResource {
-  private final CloudRedisSettings settings;
+  @Nullable private final CloudRedisSettings settings;
   private final CloudRedisStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -422,6 +423,7 @@ public class CloudRedisClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
+  @Nullable
   public final CloudRedisSettings getSettings() {
     return settings;
   }

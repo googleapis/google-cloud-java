@@ -55,6 +55,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -338,7 +339,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TopicAdminClient implements BackgroundResource {
-  private final TopicAdminSettings settings;
+  @Nullable private final TopicAdminSettings settings;
   private final PublisherStub stub;
 
   /** Constructs an instance of TopicAdminClient with default settings. */
@@ -376,6 +377,7 @@ public class TopicAdminClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final TopicAdminSettings getSettings() {
     return settings;
   }

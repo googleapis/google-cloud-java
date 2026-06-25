@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -211,7 +212,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MetricsClient implements BackgroundResource {
-  private final MetricsSettings settings;
+  @Nullable private final MetricsSettings settings;
   private final MetricsServiceV2Stub stub;
 
   /** Constructs an instance of MetricsClient with default settings. */
@@ -249,6 +250,7 @@ public class MetricsClient implements BackgroundResource {
     this.stub = stub;
   }
 
+  @Nullable
   public final MetricsSettings getSettings() {
     return settings;
   }
