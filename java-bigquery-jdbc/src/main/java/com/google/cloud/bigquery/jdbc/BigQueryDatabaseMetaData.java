@@ -914,7 +914,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(procedureFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Submitted background task for getProcedures to metadata executor");
     return resultSet;
@@ -1129,7 +1129,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(procedureColumnFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Started background task for getProcedureColumns for catalog: " + catalog);
     return resultSet;
@@ -1761,7 +1761,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(tableFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Started background thread for getTables");
     return resultSet;
@@ -2086,7 +2086,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(columnFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Started background thread for getColumns");
     return resultSet;
@@ -2362,7 +2362,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetColumnPrivilegesSchema() {
@@ -2390,7 +2390,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetTablePrivilegesSchema() {
@@ -2412,7 +2412,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetBestRowIdentifierSchema() {
@@ -2462,7 +2462,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetVersionColumnsSchema() {
@@ -3062,7 +3062,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetIndexInfoSchema() {
@@ -3193,7 +3193,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetUDTsSchema() {
@@ -3267,7 +3267,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetSuperTablesSchema() {
@@ -3304,7 +3304,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetSuperTypesSchema() {
@@ -3350,7 +3350,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetAttributesSchema() {
@@ -3602,7 +3602,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(schemaFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Submitted background task for getSchemas to metadata executor");
     return resultSet;
@@ -3881,7 +3881,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(functionFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Started background thread for getFunctions");
     return resultSet;
@@ -4087,7 +4087,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Future<?> fetcherFuture = connection.getExecutorService().submit(functionColumnFetcher);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Future<?>[] {fetcherFuture});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
     LOG.info("Started background thread for getFunctionColumns for catalog: " + catalog);
     return resultSet;
@@ -4479,7 +4479,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
     signalEndOfData(queue, resultSchemaFields);
 
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null, null);
+    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
   }
 
   Schema defineGetPseudoColumnsSchema() {

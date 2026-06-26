@@ -217,7 +217,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
-  private ExecutorService metadataExecutor;
+  private final ExecutorService metadataExecutor;
   private final ExecutorService queryExecutor;
 
   BigQueryConnection(String url) throws IOException {
@@ -366,6 +366,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       // when inactive, minimizing resources.
       this.queryExecutor =
           BigQueryJdbcMdc.newCachedThreadPool(String.format("BQ-Query-%s", connectionId));
+      this.metadataExecutor =
+          BigQueryJdbcMdc.newFixedThreadPool(
+              String.format("BQ-Metadata-%s", connectionId), this.metadataFetchThreadCount);
     }
   }
 
@@ -949,7 +952,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    * @see Connection#close()
    */
   @Override
-  public synchronized void close() throws SQLException {
+  public void close() throws SQLException {
     if (isClosed()) {
       return;
     }
@@ -1062,14 +1065,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.queryExecutor;
   }
 
-  synchronized ExecutorService getMetadataExecutor() {
-    if (this.metadataExecutor != null) {
-      return this.metadataExecutor;
-    }
-    checkClosed();
-    this.metadataExecutor =
-        BigQueryJdbcMdc.newFixedThreadPool(
-            String.format("BQ-Metadata-%s", connectionId), metadataFetchThreadCount);
+  ExecutorService getMetadataExecutor() {
     return this.metadataExecutor;
   }
 
