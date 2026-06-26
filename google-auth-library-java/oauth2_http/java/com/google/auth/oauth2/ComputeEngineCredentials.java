@@ -808,7 +808,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
     if (account == null || !EMAIL_PATTERN.matcher(account).matches()) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
-          Level.INFO,
+          Level.FINE,
           Collections.emptyMap(),
           "Unable to retrieve this instance's email and will skip the regional request routing. Proceeding with request");
       return null;
