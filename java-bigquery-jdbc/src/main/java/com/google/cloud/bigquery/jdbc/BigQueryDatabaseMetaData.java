@@ -3476,7 +3476,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       } finally {
         signalEndOfData(queue, resultSchemaFields);
       }
-      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, (Future<?>) null);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
     } else {
       // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
       Runnable multiSchemaFetcher =
