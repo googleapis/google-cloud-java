@@ -362,15 +362,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
-      // Fixed thread pool queues tasks to limit concurrent metadata calls and prevent API
-      // throttling.
-      this.metadataExecutor =
-          BigQueryJdbcMdc.newFixedThreadPool(
-              String.format("BQ-Metadata-%s", connectionId), metadataFetchThreadCount);
       // Cached pool executes queries immediately without queueing and reclaims all idle threads
       // when inactive, minimizing resources.
       this.queryExecutor =
           BigQueryJdbcMdc.newCachedThreadPool(String.format("BQ-Query-%s", connectionId));
+      this.metadataExecutor =
+          BigQueryJdbcMdc.newFixedThreadPool(
+              String.format("BQ-Metadata-%s", connectionId), this.metadataFetchThreadCount);
     }
   }
 
