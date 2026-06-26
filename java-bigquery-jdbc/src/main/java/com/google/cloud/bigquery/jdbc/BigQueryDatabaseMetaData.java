@@ -1105,6 +1105,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               queue.put(BigQueryFieldValueListWrapper.ofError(e));
             } catch (InterruptedException ie) {
               LOG.warning("Failed to put exception to queue due to interruption.");
+              Thread.currentThread().interrupt();
             }
           } catch (Throwable t) {
             LOG.severe(
@@ -3517,7 +3518,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           () -> {
             final FieldList localResultSchemaFields = resultSchemaFields;
             final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
-            final List<Dataset> collectedDatasets = Collections.synchronizedList(new ArrayList<>());
+            final List<Dataset> collectedDatasets = new ArrayList<>();
             final List<FieldValueList> collectedResults = new ArrayList<>();
 
             try {
@@ -3591,6 +3592,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 Thread.currentThread().interrupt();
               }
             } finally {
+              apiFutures.forEach(f -> f.cancel(true));
               signalEndOfData(queue, localResultSchemaFields);
               LOG.info("Multi-schema fetcher thread finished.");
             }
@@ -4063,6 +4065,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               queue.put(BigQueryFieldValueListWrapper.ofError(e));
             } catch (InterruptedException ie) {
               LOG.warning("Failed to put exception to queue due to interruption.");
+              Thread.currentThread().interrupt();
             }
           } catch (Throwable t) {
             LOG.severe(
@@ -4976,17 +4979,22 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (Thread.currentThread().isInterrupted()) {
         break;
       }
-      List<Dataset> datasets =
-          findMatchingBigQueryObjects(
-              "Dataset",
-              () -> bigquery.listDatasets(project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-              (name) -> bigquery.getDataset(DatasetId.of(project, name)),
-              (ds) -> ds.getDatasetId().getDataset(),
-              schemaPattern,
-              schemaRegex,
-              LOG);
-      if (datasets != null) {
-        allDatasets.addAll(datasets);
+      try {
+        List<Dataset> datasets =
+            findMatchingBigQueryObjects(
+                "Dataset",
+                () -> bigquery.listDatasets(project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                (name) -> bigquery.getDataset(DatasetId.of(project, name)),
+                (ds) -> ds.getDatasetId().getDataset(),
+                schemaPattern,
+                schemaRegex,
+                LOG);
+        if (datasets != null) {
+          allDatasets.addAll(datasets);
+        }
+      } catch (Throwable t) {
+        LOG.warning(
+            "Failed to fetch matching datasets for project " + project + ": " + t.getMessage());
       }
     }
     return allDatasets;
