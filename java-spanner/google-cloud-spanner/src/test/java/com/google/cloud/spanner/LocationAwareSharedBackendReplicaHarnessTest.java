@@ -390,7 +390,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       assertEquals(
           "Direct replicas should not receive the transaction read.\n" + diagnostics,
           0,
-          harness.replicas.get(0).getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ).size()
+          harness
+                  .replicas
+                  .get(0)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+                  .size()
               + harness
                   .replicas
                   .get(1)
@@ -405,7 +409,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
               + diagnostics,
           0,
           harness.replicas.get(0).getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size()
-              + harness.replicas.get(1).getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size());
+              + harness
+                  .replicas
+                  .get(1)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_COMMIT)
+                  .size());
     }
   }
 
