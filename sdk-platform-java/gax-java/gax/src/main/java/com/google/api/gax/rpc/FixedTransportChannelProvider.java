@@ -58,12 +58,6 @@ public class FixedTransportChannelProvider implements TransportChannelProvider {
     return false;
   }
 
-  @Nullable
-  @Override
-  public Executor getExecutor() {
-    return null;
-  }
-
   @Override
   public FixedTransportChannelProvider withExecutor(ScheduledExecutorService executor) {
     return withExecutor((Executor) executor);
