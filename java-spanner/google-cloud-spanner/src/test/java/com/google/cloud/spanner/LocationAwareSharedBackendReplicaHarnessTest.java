@@ -355,6 +355,61 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   }
 
   @Test
+  public void readWriteTransactionInlineBeginOnDefaultKeepsReadOnDefaultForBypassTraffic()
+      throws Exception {
+    try (Spanner spanner = createSpanner(harness)) {
+      configureBackend(harness, singleRowReadResultSet("b"), /* leaderReplicaIndex= */ 1);
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+
+      seedLocationMetadata(client);
+      waitForReplicaRoutedStrongRead(client, harness, /* expectedReplicaIndex= */ 1);
+      harness.clearRequests();
+
+      client
+          .readWriteTransaction()
+          .run(
+              transaction -> {
+                try (ResultSet resultSet = transaction.executeQuery(SEED_QUERY)) {
+                  assertTrue(resultSet.next());
+                }
+                try (ResultSet resultSet =
+                    transaction.read(TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"))) {
+                  assertTrue(resultSet.next());
+                }
+                return null;
+              });
+
+      String diagnostics = routingDiagnostics(harness);
+      assertEquals(
+          "Read after inline begin on default should stay on default.\n" + diagnostics,
+          1,
+          harness
+              .defaultReplica
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          "Direct replicas should not receive the transaction read.\n" + diagnostics,
+          0,
+          harness.replicas.get(0).getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ).size()
+              + harness
+                  .replicas
+                  .get(1)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+                  .size());
+      assertEquals(
+          "Commit should use the default transaction affinity.\n" + diagnostics,
+          1,
+          harness.defaultReplica.getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size());
+      assertEquals(
+          "Direct replicas should not receive commit for the default-pinned transaction.\n"
+              + diagnostics,
+          0,
+          harness.replicas.get(0).getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size()
+              + harness.replicas.get(1).getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size());
+    }
+  }
+
+  @Test
   public void readWriteTransactionAbortedCommitUsesReadAffinityReplicaForBypassTraffic()
       throws Exception {
     try (Spanner spanner = createSpanner(harness)) {
