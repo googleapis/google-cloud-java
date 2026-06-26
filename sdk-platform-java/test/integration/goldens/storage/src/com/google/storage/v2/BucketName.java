@@ -137,7 +137,7 @@ public class BucketName implements ResourceName {
   }
 
   @Override
-  public boolean equals(@Nullable java.lang.Object o) {
+  public boolean equals(java.lang.@Nullable Object o) {
     if (o == this) {
       return true;
     }
