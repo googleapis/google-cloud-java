@@ -66,6 +66,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
@@ -118,6 +119,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   // this pool. One tick thread per Client (owned by Client); O(1) insert / O(1) cancel.
   private final BigtableTimer timer;
 
+  // Executor for timer-scheduled pool maintenance bodies (AFE prune, retry-create-session,
+  // deadline monitor, watchdog tick). The timer's tick thread hands work here so it doesn't
+  // run pool-lock-holding work inline.
+  private final Executor backgroundExecutor;
+
   @GuardedBy("this")
   private int consecutiveFailures = 0;
 
@@ -167,7 +173,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       CallOptions callOptions,
       SessionDescriptor<OpenReqT> sessionDescriptor,
       String name,
-      BigtableTimer timer) {
+      BigtableTimer timer,
+      Executor backgroundExecutor) {
     this(
         metrics,
         featureFlags,
@@ -178,6 +185,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         sessionDescriptor,
         name,
         timer,
+        backgroundExecutor,
         createInitialBudget(configManager.getClientConfiguration()));
   }
 
@@ -194,6 +202,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       SessionDescriptor<OpenReqT> sessionDescriptor,
       String name,
       BigtableTimer timer,
+      Executor backgroundExecutor,
       SessionCreationBudget budget) {
     this.metrics = metrics;
     this.featureFlags = featureFlags;
@@ -204,6 +213,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // Timer is owned by the caller (typically Client) and shared across pools — do NOT stop it
     // in close().
     this.timer = timer;
+    this.backgroundExecutor = backgroundExecutor;
 
     sessions = new SessionList();
     LoadBalancingOptions lbOptions =
@@ -225,7 +235,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     debugTagTracer = metrics.getDebugTagTracer();
 
     // Watchdog checks for sessions in WAIT_SERVER_CLOSE state and runs every 5 minutes
-    watchdog = new Watchdog(this, timer, Duration.ofMinutes(5), sessions, debugTagTracer);
+    watchdog =
+        new Watchdog(
+            this, timer, backgroundExecutor, Duration.ofMinutes(5), sessions, debugTagTracer);
     // Heartbeat monitoring is now done per-session via SessionImpl.scheduleHeartbeatCheck.
     scheduleNextAfePrune();
 
@@ -252,6 +264,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     afeListPruneTimeout =
         timer.newTimeout(
             this::runAfePruneAndReschedule,
+            backgroundExecutor,
             SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis(),
             TimeUnit.MILLISECONDS);
   }
@@ -461,6 +474,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 }
               }
             },
+            backgroundExecutor,
             retryIntervalMs,
             TimeUnit.MILLISECONDS);
   }
@@ -814,14 +828,14 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     private BigtableTimer.Timeout monitorDeadline(Deadline deadline) {
-      // Body runs on the timer's bundled dispatcher (off the tick thread).
-      // onlyCancelPendingCall=true avoids racing with a user cancel that already attached a real
-      // call.
+      // Body runs on backgroundExecutor (off the tick thread). onlyCancelPendingCall=true avoids
+      // racing with a user cancel that already attached a real call.
       return timer.newTimeout(
           () ->
               cancel(
                   Status.DEADLINE_EXCEEDED.withDescription("Deadline exceeded waiting for session"),
                   true),
+          backgroundExecutor,
           deadline.timeRemaining(TimeUnit.NANOSECONDS),
           TimeUnit.NANOSECONDS);
     }
@@ -832,6 +846,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     private final Object lock;
     private final BigtableTimer timer;
+    private final Executor backgroundExecutor;
     private final Duration interval;
     private final SessionList sessions;
     private final Clock clock;
@@ -854,22 +869,32 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     public Watchdog(
         Object lock,
         BigtableTimer timer,
+        Executor backgroundExecutor,
         Duration interval,
         SessionList sessionList,
         DebugTagTracer debugTagTracer) {
-      this(lock, timer, interval, sessionList, debugTagTracer, Clock.systemUTC());
+      this(
+          lock,
+          timer,
+          backgroundExecutor,
+          interval,
+          sessionList,
+          debugTagTracer,
+          Clock.systemUTC());
     }
 
     @VisibleForTesting
     Watchdog(
         Object lock,
         BigtableTimer timer,
+        Executor backgroundExecutor,
         Duration interval,
         SessionList sessionList,
         DebugTagTracer debugTagTracer,
         Clock clock) {
       this.lock = lock;
       this.timer = timer;
+      this.backgroundExecutor = backgroundExecutor;
       this.interval = interval;
       this.sessions = sessionList;
       this.debugTagTracer = debugTagTracer;
@@ -885,7 +910,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       synchronized (scheduleLock) {
         if (watchdogClosed) return;
         currentTimeout =
-            timer.newTimeout(this::runAndReschedule, interval.toMillis(), TimeUnit.MILLISECONDS);
+            timer.newTimeout(
+                this::runAndReschedule,
+                backgroundExecutor,
+                interval.toMillis(),
+                TimeUnit.MILLISECONDS);
       }
     }
 

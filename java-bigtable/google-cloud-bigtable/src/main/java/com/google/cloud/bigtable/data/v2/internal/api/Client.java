@@ -34,7 +34,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
-import com.google.cloud.bigtable.data.v2.internal.session.NettyWheelTimer;
+import com.google.cloud.bigtable.data.v2.internal.session.ScheduledExecutorTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
@@ -205,9 +205,7 @@ public class Client implements AutoCloseable {
     this.configManager = configManager;
     this.backgroundExecutor = bgExecutor;
     this.userCallbackExecutor = userCallbackExecutor;
-    // Timer's tick thread dispatches bodies onto backgroundExecutor — tick-thread-blocking work
-    // (anything that takes a pool lock) gets handed off there instead of stalling the wheel.
-    this.sessionTimer = new NettyWheelTimer("bigtable-session-timer", bgExecutor.get());
+    this.sessionTimer = new ScheduledExecutorTimer("bigtable-session-timer");
 
     defaultCallOptions = CallOptions.DEFAULT;
 
@@ -311,6 +309,7 @@ public class Client implements AutoCloseable {
               permission,
               metrics.get(),
               sessionTimer,
+              backgroundExecutor.get(),
               userCallbackExecutor.get());
       sessionPools.add(tableAsync.getSessionPool());
       return tableAsync;
@@ -335,6 +334,7 @@ public class Client implements AutoCloseable {
               permission,
               metrics.get(),
               sessionTimer,
+              backgroundExecutor.get(),
               userCallbackExecutor.get());
       sessionPools.add(viewAsync.getSessionPool());
       return viewAsync;
@@ -358,6 +358,7 @@ public class Client implements AutoCloseable {
               permission,
               metrics.get(),
               sessionTimer,
+              backgroundExecutor.get(),
               userCallbackExecutor.get());
       sessionPools.add(viewAsync.getSessionPool());
       return viewAsync;

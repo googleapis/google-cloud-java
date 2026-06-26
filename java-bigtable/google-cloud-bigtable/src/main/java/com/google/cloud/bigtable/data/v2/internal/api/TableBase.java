@@ -63,6 +63,7 @@ class TableBase implements AutoCloseable {
       String sessionPoolName,
       Metrics metrics,
       BigtableTimer timer,
+      Executor backgroundExecutor,
       Executor userCallbackExecutor) {
 
     SessionPool<ReqT> sessionPool =
@@ -75,7 +76,8 @@ class TableBase implements AutoCloseable {
             callOptions,
             sessionDescriptor,
             sessionPoolName,
-            timer);
+            timer,
+            backgroundExecutor);
 
     sessionPool.start(openReq, new Metadata());
 

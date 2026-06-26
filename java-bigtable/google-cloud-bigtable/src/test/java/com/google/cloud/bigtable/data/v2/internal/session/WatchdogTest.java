@@ -26,10 +26,12 @@ import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.session.Session.SessionState;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl.Watchdog;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeClock;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Message;
 import io.grpc.Metadata;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -60,6 +62,7 @@ public class WatchdogTest {
         new Watchdog(
             new Object(),
             timer,
+            MoreExecutors.directExecutor(),
             interval,
             sessions,
             NoopMetrics.NoopDebugTracer.INSTANCE,
@@ -70,7 +73,7 @@ public class WatchdogTest {
   // by calling run() directly; the scheduling layer is not under test.
   private static final class NoOpBigtableTimer implements BigtableTimer {
     @Override
-    public Timeout newTimeout(Runnable task, long delay, TimeUnit unit) {
+    public Timeout newTimeout(Runnable task, Executor executor, long delay, TimeUnit unit) {
       return new Timeout() {
         @Override
         public boolean cancel() {

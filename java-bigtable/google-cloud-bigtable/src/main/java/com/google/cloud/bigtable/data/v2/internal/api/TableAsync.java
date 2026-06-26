@@ -49,6 +49,7 @@ public class TableAsync implements AutoCloseable, Closeable {
       Permission permission,
       Metrics metrics,
       BigtableTimer timer,
+      Executor backgroundExecutor,
       Executor userCallbackExecutor) {
 
     TableName tableName =
@@ -79,6 +80,7 @@ public class TableAsync implements AutoCloseable, Closeable {
             tableId,
             metrics,
             timer,
+            backgroundExecutor,
             userCallbackExecutor);
 
     return new TableAsync(base);

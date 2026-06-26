@@ -455,7 +455,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private void scheduleHeartbeatCheck() {
     heartbeatTimeout =
         timer.newTimeout(
-            () -> sessionSyncContext.execute(this::checkHeartbeat),
+            this::checkHeartbeat,
+            sessionSyncContext,
             HEARTBEAT_CHECK_INTERVAL.toMillis(),
             TimeUnit.MILLISECONDS);
   }

@@ -329,19 +329,14 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
       try {
         stopHook = timer.onStop(this::onTimerStopping);
         // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
-        // the moment the body runs, not just while the dispatcher is invoking the outer task.
+        // the moment the body runs on the op executor.
         future =
             timer.newTimeout(
                 () ->
-                    context
-                        .getExecutor()
-                        .execute(
-                            () ->
-                                grpcContext
-                                    .wrap(
-                                        () ->
-                                            otelContext.wrap(() -> onStateChange(new Idle())).run())
-                                    .run()),
+                    grpcContext
+                        .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
+                        .run(),
+                context.getExecutor(),
                 Durations.toMillis(retryDelay),
                 TimeUnit.MILLISECONDS);
       } catch (IllegalStateException e) {

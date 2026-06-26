@@ -72,6 +72,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -104,9 +105,7 @@ public class SessionImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    timer =
-        new NettyWheelTimer(
-            "session-impl-test", com.google.common.util.concurrent.MoreExecutors.directExecutor());
+    timer = new ScheduledExecutorTimer("session-impl-test");
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
@@ -826,9 +825,9 @@ public class SessionImplTest {
     }
 
     @Override
-    public Timeout newTimeout(Runnable task, long delay, TimeUnit unit) {
+    public Timeout newTimeout(Runnable task, Executor executor, long delay, TimeUnit unit) {
       scheduleCount.incrementAndGet();
-      Timeout inner = delegate.newTimeout(task, delay, unit);
+      Timeout inner = delegate.newTimeout(task, executor, delay, unit);
       return new Timeout() {
         @Override
         public boolean cancel() {

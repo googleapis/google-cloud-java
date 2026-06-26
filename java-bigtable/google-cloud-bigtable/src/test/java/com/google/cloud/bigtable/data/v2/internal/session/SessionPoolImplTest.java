@@ -54,6 +54,7 @@ import com.google.cloud.bigtable.data.v2.internal.session.fake.PeerInfoIntercept
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.base.Suppliers;
 import com.google.common.truth.Correspondence;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.Code;
@@ -82,6 +83,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -113,7 +115,7 @@ public class SessionPoolImplTest {
           Correspondence.transforming(SessionRequest::getOpenSession, "open session");
 
   private ScheduledExecutorService executor;
-  private NettyWheelTimer testTimer;
+  private ScheduledExecutorTimer testTimer;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private Metrics metrics;
@@ -130,9 +132,7 @@ public class SessionPoolImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    testTimer =
-        new NettyWheelTimer(
-            "test-timer", com.google.common.util.concurrent.MoreExecutors.directExecutor());
+    testTimer = new ScheduledExecutorTimer("test-timer");
     fakeService = new FakeSessionService(executor);
     headerInterceptor = new HeaderInterceptor();
     server =
@@ -166,7 +166,8 @@ public class SessionPoolImplTest {
             CallOptions.DEFAULT,
             FakeDescriptor.FAKE_SESSION,
             "fake-pool",
-            testTimer);
+            testTimer,
+            MoreExecutors.directExecutor());
   }
 
   @AfterEach
@@ -250,7 +251,8 @@ public class SessionPoolImplTest {
               CallOptions.DEFAULT,
               FakeDescriptor.FAKE_SESSION,
               "fake-pool",
-              testTimer);
+              testTimer,
+              MoreExecutors.directExecutor());
 
       // session ack should be delayed by at least 10ms
       testSessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
@@ -350,7 +352,8 @@ public class SessionPoolImplTest {
               CallOptions.DEFAULT,
               FakeDescriptor.FAKE_SESSION,
               "fake-pool-in-flight",
-              testTimer);
+              testTimer,
+              MoreExecutors.directExecutor());
 
       testSessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
 
@@ -468,7 +471,8 @@ public class SessionPoolImplTest {
               CallOptions.DEFAULT,
               FakeDescriptor.FAKE_SESSION,
               "fake-pool",
-              testTimer);
+              testTimer,
+              MoreExecutors.directExecutor());
 
       Context.current()
           .withDeadlineAfter(1, TimeUnit.MINUTES, executor)
@@ -529,6 +533,7 @@ public class SessionPoolImplTest {
               FakeDescriptor.FAKE_SESSION,
               "fake-pool",
               mockTimer,
+              MoreExecutors.directExecutor(),
               budget);
     }
 
@@ -567,7 +572,10 @@ public class SessionPoolImplTest {
       int waitForReadyMs = 1000;
       verify(mockTimer, Mockito.timeout(waitForReadyMs))
           .newTimeout(
-              runnableCaptor.capture(), longThat(isRetrySchedule::test), eq(TimeUnit.MILLISECONDS));
+              runnableCaptor.capture(),
+              any(Executor.class),
+              longThat(isRetrySchedule::test),
+              eq(TimeUnit.MILLISECONDS));
 
       // we should have received some open requests
       int requestsBefore = fakeService.getOpenRequestCount().get();
@@ -592,7 +600,10 @@ public class SessionPoolImplTest {
       // The retry task will try to open new sessions. This will fail and schedule another retry.
       verify(mockTimer, Mockito.timeout(5000).times(2))
           .newTimeout(
-              any(Runnable.class), longThat(isRetrySchedule::test), eq(TimeUnit.MILLISECONDS));
+              any(Runnable.class),
+              any(Executor.class),
+              longThat(isRetrySchedule::test),
+              eq(TimeUnit.MILLISECONDS));
 
       // the retry will exhaust the budget again. we should see double the request compared to
       // before

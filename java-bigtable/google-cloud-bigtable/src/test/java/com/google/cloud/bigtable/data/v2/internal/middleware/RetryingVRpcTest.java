@@ -39,9 +39,9 @@ import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.FakeDescriptor;
-import com.google.cloud.bigtable.data.v2.internal.session.NettyWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionFactory;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionImpl;
+import com.google.cloud.bigtable.data.v2.internal.session.ScheduledExecutorTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionListener;
@@ -91,9 +91,7 @@ public class RetryingVRpcTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    timer =
-        new NettyWheelTimer(
-            "retrying-vrpc-test", com.google.common.util.concurrent.MoreExecutors.directExecutor());
+    timer = new ScheduledExecutorTimer("retrying-vrpc-test");
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
