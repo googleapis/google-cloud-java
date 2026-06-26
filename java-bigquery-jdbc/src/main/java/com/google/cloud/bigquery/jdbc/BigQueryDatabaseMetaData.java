@@ -3463,21 +3463,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     if (catalog != null) {
       // Single-Catalog Path: completely synchronous on caller thread
-      try {
-        List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
-        List<FieldValueList> collectedResults = new ArrayList<>();
-        for (Dataset dataset : datasets) {
-          processSchemaInfo(dataset, collectedResults, resultSchemaFields);
-        }
-        Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
-        sortResults(collectedResults, comparator, "getSchemas", LOG);
-        populateQueue(collectedResults, queue, resultSchemaFields);
-      } catch (Throwable t) {
-        LOG.severe("Unexpected error in synchronous getSchemas: " + t.getMessage());
-        writeErrorToQueue(queue, t);
-      } finally {
-        signalEndOfData(queue, resultSchemaFields);
+      List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+      List<FieldValueList> collectedResults = new ArrayList<>();
+      for (Dataset dataset : datasets) {
+        processSchemaInfo(dataset, collectedResults, resultSchemaFields);
       }
+      Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
+      sortResults(collectedResults, comparator, "getSchemas", LOG);
+      populateQueue(collectedResults, queue, resultSchemaFields);
+      signalEndOfData(queue, resultSchemaFields);
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
     }
 
