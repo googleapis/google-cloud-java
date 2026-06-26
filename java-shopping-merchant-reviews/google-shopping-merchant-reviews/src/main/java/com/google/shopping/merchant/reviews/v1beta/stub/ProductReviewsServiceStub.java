@@ -29,6 +29,7 @@ import com.google.shopping.merchant.reviews.v1beta.ListProductReviewsRequest;
 import com.google.shopping.merchant.reviews.v1beta.ListProductReviewsResponse;
 import com.google.shopping.merchant.reviews.v1beta.ProductReview;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -36,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ProductReviewsServiceStub implements BackgroundResource {

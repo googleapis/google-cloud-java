@@ -374,8 +374,8 @@ public final class SecurityProfileGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. Identifier used by the data-path. Unique within {container,
-   * location}.
+   * Output only. Identifier used by the data-path. Unique within &#92;{container,
+   * location&#92;}.
    * </pre>
    *
    * <code>uint64 data_path_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2142,8 +2142,8 @@ public final class SecurityProfileGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Identifier used by the data-path. Unique within {container,
-     * location}.
+     * Output only. Identifier used by the data-path. Unique within &#92;{container,
+     * location&#92;}.
      * </pre>
      *
      * <code>uint64 data_path_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2159,8 +2159,8 @@ public final class SecurityProfileGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Identifier used by the data-path. Unique within {container,
-     * location}.
+     * Output only. Identifier used by the data-path. Unique within &#92;{container,
+     * location&#92;}.
      * </pre>
      *
      * <code>uint64 data_path_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2180,8 +2180,8 @@ public final class SecurityProfileGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. Identifier used by the data-path. Unique within {container,
-     * location}.
+     * Output only. Identifier used by the data-path. Unique within &#92;{container,
+     * location&#92;}.
      * </pre>
      *
      * <code>uint64 data_path_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -70,6 +70,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,6 +149,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSourcesStubSettings> {

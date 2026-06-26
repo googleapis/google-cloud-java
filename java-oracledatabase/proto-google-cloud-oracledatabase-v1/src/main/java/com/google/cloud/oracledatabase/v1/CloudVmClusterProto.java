@@ -70,7 +70,7 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "1\032\037google/api/field_behavior.proto\032\031goog"
           + "le/api/resource.proto\032+google/cloud/orac"
           + "ledatabase/v1/common.proto\032\037google/proto"
-          + "buf/timestamp.proto\032\032google/type/datetime.proto\"\202\010\n"
+          + "buf/timestamp.proto\032\032google/type/datetime.proto\"\343\010\n"
           + "\016CloudVmCluster\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022`\n"
           + "\026exadata_infrastructure\030\002 \001(\tB@\340A\002\372A:\n"
@@ -96,16 +96,19 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "\021backup_odb_subnet\030\017 \001(\tB/\340A\001\372A)\n"
           + "\'oracledatabase.googleapis.com/OdbSubnet\022R\n"
           + "\022identity_connector\030\020"
-          + " \001(\01321.google.cloud.oracledatabase.v1.IdentityConnectorB\003\340A\003\032-\n"
+          + " \001(\01321.google.cloud.oracledatabase.v1.IdentityConnectorB\003\340A\003\022_\n"
+          + "\031exascale_db_storage_vault\030\021 \001(\tB<\340A\001\372A6\n"
+          + "4oracledatabase.googleapis.com/ExascaleDbStorageVault\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
-          + ",oracledatabase.googleapis.com/CloudVmCluster\022Jprojects/{project}/locations/{l"
-          + "ocation}/cloudVmClusters/{cloud_vm_cluster}*\017cloudVmClusters2\016cloudVmCluster\"\346\014\n"
+          + ",oracledatabase.googleapis.com/CloudVmCluster\022Jprojects/{proj"
+          + "ect}/locations/{location}/cloudVmCluster"
+          + "s/{cloud_vm_cluster}*\017cloudVmClusters2\016cloudVmCluster\"\265\016\n"
           + "\030CloudVmClusterProperties\022\021\n"
           + "\004ocid\030\001 \001(\tB\003\340A\003\022_\n"
-          + "\014license_type\030\002 \001(\0162D.google.clou"
-          + "d.oracledatabase.v1.CloudVmClusterProperties.LicenseTypeB\003\340A\002\022\027\n\n"
+          + "\014license_type\030\002 \001(\0162D.google.cloud.oracledatabase.v1.Clo"
+          + "udVmClusterProperties.LicenseTypeB\003\340A\002\022\027\n\n"
           + "gi_version\030\003 \001(\tB\003\340A\001\022-\n"
           + "\ttime_zone\030\004 \001(\0132\025.google.type.TimeZoneB\003\340A\001\022\034\n"
           + "\017ssh_public_keys\030\005 \003(\tB\003\340A\001\022\027\n\n"
@@ -118,15 +121,15 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "\017storage_size_gb\030\013 \001(\005B\003\340A\003\022!\n"
           + "\024data_storage_size_tb\030\014 \001(\001B\003\340A\001\022e\n"
           + "\017disk_redundancy\030\r"
-          + " \001(\0162G.google."
-          + "cloud.oracledatabase.v1.CloudVmClusterProperties.DiskRedundancyB\003\340A\001\022%\n"
+          + " \001(\0162G.google.cloud.oracledatabase.v1"
+          + ".CloudVmClusterProperties.DiskRedundancyB\003\340A\001\022%\n"
           + "\030sparse_diskgroup_enabled\030\016 \001(\010B\003\340A\001\022!\n"
           + "\024local_backup_enabled\030\017 \001(\010B\003\340A\001\022\034\n"
           + "\017hostname_prefix\030\020 \001(\tB\003\340A\001\022g\n"
-          + "#diagnostics_data_collection_options\030\023"
-          + " \001(\01325.google.cloud.oracledatabase.v1.DataCollectionOptionsB\003\340A\001\022R\n"
-          + "\005state\030\024 \001(\0162>.google.cloud.oracledataba"
-          + "se.v1.CloudVmClusterProperties.StateB\003\340A\003\022#\n"
+          + "#diagnostics_data_collection_options\030\023 \001(\01325.goo"
+          + "gle.cloud.oracledatabase.v1.DataCollectionOptionsB\003\340A\001\022R\n"
+          + "\005state\030\024 \001(\0162>.google.c"
+          + "loud.oracledatabase.v1.CloudVmClusterProperties.StateB\003\340A\003\022#\n"
           + "\026scan_listener_port_tcp\030\025 \001(\005B\003\340A\001\022\'\n"
           + "\032scan_listener_port_tcp_ssl\030\026 \001(\005B\003\340A\001\022\023\n"
           + "\006domain\030\027 \001(\tB\003\340A\003\022\025\n"
@@ -141,8 +144,10 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "\016compartment_id\030  \001(\tB\003\340A\003\022\034\n"
           + "\017dns_listener_ip\030# \001(\tB\003\340A\003\022\031\n"
           + "\014cluster_name\030$ \001(\tB\003\340A\001\022H\n\r"
-          + "compute_model\030%"
-          + " \001(\0162,.google.cloud.oracledatabase.v1.ComputeModelB\003\340A\003\"]\n"
+          + "compute_model\030% \001("
+          + "\0162,.google.cloud.oracledatabase.v1.ComputeModelB\003\340A\003\022t\n"
+          + "\027storage_management_type\030& \001(\0162N.google.cloud.oracledatabase.v1.C"
+          + "loudVmClusterProperties.StorageManagementTypeB\003\340A\003\"]\n"
           + "\013LicenseType\022\034\n"
           + "\030LICENSE_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020LICENSE_INCLUDED\020\001\022\032\n"
@@ -159,16 +164,20 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "\013TERMINATING\020\004\022\016\n\n"
           + "TERMINATED\020\005\022\n\n"
           + "\006FAILED\020\006\022\033\n"
-          + "\027MAINTENANCE_IN_PROGRESS\020\007\"\214\001\n"
+          + "\027MAINTENANCE_IN_PROGRESS\020\007\"W\n"
+          + "\025StorageManagementType\022\'\n"
+          + "#STORAGE_MANAGEMENT_TYPE_UNSPECIFIED\020\000\022\007\n"
+          + "\003ASM\020\001\022\014\n"
+          + "\010EXASCALE\020\002\"\214\001\n"
           + "\025DataCollectionOptions\022\'\n"
           + "\032diagnostics_events_enabled\030\001 \001(\010B\003\340A\001\022&\n"
           + "\031health_monitoring_enabled\030\002 \001(\010B\003\340A\001\022\"\n"
           + "\025incident_logs_enabled\030\003 \001(\010B\003\340A\001B\355\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\023CloudVmClusterProto"
-          + "P\001ZJcloud.google.com/go/oracledatabase/a"
-          + "piv1/oracledatabasepb;oracledatabasepb\252\002"
-          + "\036Google.Cloud.OracleDatabase.V1\312\002\036Google"
-          + "\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\023CloudVmClusterProtoP\001ZJcloud.google"
+          + ".com/go/oracledatabase/apiv1/oracledatab"
+          + "asepb;oracledatabasepb\252\002\036Google.Cloud.Or"
+          + "acleDatabase.V1\312\002\036Google\\Cloud\\OracleDat"
+          + "abase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -200,6 +209,7 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
               "OdbSubnet",
               "BackupOdbSubnet",
               "IdentityConnector",
+              "ExascaleDbStorageVault",
             });
     internal_static_google_cloud_oracledatabase_v1_CloudVmCluster_LabelsEntry_descriptor =
         internal_static_google_cloud_oracledatabase_v1_CloudVmCluster_descriptor.getNestedType(0);
@@ -248,6 +258,7 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
               "DnsListenerIp",
               "ClusterName",
               "ComputeModel",
+              "StorageManagementType",
             });
     internal_static_google_cloud_oracledatabase_v1_DataCollectionOptions_descriptor =
         getDescriptor().getMessageType(2);

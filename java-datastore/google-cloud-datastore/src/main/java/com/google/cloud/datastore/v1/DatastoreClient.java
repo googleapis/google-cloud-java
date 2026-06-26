@@ -44,6 +44,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -271,6 +272,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DatastoreClient implements BackgroundResource {
   private final DatastoreSettings settings;
@@ -374,6 +376,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setReadOptions(ReadOptions.newBuilder().build())
    *           .addAllKeys(new ArrayList<Key>())
    *           .setPropertyMask(PropertyMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   LookupResponse response = datastoreClient.lookup(request);
    * }
@@ -406,6 +409,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setReadOptions(ReadOptions.newBuilder().build())
    *           .addAllKeys(new ArrayList<Key>())
    *           .setPropertyMask(PropertyMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<LookupResponse> future = datastoreClient.lookupCallable().futureCall(request);
    *   // Do something.
@@ -438,6 +442,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setReadOptions(ReadOptions.newBuilder().build())
    *           .setPropertyMask(PropertyMask.newBuilder().build())
    *           .setExplainOptions(ExplainOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   RunQueryResponse response = datastoreClient.runQuery(request);
    * }
@@ -471,6 +476,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setReadOptions(ReadOptions.newBuilder().build())
    *           .setPropertyMask(PropertyMask.newBuilder().build())
    *           .setExplainOptions(ExplainOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<RunQueryResponse> future = datastoreClient.runQueryCallable().futureCall(request);
    *   // Do something.
@@ -502,6 +508,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setPartitionId(PartitionId.newBuilder().build())
    *           .setReadOptions(ReadOptions.newBuilder().build())
    *           .setExplainOptions(ExplainOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   RunAggregationQueryResponse response = datastoreClient.runAggregationQuery(request);
    * }
@@ -534,6 +541,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setPartitionId(PartitionId.newBuilder().build())
    *           .setReadOptions(ReadOptions.newBuilder().build())
    *           .setExplainOptions(ExplainOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<RunAggregationQueryResponse> future =
    *       datastoreClient.runAggregationQueryCallable().futureCall(request);
@@ -592,6 +600,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .setTransactionOptions(TransactionOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   BeginTransactionResponse response = datastoreClient.beginTransaction(request);
    * }
@@ -622,6 +631,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .setTransactionOptions(TransactionOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<BeginTransactionResponse> future =
    *       datastoreClient.beginTransactionCallable().futureCall(request);
@@ -742,6 +752,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .addAllMutations(new ArrayList<Mutation>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   CommitResponse response = datastoreClient.commit(request);
    * }
@@ -772,6 +783,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .addAllMutations(new ArrayList<Mutation>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<CommitResponse> future = datastoreClient.commitCallable().futureCall(request);
    *   // Do something.
@@ -831,6 +843,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .setTransaction(ByteString.EMPTY)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   RollbackResponse response = datastoreClient.rollback(request);
    * }
@@ -861,6 +874,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .setTransaction(ByteString.EMPTY)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<RollbackResponse> future = datastoreClient.rollbackCallable().futureCall(request);
    *   // Do something.
@@ -922,6 +936,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .addAllKeys(new ArrayList<Key>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   AllocateIdsResponse response = datastoreClient.allocateIds(request);
    * }
@@ -953,6 +968,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .addAllKeys(new ArrayList<Key>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<AllocateIdsResponse> future =
    *       datastoreClient.allocateIdsCallable().futureCall(request);
@@ -1013,6 +1029,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .addAllKeys(new ArrayList<Key>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ReserveIdsResponse response = datastoreClient.reserveIds(request);
    * }
@@ -1043,6 +1060,7 @@ public class DatastoreClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatabaseId("databaseId1688905718")
    *           .addAllKeys(new ArrayList<Key>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<ReserveIdsResponse> future =
    *       datastoreClient.reserveIdsCallable().futureCall(request);

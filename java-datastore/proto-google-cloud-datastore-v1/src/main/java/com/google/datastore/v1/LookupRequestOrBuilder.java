@@ -232,4 +232,47 @@ public interface LookupRequestOrBuilder
    * <code>.google.datastore.v1.PropertyMask property_mask = 5;</code>
    */
   com.google.datastore.v1.PropertyMaskOrBuilder getPropertyMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  boolean hasRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  com.google.datastore.v1.RequestOptions getRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.datastore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder();
 }

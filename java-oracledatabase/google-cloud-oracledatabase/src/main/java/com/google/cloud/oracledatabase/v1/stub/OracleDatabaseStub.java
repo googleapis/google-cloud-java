@@ -57,6 +57,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -180,6 +181,7 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -187,6 +189,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class OracleDatabaseStub implements BackgroundResource {
 
@@ -241,6 +244,21 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       deleteCloudExadataInfrastructureCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteCloudExadataInfrastructureCallable()");
+  }
+
+  public OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureExascaleCloudExadataInfrastructureOperationCallable()");
+  }
+
+  public UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureExascaleCloudExadataInfrastructureCallable()");
   }
 
   public UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersPagedResponse>
