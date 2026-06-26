@@ -78,8 +78,7 @@ public interface TransportChannelProvider {
    */
   @Nullable
   default Executor getExecutor() {
-    throw new UnsupportedOperationException(
-        this.getClass().getName() + " doesnt support getExecutor()");
+    return null;
   }
 
   /** Sets the executor to use when constructing a new {@link TransportChannel}. */
