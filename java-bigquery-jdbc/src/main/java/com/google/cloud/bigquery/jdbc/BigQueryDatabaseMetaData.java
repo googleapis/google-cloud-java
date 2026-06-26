@@ -3457,7 +3457,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final FieldList resultSchemaFields = resultSchema.getFields();
 
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
-        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+        (catalog != null)
+            ? new LinkedBlockingQueue<>()
+            : new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
 
     if (catalog != null) {
       // Single-Catalog Path: completely synchronous on caller thread
@@ -4921,9 +4923,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         if (datasets != null) {
           allDatasets.addAll(datasets);
         }
-      } catch (Throwable t) {
+      } catch (Exception e) {
+        if (catalog != null) {
+          throw new SQLException("Failed to fetch matching datasets for project " + project, e);
+        }
         LOG.warning(
-            "Failed to fetch matching datasets for project " + project + ": " + t.getMessage());
+            "Failed to fetch matching datasets for project " + project + ": " + e.getMessage());
       }
     }
     return allDatasets;
