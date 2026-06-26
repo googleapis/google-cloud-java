@@ -3477,93 +3477,91 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         signalEndOfData(queue, resultSchemaFields);
       }
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
-    } else {
-      // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
-      Runnable multiSchemaFetcher =
-          () -> {
-            final FieldList localResultSchemaFields = resultSchemaFields;
-            final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
-            final List<Dataset> collectedDatasets = new ArrayList<>();
-            final List<FieldValueList> collectedResults = new ArrayList<>();
-
-            try {
-              List<String> projectsToScanList = getAccessibleCatalogNames();
-
-              if (projectsToScanList.isEmpty()) {
-                LOG.info(
-                    "No valid projects to scan (primary, specified, or additional). Returning empty"
-                        + " resultset.");
-                return;
-              }
-
-              ExecutorService apiExecutor = connection.getMetadataExecutor();
-
-              LOG.fine("Submitting parallel fetchMatchingDatasets tasks...");
-              for (String currentProjectToScan : projectsToScanList) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning("Fetcher interrupted during project iteration submission.");
-                  break;
-                }
-
-                Callable<List<Dataset>> apiCallable =
-                    () -> fetchMatchingDatasets(currentProjectToScan, schemaPattern, schemaRegex);
-                Future<List<Dataset>> apiFuture = apiExecutor.submit(apiCallable);
-                apiFutures.add(apiFuture);
-              }
-              LOG.fine(
-                  "Finished submitting " + apiFutures.size() + " fetchMatchingDatasets tasks.");
-
-              LOG.fine("Processing results from fetchMatchingDatasets tasks...");
-              for (Future<List<Dataset>> apiFuture : apiFutures) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning("Fetcher interrupted while processing API futures.");
-                  break;
-                }
-                try {
-                  List<Dataset> datasetsResult = apiFuture.get();
-                  if (datasetsResult != null) {
-                    collectedDatasets.addAll(datasetsResult);
-                  }
-                } catch (ExecutionException e) {
-                  LOG.warning(
-                      "ExecutionException in fetchMatchingDatasets task: " + e.getMessage());
-                }
-              }
-
-              for (Dataset dataset : collectedDatasets) {
-                if (Thread.currentThread().isInterrupted()) {
-                  break;
-                }
-                processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
-              }
-
-              if (!Thread.currentThread().isInterrupted()) {
-                Comparator<FieldValueList> comparator =
-                    defineGetSchemasComparator(localResultSchemaFields);
-                sortResults(collectedResults, comparator, "getSchemas", LOG);
-              }
-
-              if (!Thread.currentThread().isInterrupted()) {
-                populateQueue(collectedResults, queue, localResultSchemaFields);
-              }
-
-            } catch (Throwable t) {
-              LOG.severe("Unexpected error in multi-schema fetcher runnable: " + t.getMessage());
-              writeErrorToQueue(queue, t);
-            } finally {
-              apiFutures.forEach(f -> f.cancel(true));
-              signalEndOfData(queue, localResultSchemaFields);
-              LOG.info("Multi-schema fetcher thread finished.");
-            }
-          };
-
-      Future<?> fetcherFuture = connection.getExecutorService().submit(multiSchemaFetcher);
-      BigQueryJsonResultSet resultSet =
-          BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
-
-      LOG.info("Submitted background task for multi-catalog getSchemas to query executor");
-      return resultSet;
     }
+
+    // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
+    Runnable multiSchemaFetcher =
+        () -> {
+          final FieldList localResultSchemaFields = resultSchemaFields;
+          final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
+          final List<Dataset> collectedDatasets = new ArrayList<>();
+          final List<FieldValueList> collectedResults = new ArrayList<>();
+
+          try {
+            List<String> projectsToScanList = getAccessibleCatalogNames();
+
+            if (projectsToScanList.isEmpty()) {
+              LOG.info(
+                  "No valid projects to scan (primary, specified, or additional). Returning empty"
+                      + " resultset.");
+              return;
+            }
+
+            ExecutorService apiExecutor = connection.getMetadataExecutor();
+
+            LOG.fine("Submitting parallel fetchMatchingDatasets tasks...");
+            for (String currentProjectToScan : projectsToScanList) {
+              if (Thread.currentThread().isInterrupted()) {
+                LOG.warning("Fetcher interrupted during project iteration submission.");
+                break;
+              }
+
+              Callable<List<Dataset>> apiCallable =
+                  () -> fetchMatchingDatasets(currentProjectToScan, schemaPattern, schemaRegex);
+              Future<List<Dataset>> apiFuture = apiExecutor.submit(apiCallable);
+              apiFutures.add(apiFuture);
+            }
+            LOG.fine("Finished submitting " + apiFutures.size() + " fetchMatchingDatasets tasks.");
+
+            LOG.fine("Processing results from fetchMatchingDatasets tasks...");
+            for (Future<List<Dataset>> apiFuture : apiFutures) {
+              if (Thread.currentThread().isInterrupted()) {
+                LOG.warning("Fetcher interrupted while processing API futures.");
+                break;
+              }
+              try {
+                List<Dataset> datasetsResult = apiFuture.get();
+                if (datasetsResult != null) {
+                  collectedDatasets.addAll(datasetsResult);
+                }
+              } catch (ExecutionException e) {
+                LOG.warning("ExecutionException in fetchMatchingDatasets task: " + e.getMessage());
+              }
+            }
+
+            for (Dataset dataset : collectedDatasets) {
+              if (Thread.currentThread().isInterrupted()) {
+                break;
+              }
+              processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
+            }
+
+            if (!Thread.currentThread().isInterrupted()) {
+              Comparator<FieldValueList> comparator =
+                  defineGetSchemasComparator(localResultSchemaFields);
+              sortResults(collectedResults, comparator, "getSchemas", LOG);
+            }
+
+            if (!Thread.currentThread().isInterrupted()) {
+              populateQueue(collectedResults, queue, localResultSchemaFields);
+            }
+
+          } catch (Throwable t) {
+            LOG.severe("Unexpected error in multi-schema fetcher runnable: " + t.getMessage());
+            writeErrorToQueue(queue, t);
+          } finally {
+            apiFutures.forEach(f -> f.cancel(true));
+            signalEndOfData(queue, localResultSchemaFields);
+            LOG.info("Multi-schema fetcher thread finished.");
+          }
+        };
+
+    Future<?> fetcherFuture = connection.getExecutorService().submit(multiSchemaFetcher);
+    BigQueryJsonResultSet resultSet =
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
+
+    LOG.info("Submitted background task for multi-catalog getSchemas to query executor");
+    return resultSet;
   }
 
   Schema defineGetSchemasSchema() {
