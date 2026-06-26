@@ -2955,7 +2955,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetSchemas_NoArgs_DelegatesCorrectly() {
+  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws SQLException {
     BigQueryDatabaseMetaData spiedDbMetadata = spy(dbMetadata);
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
@@ -3311,6 +3311,130 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(
         metadataTypeInfo.jdbcType, (int) resultSetType, "Type mapping mismatch for " + type);
+  }
+
+  @Test
+  public void testGetCatalogs_WithProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(true);
+    when(bigQueryConnection.getDiscoveredProjects())
+        .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
+
+    ResultSet rs = dbMetadata.getCatalogs();
+    assertNotNull(rs);
+
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      catalogs.add(rs.getString("TABLE_CAT"));
+    }
+
+    assertThat(catalogs)
+        .containsExactly(
+            "additional-1", "additional-2", "discovered-1", "discovered-2", "primary-project")
+        .inOrder();
+  }
+
+  @Test
+  public void testGetCatalogs_WithoutProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+    when(bigQueryConnection.getDiscoveredProjects())
+        .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
+
+    ResultSet rs = dbMetadata.getCatalogs();
+    assertNotNull(rs);
+
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      catalogs.add(rs.getString("TABLE_CAT"));
+    }
+
+    assertThat(catalogs)
+        .containsExactly("additional-1", "additional-2", "primary-project")
+        .inOrder();
+  }
+
+  @Test
+  public void testGetSchemas_WithProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(true);
+    when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
+
+    Page<Dataset> pagePrimary = mock(Page.class);
+    Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(eq("primary-project"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pagePrimary);
+
+    Page<Dataset> pageAdditional = mock(Page.class);
+    Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
+    when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pageAdditional);
+
+    Page<Dataset> pageDiscovered = mock(Page.class);
+    Dataset dsDiscovered = mockBigQueryDataset("discovered-1", "dataset_d");
+    when(pageDiscovered.iterateAll()).thenReturn(Collections.singletonList(dsDiscovered));
+    when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pageDiscovered);
+
+    ResultSet rs = dbMetadata.getSchemas(null, null);
+    assertNotNull(rs);
+
+    List<String> schemas = new ArrayList<>();
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      schemas.add(rs.getString("TABLE_SCHEM"));
+      catalogs.add(rs.getString("TABLE_CATALOG"));
+    }
+
+    // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+    // alphabetical catalog: "additional-1", "discovered-1", "primary-project"
+    assertThat(catalogs)
+        .containsExactly("additional-1", "discovered-1", "primary-project")
+        .inOrder();
+    assertThat(schemas).containsExactly("dataset_a", "dataset_d", "dataset_p").inOrder();
+  }
+
+  @Test
+  public void testGetSchemas_WithoutProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+    when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
+
+    Page<Dataset> pagePrimary = mock(Page.class);
+    Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(eq("primary-project"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pagePrimary);
+
+    Page<Dataset> pageAdditional = mock(Page.class);
+    Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
+    when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pageAdditional);
+
+    ResultSet rs = dbMetadata.getSchemas(null, null);
+    assertNotNull(rs);
+
+    List<String> schemas = new ArrayList<>();
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      schemas.add(rs.getString("TABLE_SCHEM"));
+      catalogs.add(rs.getString("TABLE_CATALOG"));
+    }
+
+    // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+    // alphabetical catalog: "additional-1", "primary-project" (discovered-1 is ignored)
+    assertThat(catalogs).containsExactly("additional-1", "primary-project").inOrder();
+    assertThat(schemas).containsExactly("dataset_a", "dataset_p").inOrder();
+
+    verify(bigqueryClient, never())
+        .listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class));
   }
 
   @Test
