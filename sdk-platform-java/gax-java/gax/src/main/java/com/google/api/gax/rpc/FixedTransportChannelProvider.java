@@ -36,7 +36,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nullable;
 
 /** An instance of TransportChannelProvider that always provides the same TransportChannel. */
 @InternalExtensionOnly
