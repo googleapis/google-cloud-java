@@ -48,8 +48,8 @@ import com.google.api.generator.engine.ast.ReferenceConstructorExpr;
 import com.google.api.generator.engine.ast.RelationalOperationExpr;
 import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
-import com.google.api.generator.engine.ast.SuperObjectValue;
 import com.google.api.generator.engine.ast.StringObjectValue;
+import com.google.api.generator.engine.ast.SuperObjectValue;
 import com.google.api.generator.engine.ast.TernaryExpr;
 import com.google.api.generator.engine.ast.ThisObjectValue;
 import com.google.api.generator.engine.ast.TypeNode;
@@ -766,7 +766,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                   methodArg -> {
                     TypeNode argType = methodArg.type();
                     if (methodArg.isResourceNameHelper() && !methodArg.field().isRequired()) {
-                      argType = TypeNode.withReference(argType.reference().copyAndSetNullable(true));
+                      argType =
+                          TypeNode.withReference(argType.reference().copyAndSetNullable(true));
                     }
                     VariableExpr.Builder argBuilder =
                         VariableExpr.builder()
@@ -1469,7 +1470,9 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
         VariableExpr.withVariable(
             Variable.builder()
                 .setName("response")
-                .setType(TypeNode.withReference(method.outputType().reference().copyAndSetNullable(true)))
+                .setType(
+                    TypeNode.withReference(
+                        method.outputType().reference().copyAndSetNullable(true)))
                 .build());
     MethodDefinition privateCtor =
         MethodDefinition.constructorBuilder()

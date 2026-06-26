@@ -503,7 +503,9 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
         VariableExpr.withVariable(
             Variable.builder()
                 .setName("clientContext")
-                .setType(TypeNode.withReference(FIXED_TYPESTORE.get("ClientContext").reference().copyAndSetNullable(true)))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE.get("ClientContext").reference().copyAndSetNullable(true)))
                 .build());
 
     MethodDefinition newBuilderMethodTwo =
@@ -618,7 +620,9 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
         VariableExpr.withVariable(
             Variable.builder()
                 .setName("clientContext")
-                .setType(TypeNode.withReference(FIXED_TYPESTORE.get("ClientContext").reference().copyAndSetNullable(true)))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE.get("ClientContext").reference().copyAndSetNullable(true)))
                 .build());
     MethodDefinition clientContextCtor =
         ctorMakerFn.apply(
