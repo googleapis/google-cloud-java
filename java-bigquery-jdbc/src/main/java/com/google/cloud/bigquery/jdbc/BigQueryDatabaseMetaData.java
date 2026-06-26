@@ -884,13 +884,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in procedure fetcher runnable: " + t.getMessage());
-            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, t);
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
@@ -1101,25 +1095,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     + catalogParam
                     + ". Error: "
                     + e.getMessage());
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(e));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, e);
           } catch (Throwable t) {
             LOG.severe(
                 "Fetcher: Unexpected error in main try block for catalog "
                     + catalogParam
                     + ". Error: "
                     + t.getMessage());
-            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, t);
           } finally {
             signalEndOfData(queue, resultSchema.getFields());
             LOG.info("Procedure column fetcher thread finished for catalog: " + catalogParam);
@@ -1721,13 +1704,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in table fetcher runnable: " + t.getMessage());
-            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, t);
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
@@ -2044,13 +2021,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
           } catch (Throwable t) {
             LOG.severe("Unexpected error in column fetcher runnable: " + t.getMessage());
-            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, t);
           } finally {
             taskFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
@@ -3501,13 +3472,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         populateQueue(collectedResults, queue, resultSchemaFields);
       } catch (Throwable t) {
         LOG.severe("Unexpected error in synchronous getSchemas: " + t.getMessage());
-        Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-        try {
-          queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-        } catch (InterruptedException ie) {
-          LOG.warning("Failed to put exception to queue due to interruption.");
-          Thread.currentThread().interrupt();
-        }
+        writeErrorToQueue(queue, t);
       } finally {
         signalEndOfData(queue, resultSchemaFields);
       }
@@ -3584,13 +3549,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
             } catch (Throwable t) {
               LOG.severe("Unexpected error in multi-schema fetcher runnable: " + t.getMessage());
-              Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-              try {
-                queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-              } catch (InterruptedException ie) {
-                LOG.warning("Failed to put exception to queue due to interruption.");
-                Thread.currentThread().interrupt();
-              }
+              writeErrorToQueue(queue, t);
             } finally {
               apiFutures.forEach(f -> f.cancel(true));
               signalEndOfData(queue, localResultSchemaFields);
@@ -3862,13 +3821,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             populateQueue(collectedResults, queue, localResultSchemaFields);
           } catch (Throwable t) {
             LOG.severe("Unexpected error in function fetcher runnable: " + t.getMessage());
-            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, t);
           } finally {
             apiFutures.forEach(f -> f.cancel(true));
             signalEndOfData(queue, localResultSchemaFields);
@@ -4061,25 +4014,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     + catalogParam
                     + ". Error: "
                     + e.getMessage());
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(e));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, e);
           } catch (Throwable t) {
             LOG.severe(
                 "Fetcher: Unexpected error in main try block for catalog "
                     + catalogParam
                     + ". Error: "
                     + t.getMessage());
-            Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
-            try {
-              queue.put(BigQueryFieldValueListWrapper.ofError(ex));
-            } catch (InterruptedException ie) {
-              LOG.warning("Failed to put exception to queue due to interruption.");
-              Thread.currentThread().interrupt();
-            }
+            writeErrorToQueue(queue, t);
           } finally {
             signalEndOfData(queue, resultSchemaFields);
             LOG.info("Function column fetcher thread finished for catalog: " + catalogParam);
@@ -4959,21 +4901,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  private String getCurrentCatalogName() {
-    return this.connection.getCatalog();
-  }
-
-  private List<String> getProjectsToScan(String catalog) throws SQLException {
-    if (catalog != null) {
-      return Collections.singletonList(catalog);
-    } else {
-      return getAccessibleCatalogNames();
-    }
-  }
-
   private List<Dataset> fetchMatchingDatasets(
       String catalog, String schemaPattern, Pattern schemaRegex) throws SQLException {
-    List<String> projects = getProjectsToScan(catalog);
+    List<String> projects =
+        (catalog != null) ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
     List<Dataset> allDatasets = new ArrayList<>();
     for (String project : projects) {
       if (Thread.currentThread().isInterrupted()) {
@@ -5002,7 +4933,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private List<String> getAccessibleCatalogNames() throws SQLException {
     Set<String> accessibleCatalogs = new HashSet<>();
-    String primaryCatalog = getCurrentCatalogName();
+    String primaryCatalog = this.connection.getCatalog();
     if (primaryCatalog != null && !primaryCatalog.isEmpty()) {
       accessibleCatalogs.add(primaryCatalog);
     }
@@ -5046,5 +4977,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   String replaceSqlParameters(String sql, String... params) throws SQLException {
     return String.format(sql, (Object[]) params);
+  }
+
+  private void writeErrorToQueue(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable t) {
+    Exception ex = (t instanceof Exception) ? (Exception) t : new Exception(t);
+    try {
+      queue.put(BigQueryFieldValueListWrapper.ofError(ex));
+    } catch (InterruptedException ie) {
+      LOG.warning("Failed to put exception to queue due to interruption.");
+      Thread.currentThread().interrupt();
+    }
   }
 }
