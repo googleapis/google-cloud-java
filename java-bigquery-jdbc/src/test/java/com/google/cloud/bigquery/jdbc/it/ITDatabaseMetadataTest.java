@@ -937,9 +937,9 @@ public class ITDatabaseMetadataTest extends ITBase {
         rsEmptyFunction.next(), "Empty function name pattern should return no results");
     rsEmptyFunction.close();
 
-    // Test 9: Null catalog
+    // Test 9: Null catalog should return all functions (spec-compliant)
     ResultSet rsNullCatalog = databaseMetaData.getFunctions(null, testSchema, null);
-    Assertions.assertFalse(rsNullCatalog.next(), "Null catalog should return no results");
+    Assertions.assertTrue(rsNullCatalog.next(), "Null catalog should return results");
     rsNullCatalog.close();
     connection.close();
   }

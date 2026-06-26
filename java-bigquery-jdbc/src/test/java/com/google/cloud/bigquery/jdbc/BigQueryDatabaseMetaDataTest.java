@@ -1017,7 +1017,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListWithPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = "proc_%";
@@ -1063,7 +1063,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() {
+  public void testFindMatchingBigQueryObjects_Routines_ListNoPattern() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String pattern = null;
@@ -1102,7 +1102,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() {
+  public void testFindMatchingBigQueryObjects_Routines_GetSpecific() throws Exception {
     String catalog = "p-cat";
     String schema = "d-sch";
     String procNameExact = "exactprocname";

@@ -4585,7 +4585,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<T, String> nameExtractor,
       String pattern,
       Pattern regex,
-      BigQueryJdbcCustomLogger logger) {
+      BigQueryJdbcCustomLogger logger)
+      throws InterruptedException {
 
     boolean needsList = needsListing(pattern);
     List<T> resultList = new ArrayList<>();
@@ -4639,14 +4640,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         logger.warning(
             "BigQueryException finding %ss for pattern '%s': %s (Code: %d)",
             objectTypeName, pattern, e.getMessage(), e.getCode());
+        throw e;
       }
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
       logger.warning("Interrupted while finding " + objectTypeName + "s.");
+      throw e;
     } catch (Exception e) {
       logger.severe(
           "Unexpected exception finding %ss for pattern '%s': %s",
           objectTypeName, pattern, e.getMessage());
+      throw new RuntimeException(e);
     }
     return resultList;
   }
@@ -4923,6 +4927,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         if (datasets != null) {
           allDatasets.addAll(datasets);
         }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        break;
       } catch (Exception e) {
         if (catalog != null) {
           throw new SQLException("Failed to fetch matching datasets for project " + project, e);
