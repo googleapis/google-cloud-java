@@ -741,8 +741,7 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteBucket(BucketName name) {
-    DeleteBucketRequest request =
-        DeleteBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    DeleteBucketRequest request = DeleteBucketRequest.newBuilder().setName(name.toString()).build();
     deleteBucket(request);
   }
 
@@ -853,8 +852,7 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Bucket getBucket(BucketName name) {
-    GetBucketRequest request =
-        GetBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    GetBucketRequest request = GetBucketRequest.newBuilder().setName(name.toString()).build();
     return getBucket(request);
   }
 
@@ -977,7 +975,7 @@ public class StorageClient implements BackgroundResource {
   public final Bucket createBucket(ProjectName parent, Bucket bucket, String bucketId) {
     CreateBucketRequest request =
         CreateBucketRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setBucket(bucket)
             .setBucketId(bucketId)
             .build();
@@ -1111,9 +1109,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final ListBucketsPagedResponse listBuckets(ProjectName parent) {
     ListBucketsRequest request =
-        ListBucketsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListBucketsRequest.newBuilder().setParent(parent.toString()).build();
     return listBuckets(request);
   }
 
@@ -1276,9 +1272,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final Bucket lockBucketRetentionPolicy(BucketName bucket) {
     LockBucketRetentionPolicyRequest request =
-        LockBucketRetentionPolicyRequest.newBuilder()
-            .setBucket(bucket == null ? null : bucket.toString())
-            .build();
+        LockBucketRetentionPolicyRequest.newBuilder().setBucket(bucket.toString()).build();
     return lockBucketRetentionPolicy(request);
   }
 
@@ -1395,9 +1389,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final Policy getIamPolicy(ResourceName resource) {
     GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .build();
+        GetIamPolicyRequest.newBuilder().setResource(resource.toString()).build();
     return getIamPolicy(request);
   }
 
@@ -1527,10 +1519,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final Policy setIamPolicy(ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
-        SetIamPolicyRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
-            .setPolicy(policy)
-            .build();
+        SetIamPolicyRequest.newBuilder().setResource(resource.toString()).setPolicy(policy).build();
     return setIamPolicy(request);
   }
 
@@ -1670,7 +1659,7 @@ public class StorageClient implements BackgroundResource {
       ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(resource == null ? null : resource.toString())
+            .setResource(resource.toString())
             .addAllPermissions(permissions)
             .build();
     return testIamPermissions(request);
@@ -1909,9 +1898,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final void deleteNotification(NotificationName name) {
     DeleteNotificationRequest request =
-        DeleteNotificationRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
+        DeleteNotificationRequest.newBuilder().setName(name.toString()).build();
     deleteNotification(request);
   }
 
@@ -2021,7 +2008,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final Notification getNotification(BucketName name) {
     GetNotificationRequest request =
-        GetNotificationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        GetNotificationRequest.newBuilder().setName(name.toString()).build();
     return getNotification(request);
   }
 
@@ -2135,7 +2122,7 @@ public class StorageClient implements BackgroundResource {
   public final Notification createNotification(ProjectName parent, Notification notification) {
     CreateNotificationRequest request =
         CreateNotificationRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setNotification(notification)
             .build();
     return createNotification(request);
@@ -2262,9 +2249,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final ListNotificationsPagedResponse listNotifications(ProjectName parent) {
     ListNotificationsRequest request =
-        ListNotificationsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListNotificationsRequest.newBuilder().setParent(parent.toString()).build();
     return listNotifications(request);
   }
 
@@ -3090,9 +3075,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final ListObjectsPagedResponse listObjects(ProjectName parent) {
     ListObjectsRequest request =
-        ListObjectsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListObjectsRequest.newBuilder().setParent(parent.toString()).build();
     return listObjects(request);
   }
 
@@ -3554,9 +3537,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final ServiceAccount getServiceAccount(ProjectName project) {
     GetServiceAccountRequest request =
-        GetServiceAccountRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
-            .build();
+        GetServiceAccountRequest.newBuilder().setProject(project.toString()).build();
     return getServiceAccount(request);
   }
 
@@ -3673,7 +3654,7 @@ public class StorageClient implements BackgroundResource {
       ProjectName project, String serviceAccountEmail) {
     CreateHmacKeyRequest request =
         CreateHmacKeyRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
+            .setProject(project.toString())
             .setServiceAccountEmail(serviceAccountEmail)
             .build();
     return createHmacKey(request);
@@ -3800,7 +3781,7 @@ public class StorageClient implements BackgroundResource {
     DeleteHmacKeyRequest request =
         DeleteHmacKeyRequest.newBuilder()
             .setAccessId(accessId)
-            .setProject(project == null ? null : project.toString())
+            .setProject(project.toString())
             .build();
     deleteHmacKey(request);
   }
@@ -3920,10 +3901,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final HmacKeyMetadata getHmacKey(String accessId, ProjectName project) {
     GetHmacKeyRequest request =
-        GetHmacKeyRequest.newBuilder()
-            .setAccessId(accessId)
-            .setProject(project == null ? null : project.toString())
-            .build();
+        GetHmacKeyRequest.newBuilder().setAccessId(accessId).setProject(project.toString()).build();
     return getHmacKey(request);
   }
 
@@ -4042,9 +4020,7 @@ public class StorageClient implements BackgroundResource {
    */
   public final ListHmacKeysPagedResponse listHmacKeys(ProjectName project) {
     ListHmacKeysRequest request =
-        ListHmacKeysRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
-            .build();
+        ListHmacKeysRequest.newBuilder().setProject(project.toString()).build();
     return listHmacKeys(request);
   }
 
@@ -4332,8 +4308,8 @@ public class StorageClient implements BackgroundResource {
       extends AbstractPage<ListBucketsRequest, ListBucketsResponse, Bucket, ListBucketsPage> {
 
     private ListBucketsPage(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
-        ListBucketsResponse response) {
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable ListBucketsResponse response) {
       super(context, response);
     }
 
@@ -4343,14 +4319,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListBucketsPage createPage(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
-        ListBucketsResponse response) {
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable ListBucketsResponse response) {
       return new ListBucketsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBucketsPage> createPageAsync(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
         ApiFuture<ListBucketsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4364,7 +4340,8 @@ public class StorageClient implements BackgroundResource {
           ListBucketsPage,
           ListBucketsFixedSizeCollection> {
 
-    private ListBucketsFixedSizeCollection(List<ListBucketsPage> pages, int collectionSize) {
+    private ListBucketsFixedSizeCollection(
+        @Nullable List<ListBucketsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4374,7 +4351,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListBucketsFixedSizeCollection createCollection(
-        List<ListBucketsPage> pages, int collectionSize) {
+        @Nullable List<ListBucketsPage> pages, int collectionSize) {
       return new ListBucketsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4411,8 +4388,9 @@ public class StorageClient implements BackgroundResource {
           ListNotificationsPage> {
 
     private ListNotificationsPage(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
-        ListNotificationsResponse response) {
+        @Nullable
+            PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable ListNotificationsResponse response) {
       super(context, response);
     }
 
@@ -4422,14 +4400,16 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListNotificationsPage createPage(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
-        ListNotificationsResponse response) {
+        @Nullable
+            PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable ListNotificationsResponse response) {
       return new ListNotificationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationsPage> createPageAsync(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable
+            PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
         ApiFuture<ListNotificationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4444,7 +4424,7 @@ public class StorageClient implements BackgroundResource {
           ListNotificationsFixedSizeCollection> {
 
     private ListNotificationsFixedSizeCollection(
-        List<ListNotificationsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4454,7 +4434,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListNotificationsFixedSizeCollection createCollection(
-        List<ListNotificationsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationsPage> pages, int collectionSize) {
       return new ListNotificationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4485,8 +4465,8 @@ public class StorageClient implements BackgroundResource {
       extends AbstractPage<ListObjectsRequest, ListObjectsResponse, Object, ListObjectsPage> {
 
     private ListObjectsPage(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
-        ListObjectsResponse response) {
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable ListObjectsResponse response) {
       super(context, response);
     }
 
@@ -4496,14 +4476,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListObjectsPage createPage(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
-        ListObjectsResponse response) {
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable ListObjectsResponse response) {
       return new ListObjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListObjectsPage> createPageAsync(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
         ApiFuture<ListObjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4517,7 +4497,8 @@ public class StorageClient implements BackgroundResource {
           ListObjectsPage,
           ListObjectsFixedSizeCollection> {
 
-    private ListObjectsFixedSizeCollection(List<ListObjectsPage> pages, int collectionSize) {
+    private ListObjectsFixedSizeCollection(
+        @Nullable List<ListObjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4527,7 +4508,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListObjectsFixedSizeCollection createCollection(
-        List<ListObjectsPage> pages, int collectionSize) {
+        @Nullable List<ListObjectsPage> pages, int collectionSize) {
       return new ListObjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4561,8 +4542,8 @@ public class StorageClient implements BackgroundResource {
           ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata, ListHmacKeysPage> {
 
     private ListHmacKeysPage(
-        PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
-        ListHmacKeysResponse response) {
+        @Nullable PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
+        @Nullable ListHmacKeysResponse response) {
       super(context, response);
     }
 
@@ -4572,14 +4553,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListHmacKeysPage createPage(
-        PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
-        ListHmacKeysResponse response) {
+        @Nullable PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
+        @Nullable ListHmacKeysResponse response) {
       return new ListHmacKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHmacKeysPage> createPageAsync(
-        PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
+        @Nullable PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
         ApiFuture<ListHmacKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4593,7 +4574,8 @@ public class StorageClient implements BackgroundResource {
           ListHmacKeysPage,
           ListHmacKeysFixedSizeCollection> {
 
-    private ListHmacKeysFixedSizeCollection(List<ListHmacKeysPage> pages, int collectionSize) {
+    private ListHmacKeysFixedSizeCollection(
+        @Nullable List<ListHmacKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4603,7 +4585,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListHmacKeysFixedSizeCollection createCollection(
-        List<ListHmacKeysPage> pages, int collectionSize) {
+        @Nullable List<ListHmacKeysPage> pages, int collectionSize) {
       return new ListHmacKeysFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -222,9 +222,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    */
   public final ListConnectionsPagedResponse listConnections(EndpointName parent) {
     ListConnectionsRequest request =
-        ListConnectionsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListConnectionsRequest.newBuilder().setParent(parent.toString()).build();
     return listConnections(request);
   }
 
@@ -421,8 +419,8 @@ public class ConnectionServiceClient implements BackgroundResource {
           ListConnectionsRequest, ListConnectionsResponse, Connection, ListConnectionsPage> {
 
     private ListConnectionsPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       super(context, response);
     }
 
@@ -432,14 +430,14 @@ public class ConnectionServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsPage createPage(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
-        ListConnectionsResponse response) {
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable ListConnectionsResponse response) {
       return new ListConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionsPage> createPageAsync(
-        PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
+        @Nullable PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> context,
         ApiFuture<ListConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -454,7 +452,7 @@ public class ConnectionServiceClient implements BackgroundResource {
           ListConnectionsFixedSizeCollection> {
 
     private ListConnectionsFixedSizeCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -464,7 +462,7 @@ public class ConnectionServiceClient implements BackgroundResource {
 
     @Override
     protected ListConnectionsFixedSizeCollection createCollection(
-        List<ListConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionsPage> pages, int collectionSize) {
       return new ListConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }

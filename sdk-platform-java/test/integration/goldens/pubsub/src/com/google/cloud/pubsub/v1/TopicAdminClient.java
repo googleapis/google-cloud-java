@@ -413,7 +413,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic createTopic(TopicName name) {
-    Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
+    Topic request = Topic.newBuilder().setName(name.toString()).build();
     return createTopic(request);
   }
 
@@ -600,10 +600,7 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
     PublishRequest request =
-        PublishRequest.newBuilder()
-            .setTopic(topic == null ? null : topic.toString())
-            .addAllMessages(messages)
-            .build();
+        PublishRequest.newBuilder().setTopic(topic.toString()).addAllMessages(messages).build();
     return publish(request);
   }
 
@@ -717,8 +714,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Topic getTopic(TopicName topic) {
-    GetTopicRequest request =
-        GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
+    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic.toString()).build();
     return getTopic(request);
   }
 
@@ -830,9 +826,7 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final ListTopicsPagedResponse listTopics(ProjectName project) {
     ListTopicsRequest request =
-        ListTopicsRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
-            .build();
+        ListTopicsRequest.newBuilder().setProject(project.toString()).build();
     return listTopics(request);
   }
 
@@ -992,9 +986,7 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(TopicName topic) {
     ListTopicSubscriptionsRequest request =
-        ListTopicSubscriptionsRequest.newBuilder()
-            .setTopic(topic == null ? null : topic.toString())
-            .build();
+        ListTopicSubscriptionsRequest.newBuilder().setTopic(topic.toString()).build();
     return listTopicSubscriptions(request);
   }
 
@@ -1163,9 +1155,7 @@ public class TopicAdminClient implements BackgroundResource {
    */
   public final ListTopicSnapshotsPagedResponse listTopicSnapshots(TopicName topic) {
     ListTopicSnapshotsRequest request =
-        ListTopicSnapshotsRequest.newBuilder()
-            .setTopic(topic == null ? null : topic.toString())
-            .build();
+        ListTopicSnapshotsRequest.newBuilder().setTopic(topic.toString()).build();
     return listTopicSnapshots(request);
   }
 
@@ -1343,8 +1333,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTopic(TopicName topic) {
-    DeleteTopicRequest request =
-        DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
+    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic.toString()).build();
     deleteTopic(request);
   }
 
@@ -1747,8 +1736,8 @@ public class TopicAdminClient implements BackgroundResource {
       extends AbstractPage<ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage> {
 
     private ListTopicsPage(
-        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
-        ListTopicsResponse response) {
+        @Nullable PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        @Nullable ListTopicsResponse response) {
       super(context, response);
     }
 
@@ -1758,14 +1747,14 @@ public class TopicAdminClient implements BackgroundResource {
 
     @Override
     protected ListTopicsPage createPage(
-        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
-        ListTopicsResponse response) {
+        @Nullable PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        @Nullable ListTopicsResponse response) {
       return new ListTopicsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTopicsPage> createPageAsync(
-        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        @Nullable PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
         ApiFuture<ListTopicsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1779,7 +1768,8 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicsPage,
           ListTopicsFixedSizeCollection> {
 
-    private ListTopicsFixedSizeCollection(List<ListTopicsPage> pages, int collectionSize) {
+    private ListTopicsFixedSizeCollection(
+        @Nullable List<ListTopicsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1789,7 +1779,7 @@ public class TopicAdminClient implements BackgroundResource {
 
     @Override
     protected ListTopicsFixedSizeCollection createCollection(
-        List<ListTopicsPage> pages, int collectionSize) {
+        @Nullable List<ListTopicsPage> pages, int collectionSize) {
       return new ListTopicsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1826,8 +1816,10 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicSubscriptionsPage> {
 
     private ListTopicSubscriptionsPage(
-        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
-        ListTopicSubscriptionsResponse response) {
+        @Nullable
+            PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+                context,
+        @Nullable ListTopicSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -1837,14 +1829,18 @@ public class TopicAdminClient implements BackgroundResource {
 
     @Override
     protected ListTopicSubscriptionsPage createPage(
-        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
-        ListTopicSubscriptionsResponse response) {
+        @Nullable
+            PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+                context,
+        @Nullable ListTopicSubscriptionsResponse response) {
       return new ListTopicSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTopicSubscriptionsPage> createPageAsync(
-        PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
+        @Nullable
+            PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+                context,
         ApiFuture<ListTopicSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1859,7 +1855,7 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicSubscriptionsFixedSizeCollection> {
 
     private ListTopicSubscriptionsFixedSizeCollection(
-        List<ListTopicSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListTopicSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1869,7 +1865,7 @@ public class TopicAdminClient implements BackgroundResource {
 
     @Override
     protected ListTopicSubscriptionsFixedSizeCollection createCollection(
-        List<ListTopicSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListTopicSubscriptionsPage> pages, int collectionSize) {
       return new ListTopicSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1903,8 +1899,9 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String, ListTopicSnapshotsPage> {
 
     private ListTopicSnapshotsPage(
-        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
-        ListTopicSnapshotsResponse response) {
+        @Nullable
+            PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        @Nullable ListTopicSnapshotsResponse response) {
       super(context, response);
     }
 
@@ -1914,14 +1911,16 @@ public class TopicAdminClient implements BackgroundResource {
 
     @Override
     protected ListTopicSnapshotsPage createPage(
-        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
-        ListTopicSnapshotsResponse response) {
+        @Nullable
+            PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        @Nullable ListTopicSnapshotsResponse response) {
       return new ListTopicSnapshotsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTopicSnapshotsPage> createPageAsync(
-        PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
+        @Nullable
+            PageContext<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse, String> context,
         ApiFuture<ListTopicSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1936,7 +1935,7 @@ public class TopicAdminClient implements BackgroundResource {
           ListTopicSnapshotsFixedSizeCollection> {
 
     private ListTopicSnapshotsFixedSizeCollection(
-        List<ListTopicSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListTopicSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1946,7 +1945,7 @@ public class TopicAdminClient implements BackgroundResource {
 
     @Override
     protected ListTopicSnapshotsFixedSizeCollection createCollection(
-        List<ListTopicSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListTopicSnapshotsPage> pages, int collectionSize) {
       return new ListTopicSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }

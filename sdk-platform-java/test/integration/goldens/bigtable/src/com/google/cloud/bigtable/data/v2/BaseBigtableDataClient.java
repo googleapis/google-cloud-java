@@ -392,7 +392,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       TableName tableName, ByteString rowKey, List<Mutation> mutations) {
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
-            .setTableName(tableName == null ? null : tableName.toString())
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .addAllMutations(mutations)
             .build();
@@ -478,7 +478,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       TableName tableName, ByteString rowKey, List<Mutation> mutations, String appProfileId) {
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
-            .setTableName(tableName == null ? null : tableName.toString())
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .addAllMutations(mutations)
             .setAppProfileId(appProfileId)
@@ -677,7 +677,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       List<Mutation> falseMutations) {
     CheckAndMutateRowRequest request =
         CheckAndMutateRowRequest.newBuilder()
-            .setTableName(tableName == null ? null : tableName.toString())
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .setPredicateFilter(predicateFilter)
             .addAllTrueMutations(trueMutations)
@@ -797,7 +797,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       String appProfileId) {
     CheckAndMutateRowRequest request =
         CheckAndMutateRowRequest.newBuilder()
-            .setTableName(tableName == null ? null : tableName.toString())
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .setPredicateFilter(predicateFilter)
             .addAllTrueMutations(trueMutations)
@@ -961,8 +961,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PingAndWarmResponse pingAndWarm(InstanceName name) {
-    PingAndWarmRequest request =
-        PingAndWarmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    PingAndWarmRequest request = PingAndWarmRequest.newBuilder().setName(name.toString()).build();
     return pingAndWarm(request);
   }
 
@@ -1023,7 +1022,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
   public final PingAndWarmResponse pingAndWarm(InstanceName name, String appProfileId) {
     PingAndWarmRequest request =
         PingAndWarmRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .setAppProfileId(appProfileId)
             .build();
     return pingAndWarm(request);
@@ -1159,7 +1158,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       TableName tableName, ByteString rowKey, List<ReadModifyWriteRule> rules) {
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableName(tableName == null ? null : tableName.toString())
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .addAllRules(rules)
             .build();
@@ -1255,7 +1254,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
       String appProfileId) {
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableName(tableName == null ? null : tableName.toString())
+            .setTableName(tableName.toString())
             .setRowKey(rowKey)
             .addAllRules(rules)
             .setAppProfileId(appProfileId)

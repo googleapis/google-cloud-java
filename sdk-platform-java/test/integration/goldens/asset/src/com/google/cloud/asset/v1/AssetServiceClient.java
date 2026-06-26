@@ -708,8 +708,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAssetsPagedResponse listAssets(ResourceName parent) {
-    ListAssetsRequest request =
-        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    ListAssetsRequest request = ListAssetsRequest.newBuilder().setParent(parent.toString()).build();
     return listAssets(request);
   }
 
@@ -1043,8 +1042,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feed getFeed(FeedName name) {
-    GetFeedRequest request =
-        GetFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    GetFeedRequest request = GetFeedRequest.newBuilder().setName(name.toString()).build();
     return getFeed(request);
   }
 
@@ -1320,8 +1318,7 @@ public class AssetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFeed(FeedName name) {
-    DeleteFeedRequest request =
-        DeleteFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    DeleteFeedRequest request = DeleteFeedRequest.newBuilder().setName(name.toString()).build();
     deleteFeed(request);
   }
 
@@ -2214,7 +2211,7 @@ public class AssetServiceClient implements BackgroundResource {
       FolderName parent, SavedQuery savedQuery, String savedQueryId) {
     CreateSavedQueryRequest request =
         CreateSavedQueryRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setSavedQuery(savedQuery)
             .setSavedQueryId(savedQueryId)
             .build();
@@ -2258,7 +2255,7 @@ public class AssetServiceClient implements BackgroundResource {
       OrganizationName parent, SavedQuery savedQuery, String savedQueryId) {
     CreateSavedQueryRequest request =
         CreateSavedQueryRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setSavedQuery(savedQuery)
             .setSavedQueryId(savedQueryId)
             .build();
@@ -2302,7 +2299,7 @@ public class AssetServiceClient implements BackgroundResource {
       ProjectName parent, SavedQuery savedQuery, String savedQueryId) {
     CreateSavedQueryRequest request =
         CreateSavedQueryRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setSavedQuery(savedQuery)
             .setSavedQueryId(savedQueryId)
             .build();
@@ -2442,7 +2439,7 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final SavedQuery getSavedQuery(SavedQueryName name) {
     GetSavedQueryRequest request =
-        GetSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        GetSavedQueryRequest.newBuilder().setName(name.toString()).build();
     return getSavedQuery(request);
   }
 
@@ -2562,9 +2559,7 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final ListSavedQueriesPagedResponse listSavedQueries(FolderName parent) {
     ListSavedQueriesRequest request =
-        ListSavedQueriesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListSavedQueriesRequest.newBuilder().setParent(parent.toString()).build();
     return listSavedQueries(request);
   }
 
@@ -2595,9 +2590,7 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final ListSavedQueriesPagedResponse listSavedQueries(OrganizationName parent) {
     ListSavedQueriesRequest request =
-        ListSavedQueriesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListSavedQueriesRequest.newBuilder().setParent(parent.toString()).build();
     return listSavedQueries(request);
   }
 
@@ -2628,9 +2621,7 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final ListSavedQueriesPagedResponse listSavedQueries(ProjectName parent) {
     ListSavedQueriesRequest request =
-        ListSavedQueriesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListSavedQueriesRequest.newBuilder().setParent(parent.toString()).build();
     return listSavedQueries(request);
   }
 
@@ -2900,7 +2891,7 @@ public class AssetServiceClient implements BackgroundResource {
    */
   public final void deleteSavedQuery(SavedQueryName name) {
     DeleteSavedQueryRequest request =
-        DeleteSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        DeleteSavedQueryRequest.newBuilder().setName(name.toString()).build();
     deleteSavedQuery(request);
   }
 
@@ -3111,8 +3102,8 @@ public class AssetServiceClient implements BackgroundResource {
       extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -3122,14 +3113,14 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3143,7 +3134,8 @@ public class AssetServiceClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3153,7 +3145,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3191,9 +3183,10 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllResourcesPage> {
 
     private SearchAllResourcesPage(
-        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
-            context,
-        SearchAllResourcesResponse response) {
+        @Nullable
+            PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+                context,
+        @Nullable SearchAllResourcesResponse response) {
       super(context, response);
     }
 
@@ -3203,16 +3196,18 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllResourcesPage createPage(
-        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
-            context,
-        SearchAllResourcesResponse response) {
+        @Nullable
+            PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+                context,
+        @Nullable SearchAllResourcesResponse response) {
       return new SearchAllResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAllResourcesPage> createPageAsync(
-        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
-            context,
+        @Nullable
+            PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
+                context,
         ApiFuture<SearchAllResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3227,7 +3222,7 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllResourcesFixedSizeCollection> {
 
     private SearchAllResourcesFixedSizeCollection(
-        List<SearchAllResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3237,7 +3232,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllResourcesFixedSizeCollection createCollection(
-        List<SearchAllResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllResourcesPage> pages, int collectionSize) {
       return new SearchAllResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3276,10 +3271,13 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllIamPoliciesPage> {
 
     private SearchAllIamPoliciesPage(
-        PageContext<
-                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
-            context,
-        SearchAllIamPoliciesResponse response) {
+        @Nullable
+            PageContext<
+                    SearchAllIamPoliciesRequest,
+                    SearchAllIamPoliciesResponse,
+                    IamPolicySearchResult>
+                context,
+        @Nullable SearchAllIamPoliciesResponse response) {
       super(context, response);
     }
 
@@ -3289,18 +3287,24 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllIamPoliciesPage createPage(
-        PageContext<
-                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
-            context,
-        SearchAllIamPoliciesResponse response) {
+        @Nullable
+            PageContext<
+                    SearchAllIamPoliciesRequest,
+                    SearchAllIamPoliciesResponse,
+                    IamPolicySearchResult>
+                context,
+        @Nullable SearchAllIamPoliciesResponse response) {
       return new SearchAllIamPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAllIamPoliciesPage> createPageAsync(
-        PageContext<
-                SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
-            context,
+        @Nullable
+            PageContext<
+                    SearchAllIamPoliciesRequest,
+                    SearchAllIamPoliciesResponse,
+                    IamPolicySearchResult>
+                context,
         ApiFuture<SearchAllIamPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3315,7 +3319,7 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllIamPoliciesFixedSizeCollection> {
 
     private SearchAllIamPoliciesFixedSizeCollection(
-        List<SearchAllIamPoliciesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllIamPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3325,7 +3329,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllIamPoliciesFixedSizeCollection createCollection(
-        List<SearchAllIamPoliciesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllIamPoliciesPage> pages, int collectionSize) {
       return new SearchAllIamPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3359,8 +3363,9 @@ public class AssetServiceClient implements BackgroundResource {
           ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery, ListSavedQueriesPage> {
 
     private ListSavedQueriesPage(
-        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
-        ListSavedQueriesResponse response) {
+        @Nullable
+            PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        @Nullable ListSavedQueriesResponse response) {
       super(context, response);
     }
 
@@ -3370,14 +3375,16 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSavedQueriesPage createPage(
-        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
-        ListSavedQueriesResponse response) {
+        @Nullable
+            PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        @Nullable ListSavedQueriesResponse response) {
       return new ListSavedQueriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSavedQueriesPage> createPageAsync(
-        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        @Nullable
+            PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
         ApiFuture<ListSavedQueriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3392,7 +3399,7 @@ public class AssetServiceClient implements BackgroundResource {
           ListSavedQueriesFixedSizeCollection> {
 
     private ListSavedQueriesFixedSizeCollection(
-        List<ListSavedQueriesPage> pages, int collectionSize) {
+        @Nullable List<ListSavedQueriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3402,7 +3409,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSavedQueriesFixedSizeCollection createCollection(
-        List<ListSavedQueriesPage> pages, int collectionSize) {
+        @Nullable List<ListSavedQueriesPage> pages, int collectionSize) {
       return new ListSavedQueriesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -266,8 +266,7 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EchoResponse echoShouldGenerateAsUsual(FoobarName name) {
-    EchoRequest request =
-        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    EchoRequest request = EchoRequest.newBuilder().setName(name.toString()).build();
     return echoShouldGenerateAsUsual(request);
   }
 
@@ -477,8 +476,7 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    */
   @InternalApi("This API is not intended for public consumption.")
   public final EchoResponse chatShouldGenerateAsInternal(FoobarName name) {
-    EchoRequest request =
-        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    EchoRequest request = EchoRequest.newBuilder().setName(name.toString()).build();
     return chatShouldGenerateAsInternal(request);
   }
 

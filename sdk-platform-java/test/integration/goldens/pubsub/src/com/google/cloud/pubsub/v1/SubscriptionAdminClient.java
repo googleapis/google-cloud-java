@@ -597,8 +597,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
       SubscriptionName name, TopicName topic, PushConfig pushConfig, int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setTopic(topic == null ? null : topic.toString())
+            .setName(name.toString())
+            .setTopic(topic.toString())
             .setPushConfig(pushConfig)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
@@ -668,7 +668,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
       SubscriptionName name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .setTopic(topic)
             .setPushConfig(pushConfig)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
@@ -740,7 +740,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     Subscription request =
         Subscription.newBuilder()
             .setName(name)
-            .setTopic(topic == null ? null : topic.toString())
+            .setTopic(topic.toString())
             .setPushConfig(pushConfig)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
@@ -946,9 +946,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final Subscription getSubscription(SubscriptionName subscription) {
     GetSubscriptionRequest request =
-        GetSubscriptionRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
-            .build();
+        GetSubscriptionRequest.newBuilder().setSubscription(subscription.toString()).build();
     return getSubscription(request);
   }
 
@@ -1122,9 +1120,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(ProjectName project) {
     ListSubscriptionsRequest request =
-        ListSubscriptionsRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
-            .build();
+        ListSubscriptionsRequest.newBuilder().setProject(project.toString()).build();
     return listSubscriptions(request);
   }
 
@@ -1290,9 +1286,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final void deleteSubscription(SubscriptionName subscription) {
     DeleteSubscriptionRequest request =
-        DeleteSubscriptionRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
-            .build();
+        DeleteSubscriptionRequest.newBuilder().setSubscription(subscription.toString()).build();
     deleteSubscription(request);
   }
 
@@ -1428,7 +1422,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
       SubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setSubscription(subscription.toString())
             .addAllAckIds(ackIds)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
@@ -1579,7 +1573,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
   public final void acknowledge(SubscriptionName subscription, List<String> ackIds) {
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setSubscription(subscription.toString())
             .addAllAckIds(ackIds)
             .build();
     acknowledge(request);
@@ -1714,7 +1708,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
   public final PullResponse pull(SubscriptionName subscription, int maxMessages) {
     PullRequest request =
         PullRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setSubscription(subscription.toString())
             .setMaxMessages(maxMessages)
             .build();
     return pull(request);
@@ -1790,7 +1784,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
       SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
     PullRequest request =
         PullRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setSubscription(subscription.toString())
             .setReturnImmediately(returnImmediately)
             .setMaxMessages(maxMessages)
             .build();
@@ -1980,7 +1974,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
   public final void modifyPushConfig(SubscriptionName subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setSubscription(subscription.toString())
             .setPushConfig(pushConfig)
             .build();
     modifyPushConfig(request);
@@ -2122,9 +2116,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final Snapshot getSnapshot(SnapshotName snapshot) {
     GetSnapshotRequest request =
-        GetSnapshotRequest.newBuilder()
-            .setSnapshot(snapshot == null ? null : snapshot.toString())
-            .build();
+        GetSnapshotRequest.newBuilder().setSnapshot(snapshot.toString()).build();
     return getSnapshot(request);
   }
 
@@ -2249,9 +2241,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final ListSnapshotsPagedResponse listSnapshots(ProjectName project) {
     ListSnapshotsRequest request =
-        ListSnapshotsRequest.newBuilder()
-            .setProject(project == null ? null : project.toString())
-            .build();
+        ListSnapshotsRequest.newBuilder().setProject(project.toString()).build();
     return listSnapshots(request);
   }
 
@@ -2447,8 +2437,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
   public final Snapshot createSnapshot(SnapshotName name, SubscriptionName subscription) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setName(name.toString())
+            .setSubscription(subscription.toString())
             .build();
     return createSnapshot(request);
   }
@@ -2500,7 +2490,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
   public final Snapshot createSnapshot(SnapshotName name, String subscription) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .setSubscription(subscription)
             .build();
     return createSnapshot(request);
@@ -2554,7 +2544,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setName(name)
-            .setSubscription(subscription == null ? null : subscription.toString())
+            .setSubscription(subscription.toString())
             .build();
     return createSnapshot(request);
   }
@@ -2785,9 +2775,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    */
   public final void deleteSnapshot(SnapshotName snapshot) {
     DeleteSnapshotRequest request =
-        DeleteSnapshotRequest.newBuilder()
-            .setSnapshot(snapshot == null ? null : snapshot.toString())
-            .build();
+        DeleteSnapshotRequest.newBuilder().setSnapshot(snapshot.toString()).build();
     deleteSnapshot(request);
   }
 
@@ -3211,8 +3199,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSubscriptionsPage> {
 
     private ListSubscriptionsPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable
+            PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable ListSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -3222,14 +3211,16 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsPage createPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable
+            PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable ListSubscriptionsResponse response) {
       return new ListSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubscriptionsPage> createPageAsync(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable
+            PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
         ApiFuture<ListSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3244,7 +3235,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSubscriptionsFixedSizeCollection> {
 
     private ListSubscriptionsFixedSizeCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3254,7 +3245,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsFixedSizeCollection createCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3288,8 +3279,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
 
     private ListSnapshotsPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       super(context, response);
     }
 
@@ -3299,14 +3290,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsPage createPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       return new ListSnapshotsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSnapshotsPage> createPageAsync(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
         ApiFuture<ListSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3320,7 +3311,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
-    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+    private ListSnapshotsFixedSizeCollection(
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3330,7 +3322,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsFixedSizeCollection createCollection(
-        List<ListSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }

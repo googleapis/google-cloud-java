@@ -403,8 +403,7 @@ public class EchoClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EchoResponse echo(ResourceName parent) {
-    EchoRequest request =
-        EchoRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    EchoRequest request = EchoRequest.newBuilder().setParent(parent.toString()).build();
     return echo(request);
   }
 
@@ -452,8 +451,7 @@ public class EchoClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EchoResponse echo(FoobarName name) {
-    EchoRequest request =
-        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    EchoRequest request = EchoRequest.newBuilder().setName(name.toString()).build();
     return echo(request);
   }
 
@@ -1350,8 +1348,8 @@ public class EchoClient implements BackgroundResource {
       extends AbstractPage<PagedExpandRequest, PagedExpandResponse, EchoResponse, PagedExpandPage> {
 
     private PagedExpandPage(
-        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
-        PagedExpandResponse response) {
+        @Nullable PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        @Nullable PagedExpandResponse response) {
       super(context, response);
     }
 
@@ -1361,14 +1359,14 @@ public class EchoClient implements BackgroundResource {
 
     @Override
     protected PagedExpandPage createPage(
-        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
-        PagedExpandResponse response) {
+        @Nullable PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        @Nullable PagedExpandResponse response) {
       return new PagedExpandPage(context, response);
     }
 
     @Override
     public ApiFuture<PagedExpandPage> createPageAsync(
-        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        @Nullable PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
         ApiFuture<PagedExpandResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1382,7 +1380,8 @@ public class EchoClient implements BackgroundResource {
           PagedExpandPage,
           PagedExpandFixedSizeCollection> {
 
-    private PagedExpandFixedSizeCollection(List<PagedExpandPage> pages, int collectionSize) {
+    private PagedExpandFixedSizeCollection(
+        @Nullable List<PagedExpandPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1392,7 +1391,7 @@ public class EchoClient implements BackgroundResource {
 
     @Override
     protected PagedExpandFixedSizeCollection createCollection(
-        List<PagedExpandPage> pages, int collectionSize) {
+        @Nullable List<PagedExpandPage> pages, int collectionSize) {
       return new PagedExpandFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1426,8 +1425,8 @@ public class EchoClient implements BackgroundResource {
           PagedExpandRequest, PagedExpandResponse, EchoResponse, SimplePagedExpandPage> {
 
     private SimplePagedExpandPage(
-        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
-        PagedExpandResponse response) {
+        @Nullable PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        @Nullable PagedExpandResponse response) {
       super(context, response);
     }
 
@@ -1437,14 +1436,14 @@ public class EchoClient implements BackgroundResource {
 
     @Override
     protected SimplePagedExpandPage createPage(
-        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
-        PagedExpandResponse response) {
+        @Nullable PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        @Nullable PagedExpandResponse response) {
       return new SimplePagedExpandPage(context, response);
     }
 
     @Override
     public ApiFuture<SimplePagedExpandPage> createPageAsync(
-        PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
+        @Nullable PageContext<PagedExpandRequest, PagedExpandResponse, EchoResponse> context,
         ApiFuture<PagedExpandResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1459,7 +1458,7 @@ public class EchoClient implements BackgroundResource {
           SimplePagedExpandFixedSizeCollection> {
 
     private SimplePagedExpandFixedSizeCollection(
-        List<SimplePagedExpandPage> pages, int collectionSize) {
+        @Nullable List<SimplePagedExpandPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1469,7 +1468,7 @@ public class EchoClient implements BackgroundResource {
 
     @Override
     protected SimplePagedExpandFixedSizeCollection createCollection(
-        List<SimplePagedExpandPage> pages, int collectionSize) {
+        @Nullable List<SimplePagedExpandPage> pages, int collectionSize) {
       return new SimplePagedExpandFixedSizeCollection(pages, collectionSize);
     }
   }

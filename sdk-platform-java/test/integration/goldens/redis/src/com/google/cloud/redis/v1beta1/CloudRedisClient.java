@@ -485,9 +485,7 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final ListInstancesPagedResponse listInstances(LocationName parent) {
     ListInstancesRequest request =
-        ListInstancesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
+        ListInstancesRequest.newBuilder().setParent(parent.toString()).build();
     return listInstances(request);
   }
 
@@ -687,8 +685,7 @@ public class CloudRedisClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Instance getInstance(InstanceName name) {
-    GetInstanceRequest request =
-        GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name.toString()).build();
     return getInstance(request);
   }
 
@@ -801,9 +798,7 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final InstanceAuthString getInstanceAuthString(InstanceName name) {
     GetInstanceAuthStringRequest request =
-        GetInstanceAuthStringRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
+        GetInstanceAuthStringRequest.newBuilder().setName(name.toString()).build();
     return getInstanceAuthString(request);
   }
 
@@ -946,7 +941,7 @@ public class CloudRedisClient implements BackgroundResource {
       LocationName parent, String instanceId, Instance instance) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setInstanceId(instanceId)
             .setInstance(instance)
             .build();
@@ -1299,7 +1294,7 @@ public class CloudRedisClient implements BackgroundResource {
       InstanceName name, String redisVersion) {
     UpgradeInstanceRequest request =
         UpgradeInstanceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .setRedisVersion(redisVersion)
             .build();
     return upgradeInstanceAsync(request);
@@ -1738,7 +1733,7 @@ public class CloudRedisClient implements BackgroundResource {
       InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
     FailoverInstanceRequest request =
         FailoverInstanceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .setDataProtectionMode(dataProtectionMode)
             .build();
     return failoverInstanceAsync(request);
@@ -1895,7 +1890,7 @@ public class CloudRedisClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Any> deleteInstanceAsync(InstanceName name) {
     DeleteInstanceRequest request =
-        DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        DeleteInstanceRequest.newBuilder().setName(name.toString()).build();
     return deleteInstanceAsync(request);
   }
 
@@ -2048,7 +2043,7 @@ public class CloudRedisClient implements BackgroundResource {
       Timestamp scheduleTime) {
     RescheduleMaintenanceRequest request =
         RescheduleMaintenanceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .setRescheduleType(rescheduleType)
             .setScheduleTime(scheduleTime)
             .build();
@@ -2248,8 +2243,8 @@ public class CloudRedisClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -2259,14 +2254,14 @@ public class CloudRedisClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2280,7 +2275,8 @@ public class CloudRedisClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2290,7 +2286,7 @@ public class CloudRedisClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }

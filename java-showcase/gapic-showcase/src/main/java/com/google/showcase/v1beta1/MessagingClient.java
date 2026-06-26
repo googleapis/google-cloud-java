@@ -632,8 +632,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Room getRoom(RoomName name) {
-    GetRoomRequest request =
-        GetRoomRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    GetRoomRequest request = GetRoomRequest.newBuilder().setName(name.toString()).build();
     return getRoom(request);
   }
 
@@ -793,8 +792,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteRoom(RoomName name) {
-    DeleteRoomRequest request =
-        DeleteRoomRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    DeleteRoomRequest request = DeleteRoomRequest.newBuilder().setName(name.toString()).build();
     deleteRoom(request);
   }
 
@@ -1003,12 +1001,8 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(ProfileName parent, UserName user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setBlurb(
-                Blurb.newBuilder()
-                    .setUser(user == null ? null : user.toString())
-                    .setImage(image)
-                    .build())
+            .setParent(parent.toString())
+            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setImage(image).build())
             .build();
     return createBlurb(request);
   }
@@ -1043,12 +1037,8 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(ProfileName parent, UserName user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setBlurb(
-                Blurb.newBuilder()
-                    .setUser(user == null ? null : user.toString())
-                    .setText(text)
-                    .build())
+            .setParent(parent.toString())
+            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setText(text).build())
             .build();
     return createBlurb(request);
   }
@@ -1083,7 +1073,7 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(ProfileName parent, String user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setImage(image).build())
             .build();
     return createBlurb(request);
@@ -1119,7 +1109,7 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(ProfileName parent, String user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setText(text).build())
             .build();
     return createBlurb(request);
@@ -1155,12 +1145,8 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(RoomName parent, UserName user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setBlurb(
-                Blurb.newBuilder()
-                    .setUser(user == null ? null : user.toString())
-                    .setImage(image)
-                    .build())
+            .setParent(parent.toString())
+            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setImage(image).build())
             .build();
     return createBlurb(request);
   }
@@ -1195,12 +1181,8 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(RoomName parent, UserName user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setBlurb(
-                Blurb.newBuilder()
-                    .setUser(user == null ? null : user.toString())
-                    .setText(text)
-                    .build())
+            .setParent(parent.toString())
+            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setText(text).build())
             .build();
     return createBlurb(request);
   }
@@ -1235,7 +1217,7 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(RoomName parent, String user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setImage(image).build())
             .build();
     return createBlurb(request);
@@ -1271,7 +1253,7 @@ public class MessagingClient implements BackgroundResource {
   public final Blurb createBlurb(RoomName parent, String user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setText(text).build())
             .build();
     return createBlurb(request);
@@ -1308,11 +1290,7 @@ public class MessagingClient implements BackgroundResource {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
             .setParent(parent)
-            .setBlurb(
-                Blurb.newBuilder()
-                    .setUser(user == null ? null : user.toString())
-                    .setImage(image)
-                    .build())
+            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setImage(image).build())
             .build();
     return createBlurb(request);
   }
@@ -1348,11 +1326,7 @@ public class MessagingClient implements BackgroundResource {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
             .setParent(parent)
-            .setBlurb(
-                Blurb.newBuilder()
-                    .setUser(user == null ? null : user.toString())
-                    .setText(text)
-                    .build())
+            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setText(text).build())
             .build();
     return createBlurb(request);
   }
@@ -1510,8 +1484,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Blurb getBlurb(BlurbName name) {
-    GetBlurbRequest request =
-        GetBlurbRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    GetBlurbRequest request = GetBlurbRequest.newBuilder().setName(name.toString()).build();
     return getBlurb(request);
   }
 
@@ -1676,8 +1649,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteBlurb(BlurbName name) {
-    DeleteBlurbRequest request =
-        DeleteBlurbRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    DeleteBlurbRequest request = DeleteBlurbRequest.newBuilder().setName(name.toString()).build();
     deleteBlurb(request);
   }
 
@@ -1787,8 +1759,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBlurbsPagedResponse listBlurbs(ProfileName parent) {
-    ListBlurbsRequest request =
-        ListBlurbsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    ListBlurbsRequest request = ListBlurbsRequest.newBuilder().setParent(parent.toString()).build();
     return listBlurbs(request);
   }
 
@@ -1816,8 +1787,7 @@ public class MessagingClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBlurbsPagedResponse listBlurbs(RoomName parent) {
-    ListBlurbsRequest request =
-        ListBlurbsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    ListBlurbsRequest request = ListBlurbsRequest.newBuilder().setParent(parent.toString()).build();
     return listBlurbs(request);
   }
 
@@ -1981,7 +1951,7 @@ public class MessagingClient implements BackgroundResource {
       @Nullable ProfileName parent, String query) {
     SearchBlurbsRequest request =
         SearchBlurbsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent == null ? "" : parent.toString())
             .setQuery(query)
             .build();
     return searchBlurbsAsync(request);
@@ -2018,7 +1988,7 @@ public class MessagingClient implements BackgroundResource {
       @Nullable RoomName parent, String query) {
     SearchBlurbsRequest request =
         SearchBlurbsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(parent == null ? "" : parent.toString())
             .setQuery(query)
             .build();
     return searchBlurbsAsync(request);
@@ -2663,8 +2633,8 @@ public class MessagingClient implements BackgroundResource {
       extends AbstractPage<ListRoomsRequest, ListRoomsResponse, Room, ListRoomsPage> {
 
     private ListRoomsPage(
-        PageContext<ListRoomsRequest, ListRoomsResponse, Room> context,
-        ListRoomsResponse response) {
+        @Nullable PageContext<ListRoomsRequest, ListRoomsResponse, Room> context,
+        @Nullable ListRoomsResponse response) {
       super(context, response);
     }
 
@@ -2674,14 +2644,14 @@ public class MessagingClient implements BackgroundResource {
 
     @Override
     protected ListRoomsPage createPage(
-        PageContext<ListRoomsRequest, ListRoomsResponse, Room> context,
-        ListRoomsResponse response) {
+        @Nullable PageContext<ListRoomsRequest, ListRoomsResponse, Room> context,
+        @Nullable ListRoomsResponse response) {
       return new ListRoomsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRoomsPage> createPageAsync(
-        PageContext<ListRoomsRequest, ListRoomsResponse, Room> context,
+        @Nullable PageContext<ListRoomsRequest, ListRoomsResponse, Room> context,
         ApiFuture<ListRoomsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2691,7 +2661,7 @@ public class MessagingClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRoomsRequest, ListRoomsResponse, Room, ListRoomsPage, ListRoomsFixedSizeCollection> {
 
-    private ListRoomsFixedSizeCollection(List<ListRoomsPage> pages, int collectionSize) {
+    private ListRoomsFixedSizeCollection(@Nullable List<ListRoomsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2701,7 +2671,7 @@ public class MessagingClient implements BackgroundResource {
 
     @Override
     protected ListRoomsFixedSizeCollection createCollection(
-        List<ListRoomsPage> pages, int collectionSize) {
+        @Nullable List<ListRoomsPage> pages, int collectionSize) {
       return new ListRoomsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2732,8 +2702,8 @@ public class MessagingClient implements BackgroundResource {
       extends AbstractPage<ListBlurbsRequest, ListBlurbsResponse, Blurb, ListBlurbsPage> {
 
     private ListBlurbsPage(
-        PageContext<ListBlurbsRequest, ListBlurbsResponse, Blurb> context,
-        ListBlurbsResponse response) {
+        @Nullable PageContext<ListBlurbsRequest, ListBlurbsResponse, Blurb> context,
+        @Nullable ListBlurbsResponse response) {
       super(context, response);
     }
 
@@ -2743,14 +2713,14 @@ public class MessagingClient implements BackgroundResource {
 
     @Override
     protected ListBlurbsPage createPage(
-        PageContext<ListBlurbsRequest, ListBlurbsResponse, Blurb> context,
-        ListBlurbsResponse response) {
+        @Nullable PageContext<ListBlurbsRequest, ListBlurbsResponse, Blurb> context,
+        @Nullable ListBlurbsResponse response) {
       return new ListBlurbsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBlurbsPage> createPageAsync(
-        PageContext<ListBlurbsRequest, ListBlurbsResponse, Blurb> context,
+        @Nullable PageContext<ListBlurbsRequest, ListBlurbsResponse, Blurb> context,
         ApiFuture<ListBlurbsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2764,7 +2734,8 @@ public class MessagingClient implements BackgroundResource {
           ListBlurbsPage,
           ListBlurbsFixedSizeCollection> {
 
-    private ListBlurbsFixedSizeCollection(List<ListBlurbsPage> pages, int collectionSize) {
+    private ListBlurbsFixedSizeCollection(
+        @Nullable List<ListBlurbsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2774,7 +2745,7 @@ public class MessagingClient implements BackgroundResource {
 
     @Override
     protected ListBlurbsFixedSizeCollection createCollection(
-        List<ListBlurbsPage> pages, int collectionSize) {
+        @Nullable List<ListBlurbsPage> pages, int collectionSize) {
       return new ListBlurbsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2808,8 +2779,8 @@ public class MessagingClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2819,14 +2790,14 @@ public class MessagingClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2840,7 +2811,8 @@ public class MessagingClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2850,7 +2822,7 @@ public class MessagingClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

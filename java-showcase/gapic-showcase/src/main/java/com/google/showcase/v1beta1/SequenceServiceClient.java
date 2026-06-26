@@ -551,9 +551,7 @@ public class SequenceServiceClient implements BackgroundResource {
    */
   public final SequenceReport getSequenceReport(SequenceReportName name) {
     GetSequenceReportRequest request =
-        GetSequenceReportRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
+        GetSequenceReportRequest.newBuilder().setName(name.toString()).build();
     return getSequenceReport(request);
   }
 
@@ -667,9 +665,7 @@ public class SequenceServiceClient implements BackgroundResource {
   public final StreamingSequenceReport getStreamingSequenceReport(
       StreamingSequenceReportName name) {
     GetStreamingSequenceReportRequest request =
-        GetStreamingSequenceReportRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
+        GetStreamingSequenceReportRequest.newBuilder().setName(name.toString()).build();
     return getStreamingSequenceReport(request);
   }
 
@@ -784,7 +780,7 @@ public class SequenceServiceClient implements BackgroundResource {
    */
   public final void attemptSequence(SequenceName name) {
     AttemptSequenceRequest request =
-        AttemptSequenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        AttemptSequenceRequest.newBuilder().setName(name.toString()).build();
     attemptSequence(request);
   }
 
@@ -1309,8 +1305,8 @@ public class SequenceServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1320,14 +1316,14 @@ public class SequenceServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1341,7 +1337,8 @@ public class SequenceServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1351,7 +1348,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

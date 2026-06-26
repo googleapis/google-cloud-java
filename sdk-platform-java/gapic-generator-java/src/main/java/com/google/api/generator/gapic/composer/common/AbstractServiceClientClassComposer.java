@@ -49,6 +49,7 @@ import com.google.api.generator.engine.ast.RelationalOperationExpr;
 import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.api.generator.engine.ast.SuperObjectValue;
+import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.TernaryExpr;
 import com.google.api.generator.engine.ast.ThisObjectValue;
 import com.google.api.generator.engine.ast.TypeNode;
@@ -763,19 +764,18 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
           signature.stream()
               .map(
                   methodArg -> {
+                    TypeNode argType = methodArg.type();
+                    if (methodArg.isResourceNameHelper() && !methodArg.field().isRequired()) {
+                      argType = TypeNode.withReference(argType.reference().copyAndSetNullable(true));
+                    }
                     VariableExpr.Builder argBuilder =
                         VariableExpr.builder()
                             .setVariable(
                                 Variable.builder()
                                     .setName(JavaStyle.toLowerCamelCase(methodArg.name()))
-                                    .setType(methodArg.type())
+                                    .setType(argType)
                                     .build())
                             .setIsDecl(true);
-                    if (methodArg.isResourceNameHelper() && !methodArg.field().isRequired()) {
-                      argBuilder.setAnnotations(
-                          Collections.singletonList(
-                              AnnotationNode.withType(typeStore.get("Nullable"))));
-                    }
                     return argBuilder.build();
                   })
               .collect(Collectors.toList());
@@ -1462,11 +1462,15 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                                     .stream()
                                     .map(t -> t.reference())
                                     .collect(Collectors.toList()))
-                            .build()))
+                            .build()
+                            .copyAndSetNullable(true)))
                 .build());
     VariableExpr responseVarExpr =
         VariableExpr.withVariable(
-            Variable.builder().setName("response").setType(method.outputType()).build());
+            Variable.builder()
+                .setName("response")
+                .setType(TypeNode.withReference(method.outputType().reference().copyAndSetNullable(true)))
+                .build());
     MethodDefinition privateCtor =
         MethodDefinition.constructorBuilder()
             .setScope(ScopeNode.PRIVATE)
@@ -1602,7 +1606,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                         ConcreteReference.builder()
                             .setClazz(List.class)
                             .setGenerics(Arrays.asList(methodPageType.reference()))
-                            .build()))
+                            .build()
+                            .copyAndSetNullable(true)))
                 .build());
     VariableExpr collectionSizeVarExpr =
         VariableExpr.withVariable(
@@ -1753,20 +1758,30 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
         VariableExpr.withVariable(
             Variable.builder().setName(argumentName).setType(argumentType).build());
     if (argument.isResourceNameHelper()) {
-      Expr nullExpr = ValueExpr.createNullExpr();
-      Expr isNullCheckExpr = RelationalOperationExpr.equalToWithExprs(argVarExpr, nullExpr);
-      MethodInvocationExpr toStringExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(argVarExpr)
-              .setMethodName("toString")
-              .setReturnType(TypeNode.STRING)
-              .build();
-      argVarExpr =
-          TernaryExpr.builder()
-              .setConditionExpr(isNullCheckExpr)
-              .setThenExpr(nullExpr)
-              .setElseExpr(toStringExpr)
-              .build();
+      if (argument.field().isRequired()) {
+        argVarExpr =
+            MethodInvocationExpr.builder()
+                .setExprReferenceExpr(argVarExpr)
+                .setMethodName("toString")
+                .setReturnType(TypeNode.STRING)
+                .build();
+      } else {
+        Expr nullExpr = ValueExpr.createNullExpr();
+        Expr isNullCheckExpr = RelationalOperationExpr.equalToWithExprs(argVarExpr, nullExpr);
+        Expr emptyStringExpr = ValueExpr.withValue(StringObjectValue.withValue(""));
+        MethodInvocationExpr toStringExpr =
+            MethodInvocationExpr.builder()
+                .setExprReferenceExpr(argVarExpr)
+                .setMethodName("toString")
+                .setReturnType(TypeNode.STRING)
+                .build();
+        argVarExpr =
+            TernaryExpr.builder()
+                .setConditionExpr(isNullCheckExpr)
+                .setThenExpr(emptyStringExpr)
+                .setElseExpr(toStringExpr)
+                .build();
+      }
     }
 
     String setterMethodName =

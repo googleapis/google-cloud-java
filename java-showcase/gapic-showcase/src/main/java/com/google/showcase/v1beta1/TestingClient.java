@@ -1315,8 +1315,8 @@ public class TestingClient implements BackgroundResource {
       extends AbstractPage<ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage> {
 
     private ListSessionsPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       super(context, response);
     }
 
@@ -1326,14 +1326,14 @@ public class TestingClient implements BackgroundResource {
 
     @Override
     protected ListSessionsPage createPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       return new ListSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSessionsPage> createPageAsync(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
         ApiFuture<ListSessionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1347,7 +1347,8 @@ public class TestingClient implements BackgroundResource {
           ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
-    private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
+    private ListSessionsFixedSizeCollection(
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1357,7 +1358,7 @@ public class TestingClient implements BackgroundResource {
 
     @Override
     protected ListSessionsFixedSizeCollection createCollection(
-        List<ListSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       return new ListSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1384,8 +1385,8 @@ public class TestingClient implements BackgroundResource {
       extends AbstractPage<ListTestsRequest, ListTestsResponse, Test, ListTestsPage> {
 
     private ListTestsPage(
-        PageContext<ListTestsRequest, ListTestsResponse, Test> context,
-        ListTestsResponse response) {
+        @Nullable PageContext<ListTestsRequest, ListTestsResponse, Test> context,
+        @Nullable ListTestsResponse response) {
       super(context, response);
     }
 
@@ -1395,14 +1396,14 @@ public class TestingClient implements BackgroundResource {
 
     @Override
     protected ListTestsPage createPage(
-        PageContext<ListTestsRequest, ListTestsResponse, Test> context,
-        ListTestsResponse response) {
+        @Nullable PageContext<ListTestsRequest, ListTestsResponse, Test> context,
+        @Nullable ListTestsResponse response) {
       return new ListTestsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTestsPage> createPageAsync(
-        PageContext<ListTestsRequest, ListTestsResponse, Test> context,
+        @Nullable PageContext<ListTestsRequest, ListTestsResponse, Test> context,
         ApiFuture<ListTestsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1412,7 +1413,7 @@ public class TestingClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTestsRequest, ListTestsResponse, Test, ListTestsPage, ListTestsFixedSizeCollection> {
 
-    private ListTestsFixedSizeCollection(List<ListTestsPage> pages, int collectionSize) {
+    private ListTestsFixedSizeCollection(@Nullable List<ListTestsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1422,7 +1423,7 @@ public class TestingClient implements BackgroundResource {
 
     @Override
     protected ListTestsFixedSizeCollection createCollection(
-        List<ListTestsPage> pages, int collectionSize) {
+        @Nullable List<ListTestsPage> pages, int collectionSize) {
       return new ListTestsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1456,8 +1457,8 @@ public class TestingClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1467,14 +1468,14 @@ public class TestingClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1488,7 +1489,8 @@ public class TestingClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1498,7 +1500,7 @@ public class TestingClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

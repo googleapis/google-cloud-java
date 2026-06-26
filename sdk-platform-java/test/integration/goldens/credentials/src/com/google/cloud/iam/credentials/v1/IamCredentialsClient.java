@@ -298,7 +298,7 @@ public class IamCredentialsClient implements BackgroundResource {
       ServiceAccountName name, List<String> delegates, List<String> scope, Duration lifetime) {
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .addAllDelegates(delegates)
             .addAllScope(scope)
             .setLifetime(lifetime)
@@ -467,7 +467,7 @@ public class IamCredentialsClient implements BackgroundResource {
       ServiceAccountName name, List<String> delegates, String audience, boolean includeEmail) {
     GenerateIdTokenRequest request =
         GenerateIdTokenRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .addAllDelegates(delegates)
             .setAudience(audience)
             .setIncludeEmail(includeEmail)
@@ -629,7 +629,7 @@ public class IamCredentialsClient implements BackgroundResource {
       ServiceAccountName name, List<String> delegates, ByteString payload) {
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .addAllDelegates(delegates)
             .setPayload(payload)
             .build();
@@ -780,7 +780,7 @@ public class IamCredentialsClient implements BackgroundResource {
       ServiceAccountName name, List<String> delegates, String payload) {
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
+            .setName(name.toString())
             .addAllDelegates(delegates)
             .setPayload(payload)
             .build();

@@ -1334,7 +1334,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     VariableExpr clientContextVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(TypeNode.withReference(FIXED_TYPESTORE.get("ClientContext").reference().copyAndSetNullable(true)))
                 .setName("clientContext")
                 .build());
     javaMethods.add(
@@ -1646,7 +1646,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     VariableExpr clientContextVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(TypeNode.withReference(FIXED_TYPESTORE.get("ClientContext").reference().copyAndSetNullable(true)))
                 .setName("clientContext")
                 .build());
     Reference pagedSettingsBuilderRef =
