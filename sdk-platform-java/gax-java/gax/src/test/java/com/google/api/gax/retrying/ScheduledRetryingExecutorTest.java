@@ -114,7 +114,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
         RetryingFuture<String> future =
             executor.createFuture(
                 callable,
-                FakeCallContext.createDefault().withTracer(tracer).withRetrySettings(retrySettings));
+                FakeCallContext.createDefault()
+                    .withTracer(tracer)
+                    .withRetrySettings(retrySettings));
         callable.setExternalFuture(future);
 
         assertNull(future.peekAttemptResult());
@@ -293,7 +295,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
         RetryingFuture<String> future =
             executor.createFuture(
                 callable,
-                FakeCallContext.createDefault().withTracer(tracer).withRetrySettings(retrySettings));
+                FakeCallContext.createDefault()
+                    .withTracer(tracer)
+                    .withRetrySettings(retrySettings));
         callable.setExternalFuture(future);
         future.setAttemptFuture(executor.submit(future));
 

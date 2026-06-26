@@ -31,7 +31,6 @@ package com.google.api.gax.core;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
