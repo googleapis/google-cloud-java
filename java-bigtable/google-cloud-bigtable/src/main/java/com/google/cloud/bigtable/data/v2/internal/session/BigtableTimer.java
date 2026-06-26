@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.session;
 
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -22,33 +23,28 @@ import java.util.concurrent.TimeUnit;
  * approximate, low-resolution times. Backed by a hashed wheel: O(1) insert and O(1) cancel,
  * regardless of how many pending timeouts the wheel holds.
  *
- * <p>{@link #newTimeout} runs the callback on the timer's bundled dispatch executor — callers do
- * not have to wrap their bodies in {@code executor.execute(...)} to stay off the tick thread. This
- * is the default and is correct for any callback that takes a lock or does real work.
- *
- * <p>TODO: once later refactor steps introduce per-op / per-session dispatchers (e.g. {@code
- * SerializingExecutor} or {@code SynchronizationContext}), add a {@code newTimeoutOnTickThread}
- * variant so callers with their own dispatcher can skip the wasted hop through the bundled
- * executor.
- *
- * <p>This is a thin abstraction over a single concrete implementation today (see {@code
- * NettyWheelTimer}). It exists so the implementation can be swapped after benchmarking establishes
- * a baseline.
+ * <p>Each {@link #newTimeout} call carries the {@link Executor} that should run the task body.
+ * Tasks never run on the timer's tick thread (unless the caller passes {@code directExecutor()};
+ * see warning below). Passing the executor per-call avoids the dispatcher hop that a bundled
+ * default would impose on callers who already trampoline onto their own executor.
  */
 public interface BigtableTimer {
   /**
-   * Schedules {@code task} to run after {@code delay}. The task body runs on the timer's bundled
-   * dispatch executor, not on the tick thread, so it is safe to take locks or do bounded work.
+   * Schedules {@code task} to run after {@code delay}. The task body is handed to {@code
+   * executor.execute(task)} — pass the executor where this task should ultimately run.
    *
    * <p>The returned handle can be used to cancel the task; cancel is O(1) and does not leave the
    * entry in any heap.
+   *
+   * <p><b>Warning:</b> passing {@code MoreExecutors.directExecutor()} runs {@code task} inline on
+   * the timer's tick thread. The task must be trivial and non-blocking — anything more will stall
+   * every other scheduled timeout on the wheel.
    */
-  Timeout newTimeout(Runnable task, long delay, TimeUnit unit);
+  Timeout newTimeout(Runnable task, Executor executor, long delay, TimeUnit unit);
 
   /**
    * Releases the tick thread and discards any pending timeouts. Idempotent. After {@code stop()},
-   * subsequent calls to {@link #newTimeout} or {@link #onStop} throw {@link
-   * IllegalStateException}.
+   * subsequent calls to {@link #newTimeout} or {@link #onStop} throw {@link IllegalStateException}.
    *
    * <p>Before releasing the tick thread, invokes every hook registered via {@link #onStop} on the
    * caller thread. Hooks fire in unspecified order; a hook that throws is logged and other hooks

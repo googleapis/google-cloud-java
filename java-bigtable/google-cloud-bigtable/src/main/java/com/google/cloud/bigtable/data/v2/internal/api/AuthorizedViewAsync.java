@@ -50,6 +50,7 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
       Permission permission,
       Metrics metrics,
       BigtableTimer timer,
+      Executor backgroundExecutor,
       Executor userCallbackExecutor) {
 
     AuthorizedViewName viewName =
@@ -81,6 +82,7 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
             viewName.toString(),
             metrics,
             timer,
+            backgroundExecutor,
             userCallbackExecutor);
 
     return new AuthorizedViewAsync(base);

@@ -329,17 +329,14 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
       try {
         stopHook = timer.onStop(this::onTimerStopping);
         // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
-        // the moment the body runs, not just while the dispatcher is invoking the outer task.
+        // the moment the body runs on the op executor.
         future =
             timer.newTimeout(
                 () ->
-                    context
-                        .getExecutor()
-                        .execute(
-                            () ->
-                                grpcContext
-                                    .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
-                                    .run()),
+                    grpcContext
+                        .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
+                        .run(),
+                context.getExecutor(),
                 Durations.toMillis(retryDelay),
                 TimeUnit.MILLISECONDS);
       } catch (IllegalStateException e) {
@@ -359,16 +356,19 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     // Invoked from BigtableTimer.stop on the close thread. Trampoline back to the op executor so
     // currentState reads and onStateChange are still single-threaded with the rest of the chain.
     private void onTimerStopping() {
-      context.getExecutor().execute(() -> {
-        if (currentState != Scheduled.this) {
-          return; // already transitioned out via normal fire or cancel
-        }
-        onStateChange(
-            new Done(
-                VRpcResult.createRejectedError(
-                    Status.CANCELLED.withDescription(
-                        "Client closing while retry pending"))));
-      });
+      context
+          .getExecutor()
+          .execute(
+              () -> {
+                if (currentState != Scheduled.this) {
+                  return; // already transitioned out via normal fire or cancel
+                }
+                onStateChange(
+                    new Done(
+                        VRpcResult.createRejectedError(
+                            Status.CANCELLED.withDescription(
+                                "Client closing while retry pending"))));
+              });
     }
 
     @Override

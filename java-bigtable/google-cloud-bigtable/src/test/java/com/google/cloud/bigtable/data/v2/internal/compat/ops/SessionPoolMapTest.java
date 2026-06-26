@@ -77,8 +77,7 @@ class SessionPoolMapTest {
     CountingHandle handle = new CountingHandle();
     SessionPoolMap<String, CountingHandle> map = new SessionPoolMap<>(key -> handle);
 
-    CompletableFuture<String> result =
-        map.apply("k", v -> CompletableFuture.completedFuture("ok"));
+    CompletableFuture<String> result = map.apply("k", v -> CompletableFuture.completedFuture("ok"));
 
     assertThat(result.get(1, TimeUnit.SECONDS)).isEqualTo("ok");
   }
