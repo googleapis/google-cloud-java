@@ -46,7 +46,7 @@ import javax.annotation.concurrent.Immutable;
 public final class ReadAsSeekableChannel extends ReadProjectionConfig<SeekableByteChannel> {
 
   static final ReadAsSeekableChannel INSTANCE =
-      new ReadAsSeekableChannel(Hasher.enabled(), LinearExponentialRangeSpecFunction.INSTANCE);
+      new ReadAsSeekableChannel(Hasher.readHasher(), LinearExponentialRangeSpecFunction.INSTANCE);
 
   private final Hasher hasher;
   private final RangeSpecFunction rangeSpecFunction;

@@ -139,9 +139,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Maximum number of TeamFolders to return. The server may return
-   * fewer items than requested. If unspecified, the server will pick an
-   * appropriate default.
+   * Optional. Maximum number of `TeamFolders` to return. The server may return
+   * fewer items than requested. If unspecified, the server will pick a default
+   * of `page_size` = 50.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -228,8 +228,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
    * Optional. Field to additionally sort results by.
    * Supported keywords: `display_name` (default), `create_time`,
    * `last_modified_time`. Examples:
-   * - `orderBy="display_name"`
-   * - `orderBy="display_name desc"`
+   *
+   * * `orderBy="display_name"`
+   * * `orderBy="display_name desc"`
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -256,8 +257,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
    * Optional. Field to additionally sort results by.
    * Supported keywords: `display_name` (default), `create_time`,
    * `last_modified_time`. Examples:
-   * - `orderBy="display_name"`
-   * - `orderBy="display_name desc"`
+   *
+   * * `orderBy="display_name"`
+   * * `orderBy="display_name desc"`
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -290,7 +292,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
    * only supported on the `display_name` field.
    *
    * Example:
-   * - `filter="display_name="MyFolder""`
+   *
+   * * `filter="display_name="MyFolder""`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -318,7 +321,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
    * only supported on the `display_name` field.
    *
    * Example:
-   * - `filter="display_name="MyFolder""`
+   *
+   * * `filter="display_name="MyFolder""`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -875,9 +879,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Maximum number of TeamFolders to return. The server may return
-     * fewer items than requested. If unspecified, the server will pick an
-     * appropriate default.
+     * Optional. Maximum number of `TeamFolders` to return. The server may return
+     * fewer items than requested. If unspecified, the server will pick a default
+     * of `page_size` = 50.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,9 +897,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Maximum number of TeamFolders to return. The server may return
-     * fewer items than requested. If unspecified, the server will pick an
-     * appropriate default.
+     * Optional. Maximum number of `TeamFolders` to return. The server may return
+     * fewer items than requested. If unspecified, the server will pick a default
+     * of `page_size` = 50.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -915,9 +919,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Maximum number of TeamFolders to return. The server may return
-     * fewer items than requested. If unspecified, the server will pick an
-     * appropriate default.
+     * Optional. Maximum number of `TeamFolders` to return. The server may return
+     * fewer items than requested. If unspecified, the server will pick a default
+     * of `page_size` = 50.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1076,8 +1080,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * Optional. Field to additionally sort results by.
      * Supported keywords: `display_name` (default), `create_time`,
      * `last_modified_time`. Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1103,8 +1108,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * Optional. Field to additionally sort results by.
      * Supported keywords: `display_name` (default), `create_time`,
      * `last_modified_time`. Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1130,8 +1136,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * Optional. Field to additionally sort results by.
      * Supported keywords: `display_name` (default), `create_time`,
      * `last_modified_time`. Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1156,8 +1163,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * Optional. Field to additionally sort results by.
      * Supported keywords: `display_name` (default), `create_time`,
      * `last_modified_time`. Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1178,8 +1186,9 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * Optional. Field to additionally sort results by.
      * Supported keywords: `display_name` (default), `create_time`,
      * `last_modified_time`. Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1208,7 +1217,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1235,7 +1245,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1262,7 +1273,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1288,7 +1300,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1310,7 +1323,8 @@ public final class SearchTeamFoldersRequest extends com.google.protobuf.Generate
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

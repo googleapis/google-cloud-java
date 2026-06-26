@@ -49,9 +49,6 @@ public class ITConnectionTest {
   static int randomNumber = random.nextInt(999);
   private static final String TABLE_NAME = "JDBC_CONNECTION_TEST_TABLE" + randomNumber;
 
-  private static String connectionUrl =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
-
   @BeforeAll
   public static void beforeClass() throws InterruptedException {
     DATASET = ITBase.getSharedDataset();
@@ -66,8 +63,7 @@ public class ITConnectionTest {
 
   @Test
   public void testGetMetaData() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertFalse(connection.isClosed());
     DatabaseMetaData metaData = connection.getMetaData();
     assertNotNull(metaData);
@@ -80,8 +76,7 @@ public class ITConnectionTest {
 
   @Test
   public void testCreateStatement() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertFalse(connection.isClosed());
     Statement statement = connection.createStatement();
     assertNotNull(statement);
@@ -91,8 +86,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareStatement1() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     PreparedStatement preparedStatement = connection.prepareStatement("SELECT 1");
     assertNotNull(preparedStatement);
     preparedStatement.execute();
@@ -103,8 +97,7 @@ public class ITConnectionTest {
   @Test
   public void testPrepareStatement2() throws SQLException {
 
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     PreparedStatement preparedStatement =
         connection.prepareStatement("SELECT 1", Statement.NO_GENERATED_KEYS);
     assertNotNull(preparedStatement);
@@ -115,8 +108,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareStatement3() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
         SQLFeatureNotSupportedException.class,
         () -> connection.prepareStatement("SELECT 1", new int[] {1, 2, 3}));
@@ -124,8 +116,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareStatement4() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     PreparedStatement preparedStatement =
         connection.prepareStatement(
             "SELECT 1", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
@@ -137,8 +128,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareStatement5() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
         SQLFeatureNotSupportedException.class,
         () ->
@@ -151,8 +141,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareStatement6() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
         SQLFeatureNotSupportedException.class,
         () -> connection.prepareStatement("SELECT 1", new String[] {"a", "b"}));
@@ -160,8 +149,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareCall1() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     try {
       CallableStatement callableStatement =
           connection.prepareCall(
@@ -179,8 +167,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareCall2() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     try {
 
       CallableStatement callableStatement1 =
@@ -201,8 +188,7 @@ public class ITConnectionTest {
 
   @Test
   public void testPrepareCall3() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
         SQLFeatureNotSupportedException.class,
         () ->
@@ -229,8 +215,7 @@ public class ITConnectionTest {
   @Test
   public void testCommitAndRollback() throws SQLException {
 
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
     Properties properties = new Properties();
     properties.setProperty("EnableSession", "1");
@@ -268,8 +253,7 @@ public class ITConnectionTest {
 
   @Test
   public void testSetCatalog() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     try {
       String catalog = connection.getCatalog();
       if (catalog != null) {
@@ -284,8 +268,7 @@ public class ITConnectionTest {
 
   @Test
   public void testSetSchema() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     try {
       String schema = connection.getSchema();
       if (schema != null) {
@@ -300,8 +283,7 @@ public class ITConnectionTest {
 
   @Test
   public void testSetClientInfo() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
     ResultSet resultSet = databaseMetaData.getClientInfoProperties();
     while (resultSet.next()) {
@@ -326,8 +308,7 @@ public class ITConnectionTest {
   @Disabled
   @Test
   public void testSetNetworkTimeout() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
         SQLFeatureNotSupportedException.class,
         () -> connection.setNetworkTimeout(null, 1000)); // 1 second timeout
@@ -335,36 +316,31 @@ public class ITConnectionTest {
 
   @Test
   public void testCreateClob() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(SQLFeatureNotSupportedException.class, () -> connection.createClob());
   }
 
   @Test
   public void testCreateBlob() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(SQLFeatureNotSupportedException.class, () -> connection.createBlob());
   }
 
   @Test
   public void testCreateNClob() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(SQLFeatureNotSupportedException.class, () -> connection.createNClob());
   }
 
   @Test
   public void testCreateSQLXML() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(SQLFeatureNotSupportedException.class, () -> connection.createSQLXML());
   }
 
   @Test
   public void testCreateArray() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     try {
       Array array = connection.createArrayOf("INTEGER", new Object[] {1, 2, 3});
       assertNotNull(array);
@@ -378,8 +354,7 @@ public class ITConnectionTest {
 
   @Test
   public void testCreateStruct() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
         SQLFeatureNotSupportedException.class,
         () -> connection.createStruct("ADDRESS", new Object[] {"123 Main St", "Anytown"}));
@@ -387,8 +362,7 @@ public class ITConnectionTest {
 
   @Test
   public void testNativeSQL() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     String sql = "SELECT 1";
     String nativeSql = connection.nativeSQL(sql);
     assertEquals(sql, nativeSql);
@@ -418,8 +392,7 @@ public class ITConnectionTest {
   // TODO:rewrite test
   @Test
   public void testAbort() throws SQLException, InterruptedException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     // This test is tricky to automate fully, as it involves asynchronous behavior
     // We'll just test that we can call it without throwing an exception immediately
 
@@ -456,16 +429,14 @@ public class ITConnectionTest {
 
   @Test
   public void testIsWrapperFor() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertTrue(connection.isWrapperFor(Connection.class));
     connection.close();
   }
 
   @Test
   public void testIsValid() throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertTrue(connection.isValid(0)); // 0 seconds timeout
     connection.close();
   }

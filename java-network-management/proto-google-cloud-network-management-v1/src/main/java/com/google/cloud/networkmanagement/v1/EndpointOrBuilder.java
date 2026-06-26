@@ -583,6 +583,40 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [job](https://docs.cloud.google.com/run/docs/reference/rest/v2/projects.locations.jobs#Job)
+   * URI.
+   * Applicable only to source endpoint.
+   * The format is: projects/{project}/locations/{location}/jobs/{job}
+   * </pre>
+   *
+   * <code>string cloud_run_job = 24;</code>
+   *
+   * @return The cloudRunJob.
+   */
+  java.lang.String getCloudRunJob();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [job](https://docs.cloud.google.com/run/docs/reference/rest/v2/projects.locations.jobs#Job)
+   * URI.
+   * Applicable only to source endpoint.
+   * The format is: projects/{project}/locations/{location}/jobs/{job}
+   * </pre>
+   *
+   * <code>string cloud_run_job = 24;</code>
+   *
+   * @return The bytes for cloudRunJob.
+   */
+  com.google.protobuf.ByteString getCloudRunJobBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A VPC network URI. For source endpoints, used according to the
    * `network_type`. For destination endpoints, used only when the source is an
    * external IP address endpoint, and the destination is an internal IP address
