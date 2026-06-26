@@ -73,8 +73,7 @@ public interface TransportChannelProvider {
 
   /**
    * @return the user provided executor. This can be null if the user didn't override the executor
-   *     and the TransportProvider is using its internal executor.
-   * @throws UnsupportedOperationException if the TransportProvider doesn't support this method.
+   *     and/or the TransportProvider is using its internal executor.
    */
   @Nullable
   default Executor getExecutor() {
