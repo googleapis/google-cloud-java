@@ -135,6 +135,7 @@
             <!-- maven-dependency-plugin cannot detect the runtime usage of junit-platform-suite-engine for executing JUnit 5+ test suites. -->
             <ignoredUnusedDeclaredDependency>org.junit.platform:junit-platform-suite-engine</ignoredUnusedDeclaredDependency>
             <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>org.slf4j:slf4j-api</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>

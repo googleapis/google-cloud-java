@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- adding comment for testing-->
+  <groupId>com.google.cloud</groupId>
+  <artifactId>libraries-bom</artifactId>
+  <version>26.85.0-SNAPSHOT</version><!-- {x-version-update:libraries-bom:current} -->
+  <packaging>pom</packaging>
+
+  <name>Google Cloud Platform Supported Libraries</name>
+  <description>
+    A compatible set of Google Cloud open source libraries.
+    Document: https://cloud.google.com/java/docs/bom
+  </description>
+  <url>https://cloud.google.com/java/docs/bom</url>
+  <organization>
+    <name>Google LLC</name>
+    <url>https://cloud.google.com</url>
+  </organization>
+  <inceptionYear>2019</inceptionYear>
+  <developers>
+    <developer>
+      <name>Cloud Java team</name>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+  </issueManagement>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git
+    </developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>https://raw.githubusercontent.com/googleapis/google-cloud-java/main/LICENSE</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <google-cloud-shared-dependencies.version>3.63.0</google-cloud-shared-dependencies.version>
+    <enforcer.skip>true</enforcer.skip>
+  </properties>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <dependencyManagement>
+    <dependencies>
+      <!--
+        Import google-cloud-shared-dependencies instead of first-party-dependencies
+        to ensure all third-party transitive dependencies (like io.opentelemetry:opentelemetry-api)
+        are centrally managed and converged. Without this, conflicts like the one between
+        google-cloud-bigtable (using opentelemetry 1.62.0) and exporter-metrics (using opentelemetry 1.42.1)
+        will not converge for users of libraries-bom.
+      -->
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.266.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.7.0</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>sonatype-nexus-staging</serverId>
+            <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
+            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <configuration>
+          <pomElements>
+            <dependencyManagement>expand</dependencyManagement>
+          </pomElements>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <!-- By default, we release artifacts to Sonatype, which requires
+          nexus-staging-maven-plugin. -->
+      <id>release-sonatype</id>
+      <activation>
+        <property>
+          <!-- Only when we use the release-gcp-artifact-registry profile,
+          which comes with artifact-registry-url property, this profile is
+          turned off. -->
+          <name>!artifact-registry-url</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>release</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>3.2.7</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+                <configuration>
+                  <gpgArguments>
+                    <arg>--pinentry-mode</arg>
+                    <arg>loopback</arg>
+                  </gpgArguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.3.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
