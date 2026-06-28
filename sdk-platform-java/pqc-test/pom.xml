@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+		<groupId>com.google.cloud</groupId>
+		<artifactId>google-cloud-shared-config</artifactId>
+		<version>1.17.0</version>
+	</parent>
+
+  <groupId>com.google.api</groupId>
+  <artifactId>pqc-test-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>2.81.0-SNAPSHOT</version>
+
+  <modules>
+    <module>pqc-test-common</module>
+    <module>pqc-test-snapshot</module>
+    <module>pqc-test-release</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+        <version>1.84</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bctls-jdk18on</artifactId>
+        <version>1.84</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcutil-jdk18on</artifactId>
+        <version>1.84</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>
+            -Djavax.net.ssl.trustStore=${project.basedir}/../pqc-test-common/target/classes/pqctest.p12
+            -Djavax.net.ssl.trustStorePassword=password
+            -Djavax.net.ssl.trustStoreType=PKCS12
+          </argLine>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
