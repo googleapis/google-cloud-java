@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 # This script generates showcase in place and checks for git diffs to verify.
 
 echo "******** Verifying Showcase ********"
 
-set -oxe
+set -ex
 readonly SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 readonly ROOT_DIR="${SCRIPT_DIR}/../.."
 readonly SHOWCASE_DIR="${SCRIPT_DIR}/.."
