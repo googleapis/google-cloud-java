@@ -22,16 +22,11 @@ import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.protobuf.Any;
-import com.google.rpc.ErrorInfo;
-import com.google.rpc.PreconditionFailure;
-import com.google.rpc.Status;
 import io.grpc.Channel;
 import io.grpc.ClientInterceptors;
 import io.grpc.ManagedChannel;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
-import io.grpc.protobuf.StatusProto;
 import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
@@ -80,43 +75,12 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
   }
 
   /** Checks if the exception is due to a VPC Service Controls policy violation. */
-  private boolean isVpcScViolation(StatusRuntimeException e) {
-    try {
-      Status status = StatusProto.fromThrowable(e);
-      if (status != null) {
-        for (Any detail : status.getDetailsList()) {
-          // Check for ErrorInfo reason
-          if (detail.is(ErrorInfo.class)) {
-            ErrorInfo errorInfo = detail.unpack(ErrorInfo.class);
-            if ("VPC_SERVICE_CONTROLS".equals(errorInfo.getReason())) {
-              return true;
-            }
-          }
-          // Check for PreconditionFailure violation type
-          if (detail.is(PreconditionFailure.class)) {
-            PreconditionFailure failure = detail.unpack(PreconditionFailure.class);
-            for (PreconditionFailure.Violation violation : failure.getViolationsList()) {
-              if ("VPC_SERVICE_CONTROLS".equals(violation.getType())) {
-                return true;
-              }
-            }
-          }
-        }
-      }
-    } catch (Exception ex) {
-      // Fall back silently to string matching if protobuf unpacking fails
-    }
-
-    // Check the error message if we can't parse ErrorDetails
+  private boolean isAllowed(StatusRuntimeException e) {
     String description = e.getStatus().getDescription();
     String message = e.getMessage();
-
     return (description != null
-            && (description.contains("VPC Service Controls")
-                || description.contains("VPC_SERVICE_CONTROLS")))
-        || (message != null
-            && (message.contains("VPC Service Controls")
-                || message.contains("VPC_SERVICE_CONTROLS")));
+            && description.contains("Request is prohibited by organization's policy"))
+        || (message != null && message.contains("Request is prohibited by organization's policy"));
   }
 
   /** Executes the underlying RPC and evaluates the eligibility. */
@@ -137,10 +101,8 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
         throw e;
       }
 
-      if (isVpcScViolation(e)) {
-        LOG.log(
-            Level.WARNING,
-            "DirectPath is blocked by a VPC Service Controls perimeter policy violation.");
+      if (isAllowed(e)) {
+        LOG.log(Level.WARNING, "DirectPath is blocked by a perimeter policy violation.");
       } else {
         // Failed with standard permission error, resorting to ALTS check.
         isEligible = sidebandData.isAlts();
