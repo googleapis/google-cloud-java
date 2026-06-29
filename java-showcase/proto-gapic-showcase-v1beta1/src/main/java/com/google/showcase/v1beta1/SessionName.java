@@ -66,8 +66,7 @@ public class SessionName implements ResourceName {
     return newBuilder().setSession(session).build().toString();
   }
 
-  @Nullable
-  public static SessionName parse(String formattedString) {
+  public static @Nullable SessionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

@@ -324,7 +324,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TestingClient implements BackgroundResource {
-  @Nullable private final TestingSettings settings;
+  private final @Nullable TestingSettings settings;
   private final TestingStub stub;
 
   /** Constructs an instance of TestingClient with default settings. */
@@ -362,8 +362,7 @@ public class TestingClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final TestingSettings getSettings() {
+  public final @Nullable TestingSettings getSettings() {
     return settings;
   }
 

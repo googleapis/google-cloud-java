@@ -66,8 +66,7 @@ public class SequenceReportName implements ResourceName {
     return newBuilder().setSequence(sequence).build().toString();
   }
 
-  @Nullable
-  public static SequenceReportName parse(String formattedString) {
+  public static @Nullable SequenceReportName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

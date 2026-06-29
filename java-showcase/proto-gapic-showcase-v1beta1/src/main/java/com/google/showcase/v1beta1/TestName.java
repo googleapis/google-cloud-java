@@ -73,8 +73,7 @@ public class TestName implements ResourceName {
     return newBuilder().setSession(session).setTest(test).build().toString();
   }
 
-  @Nullable
-  public static TestName parse(String formattedString) {
+  public static @Nullable TestName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

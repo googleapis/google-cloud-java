@@ -315,7 +315,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SequenceServiceClient implements BackgroundResource {
-  @Nullable private final SequenceServiceSettings settings;
+  private final @Nullable SequenceServiceSettings settings;
   private final SequenceServiceStub stub;
 
   /** Constructs an instance of SequenceServiceClient with default settings. */
@@ -355,8 +355,7 @@ public class SequenceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final SequenceServiceSettings getSettings() {
+  public final @Nullable SequenceServiceSettings getSettings() {
     return settings;
   }
 
@@ -549,9 +548,11 @@ public class SequenceServiceClient implements BackgroundResource {
    * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SequenceReport getSequenceReport(SequenceReportName name) {
+  public final SequenceReport getSequenceReport(@Nullable SequenceReportName name) {
     GetSequenceReportRequest request =
-        GetSequenceReportRequest.newBuilder().setName(name.toString()).build();
+        GetSequenceReportRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getSequenceReport(request);
   }
 
@@ -663,9 +664,11 @@ public class SequenceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StreamingSequenceReport getStreamingSequenceReport(
-      StreamingSequenceReportName name) {
+      @Nullable StreamingSequenceReportName name) {
     GetStreamingSequenceReportRequest request =
-        GetStreamingSequenceReportRequest.newBuilder().setName(name.toString()).build();
+        GetStreamingSequenceReportRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
     return getStreamingSequenceReport(request);
   }
 
@@ -778,9 +781,9 @@ public class SequenceServiceClient implements BackgroundResource {
    * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void attemptSequence(SequenceName name) {
+  public final void attemptSequence(@Nullable SequenceName name) {
     AttemptSequenceRequest request =
-        AttemptSequenceRequest.newBuilder().setName(name.toString()).build();
+        AttemptSequenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     attemptSequence(request);
   }
 

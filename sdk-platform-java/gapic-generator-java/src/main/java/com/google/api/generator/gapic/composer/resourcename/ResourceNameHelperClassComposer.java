@@ -71,7 +71,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 public class ResourceNameHelperClassComposer {
   private static final String CLASS_NAME_PATTERN = "%sName";
@@ -791,12 +790,12 @@ public class ResourceNameHelperClassComposer {
               .setArguments(ofMethodArgExprs)
               .setReturnType(thisClassType)
               .build();
+      TypeNode nullableReturnType =
+          TypeNode.withReference(thisClassType.reference().copyAndSetNullable(true));
       return MethodDefinition.builder()
           .setScope(ScopeNode.PUBLIC)
           .setIsStatic(true)
-          .setAnnotations(
-              Collections.singletonList(AnnotationNode.withType(FIXED_TYPESTORE.get("Nullable"))))
-          .setReturnType(thisClassType)
+          .setReturnType(nullableReturnType)
           .setName("parse")
           .setArguments(formattedStringArgDeclList)
           .setBody(body)
@@ -888,12 +887,12 @@ public class ResourceNameHelperClassComposer {
                 .setType(FIXED_TYPESTORE.get("ValidationException"))
                 .setMessageExpr(exceptionMessageString)
                 .build()));
+    TypeNode nullableReturnType =
+        TypeNode.withReference(thisClassType.reference().copyAndSetNullable(true));
     return MethodDefinition.builder()
         .setScope(ScopeNode.PUBLIC)
         .setIsStatic(true)
-        .setAnnotations(
-            Collections.singletonList(AnnotationNode.withType(FIXED_TYPESTORE.get("Nullable"))))
-        .setReturnType(thisClassType)
+        .setReturnType(nullableReturnType)
         .setName("parse")
         .setArguments(formattedStringArgDeclList)
         .setBody(body)
@@ -1709,7 +1708,6 @@ public class ResourceNameHelperClassComposer {
             List.class,
             Map.class,
             NullMarked.class,
-            Nullable.class,
             Object.class,
             Objects.class,
             PathTemplate.class,

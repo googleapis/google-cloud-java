@@ -288,7 +288,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EchoClient implements BackgroundResource {
-  @Nullable private final EchoSettings settings;
+  private final @Nullable EchoSettings settings;
   private final EchoStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -334,8 +334,7 @@ public class EchoClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @Nullable
-  public final EchoSettings getSettings() {
+  public final @Nullable EchoSettings getSettings() {
     return settings;
   }
 
@@ -402,8 +401,9 @@ public class EchoClient implements BackgroundResource {
    * @param parent
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EchoResponse echo(ResourceName parent) {
-    EchoRequest request = EchoRequest.newBuilder().setParent(parent.toString()).build();
+  public final EchoResponse echo(@Nullable ResourceName parent) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return echo(request);
   }
 
@@ -450,8 +450,9 @@ public class EchoClient implements BackgroundResource {
    * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EchoResponse echo(FoobarName name) {
-    EchoRequest request = EchoRequest.newBuilder().setName(name.toString()).build();
+  public final EchoResponse echo(@Nullable FoobarName name) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return echo(request);
   }
 

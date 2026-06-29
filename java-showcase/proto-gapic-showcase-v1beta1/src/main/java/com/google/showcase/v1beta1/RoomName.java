@@ -65,8 +65,7 @@ public class RoomName implements ResourceName {
     return newBuilder().setRoom(room).build().toString();
   }
 
-  @Nullable
-  public static RoomName parse(String formattedString) {
+  public static @Nullable RoomName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

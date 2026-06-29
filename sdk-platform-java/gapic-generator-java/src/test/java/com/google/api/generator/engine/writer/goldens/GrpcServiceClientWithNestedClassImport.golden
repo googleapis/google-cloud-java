@@ -100,7 +100,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NestedMessageServiceClient implements BackgroundResource {
-  @Nullable private final NestedMessageServiceSettings settings;
+  private final @Nullable NestedMessageServiceSettings settings;
   private final NestedMessageServiceStub stub;
 
   /** Constructs an instance of NestedMessageServiceClient with default settings. */
@@ -140,8 +140,7 @@ public class NestedMessageServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final NestedMessageServiceSettings getSettings() {
+  public final @Nullable NestedMessageServiceSettings getSettings() {
     return settings;
   }
 

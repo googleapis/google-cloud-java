@@ -370,7 +370,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EchoClient implements BackgroundResource {
-  @Nullable private final EchoSettings settings;
+  private final @Nullable EchoSettings settings;
   private final EchoStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -416,8 +416,7 @@ public class EchoClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @Nullable
-  public final EchoSettings getSettings() {
+  public final @Nullable EchoSettings getSettings() {
     return settings;
   }
 

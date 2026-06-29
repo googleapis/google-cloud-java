@@ -75,9 +75,6 @@ public abstract class VaporReference implements Reference {
   public abstract boolean isStaticImport();
 
   @Override
-  public abstract boolean isNullable();
-
-  @Override
   public boolean hasEnclosingClass() {
     return !enclosingClassNames().isEmpty();
   }

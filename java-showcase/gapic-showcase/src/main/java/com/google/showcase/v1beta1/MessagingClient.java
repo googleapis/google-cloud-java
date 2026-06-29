@@ -455,7 +455,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MessagingClient implements BackgroundResource {
-  @Nullable private final MessagingSettings settings;
+  private final @Nullable MessagingSettings settings;
   private final MessagingStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -501,8 +501,7 @@ public class MessagingClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @Nullable
-  public final MessagingSettings getSettings() {
+  public final @Nullable MessagingSettings getSettings() {
     return settings;
   }
 
@@ -631,8 +630,9 @@ public class MessagingClient implements BackgroundResource {
    * @param name The resource name of the requested room.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Room getRoom(RoomName name) {
-    GetRoomRequest request = GetRoomRequest.newBuilder().setName(name.toString()).build();
+  public final Room getRoom(@Nullable RoomName name) {
+    GetRoomRequest request =
+        GetRoomRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRoom(request);
   }
 
@@ -791,8 +791,9 @@ public class MessagingClient implements BackgroundResource {
    * @param name The resource name of the requested room.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRoom(RoomName name) {
-    DeleteRoomRequest request = DeleteRoomRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteRoom(@Nullable RoomName name) {
+    DeleteRoomRequest request =
+        DeleteRoomRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRoom(request);
   }
 
@@ -998,11 +999,16 @@ public class MessagingClient implements BackgroundResource {
    * @param image The image content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(ProfileName parent, UserName user, ByteString image) {
+  public final Blurb createBlurb(
+      @Nullable ProfileName parent, @Nullable UserName user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
-            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setImage(image).build())
+            .setParent(parent == null ? null : parent.toString())
+            .setBlurb(
+                Blurb.newBuilder()
+                    .setUser(user == null ? null : user.toString())
+                    .setImage(image)
+                    .build())
             .build();
     return createBlurb(request);
   }
@@ -1034,11 +1040,16 @@ public class MessagingClient implements BackgroundResource {
    * @param text The textual content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(ProfileName parent, UserName user, String text) {
+  public final Blurb createBlurb(
+      @Nullable ProfileName parent, @Nullable UserName user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
-            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setText(text).build())
+            .setParent(parent == null ? null : parent.toString())
+            .setBlurb(
+                Blurb.newBuilder()
+                    .setUser(user == null ? null : user.toString())
+                    .setText(text)
+                    .build())
             .build();
     return createBlurb(request);
   }
@@ -1070,10 +1081,10 @@ public class MessagingClient implements BackgroundResource {
    * @param image The image content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(ProfileName parent, String user, ByteString image) {
+  public final Blurb createBlurb(@Nullable ProfileName parent, String user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setImage(image).build())
             .build();
     return createBlurb(request);
@@ -1106,10 +1117,10 @@ public class MessagingClient implements BackgroundResource {
    * @param text The textual content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(ProfileName parent, String user, String text) {
+  public final Blurb createBlurb(@Nullable ProfileName parent, String user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setText(text).build())
             .build();
     return createBlurb(request);
@@ -1142,11 +1153,16 @@ public class MessagingClient implements BackgroundResource {
    * @param image The image content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(RoomName parent, UserName user, ByteString image) {
+  public final Blurb createBlurb(
+      @Nullable RoomName parent, @Nullable UserName user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
-            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setImage(image).build())
+            .setParent(parent == null ? null : parent.toString())
+            .setBlurb(
+                Blurb.newBuilder()
+                    .setUser(user == null ? null : user.toString())
+                    .setImage(image)
+                    .build())
             .build();
     return createBlurb(request);
   }
@@ -1178,11 +1194,15 @@ public class MessagingClient implements BackgroundResource {
    * @param text The textual content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(RoomName parent, UserName user, String text) {
+  public final Blurb createBlurb(@Nullable RoomName parent, @Nullable UserName user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
-            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setText(text).build())
+            .setParent(parent == null ? null : parent.toString())
+            .setBlurb(
+                Blurb.newBuilder()
+                    .setUser(user == null ? null : user.toString())
+                    .setText(text)
+                    .build())
             .build();
     return createBlurb(request);
   }
@@ -1214,10 +1234,10 @@ public class MessagingClient implements BackgroundResource {
    * @param image The image content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(RoomName parent, String user, ByteString image) {
+  public final Blurb createBlurb(@Nullable RoomName parent, String user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setImage(image).build())
             .build();
     return createBlurb(request);
@@ -1250,10 +1270,10 @@ public class MessagingClient implements BackgroundResource {
    * @param text The textual content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(RoomName parent, String user, String text) {
+  public final Blurb createBlurb(@Nullable RoomName parent, String user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
-            .setParent(parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setBlurb(Blurb.newBuilder().setUser(user).setText(text).build())
             .build();
     return createBlurb(request);
@@ -1286,11 +1306,15 @@ public class MessagingClient implements BackgroundResource {
    * @param image The image content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(String parent, UserName user, ByteString image) {
+  public final Blurb createBlurb(String parent, @Nullable UserName user, ByteString image) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
             .setParent(parent)
-            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setImage(image).build())
+            .setBlurb(
+                Blurb.newBuilder()
+                    .setUser(user == null ? null : user.toString())
+                    .setImage(image)
+                    .build())
             .build();
     return createBlurb(request);
   }
@@ -1322,11 +1346,15 @@ public class MessagingClient implements BackgroundResource {
    * @param text The textual content of this blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb createBlurb(String parent, UserName user, String text) {
+  public final Blurb createBlurb(String parent, @Nullable UserName user, String text) {
     CreateBlurbRequest request =
         CreateBlurbRequest.newBuilder()
             .setParent(parent)
-            .setBlurb(Blurb.newBuilder().setUser(user.toString()).setText(text).build())
+            .setBlurb(
+                Blurb.newBuilder()
+                    .setUser(user == null ? null : user.toString())
+                    .setText(text)
+                    .build())
             .build();
     return createBlurb(request);
   }
@@ -1483,8 +1511,9 @@ public class MessagingClient implements BackgroundResource {
    * @param name The resource name of the requested blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blurb getBlurb(BlurbName name) {
-    GetBlurbRequest request = GetBlurbRequest.newBuilder().setName(name.toString()).build();
+  public final Blurb getBlurb(@Nullable BlurbName name) {
+    GetBlurbRequest request =
+        GetBlurbRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBlurb(request);
   }
 
@@ -1648,8 +1677,9 @@ public class MessagingClient implements BackgroundResource {
    * @param name The resource name of the requested blurb.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBlurb(BlurbName name) {
-    DeleteBlurbRequest request = DeleteBlurbRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteBlurb(@Nullable BlurbName name) {
+    DeleteBlurbRequest request =
+        DeleteBlurbRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBlurb(request);
   }
 
@@ -1758,8 +1788,9 @@ public class MessagingClient implements BackgroundResource {
    * @param parent The resource name of the requested room or profile who blurbs to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBlurbsPagedResponse listBlurbs(ProfileName parent) {
-    ListBlurbsRequest request = ListBlurbsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListBlurbsPagedResponse listBlurbs(@Nullable ProfileName parent) {
+    ListBlurbsRequest request =
+        ListBlurbsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listBlurbs(request);
   }
 
@@ -1786,8 +1817,9 @@ public class MessagingClient implements BackgroundResource {
    * @param parent The resource name of the requested room or profile who blurbs to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBlurbsPagedResponse listBlurbs(RoomName parent) {
-    ListBlurbsRequest request = ListBlurbsRequest.newBuilder().setParent(parent.toString()).build();
+  public final ListBlurbsPagedResponse listBlurbs(@Nullable RoomName parent) {
+    ListBlurbsRequest request =
+        ListBlurbsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listBlurbs(request);
   }
 
@@ -1951,7 +1983,7 @@ public class MessagingClient implements BackgroundResource {
       @Nullable ProfileName parent, String query) {
     SearchBlurbsRequest request =
         SearchBlurbsRequest.newBuilder()
-            .setParent(parent == null ? "" : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setQuery(query)
             .build();
     return searchBlurbsAsync(request);
@@ -1988,7 +2020,7 @@ public class MessagingClient implements BackgroundResource {
       @Nullable RoomName parent, String query) {
     SearchBlurbsRequest request =
         SearchBlurbsRequest.newBuilder()
-            .setParent(parent == null ? "" : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setQuery(query)
             .build();
     return searchBlurbsAsync(request);

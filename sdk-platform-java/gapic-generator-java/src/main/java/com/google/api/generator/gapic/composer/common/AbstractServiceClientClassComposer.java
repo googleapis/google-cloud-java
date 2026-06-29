@@ -105,7 +105,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 public abstract class AbstractServiceClientClassComposer implements ClassComposer {
   private static final String CALLABLE_NAME_PATTERN = "%sCallable";
@@ -291,6 +290,9 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             e -> {
               String varName = e.getKey();
               TypeNode varType = e.getValue();
+              if (varName.equals("settings")) {
+                varType = TypeNode.withReference(varType.reference().copyAndSetNullable(true));
+              }
               Variable variable = Variable.builder().setName(varName).setType(varType).build();
               VariableExpr.Builder varExprBuilder =
                   VariableExpr.builder()
@@ -298,12 +300,6 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                       .setScope(ScopeNode.PRIVATE)
                       .setIsFinal(true)
                       .setIsDecl(true);
-              if (varName.equals("settings")) {
-                varExprBuilder =
-                    varExprBuilder.setAnnotations(
-                        Collections.singletonList(
-                            AnnotationNode.withType(typeStore.get("Nullable"))));
-              }
               return ExprStatement.withExpr(varExprBuilder.build());
             })
         .collect(Collectors.toList());
@@ -585,10 +581,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                 methodBuilder.setAnnotations(annotations);
               }
               if (methodName.equals("getSettings")) {
-                methodBuilder =
-                    methodBuilder.setAnnotations(
-                        Collections.singletonList(
-                            AnnotationNode.withType(typeStore.get("Nullable"))));
+                methodReturnType =
+                    TypeNode.withReference(methodReturnType.reference().copyAndSetNullable(true));
               }
               return methodBuilder
                   .setScope(ScopeNode.PUBLIC)
@@ -730,6 +724,22 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     return javaMethods;
   }
 
+  // Mark resource name helper arguments as nullable since callers may pass null into the helper methods.
+  private static VariableExpr createMethodArgVariableExpr(MethodArgument methodArg) {
+    TypeNode argType = methodArg.type();
+    if (methodArg.isResourceNameHelper()) {
+      argType = TypeNode.withReference(argType.reference().copyAndSetNullable(true));
+    }
+    return VariableExpr.builder()
+        .setVariable(
+            Variable.builder()
+                .setName(JavaStyle.toLowerCamelCase(methodArg.name()))
+                .setType(argType)
+                .build())
+        .setIsDecl(true)
+        .build();
+  }
+
   private static List<MethodDefinition> createMethodVariants(
       Method method,
       String clientName,
@@ -762,23 +772,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
       // Get the argument list.
       List<VariableExpr> arguments =
           signature.stream()
-              .map(
-                  methodArg -> {
-                    TypeNode argType = methodArg.type();
-                    if (methodArg.isResourceNameHelper() && !methodArg.field().isRequired()) {
-                      argType =
-                          TypeNode.withReference(argType.reference().copyAndSetNullable(true));
-                    }
-                    VariableExpr.Builder argBuilder =
-                        VariableExpr.builder()
-                            .setVariable(
-                                Variable.builder()
-                                    .setName(JavaStyle.toLowerCamelCase(methodArg.name()))
-                                    .setType(argType)
-                                    .build())
-                            .setIsDecl(true);
-                    return argBuilder.build();
-                  })
+              .map(AbstractServiceClientClassComposer::createMethodArgVariableExpr)
               .collect(Collectors.toList());
 
       // Request proto builder.
@@ -1761,30 +1755,20 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
         VariableExpr.withVariable(
             Variable.builder().setName(argumentName).setType(argumentType).build());
     if (argument.isResourceNameHelper()) {
-      if (argument.field().isRequired()) {
-        argVarExpr =
-            MethodInvocationExpr.builder()
-                .setExprReferenceExpr(argVarExpr)
-                .setMethodName("toString")
-                .setReturnType(TypeNode.STRING)
-                .build();
-      } else {
-        Expr nullExpr = ValueExpr.createNullExpr();
-        Expr isNullCheckExpr = RelationalOperationExpr.equalToWithExprs(argVarExpr, nullExpr);
-        Expr emptyStringExpr = ValueExpr.withValue(StringObjectValue.withValue(""));
-        MethodInvocationExpr toStringExpr =
-            MethodInvocationExpr.builder()
-                .setExprReferenceExpr(argVarExpr)
-                .setMethodName("toString")
-                .setReturnType(TypeNode.STRING)
-                .build();
-        argVarExpr =
-            TernaryExpr.builder()
-                .setConditionExpr(isNullCheckExpr)
-                .setThenExpr(emptyStringExpr)
-                .setElseExpr(toStringExpr)
-                .build();
-      }
+      Expr nullExpr = ValueExpr.createNullExpr();
+      Expr isNullCheckExpr = RelationalOperationExpr.equalToWithExprs(argVarExpr, nullExpr);
+      MethodInvocationExpr toStringExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(argVarExpr)
+              .setMethodName("toString")
+              .setReturnType(TypeNode.STRING)
+              .build();
+      argVarExpr =
+          TernaryExpr.builder()
+              .setConditionExpr(isNullCheckExpr)
+              .setThenExpr(nullExpr)
+              .setElseExpr(toStringExpr)
+              .build();
     }
 
     String setterMethodName =
@@ -1826,7 +1810,6 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             IOException.class,
             MoreExecutors.class,
             NullMarked.class,
-            Nullable.class,
             Objects.class,
             Operation.class,
             OperationFuture.class,

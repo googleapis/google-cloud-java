@@ -119,7 +119,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WickedClient implements BackgroundResource {
-  @Nullable private final WickedSettings settings;
+  private final @Nullable WickedSettings settings;
   private final WickedStub stub;
 
   /** Constructs an instance of WickedClient with default settings. */
@@ -157,8 +157,7 @@ public class WickedClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final WickedSettings getSettings() {
+  public final @Nullable WickedSettings getSettings() {
     return settings;
   }
 

@@ -67,8 +67,7 @@ public class StreamingSequenceReportName implements ResourceName {
     return newBuilder().setStreamingSequence(streamingSequence).build().toString();
   }
 
-  @Nullable
-  public static StreamingSequenceReportName parse(String formattedString) {
+  public static @Nullable StreamingSequenceReportName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

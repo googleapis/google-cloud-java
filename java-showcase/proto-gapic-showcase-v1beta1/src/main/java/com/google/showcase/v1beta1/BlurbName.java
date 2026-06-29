@@ -189,8 +189,7 @@ public class BlurbName implements ResourceName {
         .toString();
   }
 
-  @Nullable
-  public static BlurbName parse(String formattedString) {
+  public static @Nullable BlurbName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }

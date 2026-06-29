@@ -161,7 +161,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundResource {
-  @Nullable private final EchoServiceShouldGeneratePartialUsualSettings settings;
+  private final @Nullable EchoServiceShouldGeneratePartialUsualSettings settings;
   private final EchoServiceShouldGeneratePartialUsualStub stub;
 
   /**
@@ -210,8 +210,7 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
     this.stub = stub;
   }
 
-  @Nullable
-  public final EchoServiceShouldGeneratePartialUsualSettings getSettings() {
+  public final @Nullable EchoServiceShouldGeneratePartialUsualSettings getSettings() {
     return settings;
   }
 
@@ -265,8 +264,9 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EchoResponse echoShouldGenerateAsUsual(FoobarName name) {
-    EchoRequest request = EchoRequest.newBuilder().setName(name.toString()).build();
+  public final EchoResponse echoShouldGenerateAsUsual(@Nullable FoobarName name) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return echoShouldGenerateAsUsual(request);
   }
 
@@ -475,8 +475,9 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @InternalApi("This API is not intended for public consumption.")
-  public final EchoResponse chatShouldGenerateAsInternal(FoobarName name) {
-    EchoRequest request = EchoRequest.newBuilder().setName(name.toString()).build();
+  public final EchoResponse chatShouldGenerateAsInternal(@Nullable FoobarName name) {
+    EchoRequest request =
+        EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return chatShouldGenerateAsInternal(request);
   }
 

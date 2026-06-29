@@ -53,9 +53,6 @@ public abstract class ConcreteReference implements Reference {
   public abstract boolean isStaticImport();
 
   @Override
-  public abstract boolean isNullable();
-
-  @Override
   public String name() {
     StringBuilder sb = new StringBuilder();
     if (isWildcard()) {

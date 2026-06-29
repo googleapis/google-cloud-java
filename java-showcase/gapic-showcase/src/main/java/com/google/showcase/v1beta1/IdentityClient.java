@@ -292,7 +292,7 @@ import org.jspecify.annotations.Nullable;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class IdentityClient implements BackgroundResource {
-  @Nullable private final IdentitySettings settings;
+  private final @Nullable IdentitySettings settings;
   private final IdentityStub stub;
 
   /** Constructs an instance of IdentityClient with default settings. */
@@ -330,8 +330,7 @@ public class IdentityClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final IdentitySettings getSettings() {
+  public final @Nullable IdentitySettings getSettings() {
     return settings;
   }
 
@@ -502,8 +501,9 @@ public class IdentityClient implements BackgroundResource {
    * @param name The resource name of the requested user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User getUser(UserName name) {
-    GetUserRequest request = GetUserRequest.newBuilder().setName(name.toString()).build();
+  public final User getUser(@Nullable UserName name) {
+    GetUserRequest request =
+        GetUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUser(request);
   }
 
@@ -662,8 +662,9 @@ public class IdentityClient implements BackgroundResource {
    * @param name The resource name of the user to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUser(UserName name) {
-    DeleteUserRequest request = DeleteUserRequest.newBuilder().setName(name.toString()).build();
+  public final void deleteUser(@Nullable UserName name) {
+    DeleteUserRequest request =
+        DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUser(request);
   }
 

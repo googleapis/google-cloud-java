@@ -116,7 +116,7 @@ import org.jspecify.annotations.Nullable;
 @Deprecated
 @Generated("by gapic-generator-java")
 public class DeprecatedServiceClient implements BackgroundResource {
-  @Nullable private final DeprecatedServiceSettings settings;
+  private final @Nullable DeprecatedServiceSettings settings;
   private final DeprecatedServiceStub stub;
 
   /** Constructs an instance of DeprecatedServiceClient with default settings. */
@@ -156,8 +156,7 @@ public class DeprecatedServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  @Nullable
-  public final DeprecatedServiceSettings getSettings() {
+  public final @Nullable DeprecatedServiceSettings getSettings() {
     return settings;
   }
 

@@ -66,8 +66,7 @@ public class ProfileName implements ResourceName {
     return newBuilder().setUser(user).build().toString();
   }
 
-  @Nullable
-  public static ProfileName parse(String formattedString) {
+  public static @Nullable ProfileName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
