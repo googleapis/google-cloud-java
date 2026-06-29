@@ -7,6 +7,7 @@ echo "******** Generating Showcase ********"
 trap cleanup ERR
 
 readonly ROOT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../.."
+export PYTHONPATH="${ROOT_DIR}/sdk-platform-java/hermetic_build/library_generation/owlbot"
 pushd "${ROOT_DIR}"
 source "${ROOT_DIR}/java-showcase/scripts/showcase_utilities.sh"
 
@@ -44,6 +45,8 @@ fi
 if [[ "${replace}" == "true" ]]; then
   echo "generating showcase in place"
   $LIBRARIAN_CMD generate showcase
+  # Discard changes to root POM and BOM POM files modified by Librarian's Java post-processor
+  git restore "${ROOT_DIR}/pom.xml" "${ROOT_DIR}/gapic-libraries-bom/pom.xml" || true
 else
   export generated_files_dir=$(mktemp -d)
   echo "Temp generation directory: ${generated_files_dir}"

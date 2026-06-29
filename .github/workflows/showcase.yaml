@@ -115,6 +115,29 @@ jobs:
         env:
           BUILD_SUBDIR: sdk-platform-java
           JOB_TYPE: install
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+      - name: Install protoc
+        run: |
+          set -e
+          VERSION="33.2"
+          curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
+          cd /usr/local
+          sudo unzip -o /tmp/protoc.zip
+          protoc --version
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: 'pip'
+      - name: Install Librarian and tools
+        env:
+          PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
+        run: |
+          V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
+          echo "Installing librarian version $V"
+          go install github.com/googleapis/librarian/cmd/librarian@$V
+          librarian install
       - name: Showcase golden tests
         working-directory: java-showcase
         run: |
