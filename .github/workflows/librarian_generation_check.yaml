@@ -11,7 +11,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-name: Librarian - Generate diff check on main
+
+# This workflow runs a check to ensure that all generated libraries are up-to-date with
+# the latest configuration.
+#
+# Triggers:
+# 1. Push to main: Generates the libraries, checks for git diffs, and fails (creating
+#    a Buganizer/GitHub issue) if any changes are detected.
+# 2. Manual trigger (workflow_dispatch) on a branch (except main): Generates the
+#    libraries and commits the resulting diff directly back to the triggering branch.
+name: Librarian - Generate libraries check / update
 on:
   push:
     branches:
@@ -22,9 +31,14 @@ jobs:
   library_generation:
     runs-on: ubuntu-24.04
     permissions:
-      contents: read
+      contents: write
       issues: write
     steps:
+    - name: Prevent running manually on main branch
+      if: ${{ github.event_name == 'workflow_dispatch' && github.ref_name == 'main' }}
+      run: |
+        echo "Error: Running this workflow manually on the main branch is not allowed."
+        exit 1
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
@@ -70,6 +84,7 @@ jobs:
       run: |
         librarian generate --all
     - name: Check for generated code changes
+      if: ${{ github.event_name != 'workflow_dispatch' }}
       run: |
         if [ -n "$(git status --porcelain)" ]; then
           git status
@@ -79,8 +94,20 @@ jobs:
           echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
           exit 1
         fi
+    - name: Commit and push changes (manual run only)
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "chore: regenerate libraries"
+          git push
+        else
+          echo "No changes to commit"
+        fi
     - name: Create issue if previous step fails
-      if: ${{ failure() && github.ref == 'refs/heads/main' }}
+      if: ${{ failure() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
       uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
       with:
         title: "Librarian generate diff check failed on main branch"
