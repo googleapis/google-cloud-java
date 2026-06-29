@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.22.0
+version: v0.22.1-0.20260629154537-1ec1f6ec6ca3
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
