@@ -103,7 +103,6 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceClientClassComposer implements ClassComposer {
   private static final String CALLABLE_NAME_PATTERN = "%sCallable";
@@ -194,7 +193,6 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
 
   private static List<AnnotationNode> createClassAnnotations(Service service, TypeStore typeStore) {
     List<AnnotationNode> annotations = new ArrayList<>();
-    annotations.add(AnnotationNode.withType(typeStore.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(typeStore.get("BetaApi")));
     }
@@ -1788,7 +1786,6 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             InterruptedException.class,
             IOException.class,
             MoreExecutors.class,
-            NullMarked.class,
             Objects.class,
             Operation.class,
             OperationFuture.class,

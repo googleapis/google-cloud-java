@@ -43,7 +43,6 @@ import com.google.pubsub.v1.ValidateMessageResponse;
 import com.google.pubsub.v1.ValidateSchemaRequest;
 import com.google.pubsub.v1.ValidateSchemaResponse;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -51,7 +50,6 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class SchemaServiceStub implements BackgroundResource {
 

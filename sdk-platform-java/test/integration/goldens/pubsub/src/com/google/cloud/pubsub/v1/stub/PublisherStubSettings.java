@@ -81,7 +81,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -132,7 +131,6 @@ import org.jspecify.annotations.NullMarked;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
-@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
