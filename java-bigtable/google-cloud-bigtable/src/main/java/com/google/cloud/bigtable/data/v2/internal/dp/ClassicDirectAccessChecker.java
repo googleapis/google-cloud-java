@@ -75,12 +75,12 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
   }
 
   /** Checks if the exception is due to a VPC Service Controls policy violation. */
-  private boolean isAllowed(StatusRuntimeException e) {
+  private boolean isAllowedFromVPCServiceControls(StatusRuntimeException e) {
     String description = e.getStatus().getDescription();
     String message = e.getMessage();
-    return (description != null
-            && description.contains("Request is prohibited by organization's policy"))
-        || (message != null && message.contains("Request is prohibited by organization's policy"));
+    String expected = "request is prohibited by organization's policy";
+    return (description != null && description.toLowerCase().contains(expected))
+        || (message != null && message.toLowerCase().contains(expected));
   }
 
   /** Executes the underlying RPC and evaluates the eligibility. */
@@ -101,7 +101,7 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
         throw e;
       }
 
-      if (isAllowed(e)) {
+      if (isAllowedFromVPCServiceControls(e)) {
         LOG.log(Level.WARNING, "DirectPath is blocked by a perimeter policy violation.");
       } else {
         // Failed with standard permission error, resorting to ALTS check.
