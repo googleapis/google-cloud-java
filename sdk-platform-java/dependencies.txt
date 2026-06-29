@@ -43,7 +43,7 @@ io.perfmark:perfmark-api,perfmark-api=0.27.0
 # Note: This is the google opentelemetry exporter and not the general opentelemetry project
 com.google.cloud.opentelemetry:exporter-metrics,google.cloud.opentelemetry=0.37.0
 com.google.flogger:flogger,flogger=0.9
-org.apache.arrow:arrow-memory-core,arrow=18.3.0
+org.apache.arrow:arrow-memory-core,arrow=19.0.0
 dev.cel:cel,dev.cel=0.13.1
 com.google.crypto.tink:tink,com.google.crypto.tink=1.22.0
 # The follow opentelemetry dependencies have a different version from the opentelemetry-bom
