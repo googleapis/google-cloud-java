@@ -44,14 +44,12 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -62,18 +60,29 @@ public class BigQueryDatabaseMetaDataTest {
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
   private BigQuery bigqueryClient;
+  private ExecutorService metadataExecutor;
 
   @BeforeEach
   public void setUp() throws SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
     bigqueryClient = mock(BigQuery.class);
     Statement mockStatement = mock(Statement.class);
+    metadataExecutor = Executors.newCachedThreadPool();
 
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
+    when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+  }
+
+  @AfterEach
+  public void tearDown() {
+    if (metadataExecutor != null) {
+      metadataExecutor.shutdownNow();
+    }
   }
 
   private Table mockBigQueryTable(
@@ -1598,7 +1607,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testSubmitProcedureArgumentProcessingJobs_Basic() throws InterruptedException {
+  public void testProcessProcedureArgumentsSequentially_Basic() throws InterruptedException {
     String catalog = "p";
     String schemaName = "d";
     RoutineArgument arg1 = mockRoutineArgument("arg1_name", StandardSQLTypeName.STRING, "IN");
@@ -1623,32 +1632,13 @@ public class BigQueryDatabaseMetaDataTest {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultSchemaFields = resultSchema.getFields();
 
-    ExecutorService mockExecutor = mock(ExecutorService.class);
-    List<Future<?>> processingTaskFutures = new ArrayList<>();
+    dbMetadata.processProcedureArgumentsSequentially(
+        fullRoutines, columnNameRegex, collectedResults, resultSchemaFields, dbMetadata.LOG);
 
-    // Capture the runnable submitted to the executor
-    List<Runnable> submittedRunnables = new ArrayList<>();
-    doAnswer(
-            invocation -> {
-              Runnable runnable = invocation.getArgument(0);
-              submittedRunnables.add(runnable);
-              Future<?> future = mock(Future.class);
-              return future;
-            })
-        .when(mockExecutor)
-        .submit(any(Runnable.class));
-
-    dbMetadata.submitProcedureArgumentProcessingJobs(
-        fullRoutines,
-        columnNameRegex,
-        collectedResults,
-        resultSchemaFields,
-        mockExecutor,
-        processingTaskFutures,
-        dbMetadata.LOG);
-
-    verify(mockExecutor, times(2)).submit(any(Runnable.class));
-    assertEquals(2, processingTaskFutures.size());
+    // Only proc1 has arguments, so collectedResults should contain 1 row.
+    assertEquals(1, collectedResults.size());
+    FieldValueList row = collectedResults.get(0);
+    assertEquals("arg1_name", row.get("COLUMN_NAME").getStringValue());
   }
 
   @Test
@@ -2955,7 +2945,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetSchemas_NoArgs_DelegatesCorrectly() {
+  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws SQLException {
     BigQueryDatabaseMetaData spiedDbMetadata = spy(dbMetadata);
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
@@ -3314,123 +3304,126 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testWrapThread_NullThread() {
-    assertNull(BigQueryDatabaseMetaData.wrapThread(null));
+  public void testGetCatalogs_WithProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(true);
+    when(bigQueryConnection.getDiscoveredProjects())
+        .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
+
+    ResultSet rs = dbMetadata.getCatalogs();
+    assertNotNull(rs);
+
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      catalogs.add(rs.getString("TABLE_CAT"));
+    }
+
+    assertThat(catalogs)
+        .containsExactly(
+            "additional-1", "additional-2", "discovered-1", "discovered-2", "primary-project")
+        .inOrder();
   }
 
   @Test
-  public void testWrapThread_BasicLifecycle() throws Exception {
-    CountDownLatch startLatch = new CountDownLatch(1);
-    CountDownLatch finishLatch = new CountDownLatch(1);
-    Thread t =
-        new Thread(
-            () -> {
-              try {
-                startLatch.countDown();
-                finishLatch.await();
-              } catch (InterruptedException e) {
-                // ignore
-              }
-            });
+  public void testGetCatalogs_WithoutProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+    when(bigQueryConnection.getDiscoveredProjects())
+        .thenReturn(Arrays.asList("discovered-1", "discovered-2"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1,additional-2");
 
-    Future<?>[] futures = BigQueryDatabaseMetaData.wrapThread(t);
-    assertNotNull(futures);
-    assertEquals(1, futures.length);
-    Future<?> f = futures[0];
+    ResultSet rs = dbMetadata.getCatalogs();
+    assertNotNull(rs);
 
-    // Thread is NEW (not started yet).
-    assertFalse(f.isDone());
-    assertFalse(f.isCancelled());
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      catalogs.add(rs.getString("TABLE_CAT"));
+    }
 
-    t.start();
-    startLatch.await();
-
-    // Thread is running.
-    assertFalse(f.isDone());
-    assertFalse(f.isCancelled());
-
-    finishLatch.countDown();
-    t.join();
-
-    // Thread is terminated.
-    assertTrue(f.isDone());
-    assertFalse(f.isCancelled());
-    assertNull(f.get());
+    assertThat(catalogs)
+        .containsExactly("additional-1", "additional-2", "primary-project")
+        .inOrder();
   }
 
   @Test
-  public void testWrapThread_CancelBeforeStart() throws Exception {
-    Thread t =
-        new Thread(
-            () -> {
-              try {
-                Thread.sleep(1000);
-              } catch (InterruptedException e) {
-                // ignore
-              }
-            });
+  public void testGetSchemas_WithProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(true);
+    when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
-    assertTrue(f.cancel(true));
-    assertTrue(f.isCancelled());
-    assertTrue(f.isDone());
+    Page<Dataset> pagePrimary = mock(Page.class);
+    Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(eq("primary-project"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pagePrimary);
 
-    // cancel on already cancelled should return false
-    assertFalse(f.cancel(true));
+    Page<Dataset> pageAdditional = mock(Page.class);
+    Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
+    when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pageAdditional);
 
-    assertThrows(CancellationException.class, () -> f.get());
-    assertThrows(CancellationException.class, () -> f.get(1, TimeUnit.SECONDS));
+    Page<Dataset> pageDiscovered = mock(Page.class);
+    Dataset dsDiscovered = mockBigQueryDataset("discovered-1", "dataset_d");
+    when(pageDiscovered.iterateAll()).thenReturn(Collections.singletonList(dsDiscovered));
+    when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pageDiscovered);
+
+    ResultSet rs = dbMetadata.getSchemas(null, null);
+    assertNotNull(rs);
+
+    List<String> schemas = new ArrayList<>();
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      schemas.add(rs.getString("TABLE_SCHEM"));
+      catalogs.add(rs.getString("TABLE_CATALOG"));
+    }
+
+    // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+    // alphabetical catalog: "additional-1", "discovered-1", "primary-project"
+    assertThat(catalogs)
+        .containsExactly("additional-1", "discovered-1", "primary-project")
+        .inOrder();
+    assertThat(schemas).containsExactly("dataset_a", "dataset_d", "dataset_p").inOrder();
   }
 
   @Test
-  public void testWrapThread_CancelRunningWithInterrupt() throws Exception {
-    CountDownLatch startLatch = new CountDownLatch(1);
-    CountDownLatch interruptedLatch = new CountDownLatch(1);
-    Thread t =
-        new Thread(
-            () -> {
-              startLatch.countDown();
-              try {
-                Thread.sleep(10000);
-              } catch (InterruptedException e) {
-                interruptedLatch.countDown();
-              }
-            });
+  public void testGetSchemas_WithoutProjectDiscovery() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+    when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    t.start();
-    startLatch.await();
+    Page<Dataset> pagePrimary = mock(Page.class);
+    Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
+    when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
+    when(bigqueryClient.listDatasets(eq("primary-project"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pagePrimary);
 
-    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
-    assertTrue(f.cancel(true));
-    assertTrue(f.isCancelled());
-    assertTrue(f.isDone());
+    Page<Dataset> pageAdditional = mock(Page.class);
+    Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
+    when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
+    when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption.class)))
+        .thenReturn(pageAdditional);
 
-    assertTrue(interruptedLatch.await(5, TimeUnit.SECONDS));
-    assertThrows(CancellationException.class, () -> f.get());
-  }
+    ResultSet rs = dbMetadata.getSchemas(null, null);
+    assertNotNull(rs);
 
-  @Test
-  public void testWrapThread_GetTimeout() throws Exception {
-    CountDownLatch startLatch = new CountDownLatch(1);
-    Thread t =
-        new Thread(
-            () -> {
-              startLatch.countDown();
-              try {
-                Thread.sleep(10000);
-              } catch (InterruptedException e) {
-                // ignore
-              }
-            });
+    List<String> schemas = new ArrayList<>();
+    List<String> catalogs = new ArrayList<>();
+    while (rs.next()) {
+      schemas.add(rs.getString("TABLE_SCHEM"));
+      catalogs.add(rs.getString("TABLE_CATALOG"));
+    }
 
-    t.start();
-    startLatch.await();
+    // Results are sorted by catalog (TABLE_CATALOG) then schema (TABLE_SCHEM)
+    // alphabetical catalog: "additional-1", "primary-project" (discovered-1 is ignored)
+    assertThat(catalogs).containsExactly("additional-1", "primary-project").inOrder();
+    assertThat(schemas).containsExactly("dataset_a", "dataset_p").inOrder();
 
-    Future<?> f = BigQueryDatabaseMetaData.wrapThread(t)[0];
-    assertThrows(TimeoutException.class, () -> f.get(100, TimeUnit.MILLISECONDS));
-
-    // Cleanup: stop the thread
-    t.interrupt();
-    t.join();
+    verify(bigqueryClient, never())
+        .listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption.class));
   }
 }

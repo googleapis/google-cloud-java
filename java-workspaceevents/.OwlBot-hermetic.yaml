@@ -16,21 +16,20 @@
 deep-remove-regex:
 - "/java-workspaceevents/grpc-google-.*/src"
 - "/java-workspaceevents/proto-google-.*/src"
-- "/java-workspaceevents/google-.*/src/main"
-- "/java-workspaceevents/google-.*/src/test/java/com/google/.*/v.*/.*ClientTest.java"
-- "/java-workspaceevents/google-.*/src/test/java/com/google/.*/v.*/.*ClientHttpJsonTest.java"
-- "/java-workspaceevents/google-.*/src/test/java/com/google/.*/v.*/Mock.*.java"
+- "/java-workspaceevents/google-.*/src"
 - "/java-workspaceevents/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+
 deep-copy-regex:
 - source: "/google/apps/events/subscriptions/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-workspaceevents/$1/proto-google-cloud-workspaceevents-$1/src"
 - source: "/google/apps/events/subscriptions/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-workspaceevents/$1/grpc-google-cloud-workspaceevents-$1/src"
-- source: "/google/apps/events/subscriptions/(v.*)/.*-java/gapic-google-.*/src/main"
-  dest: "/owl-bot-staging/java-workspaceevents/$1/google-cloud-workspaceevents/src/main"
+- source: "/google/apps/events/subscriptions/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-workspaceevents/$1/google-cloud-workspaceevents/src"
 - source: "/google/apps/events/subscriptions/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-workspaceevents/$1/samples/snippets/generated"
 

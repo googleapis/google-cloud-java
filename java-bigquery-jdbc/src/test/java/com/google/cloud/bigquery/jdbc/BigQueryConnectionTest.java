@@ -23,11 +23,18 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -35,6 +42,8 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -517,6 +526,81 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           assertThrows(
               BigQueryJdbcException.class, () -> connection.unwrap(java.sql.Statement.class));
       assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
+    }
+  }
+
+  @Test
+  public void testGetDiscoveredProjects_Success() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      connection.bigQuery = mockBigQuery;
+
+      Page<Project> mockPage = mock(Page.class);
+      Project project1 = mock(Project.class);
+      when(project1.getProjectId()).thenReturn("discovered-p1");
+      Project project2 = mock(Project.class);
+      when(project2.getProjectId()).thenReturn("discovered-p2");
+
+      when(mockPage.iterateAll()).thenReturn(Arrays.asList(project1, project2));
+      when(mockBigQuery.listProjects()).thenReturn(mockPage);
+
+      List<String> discovered = connection.getDiscoveredProjects();
+      assertEquals(Arrays.asList("discovered-p1", "discovered-p2"), discovered);
+
+      // Verify caching: second call should not invoke listProjects again
+      List<String> discoveredCached = connection.getDiscoveredProjects();
+      assertSame(discovered, discoveredCached);
+      verify(mockBigQuery, times(1)).listProjects();
+    }
+  }
+
+  @Test
+  public void testGetDiscoveredProjects_BigQueryExceptionThrown() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      connection.bigQuery = mockBigQuery;
+
+      BigQueryException exception = new BigQueryException(403, "Access Denied");
+      when(mockBigQuery.listProjects()).thenThrow(exception);
+
+      // Verify that it throws BigQueryJdbcException
+      BigQueryJdbcException ex =
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> {
+                connection.getDiscoveredProjects();
+              });
+      assertTrue(ex.getMessage().contains("Failed to list all accessible projects."));
+      assertEquals(exception, ex.getCause());
+
+      // Subsequent call should retry since no cache is set
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> {
+            connection.getDiscoveredProjects();
+          });
+      verify(mockBigQuery, times(2)).listProjects();
+    }
+  }
+
+  @Test
+  public void testGetDiscoveredProjects_OtherExceptionThrown() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      connection.bigQuery = mockBigQuery;
+
+      RuntimeException exception = new RuntimeException("Generic Network Failure");
+      when(mockBigQuery.listProjects()).thenThrow(exception);
+
+      // Verify that it throws BigQueryJdbcException
+      BigQueryJdbcException ex =
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> {
+                connection.getDiscoveredProjects();
+              });
+      assertTrue(ex.getMessage().contains("Failed to list all accessible projects."));
+      assertEquals(exception, ex.getCause());
     }
   }
 }

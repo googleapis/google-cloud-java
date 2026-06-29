@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -48,7 +49,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class ITStatementTest {
+public class ITStatementTest extends ITBase {
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static String DATASET;
   private static Random random = new Random();
@@ -122,7 +123,7 @@ public class ITStatementTest {
     // setMaxRows Test
     statement.setMaxRows(5);
     ResultSet maxRowsResultSet = statement.executeQuery(selectQuery);
-    assertEquals(5, getSizeOfResultSet(maxRowsResultSet));
+    assertEquals(5, resultSetRowCount(maxRowsResultSet));
 
     try {
       statement.setMaxRows(0);
@@ -244,14 +245,6 @@ public class ITStatementTest {
     connection.close();
   }
 
-  private int resultSetRowCount(ResultSet resultSet) throws SQLException {
-    int rowCount = 0;
-    while (resultSet.next()) {
-      rowCount++;
-    }
-    return rowCount;
-  }
-
   @Test
   public void testStringColumnLength() throws SQLException {
     String TABLE_NAME = "StringColumnLengthTable";
@@ -323,20 +316,13 @@ public class ITStatementTest {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
 
-    String selectQuery =
-        "SELECT views FROM bigquery-public-data.wikipedia.pageviews_2020 WHERE datehour >="
-            + " '2020-01-01' LIMIT 9000000";
-
     // statement.execute(selectQuery);
     assertEquals(0, statement.getQueryTimeout());
     statement.setQueryTimeout(1);
     assertEquals(1, statement.getQueryTimeout());
-    try {
-      statement.executeQuery(selectQuery);
-    } catch (SQLException e) {
-      assertTrue(true);
-      assertEquals("SQL execution canceled", e.getMessage());
-    }
+    SQLException e =
+        assertThrows(SQLException.class, () -> statement.executeQuery(ITBase.query300seconds));
+    assertThat(e.getMessage()).contains("Job execution was cancelled: Job timed out");
     statement.close();
     connection.close();
   }
@@ -388,14 +374,6 @@ public class ITStatementTest {
       statement.close();
     }
     connection.close();
-  }
-
-  int getSizeOfResultSet(ResultSet resultSet) throws SQLException {
-    int count = 0;
-    while (resultSet.next()) {
-      count++;
-    }
-    return count;
   }
 
   @Test

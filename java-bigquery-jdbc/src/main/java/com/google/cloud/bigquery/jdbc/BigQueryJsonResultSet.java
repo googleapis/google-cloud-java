@@ -109,6 +109,23 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         schema, totalRows, buffer, statement, false, null, -1, -1, ownedTasks, null, null);
   }
 
+  static BigQueryJsonResultSet of(
+      Schema schema,
+      long totalRows,
+      BlockingQueue<BigQueryFieldValueListWrapper> buffer,
+      BigQueryStatement statement,
+      Future<?> ownedTask) {
+    return of(schema, totalRows, buffer, statement, new Future<?>[] {ownedTask});
+  }
+
+  static BigQueryJsonResultSet of(
+      Schema schema,
+      long totalRows,
+      BlockingQueue<BigQueryFieldValueListWrapper> buffer,
+      BigQueryStatement statement) {
+    return of(schema, totalRows, buffer, statement, (Future<?>[]) null);
+  }
+
   BigQueryJsonResultSet() {
     super(null, null, null, false);
     totalRows = 0;

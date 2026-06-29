@@ -23,6 +23,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
+import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
@@ -965,5 +966,114 @@ public class QueryTest {
     Query query = Query.create(TABLE_ID).reversed(true);
     assertThat(query.toProto(requestContext))
         .isEqualTo(expectedReadFromTableProtoBuilder().setReversed(true).build());
+  }
+
+  @Test
+  public void isSinglePointQuery_singleRowKey() {
+    assertThat(Query.create(TABLE_ID).rowKey("k").isSinglePointQuery()).isTrue();
+  }
+
+  @Test
+  public void isSinglePointQuery_singleClosedRange() {
+    assertThat(
+            Query.create(TABLE_ID)
+                .range(ByteStringRange.unbounded().startClosed("k").endClosed("k"))
+                .isSinglePointQuery())
+        .isTrue();
+  }
+
+  @Test
+  public void isSinglePointQuery_emptyQuery() {
+    assertThat(Query.create(TABLE_ID).isSinglePointQuery()).isFalse();
+  }
+
+  @Test
+  public void isSinglePointQuery_multipleRowKeys() {
+    assertThat(Query.create(TABLE_ID).rowKey("a").rowKey("b").isSinglePointQuery()).isFalse();
+  }
+
+  @Test
+  public void isSinglePointQuery_rowKeyAndRange() {
+    assertThat(
+            Query.create(TABLE_ID)
+                .rowKey("a")
+                .range(ByteStringRange.unbounded().startClosed("a").endClosed("a"))
+                .isSinglePointQuery())
+        .isFalse();
+  }
+
+  @Test
+  public void isSinglePointQuery_multipleRanges() {
+    assertThat(
+            Query.create(TABLE_ID)
+                .range(ByteStringRange.unbounded().startClosed("a").endClosed("a"))
+                .range(ByteStringRange.unbounded().startClosed("b").endClosed("b"))
+                .isSinglePointQuery())
+        .isFalse();
+  }
+
+  @Test
+  public void isSinglePointQuery_closedOpenRange() {
+    assertThat(
+            Query.create(TABLE_ID)
+                .range(ByteStringRange.unbounded().startClosed("k").endOpen("k"))
+                .isSinglePointQuery())
+        .isFalse();
+  }
+
+  @Test
+  public void isSinglePointQuery_unequalClosedRange() {
+    assertThat(
+            Query.create(TABLE_ID)
+                .range(ByteStringRange.unbounded().startClosed("a").endClosed("b"))
+                .isSinglePointQuery())
+        .isFalse();
+  }
+
+  @Test
+  public void isSinglePointQuery_prefixRange() {
+    assertThat(Query.create(TABLE_ID).prefix("k").isSinglePointQuery()).isFalse();
+  }
+
+  @Test
+  public void toSessionPointProto_fromRowKey() {
+    Query query = Query.create(TABLE_ID).rowKey("the-key");
+    assertThat(query.toSessionPointProto())
+        .isEqualTo(
+            SessionReadRowRequest.newBuilder()
+                .setKey(ByteString.copyFromUtf8("the-key"))
+                .setFilter(RowFilter.getDefaultInstance())
+                .build());
+  }
+
+  @Test
+  public void toSessionPointProto_fromClosedRange() {
+    Query query =
+        Query.create(TABLE_ID)
+            .range(ByteStringRange.unbounded().startClosed("the-key").endClosed("the-key"));
+    assertThat(query.toSessionPointProto())
+        .isEqualTo(
+            SessionReadRowRequest.newBuilder()
+                .setKey(ByteString.copyFromUtf8("the-key"))
+                .setFilter(RowFilter.getDefaultInstance())
+                .build());
+  }
+
+  @Test
+  public void toSessionPointProto_preservesFilter() {
+    RowFilter filter = FILTERS.key().regex("regex").toProto();
+    Query query = Query.create(TABLE_ID).rowKey("the-key").filter(FILTERS.key().regex("regex"));
+    assertThat(query.toSessionPointProto())
+        .isEqualTo(
+            SessionReadRowRequest.newBuilder()
+                .setKey(ByteString.copyFromUtf8("the-key"))
+                .setFilter(filter)
+                .build());
+  }
+
+  @Test
+  public void toSessionPointProto_rejectsNonSinglePointQuery() {
+    Query query = Query.create(TABLE_ID).rowKey("a").rowKey("b");
+    assertThrows(IllegalStateException.class, query::toSessionPointProto);
   }
 }

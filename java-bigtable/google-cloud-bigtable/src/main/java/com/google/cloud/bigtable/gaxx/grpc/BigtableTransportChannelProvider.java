@@ -74,6 +74,12 @@ public final class BigtableTransportChannelProvider implements TransportChannelP
     return delegate.needsExecutor();
   }
 
+  @Nullable
+  @Override
+  public Executor getExecutor() {
+    return delegate.getExecutor();
+  }
+
   @Override
   @Deprecated
   public BigtableTransportChannelProvider withExecutor(ScheduledExecutorService executor) {
