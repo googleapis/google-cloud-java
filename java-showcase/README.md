@@ -85,7 +85,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 # Configure pip for external sources
-pip config set global.extra-index-url https://pypi.org/simple
+pip config --venv set global.extra-index-url https://pypi.org/simple
 
 # Install and configure Java tools (takes around 5 mins)
 V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
