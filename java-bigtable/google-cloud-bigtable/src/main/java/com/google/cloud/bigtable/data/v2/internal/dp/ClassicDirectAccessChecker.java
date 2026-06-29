@@ -27,6 +27,7 @@ import io.grpc.ClientInterceptors;
 import io.grpc.ManagedChannel;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
@@ -75,12 +76,12 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
   }
 
   /** Checks if the exception is due to a VPC Service Controls policy violation. */
-  private boolean isAllowedFromVPCServiceControls(StatusRuntimeException e) {
+  private boolean isVpcServiceControlsViolation(StatusRuntimeException e) {
     String description = e.getStatus().getDescription();
     String message = e.getMessage();
     String expected = "request is prohibited by organization's policy";
-    return (description != null && description.toLowerCase().contains(expected))
-        || (message != null && message.toLowerCase().contains(expected));
+    return (description != null && description.toLowerCase(Locale.ROOT).contains(expected))
+        || (message != null && message.toLowerCase(Locale.ROOT).contains(expected));
   }
 
   /** Executes the underlying RPC and evaluates the eligibility. */
@@ -101,7 +102,7 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
         throw e;
       }
 
-      if (isAllowedFromVPCServiceControls(e)) {
+      if (isVpcServiceControlsViolation(e)) {
         LOG.log(Level.WARNING, "DirectPath is blocked by a perimeter policy violation.");
       } else {
         // Failed with standard permission error, resorting to ALTS check.
