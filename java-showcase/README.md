@@ -100,6 +100,8 @@ cd java-showcase
 mvn verify -P enable-golden-tests
 ```
 
+> [!IMPORTANT]
+> The golden tests run the generator and compare the entire `java-showcase` directory against the newly generated state using `git diff`. For these tests to pass, you must have a completely clean git tree within the `java-showcase` directory before running them. Any uncommitted changes or untracked files will cause the tests to fail.
 
 ## Update the Golden Showcase Files
 
