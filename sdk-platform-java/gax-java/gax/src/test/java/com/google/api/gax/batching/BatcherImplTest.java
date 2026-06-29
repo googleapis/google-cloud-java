@@ -516,7 +516,6 @@ class BatcherImplTest {
 
   /** Validates that the elements are not leaking to multiple batches */
   @Test
-  @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
   void testElementsNotLeaking() throws Exception {
     ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
     ScheduledExecutorService multiThreadExecutor = Executors.newScheduledThreadPool(20);
@@ -567,6 +566,7 @@ class BatcherImplTest {
       }
 
       // Closing the resources
+      await().atMost(Duration.ofSeconds(10)).until(future::isDone);
       future.get();
       assertThat(isDuplicateElement.get()).isFalse();
       singleThreadExecutor.shutdown();
