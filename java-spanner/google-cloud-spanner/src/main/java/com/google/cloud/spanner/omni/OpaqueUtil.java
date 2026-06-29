@@ -122,8 +122,16 @@ public class OpaqueUtil {
           md.update(bXor);
           md.update((byte) i);
           md.update(dstPrime);
-          bi = md.digest();
-          System.arraycopy(bi, 0, bOut, (i - 1) * bInBytes, bInBytes);
+          byte[] nextBi = md.digest();
+          System.arraycopy(nextBi, 0, bOut, (i - 1) * bInBytes, bInBytes);
+          Arrays.fill(bXor, (byte) 0);
+          if (bi != b1) {
+            Arrays.fill(bi, (byte) 0);
+          }
+          bi = nextBi;
+        }
+        if (bi != b1) {
+          Arrays.fill(bi, (byte) 0);
         }
 
         byte[] res = new byte[lenInBytes];
