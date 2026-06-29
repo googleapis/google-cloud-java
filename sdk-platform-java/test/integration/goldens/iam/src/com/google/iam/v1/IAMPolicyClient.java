@@ -23,7 +23,6 @@ import com.google.iam.v1.stub.IAMPolicyStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,7 +164,6 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@NullMarked
 @Generated("by gapic-generator-java")
 public class IAMPolicyClient implements BackgroundResource {
   private final IAMPolicySettings settings;

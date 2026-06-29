@@ -32,7 +32,6 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
 import javax.annotation.Generated;
-import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -40,7 +39,6 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>This class is for advanced usage.
  */
-@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonConnectionServiceCallableFactory
     implements HttpJsonStubCallableFactory<Operation, OperationsStub> {

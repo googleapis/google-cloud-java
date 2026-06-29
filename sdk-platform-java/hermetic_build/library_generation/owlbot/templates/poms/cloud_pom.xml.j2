@@ -43,11 +43,6 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.jspecify</groupId>
-      <artifactId>jspecify</artifactId>
-      <version>${jspecify.version}</version>
-    </dependency>
 {% for module in proto_modules %}
     <dependency>
       <groupId>{{module.group_id}}</groupId>
