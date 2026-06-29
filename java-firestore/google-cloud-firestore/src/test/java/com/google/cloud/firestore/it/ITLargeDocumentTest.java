@@ -215,9 +215,9 @@ public class ITLargeDocumentTest extends ITBaseTest {
   public void testOversizedPayloadRejection() {
     DocumentReference oversizedDoc = firestore.collection(collectionName).document("temp_oversized_doc");
     int targetBytes = 16 * 1024 * 1024 + 102400;
-    String largePayload = generateAsciiString(targetBytes);
-    Map<String, Object> data = new HashMap<>();
-    data.put("chunk", largePayload);
+    char[] chars = new char[targetBytes];
+    Arrays.fill(chars, 'a');
+    String largePayload = new String(chars);
 
     try {
       oversizedDoc.set(data).get(60, TimeUnit.SECONDS);
