@@ -115,6 +115,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("this")
   private int consecutiveFailures = 0;
 
+  @GuardedBy("this")
+  private boolean isDraining = false;
+
   /**
    * When the client fallback to a non-session AFE session creation will return unimplemented
    * errors. In which case the requests should fallback to classic client instead of waiting for an
@@ -525,17 +528,25 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   @GuardedBy("this")
   private void tryDrainPendingRpcs() {
-    while (!pendingRpcs.isEmpty()) {
-      if (pendingRpcs.peek().isCancelled) {
-        pendingRpcs.pop();
-        continue;
+    if (isDraining) {
+      return;
+    }
+    isDraining = true;
+    try {
+      while (!pendingRpcs.isEmpty()) {
+        if (pendingRpcs.peek().isCancelled) {
+          pendingRpcs.pop();
+          continue;
+        }
+        Optional<SessionHandle> handle = picker.pickSession();
+        if (!handle.isPresent()) {
+          break;
+        }
+        PendingVRpc<?, ?> rpc = pendingRpcs.removeFirst();
+        rpc.drainTo(handle.get());
       }
-      Optional<SessionHandle> handle = picker.pickSession();
-      if (!handle.isPresent()) {
-        break;
-      }
-      PendingVRpc<?, ?> rpc = pendingRpcs.removeFirst();
-      rpc.drainTo(handle.get());
+    } finally {
+      isDraining = false;
     }
   }
 
