@@ -1,21 +1,20 @@
 #!/bin/sh
-# This script generates showcase in a temporary/untracked folder and compares
-# its contents with the actual showcase libraries. 
+# This script generates showcase in place and checks for git diffs to verify.
 
 echo "******** Verifying Showcase ********"
 
 set -oxe
 readonly SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 readonly ROOT_DIR="${SCRIPT_DIR}/../.."
-source "${SCRIPT_DIR}/showcase_utilities.sh"
 readonly SHOWCASE_DIR="${SCRIPT_DIR}/.."
+readonly GENERATED_DIRS="${SHOWCASE_DIR}/gapic-showcase/src/main ${SHOWCASE_DIR}/grpc-gapic-showcase-v1beta1/src/main ${SHOWCASE_DIR}/proto-gapic-showcase-v1beta1/src/main"
 
-# generate sources
-bash "${SCRIPT_DIR}/generate_showcase.sh" --replace "false"
+# generate sources in place
+bash "${SCRIPT_DIR}/generate_showcase.sh"
 
-generated_library_location=$(cat "${ROOT_DIR}/generated-showcase-location")
-
-# compare library
-diff -ru "${SHOWCASE_DIR}/" "${generated_library_location}"
-
-cleanup $SCRIPT_DIR
+# check if there are changes in generated directories
+if [ -n "$(git status --porcelain ${GENERATED_DIRS})" ]; then
+  git diff ${GENERATED_DIRS}
+  echo "Error: Showcase generated files are out of sync. Please run 'mvn compile -P update' inside java-showcase to update them."
+  exit 1
+fi
