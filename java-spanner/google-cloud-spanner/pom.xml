@@ -535,7 +535,6 @@
     <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcprov-jdk18on</artifactId>
-      <version>1.78</version>
     </dependency>
     <dependency>
       <groupId>com.google.crypto.tink</groupId>
