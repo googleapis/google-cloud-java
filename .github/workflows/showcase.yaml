@@ -138,6 +138,11 @@ jobs:
           echo "Installing librarian version $V"
           go install github.com/googleapis/librarian/cmd/librarian@$V
           librarian install
+      - name: Setup Java 17 for Golden Tests
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
       - name: Showcase golden tests
         working-directory: java-showcase
         run: |
@@ -145,6 +150,11 @@ jobs:
             -P enable-golden-tests \
             --batch-mode \
             --no-transfer-progress
+      - name: Restore Matrix Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
       - name: Parse showcase version
         working-directory: java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
