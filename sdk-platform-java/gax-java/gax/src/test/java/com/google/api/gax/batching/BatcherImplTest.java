@@ -566,8 +566,7 @@ class BatcherImplTest {
       }
 
       // Closing the resources
-      await().atMost(Duration.ofSeconds(10)).until(future::isDone);
-      future.get();
+      future.get(10, TimeUnit.SECONDS);
       assertThat(isDuplicateElement.get()).isFalse();
       singleThreadExecutor.shutdown();
       multiThreadExecutor.shutdown();
