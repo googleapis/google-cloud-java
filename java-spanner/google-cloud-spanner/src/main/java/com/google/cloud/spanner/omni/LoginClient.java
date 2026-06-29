@@ -65,6 +65,7 @@ public class LoginClient {
     byte[] clientPrivateKeyshare = null;
     byte[] blind = null;
     byte[] blindedMessage = null;
+    byte[] clientNonce = null;
     try {
       passwordBytes = password.toByteArray(InsecureSecretKeyAccess.get());
       byte[] randomNonce = OpaqueUtil.nonce();
@@ -75,7 +76,7 @@ public class LoginClient {
                   OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(StandardCharsets.UTF_8)));
       clientPrivateKeyshare = keyPair[0];
       byte[] clientPublicKeyshare = keyPair[1];
-      byte[] clientNonce = OpaqueUtil.nonce();
+      clientNonce = OpaqueUtil.nonce();
       blind = new byte[32];
       SECURE_RANDOM.nextBytes(blind);
 
@@ -184,6 +185,9 @@ public class LoginClient {
       }
       if (blindedMessage != null) {
         Arrays.fill(blindedMessage, (byte) 0);
+      }
+      if (clientNonce != null) {
+        Arrays.fill(clientNonce, (byte) 0);
       }
     }
   }

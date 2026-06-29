@@ -82,6 +82,7 @@ public class SpannerOmniCredentials extends GoogleCredentials {
     if (target.startsWith("http://")) {
       this.target = target.substring(7);
       this.usePlainText = true;
+      logger.warning("Using plaintext connection for Spanner Omni credentials.");
     } else if (target.startsWith("https://")) {
       this.target = target.substring(8);
     } else {
@@ -99,6 +100,9 @@ public class SpannerOmniCredentials extends GoogleCredentials {
             + ", target="
             + target);
     this.usePlainText = usePlainText;
+    if (this.usePlainText) {
+      logger.warning("Using plaintext connection for Spanner Omni credentials.");
+    }
     this.sslContext = sslContext;
   }
 

@@ -807,6 +807,12 @@ public class ConnectionOptions {
         SecretBytes secretBytes =
             SpannerOmniCredentials.convertToSecretBytes(password.toCharArray());
         this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
+        // Clear the password from the initial connection state to allow it to be GC'd.
+        this.initialConnectionState.setValue(
+            ConnectionProperties.PASSWORD,
+            DEFAULT_PASSWORD,
+            ConnectionProperty.Context.STARTUP,
+            /* inTransaction= */ false);
       } else if (defaultSpannerOmniCredentials != null) {
         this.credentials = defaultSpannerOmniCredentials;
       } else {
