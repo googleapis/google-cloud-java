@@ -20,7 +20,7 @@
 #    a Buganizer/GitHub issue) if any changes are detected.
 # 2. Manual trigger (workflow_dispatch) on a branch (except main): Generates the
 #    libraries and commits the resulting diff directly back to the triggering branch.
-name: Librarian - Generate diff check on main
+name: Librarian - Generate libraries check / update
 on:
   push:
     branches:
