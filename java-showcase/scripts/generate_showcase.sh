@@ -1,6 +1,5 @@
 #!/bin/bash
-# Generates the showcase library using the docker image, which is built
-# from the current state of the repo in order to test local changes.
+# Generates the showcase library using librarian.
 set -ex
 
 echo "******** Generating Showcase ********"
@@ -12,11 +11,8 @@ pushd "${ROOT_DIR}"
 source "${ROOT_DIR}/java-showcase/scripts/showcase_utilities.sh"
 
 cleanup() {
-  if [[ -z "${api_def_dir}" ]]; then
-    rm -rf "${api_def_dir}"
-  fi
-  if [[ -z "${showcase_def_dir}" ]]; then
-    rm -rf "${showcase_def_dir}"
+  if [[ -n "${generated_files_dir}" && "${replace}" != "true" ]]; then
+    rm -rf "${generated_files_dir}"
   fi
 }
 
@@ -39,58 +35,40 @@ if [ -z "${replace}" ]; then
   replace="false"
 fi
 
-
-# download api definitions from googleapis repository
-googleapis_commitish=$(grep googleapis_commitish generation_config.yaml | cut -d ":" -f 2 | xargs)
-api_def_dir=$(mktemp -d)
-git clone https://github.com/googleapis/googleapis.git "${api_def_dir}"
-
-pushd "${api_def_dir}"
-git checkout "${googleapis_commitish}"
-# for local setups, we avoid permission issues when the docker image
-# performs version-dependent operations.
-rm -rf ".git/"
-popd
-
-append_showcase_to_api_defs "${api_def_dir}"
-
-if [[ -f "image-id" ]]; then
-  echo "image already exists:"
-  cat image-id
+if command -v librarian &> /dev/null; then
+  LIBRARIAN_CMD="librarian"
 else
-  echo "building docker image"
-  DOCKER_BUILDKIT=1 docker build --file sdk-platform-java/.cloudbuild/library_generation/library_generation.Dockerfile --iidfile image-id .
+  LIBRARIAN_CMD="go run github.com/googleapis/librarian/cmd/librarian@latest"
 fi
 
 if [[ "${replace}" == "true" ]]; then
-  generated_files_dir="${ROOT_DIR}"
+  echo "generating showcase in place"
+  $LIBRARIAN_CMD generate showcase
 else
   export generated_files_dir=$(mktemp -d)
-  # here we store the generated library location for upstream scripts to use
-  # it.
+  echo "Temp generation directory: ${generated_files_dir}"
+  
+  # store the generated library location for verify.sh
   echo "${generated_files_dir}/java-showcase" > "${ROOT_DIR}/generated-showcase-location"
-  # we prepare the temp folder with the minimal setup to perform an incremental
-  # generation.
-  pushd "${ROOT_DIR}"
-  cp -r generation_config.yaml java-showcase/ versions.txt "${generated_files_dir}"
-  popd #ROOT_DIR
+  
+  # Symlink all contents of root directory except java-showcase and librarian.yaml
+  for item in "${ROOT_DIR}"/*; do
+    name=$(basename "$item")
+    if [[ "$name" != "java-showcase" && "$name" != "librarian.yaml" ]]; then
+      ln -s "$item" "${generated_files_dir}/${name}"
+    fi
+  done
+  
+  # Copy librarian.yaml and java-showcase to the temp directory
+  cp -r "${ROOT_DIR}/librarian.yaml" "${ROOT_DIR}/java-showcase" "${generated_files_dir}/"
+  
+  # Convert local paths in librarian.yaml to absolute paths
+  sed -i "s|local_path: sdk-platform-java|local_path: ${ROOT_DIR}/sdk-platform-java|g" "${generated_files_dir}/librarian.yaml"
+  
+  # Run librarian generate from the temp workspace
+  pushd "${generated_files_dir}"
+  $LIBRARIAN_CMD generate showcase
+  popd
 fi
 
-pushd sdk-platform-java
-GENERATOR_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout -pl gapic-generator-java)
-popd
-
-echo "generating showcase"
-workspace_name="/workspace"
-docker run \
-  --rm \
-  -u "$(id -u):$(id -g)" \
-  -v "${generated_files_dir}:${workspace_name}" \
-  -v "${api_def_dir}:${workspace_name}/googleapis" \
-  -e GENERATOR_VERSION="${GENERATOR_VERSION}" \
-  "$(cat image-id)" \
-  --generation-config-path="${workspace_name}/generation_config.yaml" \
-  --library-names="showcase" \
-  --api-definitions-path="${workspace_name}/googleapis"
-
-echo "generated showcase library in ${generated_files_dir}"
+echo "generated showcase library"
