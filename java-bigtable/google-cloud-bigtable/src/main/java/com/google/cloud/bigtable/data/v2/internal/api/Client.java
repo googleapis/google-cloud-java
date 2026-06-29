@@ -49,6 +49,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.WeakHashMap;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -87,11 +88,12 @@ public class Client implements AutoCloseable {
   private final FeatureFlags featureFlags;
   private final ClientInfo clientInfo;
   private final Resource<ScheduledExecutorService> backgroundExecutor;
-  // Drains the per-op SerializingExecutor. Cached pool so a blocked user callback does not starve
-  // heartbeats, retry delays, or other vRPCs (which all run on backgroundExecutor).
-  // TODO: source from the gax TransportChannelProvider so transport and user-callback dispatch
-  // share the same pool. Blocked on missing APIs to extract the configured executor from gax.
-  private final Resource<ExecutorService> userCallbackExecutor;
+  // Drains the per-op SerializingExecutor. Sourced from the gax TransportChannelProvider /
+  // StubSettings on the compat path (see ShimImpl.selectUserCallbackExecutor) so a user-configured
+  // transport executor is reused for callback dispatch; otherwise a dedicated cached pool keeps a
+  // blocked user callback from starving heartbeats, retry delays, or other vRPCs (which all run on
+  // backgroundExecutor).
+  private final Resource<Executor> userCallbackExecutor;
   // Hashed-wheel timer for heartbeat / deadline / watchdog / retry scheduling. Built over
   // backgroundExecutor (the timer's tick thread dispatches bodies onto it). Single tick thread per
   // Client, shared across every SessionPoolImpl.
@@ -187,7 +189,8 @@ public class Client implements AutoCloseable {
         Resource.createOwned(metrics, metrics::close),
         Resource.createOwned(configManager, configManager::close),
         Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown),
-        Resource.createOwned(userCallbackExecutor, () -> shutdownAndAwait(userCallbackExecutor)));
+        Resource.<Executor>createOwned(
+            userCallbackExecutor, () -> shutdownAndAwait(userCallbackExecutor)));
   }
 
   public Client(
@@ -197,7 +200,7 @@ public class Client implements AutoCloseable {
       Resource<Metrics> metrics,
       Resource<ClientConfigurationManager> configManager,
       Resource<ScheduledExecutorService> bgExecutor,
-      Resource<ExecutorService> userCallbackExecutor)
+      Resource<Executor> userCallbackExecutor)
       throws IOException {
     this.featureFlags = featureFlags;
     this.clientInfo = clientInfo;
