@@ -120,27 +120,38 @@ public final class OpExecutor implements Executor {
   }
 
   private void drain() {
-    while (true) {
-      Runnable r;
-      synchronized (queue) {
-        r = queue.poll();
-        if (r == null) {
-          drainScheduled = false;
-          return;
-        }
-        runningThread = Thread.currentThread();
-      }
-      try {
-        try {
-          r.run();
-        } catch (Throwable t) {
-          handler.uncaught(t);
-        }
-      } finally {
+    // If the loop exits abruptly (only reachable if handler.uncaught itself throws), reset
+    // drainScheduled before propagating so a subsequent execute() reschedules instead of
+    // queueing into a wedged executor. Symmetric with scheduleDrainLocked's reset on backing
+    // throw.
+    try {
+      while (true) {
+        Runnable r;
         synchronized (queue) {
-          runningThread = null;
+          r = queue.poll();
+          if (r == null) {
+            drainScheduled = false;
+            return;
+          }
+          runningThread = Thread.currentThread();
+        }
+        try {
+          try {
+            r.run();
+          } catch (Throwable t) {
+            handler.uncaught(t);
+          }
+        } finally {
+          synchronized (queue) {
+            runningThread = null;
+          }
         }
       }
+    } catch (Throwable t) {
+      synchronized (queue) {
+        drainScheduled = false;
+      }
+      throw t;
     }
   }
 
