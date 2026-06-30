@@ -25,20 +25,6 @@ PARENT_DIR="$(cd "${MONOREPO_DIR}/.." && pwd)"
 HTTP_CLIENT_DIR="${HTTP_CLIENT_DIR:-${PARENT_DIR}/google-http-java-client}"
 HTTP_CLIENT_BRANCH="${HTTP_CLIENT_BRANCH:-pqc-support-conscrypt}"
 
-# Use JDK 17 by default for compiling and formatting (required for Spotify fmt plugin)
-# If SDKMAN is installed, try using its JDK 17
-if [ -d "$HOME/.sdkman/candidates/java/17.0.19-tem" ]; then
-  export JAVA_HOME="$HOME/.sdkman/candidates/java/17.0.19-tem"
-elif [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
-  export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
-fi
-
-if [ -n "$JAVA_HOME" ]; then
-  echo "Using JAVA_HOME: $JAVA_HOME"
-  export PATH="$JAVA_HOME/bin:$PATH"
-else
-  echo "WARNING: JAVA_HOME for JDK 17 was not found. Using default java: $(java -version 2>&1 | head -n 1)"
-fi
 
 echo "========================================================================="
 echo "Building and installing google-http-java-client snapshot..."
@@ -64,7 +50,7 @@ else
     git checkout "${HTTP_CLIENT_BRANCH}"
     
     echo "Running maven install..."
-    mvn clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -Dclirr.skip=true
+    mvn clean install -pl google-http-client -am -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -Dclirr.skip=true
   popd
 fi
 
@@ -72,19 +58,5 @@ echo "========================================================================="
 echo "Building and verifying gapic-showcase with PQC in google-cloud-java..."
 echo "========================================================================="
 
-# We need Java 21+ to run the showcase tests because of Conscrypt TLS requirements,
-# but if the user has custom JDK, we will respect it.
-# Let's try to locate JDK 21 for showcase run if it exists, or just use the active JDK.
-if [ -d "$HOME/.sdkman/candidates/java/17.0.19-tem" ]; then
-  # JDK 17 also works for running show-case tests if Conscrypt loads successfully
-  export JAVA_HOME="$HOME/.sdkman/candidates/java/17.0.19-tem"
-elif [ -d "/usr/lib/jvm/java-21-openjdk-amd64" ]; then
-  export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-fi
-
-if [ -n "$JAVA_HOME" ]; then
-  export PATH="$JAVA_HOME/bin:$PATH"
-fi
-
 # Run the showcase tests
-mvn test -pl java-showcase/gapic-showcase -Dtest=ITPqc -Dshowcase.ca.cert="${HOME}/pqc-certs/ca.crt"
+mvn test -pl java-showcase/gapic-showcase -Dtest=ITPqc
