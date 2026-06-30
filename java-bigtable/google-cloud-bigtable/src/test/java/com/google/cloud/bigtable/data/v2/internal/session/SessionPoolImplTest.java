@@ -115,7 +115,7 @@ public class SessionPoolImplTest {
           Correspondence.transforming(SessionRequest::getOpenSession, "open session");
 
   private ScheduledExecutorService executor;
-  private ScheduledExecutorTimer testTimer;
+  private HashedWheelTimer testTimer;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private Metrics metrics;
@@ -132,7 +132,7 @@ public class SessionPoolImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    testTimer = new ScheduledExecutorTimer("test-timer");
+    testTimer = new HashedWheelTimer("test-timer");
     fakeService = new FakeSessionService(executor);
     headerInterceptor = new HeaderInterceptor();
     server =

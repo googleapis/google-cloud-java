@@ -49,7 +49,7 @@ import com.google.cloud.bigtable.data.v2.internal.session.FakeDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.session.Session;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionFactory;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionImpl;
-import com.google.cloud.bigtable.data.v2.internal.session.ScheduledExecutorTimer;
+import com.google.cloud.bigtable.data.v2.internal.session.HashedWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionListener;
@@ -118,7 +118,7 @@ public class VRpcTracerTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    timer = new ScheduledExecutorTimer("vrpc-tracer-test");
+    timer = new HashedWheelTimer("vrpc-tracer-test");
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())

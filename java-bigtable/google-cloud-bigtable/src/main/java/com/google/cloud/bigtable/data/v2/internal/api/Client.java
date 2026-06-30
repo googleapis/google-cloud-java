@@ -34,7 +34,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
-import com.google.cloud.bigtable.data.v2.internal.session.ScheduledExecutorTimer;
+import com.google.cloud.bigtable.data.v2.internal.session.HashedWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
@@ -205,7 +205,7 @@ public class Client implements AutoCloseable {
     this.configManager = configManager;
     this.backgroundExecutor = bgExecutor;
     this.userCallbackExecutor = userCallbackExecutor;
-    this.sessionTimer = new ScheduledExecutorTimer("bigtable-session-timer");
+    this.sessionTimer = new HashedWheelTimer("bigtable-session-timer");
 
     defaultCallOptions = CallOptions.DEFAULT;
 

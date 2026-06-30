@@ -31,10 +31,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 @Timeout(value = 10, unit = TimeUnit.SECONDS)
-class ScheduledExecutorTimerTest {
+class HashedWheelTimerTest {
   private static final Executor DIRECT = MoreExecutors.directExecutor();
 
-  private ScheduledExecutorTimer timer;
+  private HashedWheelTimer timer;
 
   @AfterEach
   void tearDown() {
@@ -45,7 +45,7 @@ class ScheduledExecutorTimerTest {
 
   @Test
   void schedule_fires_after_delay() throws Exception {
-    timer = new ScheduledExecutorTimer("ses-test");
+    timer = new HashedWheelTimer("wheel-test");
     CountDownLatch latch = new CountDownLatch(1);
 
     timer.newTimeout(latch::countDown, DIRECT, 10, TimeUnit.MILLISECONDS);
@@ -55,7 +55,7 @@ class ScheduledExecutorTimerTest {
 
   @Test
   void cancel_before_fire_prevents_execution() throws Exception {
-    timer = new ScheduledExecutorTimer("ses-test");
+    timer = new HashedWheelTimer("wheel-test");
     AtomicInteger fires = new AtomicInteger();
 
     BigtableTimer.Timeout t =
@@ -69,7 +69,7 @@ class ScheduledExecutorTimerTest {
 
   @Test
   void stop_runs_all_hooks_on_caller_thread_and_rejects_inserts() {
-    timer = new ScheduledExecutorTimer("ses-test");
+    timer = new HashedWheelTimer("wheel-test");
     Thread caller = Thread.currentThread();
     List<Thread> ran = new CopyOnWriteArrayList<>();
 
@@ -90,7 +90,7 @@ class ScheduledExecutorTimerTest {
 
   @Test
   void unregister_removes_hook() {
-    timer = new ScheduledExecutorTimer("ses-test");
+    timer = new HashedWheelTimer("wheel-test");
     AtomicInteger fires = new AtomicInteger();
 
     Registration reg = timer.onStop(fires::incrementAndGet);
@@ -104,7 +104,7 @@ class ScheduledExecutorTimerTest {
 
   @Test
   void newTimeout_dispatches_to_supplied_executor() throws Exception {
-    timer = new ScheduledExecutorTimer("ses-test");
+    timer = new HashedWheelTimer("wheel-test");
     Thread caller = Thread.currentThread();
     CountDownLatch latch = new CountDownLatch(1);
 

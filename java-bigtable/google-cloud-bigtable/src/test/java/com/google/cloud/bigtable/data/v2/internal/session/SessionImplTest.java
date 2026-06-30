@@ -105,7 +105,7 @@ public class SessionImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
-    timer = new ScheduledExecutorTimer("session-impl-test");
+    timer = new HashedWheelTimer("session-impl-test");
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
