@@ -55,6 +55,7 @@ public class SubscriberTest {
   private Server testServer;
   private LinkedBlockingQueue<AckReplyConsumerWithResponse> consumersWithResponse;
   private MessageReceiverWithAckResponse messageReceiverWithAckResponse;
+  private ExecutorService serverExecutor;
 
   private final MessageReceiver testReceiver =
       new MessageReceiver() {
@@ -69,7 +70,9 @@ public class SubscriberTest {
   @Before
   public void setUp() throws Exception {
     consumersWithResponse = new LinkedBlockingQueue<>();
-    InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName(testName.getMethodName());
+    serverExecutor = Executors.newCachedThreadPool();
+    InProcessServerBuilder serverBuilder =
+        InProcessServerBuilder.forName(testName.getMethodName()).executor(serverExecutor);
     fakeSubscriberServiceImpl = new FakeSubscriberServiceImpl();
     fakeExecutor = new FakeScheduledExecutorService();
     testChannel = InProcessChannelBuilder.forName(testName.getMethodName()).build();
@@ -92,6 +95,9 @@ public class SubscriberTest {
   public void tearDown() throws Exception {
     testServer.shutdownNow().awaitTermination();
     testChannel.shutdown();
+    if (serverExecutor != null) {
+      serverExecutor.shutdownNow();
+    }
   }
 
   @Test

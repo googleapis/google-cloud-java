@@ -59,6 +59,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
@@ -94,11 +95,15 @@ public class PublisherImplTest {
 
   private Server testServer;
 
+  private ExecutorService serverExecutor;
+
   @Before
   public void setUp() throws Exception {
     testPublisherServiceImpl = new FakePublisherServiceImpl();
 
-    InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
+    serverExecutor = Executors.newCachedThreadPool();
+    InProcessServerBuilder serverBuilder =
+        InProcessServerBuilder.forName("test-server").executor(serverExecutor);
     serverBuilder.addService(testPublisherServiceImpl);
     testServer = serverBuilder.build();
     testChannel = InProcessChannelBuilder.forName("test-server").build();
@@ -111,6 +116,9 @@ public class PublisherImplTest {
   public void tearDown() throws Exception {
     testServer.shutdownNow().awaitTermination();
     testChannel.shutdown();
+    if (serverExecutor != null) {
+      serverExecutor.shutdownNow();
+    }
   }
 
   @Test
@@ -513,7 +521,6 @@ public class PublisherImplTest {
    *   <li>publish with key orderA, which should now succeed
    * </ol>
    */
-  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13394")
   @Test
   public void testResumePublish() throws Exception {
     Publisher publisher =
@@ -593,7 +600,6 @@ public class PublisherImplTest {
     shutdownTestPublisher(publisher);
   }
 
-  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13394")
   @Test
   public void testPublishThrowExceptionForUnsubmittedOrderingKeyMessage() throws Exception {
     Publisher publisher =
