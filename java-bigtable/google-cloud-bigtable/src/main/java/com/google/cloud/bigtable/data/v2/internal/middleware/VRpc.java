@@ -61,9 +61,9 @@ public interface VRpc<ReqT, RespT> {
 
   /**
    * True once a terminal result has been (or is about to be) delivered to the listener; future
-   * events on this VRpc are no-ops. Callers use this to detect a synchronous terminal during
-   * {@link #start} — e.g. VOperationImpl checks this to avoid registering a gRPC cancellation
-   * listener that would never be removed because the chain already finished.
+   * events on this VRpc are no-ops. Callers use this to detect a synchronous terminal during {@link
+   * #start} — e.g. VOperationImpl checks this to avoid registering a gRPC cancellation listener
+   * that would never be removed because the chain already finished.
    */
   boolean isDone();
 

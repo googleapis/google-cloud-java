@@ -338,7 +338,9 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                         .execute(
                             () ->
                                 grpcContext
-                                    .wrap(() -> otelContext.wrap(() -> onStateChange(new Idle())).run())
+                                    .wrap(
+                                        () ->
+                                            otelContext.wrap(() -> onStateChange(new Idle())).run())
                                     .run()),
                 Durations.toMillis(retryDelay),
                 TimeUnit.MILLISECONDS);
