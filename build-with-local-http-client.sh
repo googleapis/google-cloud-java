@@ -57,7 +57,7 @@ pushd "${HTTP_CLIENT_DIR}"
   git checkout "${HTTP_CLIENT_BRANCH}"
   
   echo "Running maven install..."
-  mvn clean install -DskipTests
+  mvn clean install -DskipTests -Dmaven.javadoc.skip=true -Dclirr.skip=true
 popd
 
 echo "========================================================================="
