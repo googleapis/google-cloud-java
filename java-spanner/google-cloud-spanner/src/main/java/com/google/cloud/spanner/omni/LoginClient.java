@@ -44,6 +44,9 @@ import java.util.concurrent.TimeUnit;
 public class LoginClient {
   private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
+  static final int EXPECTED_ENVELOPE_SIZE =
+      OpaqueUtil.PUBLIC_KEY_LENGTH + OpaqueUtil.NONCE_LENGTH + OpaqueUtil.MAC_TAG_LENGTH;
+
   private final LoginServiceGrpc.LoginServiceStub stub;
 
   public LoginClient(ManagedChannel channel) {
@@ -132,7 +135,7 @@ public class LoginClient {
             initialResponse.getOpaqueResponse().getInitialResponse();
 
         ByteString envelope = initialOpaqueResponse.getMaskedResponse();
-        if (envelope.size() != 65) {
+        if (envelope.size() != EXPECTED_ENVELOPE_SIZE) {
           throw new GeneralSecurityException("Invalid envelope size: " + envelope.size());
         }
 
@@ -236,17 +239,21 @@ public class LoginClient {
               OpaqueUtil.concat(
                   initialOpaqueResponse.getMaskingNonce().toByteArray(),
                   "CredentialResponsePad".getBytes(java.nio.charset.StandardCharsets.UTF_8)),
-              16 + 33 + 16);
+              OpaqueUtil.NONCE_LENGTH + OpaqueUtil.PUBLIC_KEY_LENGTH + OpaqueUtil.MAC_TAG_LENGTH);
       byte[] serializedEnvelope =
           OpaqueUtil.xorBytes(
               initialOpaqueResponse.getMaskedResponse().toByteArray(), credentialResponsePad);
       ByteString envelope = ByteString.copyFrom(serializedEnvelope);
-      if (envelope.size() != 65) {
+      if (envelope.size() != EXPECTED_ENVELOPE_SIZE) {
         throw new GeneralSecurityException("Invalid envelope size: " + envelope.size());
       }
-      ByteString serverPublicKey = envelope.substring(0, 33);
-      ByteString envelopeNonce = envelope.substring(33, 33 + 16);
-      ByteString authTag = envelope.substring(33 + 16, 33 + 16 + 16);
+      ByteString serverPublicKey = envelope.substring(0, OpaqueUtil.PUBLIC_KEY_LENGTH);
+      ByteString envelopeNonce =
+          envelope.substring(
+              OpaqueUtil.PUBLIC_KEY_LENGTH, OpaqueUtil.PUBLIC_KEY_LENGTH + OpaqueUtil.NONCE_LENGTH);
+      ByteString authTag =
+          envelope.substring(
+              OpaqueUtil.PUBLIC_KEY_LENGTH + OpaqueUtil.NONCE_LENGTH, EXPECTED_ENVELOPE_SIZE);
 
       authKey =
           OpaqueUtil.expand(

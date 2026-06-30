@@ -34,4 +34,12 @@ public class LoginClientTest {
     LoginClient client = new LoginClient(channel);
     assertNotNull(client);
   }
+
+  @Test
+  public void testExpectedEnvelopeSize() {
+    // The envelope size must match the sum of the public key, nonce, and auth tag lengths.
+    // If the server changes the lengths in cl/940065095, this test will catch any mismatch.
+    org.junit.Assert.assertEquals(
+        "Envelope size should be 97 bytes (33 + 32 + 32)", 97, LoginClient.EXPECTED_ENVELOPE_SIZE);
+  }
 }

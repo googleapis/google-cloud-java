@@ -40,8 +40,8 @@ public class OpaqueUtilTest {
   public void testNonce() {
     byte[] nonce1 = OpaqueUtil.nonce();
     byte[] nonce2 = OpaqueUtil.nonce();
-    assertEquals(16, nonce1.length);
-    assertEquals(16, nonce2.length);
+    assertEquals(32, nonce1.length);
+    assertEquals(32, nonce2.length);
     assertTrue(!Arrays.equals(nonce1, nonce2));
   }
 
@@ -90,7 +90,7 @@ public class OpaqueUtilTest {
       byte[] mac1 = OpaqueUtil.mac(keys[i], data[i]);
       byte[] mac2 = OpaqueUtil.mac(keys[i], data[i]);
       assertArrayEquals(mac1, mac2);
-      assertEquals(16, mac1.length);
+      assertEquals(32, mac1.length);
     }
   }
 

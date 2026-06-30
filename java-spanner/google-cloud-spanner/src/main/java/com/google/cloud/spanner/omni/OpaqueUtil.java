@@ -45,8 +45,9 @@ public class OpaqueUtil {
   public static final String DIFFIE_HELLMAN_KEY_INFO = "OPAQUE-DeriveDiffieHellmanKeyPair";
   public static final String HMAC_SHA256 = "HmacSHA256";
 
-  private static final int NONCE_LENGTH = 16;
-  private static final int MAC_TAG_LENGTH = 16;
+  static final int NONCE_LENGTH = 32;
+  static final int MAC_TAG_LENGTH = 32;
+  static final int PUBLIC_KEY_LENGTH = 33;
   private static final int EXTRACT_OUTPUT_LENGTH = 32;
 
   // Argon2ID parameters.
