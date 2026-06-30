@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-apigee-connect/proto-google-.*/src"
 - "/java-apigee-connect/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/apigeeconnect/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-apigee-connect/$1/proto-google-cloud-apigee-connect-$1/src"

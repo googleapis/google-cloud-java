@@ -246,7 +246,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
    * }</pre>
    *
    * @param parent Required. Parent resource Format
-   *     organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}
+   *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListViolationsPagedResponse listViolations(WorkloadName parent) {
@@ -284,7 +284,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
    * }</pre>
    *
    * @param parent Required. Parent resource Format
-   *     organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}
+   *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListViolationsPagedResponse listViolations(String parent) {
@@ -447,7 +447,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
    * }</pre>
    *
    * @param name Required. Format:
-   *     organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+   *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Violation getViolation(ViolationName name) {
@@ -479,7 +479,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
    * }</pre>
    *
    * @param name Required. Format:
-   *     organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}
+   *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Violation getViolation(String name) {

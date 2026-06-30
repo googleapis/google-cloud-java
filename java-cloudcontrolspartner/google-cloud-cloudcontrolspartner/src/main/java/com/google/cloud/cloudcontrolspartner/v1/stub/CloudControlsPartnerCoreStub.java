@@ -22,7 +22,9 @@ import static com.google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCoreC
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.cloudcontrolspartner.v1.CreateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Customer;
+import com.google.cloud.cloudcontrolspartner.v1.DeleteCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.EkmConnections;
 import com.google.cloud.cloudcontrolspartner.v1.GetCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.GetEkmConnectionsRequest;
@@ -37,7 +39,9 @@ import com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsRequest;
 import com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsResponse;
 import com.google.cloud.cloudcontrolspartner.v1.Partner;
 import com.google.cloud.cloudcontrolspartner.v1.PartnerPermissions;
+import com.google.cloud.cloudcontrolspartner.v1.UpdateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Workload;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -84,12 +88,14 @@ public abstract class CloudControlsPartnerCoreStub implements BackgroundResource
     throw new UnsupportedOperationException("Not implemented: getPartnerPermissionsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsPagedResponse>
       listAccessApprovalRequestsPagedCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listAccessApprovalRequestsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsResponse>
       listAccessApprovalRequestsCallable() {
     throw new UnsupportedOperationException(
@@ -98,6 +104,18 @@ public abstract class CloudControlsPartnerCoreStub implements BackgroundResource
 
   public UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable() {
     throw new UnsupportedOperationException("Not implemented: getPartnerCallable()");
+  }
+
+  public UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomerCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomerCallable()");
+  }
+
+  public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCustomerCallable()");
   }
 
   @Override

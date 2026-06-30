@@ -113,6 +113,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listConnectionsCallable =

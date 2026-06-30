@@ -14,9 +14,13 @@
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
     <module>google-cloud-pom-parent</module>
+    <module>google-auth-library-java</module>
+    <module>grpc-gcp-java</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
+    <module>java-admanager</module>
     <module>java-advisorynotifications</module>
+    <module>java-agentregistry</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
     <module>java-alloydb-connectors</module>
@@ -26,14 +30,18 @@
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>
+    <module>java-apihub</module>
     <module>java-apikeys</module>
     <module>java-appengine-admin</module>
     <module>java-apphub</module>
+    <module>java-appoptimize</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
     <module>java-asset</module>
     <module>java-assured-workloads</module>
+    <module>java-auditmanager</module>
     <module>java-automl</module>
+    <module>java-backstory</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
     <module>java-batch</module>
@@ -43,41 +51,58 @@
     <module>java-beyondcorp-clientconnectorservices</module>
     <module>java-beyondcorp-clientgateways</module>
     <module>java-biglake</module>
+    <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
+    <module>java-bigquery-jdbc</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
+    <module>java-bigquerystorage</module>
+    <module>java-bigtable</module>
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
+    <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
+    <module>java-ces</module>
     <module>java-channel</module>
     <module>java-chat</module>
+    <module>java-chronicle</module>
+    <module>java-cloudapiregistry</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
     <module>java-cloudquotas</module>
+    <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
+    <module>java-common-protos</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
+    <module>java-configdelivery</module>
+    <module>java-connectgateway</module>
     <module>java-contact-center-insights</module>
     <module>java-container</module>
     <module>java-containeranalysis</module>
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
+    <module>java-databasecenter</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-datalineage</module>
+    <module>java-datamanager</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
+    <module>java-datastore</module>
     <module>java-datastream</module>
-    <module>java-debugger-client</module>
     <module>java-deploy</module>
+    <module>java-developerconnect</module>
+    <module>java-developerknowledge</module>
+    <module>java-devicestreaming</module>
     <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>
     <module>java-discoveryengine</module>
@@ -94,32 +119,59 @@
     <module>java-eventarc</module>
     <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
+    <module>java-financialservices</module>
+    <module>java-firestore</module>
     <module>java-functions</module>
+    <module>java-gdchardwaremanagement</module>
+    <module>java-geminidataanalytics</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
     <module>java-gkehub</module>
+    <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
+    <module>java-health</module>
+    <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>
+    <module>java-iam-policy</module>
     <module>java-iamcredentials</module>
+    <module>java-iap</module>
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
+    <module>java-java-shopping-merchant-issue-resolution</module>
+    <module>java-java-shopping-merchant-order-tracking</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
+    <module>java-licensemanager</module>
     <module>java-life-sciences</module>
+    <module>java-locationfinder</module>
+    <module>java-logging</module>
+    <module>java-logging-logback</module>
+    <module>java-lustre</module>
+    <module>java-maintenance</module>
     <module>java-managed-identities</module>
+    <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
+    <module>java-maps-area-insights</module>
+    <module>java-maps-fleetengine</module>
+    <module>java-maps-fleetengine-delivery</module>
+    <module>java-maps-geocode</module>
+    <module>java-maps-mapmanagement</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
+    <module>java-maps-routeoptimization</module>
     <module>java-maps-routing</module>
+    <module>java-maps-solar</module>
+    <module>java-marketingplatformadminapi</module>
     <module>java-mediatranslation</module>
     <module>java-meet</module>
     <module>java-memcache</module>
     <module>java-migrationcenter</module>
+    <module>java-modelarmor</module>
     <module>java-monitoring</module>
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
@@ -127,30 +179,36 @@
     <module>java-network-management</module>
     <module>java-network-security</module>
     <module>java-networkconnectivity</module>
+    <module>java-networkservices</module>
     <module>java-notebooks</module>
     <module>java-notification</module>
     <module>java-optimization</module>
+    <module>java-oracledatabase</module>
     <module>java-orchestration-airflow</module>
     <module>java-orgpolicy</module>
     <module>java-os-config</module>
     <module>java-os-login</module>
     <module>java-parallelstore</module>
+    <module>java-parametermanager</module>
     <module>java-phishingprotection</module>
     <module>java-policy-troubleshooter</module>
     <module>java-policysimulator</module>
     <module>java-private-catalog</module>
+    <module>java-privilegedaccessmanager</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
+    <module>java-pubsub</module>
     <module>java-rapidmigrationassessment</module>
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
     <module>java-redis</module>
     <module>java-redis-cluster</module>
-    <module>java-resource-settings</module>
     <module>java-resourcemanager</module>
     <module>java-retail</module>
     <module>java-run</module>
+    <module>java-saasservicemgmt</module>
+    <module>java-samples</module>
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
     <module>java-securesourcemanager</module>
@@ -164,13 +222,30 @@
     <module>java-service-usage</module>
     <module>java-servicedirectory</module>
     <module>java-servicehealth</module>
+    <module>java-shared-config</module>
     <module>java-shell</module>
     <module>java-shopping-css</module>
+    <module>java-shopping-merchant-accounts</module>
+    <module>java-shopping-merchant-conversions</module>
+    <module>java-shopping-merchant-datasources</module>
     <module>java-shopping-merchant-inventories</module>
+    <module>java-shopping-merchant-lfp</module>
+    <module>java-shopping-merchant-notifications</module>
+    <module>java-shopping-merchant-product-studio</module>
+    <module>java-shopping-merchant-products</module>
+    <module>java-shopping-merchant-promotions</module>
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
+    <module>java-shopping-merchant-reviews</module>
+    <module>java-showcase</module>
+    <module>java-spanner</module>
+    <module>java-spanner-jdbc</module>
+    <module>java-spanneradapter</module>
     <module>java-speech</module>
+    <module>java-storage</module>
+    <module>java-storage-nio</module>
     <module>java-storage-transfer</module>
+    <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>
     <module>java-talent</module>
     <module>java-tasks</module>
@@ -179,12 +254,15 @@
     <module>java-tpu</module>
     <module>java-trace</module>
     <module>java-translate</module>
+    <module>java-valkey</module>
+    <module>java-vectorsearch</module>
     <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>
     <module>java-video-stitcher</module>
     <module>java-video-transcoder</module>
     <module>java-vision</module>
+    <module>java-visionai</module>
     <module>java-vmmigration</module>
     <module>java-vmwareengine</module>
     <module>java-vpcaccess</module>
@@ -192,8 +270,10 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>java-workloadmanager</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>
+    <module>sdk-platform-java</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->

@@ -5,6 +5,24 @@
   "protoPackage": "google.cloud.alloydb.v1",
   "libraryPackage": "com.google.cloud.alloydb.v1",
   "services": {
+    "AlloyDBCSQLAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlloyDBCSQLAdminClient",
+          "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RestoreFromCloudSQL": {
+              "methods": ["restoreFromCloudSQLAsync", "restoreFromCloudSQLAsync", "restoreFromCloudSQLAsync", "restoreFromCloudSQLOperationCallable", "restoreFromCloudSQLCallable"]
+            }
+          }
+        }
+      }
+    },
     "AlloyDBAdmin": {
       "clients": {
         "grpc": {
@@ -43,6 +61,12 @@
             "DeleteUser": {
               "methods": ["deleteUser", "deleteUser", "deleteUser", "deleteUserCallable"]
             },
+            "ExecuteSql": {
+              "methods": ["executeSql", "executeSql", "executeSql", "executeSqlCallable"]
+            },
+            "ExportCluster": {
+              "methods": ["exportClusterAsync", "exportClusterAsync", "exportClusterAsync", "exportClusterOperationCallable", "exportClusterCallable"]
+            },
             "FailoverInstance": {
               "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
             },
@@ -67,6 +91,9 @@
             "GetUser": {
               "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
             },
+            "ImportCluster": {
+              "methods": ["importClusterAsync", "importClusterAsync", "importClusterAsync", "importClusterOperationCallable", "importClusterCallable"]
+            },
             "InjectFault": {
               "methods": ["injectFaultAsync", "injectFaultAsync", "injectFaultAsync", "injectFaultOperationCallable", "injectFaultCallable"]
             },
@@ -75,6 +102,9 @@
             },
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
@@ -97,6 +127,9 @@
             "RestoreCluster": {
               "methods": ["restoreClusterAsync", "restoreClusterOperationCallable", "restoreClusterCallable"]
             },
+            "SwitchoverCluster": {
+              "methods": ["switchoverClusterAsync", "switchoverClusterAsync", "switchoverClusterAsync", "switchoverClusterOperationCallable", "switchoverClusterCallable"]
+            },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
             },
@@ -108,6 +141,9 @@
             },
             "UpdateUser": {
               "methods": ["updateUser", "updateUser", "updateUserCallable"]
+            },
+            "UpgradeCluster": {
+              "methods": ["upgradeClusterAsync", "upgradeClusterAsync", "upgradeClusterAsync", "upgradeClusterOperationCallable", "upgradeClusterCallable"]
             }
           }
         }

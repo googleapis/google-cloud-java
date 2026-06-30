@@ -40,14 +40,20 @@ import com.google.cloud.alloydb.v1alpha.Cluster;
 import com.google.cloud.alloydb.v1alpha.ConnectionInfo;
 import com.google.cloud.alloydb.v1alpha.CreateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.CreateClusterRequest;
+import com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest;
 import com.google.cloud.alloydb.v1alpha.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateUserRequest;
+import com.google.cloud.alloydb.v1alpha.Database;
 import com.google.cloud.alloydb.v1alpha.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
+import com.google.cloud.alloydb.v1alpha.ExecuteSqlRequest;
+import com.google.cloud.alloydb.v1alpha.ExecuteSqlResponse;
+import com.google.cloud.alloydb.v1alpha.ExportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ExportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -56,6 +62,8 @@ import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 import com.google.cloud.alloydb.v1alpha.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1alpha.GetInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GetUserRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.InjectFaultRequest;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
@@ -74,10 +82,13 @@ import com.google.cloud.alloydb.v1alpha.OperationMetadata;
 import com.google.cloud.alloydb.v1alpha.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.RestartInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.RestoreClusterRequest;
+import com.google.cloud.alloydb.v1alpha.SwitchoverClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateUserRequest;
+import com.google.cloud.alloydb.v1alpha.UpgradeClusterRequest;
+import com.google.cloud.alloydb.v1alpha.UpgradeClusterResponse;
 import com.google.cloud.alloydb.v1alpha.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -143,6 +154,39 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExportClusterRequest, Operation>
+      exportClusterMethodDescriptor =
+          MethodDescriptor.<ExportClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/ExportCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ImportClusterRequest, Operation>
+      importClusterMethodDescriptor =
+          MethodDescriptor.<ImportClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/ImportCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpgradeClusterRequest, Operation>
+      upgradeClusterMethodDescriptor =
+          MethodDescriptor.<UpgradeClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/UpgradeCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpgradeClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
       deleteClusterMethodDescriptor =
           MethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
@@ -161,6 +205,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/PromoteCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PromoteClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SwitchoverClusterRequest, Operation>
+      switchoverClusterMethodDescriptor =
+          MethodDescriptor.<SwitchoverClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/SwitchoverCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SwitchoverClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -292,6 +347,16 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestartInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExecuteSqlRequest, ExecuteSqlResponse>
+      executeSqlMethodDescriptor =
+          MethodDescriptor.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/ExecuteSql")
+              .setRequestMarshaller(ProtoUtils.marshaller(ExecuteSqlRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ExecuteSqlResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -444,6 +509,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateDatabaseRequest, Database>
+      createDatabaseMethodDescriptor =
+          MethodDescriptor.<CreateDatabaseRequest, Database>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/CreateDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -475,12 +551,24 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable;
+  private final UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable;
+  private final OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable;
+  private final UnaryCallable<ImportClusterRequest, Operation> importClusterCallable;
+  private final OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable;
+  private final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable;
+  private final OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable;
   private final UnaryCallable<PromoteClusterRequest, Operation> promoteClusterCallable;
   private final OperationCallable<PromoteClusterRequest, Cluster, OperationMetadata>
       promoteClusterOperationCallable;
+  private final UnaryCallable<SwitchoverClusterRequest, Operation> switchoverClusterCallable;
+  private final OperationCallable<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationCallable;
   private final UnaryCallable<RestoreClusterRequest, Operation> restoreClusterCallable;
   private final OperationCallable<RestoreClusterRequest, Cluster, OperationMetadata>
       restoreClusterOperationCallable;
@@ -518,6 +606,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<RestartInstanceRequest, Operation> restartInstanceCallable;
   private final OperationCallable<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationCallable;
+  private final UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
@@ -548,6 +637,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
       listDatabasesPagedCallable;
+  private final UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -604,6 +694,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -614,6 +705,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -624,6 +716,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -635,6 +728,39 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportClusterRequest, Operation> exportClusterTransportSettings =
+        GrpcCallSettings.<ExportClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ImportClusterRequest, Operation> importClusterTransportSettings =
+        GrpcCallSettings.<ImportClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(importClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpgradeClusterRequest, Operation> upgradeClusterTransportSettings =
+        GrpcCallSettings.<UpgradeClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -644,6 +770,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PromoteClusterRequest, Operation> promoteClusterTransportSettings =
         GrpcCallSettings.<PromoteClusterRequest, Operation>newBuilder()
@@ -654,6 +781,18 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<SwitchoverClusterRequest, Operation> switchoverClusterTransportSettings =
+        GrpcCallSettings.<SwitchoverClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(switchoverClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestoreClusterRequest, Operation> restoreClusterTransportSettings =
         GrpcCallSettings.<RestoreClusterRequest, Operation>newBuilder()
@@ -664,6 +803,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSecondaryClusterRequest, Operation>
         createSecondaryClusterTransportSettings =
@@ -675,6 +815,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -685,6 +826,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -695,6 +837,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -705,6 +848,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSecondaryInstanceRequest, Operation>
         createSecondaryInstanceTransportSettings =
@@ -716,6 +860,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchCreateInstancesRequest, Operation> batchCreateInstancesTransportSettings =
         GrpcCallSettings.<BatchCreateInstancesRequest, Operation>newBuilder()
@@ -726,6 +871,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -746,6 +892,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
         GrpcCallSettings.<FailoverInstanceRequest, Operation>newBuilder()
@@ -756,6 +903,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<InjectFaultRequest, Operation> injectFaultTransportSettings =
         GrpcCallSettings.<InjectFaultRequest, Operation>newBuilder()
@@ -766,6 +914,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestartInstanceRequest, Operation> restartInstanceTransportSettings =
         GrpcCallSettings.<RestartInstanceRequest, Operation>newBuilder()
@@ -776,6 +925,18 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlTransportSettings =
+        GrpcCallSettings.<ExecuteSqlRequest, ExecuteSqlResponse>newBuilder()
+            .setMethodDescriptor(executeSqlMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance", String.valueOf(request.getInstance()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getInstance())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -786,6 +947,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -796,6 +958,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
         GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
@@ -806,6 +969,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         GrpcCallSettings.<UpdateBackupRequest, Operation>newBuilder()
@@ -826,6 +990,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsResponse>
         listSupportedDatabaseFlagsTransportSettings =
@@ -838,6 +1003,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
         generateClientCertificateTransportSettings =
@@ -850,6 +1016,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoTransportSettings =
         GrpcCallSettings.<GetConnectionInfoRequest, ConnectionInfo>newBuilder()
@@ -860,6 +1027,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         GrpcCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
@@ -870,6 +1038,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetUserRequest, User> getUserTransportSettings =
         GrpcCallSettings.<GetUserRequest, User>newBuilder()
@@ -880,6 +1049,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateUserRequest, User> createUserTransportSettings =
         GrpcCallSettings.<CreateUserRequest, User>newBuilder()
@@ -890,6 +1060,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         GrpcCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -910,6 +1081,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
         GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
@@ -920,6 +1092,18 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<CreateDatabaseRequest, Database> createDatabaseTransportSettings =
+        GrpcCallSettings.<CreateDatabaseRequest, Database>newBuilder()
+            .setMethodDescriptor(createDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -969,6 +1153,33 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             settings.updateClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.exportClusterCallable =
+        callableFactory.createUnaryCallable(
+            exportClusterTransportSettings, settings.exportClusterSettings(), clientContext);
+    this.exportClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            exportClusterTransportSettings,
+            settings.exportClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importClusterCallable =
+        callableFactory.createUnaryCallable(
+            importClusterTransportSettings, settings.importClusterSettings(), clientContext);
+    this.importClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            importClusterTransportSettings,
+            settings.importClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.upgradeClusterCallable =
+        callableFactory.createUnaryCallable(
+            upgradeClusterTransportSettings, settings.upgradeClusterSettings(), clientContext);
+    this.upgradeClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            upgradeClusterTransportSettings,
+            settings.upgradeClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteClusterCallable =
         callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
@@ -985,6 +1196,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
         callableFactory.createOperationCallable(
             promoteClusterTransportSettings,
             settings.promoteClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.switchoverClusterCallable =
+        callableFactory.createUnaryCallable(
+            switchoverClusterTransportSettings,
+            settings.switchoverClusterSettings(),
+            clientContext);
+    this.switchoverClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            switchoverClusterTransportSettings,
+            settings.switchoverClusterOperationSettings(),
             clientContext,
             operationsStub);
     this.restoreClusterCallable =
@@ -1092,6 +1314,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             settings.restartInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.executeSqlCallable =
+        callableFactory.createUnaryCallable(
+            executeSqlTransportSettings, settings.executeSqlSettings(), clientContext);
     this.listBackupsCallable =
         callableFactory.createUnaryCallable(
             listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
@@ -1172,6 +1397,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
     this.listDatabasesPagedCallable =
         callableFactory.createPagedCallable(
             listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
+    this.createDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            createDatabaseTransportSettings, settings.createDatabaseSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1228,6 +1456,39 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   }
 
   @Override
+  public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    return exportClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    return exportClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    return importClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    return importClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    return upgradeClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    return upgradeClusterOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
@@ -1247,6 +1508,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   public OperationCallable<PromoteClusterRequest, Cluster, OperationMetadata>
       promoteClusterOperationCallable() {
     return promoteClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SwitchoverClusterRequest, Operation> switchoverClusterCallable() {
+    return switchoverClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationCallable() {
+    return switchoverClusterOperationCallable;
   }
 
   @Override
@@ -1378,6 +1650,11 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   }
 
   @Override
+  public UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    return executeSqlCallable;
+  }
+
+  @Override
   public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
     return listBackupsCallable;
   }
@@ -1487,6 +1764,11 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
       listDatabasesPagedCallable() {
     return listDatabasesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable() {
+    return createDatabaseCallable;
   }
 
   @Override
