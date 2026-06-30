@@ -1245,7 +1245,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           builder.setCredentials(
               new SpannerOmniCredentials(builder.username, builder.secretBytes, builder.host));
         } else if (builder.credentials == null) {
-          builder.setCredentials(environment.getDefaultSpannerOmniCredentials());
+          GoogleCredentials defaultCreds = environment.getDefaultSpannerOmniCredentials();
+          if (defaultCreds != null) {
+            builder.setCredentials(defaultCreds);
+          }
         }
         if (builder.credentials instanceof SpannerOmniCredentials) {
           ((SpannerOmniCredentials) builder.credentials)
